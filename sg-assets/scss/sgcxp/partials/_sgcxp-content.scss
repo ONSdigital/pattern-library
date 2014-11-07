@@ -1,0 +1,251 @@
+/* ======================================================
+   Namespaced content wrapper
+   ======================================================*/
+
+.sgcxp__content {
+  @include font-weight(normal);
+  @include font-size(18);
+
+}
+
+
+/* ======================================================
+   Breadcrumb trail
+   ======================================================*/
+
+.sgcxp__breadcrumb {
+  @include font-size(13);
+  @include font-weight(normal);
+  margin:0;
+  text-transform:uppercase;
+}
+
+  .sgcxp__breadcrumb__item {
+    display:inline-block;
+    white-space: nowrap;
+
+    @include rem(padding-left, 5); 
+    &:before {
+      color:$mid-grey;
+      content:">";
+      @include rem(padding-right, 5); 
+    }
+    &:first-child:before{
+      content:"";
+      padding:0; 
+    }
+    a {
+      color:$off-black;
+      text-decoration:none;
+      &:hover {text-decoration:underline}
+    }
+  }
+
+
+/* ======================================================
+   Blocks
+   ======================================================*/
+
+ .sgcxp__block {
+  background: $white;
+  border:1px solid $mid-grey;
+  @include rem(margin-bottom, 40); 
+ }
+
+   .sgcxp__block__image {
+    display:block; /* TODO: add block to all images */ 
+    max-width:100%;
+   }
+
+   .sgcxp__block__desc {
+    @include rem(padding, 5 20); 
+    @include font-size(14);
+    @include respond-min($bp-desktop-min) {
+      @include font-size(16);
+    }
+   } 
+
+.sgcxp__block--notes {
+  background:$off-black;
+  color:$white;
+  @include rem(margin-bottom, 40); 
+} 
+
+  .sgcxp__block--notes__header {
+    @include font-size(14);
+    @include rem(margin, 0 0 5);
+    text-transform:uppercase;
+  }
+
+
+.sgcxp__block--lifted {
+  @include box-shadow(3px 3px 5px 0 rgba(0,0,0,0.07));
+}
+
+.sgcxp__block--padding-small {
+  @include rem(padding, 10); 
+} 
+
+.sgcxp__block--padding-medium {
+  @include rem(padding, 20); 
+} 
+
+.sgcxp__block--padding-large {
+  @include rem(padding, 30); 
+}
+
+.sgcxp__block__img {
+  max-width: 100%;
+}
+
+/* ======================================================
+   Headings
+   ======================================================*/
+.sgcxp__page-title {
+  @include font-weight(bold);
+  @include rem(margin, 0);
+  line-height: 1.2;
+  @include font-size(40);
+  @include rem(margin-bottom, 20);
+  @include respond-min($bp-desktop-min) {
+    @include font-size(60);
+  }
+}
+
+.sgcxp__page-subtitle {
+  @include font-weight(bold);
+  @include rem(margin, 0);
+  line-height: 1.2;
+  @include font-size(26);
+  @include rem(margin, 10 0 5);
+  @include respond-min($bp-desktop-min) {
+    @include font-size(30);
+    @include rem(margin, 30 0 5);
+  }
+}
+
+.sgcxp__page-subtitle__link {
+  text-decoration: none;
+  color: $content-colour;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+/* ======================================================
+   Select box
+   ======================================================*/
+/**
+ * Select boxes
+ * (Uniform)
+ * This element is pixel based because using REMs for line-height inside pseudo elements does not work in IE10 & 9
+ */
+
+ .sgcxp__dropdown {
+  left: auto;
+  float: right;
+  position: absolute;
+  @include font-size(14);
+  @include rem(top, 10);
+  @include rem(right,15);
+  p {
+    display: block;
+    text-align: right;
+    @include rem(margin-bottom, 8);
+  }
+  text-align: left;
+  @include rem(max-width, 260);
+  width: 100%;
+  .lt-ie9 & {
+    @include rem(width,260);
+  }
+}
+
+.sgcxp__figure {
+  vertical-align: middle;
+  display: inline-block;
+}
+.sgcxp__figure__caption {
+  @include font-size(12);
+  @include rem(margin, 0 0 5);
+  text-transform:uppercase;
+}
+
+.sgcxp__block--imgs {
+  @include rem(margin-bottom, 40);
+}
+
+.selector,
+.selector span {
+  background-image: url(../img/uniform/sprite.png);
+  background-repeat: no-repeat;
+}
+
+.selector {
+  width: 100% !important;
+  min-width: 60px;
+  margin-bottom: 0;
+  overflow: hidden !important;
+  background-position: -5px -55px;
+  @include rem(padding-left, 12);
+  position: relative;
+  &:focus {
+    outline: 0;
+  }
+
+  span {
+    @include box-sizing(border-box);
+    width: 100%!important;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    background-position: right -104px;
+    height: 44px;
+    @include line-height (44); 
+    cursor: pointer;
+    width: 100% !important;
+    display: block;
+  }
+
+  select {
+    border: none;
+    background: none;
+    height: 44px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: pointer;
+    @include opacity(0);
+  }
+
+
+}
+
+/*  Modified Uniform Default Theme */
+
+
+div.selector.focus {
+  background-position: -5px -153px;
+}
+
+
+div.selector.focus span {
+  background-position: right -202px;
+}
+
+div.selector.focus.active {
+  background-position: -5px -55px;
+}
+
+div.selector.focus.active span {
+  background-position: right -104px;
+}
+
+
+
+
+

@@ -1,0 +1,127 @@
+/*
+ * Styles which are required to make sure the project works with the Pattern Library CSS
+ */
+
+body {
+  max-width: 100%;
+  padding: 0;
+}
+
+.color-block {
+  float: none;
+  display: inline-block;
+}
+
+.language-markup {
+  overflow-wrap: normal;
+}
+
+#panel1 {
+  background-color: palegoldenrod;
+}
+
+#panel3 {
+  background-color: mistyrose;
+}
+
+#panel4 {
+  background-color: honeydew;
+}
+
+.language-markup {
+  overflow-wrap: normal;
+}
+
+.sgcxp {
+  max-width: 100%;
+}
+
+.grid-col {
+  word-wrap: break-word;
+}
+
+.sgcxp__block--notes__header {
+  color: #fff;
+}
+
+.sgcxp__nav__item .grid-col {
+  word-wrap: normal;
+}
+
+.sgcxp__block--notes a,
+.sgcxp__block--notes a:visited,
+.sgcxp__block--notes a:hover {
+  color: #fff;
+}
+
+.sgcxp__block--code {
+  word-wrap: normal;
+  white-space: pre;
+  overflow: auto;
+}
+
+.swatch {
+  border-radius: 100%;
+  display: inline-table;
+  width: 110px;
+  height: 110px;
+  padding: 15px;
+  margin: 20px;
+  text-align: center;
+  border: 1px solid black;
+  position: relative;
+}
+
+.swatch div {
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.token.tag {
+  padding: 0;
+  text-transform: none;
+  background-color: #eaeaea;
+}
+
+.hljs {
+  background: #fff;
+}
+
+.sgcxp__wrapper [class*="icon-"]:before,
+.sgcxp__wrapper [class^="icon-"]:before {
+  font-family: 'fontello' !important;
+}
+
+.sgcxp__block--markdown h2 {
+  margin-top: 40px;
+}
+
+.sgcxp__block--markdown h3,
+.sgcxp__block--markdown h4,
+.sgcxp__block--markdown h5 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.sgcxp__block--markdown h1,
+.sgcxp__block--markdown h2 {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+h5 .language-markup,
+h4 .language-markup {
+  font-size: 1.6rem;
+}
+
+.sgcxp__code {
+  margin-bottom: 4rem;
+}
+
+.sgcxp__block--markdown blockquote {
+  font-style: italic;
+}
+

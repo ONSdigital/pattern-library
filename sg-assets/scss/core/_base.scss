@@ -1,0 +1,96 @@
+/* ======================================================
+   Project base (formerly 'Brand' styles)
+   Apply visual language to unclassed elements
+   ======================================================*/
+
+body {
+  @include font-size(18);
+  line-height: 1.45;
+  color: $body-colour;
+  background: $body-bg;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  @include font-weight(normal);
+}
+
+strong, b, h1, h2 {
+  @include font-weight(bold);
+}
+
+h1, h2, h3, h4, h5 {
+  @include rem(margin, 0);
+  line-height: 1.2;
+
+  b, strong {
+    @include font-weight(bold);
+  }
+
+}
+
+h1 {
+  @include font-size(40);
+  @include rem(margin-bottom, 20);
+}
+
+h2 {
+  @include font-size(26);
+  @include rem(margin, 10 0 5);
+}
+
+h3 {
+  @include font-size(14);
+}
+
+
+// font sizes scale up
+@include respond-min($bp-desktop-min) {
+
+  body {
+    @include font-size(18);
+  }
+
+  h1 {
+    @include font-size(60);
+    @include rem(margin-bottom, 20);
+  }
+
+  h2 {
+    @include font-size(30);
+    @include rem(margin, 30 0 5);
+  }
+
+}
+
+blockquote {
+  @include rem(margin, 10 0 0 40);
+}
+cite {
+  display: block;
+  @include rem(margin, 0 0 10 40);
+  font-style: normal;
+  text-transform: uppercase;
+  color: $off-black;
+  @include font-size(12);
+}
+
+a {
+  color: $body-link-colour;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+}
+
+
+i, em {
+  font-family: Arial, sans-serif;
+  font-size: 90%;
+}

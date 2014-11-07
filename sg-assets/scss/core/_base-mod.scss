@@ -1,0 +1,17 @@
+/* ======================================================
+   Base CSS
+   (any add-ons to normalize)
+   ======================================================*/
+
+// @TODO: Review any modifications to see if any are worthy of rolling into core
+
+
+html {
+  overflow-x: hidden; // To stop scrolling horizontally when the mobile navigation panel is open
+  overflow-y: scroll; // Forces a default scrollbar to avoid the page jumping when the meganav opens
+  font-size: 62.5%; // Easier font size calculations - clagnut.com/blog/348/ (18 May 2004!!)
+  line-height: 1.5; // Unitless line-height - meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/ (8 Feb 2006!!)
+  &.ie8 {overflow-x: visible;} // Stops ie8 clipping content and removing scrollbars
+}
+
+
