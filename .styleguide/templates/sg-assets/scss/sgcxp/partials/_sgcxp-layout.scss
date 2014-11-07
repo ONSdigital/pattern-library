@@ -1,0 +1,77 @@
+/* =============================================================================
+   Layout
+   =============================================================================
+*/
+
+// Several wrappers needed for the off canvas navigation technique which follows
+// the pattern outlined in this article:
+// http://coding.smashingmagazine.com/2013/01/15/off-canvas-navigation-for-responsive-website/
+.sgcxp__outer-wrapper {
+  overflow:hidden;
+  .js-offcanvas-menu-visible &,
+  .ie8 & {overflow:visible;}
+  @include respond-min($bp-desktop-min) {
+    overflow:visible;
+  }
+}
+
+.sgcxp__inner-wrapper {
+  @include transition(transform 0.3s ease-in-out);
+  @include transform(translate3d(0, 0, 0));
+
+  @include respond-min($bp-desktop-min) {
+    @include transition(none);
+    @include transform(none);
+  }
+}
+
+.sgcxp__wrapper {
+  margin: 0 auto;
+  max-width: $max-width;
+  @include pie-clearfix;
+  @include rem(padding, 0 15);
+}
+
+#sgcxp__main {
+  @include rem(padding, 20 0);
+  color: $content-colour;
+  background: $content-bg;
+  outline: 0 none;  // This element can be focused, don't let it show an outline
+
+  @include respond-min($bp-desktop-min) {
+    @include rem(padding, 30 0);
+  }
+
+  .grid-wrap {
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .grid-col {
+      .grid-wrap {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include respond-max($bp-mobile-max) {
+    .grid-col {
+      margin-top: $grid-gutter;
+      margin-bottom: $grid-gutter;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "autoPrefixer": {
+    "active": true,
+    "sourceMap": true,
+    "browsers": [
+      "last 2 version",
+      "Firefox ESR",
+      "Opera 12",
+      "> 1%",
+      "ie 9",
+      "ie 8"
+    ]
+  },
+  "convertHtml": {
+    "relativePaths": false
+  },
+  "debug": true,
+  "domain": null,
+  "lintScripts": false,
+  "modelSource": null,
+  "preprocessorLocations": [
+    "ui/scss"
+  ],
+  "preprocessorScriptOutput": null,
+  "preprocessorStyleOutput": "ui/css",
+  "projectDescription": "ONS",
+  "projectName": "Pattern library",
+  "publishedId": null,
+  "serverHostname": null,
+  "serverPort": null,
+  "sourceMap": true,
+  "sass": {
+    "outputStyle": "nested",
+    "sourceMap": true,
+    "useLibSass": true
+  },
+  "simpleModePartnerServer": null,
+  "templateDefaultLayout": "bare",
+  "templateDefaultPage": "index",
+  "templateDirectory": "templates",
+  "type": "mixture",
+  "useCompass": false,
+  "followLeader": false
+}

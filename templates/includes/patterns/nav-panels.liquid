@@ -1,0 +1,150 @@
+{% block page_title %} Nav panels {% endblock %}
+
+{% block custom_head %}
+{% endblock %}
+
+{% block content %}
+  <div class="wrapper">
+    <h1>Nav panels</h1>
+    <div class="grid-wrap">
+      <div class="grid-col desktop-grid-one-half">
+        <!---
+        title: Nav panel with stats
+        usage: Use to display key stats in an easy-to-overview manner. Makes heavy use of the `stat` classes
+        group: Panels
+        -->
+        <article class="nav-panel nav-panel--stats sectioned">
+          <header class="nav-panel__header nav-panel__roomy">
+            <h2 class="flush">Gross Domestic Product (GDP)</h2>
+          </header>
+
+          <div class="nav-panel__roomy">
+            <ul class="list--neutral">
+              <li class="nav-panel__item">
+                <dl>
+                  <dt class="nav-panel__title">
+                    <a href="#">
+                      Gross Domestic Product
+                    </a>
+                    <span tabindex="0" title="Lorem ipsum dolor sit amet" class="tooltip icon-info-circled icon--warm icon--inline icon--left-margin"></span>
+                  </dt>
+                  <dd class="nav-panel__value">
+                    <div class="stat stat--small">
+                      <div class="stat__figure">
+                        390383
+                        <span class="stat__figure__unit">m</span>
+                      </div>
+                      <div class="stat__description">
+                        1st Quarter 2014
+                      </div>
+                    </div>
+                  </dd>
+                </dl>
+              </li>
+
+              <li class="nav-panel__item">
+                <dl>
+                  <dt class="nav-panel__title">
+                    <a href="#">
+                      GDP Quarter on Quarter growth
+                    </a>
+                    <span tabindex="0" title="Lorem ipsum dolor sit amet" class="tooltip icon-info-circled icon--warm icon--inline icon--left-margin"></span>
+                  </dt>
+                  <dd class="nav-panel__value">
+                    <div class="stat stat--small">
+                      <div class="stat__figure">
+                        0.8
+                        <span class="stat__figure__unit">%</span>
+                      </div>
+                      <div class="stat__description">
+                        1st Quarter 2014
+                      </div>
+                    </div>
+                  </dd>
+                </dl>
+              </li>
+
+              <li class="nav-panel__item">
+                <dl>
+                  <dt class="nav-panel__title">
+                    <a href="#">
+                      GDP Change on same Quarter a year ago
+                    </a>
+                    <span tabindex="0" title="Lorem ipsum dolor sit amet" class="tooltip icon-info-circled icon--warm icon--inline icon--left-margin"></span>
+                  </dt>
+                  <dd class="nav-panel__value">
+                    <div class="stat stat--small">
+                      <div class="stat__figure">
+                        0.3
+                        <span class="stat__figure__unit">%</span>
+                      </div>
+                      <div class="stat__description">
+                        1st Quarter 2014
+                      </div>
+                    </div>
+                  </dd>
+                </dl>
+              </li>
+
+              <li class="nav-panel__item">
+                <dl>
+                  <dt class="nav-panel__title">
+                    <a href="#">
+                      Production Index
+                    </a>
+                    <span tabindex="0" title="Lorem ipsum dolor sit amet" class="tooltip icon-info-circled icon--warm icon--inline icon--left-margin"></span>
+                    <div class="micro description">2005 = 100. Not seasonally adjusted</div>
+                  </dt>
+                  <dd class="nav-panel__value">
+                    <div class="stat stat--small">
+                      <div class="stat__figure">
+                        0.8
+                        <span class="stat__figure__unit">%</span>
+                      </div>
+                      <div class="stat__description">
+                        1st Quarter 2014
+                      </div>
+                    </div>
+                  </dd>
+                </dl>
+              </li>
+            </ul>
+          </div>
+
+          <footer class="nav-panel__footer">
+            <div class="nav-panel__action">
+              <a class="nav-panel__roomy" href="#">View all Gross Domestic Product</a>
+            </div>
+          </footer>
+        </article><!-- /nav-panel -->
+      </div><!-- /grid-col -->
+      <div class="grid-col desktop-grid-one-half">
+        <!---
+        title: Nav panel without stats
+        usage: Use to display key sections of the site in a style similar to the nav panel with stats.
+        group: Panels
+        -->
+        <div class="nav-panel nav-panel--statless">
+          <header class="nav-panel__header nav-panel__roomy">
+            <h2 class="flush">Other economy categories</h2>
+          </header>
+
+          <ul class="nav-panel__roomy nav-panel__body list--neutral flush">
+            <li class="nav-panel__action">
+              <a href="#">Environmental Accounts</a>
+            </li>
+            <li class="nav-panel__action">
+              <a href="#">Government, Public Sector, and Taxes</a>
+            </li>
+            <li class="nav-panel__action">
+              <a href="#">Gross Value Added (GVA)</a>
+            </li>
+            <li class="nav-panel__action">
+              <a href="#">Investments, Pensions, and Trusts</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- /grid-wrap -->
+  </div><!-- /wrapper -->
+{% endblock %}

@@ -1,0 +1,39 @@
+{% block page_title %}Content image / equation{% endblock %}
+{% block custom_head %}
+  <style>
+  </style>
+{% endblock %}
+{% block content %}
+  <div class="wrapper">
+    <h1>Content image / equation</h1>
+  </div>
+
+  <div class="wrapper">
+    <div class="grid-wrap">
+      <div class="grid-col desktop-grid-two-thirds">
+        <p>Filler text added for example of usage in-line. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum sint officia est alias reprehenderit amet, quisquam rerum atque excepturi consequuntur laudantium voluptates, adipisci iste quibusdam perspiciatis, ut totam! Et, ipsa.</p>
+        <!---
+        title: Content image
+        group: Media
+        usage: >
+          Use the content image class to mark up an image with optional title
+          on a content page (like a stat bulletin). Comes with vertical spacing.
+        devnotes: |
+          Adding the `.content-image--separated` class will add top/bottom borders and padding. This can be left out.
+          Always add an `alt` attribute to the image, and the `width` and `height` attributes so that browser doesn't make unnecessary repaints aren't made once the image has loaded.
+          Even if the image is purely decorational, add an empty alt attribute for accessibility purposes.
+        -->
+        <figure class="content-image content-image--separated">
+          <figcaption>
+            <h3 class="content-image__title">Title of equation (I'm optional)</h3>
+          </figcaption>
+          <img class="content-image__image" src="/ui/img/equation.png" alt="a description of the image" width="497" height="60">
+        </figure>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil veniam magnam quo laboriosam, veritatis! Quae rem modi, officia voluptatum tempore sunt in beatae ut deleniti iusto! Eveniet accusantium nesciunt tempora!</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% block custom_scripts %}
+{% endblock %}

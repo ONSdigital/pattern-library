@@ -1,0 +1,31 @@
+{% block page_title %} Lozenges {% endblock %}
+
+{% block custom_head %}{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+
+  <div class="grid-wrapp">
+    <div class="grid-col">
+      <h1 class="alpha">Lozenges</h1>
+      <!---
+      title: Lozenges
+      group: General
+      usage: >
+        Lozenges are used for displaying statuses. Available in a standard format, and a couple of variations.
+      devnotes: >
+        Use classes `lozenge--fat` for more padded lozenges.
+        `lozenge--cold` `lozenge--semi-opaque` are colour and transparency variations.
+      -->
+      <span class="lozenge">Standard</span> <br />
+      <span class="lozenge lozenge--cold">Cold</span> <br />
+      <span class="lozenge lozenge--fat lozenge--cold">Fat</span> <br />
+      <span class="lozenge lozenge--semi-opaque">Opaque lozenge for use on backgrounds</span> <br />
+      <span class="lozenge lozenge--semi-opaque lozenge--fat">Opaque, fat lozenge</span> <br />
+      <!--- // -->
+    </div>
+  </div>
+</div>
+
+{% endblock %}

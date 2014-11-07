@@ -1,0 +1,22 @@
+{% block page_title %} Dates {% endblock %}
+
+{% block custom_head %}{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+
+  <h1 class="alpha">Dates</h1>
+  <!---
+  title: Stacked date microcomponent
+  group: General
+  usage: This is a small component, and very simple. Works with and without a leading 0 for 1st-9th, as it's centrally-aligned and width-restricted.
+  devnotes: Remember to specify the correct datetime attribute for each date.
+  -->
+  <time class="date date--stacked" datetime="2014-07-30">
+    <span class="date--stacked__date">30</span>
+    <span class="date--stacked__month date--stacked__month--shorthand">Jul</span>
+    <span class="date--stacked__year">2014</span>
+  </time>
+</div>
+{% endblock %}

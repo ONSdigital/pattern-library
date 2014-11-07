@@ -1,0 +1,40 @@
+publish: ../docs
+
+assets:
+  - src: ../converted-html/dist # original location within filesystem
+    dest: ./dist # where it should be put relative to publish folder
+  - src: ../converted-html/ui
+    dest: ./ui
+
+# Define where the templates that are used to build the styleguide are.
+templates: ./templates
+template_assets: sg-assets
+
+use_groups: false # this should be split or one component per page
+
+# The files that should be searched for HTMLdoc declarations
+files:
+  - category: Components
+    files:    ['../templates/includes/components/**/*', '../templates/includes/charts/**/*']
+  - category: Patterns
+    files:    ['../templates/includes/patterns/**/*']
+  - category: Visual Language
+    files:    ['../templates/includes/visual-language/**/*', '../templates/includes/global/**/*']
+  - category: Templates
+    files:    ['../converted-html/pages/**/*.html']
+
+# Static Pages
+pages:
+  - title:    Home
+    index:    true
+    src:      ./readme.md
+  - title:    Getting Started
+    hidden:   true
+    src:      ./getting-started.md
+  - title:    Readme
+    hidden:   true
+    src:      ./readme.md
+
+htmltidy:
+  indent_size: 2
+  unformatted: [ 'code' ]

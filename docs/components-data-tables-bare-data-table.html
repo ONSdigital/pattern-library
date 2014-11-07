@@ -1,0 +1,3512 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html class="no-js ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"><!--<![endif]-->
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>ONS Alpha Pattern Library</title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <meta content="on" http-equiv="cleartype"/>
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="shortcut icon" href="./sg-assets/img/favicon.png">
+
+  <!-- These are the project stylesheets and scripts -->
+
+  <link rel="stylesheet" href="./dist/css/main.css"/>
+
+  <link href="./sg-assets/prismjs/prism.css" rel="stylesheet"/>
+  <script src="./ui/js/lib/modernizr.min.js"></script>
+
+  <!-- // -->
+
+  <!-- These are the styleguide stylesheets -->
+
+  <!-- IE friendly media query replacements as per http://jakearchibald.github.io/sass-ie/ -->
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="./sg-assets/css/main-oldie.css"/>
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="./sg-assets/css/main.css"/>
+  <!--<![endif]-->
+
+  <!-- // -->
+
+  <!-- Styles that are required to make the project display correctly in the pattern library. -->
+  <link rel="stylesheet" href="./sg-assets/css/project.css"/>
+
+</head>
+<body class="sgcxp">
+<div class="sgcxp__outer-wrapper">
+  <div class="sgcxp__inner-wrapper">
+    <a class="skiplink visuallyhidden focusable" href="#sgcxp__main" tabindex="0">
+      <span>Skip to main content</span>
+    </a>
+
+    <header class="sgcxp__header" id="header" role="banner">
+      <div class="sgcxp__update-panel">
+        <p class="sgcxp__update-panel__inner">Last updated: 07 November 2014</p>
+      </div>
+      <!--/sgcxp__update-panel-->
+      <div class="sgcxp__header__inner sgxcp-icons">
+        <a href="#menu" class="mobile-only offcanvas-menu-toggle offcanvas-menu-toggle--open"><span
+          class="icon icon-menu" role="presentation"></span><span
+          class="offcanvas-menu-toggle__text">Menu</span></a>
+        <a itemprop="url" class="sgcxp__logo" href="./">
+          <span itemprop="name">ONS</span>
+          <link itemprop="logo" href="./sg-assets/img/logo.png"/>
+        </a>
+
+        <div class="sgcxp__nav" id="menu">
+          <a href="#masthead" class="mobile-only offcanvas-menu-toggle offcanvas-menu-toggle--close"><span
+            class="icon icon-close" role="presentation"></span></a>
+          <nav>
+            <ul class="sgcxp__nav__list">
+
+
+
+                  <li class="sgcxp__nav__item">
+                    <a class="sgcxp__nav__link" href="#">Components<span
+                      class="icon-down-arrow desktop-only"></span></a>
+
+                    <div class="sgcxp__nav__dropdown grid-wrap">
+                    <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="components-buttons.html">Buttons</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-buttons-primary.html"
+                                         class="sgcxp__linklist__link">Primary</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-buttons-primary-with-icon.html"
+                                         class="sgcxp__linklist__link">Primary, with icon</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-buttons-sizes.html"
+                                         class="sgcxp__linklist__link">Sizes</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-buttons-primary-block.html"
+                                         class="sgcxp__linklist__link">Primary, block</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-buttons-secondary.html"
+                                         class="sgcxp__linklist__link">Secondary</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-buttons-secondary-active.html"
+                                         class="sgcxp__linklist__link">Secondary, active</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-buttons-button-bar.html"
+                                         class="sgcxp__linklist__link">Button bar</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="components-global.html">Global</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-global-footer.html"
+                                         class="sgcxp__linklist__link">Footer</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-global-header-with-breadcrumb.html"
+                                         class="sgcxp__linklist__link">Header with breadcrumb</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-global-header.html"
+                                         class="sgcxp__linklist__link">Header</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-global-hero-banner.html"
+                                         class="sgcxp__linklist__link">Hero banner</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-global-hero-banner-with-extra-large-stat.html"
+                                         class="sgcxp__linklist__link">Hero banner with extra large stat</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-global-page-header.html"
+                                         class="sgcxp__linklist__link">Page header</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="components-charts.html">Charts</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-charts-chart-controls.html"
+                                         class="sgcxp__linklist__link">Chart Controls</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-charts-horizontal-bar-chart.html"
+                                         class="sgcxp__linklist__link">Horizontal Bar Chart</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-charts-multi-series-chart.html"
+                                         class="sgcxp__linklist__link">Multi Series Chart</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-charts-population-pyramid.html"
+                                         class="sgcxp__linklist__link">Population Pyramid</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-charts-stacked-bar-chart.html"
+                                         class="sgcxp__linklist__link">Stacked Bar Chart</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-charts-line-chart.html"
+                                         class="sgcxp__linklist__link">Line Chart</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="components-data-tables.html">Data Tables</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-data-tables-data-table-with-toggle.html"
+                                         class="sgcxp__linklist__link">Data Table with Toggle</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-data-tables-data-table-with-mode-switcher.html"
+                                         class="sgcxp__linklist__link">Data Table with Mode Switcher</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-data-tables-data-table-with-swipe-control.html"
+                                         class="sgcxp__linklist__link">Data Table with Swipe Control</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-data-tables-bare-data-table.html"
+                                         class="sgcxp__linklist__link">Bare Data Table</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-data-tables-responsive-table.html"
+                                         class="sgcxp__linklist__link">Responsive table</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+                            </div>
+                            <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="components-misc.html">Misc</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-misc-tooltips.html"
+                                         class="sgcxp__linklist__link">Tooltips</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+                    </div>
+                    </div>
+                    <!--/sgcxp__nav__dropdown-->
+                  </li>
+
+
+                  <li class="sgcxp__nav__item">
+                    <a class="sgcxp__nav__link" href="#">Patterns<span
+                      class="icon-down-arrow desktop-only"></span></a>
+
+                    <div class="sgcxp__nav__dropdown grid-wrap">
+                    <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-boxes.html">Boxes</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-standard-box.html"
+                                         class="sgcxp__linklist__link">Standard box</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-padded-box.html"
+                                         class="sgcxp__linklist__link">Padded box</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-sectioned-box.html"
+                                         class="sgcxp__linklist__link">Sectioned box</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-lifted-box.html"
+                                         class="sgcxp__linklist__link">Lifted box</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-combinations.html"
+                                         class="sgcxp__linklist__link">Combinations</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-vertically-sectioned-box.html"
+                                         class="sgcxp__linklist__link">Vertically sectioned box</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-box-with-border.html"
+                                         class="sgcxp__linklist__link">Box with border</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-orange-box.html"
+                                         class="sgcxp__linklist__link">Orange box</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-orange-box-with-large-left-border.html"
+                                         class="sgcxp__linklist__link">Orange box with large left border</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-orange-coloured-box-with-icon.html"
+                                         class="sgcxp__linklist__link">Orange-coloured box with icon</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-negative-offset.html"
+                                         class="sgcxp__linklist__link">Negative offset</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-dark-lifted-box.html"
+                                         class="sgcxp__linklist__link">Dark lifted box</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-navs.html">Navs</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-navs-nav.html"
+                                         class="sgcxp__linklist__link">Nav</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-navs-nav-inline-block.html"
+                                         class="sgcxp__linklist__link">Nav inline-block</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-navs-nav-block.html"
+                                         class="sgcxp__linklist__link">Nav, block</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-navs-nav-block-spaced.html"
+                                         class="sgcxp__linklist__link">Nav, block spaced</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-navs-nav-dark.html"
+                                         class="sgcxp__linklist__link">Nav dark</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-navs-nav-heavy.html"
+                                         class="sgcxp__linklist__link">Nav heavy</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-navs-simple-breadcrumb-nav.html"
+                                         class="sgcxp__linklist__link">Simple breadcrumb nav</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-navs-breadcrumb.html"
+                                         class="sgcxp__linklist__link">Breadcrumb</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-general.html">General</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-general-actionable-header.html"
+                                         class="sgcxp__linklist__link">Actionable header</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-general-actionable-header-tight.html"
+                                         class="sgcxp__linklist__link">Actionable header, tight</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-general-content-reveal-class.html"
+                                         class="sgcxp__linklist__link">Content reveal class</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-general-stacked-date-microcomponent.html"
+                                         class="sgcxp__linklist__link">Stacked date microcomponent</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-general-divider.html"
+                                         class="sgcxp__linklist__link">Divider</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-general-lozenges.html"
+                                         class="sgcxp__linklist__link">Lozenges</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-general-table-of-contents.html"
+                                         class="sgcxp__linklist__link">Table of Contents</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-general-standard-tabbed-ui.html"
+                                         class="sgcxp__linklist__link">Standard tabbed UI</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-stats.html">Stats</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-stats-hero-stat-headline.html"
+                                         class="sgcxp__linklist__link">Hero stat headline</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-stats-basic.html"
+                                         class="sgcxp__linklist__link">Basic</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-stats-basic-with-unit.html"
+                                         class="sgcxp__linklist__link">Basic, with unit</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-stats-basic-with-unit-and-description.html"
+                                         class="sgcxp__linklist__link">Basic, with unit and description</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-stats-small.html"
+                                         class="sgcxp__linklist__link">Small</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-stats-headline-stat.html"
+                                         class="sgcxp__linklist__link">Headline stat</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-stats-xl-headline-stat.html"
+                                         class="sgcxp__linklist__link">XL Headline stat</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+                            </div>
+                            <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-panels.html">Panels</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-panels-nav-panel-with-stats.html"
+                                         class="sgcxp__linklist__link">Nav panel with stats</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-panels-nav-panel-without-stats.html"
+                                         class="sgcxp__linklist__link">Nav panel without stats</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-panels-panel.html"
+                                         class="sgcxp__linklist__link">Panel</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-panels-panel-separated.html"
+                                         class="sgcxp__linklist__link">Panel, separated</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-panels-panel-with-padding.html"
+                                         class="sgcxp__linklist__link">Panel, with padding</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-panels-panel-with-margin.html"
+                                         class="sgcxp__linklist__link">Panel, with margin</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-lists.html">Lists</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-lists-standard-unordered-list.html"
+                                         class="sgcxp__linklist__link">Standard unordered list</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-lists-standard-ordered-list.html"
+                                         class="sgcxp__linklist__link">Standard ordered list</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-lists-neutral-list.html"
+                                         class="sgcxp__linklist__link">Neutral list</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-lists-stacking-definition-list.html"
+                                         class="sgcxp__linklist__link">Stacking definition list</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-lists-inline-definition-list.html"
+                                         class="sgcxp__linklist__link">Inline definition list</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-lists-inline-split-definition-list.html"
+                                         class="sgcxp__linklist__link">Inline, split definition list</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-slates.html">Slates</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-slates-light-grey-slate.html"
+                                         class="sgcxp__linklist__link">Light grey slate</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-slates-off-white-slate.html"
+                                         class="sgcxp__linklist__link">Off-white slate</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-slates-mid-grey-slate.html"
+                                         class="sgcxp__linklist__link">Mid grey slate</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-slates-grey-slate.html"
+                                         class="sgcxp__linklist__link">Grey slate</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-media.html">Media</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-media-content-image.html"
+                                         class="sgcxp__linklist__link">Content image</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-media-media-object.html"
+                                         class="sgcxp__linklist__link">Media object</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-media-media-object-with-reverse-image.html"
+                                         class="sgcxp__linklist__link">Media object with reverse image</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+                            </div>
+                            <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-type.html">Type</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-type-complex-link.html"
+                                         class="sgcxp__linklist__link">Complex link</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+                    </div>
+                    </div>
+                    <!--/sgcxp__nav__dropdown-->
+                  </li>
+
+
+                  <li class="sgcxp__nav__item">
+                    <a class="sgcxp__nav__link" href="#">Visual Language<span
+                      class="icon-down-arrow desktop-only"></span></a>
+
+                    <div class="sgcxp__nav__dropdown grid-wrap">
+                    <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="visual-language-forms.html">Forms</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-forms-text-input.html"
+                                         class="sgcxp__linklist__link">Text input</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-forms-text-input-with-supporting-text.html"
+                                         class="sgcxp__linklist__link">Text input with supporting text</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-forms-input-with-error.html"
+                                         class="sgcxp__linklist__link">Input with error</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-forms-input-with-button.html"
+                                         class="sgcxp__linklist__link">Input with button</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-forms-textarea.html"
+                                         class="sgcxp__linklist__link">Textarea</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-forms-checkboxes.html"
+                                         class="sgcxp__linklist__link">Checkboxes</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-forms-selectbox.html"
+                                         class="sgcxp__linklist__link">Selectbox</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="visual-language-grid.html">Grid</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-grid-desktop-grid.html"
+                                         class="sgcxp__linklist__link">Desktop grid</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-grid-tablet-and-up-grid.html"
+                                         class="sgcxp__linklist__link">Tablet (and up) grid</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-grid-mobile-and-up-grid.html"
+                                         class="sgcxp__linklist__link">Mobile (and up) grid</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-grid-mixed-mobiletabletdesktop-grid.html"
+                                         class="sgcxp__linklist__link">Mixed Mobile/Tablet/Desktop grid</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-grid-push-pull-grid.html"
+                                         class="sgcxp__linklist__link">Push pull grid</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-grid-nested-grid.html"
+                                         class="sgcxp__linklist__link">Nested grid</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="visual-language-type.html">Type</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-type-headings.html"
+                                         class="sgcxp__linklist__link">Headings</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-type-paragraph.html"
+                                         class="sgcxp__linklist__link">Paragraph</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-type-links.html"
+                                         class="sgcxp__linklist__link">Links</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="visual-language-colors.html">Colors</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-colors-primary.html"
+                                         class="sgcxp__linklist__link">Primary</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-colors-global.html"
+                                         class="sgcxp__linklist__link">Global</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-colors-accent.html"
+                                         class="sgcxp__linklist__link">Accent</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+                            </div>
+                            <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="visual-language-graphical-elements.html">Graphical elements</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-graphical-elements-icons.html"
+                                         class="sgcxp__linklist__link">Icons</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+                    </div>
+                    </div>
+                    <!--/sgcxp__nav__dropdown-->
+                  </li>
+
+
+                  <li class="sgcxp__nav__item">
+                    <a class="sgcxp__nav__link" href="#">Templates<span
+                      class="icon-down-arrow desktop-only"></span></a>
+
+                    <div class="sgcxp__nav__dropdown grid-wrap">
+                    <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="templates-templates.html">Templates</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="templates-templates-homepage-template-t1.html"
+                                         class="sgcxp__linklist__link">Homepage Template (T1)</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="templates-templates-product-page-t3.html"
+                                         class="sgcxp__linklist__link">Product Page (T3)</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="templates-templates-stat-bulletin-page-t4-1.html"
+                                         class="sgcxp__linklist__link">Stat Bulletin Page (T4-1)</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="templates-templates-expert-analysis-page-t4-2.html"
+                                         class="sgcxp__linklist__link">Expert Analysis  Page (T4-2)</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="templates-templates-time-series-page-t5.html"
+                                         class="sgcxp__linklist__link">Time Series Page (T5)</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="templates-examples.html">Examples</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="templates-examples-desktop-grid.html"
+                                         class="sgcxp__linklist__link">Desktop Grid</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="templates-examples-basic-starter.html"
+                                         class="sgcxp__linklist__link">Basic starter</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+                    </div>
+                    </div>
+                    <!--/sgcxp__nav__dropdown-->
+                  </li>
+
+
+
+              <!--<li class="sgcxp__nav__item no-subnav">-->
+              <!--<a class="sgcxp__nav__link" href="#">Pages</a>-->
+              <!--</li>-->
+            </ul>
+          </nav>
+        </div>
+        <!--/sgcxp__nav-->
+
+      </div>
+      <!--/sgcxp__header__inner-->
+    </header>
+
+
+    <main id="sgcxp__main" role="main">
+      <div class="sgcxp__wrapper">
+
+<style>
+.sgcxp__block__img {
+  vertical-align: middle;
+  margin-bottom:20px;
+  max-width:100%;
+}
+
+.sgcxp__block--imgs {
+  text-align:center;
+}
+</style>
+
+<div class="grid-wrap">
+    <div class="grid-col">
+        <ul class="sgcxp__breadcrumb">
+            <li class="sgcxp__breadcrumb__item">
+                Components
+            </li>
+            <li class="sgcxp__breadcrumb__item">
+                Data Tables
+            </li>
+        </ul>
+    </div><!--/grid-col-->
+</div><!--/grid-wrap-->
+<div class="grid-wrap">
+    <div class="grid-col">
+        <h1 class="sgcxp__page-title">Bare Data Table</h1>
+
+
+    </div><!--/grid-col-->
+    <div class="grid-col grid-two-fifths">
+
+    </div><!--/grid-col-->
+</div><!--/grid-wrap-->
+
+
+        <div class="grid-wrap" id="error-panel">
+            <div class="grid-col">
+                <div class="sgcxp__block sgcxp__block--lifted">
+                    <div class="sgcxp__block__desc">
+                        <table class="tablesaw">
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th>K24V</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>1997</th>
+        <td>109</td>
+      </tr>
+      <tr>
+        <th>1998</th>
+        <td>110.2</td>
+      </tr>
+      <tr>
+        <th>1999</th>
+        <td>111.4</td>
+      </tr>
+      <tr>
+        <th>2000</th>
+        <td>113.5</td>
+      </tr>
+      <tr>
+        <th>2001</th>
+        <td>111.7</td>
+      </tr>
+      <tr>
+        <th>2002</th>
+        <td>109.8</td>
+      </tr>
+      <tr>
+        <th>2003</th>
+        <td>109</td>
+      </tr>
+      <tr>
+        <th>2004</th>
+        <td>109.9</td>
+      </tr>
+      <tr>
+        <th>2005</th>
+        <td>109.1</td>
+      </tr>
+      <tr>
+        <th>2006</th>
+        <td>109.8</td>
+      </tr>
+      <tr>
+        <th>2007</th>
+        <td>110.2</td>
+      </tr>
+      <tr>
+        <th>2008</th>
+        <td>107.2</td>
+      </tr>
+      <tr>
+        <th>2009</th>
+        <td>97.8</td>
+      </tr>
+      <tr>
+        <th>2010</th>
+        <td>100.8</td>
+      </tr>
+      <tr>
+        <th>2011</th>
+        <td>100</td>
+      </tr>
+      <tr>
+        <th>2012</th>
+        <td>97.3</td>
+      </tr>
+      <tr>
+        <th>2013</th>
+        <td>97.2</td>
+      </tr>
+      <tr>
+        <th>1997 Q1</th>
+        <td>109.5</td>
+      </tr>
+      <tr>
+        <th>1997 Q2</th>
+        <td>107.1</td>
+      </tr>
+      <tr>
+        <th>1997 Q3</th>
+        <td>105.7</td>
+      </tr>
+      <tr>
+        <th>1997 Q4</th>
+        <td>113.6</td>
+      </tr>
+      <tr>
+        <th>1998 Q1</th>
+        <td>111.9</td>
+      </tr>
+      <tr>
+        <th>1998 Q2</th>
+        <td>108.8</td>
+      </tr>
+      <tr>
+        <th>1998 Q3</th>
+        <td>106.9</td>
+      </tr>
+      <tr>
+        <th>1998 Q4</th>
+        <td>113.2</td>
+      </tr>
+      <tr>
+        <th>1999 Q1</th>
+        <td>111.2</td>
+      </tr>
+      <tr>
+        <th>1999 Q2</th>
+        <td>108.5</td>
+      </tr>
+      <tr>
+        <th>1999 Q3</th>
+        <td>109.6</td>
+      </tr>
+      <tr>
+        <th>1999 Q4</th>
+        <td>116.5</td>
+      </tr>
+      <tr>
+        <th>2000 Q1</th>
+        <td>115.7</td>
+      </tr>
+      <tr>
+        <th>2000 Q2</th>
+        <td>112</td>
+      </tr>
+      <tr>
+        <th>2000 Q3</th>
+        <td>109.8</td>
+      </tr>
+      <tr>
+        <th>2000 Q4</th>
+        <td>116.6</td>
+      </tr>
+      <tr>
+        <th>2001 Q1</th>
+        <td>115.2</td>
+      </tr>
+      <tr>
+        <th>2001 Q2</th>
+        <td>110.1</td>
+      </tr>
+      <tr>
+        <th>2001 Q3</th>
+        <td>108</td>
+      </tr>
+      <tr>
+        <th>2001 Q4</th>
+        <td>113.5</td>
+      </tr>
+      <tr>
+        <th>2002 Q1</th>
+        <td>110.6</td>
+      </tr>
+      <tr>
+        <th>2002 Q2</th>
+        <td>109.1</td>
+      </tr>
+      <tr>
+        <th>2002 Q3</th>
+        <td>107</td>
+      </tr>
+      <tr>
+        <th>2002 Q4</th>
+        <td>112.4</td>
+      </tr>
+      <tr>
+        <th>2003 Q1</th>
+        <td>109.7</td>
+      </tr>
+      <tr>
+        <th>2003 Q2</th>
+        <td>107</td>
+      </tr>
+      <tr>
+        <th>2003 Q3</th>
+        <td>106.7</td>
+      </tr>
+      <tr>
+        <th>2003 Q4</th>
+        <td>112.6</td>
+      </tr>
+      <tr>
+        <th>2004 Q1</th>
+        <td>112.1</td>
+      </tr>
+      <tr>
+        <th>2004 Q2</th>
+        <td>109</td>
+      </tr>
+      <tr>
+        <th>2004 Q3</th>
+        <td>106</td>
+      </tr>
+      <tr>
+        <th>2004 Q4</th>
+        <td>112.4</td>
+      </tr>
+      <tr>
+        <th>2005 Q1</th>
+        <td>108.9</td>
+      </tr>
+      <tr>
+        <th>2005 Q2</th>
+        <td>109.7</td>
+      </tr>
+      <tr>
+        <th>2005 Q3</th>
+        <td>106.3</td>
+      </tr>
+      <tr>
+        <th>2005 Q4</th>
+        <td>111.2</td>
+      </tr>
+      <tr>
+        <th>2006 Q1</th>
+        <td>111.9</td>
+      </tr>
+      <tr>
+        <th>2006 Q2</th>
+        <td>108.7</td>
+      </tr>
+      <tr>
+        <th>2006 Q3</th>
+        <td>106.6</td>
+      </tr>
+      <tr>
+        <th>2006 Q4</th>
+        <td>112.1</td>
+      </tr>
+      <tr>
+        <th>2007 Q1</th>
+        <td>112.2</td>
+      </tr>
+      <tr>
+        <th>2007 Q2</th>
+        <td>109.3</td>
+      </tr>
+      <tr>
+        <th>2007 Q3</th>
+        <td>105.9</td>
+      </tr>
+      <tr>
+        <th>2007 Q4</th>
+        <td>113.2</td>
+      </tr>
+      <tr>
+        <th>2008 Q1</th>
+        <td>111.1</td>
+      </tr>
+      <tr>
+        <th>2008 Q2</th>
+        <td>108.4</td>
+      </tr>
+      <tr>
+        <th>2008 Q3</th>
+        <td>104.2</td>
+      </tr>
+      <tr>
+        <th>2008 Q4</th>
+        <td>105.1</td>
+      </tr>
+      <tr>
+        <th>2009 Q1</th>
+        <td>98.7</td>
+      </tr>
+      <tr>
+        <th>2009 Q2</th>
+        <td>97.3</td>
+      </tr>
+      <tr>
+        <th>2009 Q3</th>
+        <td>94.7</td>
+      </tr>
+      <tr>
+        <th>2009 Q4</th>
+        <td>100.5</td>
+      </tr>
+      <tr>
+        <th>2010 Q1</th>
+        <td>101.1</td>
+      </tr>
+      <tr>
+        <th>2010 Q2</th>
+        <td>99.6</td>
+      </tr>
+      <tr>
+        <th>2010 Q3</th>
+        <td>98.4</td>
+      </tr>
+      <tr>
+        <th>2010 Q4</th>
+        <td>104.3</td>
+      </tr>
+      <tr>
+        <th>2011 Q1</th>
+        <td>102.2</td>
+      </tr>
+      <tr>
+        <th>2011 Q2</th>
+        <td>99.6</td>
+      </tr>
+      <tr>
+        <th>2011 Q3</th>
+        <td>97.7</td>
+      </tr>
+      <tr>
+        <th>2011 Q4</th>
+        <td>100.5</td>
+      </tr>
+      <tr>
+        <th>2012 Q1</th>
+        <td>100.5</td>
+      </tr>
+      <tr>
+        <th>2012 Q2</th>
+        <td>96.9</td>
+      </tr>
+      <tr>
+        <th>2012 Q3</th>
+        <td>94.4</td>
+      </tr>
+      <tr>
+        <th>2012 Q4</th>
+        <td>97.3</td>
+      </tr>
+      <tr>
+        <th>2013 Q1</th>
+        <td>96.6</td>
+      </tr>
+      <tr>
+        <th>2013 Q2</th>
+        <td>97</td>
+      </tr>
+      <tr>
+        <th>2013 Q3</th>
+        <td>95.2</td>
+      </tr>
+      <tr>
+        <th>2013 Q4</th>
+        <td>99.7</td>
+      </tr>
+      <tr>
+        <th>2014 Q1</th>
+        <td>100.1</td>
+      </tr>
+      <tr>
+        <th>2014 Q2</th>
+        <td>98.8</td>
+      </tr>
+      <tr>
+        <th>1997 JAN</th>
+        <td>109.5</td>
+      </tr>
+      <tr>
+        <th>1997 FEB</th>
+        <td>107.1</td>
+      </tr>
+      <tr>
+        <th>1997 MAR</th>
+        <td>111.8</td>
+      </tr>
+      <tr>
+        <th>1997 APR</th>
+        <td>109.6</td>
+      </tr>
+      <tr>
+        <th>1997 MAY</th>
+        <td>105.2</td>
+      </tr>
+      <tr>
+        <th>1997 JUN</th>
+        <td>106.4</td>
+      </tr>
+      <tr>
+        <th>1997 JUL</th>
+        <td>109.1</td>
+      </tr>
+      <tr>
+        <th>1997 AUG</th>
+        <td>97.3</td>
+      </tr>
+      <tr>
+        <th>1997 SEP</th>
+        <td>110.5</td>
+      </tr>
+      <tr>
+        <th>1997 OCT</th>
+        <td>118</td>
+      </tr>
+      <tr>
+        <th>1997 NOV</th>
+        <td>113</td>
+      </tr>
+      <tr>
+        <th>1997 DEC</th>
+        <td>109.9</td>
+      </tr>
+      <tr>
+        <th>1998 JAN</th>
+        <td>107.4</td>
+      </tr>
+      <tr>
+        <th>1998 FEB</th>
+        <td>108.4</td>
+      </tr>
+      <tr>
+        <th>1998 MAR</th>
+        <td>120</td>
+      </tr>
+      <tr>
+        <th>1998 APR</th>
+        <td>109.7</td>
+      </tr>
+      <tr>
+        <th>1998 MAY</th>
+        <td>105.2</td>
+      </tr>
+      <tr>
+        <th>1998 JUN</th>
+        <td>111.4</td>
+      </tr>
+      <tr>
+        <th>1998 JUL</th>
+        <td>109.8</td>
+      </tr>
+      <tr>
+        <th>1998 AUG</th>
+        <td>98.7</td>
+      </tr>
+      <tr>
+        <th>1998 SEP</th>
+        <td>112.2</td>
+      </tr>
+      <tr>
+        <th>1998 OCT</th>
+        <td>115.1</td>
+      </tr>
+      <tr>
+        <th>1998 NOV</th>
+        <td>114.8</td>
+      </tr>
+      <tr>
+        <th>1998 DEC</th>
+        <td>109.8</td>
+      </tr>
+      <tr>
+        <th>1999 JAN</th>
+        <td>104.3</td>
+      </tr>
+      <tr>
+        <th>1999 FEB</th>
+        <td>106.9</td>
+      </tr>
+      <tr>
+        <th>1999 MAR</th>
+        <td>122.2</td>
+      </tr>
+      <tr>
+        <th>1999 APR</th>
+        <td>107.4</td>
+      </tr>
+      <tr>
+        <th>1999 MAY</th>
+        <td>105.3</td>
+      </tr>
+      <tr>
+        <th>1999 JUN</th>
+        <td>112.7</td>
+      </tr>
+      <tr>
+        <th>1999 JUL</th>
+        <td>107.9</td>
+      </tr>
+      <tr>
+        <th>1999 AUG</th>
+        <td>104.5</td>
+      </tr>
+      <tr>
+        <th>1999 SEP</th>
+        <td>116.3</td>
+      </tr>
+      <tr>
+        <th>1999 OCT</th>
+        <td>115.6</td>
+      </tr>
+      <tr>
+        <th>1999 NOV</th>
+        <td>121.4</td>
+      </tr>
+      <tr>
+        <th>1999 DEC</th>
+        <td>112.7</td>
+      </tr>
+      <tr>
+        <th>2000 JAN</th>
+        <td>107.1</td>
+      </tr>
+      <tr>
+        <th>2000 FEB</th>
+        <td>114</td>
+      </tr>
+      <tr>
+        <th>2000 MAR</th>
+        <td>125.8</td>
+      </tr>
+      <tr>
+        <th>2000 APR</th>
+        <td>106.4</td>
+      </tr>
+      <tr>
+        <th>2000 MAY</th>
+        <td>113.9</td>
+      </tr>
+      <tr>
+        <th>2000 JUN</th>
+        <td>115.7</td>
+      </tr>
+      <tr>
+        <th>2000 JUL</th>
+        <td>107</td>
+      </tr>
+      <tr>
+        <th>2000 AUG</th>
+        <td>109</td>
+      </tr>
+      <tr>
+        <th>2000 SEP</th>
+        <td>113.5</td>
+      </tr>
+      <tr>
+        <th>2000 OCT</th>
+        <td>118.1</td>
+      </tr>
+      <tr>
+        <th>2000 NOV</th>
+        <td>122.5</td>
+      </tr>
+      <tr>
+        <th>2000 DEC</th>
+        <td>109.3</td>
+      </tr>
+      <tr>
+        <th>2001 JAN</th>
+        <td>113.5</td>
+      </tr>
+      <tr>
+        <th>2001 FEB</th>
+        <td>109.9</td>
+      </tr>
+      <tr>
+        <th>2001 MAR</th>
+        <td>122.2</td>
+      </tr>
+      <tr>
+        <th>2001 APR</th>
+        <td>107.6</td>
+      </tr>
+      <tr>
+        <th>2001 MAY</th>
+        <td>112.2</td>
+      </tr>
+      <tr>
+        <th>2001 JUN</th>
+        <td>110.6</td>
+      </tr>
+      <tr>
+        <th>2001 JUL</th>
+        <td>107.7</td>
+      </tr>
+      <tr>
+        <th>2001 AUG</th>
+        <td>107.5</td>
+      </tr>
+      <tr>
+        <th>2001 SEP</th>
+        <td>108.9</td>
+      </tr>
+      <tr>
+        <th>2001 OCT</th>
+        <td>117.6</td>
+      </tr>
+      <tr>
+        <th>2001 NOV</th>
+        <td>117.2</td>
+      </tr>
+      <tr>
+        <th>2001 DEC</th>
+        <td>105.7</td>
+      </tr>
+      <tr>
+        <th>2002 JAN</th>
+        <td>110</td>
+      </tr>
+      <tr>
+        <th>2002 FEB</th>
+        <td>107.1</td>
+      </tr>
+      <tr>
+        <th>2002 MAR</th>
+        <td>114.6</td>
+      </tr>
+      <tr>
+        <th>2002 APR</th>
+        <td>111.5</td>
+      </tr>
+      <tr>
+        <th>2002 MAY</th>
+        <td>112.9</td>
+      </tr>
+      <tr>
+        <th>2002 JUN</th>
+        <td>103</td>
+      </tr>
+      <tr>
+        <th>2002 JUL</th>
+        <td>108.8</td>
+      </tr>
+      <tr>
+        <th>2002 AUG</th>
+        <td>102.3</td>
+      </tr>
+      <tr>
+        <th>2002 SEP</th>
+        <td>109.9</td>
+      </tr>
+      <tr>
+        <th>2002 OCT</th>
+        <td>116.6</td>
+      </tr>
+      <tr>
+        <th>2002 NOV</th>
+        <td>113.8</td>
+      </tr>
+      <tr>
+        <th>2002 DEC</th>
+        <td>106.7</td>
+      </tr>
+      <tr>
+        <th>2003 JAN</th>
+        <td>108.2</td>
+      </tr>
+      <tr>
+        <th>2003 FEB</th>
+        <td>106.2</td>
+      </tr>
+      <tr>
+        <th>2003 MAR</th>
+        <td>114.7</td>
+      </tr>
+      <tr>
+        <th>2003 APR</th>
+        <td>107.1</td>
+      </tr>
+      <tr>
+        <th>2003 MAY</th>
+        <td>106.4</td>
+      </tr>
+      <tr>
+        <th>2003 JUN</th>
+        <td>107.4</td>
+      </tr>
+      <tr>
+        <th>2003 JUL</th>
+        <td>109.2</td>
+      </tr>
+      <tr>
+        <th>2003 AUG</th>
+        <td>99.6</td>
+      </tr>
+      <tr>
+        <th>2003 SEP</th>
+        <td>111.2</td>
+      </tr>
+      <tr>
+        <th>2003 OCT</th>
+        <td>117.1</td>
+      </tr>
+      <tr>
+        <th>2003 NOV</th>
+        <td>111.2</td>
+      </tr>
+      <tr>
+        <th>2003 DEC</th>
+        <td>109.5</td>
+      </tr>
+      <tr>
+        <th>2004 JAN</th>
+        <td>107.2</td>
+      </tr>
+      <tr>
+        <th>2004 FEB</th>
+        <td>107.1</td>
+      </tr>
+      <tr>
+        <th>2004 MAR</th>
+        <td>122</td>
+      </tr>
+      <tr>
+        <th>2004 APR</th>
+        <td>109.4</td>
+      </tr>
+      <tr>
+        <th>2004 MAY</th>
+        <td>106.2</td>
+      </tr>
+      <tr>
+        <th>2004 JUN</th>
+        <td>111.5</td>
+      </tr>
+      <tr>
+        <th>2004 JUL</th>
+        <td>106</td>
+      </tr>
+      <tr>
+        <th>2004 AUG</th>
+        <td>100.9</td>
+      </tr>
+      <tr>
+        <th>2004 SEP</th>
+        <td>111.1</td>
+      </tr>
+      <tr>
+        <th>2004 OCT</th>
+        <td>111</td>
+      </tr>
+      <tr>
+        <th>2004 NOV</th>
+        <td>116.5</td>
+      </tr>
+      <tr>
+        <th>2004 DEC</th>
+        <td>109.6</td>
+      </tr>
+      <tr>
+        <th>2005 JAN</th>
+        <td>104.9</td>
+      </tr>
+      <tr>
+        <th>2005 FEB</th>
+        <td>106.6</td>
+      </tr>
+      <tr>
+        <th>2005 MAR</th>
+        <td>115.3</td>
+      </tr>
+      <tr>
+        <th>2005 APR</th>
+        <td>109.2</td>
+      </tr>
+      <tr>
+        <th>2005 MAY</th>
+        <td>108.7</td>
+      </tr>
+      <tr>
+        <th>2005 JUN</th>
+        <td>111.4</td>
+      </tr>
+      <tr>
+        <th>2005 JUL</th>
+        <td>104.8</td>
+      </tr>
+      <tr>
+        <th>2005 AUG</th>
+        <td>103.8</td>
+      </tr>
+      <tr>
+        <th>2005 SEP</th>
+        <td>110.4</td>
+      </tr>
+      <tr>
+        <th>2005 OCT</th>
+        <td>110.1</td>
+      </tr>
+      <tr>
+        <th>2005 NOV</th>
+        <td>116</td>
+      </tr>
+      <tr>
+        <th>2005 DEC</th>
+        <td>107.6</td>
+      </tr>
+      <tr>
+        <th>2006 JAN</th>
+        <td>108</td>
+      </tr>
+      <tr>
+        <th>2006 FEB</th>
+        <td>106.8</td>
+      </tr>
+      <tr>
+        <th>2006 MAR</th>
+        <td>120.8</td>
+      </tr>
+      <tr>
+        <th>2006 APR</th>
+        <td>104.3</td>
+      </tr>
+      <tr>
+        <th>2006 MAY</th>
+        <td>110.6</td>
+      </tr>
+      <tr>
+        <th>2006 JUN</th>
+        <td>111.3</td>
+      </tr>
+      <tr>
+        <th>2006 JUL</th>
+        <td>104.4</td>
+      </tr>
+      <tr>
+        <th>2006 AUG</th>
+        <td>105.1</td>
+      </tr>
+      <tr>
+        <th>2006 SEP</th>
+        <td>110.3</td>
+      </tr>
+      <tr>
+        <th>2006 OCT</th>
+        <td>114.4</td>
+      </tr>
+      <tr>
+        <th>2006 NOV</th>
+        <td>117.3</td>
+      </tr>
+      <tr>
+        <th>2006 DEC</th>
+        <td>104.7</td>
+      </tr>
+      <tr>
+        <th>2007 JAN</th>
+        <td>111.4</td>
+      </tr>
+      <tr>
+        <th>2007 FEB</th>
+        <td>107.2</td>
+      </tr>
+      <tr>
+        <th>2007 MAR</th>
+        <td>118</td>
+      </tr>
+      <tr>
+        <th>2007 APR</th>
+        <td>106.8</td>
+      </tr>
+      <tr>
+        <th>2007 MAY</th>
+        <td>112.6</td>
+      </tr>
+      <tr>
+        <th>2007 JUN</th>
+        <td>108.5</td>
+      </tr>
+      <tr>
+        <th>2007 JUL</th>
+        <td>106.7</td>
+      </tr>
+      <tr>
+        <th>2007 AUG</th>
+        <td>104.6</td>
+      </tr>
+      <tr>
+        <th>2007 SEP</th>
+        <td>106.5</td>
+      </tr>
+      <tr>
+        <th>2007 OCT</th>
+        <td>117</td>
+      </tr>
+      <tr>
+        <th>2007 NOV</th>
+        <td>116.9</td>
+      </tr>
+      <tr>
+        <th>2007 DEC</th>
+        <td>105.7</td>
+      </tr>
+      <tr>
+        <th>2008 JAN</th>
+        <td>111</td>
+      </tr>
+      <tr>
+        <th>2008 FEB</th>
+        <td>110.7</td>
+      </tr>
+      <tr>
+        <th>2008 MAR</th>
+        <td>111.5</td>
+      </tr>
+      <tr>
+        <th>2008 APR</th>
+        <td>111.5</td>
+      </tr>
+      <tr>
+        <th>2008 MAY</th>
+        <td>107.6</td>
+      </tr>
+      <tr>
+        <th>2008 JUN</th>
+        <td>106.1</td>
+      </tr>
+      <tr>
+        <th>2008 JUL</th>
+        <td>106.2</td>
+      </tr>
+      <tr>
+        <th>2008 AUG</th>
+        <td>98.3</td>
+      </tr>
+      <tr>
+        <th>2008 SEP</th>
+        <td>108.1</td>
+      </tr>
+      <tr>
+        <th>2008 OCT</th>
+        <td>111.5</td>
+      </tr>
+      <tr>
+        <th>2008 NOV</th>
+        <td>103.3</td>
+      </tr>
+      <tr>
+        <th>2008 DEC</th>
+        <td>100.7</td>
+      </tr>
+      <tr>
+        <th>2009 JAN</th>
+        <td>96.8</td>
+      </tr>
+      <tr>
+        <th>2009 FEB</th>
+        <td>94.9</td>
+      </tr>
+      <tr>
+        <th>2009 MAR</th>
+        <td>104.3</td>
+      </tr>
+      <tr>
+        <th>2009 APR</th>
+        <td>98.3</td>
+      </tr>
+      <tr>
+        <th>2009 MAY</th>
+        <td>94.7</td>
+      </tr>
+      <tr>
+        <th>2009 JUN</th>
+        <td>99</td>
+      </tr>
+      <tr>
+        <th>2009 JUL</th>
+        <td>98.1</td>
+      </tr>
+      <tr>
+        <th>2009 AUG</th>
+        <td>87.4</td>
+      </tr>
+      <tr>
+        <th>2009 SEP</th>
+        <td>98.7</td>
+      </tr>
+      <tr>
+        <th>2009 OCT</th>
+        <td>101.8</td>
+      </tr>
+      <tr>
+        <th>2009 NOV</th>
+        <td>101.8</td>
+      </tr>
+      <tr>
+        <th>2009 DEC</th>
+        <td>98</td>
+      </tr>
+      <tr>
+        <th>2010 JAN</th>
+        <td>95.4</td>
+      </tr>
+      <tr>
+        <th>2010 FEB</th>
+        <td>96.9</td>
+      </tr>
+      <tr>
+        <th>2010 MAR</th>
+        <td>111</td>
+      </tr>
+      <tr>
+        <th>2010 APR</th>
+        <td>99.9</td>
+      </tr>
+      <tr>
+        <th>2010 MAY</th>
+        <td>97.6</td>
+      </tr>
+      <tr>
+        <th>2010 JUN</th>
+        <td>101.3</td>
+      </tr>
+      <tr>
+        <th>2010 JUL</th>
+        <td>97.9</td>
+      </tr>
+      <tr>
+        <th>2010 AUG</th>
+        <td>94.1</td>
+      </tr>
+      <tr>
+        <th>2010 SEP</th>
+        <td>103.2</td>
+      </tr>
+      <tr>
+        <th>2010 OCT</th>
+        <td>103</td>
+      </tr>
+      <tr>
+        <th>2010 NOV</th>
+        <td>107.6</td>
+      </tr>
+      <tr>
+        <th>2010 DEC</th>
+        <td>102.2</td>
+      </tr>
+      <tr>
+        <th>2011 JAN</th>
+        <td>98.2</td>
+      </tr>
+      <tr>
+        <th>2011 FEB</th>
+        <td>97</td>
+      </tr>
+      <tr>
+        <th>2011 MAR</th>
+        <td>111.4</td>
+      </tr>
+      <tr>
+        <th>2011 APR</th>
+        <td>96.5</td>
+      </tr>
+      <tr>
+        <th>2011 MAY</th>
+        <td>99.5</td>
+      </tr>
+      <tr>
+        <th>2011 JUN</th>
+        <td>102.7</td>
+      </tr>
+      <tr>
+        <th>2011 JUL</th>
+        <td>96.2</td>
+      </tr>
+      <tr>
+        <th>2011 AUG</th>
+        <td>95.3</td>
+      </tr>
+      <tr>
+        <th>2011 SEP</th>
+        <td>101.6</td>
+      </tr>
+      <tr>
+        <th>2011 OCT</th>
+        <td>100.6</td>
+      </tr>
+      <tr>
+        <th>2011 NOV</th>
+        <td>104.3</td>
+      </tr>
+      <tr>
+        <th>2011 DEC</th>
+        <td>96.6</td>
+      </tr>
+      <tr>
+        <th>2012 JAN</th>
+        <td>97.1</td>
+      </tr>
+      <tr>
+        <th>2012 FEB</th>
+        <td>98.3</td>
+      </tr>
+      <tr>
+        <th>2012 MAR</th>
+        <td>106.2</td>
+      </tr>
+      <tr>
+        <th>2012 APR</th>
+        <td>94.6</td>
+      </tr>
+      <tr>
+        <th>2012 MAY</th>
+        <td>99.8</td>
+      </tr>
+      <tr>
+        <th>2012 JUN</th>
+        <td>96.2</td>
+      </tr>
+      <tr>
+        <th>2012 JUL</th>
+        <td>97.1</td>
+      </tr>
+      <tr>
+        <th>2012 AUG</th>
+        <td>93.5</td>
+      </tr>
+      <tr>
+        <th>2012 SEP</th>
+        <td>92.6</td>
+      </tr>
+      <tr>
+        <th>2012 OCT</th>
+        <td>99.3</td>
+      </tr>
+      <tr>
+        <th>2012 NOV</th>
+        <td>100.4</td>
+      </tr>
+      <tr>
+        <th>2012 DEC</th>
+        <td>92.4</td>
+      </tr>
+      <tr>
+        <th>2013 JAN</th>
+        <td>95.9</td>
+      </tr>
+      <tr>
+        <th>2013 FEB</th>
+        <td>93.2</td>
+      </tr>
+      <tr>
+        <th>2013 MAR</th>
+        <td>100.8</td>
+      </tr>
+      <tr>
+        <th>2013 APR</th>
+        <td>96.9</td>
+      </tr>
+      <tr>
+        <th>2013 MAY</th>
+        <td>98.5</td>
+      </tr>
+      <tr>
+        <th>2013 JUN</th>
+        <td>95.7</td>
+      </tr>
+      <tr>
+        <th>2013 JUL</th>
+        <td>98.1</td>
+      </tr>
+      <tr>
+        <th>2013 AUG</th>
+        <td>90.1</td>
+      </tr>
+      <tr>
+        <th>2013 SEP</th>
+        <td>97.5</td>
+      </tr>
+      <tr>
+        <th>2013 OCT</th>
+        <td>102.6</td>
+      </tr>
+      <tr>
+        <th>2013 NOV</th>
+        <td>100.6</td>
+      </tr>
+      <tr>
+        <th>2013 DEC</th>
+        <td>96.1</td>
+      </tr>
+      <tr>
+        <th>2014 JAN</th>
+        <td>97.9</td>
+      </tr>
+      <tr>
+        <th>2014 FEB</th>
+        <td>96.5</td>
+      </tr>
+      <tr>
+        <th>2014 MAR</th>
+        <td>106</td>
+      </tr>
+      <tr>
+        <th>2014 APR</th>
+        <td>98.5</td>
+      </tr>
+      <tr>
+        <th>2014 MAY</th>
+        <td>98.8</td>
+      </tr>
+      <tr>
+        <th>2014 JUN</th>
+        <td>99.1</td>
+      </tr>
+      <tr>
+        <th>2014 JUL</th>
+        <td>100.5</td>
+      </tr>
+      <tr>
+        <th>2014 AUG</th>
+        <td>90.3</td>
+      </tr>
+    </tbody>
+  </table>
+                    </div>
+                </div>
+            </div><!--/grid-col-->
+        </div><!--/grid-wrap-->
+
+<div class="grid-wrap">
+    <div class="grid-col">
+    </div><!--/grid-col-->
+</div><!--/grid-wrap-->
+
+
+
+<div class="grid-wrap sgcxp__content">
+
+    <div class="grid-col grid-two-fifths">
+            <div class="sgcxp__block--notes sgcxp__block--padding-large">
+                <h2 class="sgcxp__block--notes__header">Usage notes</h2>
+                <p><p>This is an example of a bare table i.e. it has no controls.<br><br>This type of chart is suited to tables with no more than two columns (for example a time-series table), as a two column table should comfortably fit a mobile device (depending on the nature of the values within the column).</p>
+</p>
+            </div>
+
+        &nbsp;
+    </div><!--/grid-col-->
+
+
+    <div class="grid-col grid-three-fifths">
+        <div class="sgcxp__code">
+<pre class="language-markup"><code>&lt;table class=&quot;tablesaw&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Year&lt;/th&gt;
+      &lt;th&gt;K24V&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1997&lt;/th&gt;
+      &lt;td&gt;109&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1998&lt;/th&gt;
+      &lt;td&gt;110.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1999&lt;/th&gt;
+      &lt;td&gt;111.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000&lt;/th&gt;
+      &lt;td&gt;113.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001&lt;/th&gt;
+      &lt;td&gt;111.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2002&lt;/th&gt;
+      &lt;td&gt;109.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2003&lt;/th&gt;
+      &lt;td&gt;109&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2004&lt;/th&gt;
+      &lt;td&gt;109.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2005&lt;/th&gt;
+      &lt;td&gt;109.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2006&lt;/th&gt;
+      &lt;td&gt;109.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2007&lt;/th&gt;
+      &lt;td&gt;110.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2008&lt;/th&gt;
+      &lt;td&gt;107.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2009&lt;/th&gt;
+      &lt;td&gt;97.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010&lt;/th&gt;
+      &lt;td&gt;100.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011&lt;/th&gt;
+      &lt;td&gt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012&lt;/th&gt;
+      &lt;td&gt;97.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013&lt;/th&gt;
+      &lt;td&gt;97.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1997 Q1&lt;/th&gt;
+      &lt;td&gt;109.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1997 Q2&lt;/th&gt;
+      &lt;td&gt;107.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1997 Q3&lt;/th&gt;
+      &lt;td&gt;105.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1997 Q4&lt;/th&gt;
+      &lt;td&gt;113.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1998 Q1&lt;/th&gt;
+      &lt;td&gt;111.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1998 Q2&lt;/th&gt;
+      &lt;td&gt;108.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1998 Q3&lt;/th&gt;
+      &lt;td&gt;106.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1998 Q4&lt;/th&gt;
+      &lt;td&gt;113.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1999 Q1&lt;/th&gt;
+      &lt;td&gt;111.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1999 Q2&lt;/th&gt;
+      &lt;td&gt;108.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1999 Q3&lt;/th&gt;
+      &lt;td&gt;109.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1999 Q4&lt;/th&gt;
+      &lt;td&gt;116.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000 Q1&lt;/th&gt;
+      &lt;td&gt;115.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000 Q2&lt;/th&gt;
+      &lt;td&gt;112&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000 Q3&lt;/th&gt;
+      &lt;td&gt;109.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000 Q4&lt;/th&gt;
+      &lt;td&gt;116.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001 Q1&lt;/th&gt;
+      &lt;td&gt;115.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001 Q2&lt;/th&gt;
+      &lt;td&gt;110.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001 Q3&lt;/th&gt;
+      &lt;td&gt;108&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001 Q4&lt;/th&gt;
+      &lt;td&gt;113.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2002 Q1&lt;/th&gt;
+      &lt;td&gt;110.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2002 Q2&lt;/th&gt;
+      &lt;td&gt;109.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2002 Q3&lt;/th&gt;
+      &lt;td&gt;107&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2002 Q4&lt;/th&gt;
+      &lt;td&gt;112.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2003 Q1&lt;/th&gt;
+      &lt;td&gt;109.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2003 Q2&lt;/th&gt;
+      &lt;td&gt;107&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2003 Q3&lt;/th&gt;
+      &lt;td&gt;106.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2003 Q4&lt;/th&gt;
+      &lt;td&gt;112.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2004 Q1&lt;/th&gt;
+      &lt;td&gt;112.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2004 Q2&lt;/th&gt;
+      &lt;td&gt;109&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2004 Q3&lt;/th&gt;
+      &lt;td&gt;106&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2004 Q4&lt;/th&gt;
+      &lt;td&gt;112.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2005 Q1&lt;/th&gt;
+      &lt;td&gt;108.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2005 Q2&lt;/th&gt;
+      &lt;td&gt;109.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2005 Q3&lt;/th&gt;
+      &lt;td&gt;106.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2005 Q4&lt;/th&gt;
+      &lt;td&gt;111.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2006 Q1&lt;/th&gt;
+      &lt;td&gt;111.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2006 Q2&lt;/th&gt;
+      &lt;td&gt;108.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2006 Q3&lt;/th&gt;
+      &lt;td&gt;106.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2006 Q4&lt;/th&gt;
+      &lt;td&gt;112.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2007 Q1&lt;/th&gt;
+      &lt;td&gt;112.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2007 Q2&lt;/th&gt;
+      &lt;td&gt;109.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2007 Q3&lt;/th&gt;
+      &lt;td&gt;105.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2007 Q4&lt;/th&gt;
+      &lt;td&gt;113.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2008 Q1&lt;/th&gt;
+      &lt;td&gt;111.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2008 Q2&lt;/th&gt;
+      &lt;td&gt;108.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2008 Q3&lt;/th&gt;
+      &lt;td&gt;104.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2008 Q4&lt;/th&gt;
+      &lt;td&gt;105.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2009 Q1&lt;/th&gt;
+      &lt;td&gt;98.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2009 Q2&lt;/th&gt;
+      &lt;td&gt;97.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2009 Q3&lt;/th&gt;
+      &lt;td&gt;94.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2009 Q4&lt;/th&gt;
+      &lt;td&gt;100.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010 Q1&lt;/th&gt;
+      &lt;td&gt;101.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010 Q2&lt;/th&gt;
+      &lt;td&gt;99.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010 Q3&lt;/th&gt;
+      &lt;td&gt;98.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010 Q4&lt;/th&gt;
+      &lt;td&gt;104.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011 Q1&lt;/th&gt;
+      &lt;td&gt;102.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011 Q2&lt;/th&gt;
+      &lt;td&gt;99.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011 Q3&lt;/th&gt;
+      &lt;td&gt;97.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011 Q4&lt;/th&gt;
+      &lt;td&gt;100.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012 Q1&lt;/th&gt;
+      &lt;td&gt;100.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012 Q2&lt;/th&gt;
+      &lt;td&gt;96.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012 Q3&lt;/th&gt;
+      &lt;td&gt;94.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012 Q4&lt;/th&gt;
+      &lt;td&gt;97.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013 Q1&lt;/th&gt;
+      &lt;td&gt;96.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013 Q2&lt;/th&gt;
+      &lt;td&gt;97&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013 Q3&lt;/th&gt;
+      &lt;td&gt;95.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013 Q4&lt;/th&gt;
+      &lt;td&gt;99.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2014 Q1&lt;/th&gt;
+      &lt;td&gt;100.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2014 Q2&lt;/th&gt;
+      &lt;td&gt;98.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1997 JAN&lt;/th&gt;
+      &lt;td&gt;109.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1997 FEB&lt;/th&gt;
+      &lt;td&gt;107.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1997 MAR&lt;/th&gt;
+      &lt;td&gt;111.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1997 APR&lt;/th&gt;
+      &lt;td&gt;109.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1997 MAY&lt;/th&gt;
+      &lt;td&gt;105.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1997 JUN&lt;/th&gt;
+      &lt;td&gt;106.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1997 JUL&lt;/th&gt;
+      &lt;td&gt;109.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1997 AUG&lt;/th&gt;
+      &lt;td&gt;97.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1997 SEP&lt;/th&gt;
+      &lt;td&gt;110.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1997 OCT&lt;/th&gt;
+      &lt;td&gt;118&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1997 NOV&lt;/th&gt;
+      &lt;td&gt;113&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1997 DEC&lt;/th&gt;
+      &lt;td&gt;109.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1998 JAN&lt;/th&gt;
+      &lt;td&gt;107.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1998 FEB&lt;/th&gt;
+      &lt;td&gt;108.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1998 MAR&lt;/th&gt;
+      &lt;td&gt;120&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1998 APR&lt;/th&gt;
+      &lt;td&gt;109.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1998 MAY&lt;/th&gt;
+      &lt;td&gt;105.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1998 JUN&lt;/th&gt;
+      &lt;td&gt;111.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1998 JUL&lt;/th&gt;
+      &lt;td&gt;109.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1998 AUG&lt;/th&gt;
+      &lt;td&gt;98.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1998 SEP&lt;/th&gt;
+      &lt;td&gt;112.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1998 OCT&lt;/th&gt;
+      &lt;td&gt;115.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1998 NOV&lt;/th&gt;
+      &lt;td&gt;114.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1998 DEC&lt;/th&gt;
+      &lt;td&gt;109.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1999 JAN&lt;/th&gt;
+      &lt;td&gt;104.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1999 FEB&lt;/th&gt;
+      &lt;td&gt;106.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1999 MAR&lt;/th&gt;
+      &lt;td&gt;122.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1999 APR&lt;/th&gt;
+      &lt;td&gt;107.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1999 MAY&lt;/th&gt;
+      &lt;td&gt;105.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1999 JUN&lt;/th&gt;
+      &lt;td&gt;112.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1999 JUL&lt;/th&gt;
+      &lt;td&gt;107.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1999 AUG&lt;/th&gt;
+      &lt;td&gt;104.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1999 SEP&lt;/th&gt;
+      &lt;td&gt;116.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1999 OCT&lt;/th&gt;
+      &lt;td&gt;115.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1999 NOV&lt;/th&gt;
+      &lt;td&gt;121.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1999 DEC&lt;/th&gt;
+      &lt;td&gt;112.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000 JAN&lt;/th&gt;
+      &lt;td&gt;107.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000 FEB&lt;/th&gt;
+      &lt;td&gt;114&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000 MAR&lt;/th&gt;
+      &lt;td&gt;125.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000 APR&lt;/th&gt;
+      &lt;td&gt;106.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000 MAY&lt;/th&gt;
+      &lt;td&gt;113.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000 JUN&lt;/th&gt;
+      &lt;td&gt;115.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000 JUL&lt;/th&gt;
+      &lt;td&gt;107&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000 AUG&lt;/th&gt;
+      &lt;td&gt;109&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000 SEP&lt;/th&gt;
+      &lt;td&gt;113.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000 OCT&lt;/th&gt;
+      &lt;td&gt;118.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000 NOV&lt;/th&gt;
+      &lt;td&gt;122.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000 DEC&lt;/th&gt;
+      &lt;td&gt;109.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001 JAN&lt;/th&gt;
+      &lt;td&gt;113.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001 FEB&lt;/th&gt;
+      &lt;td&gt;109.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001 MAR&lt;/th&gt;
+      &lt;td&gt;122.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001 APR&lt;/th&gt;
+      &lt;td&gt;107.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001 MAY&lt;/th&gt;
+      &lt;td&gt;112.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001 JUN&lt;/th&gt;
+      &lt;td&gt;110.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001 JUL&lt;/th&gt;
+      &lt;td&gt;107.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001 AUG&lt;/th&gt;
+      &lt;td&gt;107.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001 SEP&lt;/th&gt;
+      &lt;td&gt;108.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001 OCT&lt;/th&gt;
+      &lt;td&gt;117.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001 NOV&lt;/th&gt;
+      &lt;td&gt;117.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001 DEC&lt;/th&gt;
+      &lt;td&gt;105.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2002 JAN&lt;/th&gt;
+      &lt;td&gt;110&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2002 FEB&lt;/th&gt;
+      &lt;td&gt;107.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2002 MAR&lt;/th&gt;
+      &lt;td&gt;114.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2002 APR&lt;/th&gt;
+      &lt;td&gt;111.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2002 MAY&lt;/th&gt;
+      &lt;td&gt;112.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2002 JUN&lt;/th&gt;
+      &lt;td&gt;103&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2002 JUL&lt;/th&gt;
+      &lt;td&gt;108.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2002 AUG&lt;/th&gt;
+      &lt;td&gt;102.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2002 SEP&lt;/th&gt;
+      &lt;td&gt;109.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2002 OCT&lt;/th&gt;
+      &lt;td&gt;116.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2002 NOV&lt;/th&gt;
+      &lt;td&gt;113.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2002 DEC&lt;/th&gt;
+      &lt;td&gt;106.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2003 JAN&lt;/th&gt;
+      &lt;td&gt;108.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2003 FEB&lt;/th&gt;
+      &lt;td&gt;106.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2003 MAR&lt;/th&gt;
+      &lt;td&gt;114.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2003 APR&lt;/th&gt;
+      &lt;td&gt;107.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2003 MAY&lt;/th&gt;
+      &lt;td&gt;106.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2003 JUN&lt;/th&gt;
+      &lt;td&gt;107.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2003 JUL&lt;/th&gt;
+      &lt;td&gt;109.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2003 AUG&lt;/th&gt;
+      &lt;td&gt;99.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2003 SEP&lt;/th&gt;
+      &lt;td&gt;111.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2003 OCT&lt;/th&gt;
+      &lt;td&gt;117.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2003 NOV&lt;/th&gt;
+      &lt;td&gt;111.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2003 DEC&lt;/th&gt;
+      &lt;td&gt;109.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2004 JAN&lt;/th&gt;
+      &lt;td&gt;107.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2004 FEB&lt;/th&gt;
+      &lt;td&gt;107.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2004 MAR&lt;/th&gt;
+      &lt;td&gt;122&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2004 APR&lt;/th&gt;
+      &lt;td&gt;109.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2004 MAY&lt;/th&gt;
+      &lt;td&gt;106.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2004 JUN&lt;/th&gt;
+      &lt;td&gt;111.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2004 JUL&lt;/th&gt;
+      &lt;td&gt;106&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2004 AUG&lt;/th&gt;
+      &lt;td&gt;100.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2004 SEP&lt;/th&gt;
+      &lt;td&gt;111.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2004 OCT&lt;/th&gt;
+      &lt;td&gt;111&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2004 NOV&lt;/th&gt;
+      &lt;td&gt;116.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2004 DEC&lt;/th&gt;
+      &lt;td&gt;109.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2005 JAN&lt;/th&gt;
+      &lt;td&gt;104.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2005 FEB&lt;/th&gt;
+      &lt;td&gt;106.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2005 MAR&lt;/th&gt;
+      &lt;td&gt;115.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2005 APR&lt;/th&gt;
+      &lt;td&gt;109.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2005 MAY&lt;/th&gt;
+      &lt;td&gt;108.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2005 JUN&lt;/th&gt;
+      &lt;td&gt;111.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2005 JUL&lt;/th&gt;
+      &lt;td&gt;104.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2005 AUG&lt;/th&gt;
+      &lt;td&gt;103.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2005 SEP&lt;/th&gt;
+      &lt;td&gt;110.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2005 OCT&lt;/th&gt;
+      &lt;td&gt;110.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2005 NOV&lt;/th&gt;
+      &lt;td&gt;116&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2005 DEC&lt;/th&gt;
+      &lt;td&gt;107.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2006 JAN&lt;/th&gt;
+      &lt;td&gt;108&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2006 FEB&lt;/th&gt;
+      &lt;td&gt;106.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2006 MAR&lt;/th&gt;
+      &lt;td&gt;120.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2006 APR&lt;/th&gt;
+      &lt;td&gt;104.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2006 MAY&lt;/th&gt;
+      &lt;td&gt;110.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2006 JUN&lt;/th&gt;
+      &lt;td&gt;111.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2006 JUL&lt;/th&gt;
+      &lt;td&gt;104.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2006 AUG&lt;/th&gt;
+      &lt;td&gt;105.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2006 SEP&lt;/th&gt;
+      &lt;td&gt;110.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2006 OCT&lt;/th&gt;
+      &lt;td&gt;114.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2006 NOV&lt;/th&gt;
+      &lt;td&gt;117.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2006 DEC&lt;/th&gt;
+      &lt;td&gt;104.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2007 JAN&lt;/th&gt;
+      &lt;td&gt;111.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2007 FEB&lt;/th&gt;
+      &lt;td&gt;107.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2007 MAR&lt;/th&gt;
+      &lt;td&gt;118&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2007 APR&lt;/th&gt;
+      &lt;td&gt;106.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2007 MAY&lt;/th&gt;
+      &lt;td&gt;112.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2007 JUN&lt;/th&gt;
+      &lt;td&gt;108.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2007 JUL&lt;/th&gt;
+      &lt;td&gt;106.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2007 AUG&lt;/th&gt;
+      &lt;td&gt;104.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2007 SEP&lt;/th&gt;
+      &lt;td&gt;106.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2007 OCT&lt;/th&gt;
+      &lt;td&gt;117&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2007 NOV&lt;/th&gt;
+      &lt;td&gt;116.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2007 DEC&lt;/th&gt;
+      &lt;td&gt;105.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2008 JAN&lt;/th&gt;
+      &lt;td&gt;111&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2008 FEB&lt;/th&gt;
+      &lt;td&gt;110.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2008 MAR&lt;/th&gt;
+      &lt;td&gt;111.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2008 APR&lt;/th&gt;
+      &lt;td&gt;111.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2008 MAY&lt;/th&gt;
+      &lt;td&gt;107.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2008 JUN&lt;/th&gt;
+      &lt;td&gt;106.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2008 JUL&lt;/th&gt;
+      &lt;td&gt;106.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2008 AUG&lt;/th&gt;
+      &lt;td&gt;98.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2008 SEP&lt;/th&gt;
+      &lt;td&gt;108.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2008 OCT&lt;/th&gt;
+      &lt;td&gt;111.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2008 NOV&lt;/th&gt;
+      &lt;td&gt;103.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2008 DEC&lt;/th&gt;
+      &lt;td&gt;100.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2009 JAN&lt;/th&gt;
+      &lt;td&gt;96.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2009 FEB&lt;/th&gt;
+      &lt;td&gt;94.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2009 MAR&lt;/th&gt;
+      &lt;td&gt;104.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2009 APR&lt;/th&gt;
+      &lt;td&gt;98.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2009 MAY&lt;/th&gt;
+      &lt;td&gt;94.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2009 JUN&lt;/th&gt;
+      &lt;td&gt;99&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2009 JUL&lt;/th&gt;
+      &lt;td&gt;98.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2009 AUG&lt;/th&gt;
+      &lt;td&gt;87.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2009 SEP&lt;/th&gt;
+      &lt;td&gt;98.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2009 OCT&lt;/th&gt;
+      &lt;td&gt;101.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2009 NOV&lt;/th&gt;
+      &lt;td&gt;101.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2009 DEC&lt;/th&gt;
+      &lt;td&gt;98&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010 JAN&lt;/th&gt;
+      &lt;td&gt;95.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010 FEB&lt;/th&gt;
+      &lt;td&gt;96.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010 MAR&lt;/th&gt;
+      &lt;td&gt;111&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010 APR&lt;/th&gt;
+      &lt;td&gt;99.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010 MAY&lt;/th&gt;
+      &lt;td&gt;97.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010 JUN&lt;/th&gt;
+      &lt;td&gt;101.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010 JUL&lt;/th&gt;
+      &lt;td&gt;97.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010 AUG&lt;/th&gt;
+      &lt;td&gt;94.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010 SEP&lt;/th&gt;
+      &lt;td&gt;103.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010 OCT&lt;/th&gt;
+      &lt;td&gt;103&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010 NOV&lt;/th&gt;
+      &lt;td&gt;107.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010 DEC&lt;/th&gt;
+      &lt;td&gt;102.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011 JAN&lt;/th&gt;
+      &lt;td&gt;98.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011 FEB&lt;/th&gt;
+      &lt;td&gt;97&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011 MAR&lt;/th&gt;
+      &lt;td&gt;111.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011 APR&lt;/th&gt;
+      &lt;td&gt;96.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011 MAY&lt;/th&gt;
+      &lt;td&gt;99.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011 JUN&lt;/th&gt;
+      &lt;td&gt;102.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011 JUL&lt;/th&gt;
+      &lt;td&gt;96.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011 AUG&lt;/th&gt;
+      &lt;td&gt;95.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011 SEP&lt;/th&gt;
+      &lt;td&gt;101.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011 OCT&lt;/th&gt;
+      &lt;td&gt;100.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011 NOV&lt;/th&gt;
+      &lt;td&gt;104.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011 DEC&lt;/th&gt;
+      &lt;td&gt;96.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012 JAN&lt;/th&gt;
+      &lt;td&gt;97.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012 FEB&lt;/th&gt;
+      &lt;td&gt;98.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012 MAR&lt;/th&gt;
+      &lt;td&gt;106.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012 APR&lt;/th&gt;
+      &lt;td&gt;94.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012 MAY&lt;/th&gt;
+      &lt;td&gt;99.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012 JUN&lt;/th&gt;
+      &lt;td&gt;96.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012 JUL&lt;/th&gt;
+      &lt;td&gt;97.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012 AUG&lt;/th&gt;
+      &lt;td&gt;93.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012 SEP&lt;/th&gt;
+      &lt;td&gt;92.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012 OCT&lt;/th&gt;
+      &lt;td&gt;99.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012 NOV&lt;/th&gt;
+      &lt;td&gt;100.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012 DEC&lt;/th&gt;
+      &lt;td&gt;92.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013 JAN&lt;/th&gt;
+      &lt;td&gt;95.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013 FEB&lt;/th&gt;
+      &lt;td&gt;93.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013 MAR&lt;/th&gt;
+      &lt;td&gt;100.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013 APR&lt;/th&gt;
+      &lt;td&gt;96.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013 MAY&lt;/th&gt;
+      &lt;td&gt;98.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013 JUN&lt;/th&gt;
+      &lt;td&gt;95.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013 JUL&lt;/th&gt;
+      &lt;td&gt;98.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013 AUG&lt;/th&gt;
+      &lt;td&gt;90.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013 SEP&lt;/th&gt;
+      &lt;td&gt;97.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013 OCT&lt;/th&gt;
+      &lt;td&gt;102.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013 NOV&lt;/th&gt;
+      &lt;td&gt;100.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013 DEC&lt;/th&gt;
+      &lt;td&gt;96.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2014 JAN&lt;/th&gt;
+      &lt;td&gt;97.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2014 FEB&lt;/th&gt;
+      &lt;td&gt;96.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2014 MAR&lt;/th&gt;
+      &lt;td&gt;106&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2014 APR&lt;/th&gt;
+      &lt;td&gt;98.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2014 MAY&lt;/th&gt;
+      &lt;td&gt;98.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2014 JUN&lt;/th&gt;
+      &lt;td&gt;99.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2014 JUL&lt;/th&gt;
+      &lt;td&gt;100.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2014 AUG&lt;/th&gt;
+      &lt;td&gt;90.3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+        </div><!--/sgcxp__code-->
+    </div><!--/grid-col-->
+
+
+
+</div><!--/grid-wrap-->
+<div class="grid-wrap" id="error-panel">
+    <div class="grid-col">
+        <div class="sgcxp__block sgcxp__block--lifted">
+            <div class="sgcxp__block__desc sgcxp__block--padding-large sgcxp__block--markdown">
+                <h1>Developer Notes</h1>
+                <p>All data-tables are based on Filament Group&#39;s <a href="https://github.com/filamentgroup/tablesaw">Tablesaw library</a>, which provides an out of the box solution to responsive tables.<br><br>Out of the box, the library features 3 different table types; <a href="./components-data-tables-data-table-with-swipe-control.html">Swipe table</a>, <a href="./components-data-tables-data-table-with-toggle.html">Toggle table</a> and <a href="./components-data-tables-data-table-with-toggle.html">Bare table</a>.  It also has a mode which allows <a href="./components-data-tables-data-table-with-mode-switcher.html">switching between the different types</a>.<br><br>The extent to the customisations for use within the pattern library is limited - specifically, the only additions are to present the tables in keeping with the of the pattern libraries look.<br><br>Although no swipe or toggle controls are used in this pattern, it is still required that the <code>class=&quot;tablesaw&quot;</code> is used to ensure it works responsively.</p>
+
+            </div>
+        </div>
+    </div><!--/grid-col-->
+</div><!--/grid-wrap-->
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- project js -->
+
+<script src="./dist/js/footer.js"></script>
+
+<!-- / -->
+
+<!-- pattern library JS (@optimise: minify) -->
+
+<script src="./sg-assets/js/charts.js"></script>
+<script src="./sg-assets/js/lib/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="./sg-assets/js/lib/media.match.js"></script>
+<script src="./sg-assets/js/lib/enquire.min.js"></script>
+<script src="./sg-assets/js/lib/tiny-pubsub.js"></script>
+<script src="./sg-assets/js/lib/jquery.uniform.min.js"></script>
+<script src="./sg-assets/js/lib/jquery.hoverIntent.js"></script>
+
+<script src="./sg-assets/js/app/widgets/offcanvas-menu.js"></script>
+<script src="./sg-assets/js/app/widgets/skiplink.js"></script>
+<script src="./sg-assets/js/app/widgets/jquery.cx.jump-to.js"></script>
+
+<script src="./sg-assets/js/app/app.js"></script>
+
+
+<!-- Fast Click - for speedy clicks and to fix the meganav dropdown on touch  -->
+<script src="./sg-assets/js/lib/fastclick.js"></script>
+<script>
+  window.addEventListener('load', function () {
+    new FastClick(document.body);
+  }, false);
+</script>
+
+
+<!-- Font -->
+<script type="text/javascript">
+  WebFontConfig = { fontdeck: { id: '42695' } };
+
+  (function () {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+
+</script>
+
+<script src="./sg-assets/prismjs/prism.js"></script>
+<script>
+$('table').addClass('tablesaw');
+$('pre').addClass('language-markup');
+$('code').addClass('language-markup');
+</script>
+</body>
+</html>

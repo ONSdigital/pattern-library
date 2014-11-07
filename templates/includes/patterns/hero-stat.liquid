@@ -1,0 +1,58 @@
+{% layout 'bare' %}
+{% block page_title %} Hero stat headline component {% endblock %}
+
+{% block custom_head %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+  <h1>Hero stat headline</h1>
+
+  <!---
+  title: Hero stat headline
+  group: Stats
+  usage: The hero stat headline component should be used to highlight key statistics on your site.
+  -->
+  <section>
+    <div class="divider">
+      <div class="divider__half divider__half--border divider__half--border-first">
+        <h2 class="beta">
+          CPI Annual Rate Percentage Change over 12 months
+          <span tabindex="0" title="Lorem ipsum dolor sit amet" class="tooltip icon-info-circled icon--warm icon--inline icon--inline--large-text icon--small"></span>
+        </h2>
+        <div class="box box--inline box--padded--med muted--dark flush--half--bottom">
+          <div class="stat stat--headline">
+            <div class="stat__figure">
+              £123,456
+            </div>
+            <div class="stat__description">
+              Jan 2014
+              <span class="icon icon-up-bold icon--large icon--green icon--fat" role="presentation"></span>
+                0.7%
+            </div>
+          </div>
+        </div>
+        <dl class="list--definition--float mini">
+          <dt>Last updated:</dt>
+          <dd>18 Jul 2014</dd>
+          <dt>Next update:</dt>
+          <dd>18 Aug 2014</dd>
+        </dl>
+      </div>
+      <div class="divider__half">
+        <h3 class="body-type lede delta">CPI headlines</h3>
+        <ul class="list--bullet mini">
+          <li>The Consumer Price Index (CPI) grew by 1.5% in the year to May 2014, down from 1.8% in April.</li>
+          <li>Fall in transport services costs, notably air fares, provided the largest contribution to the decrease in the rate.</li>
+          <li>The timing of Easter in April is likely to have an impact on movements in the index, notably for air and sea fares.</li>
+          <li>CPIH grew by 1.4% in the year to May 2014, down from 1.6% in April. RPIJ grew by 1.7%, down from 1.8% in April.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+{% endblock %}

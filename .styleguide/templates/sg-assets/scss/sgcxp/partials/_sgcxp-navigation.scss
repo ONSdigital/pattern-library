@@ -1,0 +1,211 @@
+/* ======================================================
+   Main navigation
+   ======================================================*/
+
+.sgcxp__nav {
+  background-color: $off-black;
+  border-bottom: $accent-link-colour solid 5px;
+  @include rem(padding, 35 20 50 20);
+  @include box-sizing(border-box);
+  position: absolute;
+  width: 80%;
+  left: 100%;
+  top: 0;
+  overflow:hidden;
+  @include transition(transform 0.3s ease-in-out);
+  @include transform(translate3d(0, 0, 0));
+  @include box-shadow(inset 0 0 3px rgba(0,0,0,0.5));
+  @include respond-min($bp-desktop-min) {
+    background-color: transparent;
+    border-bottom: none;
+    padding: 0;
+    position: static;
+    width: auto;
+    left: auto;
+    top: auto;
+    @include transition(none);
+    @include transform(none);
+    @include box-shadow(none);
+    .js-offcanvas-menu-visible & {
+      @include transform(none);
+    }
+  }
+}
+
+  .sgcxp__nav__list {
+    margin: 0;
+    padding: 0;
+    @include respond-min($bp-desktop-min) {
+      float:right;
+      @include rem(padding-top, 20);
+    }
+  }
+
+    .sgcxp__nav__item {
+      color:$white;
+      @include rem(padding-bottom, 20);
+      @include respond-min($bp-desktop-min) {
+        color:$content-colour;
+        display: inline-block;
+        padding-bottom:0;
+        text-align: center;
+        @include borders(1px solid transparent, top left right);
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &.hover-cancel {
+          border: 1px solid transparent !important;
+          box-shadow: none !important;
+          -moz-box-shadow: none !important;
+          -o-box-shadow: none !important;
+          -webkit-box-shadow: none !important;
+        }
+        &:hover {
+          @include borders(1px solid $mid-grey, top left right);
+          @include box-shadow(3px 3px 5px 0 rgba(0,0,0,0.07));
+          a {
+            background:$white;
+            [class^="icon-"]:before,
+            [class*=" icon-"]:before {color:$dark-grey}
+          }
+         .sgcxp__nav__dropdown {
+            display:block;
+          }
+        }
+        &.no-subnav:hover{
+          @include borders(1px solid transparent, top left right);
+          @include box-shadow(0 0 0 rgba(0,0,0,0));
+        }
+      }
+    }
+
+      .sgcxp__nav__link {
+        display: block;
+        text-decoration: none;
+        position:relative;
+        color: $white !important;
+        z-index:1000;
+        @include font-size(20);
+        @include rem(padding-bottom, 15);
+        &:hover {
+          text-decoration: underline;
+        }
+        @include respond-min($bp-desktop-min) {
+          @include rem(padding, 15 5 15 9);
+          @include font-size(24);
+          color: $black !important;
+          &:hover {
+            position:relative;
+            text-decoration: none;
+          }
+        [class^="icon-"]:before, 
+        [class*=" icon-"]:before {
+          color:$accent-link-colour;
+          font-size:75%;
+          @include rem(padding-left, 5);
+          }
+        }
+      }
+
+
+.sgcxp__nav__dropdown {
+  @include respond-min($bp-desktop-min) {
+    @include rem(padding, 30 0);
+    @include rem(margin, -2 0 20); // Moves the meganav menu up underneath the link item when hovered
+    @include box-shadow(3px 3px 5px 0 rgba(0,0,0,0.07));
+    background:$white;
+    border: 1px solid $mid-grey;
+    left:0;
+    position:absolute;
+    text-align:left;
+    width:100%;
+    display:none;
+  }
+  &.grid-wrap {margin-left:0;}
+}
+/* sgcxp__nav__dropdown contents are link list items and found in the _sgcxp-linklist.scss partial */ 
+
+
+/* ------------------------------
+ * Main navigation for mobile - transitions and toggle icons
+ */
+
+ /**
+   * When a class is added to the body by the js, translate the entire page
+   * across to the left thereby revealing the menu
+   * @see _sgcxp__layout.scss for the base styles for .inner-wrapper
+   */
+  .js-offcanvas-menu-visible .sgcxp__inner-wrapper {
+    @include transform(translate3d(-80%, 0, 0));
+
+    @include respond-min($bp-desktop-min) {
+      @include transform(none);
+    }
+  }
+
+  /**
+   * Mobile menu open button
+   */
+  .offcanvas-menu-toggle--open {
+    text-transform: uppercase;
+    float:right;
+    color: $content-colour;
+    background-color: $white;
+    @include rem(padding, 0 14);
+    @include box-shadow(2px 2px 5px 0 rgba(0,0,0,0.07));
+    border-radius: 3px;
+    border:1px solid $mid-grey;
+    text-decoration: none;
+    @include font-size(14);
+    @extend %vertical-align;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+
+    .icon {
+      color:$accent-link-colour;
+      font-size: 120%;
+      display:inline-block;
+      @include rem(margin-right, 10);
+      @include rem(margin-top, 20);
+      @extend %vertical-align;
+    }
+  }
+
+  /**
+   * Mobile menu close button
+   */
+  .offcanvas-menu-toggle--close {
+    color:$off-white!important;
+    position: absolute;
+    @include rem(top, 5);
+    @include rem(right, 10);
+    z-index: 1;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .icon {
+      line-height: normal;
+      font-size: 140%;
+    }
+  }
+
+  .offcanvas-menu-toggle__text {
+    display:inline-block;
+    @extend %vertical-align;
+    @include rem(margin-top, 20);
+    color:$content-colour;
+  }
+
+

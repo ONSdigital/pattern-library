@@ -1,0 +1,172 @@
+{% block page_title %} Responsive tables {% endblock %}
+
+{% block custom_head %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+<h1>Responsive tables</h1>
+
+<section>
+
+  <h2 class="list--table-header">All Statistics Related to Inflation and Price Indices</h2>
+<!---
+title: Responsive table
+group: Data Tables
+usage: |
+  This component is suitable for use when the data needs to be presented in a table, but the data it contains doesn't need to be directly compared with other columns in the table.
+devnotes: |
+  This table has been custom built for the library, and unlike the other responsive tables, is not based on the [Tablesaw library](https://github.com/filamentgroup/tablesaw).
+-->
+  <ol class="list--table list--table--complex table--striped-light table--selectable table-light--sectioned lifted">
+    <li class="list--table__item list--table__head">
+      <label class="list--table__item__body list--table__item__body--select-all nojs-hidden">Select all
+        <input type="checkbox" aria-label="Select" id="checkbox">
+      </label>
+    </li><!--  /list-table__head -->
+
+    <li class="list--table__item list--table__body">
+      <div class="list--table__item__body list--table__item__body--caption">
+        <h3 class="list--table__item__header">
+          <a href="#">CPI Index</a>
+          <a class="information" href="#">
+            <span tabindex="0" title="Lorem ipsum dolor sit amet" class="tooltip icon-info-circled icon--warm icon--inline"></span>
+            <span class="visuallyhidden">More information about CPI index</span>
+          </a>
+        </h3>
+        <p class="list--table__item__description">2005 = 100. Not seasonally adjusted</p>
+      </div>
+
+      <div class="list--table__item__body list--table__item__body--stat">
+        <div class="stat">
+          <div class="stat__figure stat__tight">
+            £567,890
+          </div>
+          <time class="stat__description" datetime="2014-01">Jan 2014</time>
+        </div>
+      </div>
+
+      <div class="list--table__item__body list--table__item__body--update">
+        <dl class="micro list--definition list--definition--inline flush--half--vertical">
+          <dt>Last updated:</dt>
+          <dd>18th Feb 2014</dd>
+
+          <dt>Next update:</dt>
+          <dd>25th June 2014</dd>
+        </dl>
+      </div>
+
+      <label class="list--table__item__body list--table__item__body--select">
+        <span class="visuallyhidden">Select statistic</span>
+        <input type="checkbox">
+      </label>
+    </li><!--  /list-table__body -->
+
+    <li class="list--table__item list--table__body">
+      <div class="list--table__item__body list--table__item__body--caption">
+        <h3 class="list--table__item__header">
+          <a href="#">CPI Annual Rate Percentage Change over 12 Months</a>
+          <a class="information" href="#">
+            <span tabindex="0" title="Lorem ipsum dolor sit amet" class="tooltip icon-info-circled icon--warm icon--inline"></span>
+            <span class="visuallyhidden">More information about CPI index</span>
+          </a>
+        </h3>
+      </div>
+
+      <div class="list--table__item__body list--table__item__body--stat">
+        <div class="stat">
+          <div class="stat__figure stat__tight">
+            78.7
+            <span class="stat__figure__unit">Yrs</span>
+          </div>
+          <time class="stat__description" datetime="2014-01">Jan 2014</time>
+        </div>
+      </div>
+
+      <div class="list--table__item__body list--table__item__body--update">
+        <dl class="micro list--definition list--definition--inline flush--half--vertical">
+          <dt>Last updated:</dt>
+          <dd>18th Feb 2014</dd>
+
+          <dt>Next updated:</dt>
+          <dd>25th June 2014</dd>
+        </dl>
+      </div>
+
+      <label class="list--table__item__body list--table__item__body--select">
+        <span class="visuallyhidden">Select statistic</span>
+        <input type="checkbox">
+      </label>
+    </li><!--  /list-table__body -->
+
+    <li class="list--table__item list--table__body">
+      <div class="list--table__item__body list--table__item__body--caption">
+        <h3 class="list--table__item__header">
+          <a href="#">CPI Annual Rate Percentage Change over 12 Months</a>
+          <a class="information" href="#">
+            <span tabindex="0" title="Lorem ipsum dolor sit amet" class="tooltip icon-info-circled icon--warm icon--inline"></span>
+            <span class="visuallyhidden">More information about CPI index</span>
+          </a>
+        </h3>
+        <p class="list--table__item__description">Not a national statistic</p>
+      </div>
+
+      <div class="list--table__item__body list--table__item__body--stat">
+        <div class="stat">
+          <div class="stat__figure stat__tight">
+            67.89
+            <span class="stat__figure__unit">%</span>
+          </div>
+          <time class="stat__description" datetime="2014-01">Jan 2014</time>
+        </div>
+      </div>
+      <div class="list--table__item__body list--table__item__body--update">
+        <dl class="micro list--definition list--definition--inline flush--half--vertical">
+          <dt class="">Last updated:</dt>
+          <dd>18th Feb 2014</dd>
+
+          <dt class="">Next updated:</dt>
+          <dd>25th June 2014</dd>
+        </dl>
+      </div>
+
+      <label class="list--table__item__body list--table__item__body--select">
+        <span class="visuallyhidden">Select statistic</span>
+        <input type="checkbox">
+      </label>
+    </li><!--  /list-table__body -->
+
+    <li class="list--table__item list--table__footer">
+      <div class="list--table__item__body">
+        <div class="table__actions split">
+          <a class="table__action split__title link-muted" href="#">
+            <span class="table__action__text">View all 1234</span>
+          </a>
+          <a class="table__action" href="#">
+            <span class="table__action__text">Download all 1234</span>
+            <span class="icon-download" role="presentation"></span>
+          </a>
+
+          <a href="#" class="btn btn--flex btn--block btn--primary">
+            <span class="table__action__text">Download selected</span>
+            <span class="icon-download" role="presentation"></span>
+          </a>
+        </div><!-- /table-actions -->
+      </div><!--  /list-table__item__body -->
+    </li><!--  /list-table__item -->
+  </ol><!--  /list-table -->
+</section>
+
+</div>
+
+{% endblock %}
+
+
+{% block custom_scripts %}
+
+<!-- <script src="/ui/js/app/widgets/chart-bar-horizontal.js"></script> -->
+
+
+{% endblock %}

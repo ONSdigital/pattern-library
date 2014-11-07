@@ -1,0 +1,72 @@
+{% layout 'bare' %}
+{% block page_title %} Data search component {% endblock %}
+
+{% block custom_head %}
+{% endblock %}
+
+{% block content %}
+  <div class="wrapper">
+    <h1>Data search</h1>
+    <div class="grid-wrap">
+      <div class="grid-col desktop-grid-one-third">
+        <section class="box box--padded sectioned lifted muted sectioned-ons-top">
+
+          <h2 class="delta">Time Series Data Search</h2>
+          <p>
+            Explore ONS economic data and search by series ID
+          </p>
+
+          <form action="#">
+            <ul class="list--neutral">
+              <li class="field field--spaced">
+                <label>
+                  <b class="field__label">Search</b>
+                  <input name="searchTerm" type="search" value="" class="input--full flush--half--bottom">
+                </label>
+
+                <fieldset class="fieldset--invisible">
+                  <legend class="visuallyhidden">Data type</legend>
+                  <label class="field__radio">
+                    <input type="radio" name="topicOrDataset" value="">
+                    Topic
+                  </label>
+
+                  <label class="field__radio">
+                    <input type="radio" name="topicOrDataset" value="">
+                    Key datasets
+                  </label>
+                </fieldset>
+              </li>
+
+              <li>
+                <label class="field field--spaced">
+                  <b class="field__label">Select a Topic</b>
+                  <select class="input--full" name="topic">
+                    <option selected="selected">Price Indices</option>
+                    <option>Something Else</option>
+                  </select>
+                </label>
+              </li>
+
+              <li class="field field--spaced">
+                <label>
+                  <b class="field__label">Select a Subtopic</b>
+                  <select class="input--full" name="subtopic">
+                    <option selected="selected">PPI Aggregate Level</option>
+                    <option>Something Else</option>
+                  </select>
+                </label>
+              </li>
+
+              <li class="field">
+                <button class="btn btn--primary btn--block" type="submit">Search</button>
+              </li>
+            </ul>
+
+          </form>
+        </section><!-- /box -->
+      </div><!-- /grid-col -->
+    </div><!-- /grid-wrap -->
+  </div><!-- /wrapper -->
+
+{% endblock %}

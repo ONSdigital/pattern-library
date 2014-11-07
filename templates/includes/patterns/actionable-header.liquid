@@ -1,0 +1,74 @@
+{% block page_title %} Actionable headers {% endblock %}
+
+{% block custom_head %}
+{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+  <h1>Actionable headers</h1>
+  <div class="panel panel--separated--top">
+    <h1>Regular usage:</h1>
+  </div>
+  <div class="panel">
+    <!---
+    title: Actionable header
+    group: General
+    usage: >
+      Use where you have a header of undetermined length right next to an action,
+      like a link or a button.
+    -->
+    <header class="actionable-header">
+      <h2 class="actionable-header__title">Key datasets</h2>
+      <a class="actionable-header__action" href="#">View more datasets</a>
+    </header>
+  </div>
+
+  <div class="panel panel--separated--top">
+    <h2>Actionable header, tight (no right float)</h2>
+    <!---
+    title: Actionable header, tight
+    group: General
+    usage: >
+      Use where you'd want the headers and actions to appear nearly right next to each other, right-aligned, and behaving nicely responsively
+    -->
+    <div class="actionable-header--tight">
+      <h2 class="actionable-header--tight__title delta flush--bottom">Download this entire time series from 1956—2014</h2>
+      <div class="actionable-header--tight__action actionable-header--tight__action--left">
+        <a class="btn btn--primary btn--small" href="#">
+          .csv
+          <span class="icon-download icon--button-inline" role="presentation"></span>
+        </a>
+        <a class="btn btn--primary btn--small" href="#">
+          .xls
+          <span class="icon-download icon--button-inline" role="presentation"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel--separated--top">
+    <h1>Extreme scenarios displayed:</h1>
+  </div>
+
+  <div class="panel panel--separated--top">
+    <header class="actionable-header">
+      <h2 class="actionable-header__title">Long title. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, rem. Ipsam repellat quasi rerum velit odio deleniti praesentium, laboriosam id voluptates facilis doloremque sunt, maiores doloribus voluptatem fugit laborum. Odio.</h2>
+      <a class="actionable-header__action" href="#">Long action. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid repudiandae rem reiciendis, accusantium, minima veritatis ea perspiciatis quibusdam nam aspernatur repellat impedit, cum atque excepturi. Illum ullam minus ex quidem.</a>
+    </header>
+  </div>
+  <div class="panel panel--separated--top">
+    <header class="actionable-header">
+      <h2 class="actionable-header__title">Long title. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, rem. Ipsam repellat quasi rerum velit odio deleniti praesentium, laboriosam id voluptates facilis doloremque sunt, maiores doloribus voluptatem fugit laborum. Odio.</h2>
+      <a class="actionable-header__action" href="#">Short</a>
+    </header>
+  </div>
+  <div class="panel panel--separated--top">
+    <header class="actionable-header">
+      <h2 class="actionable-header__title">Short</h2>
+      <a class="actionable-header__action" href="#">Long action. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid repudiandae rem reiciendis, accusantium, minima veritatis ea perspiciatis quibusdam nam aspernatur repellat impedit, cum atque excepturi. Illum ullam minus ex quidem.</a>
+    </header>
+  </div>
+</div>
+
+{% endblock %}

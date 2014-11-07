@@ -1,0 +1,68 @@
+{% block page_title %} Slates {% endblock %}
+
+{% block custom_head %}
+<style>
+body {
+  padding-left: 0;
+  padding-right: 0;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+  <div class="wrapper">
+    <h1>Slates</h1>
+    <p>A pattern for bars of horizontal background colours. Meant for usage outside of wrappers etc. Control padding outside of it.</p>
+  </div>
+
+  <!---
+  title: Light grey slate
+  usage: Bars of horizontal background colours, grey by default. Meant for usage outside of wrappers etc. Control padding outside of it.
+  -->
+  <div class="slate">
+    <div class="wrapper">
+      <h1>Hi. I'm a light grey slate</h1>
+      <p>
+        You'll notice I have no padding by default. This is intentional.
+      </p>
+    </div>
+  </div>
+
+  <!---
+  title: Off-white slate
+  -->
+  <div class="slate--light">
+    <div class="wrapper">
+      <h1>Off-white slate</h1>
+      <p>
+        I'm slightly lighter.
+      </p>
+    </div>
+  </div>
+
+  <!---
+  title: Mid grey slate
+  -->
+  <div class="slate--mid-grey">
+    <div class="wrapper">
+      <h1>Mid grey slate</h1>
+      <p>
+        I'm slightly darker.
+      </p>
+    </div>
+  </div>
+
+  <!---
+  title: Grey slate
+  -->
+  <div class="slate--grey">
+    <div class="wrapper">
+      <h1>Grey slate</h1>
+      <p>
+        I'm pretty grey.
+      </p>
+    </div>
+  </div>
+
+
+{% endblock %}

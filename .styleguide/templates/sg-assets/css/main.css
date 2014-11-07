@@ -1,0 +1,2993 @@
+/*
+  CSS file for cxpartners Pattern Library
+  Author: cxpartners
+ */
+/* ======================================================
+   Media query mixin
+   Handle old versions of IE without the need for JavaScript as per http://jakearchibald.github.io/sass-ie/
+   ======================================================*/
+/* line 55, ../scss/core/_mixins-mod.scss */
+.sgcxp__logo, .offcanvas-menu-toggle--open, .offcanvas-menu-toggle--open .icon, .offcanvas-menu-toggle__text {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* HTML5 display definitions
+*/
+/* line 21, ../scss/core/vendor/normalize/_normalize-mod.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* line 29, ../scss/core/vendor/normalize/_normalize-mod.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* line 38, ../scss/core/vendor/normalize/_normalize-mod.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 46, ../scss/core/vendor/normalize/_normalize-mod.scss */
+[hidden] {
+  display: none;
+}
+
+/* Base
+*/
+/* line 58, ../scss/core/vendor/normalize/_normalize-mod.scss */
+html {
+  font-size: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* line 71, ../scss/core/vendor/normalize/_normalize-mod.scss */
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+/* line 77, ../scss/core/vendor/normalize/_normalize-mod.scss */
+body {
+  margin: 0;
+}
+
+/* Links
+*/
+/* line 86, ../scss/core/vendor/normalize/_normalize-mod.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/* line 93, ../scss/core/vendor/normalize/_normalize-mod.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Typography
+*/
+/* line 136, ../scss/core/vendor/normalize/_normalize-mod.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 143, ../scss/core/vendor/normalize/_normalize-mod.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* line 147, ../scss/core/vendor/normalize/_normalize-mod.scss */
+blockquote {
+  margin: 1em 40px;
+}
+
+/* line 153, ../scss/core/vendor/normalize/_normalize-mod.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 167, ../scss/core/vendor/normalize/_normalize-mod.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/* line 174, ../scss/core/vendor/normalize/_normalize-mod.scss */
+p {
+  padding: 0.5em 0;
+  margin: 0;
+}
+
+/* line 179, ../scss/core/vendor/normalize/_normalize-mod.scss */
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 189, ../scss/core/vendor/normalize/_normalize-mod.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+/* line 197, ../scss/core/vendor/normalize/_normalize-mod.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* line 207, ../scss/core/vendor/normalize/_normalize-mod.scss */
+q {
+  quotes: none;
+}
+
+/* line 214, ../scss/core/vendor/normalize/_normalize-mod.scss */
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* line 221, ../scss/core/vendor/normalize/_normalize-mod.scss */
+small {
+  font-size: 80%;
+}
+
+/* line 228, ../scss/core/vendor/normalize/_normalize-mod.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 235, ../scss/core/vendor/normalize/_normalize-mod.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 239, ../scss/core/vendor/normalize/_normalize-mod.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* Lists
+*/
+/* line 248, ../scss/core/vendor/normalize/_normalize-mod.scss */
+dd {
+  margin: 0 0 0 40px;
+}
+
+/* line 256, ../scss/core/vendor/normalize/_normalize-mod.scss */
+menu,
+ol,
+ul {
+  padding: 0 0 0 0;
+}
+
+/* line 263, ../scss/core/vendor/normalize/_normalize-mod.scss */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+/* Embedded content
+*/
+/* line 274, ../scss/core/vendor/normalize/_normalize-mod.scss */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* line 281, ../scss/core/vendor/normalize/_normalize-mod.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Figures
+*/
+/* line 290, ../scss/core/vendor/normalize/_normalize-mod.scss */
+figure {
+  margin: 0;
+}
+
+/* Forms
+*/
+/* line 299, ../scss/core/vendor/normalize/_normalize-mod.scss */
+form {
+  margin: 0;
+}
+
+/* line 305, ../scss/core/vendor/normalize/_normalize-mod.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/* line 315, ../scss/core/vendor/normalize/_normalize-mod.scss */
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+  *margin-left: -7px;
+}
+
+/* line 330, ../scss/core/vendor/normalize/_normalize-mod.scss */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+/* line 341, ../scss/core/vendor/normalize/_normalize-mod.scss */
+button,
+input {
+  line-height: normal;
+}
+
+/* line 351, ../scss/core/vendor/normalize/_normalize-mod.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/* line 366, ../scss/core/vendor/normalize/_normalize-mod.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  cursor: pointer;
+  *overflow: visible;
+  border-radius: 0;
+}
+
+/* line 376, ../scss/core/vendor/normalize/_normalize-mod.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/* line 386, ../scss/core/vendor/normalize/_normalize-mod.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0;
+  *height: 13px;
+  *width: 13px;
+}
+
+/* line 397, ../scss/core/vendor/normalize/_normalize-mod.scss */
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+/* line 408, ../scss/core/vendor/normalize/_normalize-mod.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 415, ../scss/core/vendor/normalize/_normalize-mod.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 423, ../scss/core/vendor/normalize/_normalize-mod.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+/* Tables
+*/
+/* line 433, ../scss/core/vendor/normalize/_normalize-mod.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ======================================================
+   Base CSS
+   (any add-ons to normalize)
+   ======================================================*/
+/* line 9, ../scss/core/_base-mod.scss */
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-size: 62.5%;
+  line-height: 1.5;
+}
+/* line 14, ../scss/core/_base-mod.scss */
+html.ie8 {
+  overflow-x: visible;
+}
+
+/* line 1, ../scss/core/_skiplinks.scss */
+.skiplink {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  background-color: #3f3f3f;
+  display: block;
+  width: 100% !important;
+  text-align: center;
+  line-height: 4.5rem ;
+  z-index: 1001;
+}
+
+/* ------------------------------
+ * Hiding things
+ * MODIFIED
+ * Modified as this project uses the respond-min mixin to generate a fixed width IE stylesheet without media queries
+ */
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+/* line 9, ../scss/core/_hiding-mod.scss */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+}
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+/* line 25, ../scss/core/_hiding-mod.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+}
+/* line 37, ../scss/core/_hiding-mod.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+/* line 58, ../scss/core/_hiding-mod.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/* For image replacement */
+/* line 65, ../scss/core/_hiding-mod.scss */
+.ir {
+  display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+  line-height: 0;
+}
+
+/**
+ * Mobile / Desktop "only" helpers to control breakpoint conditional visibility
+ */
+@media screen and (max-width: 47.9375em) {
+  /* line 92, ../scss/core/_hiding-mod.scss */
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  /* line 102, ../scss/core/_hiding-mod.scss */
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+/* Print helpers
+*/
+/* Show on printed version only */
+@media screen {
+  /* line 115, ../scss/core/_hiding-mod.scss */
+  .print-only {
+    display: none !important;
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+  }
+}
+/* Don't show in printed version
+   Elements with this class can be omitted from print
+   ie. call to actions like "show more", as opposed to link elements that would meaningful even if they're not links
+*/
+@media print {
+  /* line 128, ../scss/core/_hiding-mod.scss */
+  .screen-only {
+    display: none !important;
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+  }
+}
+/* =============================================================================
+   Fonts
+   =============================================================================
+*/
+@font-face {
+  font-family: 'KievitWeb Book';
+  src: url('../font/KievitWeb/KievitWeb.eot');
+  src: url('../font/KievitWeb/KievitWeb.eot?#iefix') format("embedded-opentype"), url('../font/KievitWeb/KievitWeb.woff') format("woff"), url('../font/KievitWeb/KievitWeb.ttf') format("truetype"), url('../font/KievitWeb/KievitWeb.svg#CircularBook') format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: 'KievitWeb Book';
+    src: url('../font/KievitWeb/KievitWeb.svg#CircularBook') format("svg");
+}
+}
+@font-face {
+  font-family: 'KievitWeb Black';
+  src: url('../font/KievitWeb/KievitWeb-Black.eot');
+  src: url('../font/KievitWeb/KievitWeb-Black.eot?#iefix') format("embedded-opentype"), url('../font/KievitWeb/KievitWeb-Black.woff') format("woff"), url('../font/KievitWeb/KievitWeb-Black.ttf') format("truetype"), url('../font/KievitWeb/KievitWeb-Black.svg#CircularBlack') format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: 'KievitWeb Black';
+    src: url('../font/KievitWeb/KievitWeb-Black.svg#CircularBlack') format("svg");
+}
+}
+/* =============================================================================
+   Grid
+   =============================================================================
+*/
+@media screen and (min-width: 48em) {
+  /* line 34, ../scss/core/_proportional-grids-mod.scss */
+  .grid-wrap {
+    margin-left: -4rem;
+    *zoom: 1;
+  }
+  /* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  .grid-wrap:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  /* line 38, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-wrap {
+    margin-left: 0;
+  }
+
+  /* line 43, ../scss/core/_proportional-grids-mod.scss */
+  .grid-col {
+    float: left;
+    clear: none;
+    padding-left: 4rem;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+  }
+  /* line 51, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-col {
+    padding-left: 2%;
+  }
+
+  /* line 56, ../scss/core/_proportional-grids-mod.scss */
+  .large-gutter {
+    margin-left: -8rem;
+  }
+  /* line 27, ../scss/core/_proportional-grids-mod.scss */
+  .large-gutter > .blah-grid-col {
+    padding-left: 8rem;
+  }
+
+  /* line 60, ../scss/core/_proportional-grids-mod.scss */
+  .half-gutter {
+    margin-left: -2rem;
+  }
+  /* line 27, ../scss/core/_proportional-grids-mod.scss */
+  .half-gutter > .blah-grid-col {
+    padding-left: 2rem;
+  }
+
+  /* line 64, ../scss/core/_proportional-grids-mod.scss */
+  .no-gutter {
+    margin-left: 0;
+  }
+  /* line 27, ../scss/core/_proportional-grids-mod.scss */
+  .no-gutter > .blah-grid-col {
+    padding-left: 0;
+  }
+
+  /* line 68, ../scss/core/_proportional-grids-mod.scss */
+  .reset-gutter {
+    margin-left: -4rem;
+  }
+  /* line 27, ../scss/core/_proportional-grids-mod.scss */
+  .reset-gutter > .blah-grid-col {
+    padding-left: 4rem;
+  }
+
+  /* line 74, ../scss/core/_proportional-grids-mod.scss */
+  ul.grid-wrap,
+  ol.grid-wrap {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  /* line 79, ../scss/core/_proportional-grids-mod.scss */
+  li.grid-col {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .grid-full-width,
+  .grid-set-full-width .grid-col {
+    width: 100%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-full-width, .lt-ie8
+  .grid-set-full-width .grid-col {
+    width: 97.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .grid-offset-full-width {
+    margin-left: 100%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-offset-full-width {
+    margin-left: 100%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .grid-push-full-width {
+    left: 100%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-push-full-width {
+    left: 100%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .grid-pull-full-width {
+    left: -100%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-pull-full-width {
+    left: -100%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .grid-one-half,
+  .grid-set-one-half .grid-col {
+    width: 50%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-one-half, .lt-ie8
+  .grid-set-one-half .grid-col {
+    width: 47.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .grid-offset-one-half {
+    margin-left: 50%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-offset-one-half {
+    margin-left: 50%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .grid-push-one-half {
+    left: 50%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-push-one-half {
+    left: 50%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .grid-pull-one-half {
+    left: -50%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-pull-one-half {
+    left: -50%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .grid-one-third,
+  .grid-set-one-third .grid-col {
+    width: 33.33333%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-one-third, .lt-ie8
+  .grid-set-one-third .grid-col {
+    width: 30.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .grid-offset-one-third {
+    margin-left: 33.33333%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-offset-one-third {
+    margin-left: 33%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .grid-push-one-third {
+    left: 33.33333%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-push-one-third {
+    left: 33%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .grid-pull-one-third {
+    left: -33.33333%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-pull-one-third {
+    left: -33%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .grid-two-thirds,
+  .grid-set-two-thirds .grid-col {
+    width: 66.66667%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-two-thirds, .lt-ie8
+  .grid-set-two-thirds .grid-col {
+    width: 63.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .grid-offset-two-thirds {
+    margin-left: 66.66667%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-offset-two-thirds {
+    margin-left: 66%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .grid-push-two-thirds {
+    left: 66.66667%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-push-two-thirds {
+    left: 66%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .grid-pull-two-thirds {
+    left: -66.66667%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-pull-two-thirds {
+    left: -66%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .grid-one-quarter,
+  .grid-set-one-quarter .grid-col {
+    width: 25%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-one-quarter, .lt-ie8
+  .grid-set-one-quarter .grid-col {
+    width: 22.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .grid-offset-one-quarter {
+    margin-left: 25%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-offset-one-quarter {
+    margin-left: 25%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .grid-push-one-quarter {
+    left: 25%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-push-one-quarter {
+    left: 25%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .grid-pull-one-quarter {
+    left: -25%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-pull-one-quarter {
+    left: -25%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .grid-three-quarters,
+  .grid-set-three-quarters .grid-col {
+    width: 75%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-three-quarters, .lt-ie8
+  .grid-set-three-quarters .grid-col {
+    width: 72.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .grid-offset-three-quarters {
+    margin-left: 75%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-offset-three-quarters {
+    margin-left: 75%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .grid-push-three-quarters {
+    left: 75%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-push-three-quarters {
+    left: 75%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .grid-pull-three-quarters {
+    left: -75%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-pull-three-quarters {
+    left: -75%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .grid-one-fifth,
+  .grid-set-one-fifth .grid-col {
+    width: 20%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-one-fifth, .lt-ie8
+  .grid-set-one-fifth .grid-col {
+    width: 17.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .grid-offset-one-fifth {
+    margin-left: 20%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-offset-one-fifth {
+    margin-left: 20%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .grid-push-one-fifth {
+    left: 20%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-push-one-fifth {
+    left: 20%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .grid-pull-one-fifth {
+    left: -20%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-pull-one-fifth {
+    left: -20%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .grid-two-fifths,
+  .grid-set-two-fifths .grid-col {
+    width: 40%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-two-fifths, .lt-ie8
+  .grid-set-two-fifths .grid-col {
+    width: 37.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .grid-offset-two-fifths {
+    margin-left: 40%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-offset-two-fifths {
+    margin-left: 40%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .grid-push-two-fifths {
+    left: 40%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-push-two-fifths {
+    left: 40%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .grid-pull-two-fifths {
+    left: -40%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-pull-two-fifths {
+    left: -40%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .grid-three-fifths,
+  .grid-set-three-fifths .grid-col {
+    width: 60%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-three-fifths, .lt-ie8
+  .grid-set-three-fifths .grid-col {
+    width: 57.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .grid-offset-three-fifths {
+    margin-left: 60%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-offset-three-fifths {
+    margin-left: 60%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .grid-push-three-fifths {
+    left: 60%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-push-three-fifths {
+    left: 60%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .grid-pull-three-fifths {
+    left: -60%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-pull-three-fifths {
+    left: -60%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .grid-four-fifths,
+  .grid-set-four-fifths .grid-col {
+    width: 80%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-four-fifths, .lt-ie8
+  .grid-set-four-fifths .grid-col {
+    width: 77.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .grid-offset-four-fifths {
+    margin-left: 80%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-offset-four-fifths {
+    margin-left: 80%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .grid-push-four-fifths {
+    left: 80%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-push-four-fifths {
+    left: 80%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .grid-pull-four-fifths {
+    left: -80%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .grid-pull-four-fifths {
+    left: -80%;
+  }
+}
+@media screen and (min-width: 72em) {
+  /* line 34, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-wrap {
+    margin-left: -4rem;
+    *zoom: 1;
+  }
+  /* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  .large-grid-wrap:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  /* line 38, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-wrap {
+    margin-left: 0;
+  }
+
+  /* line 43, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-col {
+    float: left;
+    clear: none;
+    padding-left: 4rem;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+  }
+  /* line 51, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-col {
+    padding-left: 2%;
+  }
+
+  /* line 56, ../scss/core/_proportional-grids-mod.scss */
+  .large-gutter {
+    margin-left: -8rem;
+  }
+  /* line 27, ../scss/core/_proportional-grids-mod.scss */
+  .large-gutter > .blah-grid-col {
+    padding-left: 8rem;
+  }
+
+  /* line 60, ../scss/core/_proportional-grids-mod.scss */
+  .half-gutter {
+    margin-left: -2rem;
+  }
+  /* line 27, ../scss/core/_proportional-grids-mod.scss */
+  .half-gutter > .blah-grid-col {
+    padding-left: 2rem;
+  }
+
+  /* line 64, ../scss/core/_proportional-grids-mod.scss */
+  .no-gutter {
+    margin-left: 0;
+  }
+  /* line 27, ../scss/core/_proportional-grids-mod.scss */
+  .no-gutter > .blah-grid-col {
+    padding-left: 0;
+  }
+
+  /* line 68, ../scss/core/_proportional-grids-mod.scss */
+  .reset-gutter {
+    margin-left: -4rem;
+  }
+  /* line 27, ../scss/core/_proportional-grids-mod.scss */
+  .reset-gutter > .blah-grid-col {
+    padding-left: 4rem;
+  }
+
+  /* line 74, ../scss/core/_proportional-grids-mod.scss */
+  ul.large-grid-wrap,
+  ol.large-grid-wrap {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  /* line 79, ../scss/core/_proportional-grids-mod.scss */
+  li.large-grid-col {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-full-width,
+  .large-grid-set-full-width .large-grid-col {
+    width: 100%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-full-width, .lt-ie8
+  .large-grid-set-full-width .large-grid-col {
+    width: 97.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-offset-full-width {
+    margin-left: 100%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-offset-full-width {
+    margin-left: 100%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-push-full-width {
+    left: 100%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-push-full-width {
+    left: 100%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-pull-full-width {
+    left: -100%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-pull-full-width {
+    left: -100%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-one-half,
+  .large-grid-set-one-half .large-grid-col {
+    width: 50%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-one-half, .lt-ie8
+  .large-grid-set-one-half .large-grid-col {
+    width: 47.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-offset-one-half {
+    margin-left: 50%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-offset-one-half {
+    margin-left: 50%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-push-one-half {
+    left: 50%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-push-one-half {
+    left: 50%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-pull-one-half {
+    left: -50%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-pull-one-half {
+    left: -50%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-one-third,
+  .large-grid-set-one-third .large-grid-col {
+    width: 33.33333%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-one-third, .lt-ie8
+  .large-grid-set-one-third .large-grid-col {
+    width: 30.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-offset-one-third {
+    margin-left: 33.33333%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-offset-one-third {
+    margin-left: 33%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-push-one-third {
+    left: 33.33333%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-push-one-third {
+    left: 33%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-pull-one-third {
+    left: -33.33333%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-pull-one-third {
+    left: -33%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-two-thirds,
+  .large-grid-set-two-thirds .large-grid-col {
+    width: 66.66667%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-two-thirds, .lt-ie8
+  .large-grid-set-two-thirds .large-grid-col {
+    width: 63.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-offset-two-thirds {
+    margin-left: 66.66667%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-offset-two-thirds {
+    margin-left: 66%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-push-two-thirds {
+    left: 66.66667%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-push-two-thirds {
+    left: 66%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-pull-two-thirds {
+    left: -66.66667%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-pull-two-thirds {
+    left: -66%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-one-quarter,
+  .large-grid-set-one-quarter .large-grid-col {
+    width: 25%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-one-quarter, .lt-ie8
+  .large-grid-set-one-quarter .large-grid-col {
+    width: 22.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-offset-one-quarter {
+    margin-left: 25%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-offset-one-quarter {
+    margin-left: 25%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-push-one-quarter {
+    left: 25%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-push-one-quarter {
+    left: 25%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-pull-one-quarter {
+    left: -25%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-pull-one-quarter {
+    left: -25%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-three-quarters,
+  .large-grid-set-three-quarters .large-grid-col {
+    width: 75%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-three-quarters, .lt-ie8
+  .large-grid-set-three-quarters .large-grid-col {
+    width: 72.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-offset-three-quarters {
+    margin-left: 75%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-offset-three-quarters {
+    margin-left: 75%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-push-three-quarters {
+    left: 75%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-push-three-quarters {
+    left: 75%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-pull-three-quarters {
+    left: -75%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-pull-three-quarters {
+    left: -75%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-one-fifth,
+  .large-grid-set-one-fifth .large-grid-col {
+    width: 20%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-one-fifth, .lt-ie8
+  .large-grid-set-one-fifth .large-grid-col {
+    width: 17.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-offset-one-fifth {
+    margin-left: 20%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-offset-one-fifth {
+    margin-left: 20%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-push-one-fifth {
+    left: 20%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-push-one-fifth {
+    left: 20%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-pull-one-fifth {
+    left: -20%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-pull-one-fifth {
+    left: -20%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-two-fifths,
+  .large-grid-set-two-fifths .large-grid-col {
+    width: 40%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-two-fifths, .lt-ie8
+  .large-grid-set-two-fifths .large-grid-col {
+    width: 37.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-offset-two-fifths {
+    margin-left: 40%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-offset-two-fifths {
+    margin-left: 40%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-push-two-fifths {
+    left: 40%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-push-two-fifths {
+    left: 40%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-pull-two-fifths {
+    left: -40%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-pull-two-fifths {
+    left: -40%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-three-fifths,
+  .large-grid-set-three-fifths .large-grid-col {
+    width: 60%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-three-fifths, .lt-ie8
+  .large-grid-set-three-fifths .large-grid-col {
+    width: 57.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-offset-three-fifths {
+    margin-left: 60%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-offset-three-fifths {
+    margin-left: 60%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-push-three-fifths {
+    left: 60%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-push-three-fifths {
+    left: 60%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-pull-three-fifths {
+    left: -60%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-pull-three-fifths {
+    left: -60%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-four-fifths,
+  .large-grid-set-four-fifths .large-grid-col {
+    width: 80%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-four-fifths, .lt-ie8
+  .large-grid-set-four-fifths .large-grid-col {
+    width: 77.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-offset-four-fifths {
+    margin-left: 80%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-offset-four-fifths {
+    margin-left: 80%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-push-four-fifths {
+    left: 80%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-push-four-fifths {
+    left: 80%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .large-grid-pull-four-fifths {
+    left: -80%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .large-grid-pull-four-fifths {
+    left: -80%;
+  }
+}
+@media screen and (max-width: 47.9375em) {
+  /* line 34, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-wrap {
+    margin-left: -4rem;
+    *zoom: 1;
+  }
+  /* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  .mobile-grid-wrap:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  /* line 38, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-wrap {
+    margin-left: 0;
+  }
+
+  /* line 43, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-col {
+    float: left;
+    clear: none;
+    padding-left: 4rem;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+  }
+  /* line 51, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-col {
+    padding-left: 2%;
+  }
+
+  /* line 56, ../scss/core/_proportional-grids-mod.scss */
+  .large-gutter {
+    margin-left: -8rem;
+  }
+  /* line 27, ../scss/core/_proportional-grids-mod.scss */
+  .large-gutter > .blah-grid-col {
+    padding-left: 8rem;
+  }
+
+  /* line 60, ../scss/core/_proportional-grids-mod.scss */
+  .half-gutter {
+    margin-left: -2rem;
+  }
+  /* line 27, ../scss/core/_proportional-grids-mod.scss */
+  .half-gutter > .blah-grid-col {
+    padding-left: 2rem;
+  }
+
+  /* line 64, ../scss/core/_proportional-grids-mod.scss */
+  .no-gutter {
+    margin-left: 0;
+  }
+  /* line 27, ../scss/core/_proportional-grids-mod.scss */
+  .no-gutter > .blah-grid-col {
+    padding-left: 0;
+  }
+
+  /* line 68, ../scss/core/_proportional-grids-mod.scss */
+  .reset-gutter {
+    margin-left: -4rem;
+  }
+  /* line 27, ../scss/core/_proportional-grids-mod.scss */
+  .reset-gutter > .blah-grid-col {
+    padding-left: 4rem;
+  }
+
+  /* line 74, ../scss/core/_proportional-grids-mod.scss */
+  ul.mobile-grid-wrap,
+  ol.mobile-grid-wrap {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  /* line 79, ../scss/core/_proportional-grids-mod.scss */
+  li.mobile-grid-col {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-full-width,
+  .mobile-grid-set-full-width .mobile-grid-col {
+    width: 100%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-full-width, .lt-ie8
+  .mobile-grid-set-full-width .mobile-grid-col {
+    width: 97.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-offset-full-width {
+    margin-left: 100%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-offset-full-width {
+    margin-left: 100%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-push-full-width {
+    left: 100%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-push-full-width {
+    left: 100%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-pull-full-width {
+    left: -100%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-pull-full-width {
+    left: -100%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-one-half,
+  .mobile-grid-set-one-half .mobile-grid-col {
+    width: 50%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-one-half, .lt-ie8
+  .mobile-grid-set-one-half .mobile-grid-col {
+    width: 47.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-offset-one-half {
+    margin-left: 50%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-offset-one-half {
+    margin-left: 50%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-push-one-half {
+    left: 50%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-push-one-half {
+    left: 50%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-pull-one-half {
+    left: -50%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-pull-one-half {
+    left: -50%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-one-third,
+  .mobile-grid-set-one-third .mobile-grid-col {
+    width: 33.33333%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-one-third, .lt-ie8
+  .mobile-grid-set-one-third .mobile-grid-col {
+    width: 30.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-offset-one-third {
+    margin-left: 33.33333%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-offset-one-third {
+    margin-left: 33%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-push-one-third {
+    left: 33.33333%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-push-one-third {
+    left: 33%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-pull-one-third {
+    left: -33.33333%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-pull-one-third {
+    left: -33%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-two-thirds,
+  .mobile-grid-set-two-thirds .mobile-grid-col {
+    width: 66.66667%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-two-thirds, .lt-ie8
+  .mobile-grid-set-two-thirds .mobile-grid-col {
+    width: 63.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-offset-two-thirds {
+    margin-left: 66.66667%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-offset-two-thirds {
+    margin-left: 66%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-push-two-thirds {
+    left: 66.66667%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-push-two-thirds {
+    left: 66%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-pull-two-thirds {
+    left: -66.66667%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-pull-two-thirds {
+    left: -66%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-one-quarter,
+  .mobile-grid-set-one-quarter .mobile-grid-col {
+    width: 25%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-one-quarter, .lt-ie8
+  .mobile-grid-set-one-quarter .mobile-grid-col {
+    width: 22.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-offset-one-quarter {
+    margin-left: 25%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-offset-one-quarter {
+    margin-left: 25%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-push-one-quarter {
+    left: 25%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-push-one-quarter {
+    left: 25%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-pull-one-quarter {
+    left: -25%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-pull-one-quarter {
+    left: -25%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-three-quarters,
+  .mobile-grid-set-three-quarters .mobile-grid-col {
+    width: 75%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-three-quarters, .lt-ie8
+  .mobile-grid-set-three-quarters .mobile-grid-col {
+    width: 72.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-offset-three-quarters {
+    margin-left: 75%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-offset-three-quarters {
+    margin-left: 75%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-push-three-quarters {
+    left: 75%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-push-three-quarters {
+    left: 75%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-pull-three-quarters {
+    left: -75%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-pull-three-quarters {
+    left: -75%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-one-fifth,
+  .mobile-grid-set-one-fifth .mobile-grid-col {
+    width: 20%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-one-fifth, .lt-ie8
+  .mobile-grid-set-one-fifth .mobile-grid-col {
+    width: 17.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-offset-one-fifth {
+    margin-left: 20%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-offset-one-fifth {
+    margin-left: 20%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-push-one-fifth {
+    left: 20%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-push-one-fifth {
+    left: 20%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-pull-one-fifth {
+    left: -20%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-pull-one-fifth {
+    left: -20%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-two-fifths,
+  .mobile-grid-set-two-fifths .mobile-grid-col {
+    width: 40%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-two-fifths, .lt-ie8
+  .mobile-grid-set-two-fifths .mobile-grid-col {
+    width: 37.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-offset-two-fifths {
+    margin-left: 40%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-offset-two-fifths {
+    margin-left: 40%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-push-two-fifths {
+    left: 40%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-push-two-fifths {
+    left: 40%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-pull-two-fifths {
+    left: -40%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-pull-two-fifths {
+    left: -40%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-three-fifths,
+  .mobile-grid-set-three-fifths .mobile-grid-col {
+    width: 60%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-three-fifths, .lt-ie8
+  .mobile-grid-set-three-fifths .mobile-grid-col {
+    width: 57.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-offset-three-fifths {
+    margin-left: 60%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-offset-three-fifths {
+    margin-left: 60%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-push-three-fifths {
+    left: 60%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-push-three-fifths {
+    left: 60%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-pull-three-fifths {
+    left: -60%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-pull-three-fifths {
+    left: -60%;
+  }
+
+  /* line 92, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-four-fifths,
+  .mobile-grid-set-four-fifths .mobile-grid-col {
+    width: 80%;
+  }
+  /* line 95, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-four-fifths, .lt-ie8
+  .mobile-grid-set-four-fifths .mobile-grid-col {
+    width: 77.75%;
+  }
+
+  /* line 101, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-offset-four-fifths {
+    margin-left: 80%;
+  }
+  /* line 104, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-offset-four-fifths {
+    margin-left: 80%;
+  }
+
+  /* line 110, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-push-four-fifths {
+    left: 80%;
+  }
+  /* line 113, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-push-four-fifths {
+    left: 80%;
+  }
+
+  /* line 117, ../scss/core/_proportional-grids-mod.scss */
+  .mobile-grid-pull-four-fifths {
+    left: -80%;
+  }
+  /* line 120, ../scss/core/_proportional-grids-mod.scss */
+  .lt-ie8 .mobile-grid-pull-four-fifths {
+    left: -80%;
+  }
+}
+/* line 24, ../scss/sgcxp/base/_sgcxp-grid.scss */
+.multiple-row > .mobile-grid-col,
+.multiple-row > .grid-col,
+.multiple-row > .large-grid-col {
+  margin-bottom: 4rem;
+}
+
+/* ======================================================
+   Icons
+   See /ui/font/icon-font/README.md for instructions on how to
+   update the icons in this font
+   ======================================================*/
+@font-face {
+  font-family: 'icomoon';
+  src: url("../font/icon-font/icomoon.eot?6t1epn");
+  src: url("../font/icon-font/icomoon.eot?#iefix6t1epn") format("embedded-opentype"), url("../font/icon-font/icomoon.woff?6t1epn") format("woff"), url("../font/icon-font/icomoon.ttf?6t1epn") format("truetype"), url("../font/icon-font/icomoon.svg?6t1epn#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 21, ../scss/sgcxp/base/_sgcxp-icons.scss */
+.sgcxp [class^="icon-"]:before,
+.sgcxp [class*=" icon-"]:before {
+  font-family: 'icomoon';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-transform: none;
+  speak: none;
+}
+/* line 32, ../scss/sgcxp/base/_sgcxp-icons.scss */
+.sgcxp .icon-menu:before {
+  content: "\e600";
+}
+/* line 36, ../scss/sgcxp/base/_sgcxp-icons.scss */
+.sgcxp .icon-down-arrow:before {
+  content: "\e601";
+}
+/* line 40, ../scss/sgcxp/base/_sgcxp-icons.scss */
+.sgcxp .icon-close:before {
+  content: "\e602";
+}
+
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+/* line 8, ../scss/sgcxp/base/_sgcxp-prismcode.scss */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: black;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  direction: ltr;
+  text-align: left;
+  font-size: 1.2rem ;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+/* line 27, ../scss/sgcxp/base/_sgcxp-prismcode.scss */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0;
+  overflow: auto;
+  max-height: 30em;
+}
+
+/* line 35, ../scss/sgcxp/base/_sgcxp-prismcode.scss */
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #eaeaea;
+}
+
+/* Inline code */
+/* line 40, ../scss/sgcxp/base/_sgcxp-prismcode.scss */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+}
+
+/* line 48, ../scss/sgcxp/base/_sgcxp-prismcode.scss */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray;
+}
+
+/* line 52, ../scss/sgcxp/base/_sgcxp-prismcode.scss */
+.token.punctuation {
+  color: #999;
+}
+
+/* line 56, ../scss/sgcxp/base/_sgcxp-prismcode.scss */
+.namespace {
+  opacity: .7;
+}
+
+/* line 65, ../scss/sgcxp/base/_sgcxp-prismcode.scss */
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #905;
+}
+
+/* line 72, ../scss/sgcxp/base/_sgcxp-prismcode.scss */
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.builtin {
+  color: #690;
+}
+
+/* line 81, ../scss/sgcxp/base/_sgcxp-prismcode.scss */
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #a67f59;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* line 88, ../scss/sgcxp/base/_sgcxp-prismcode.scss */
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #07a;
+}
+
+/* line 94, ../scss/sgcxp/base/_sgcxp-prismcode.scss */
+.token.regex,
+.token.important {
+  color: #e90;
+}
+
+/* line 98, ../scss/sgcxp/base/_sgcxp-prismcode.scss */
+.token.important {
+  font-weight: bold;
+}
+
+/* line 102, ../scss/sgcxp/base/_sgcxp-prismcode.scss */
+.token.entity {
+  cursor: help;
+}
+
+/* =============================================================================
+   Layout
+   =============================================================================
+*/
+/* line 9, ../scss/sgcxp/partials/_sgcxp-layout.scss */
+.sgcxp__outer-wrapper {
+  overflow: hidden;
+}
+/* line 12, ../scss/sgcxp/partials/_sgcxp-layout.scss */
+.js-offcanvas-menu-visible .sgcxp__outer-wrapper, .ie8 .sgcxp__outer-wrapper {
+  overflow: visible;
+}
+@media screen and (min-width: 48em) {
+  /* line 9, ../scss/sgcxp/partials/_sgcxp-layout.scss */
+  .sgcxp__outer-wrapper {
+    overflow: visible;
+  }
+}
+
+/* line 18, ../scss/sgcxp/partials/_sgcxp-layout.scss */
+.sgcxp__inner-wrapper {
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  -moz-transition: -moz-transform 0.3s ease-in-out;
+  -o-transition: -o-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+@media screen and (min-width: 48em) {
+  /* line 18, ../scss/sgcxp/partials/_sgcxp-layout.scss */
+  .sgcxp__inner-wrapper {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+  }
+}
+
+/* line 28, ../scss/sgcxp/partials/_sgcxp-layout.scss */
+.sgcxp__wrapper {
+  margin: 0 auto;
+  max-width: 114rem;
+  *zoom: 1;
+  padding: 0rem 1.5rem ;
+}
+/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.sgcxp__wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 35, ../scss/sgcxp/partials/_sgcxp-layout.scss */
+#sgcxp__main {
+  padding: 2rem 0rem ;
+  color: #3f3f3f;
+  background: #f3f3f3;
+  outline: 0 none;
+}
+@media screen and (min-width: 48em) {
+  /* line 35, ../scss/sgcxp/partials/_sgcxp-layout.scss */
+  #sgcxp__main {
+    padding: 3rem 0rem ;
+  }
+}
+/* line 47, ../scss/sgcxp/partials/_sgcxp-layout.scss */
+#sgcxp__main .grid-wrap:first-child {
+  margin-top: 0;
+}
+/* line 51, ../scss/sgcxp/partials/_sgcxp-layout.scss */
+#sgcxp__main .grid-wrap:last-child {
+  margin-bottom: 0;
+}
+/* line 56, ../scss/sgcxp/partials/_sgcxp-layout.scss */
+#sgcxp__main .grid-wrap .grid-col .grid-wrap {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 47.9375em) {
+  /* line 64, ../scss/sgcxp/partials/_sgcxp-layout.scss */
+  #sgcxp__main .grid-col {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+  /* line 68, ../scss/sgcxp/partials/_sgcxp-layout.scss */
+  #sgcxp__main .grid-col:first-child {
+    margin-top: 0;
+  }
+  /* line 72, ../scss/sgcxp/partials/_sgcxp-layout.scss */
+  #sgcxp__main .grid-col:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* ======================================================
+   Header
+   ======================================================*/
+/* ------------------------------
+ * Main header layout
+ */
+/* line 9, ../scss/sgcxp/partials/_sgcxp-header.scss */
+.sgcxp__header {
+  background-color: white;
+  font-weight: normal;
+  font-family: "KievitWeb Book", "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;
+  position: relative;
+  z-index: 1000;
+  border-bottom: 1px solid #d9d9d9;
+  -webkit-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.04);
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.04);
+}
+
+/* line 18, ../scss/sgcxp/partials/_sgcxp-header.scss */
+.sgcxp__header__inner {
+  height: 90px;
+  margin: 0 auto;
+  max-width: 114rem;
+  position: relative;
+  *zoom: 1;
+  padding: 2rem 1.5rem 0rem ;
+}
+/* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.sgcxp__header__inner:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (min-width: 48em) {
+  /* line 18, ../scss/sgcxp/partials/_sgcxp-header.scss */
+  .sgcxp__header__inner {
+    height: 100px;
+    padding-top: 0;
+  }
+}
+
+/* ------------------------------
+ * Logo
+ */
+/* line 35, ../scss/sgcxp/partials/_sgcxp-header.scss */
+.sgcxp__logo {
+  width: 70px;
+  height: 65px;
+  float: left;
+  display: block;
+  overflow: hidden;
+  text-indent: -1000px;
+  background: transparent url('../img/logo.svg?1415362170') no-repeat 0 0;
+  background-size: cover;
+}
+/* line 46, ../scss/sgcxp/partials/_sgcxp-header.scss */
+.no-svg .sgcxp__logo {
+  background-image: url('../img/logo.png?1412698045');
+}
+@media screen and (min-width: 65.625em) {
+  /* line 35, ../scss/sgcxp/partials/_sgcxp-header.scss */
+  .sgcxp__logo {
+    margin: 0;
+    width: 295px;
+    height: 65px;
+  }
+}
+/* line 56, ../scss/sgcxp/partials/_sgcxp-header.scss */
+.sgcxp__logo:focus {
+  outline: 1px dotted black;
+}
+
+/* ------------------------------
+ * Update panel to show 'Last updated' content
+ */
+/* line 66, ../scss/sgcxp/partials/_sgcxp-header.scss */
+.sgcxp__update-panel {
+  background: #3f3f3f;
+  color: #d9d9d9;
+  left: 0;
+  position: absolute;
+  text-transform: uppercase;
+  text-align: right;
+  top: 0;
+  width: 100%;
+  font-size: 1rem ;
+}
+@media screen and (min-width: 48em) {
+  /* line 66, ../scss/sgcxp/partials/_sgcxp-header.scss */
+  .sgcxp__update-panel {
+    font-size: 1.3rem ;
+    position: static;
+  }
+}
+
+/* line 82, ../scss/sgcxp/partials/_sgcxp-header.scss */
+.sgcxp__update-panel__inner {
+  margin: 0 auto;
+  max-width: 114rem;
+  padding: 0.5rem 1.5rem 0.3rem ;
+}
+@media screen and (min-width: 48em) {
+  /* line 82, ../scss/sgcxp/partials/_sgcxp-header.scss */
+  .sgcxp__update-panel__inner {
+    padding: 1rem 1.5rem ;
+  }
+}
+
+/* ------------------------------
+ * Support panel to show support details
+ */
+/* line 95, ../scss/sgcxp/partials/_sgcxp-header.scss */
+.sgcxp__support-panel {
+  background: #eaeaea;
+  color: #7b7b7b;
+  font-size: 1.2rem ;
+  font-weight: normal;
+  font-family: "KievitWeb Book", "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;
+}
+@media screen and (min-width: 48em) {
+  /* line 95, ../scss/sgcxp/partials/_sgcxp-header.scss */
+  .sgcxp__support-panel {
+    text-align: right;
+    font-size: 1.5rem ;
+  }
+}
+/* line 104, ../scss/sgcxp/partials/_sgcxp-header.scss */
+.sgcxp__support-panel a {
+  color: #7b7b7b;
+}
+
+/* line 107, ../scss/sgcxp/partials/_sgcxp-header.scss */
+.sgcxp__support-panel__inner {
+  margin: 0 auto;
+  max-width: 114rem;
+  padding: 1rem 1.5rem ;
+}
+@media screen and (min-width: 48em) {
+  /* line 107, ../scss/sgcxp/partials/_sgcxp-header.scss */
+  .sgcxp__support-panel__inner {
+    padding: 1.5rem ;
+  }
+}
+
+/* ======================================================
+   Main navigation
+   ======================================================*/
+/* line 5, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+.sgcxp__nav {
+  background-color: #3f3f3f;
+  border-bottom: #b30041 solid 5px;
+  padding: 3.5rem 2rem 5rem 2rem ;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  width: 80%;
+  left: 100%;
+  top: 0;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  -moz-transition: -moz-transform 0.3s ease-in-out;
+  -o-transition: -o-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+}
+@media screen and (min-width: 48em) {
+  /* line 5, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+  .sgcxp__nav {
+    background-color: transparent;
+    border-bottom: none;
+    padding: 0;
+    position: static;
+    width: auto;
+    left: auto;
+    top: auto;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+  /* line 29, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+  .js-offcanvas-menu-visible .sgcxp__nav {
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+  }
+}
+
+/* line 35, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+.sgcxp__nav__list {
+  margin: 0;
+  padding: 0;
+}
+@media screen and (min-width: 48em) {
+  /* line 35, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+  .sgcxp__nav__list {
+    float: right;
+    padding-top: 2rem ;
+  }
+}
+
+/* line 44, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+.sgcxp__nav__item {
+  color: white;
+  padding-bottom: 2rem ;
+}
+@media screen and (min-width: 48em) {
+  /* line 44, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+  .sgcxp__nav__item {
+    color: #3f3f3f;
+    display: inline-block;
+    padding-bottom: 0;
+    text-align: center;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+  }
+  /* line 53, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+  .sgcxp__nav__item:last-child {
+    margin-bottom: 0;
+  }
+  /* line 56, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+  .sgcxp__nav__item.hover-cancel {
+    border: 1px solid transparent !important;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -o-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+  }
+  /* line 63, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+  .sgcxp__nav__item:hover {
+    border-top: 1px solid #d9d9d9;
+    border-left: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+    -webkit-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.07);
+    -moz-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.07);
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.07);
+  }
+  /* line 66, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+  .sgcxp__nav__item:hover a {
+    background: white;
+  }
+  /* line 69, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+  .sgcxp__nav__item:hover a [class^="icon-"]:before,
+  .sgcxp__nav__item:hover a [class*=" icon-"]:before {
+    color: #7b7b7b;
+  }
+  /* line 71, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+  .sgcxp__nav__item:hover .sgcxp__nav__dropdown {
+    display: block;
+  }
+  /* line 75, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+  .sgcxp__nav__item.no-subnav:hover {
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/* line 82, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+.sgcxp__nav__link {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  color: white !important;
+  z-index: 1000;
+  font-size: 2rem ;
+  padding-bottom: 1.5rem ;
+}
+/* line 90, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+.sgcxp__nav__link:hover {
+  text-decoration: underline;
+}
+@media screen and (min-width: 48em) {
+  /* line 82, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+  .sgcxp__nav__link {
+    padding: 1.5rem 0.5rem 1.5rem 0.9rem ;
+    font-size: 2.4rem ;
+    color: black !important;
+  }
+  /* line 97, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+  .sgcxp__nav__link:hover {
+    position: relative;
+    text-decoration: none;
+  }
+  /* line 102, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+  .sgcxp__nav__link [class^="icon-"]:before,
+  .sgcxp__nav__link [class*=" icon-"]:before {
+    color: #b30041;
+    font-size: 75%;
+    padding-left: 0.5rem ;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  /* line 111, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+  .sgcxp__nav__dropdown {
+    padding: 3rem 0rem ;
+    margin: -0.2rem 0rem 2rem ;
+    -webkit-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.07);
+    -moz-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.07);
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.07);
+    background: white;
+    border: 1px solid #d9d9d9;
+    left: 0;
+    position: absolute;
+    text-align: left;
+    width: 100%;
+    display: none;
+  }
+}
+/* line 124, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+.sgcxp__nav__dropdown.grid-wrap {
+  margin-left: 0;
+}
+
+/* sgcxp__nav__dropdown contents are link list items and found in the _sgcxp-linklist.scss partial */
+/* ------------------------------
+ * Main navigation for mobile - transitions and toggle icons
+ */
+/**
+  * When a class is added to the body by the js, translate the entire page
+  * across to the left thereby revealing the menu
+  * @see _sgcxp__layout.scss for the base styles for .inner-wrapper
+  */
+/* line 138, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+.js-offcanvas-menu-visible .sgcxp__inner-wrapper {
+  -webkit-transform: translate3d(-80%, 0, 0);
+  -moz-transform: translate3d(-80%, 0, 0);
+  -ms-transform: translate3d(-80%, 0, 0);
+  -o-transform: translate3d(-80%, 0, 0);
+  transform: translate3d(-80%, 0, 0);
+}
+@media screen and (min-width: 48em) {
+  /* line 138, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+  .js-offcanvas-menu-visible .sgcxp__inner-wrapper {
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+  }
+}
+
+/**
+ * Mobile menu open button
+ */
+/* line 149, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+.offcanvas-menu-toggle--open {
+  text-transform: uppercase;
+  float: right;
+  color: #3f3f3f;
+  background-color: white;
+  padding: 0rem 1.4rem ;
+  -webkit-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.07);
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.07);
+  border-radius: 3px;
+  border: 1px solid #d9d9d9;
+  text-decoration: none;
+  font-size: 1.4rem ;
+}
+/* line 163, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+.offcanvas-menu-toggle--open:hover, .offcanvas-menu-toggle--open:focus {
+  text-decoration: none;
+}
+/* line 167, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+.offcanvas-menu-toggle--open:focus {
+  outline: 0;
+}
+/* line 171, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+.offcanvas-menu-toggle--open .icon {
+  color: #b30041;
+  font-size: 120%;
+  display: inline-block;
+  margin-right: 1rem ;
+  margin-top: 2rem ;
+}
+
+/**
+ * Mobile menu close button
+ */
+/* line 184, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+.offcanvas-menu-toggle--close {
+  color: #f3f3f3 !important;
+  position: absolute;
+  top: 0.5rem ;
+  right: 1rem ;
+  z-index: 1;
+  text-decoration: none;
+}
+/* line 193, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+.offcanvas-menu-toggle--close:hover, .offcanvas-menu-toggle--close:focus {
+  color: #fff;
+  text-decoration: none;
+}
+/* line 198, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+.offcanvas-menu-toggle--close .icon {
+  line-height: normal;
+  font-size: 140%;
+}
+
+/* line 204, ../scss/sgcxp/partials/_sgcxp-navigation.scss */
+.offcanvas-menu-toggle__text {
+  display: inline-block;
+  margin-top: 2rem ;
+  color: #3f3f3f;
+}
+
+/* ======================================================
+   Link list
+   ======================================================*/
+/* line 6, ../scss/sgcxp/partials/_sgcxp-linklist.scss */
+.sgcxp__linklist__col__wrapper a {
+  text-decoration: none;
+}
+/* line 8, ../scss/sgcxp/partials/_sgcxp-linklist.scss */
+.sgcxp__linklist__col__wrapper a:hover {
+  text-decoration: underline;
+}
+/* line 10, ../scss/sgcxp/partials/_sgcxp-linklist.scss */
+.sgcxp__linklist__col__wrapper ul, .sgcxp__linklist__col__wrapper ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+/* line 16, ../scss/sgcxp/partials/_sgcxp-linklist.scss */
+.sgcxp__linklist__section {
+  margin-bottom: 2rem ;
+  line-height: 2.5rem ;
+}
+
+/* line 21, ../scss/sgcxp/partials/_sgcxp-linklist.scss */
+.sgcxp__linklist__heading {
+  font-size: 1.4rem ;
+  margin: 0rem ;
+  line-height: 1.2;
+  color: #7b7b7b;
+  text-transform: uppercase;
+  margin-bottom: 1rem ;
+}
+/* line 28, ../scss/sgcxp/partials/_sgcxp-linklist.scss */
+.sgcxp__linklist__heading a {
+  color: #7b7b7b;
+}
+
+/* line 33, ../scss/sgcxp/partials/_sgcxp-linklist.scss */
+.sgcxp__linklist__item {
+  font-size: 1.6rem ;
+}
+/* line 35, ../scss/sgcxp/partials/_sgcxp-linklist.scss */
+.sgcxp__linklist__item a {
+  color: #b30041;
+}
+
+@media screen and (min-width: 48em) {
+  /* line 38, ../scss/sgcxp/partials/_sgcxp-linklist.scss */
+  .sgcxp__linklist__link {
+    color: #3f3f3f;
+  }
+}
+
+/* ======================================================
+   Namespaced content wrapper
+   ======================================================*/
+/* line 5, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__content {
+  font-weight: normal;
+  font-family: "KievitWeb Book", "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.8rem ;
+}
+
+/* ======================================================
+   Breadcrumb trail
+   ======================================================*/
+/* line 16, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__breadcrumb {
+  font-size: 1.3rem ;
+  font-weight: normal;
+  font-family: "KievitWeb Book", "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* line 23, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__breadcrumb__item {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 0.5rem ;
+}
+/* line 28, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__breadcrumb__item:before {
+  color: #d9d9d9;
+  content: ">";
+  padding-right: 0.5rem ;
+}
+/* line 33, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__breadcrumb__item:first-child:before {
+  content: "";
+  padding: 0;
+}
+/* line 37, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__breadcrumb__item a {
+  color: #3f3f3f;
+  text-decoration: none;
+}
+/* line 40, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__breadcrumb__item a:hover {
+  text-decoration: underline;
+}
+
+/* ======================================================
+   Blocks
+   ======================================================*/
+/* line 49, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__block {
+  background: white;
+  border: 1px solid #d9d9d9;
+  margin-bottom: 4rem ;
+}
+
+/* line 55, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__block__image {
+  display: block;
+  /* TODO: add block to all images */
+  max-width: 100%;
+}
+
+/* line 60, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__block__desc {
+  padding: 0.5rem 2rem ;
+  font-size: 1.4rem ;
+}
+@media screen and (min-width: 48em) {
+  /* line 60, ../scss/sgcxp/partials/_sgcxp-content.scss */
+  .sgcxp__block__desc {
+    font-size: 1.6rem ;
+  }
+}
+
+/* line 68, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__block--notes {
+  background: #3f3f3f;
+  color: white;
+  margin-bottom: 4rem ;
+}
+
+/* line 74, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__block--notes__header {
+  font-size: 1.4rem ;
+  margin: 0rem 0rem 0.5rem ;
+  text-transform: uppercase;
+}
+
+/* line 81, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__block--lifted {
+  -webkit-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.07);
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.07);
+}
+
+/* line 85, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__block--padding-small {
+  padding: 1rem ;
+}
+
+/* line 89, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__block--padding-medium {
+  padding: 2rem ;
+}
+
+/* line 93, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__block--padding-large {
+  padding: 3rem ;
+}
+
+/* line 97, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__block__img {
+  max-width: 100%;
+}
+
+/* ======================================================
+   Headings
+   ======================================================*/
+/* line 104, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__page-title {
+  font-weight: normal;
+  font-family: "KievitWeb Black", "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;
+  margin: 0rem ;
+  line-height: 1.2;
+  font-size: 4rem ;
+  margin-bottom: 2rem ;
+}
+@media screen and (min-width: 48em) {
+  /* line 104, ../scss/sgcxp/partials/_sgcxp-content.scss */
+  .sgcxp__page-title {
+    font-size: 6rem ;
+  }
+}
+
+/* line 115, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__page-subtitle {
+  font-weight: normal;
+  font-family: "KievitWeb Black", "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;
+  margin: 0rem ;
+  line-height: 1.2;
+  font-size: 2.6rem ;
+  margin: 1rem 0rem 0.5rem ;
+}
+@media screen and (min-width: 48em) {
+  /* line 115, ../scss/sgcxp/partials/_sgcxp-content.scss */
+  .sgcxp__page-subtitle {
+    font-size: 3rem ;
+    margin: 3rem 0rem 0.5rem ;
+  }
+}
+
+/* line 127, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__page-subtitle__link {
+  text-decoration: none;
+  color: #3f3f3f;
+}
+/* line 131, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__page-subtitle__link:hover {
+  text-decoration: underline;
+}
+
+/* ======================================================
+   Select box
+   ======================================================*/
+/**
+ * Select boxes
+ * (Uniform)
+ * This element is pixel based because using REMs for line-height inside pseudo elements does not work in IE10 & 9
+ */
+/* line 146, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__dropdown {
+  left: auto;
+  float: right;
+  position: absolute;
+  font-size: 1.4rem ;
+  top: 1rem ;
+  right: 1.5rem ;
+  text-align: left;
+  max-width: 26rem ;
+  width: 100%;
+}
+/* line 153, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__dropdown p {
+  display: block;
+  text-align: right;
+  margin-bottom: 0.8rem ;
+}
+/* line 161, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.lt-ie9 .sgcxp__dropdown {
+  width: 26rem ;
+}
+
+/* line 166, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__figure {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/* line 170, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__figure__caption {
+  font-size: 1.2rem ;
+  margin: 0rem 0rem 0.5rem ;
+  text-transform: uppercase;
+}
+
+/* line 176, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.sgcxp__block--imgs {
+  margin-bottom: 4rem ;
+}
+
+/* line 181, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.selector,
+.selector span {
+  background-image: url(../img/uniform/sprite.png);
+  background-repeat: no-repeat;
+}
+
+/* line 186, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.selector {
+  width: 100% !important;
+  min-width: 60px;
+  margin-bottom: 0;
+  overflow: hidden !important;
+  background-position: -5px -55px;
+  padding-left: 1.2rem ;
+  position: relative;
+}
+/* line 194, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.selector:focus {
+  outline: 0;
+}
+/* line 198, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.selector span {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100% !important;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  background-position: right -104px;
+  height: 44px;
+  line-height: 4.4rem ;
+  cursor: pointer;
+  width: 100% !important;
+  display: block;
+}
+/* line 213, ../scss/sgcxp/partials/_sgcxp-content.scss */
+.selector select {
+  border: none;
+  background: none;
+  height: 44px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+/*  Modified Uniform Default Theme */
+/* line 231, ../scss/sgcxp/partials/_sgcxp-content.scss */
+div.selector.focus {
+  background-position: -5px -153px;
+}
+
+/* line 236, ../scss/sgcxp/partials/_sgcxp-content.scss */
+div.selector.focus span {
+  background-position: right -202px;
+}
+
+/* line 240, ../scss/sgcxp/partials/_sgcxp-content.scss */
+div.selector.focus.active {
+  background-position: -5px -55px;
+}
+
+/* line 244, ../scss/sgcxp/partials/_sgcxp-content.scss */
+div.selector.focus.active span {
+  background-position: right -104px;
+}
+
+/* ======================================================
+   Print styles (via H5BP)
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ======================================================*/
+@media print {
+  /* line 8, ../scss/core/_print.scss */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* line 16, ../scss/core/_print.scss */
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /* line 20, ../scss/core/_print.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 24, ../scss/core/_print.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links for images, or javascript/internal links
+   */
+  /* line 34, ../scss/core/_print.scss */
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  /* line 39, ../scss/core/_print.scss */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /* line 44, ../scss/core/_print.scss */
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+
+  /* line 49, ../scss/core/_print.scss */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  /* line 53, ../scss/core/_print.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  /* line 63, ../scss/core/_print.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 69, ../scss/core/_print.scss */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

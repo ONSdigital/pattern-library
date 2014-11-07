@@ -1,0 +1,25 @@
+files: ['converted-html/**/*.html']
+
+unicorn:
+  host: http://localhost:8089
+  path: /unicorn/check
+
+parallel: 5
+
+basedir: ../
+
+whitelist:
+  "**/*":
+    - The document is not mappable to XML 1.0 due to two consecutive hyphens in a comment.
+    - Consecutive hyphens did not terminate a comment. -- is not permitted inside a comment, but e.g. - - is.
+    - Bad value cleartype for attribute http-equiv on element meta.
+    - Bad value X-UA-Compatible for attribute http-equiv on element meta.
+    - Bogus comment.
+    - The document is not mappable to XML 1.0 due to a trailing hyphen in a comment
+    - Premature end of comment. Use --> to end a comment properly
+    - A meta element with an http-equiv attribute whose value is X-UA-Compatible must have a content attribute with the value IE=edge
+    - Comments seen before doctype. Internet Explorer will go into the quirks mode
+
+timeout: 60000
+
+cache: ./.htmlcache

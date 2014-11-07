@@ -1,0 +1,263 @@
+{% block page_title %}Index{% endblock %}
+
+{% block custom_head %}
+<style>
+.grid-wrap {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.grid-col code {
+  border: 1px dashed #ccc;
+  background: #fff;
+  padding: 10px;
+  display: block;
+}
+
+</style>
+{% endblock %}
+{% block content %}
+<h1>Grid layout</h1>
+<!---
+title: Desktop grid
+external: true
+usage: |
+  Grid systems are used for creating page layouts using a series of rows and columns that contain the page's content.
+  The pattern library includes a 6 column, responsive, mobile first, fluid grid system.
+devnotes:
+  This grid system is [nestable](/visual-language-grid-nested-grid.html) (without squeezing fixed-width gutters), and has [push/pull capability](/visual-language-grid-push-pull-grid.html) so the HTML source order is compatible with desktop and mobile layout.
+-->
+<h2>Desktop grid</h2>
+<div class="grid-wrap">
+  <div class="grid-col desktop-grid-full-width">
+    <code>Full width</code>
+  </div>
+</div>
+<div class="grid-wrap">
+  <div class="grid-col desktop-grid-one-half">
+    <code>One Half</code>
+  </div>
+  <div class="grid-col desktop-grid-one-half">
+    <code>One half</code>
+  </div>
+</div>
+<div class="grid-wrap">
+  <div class="grid-col desktop-grid-one-third">
+    <code>One Third</code>
+  </div>
+  <div class="grid-col desktop-grid-two-thirds">
+    <code>Two Thirds</code>
+  </div>
+</div>
+<div class="grid-wrap">
+  <div class="grid-col desktop-grid-one-quarter">
+    <code>One Quarter</code>
+  </div>
+  <div class="grid-col desktop-grid-three-quarters">
+    <code>Three Quarters</code>
+  </div>
+</div>
+<div class="grid-wrap">
+  <div class="grid-col desktop-grid-one-sixth">
+    <code>One Sixth</code>
+  </div>
+  <div class="grid-col desktop-grid-five-sixths">
+    <code>Five Sixths</code>
+  </div>
+</div>
+<!--- // -->
+
+<!---
+title: Tablet (and up) grid
+external: true
+-->
+<h2>Tablet (and up) grid</h2>
+<div class="grid-wrap">
+  <div class="grid-col tablet-grid-full-width">
+    <code>Full width</code>
+  </div>
+</div>
+<div class="grid-wrap">
+  <div class="grid-col tablet-grid-one-half">
+    <code>One Half</code>
+  </div>
+  <div class="grid-col tablet-grid-one-half">
+    <code>One half</code>
+  </div>
+</div>
+<div class="grid-wrap">
+  <div class="grid-col tablet-grid-one-third">
+    <code>One Third</code>
+  </div>
+  <div class="grid-col tablet-grid-two-thirds">
+    <code>Two Thirds</code>
+  </div>
+</div>
+<div class="grid-wrap">
+  <div class="grid-col tablet-grid-one-quarter">
+    <code>One Quarter</code>
+  </div>
+  <div class="grid-col tablet-grid-three-quarters">
+    <code>Three Quarters</code>
+  </div>
+</div>
+<div class="grid-wrap">
+  <div class="grid-col tablet-grid-one-sixth">
+    <code>One Sixth</code>
+  </div>
+  <div class="grid-col tablet-grid-five-sixths">
+    <code>Five Sixths</code>
+  </div>
+</div>
+<!--- // -->
+
+<!---
+title: Mobile (and up) grid
+external: true
+-->
+<h2>Mobile (and up) grid</h2>
+<div class="grid-wrap">
+  <div class="grid-col grid-full-width">
+    <code>Full width</code>
+  </div>
+</div>
+<div class="grid-wrap">
+  <div class="grid-col grid-one-half">
+    <code>One Half</code>
+  </div>
+  <div class="grid-col grid-one-half">
+    <code>One half</code>
+  </div>
+</div>
+<div class="grid-wrap">
+  <div class="grid-col grid-one-third">
+    <code>One Third</code>
+  </div>
+  <div class="grid-col grid-two-thirds">
+    <code>Two Thirds</code>
+  </div>
+</div>
+<div class="grid-wrap">
+  <div class="grid-col grid-one-quarter">
+    <code>One Quarter</code>
+  </div>
+  <div class="grid-col grid-three-quarters">
+    <code>Three Quarters</code>
+  </div>
+</div>
+<div class="grid-wrap">
+  <div class="grid-col grid-one-sixth">
+    <code>One Sixth</code>
+  </div>
+  <div class="grid-col grid-five-sixths">
+    <code>Five Sixths</code>
+  </div>
+</div>
+<!--- // -->
+
+<h2>Mixed Mobile/Tablet/Desktop grid</h2>
+<!---
+title: Mixed Mobile/Tablet/Desktop grid
+external: true
+-->
+<div class="grid-wrap">
+  <div class="grid-col grid-one-third tablet-grid-two-thirds desktop-grid-one-half">
+    <code>Mobile - 1/3. Tablet - 2/3. Dekstop - 1/2</code>
+  </div>
+  <div class="grid-col grid-two-thirds tablet-grid-one-third desktop-grid-one-half">
+    <code>Mobile - 2/3. Tablet - 1/3. Dekstop - 1/2</code>
+  </div>
+</div>
+<div class="grid-wrap">
+  <div class="grid-col grid-one-quarter tablet-grid-three-quarters desktop-grid-one-half">
+    <code>Mobile - 1/4. Tablet - 3/4. Dekstop - 1/2</code>
+  </div>
+  <div class="grid-col grid-three-quarters tablet-grid-one-quarter desktop-grid-one-half">
+    <code>Mobile - 1/3. Tablet - 2/3. Dekstop - 1/2</code>
+  </div>
+</div>
+<div class="grid-wrap">
+  <div class="grid-col grid-one-sixth tablet-grid-five-sixths desktop-grid-one-half">
+    <code>Mobile - 1/6. Tablet - 5/6. Dekstop - 1/2</code>
+  </div>
+  <div class="grid-col grid-five-sixths tablet-grid-one-sixth desktop-grid-one-half">
+    <code>Mobile - 5/6. Tablet - 1/6. Dekstop - 1/2</code>
+  </div>
+</div>
+<!--- // -->
+
+<!---
+title: Push pull grid
+external: true
+devnotes: >
+  The push and pull features of the grid system allow developers to display content in a different order to how they are placed in the markup.
+-->
+<h2>Push Pull grid</h2>
+<div class="grid-wrap">
+  <div class="grid-col desktop-grid-one-half desktop-grid-push-one-half">
+    <code>One Half 1st in source order</code>
+  </div>
+  <div class="grid-col desktop-grid-one-half desktop-grid-pull-one-half">
+    <code>One half 2nd in source order</code>
+  </div>
+</div>
+<div class="grid-wrap">
+  <div class="grid-col desktop-grid-one-third desktop-grid-push-two-thirds">
+    <code>One Third 1st in source order</code>
+  </div>
+  <div class="grid-col desktop-grid-two-thirds desktop-grid-pull-one-third">
+    <code>Two Thirds 2nd in source order</code>
+  </div>
+</div>
+<div class="grid-wrap">
+  <div class="grid-col desktop-grid-one-quarter desktop-grid-push-three-quarters">
+    <code>One Quarter 1st in source order</code>
+  </div>
+  <div class="grid-col desktop-grid-three-quarters desktop-grid-pull-one-quarter">
+    <code>Three Quarters 2nd in source order</code>
+  </div>
+</div>
+<div class="grid-wrap">
+  <div class="grid-col desktop-grid-one-sixth desktop-grid-push-five-sixths">
+    <code>One Sixth 1st in source order</code>
+  </div>
+  <div class="grid-col desktop-grid-five-sixths desktop-grid-pull-one-sixth">
+    <code>Five Sixths 2nd in source order</code>
+  </div>
+</div>
+<!--- // -->
+
+
+<!---
+title: Nested grid
+external: true
+usage: >
+  The grid system can contain other grids.
+-->
+<h2>Nested grid</h2>
+<div class="grid-wrap">
+  <div class="grid-col desktop-grid-one-half">
+    <div class="grid-wrap">
+      <div class="grid-col desktop-grid-one-half">
+        <code>One Half of one half</code>
+      </div>
+      <div class="grid-col desktop-grid-one-half">
+        <code>One Half of one half</code>
+      </div>
+    </div>
+  </div>
+  <div class="grid-col desktop-grid-one-half">
+    <div class="grid-wrap">
+      <div class="grid-col desktop-grid-one-third">
+        <code>One third of one half</code>
+      </div>
+      <div class="grid-col desktop-grid-one-third">
+        <code>One third of one half</code>
+      </div>
+      <div class="grid-col desktop-grid-one-third">
+        <code>One third of one half</code>
+      </div>
+    </div>
+  </div>
+</div>
+<!--- // -->
+{% endblock %}

@@ -1,0 +1,27 @@
+{% block content %}
+<!---
+title: Line Chart
+group: Charts
+usage: |
+  These charts are primarily used in the [Time Series pages](/templates-templates-time-series-page-t5.html).
+  In the context of the time-series pages (and ideally most situations), the line chart should be used at full page width so that any onward journey is secondary to the primary requirement of displaying data.
+  This is particularly important when considering one of the core design principles of 'it’s all about the numbers'.
+  In addition, whilst the charts are responsive, as much space should be given to the chart so that the information can be clearly relayed to the user.
+  On resizing, the number of data points that are included in the x-axis are reduced so that the chart displays well on small screen sizes.
+devnotes:
+  external: file://docs/time-series-chart.md
+-->
+
+    <div data-chart="time-series"
+         data-chart-title="Consumer Price Indices - CPI indices: 1988 to 2014"
+         data-chart-tooltip="D7BT"
+         data-chart-ylabel="D7BT"
+         class="chart">
+      <!-- this is a no-js image representation of the graph, which needs to be built on the server -->
+      <noscript>
+        <img src="http://placehold.it/1000x500&amp;text=No+-+JS+Chart+area+goes+here" alt="">
+      </noscript>
+    </div>
+
+  <!--- // -->
+{% endblock %}

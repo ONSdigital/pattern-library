@@ -1,0 +1,27 @@
+/* =============================================================================
+   Grid
+   =============================================================================
+*/
+
+// Desktop grid
+@include respond-min($bp-desktop-min) {
+  @include grids-init('grid');
+}
+
+// Large screen grid
+@include respond-min($bp-desktop-wider-min) {
+  @include grids-init('large-grid');
+}
+
+// Mobile grid
+@include respond-max($bp-mobile-max) {
+  @include grids-init('mobile-grid');
+}
+
+.multiple-row {
+  > .mobile-grid-col,
+  > .grid-col,
+  > .large-grid-col {
+    margin-bottom: $grid-gutter;
+  }
+}

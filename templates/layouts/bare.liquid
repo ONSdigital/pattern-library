@@ -1,0 +1,26 @@
+<!--[if IE]><![endif]-->
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html class="no-js ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>{% block page_title %}{% endblock %} - Office of National Statistics</title>
+    {% include 'global/head' %}
+    {% block custom_head %}{% endblock %}
+  </head>
+  <body class="{% block pageclass %}{% endblock %}">
+
+        <a class="skiplink visuallyhidden focusable" href="#main" tabindex="0">
+          <span>Skip to main content</span>
+        </a>
+
+        {% block masthead %}{% endblock %}
+        {% block content %}{% endblock %}
+
+    {% include 'global/scripts' %}
+    {% block custom_scripts %}{% endblock %}
+  </body>
+</html>

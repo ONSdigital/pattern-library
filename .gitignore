@@ -1,0 +1,45 @@
+# un-needed dot files
+.DS_Store
+
+# compass
+.sass-cache
+
+# node
+node_modules
+
+# compiled css
+ui/css/*.css
+ui/css/*.css.map
+
+# js minified by mixture
+ui/js/app/**/*.min.js
+ui/js/app/*.min.js
+
+
+# Don't version control html output
+converted-html
+converted-html-prod
+.tmp
+
+/npm-debug.log
+
+/ui/css/main.min.css
+/ui/css/main.css
+
+/ui/js/lib/console.min.js
+
+# Ignore root-level scss-lint file—this can be symlinked here as anything
+# integrating with scss-lint won't pick the config file up unless it's in the
+# scss file's directory or any directory above it.
+# ln -s .config/.scss-lint.yml ./.scss-lint.yml
+/.scss-lint.yml
+
+# Same for .jshintrc
+/.jshintrc
+
+# Styleguide folders
+publish
+
+# bower
+ui/vendor
+/.htmlcache/

@@ -1,0 +1,117 @@
+{% block page_title %} Forms {% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+
+<form action="#" class="form">
+  <!---
+  title: Text input
+  group: Forms
+  usage: |
+    Group form fields together into smaller chunks, this makes the form feel easier to complete and less intimidating.
+  devnotes: |
+    Labels should always be used as screen-readers will have problems if they are omitted.  The wrapping label pattern is preferred over the use of the `for` attribute, as this requires a corresponding `id` on the target form input, which may change according to how it needs to be integrated with a backend system.
+    All inputs have `autocorrect="off"` added for usability on mobiles and tablets.
+  -->
+  <label class="field field--spaced field--text">
+    <b class="field__label">Lorem</b>
+    <input class="input input--med" type="text" value="Text as it will appear when user types">
+  </label>
+  <!---
+  title: Text input with supporting text
+  group: Forms
+  usage: |
+    A different style of text for the supporting text separates it from the element label.
+    The label should follow sentence case; that is Upper case first word, then lower case second word(s).
+    Support text should be used to give key information that is essentially to complete the form field. Examples include password format and explanations for data collection.
+  -->
+
+  <label class="field field--spaced field--text">
+    <b class="field__label">Email account</b>
+    <span class="description field__description label__description">This will be your username</span>
+    <input class="input input--med" type="email" value="ex">
+  </label>
+  <!--- // -->
+
+  <!---
+  title: Input with error
+  group: Forms
+  devnotes: |
+    The inclusion of the class `field--error` on the label will present the input element as having an error.  Use of the `field--error__message` should be used to ensure the user understands why the input isn't valid.
+  usage: |
+    Within the error message, Avoid words such as 'error', 'problem' or 'issue'.  Be positive.
+    Valid HTML5 form elements should be used (for example here `type="email"` is used) so that the the browser is given hints as to the nature of the input field, so that the appropriate keyboard layout is used.
+  -->
+  <label class="field field--spaced field--text field--error">
+    <b class="field__label">Email account</b>
+    <input class="input input--med" type="email" value="email@notcorrect dot biz">
+    <span class="field__description field--error__message">
+      Error messsagey lorem ipsumy
+    </span>
+  </label>
+  <!--- // -->
+
+  <!---
+  title: Input with button
+  group: Forms
+  usage: |
+    A secondary button style (support button) should be used when placed inline with a form element.  Generally, there should only be one primary button in a form.
+  -->
+  <label class="field field--text field--spaced">
+    <b class="field__label">Address lookup postcode lorem</b>
+    <input class="input input--small" type="text">
+    <a href="#" class="btn btn--secondary btn--secondary--active">Look up</a>
+  </label>
+  <!--- // -->
+
+  <!---
+  title: Textarea
+  group: Forms
+  -->
+  <label class="field field--text">
+    <b class="field__label">Comments</b>
+    <span class="field__description">200 characters max</span>
+    <textarea class="input--med" cols="30" rows="10"></textarea>
+  </label>
+  <!--- // -->
+
+  <!---
+  title: Checkboxes
+  group: Forms
+  -->
+  <div class="field field--spaced">
+
+    <label>
+      Checkboxes value 1.
+      <input type="checkbox" name="checkbox" value="1">
+    </label>
+
+    <label>
+      I am disabled.
+      <input type="checkbox" name="checkbox" value="2" disabled>
+    </label>
+
+  </div>
+  <!--- // -->
+
+  <!---
+  title: Selectbox
+  group: Forms
+  usage: >
+    Select boxes where possible should default to a value.  If this is not possible, default to "Please select..."
+  -->
+  <label for="select">Selection</label>
+    <div class="field field--spaced">
+      <select class="input input--mini" id="select" name="">
+        <option value="1" selected>Please select:</option>
+        <option value="2">Options go here</option>
+        <option value="3">And here</option>
+        <option value="4">Here, too!</option>
+        <option value="5">And even here.</option>
+      </select>
+    </div>
+  <!--- // -->
+</form>
+</div>
+{% endblock %}

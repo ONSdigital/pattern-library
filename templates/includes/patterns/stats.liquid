@@ -1,0 +1,183 @@
+{% block page_title %} Stats {% endblock %}
+
+{% block custom_head %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+  <h1>Stats</h1>
+  <h2>An atomic micro-component that represents a statistical figure, with an optional unit and description.</h2>
+
+  <div class="grid-wrap">
+    <div class="grid-col desktop-grid-one-third">
+      <!---
+      title: Basic
+      usage: At the very basic level, it can just be a number.
+      -->
+      <div class="stat">
+        <div class="stat__figure">99</div>
+      </div>
+      <p>At the very basic level, it can just be a number.</p>
+    </div>
+
+    <div class="grid-col desktop-grid-one-third">
+      <!---
+      title: Basic, with unit
+      usage: A unit can be added to the stat.
+      -->
+      <div class="stat">
+        <div class="stat__figure">
+          99
+            <span class="stat__figure__unit">%</span>
+        </div>
+      </div>
+      <p>A unit can be added to this.</p>
+    </div>
+
+    <div class="grid-col desktop-grid-one-third">
+      <!---
+      title: Basic, with unit and description
+      usage: A unit can be added to to the stat and a description.
+      -->
+      <div class="stat">
+        <div class="stat__figure">
+          99
+            <span class="stat__figure__unit">m</span>
+        </div>
+        <div class="stat__description">bottles of beer on the wall</div>
+      </div>
+      <p>And a description.</p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Small stat</h2>
+    <div class="grid-wrap">
+      <div class="grid-col desktop-grid-one-third">
+        <!---
+        title: Small
+        -->
+        <div class="stat stat--small">
+          <div class="stat__figure">
+            15.12
+            <span class="stat__figure__unit">%</span>
+          </div>
+          <div class="stat__description">Big numbers, in a small, compact package</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Headline stat</h2>
+  <p>
+    Built to work with the biggest statistic (£123,456) displayed at 50% size at a medium-largeish viewport (~700px) and 100% size below this down to 240px
+  </p>
+
+  <div class="divider">
+    <div class="divider__half divider__half--border">
+      <!---
+      title: Headline stat
+      devnotes: Designed to be legible with the biggest statistic displayed at 50% size at a medium-largeish viewport (~700px) and 100% size below this down to 240px
+      -->
+      <div class="box box--padded--med muted--dark">
+        <div class="stat stat--headline">
+          <div class="stat__figure">
+            £666,666
+          </div>
+          <div class="stat__description">
+            Jan 2014
+            <span class="icon icon-up-bold icon--large icon--green icon--fat" role="presentation"></span>
+              0.7
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="divider__half">
+      <div class="box box--padded--med muted--dark">
+        <div class="stat stat--headline">
+          <div class="stat__figure">
+            106.7
+            <span class="stat__figure__unit">%</span>
+          </div>
+          <div class="stat__description">
+            Jan 2014
+            <span class="icon icon-up-bold icon--large icon--green icon--fat" role="presentation"></span>
+              0.7
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <h2>Extra large headline stat</h2>
+  <div class="grid-wrap">
+    <div class="grid-col desktop-grid-one-half">
+      <!---
+      title: XL Headline stat
+      devnotes: For when you need big, big figures and you're guaranteed to have the space for it at 100% widths on big viewports
+      -->
+      <div class="box box--padded--med muted--dark">
+        <div class="stat stat--headline stat--headline--xl">
+          <div class="stat__figure">
+            £666,666
+          </div>
+          <div class="stat__description">
+            Jan 2014
+            <span class="icon icon-up-bold icon--large icon--green icon--fat" role="presentation"></span>
+              0.7
+          </div>
+        </div>
+      </div>
+
+      <div class="box box--padded--med muted--dark">
+        <div class="stat stat--headline stat--headline--xl">
+          <div class="stat__figure">
+            123.4
+            <span class="stat__figure__unit">%</span>
+          </div>
+          <div class="stat__description">
+            Jan 2014
+            <span class="icon icon-up-bold icon--large icon--green icon--fat" role="presentation"></span>
+              0.7%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid-wrap">
+    <div class="grid-col desktop-grid-one-half">
+      <div class="box box--padded--med muted--dark">
+        <div class="stat stat--headline stat--headline--xl">
+          <div class="stat__figure">
+            666
+            <span class="stat__figure__unit">m</span>
+          </div>
+          <div class="stat__description">
+            Jan 2014
+            <span class="icon icon-up-bold icon--large icon--green icon--fat" role="presentation"></span>
+              0.7
+          </div>
+        </div>
+      </div>
+
+      <div class="box box--padded--med muted--dark">
+        <div class="stat stat--headline stat--headline--xl">
+          <div class="stat__figure">
+            123.4
+            <span class="stat__figure__unit">Yrs</span>
+          </div>
+          <div class="stat__description">
+            Jan 2014
+            <span class="icon icon-up-bold icon--large icon--green icon--fat" role="presentation"></span>
+              0.7%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

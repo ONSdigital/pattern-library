@@ -1,0 +1,104 @@
+{% block page_title %} Lists {% endblock %}
+
+{% block custom_head %}{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+
+  <h1 class="alpha">Lists</h1>
+
+  <div class="grid-wrap">
+    <div class="grid-col tablet-grid-one-third">
+      <h2>Standard unordered list</h2>
+      <!---
+      title: Standard unordered list
+      -->
+      <ul>
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li>Dolor</li>
+        <li>Sit</li>
+        <li>Amet</li>
+      </ul>
+    </div>
+
+    <div class="grid-col tablet-grid-one-third">
+      <h2>Standard ordered list</h2>
+      <!---
+      title: Standard ordered list
+      -->
+      <ol>
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li>Dolor</li>
+        <li>Sit</li>
+        <li>Amet</li>
+      </ol>
+    </div>
+
+    <div class="grid-col tablet-grid-one-third">
+      <h2>Neutral list</h2>
+      <!---
+      title: Neutral list
+      devnotes: >
+        Removes the default list padding, default bullets, and default numbers.
+        If you don't want a margin either, combine with the class `flush`.
+      -->
+      <ul class="list--neutral">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li>Dolor</li>
+        <li>Sit</li>
+        <li>Amet</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid-wrap">
+    <div class="grid-col tablet-grid-one-third">
+      <h2>Definition list</h2>
+      <!---
+      title: Stacking definition list
+      usage: Displays each description on a separate line
+      -->
+      <dl class="list--definition">
+        <dt>Categories:</dt>
+        <dd>Inflation and Price Indices</dd>
+        <dd>Cats</dd>
+        <dd>North Korea</dd>
+      </dl>
+    </div>
+
+    <div class="grid-col tablet-grid-one-third">
+      <h2>Inline definition list</h2>
+      <!---
+      title: Inline definition list
+      usage: Displays the definition title and the description(s) on the same line
+      devnotes: >
+        Will not behave nicely if the `dd` is wide enough to wrap to several lines, or indeed, if there are many `dd`s.
+      -->
+      <dl class="list--definition list--definition--inline">
+        <dt>Categories:</dt>
+        <dd>Cats</dd>
+        <dd>Dogs</dd>
+      </dl>
+    </div>
+
+    <div class="grid-col tablet-grid-one-third">
+      <h2>Inline, split definition list</h2>
+      <!---
+      title: Inline, split definition list
+      usage: >
+        Displays the definition title and the description(s) on the same line
+        floated away from eachother
+      devnotes: Only use one `dd` per `dt`. It does work well with long `dd`s though.
+      -->
+      <dl class="list--definition--float">
+        <dt>Categories:</dt>
+        <dd>Inflation and Price Indices for cats. This is a very long description</dd>
+      </dl>
+    </div>
+  </div>
+</div>
+{% endblock %}

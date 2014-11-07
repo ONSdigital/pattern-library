@@ -1,0 +1,31 @@
+{% block page_title %} Complex link {% endblock %}
+
+{% block custom_head %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+  <h1>Complex link</h1>
+  <h2>A micro-pattern for links that needs a certain behaviour on a certain part of it.</h2>
+
+  <div class="grid-wrap">
+    <div class="grid-col desktop-grid-one-third">
+      <!---
+      title: Complex link
+      group: Type
+      usage: >
+        A micro-pattern for links that need a certain part of it to not have
+        the underline applied to it. Commonly used if there's icons in the link.
+      devnotes: Apply link-complex__target to the part that you want underlined
+      -->
+      <a href="#" class="link-complex">
+        <span class="link-complex__target">Some text with an icon</span>
+        <span class="icon icon-phone" role="presentation"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

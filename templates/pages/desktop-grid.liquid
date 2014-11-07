@@ -1,0 +1,67 @@
+{% block custom_head %}
+<style>
+  .grid-wrap {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .grid-col code {
+    border: 1px dashed #ccc;
+    background: #fff;
+    padding: 10px;
+    display: block;
+  }
+
+</style>
+{% endblock %}
+{% block content %}
+<!---
+title: Desktop Grid
+external: true
+type: template
+group: Examples
+markup: false
+usage: |
+  An example showing how a basic grid is used to layout content.
+-->
+<div class="wrapper panel--mar">
+  <h1>Desktop grid</h1>
+  <div class="grid-wrap">
+    <div class="grid-col desktop-grid-full-width">
+      <code>Full width</code>
+    </div>
+  </div>
+  <div class="grid-wrap">
+    <div class="grid-col desktop-grid-one-half">
+      <code>One Half</code>
+    </div>
+    <div class="grid-col desktop-grid-one-half">
+      <code>One half</code>
+    </div>
+  </div>
+  <div class="grid-wrap">
+    <div class="grid-col desktop-grid-one-third">
+      <code>One Third</code>
+    </div>
+    <div class="grid-col desktop-grid-two-thirds">
+      <code>Two Thirds</code>
+    </div>
+  </div>
+  <div class="grid-wrap">
+    <div class="grid-col desktop-grid-one-quarter">
+      <code>One Quarter</code>
+    </div>
+    <div class="grid-col desktop-grid-three-quarters">
+      <code>Three Quarters</code>
+    </div>
+  </div>
+  <div class="grid-wrap">
+    <div class="grid-col desktop-grid-one-sixth">
+      <code>One Sixth</code>
+    </div>
+    <div class="grid-col desktop-grid-five-sixths">
+      <code>Five Sixths</code>
+    </div>
+  </div>
+</div>
+{% endblock %}
+

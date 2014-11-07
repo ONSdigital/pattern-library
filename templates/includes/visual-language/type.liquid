@@ -1,0 +1,68 @@
+{% block page_title %} Typography {% endblock %}
+
+{% block custom_head %}
+{% endblock %}
+
+{% block content %}
+
+    <!---
+    title: Headings
+    usage: |
+      The webfont 'Dax' is used for headlines; it provides the site with the personality it needs without compromising legibility.
+      Try not to introduce any new font or font weights to the design as it will add more complexity to the page.  If there is a difficult design challenge, try using scale and proximity.
+    devnotes: |
+      The pattern library's CSS classes follow a *double-stranded heading hierarchy* so that the size of the typography in the design does not need to correlate with the required heading levels.
+      With this approach we can maintain semantically correct markup, allowing us to separate structure from presentation.
+
+      ```
+      h1,.alpha   { [font styles] }
+      h2,.beta    { [font styles] }
+      h3,.gamma   { [font styles] }
+      h4,.delta   { [font styles] }
+      h5,.epsilon { [font styles] }
+      h6,.zeta    { [font styles] }
+      ```
+    -->
+    <h1>This is an H1. Stout, bold, and proud, it is an exemplary tag, loved all across the world.</h1>
+    <h2>H2 headlines are slightly smaller but still big enough to command a reasonable amount of attention</h2>
+    <h3>The Smaller Things In Life (like this h3)</h3>
+    <h4 class="headline-separated">You can easily ensure your headlines have a visual separator from the rest of the content</h4>
+
+    <h1 class="beta">This is an H1 but is presented in the same ways as an H2.</h1>
+    <h1 class="delta">This is an H1 but is presented in the same ways as an H3.</h1>
+    <h1 class="gamma headline-separated">This is an H1 but is presented in the same ways as an H4.</h1>
+
+    <h2 class="alpha">This is an H2 but is presented in the same ways as an H1.</h2>
+    <h2 class="delta">This is an H2 but is presented in the same ways as an H3.</h2>
+    <h2 class="gamma">This is an H2 but is presented in the same ways as an H4.</h2>
+
+
+    <!--- // -->
+
+    <!---
+    title: Paragraph
+    usage: |
+      For legibility and flexibility, the standard font for all non-heading typography is 'Open Sans'.
+      It has a neutral, yet friendly appearance and is optimized for print, web, and mobile interfaces, and has excellent legibility characteristics.
+      Try not to introduce any new font or font weights to the design as it will add more complexity to the page.  If there is a difficult design challenge, try using scale and proximity.
+
+
+    -->
+    <p>Normal paragraph tags are smaller. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus ipsam aperiam laborum quidem deserunt nulla ea maxime inventore necessitatibus eaque dolor adipisci, quaerat incidunt laboriosam, deleniti placeat odio! Libero, non.</p>
+    <p class="description">This is a description paragraph.</p>
+    <p class="lede">This is an introductory paragraph. All that is required to use this element is a cheeky <code>.lede</code> or <code>.lead</code> tag on the paragraph element of your choosing. Fun fact: This class name is nicked from inuit.css and originates from journalism and its use of the lead parahgraph. The "lede" spelling was created to differentiate it from <em>lead</em>ing, the distance between the baselines.</p>
+    <p class="mini">If we would like small body copy, there's a plethora of options available to us. You can apply the <code>mini</code> class to your paragraphs or their container.</p>
+    <p class="micro">Here's some even smaller text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci ipsa quisquam eveniet temporibus ipsum accusamus odit in enim nobis sint voluptate sed minus nostrum dignissimos sit, id nisi, aut. Sed? Facere necessitatibus maxime quod ex, minima ea corporis. Nisi ipsa qui ex sint voluptas voluptatibus iure, nam, obcaecati vero voluptates nesciunt repudiandae consectetur beatae vitae culpa, facilis distinctio excepturi. Adipisci. Vero aspernatur eum explicabo eius perferendis distinctio inventore commodi aliquid, veniam sint minus ratione, consectetur, amet hic. Necessitatibus veritatis exercitationem neque provident possimus minima, odio debitis itaque autem, repellendus ex.</p>
+    <!--- // -->
+
+    <!--- title: Links -->
+    <p>
+      <a href="#">Regular links are blue.</a>
+      <a href="#" class="action-link">Other links are orange and fat, if they're lucky enough to have the action-link class applied to them.</a>
+      <a href="#" class="link-muted">Some links can be grey, if they're a link-muted.</a>
+      <!--- // -->
+    </p>
+
+
+
+{% endblock %}

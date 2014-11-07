@@ -1,0 +1,52 @@
+{% block page_title %} Tabs {% endblock %}
+
+{% block custom_head %}{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+
+  <h1 class="alpha">Tabs</h1>
+  <!---
+  title: Standard tabbed UI
+  group: General
+  devnotes: This can have have pretty much anything in it, as long as there are sections with ul > li > as matching up with their ID.
+  -->
+  <div class="tab-pane tab-pane--dual">
+    <ul class="list--neutral nav--block--spaced">
+      <li><a href="#section1" class="tab-pane__tab">Published</a></li>
+      <li><a href="#section2" class="tab-pane__tab">Upcoming</a></li>
+    </ul>
+    <div class="tab-pane__content" id="section1">
+      One word tabs for testing
+    </div>
+
+    <div class="tab-pane__content" id="section2">
+      Huzzah
+    </div>
+  </div>
+
+  <div class="tab-pane tab-pane--dual">
+    <ul class="list--neutral nav--block--spaced">
+      <li>
+        <a href="#section3" class="tab-pane__tab">
+          <h2 class="tab-pane__tab__header">Published <br class="tab-pane__tab__break">Releases</h2>
+        </a>
+      </li>
+      <li>
+        <a href="#section4" class="tab-pane__tab">
+          <h2 class="tab-pane__tab__header">Upcoming <br class="tab-pane__tab__break">Releases</h2>
+        </a>
+      </li>
+    </ul>
+    <div class="tab-pane__content" id="section3">
+      Two word tabs for testing.
+    </div>
+
+    <div class="tab-pane__content" id="section4">
+      Huzzah
+    </div>
+
+  </div>
+</div>
+{% endblock %}

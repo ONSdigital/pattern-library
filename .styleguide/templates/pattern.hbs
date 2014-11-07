@@ -1,0 +1,135 @@
+<style>
+.sgcxp__block__img {
+  vertical-align: middle;
+  margin-bottom:20px;
+  max-width:100%;
+}
+
+.sgcxp__block--imgs {
+  text-align:center;
+}
+</style>
+
+<div class="grid-wrap">
+    <div class="grid-col">
+        <ul class="sgcxp__breadcrumb">
+            <li class="sgcxp__breadcrumb__item">
+                {{category}}
+            </li>
+            <li class="sgcxp__breadcrumb__item">
+                {{group}}
+            </li>
+        </ul>
+    </div><!--/grid-col-->
+</div><!--/grid-wrap-->
+<div class="grid-wrap">
+    <div class="grid-col">
+        <h1 class="sgcxp__page-title">{{title}}</h1>
+
+        {{#if external}}
+         <h2>View <a href="{{ url-external this }}">{{title}}</a></h2>
+        {{/if}}
+
+    </div><!--/grid-col-->
+    <div class="grid-col grid-two-fifths">
+
+    </div><!--/grid-col-->
+</div><!--/grid-wrap-->
+
+
+{{#unless external}}
+    {{# if content}}
+        <div class="grid-wrap" id="error-panel">
+            <div class="grid-col">
+                <div class="sgcxp__block sgcxp__block--lifted">
+                    <div class="sgcxp__block__desc">
+                        {{{content}}}
+                    </div>
+                </div>
+            </div><!--/grid-col-->
+        </div><!--/grid-wrap-->
+    {{/if}}
+{{/unless}}
+
+<div class="grid-wrap">
+    <div class="grid-col">
+        {{#if designs}}
+            <div class="grid-col sgcxp__block--imgs">
+                {{#each designs}}
+                    {{#if img}}
+                    <figure class="sgcxp__figure">
+                         <img class="sgcxp__figure__img" src="{{img}}" />
+                        {{#if caption}}
+                         <figcaption class="sgcxp__figure__caption">
+                            {{{markdown caption}}}
+                         </figcaption>
+                        {{/if}}
+                    </figure>
+                    {{else}}
+                    <img class="sgcxp__block__img" src="{{this}}" />
+                    {{/if}}
+                {{/each}}
+            </div>
+        {{/if}}
+    </div><!--/grid-col-->
+</div><!--/grid-wrap-->
+
+
+
+<div class="grid-wrap sgcxp__content">
+
+    <div class="grid-col grid-two-fifths">
+        {{#if description}}
+            <div class="sgcxp__block--notes sgcxp__block--padding-large">
+                <h2 class="sgcxp__block--notes__header">Designer notes</h2>
+                <p>{{{markdown description}}}</p>
+            </div>
+        {{/if}}
+        {{#if usage}}
+            <div class="sgcxp__block--notes sgcxp__block--padding-large">
+                <h2 class="sgcxp__block--notes__header">Usage notes</h2>
+                <p>{{{markdown usage}}}</p>
+            </div>
+        {{/if}}
+        {{#if designnotes}}
+        <div class="sgcxp__block--notes sgcxp__block--padding-large">
+            <h2 class="sgcxp__block--notes__header">Designer notes</h2>
+            <p>{{{markdown designnotes}}}</p>
+        </div>
+        {{/if}}
+
+        &nbsp;
+    </div><!--/grid-col-->
+
+
+    {{#if markup}}
+    <div class="grid-col grid-three-fifths">
+        <div class="sgcxp__code">
+<pre class="language-markup"><code>{{tidy content}}</code></pre>
+        </div><!--/sgcxp__code-->
+    </div><!--/grid-col-->
+    {{/if}}
+
+
+    {{#if spec}}
+    <div class="grid-col grid-three-fifths">
+      <div class="sgcxp__block sgcxp__block--padding-large" style="font-size:10pt">
+        <h2 class="sgcxp__block--notes__header">Behavioural Specification</h2>
+        <pre class="hljs"><code class="gherkin">{{spec}}</code></pre>
+      </div>
+    </div>
+    {{/if}}
+
+</div><!--/grid-wrap-->
+{{#if devnotes}}
+<div class="grid-wrap" id="error-panel">
+    <div class="grid-col">
+        <div class="sgcxp__block sgcxp__block--lifted">
+            <div class="sgcxp__block__desc sgcxp__block--padding-large sgcxp__block--markdown">
+                <h1>Developer Notes</h1>
+                {{{markdown devnotes}}}
+            </div>
+        </div>
+    </div><!--/grid-col-->
+</div><!--/grid-wrap-->
+{{/if}}

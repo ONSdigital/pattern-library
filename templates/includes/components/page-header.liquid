@@ -1,0 +1,60 @@
+
+{% block page_title %} Page header {% endblock %}
+
+{% block custom_head %}
+<style>
+body {
+  padding: 0;
+  margin: 1em 0 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .page-header .wrapper {
+    padding: .5em;
+  }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+  <h1>Page header</h1>
+</div>
+<!---
+title: Page header
+group: Global
+-->
+<div class="page-header slate">
+  <div class="wrapper">
+    <h1 class="page-header__title flush--half--bottom">Inflation and Price Indices. This is a very long page title</h1>
+    <div class="content-reveal lede">
+      <p>
+        Consumer price inflation is the speed at which the prices of goods and services bought by households rise or fall. Lorem ipsum dolor sit amet.
+        <a href="#" class="content-reveal__action hidden" data-content-reveal>See more</a>
+      </p>
+      <div class="content-reveal__hidden">
+          <p>Some more content about CPI goes here. This will expand and contract if you have JS enabled. If JS is disabled, this will show by default. Yay progressive enhancement!</p>
+      </div>
+    </div>
+
+    <div class="page-header__icons">
+      <a href="#" class="link-complex">
+        <span class="icon icon-twitter icon--grey">
+          <span class="visuallyhidden">Share on Twitter</span>
+        </span>
+      </a>
+      <a href="#" class="link-complex">
+        <span class="icon icon-facebook icon--grey">
+          <span class="visuallyhidden">Share on Facebook</span>
+        </span>
+      </a>
+      <a href="#" class="link-complex">
+        <span class="icon icon-gplus icon--grey">
+          <span class="visuallyhidden">Share on Google Plus</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

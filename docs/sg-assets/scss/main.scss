@@ -1,0 +1,55 @@
+/*
+  CSS file for cxpartners Pattern Library
+  Author: cxpartners
+ */
+
+@charset "UTF-8";
+
+// Compass
+@import "compass";
+
+// create SVG fallback for gradient (which bloats the style sheet) - compass-style.org
+// $experimental-support-for-svg: true; reference/compass/support
+
+// ------------------------
+// Import project settings
+@import "settings";
+
+// Project: Mixins
+// These are imported before core because it is used in a modified core file
+@import "mixins/respond";
+@import "mixins/font-weight";
+@import "mixins/borders";
+
+// ------------------------
+// Common
+@import "core/mixins-mod";
+@import "core/vendor/normalize/normalize-mod";
+//@import "core/base";
+@import "core/base-mod";
+@import "core/skiplinks";
+@import "core/hiding-mod";
+@import "core/proportional-grids-mod";
+
+
+// ------------------------
+// Project styles
+
+
+// Project: Base
+@import "sgcxp/base/sgcxp-fonts";
+@import "sgcxp/base/sgcxp-grid";
+@import "sgcxp/base/sgcxp-icons";
+@import "sgcxp/base/sgcxp-prismcode";
+
+// Project: Partials
+@import "sgcxp/partials/sgcxp-layout";
+@import "sgcxp/partials/sgcxp-header";
+@import "sgcxp/partials/sgcxp-navigation";
+@import "sgcxp/partials/sgcxp-linklist";
+@import "sgcxp/partials/sgcxp-content";
+
+
+// ------------------------
+// Print
+@import "core/print";

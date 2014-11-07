@@ -1,0 +1,44 @@
+{% block page_title %}Media object{% endblock %}
+{% block custom_head %}
+  <style>
+  </style>
+{% endblock %}
+{% block content %}
+  <div class="wrapper">
+    <h1>Media object</h1>
+    <div class="grid-wrap">
+      <div class="grid-col tablet-grid-one-half">
+        <div class="panel">
+          <!---
+          title: Media object
+          usage: For displaying an image to the left of a block of content
+          devnotes: >
+            Classic [OOCSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) [media object](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/). The principles outlined in these posts underpin the approach to the development of this pattern library.
+          -->
+          <div class="media">
+            <img class="media__img" src="http://fillmurray.com/100/100" alt="A handsome Bill Murray">
+            <div class="media__body">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis nesciunt sapiente possimus hic quibusdam deserunt ullam aut corrupti maxime debitis nisi culpa maiores rerum mollitia, soluta saepe asperiores quam aliquam.
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <!---
+          title: Media object with reverse image
+          usage: For displaying an image to the right of a block of content
+          devnotes: >
+            [OOCSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/) [media object](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/) with a twist.
+          -->
+          <div class="media">
+            <img class="media__img--reverse" src="http://fillmurray.com/100/100" alt="A handsome Bill Murray">
+            <div class="media__body">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis nesciunt sapiente possimus hic quibusdam deserunt ullam aut corrupti maxime debitis nisi culpa maiores rerum mollitia, soluta saepe asperiores quam aliquam.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% block custom_scripts %}
+{% endblock %}

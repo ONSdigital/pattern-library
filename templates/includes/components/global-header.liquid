@@ -1,0 +1,125 @@
+{% block content %}
+<!---
+title: Header
+group: Global
+usage: |
+  Responsive header and menu for the desktop portal.  Dropdowns are be accessible to keyboard users.
+  Within the menu, the first level taxonomy is exposed, and the second level taxonomy is exposed on rollover.  This allows the pages to be focused on content rather than navigation.
+  It is a flexible pattern that will allow for more/fewer themes, topics and product pages in the future.
+  The search bar is kept in focus on smaller viewports; the field width being reduced and only hidden when the viewport width is too small to comfortably contain it.
+-->
+<header class="global-header">
+  <div class="global-header__wrapper">
+    <a class="main-logo" href="/"><img src="/ui/img/ons-logo.svg" alt="Office for National Statistics" /></a>
+    <ul class="nav globaltop-nav">
+      <li><a href="#">Release Calendar</a></li>
+      <li><a href="#">Methodology</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<nav class="ons-nav">
+  <ul class="nav nav--controls">
+    <li class="nav--controls__menu">
+      <a href="#nav-primary" id="menu-toggle" aria-controls="nav-primary">
+        <span class="nav--controls__icon icon-menu icon--inline icon--large" role="presentation"></span>
+        <span class="nav--controls__text">Menu</span>
+      </a>
+    </li>
+    <li class="nav--controls__search">
+      <a href="#nav-search" id="search-toggle" aria-controls="nav-search">
+        <span class="nav--controls__icon icon-search-1 icon--inline icon--large" role="presentation"></span>
+        <span class="nav--controls__text">Search</span>
+      </a>
+    </li>
+  </ul>
+  <ul class="nav nav--block nav--primary" id="nav-primary">
+    <li class="nav--primary__hide-small-med">
+      <a href="/pages/t1">Home</a>
+    </li>
+    <li class="nav__expandable js-expandable">
+      <a href="#">Business, Industry, and Trade</a>
+      <ul class="nav--primary__sub js-expandable__content js-nav-hidden">
+        <li><a href="#">Business</a></li>
+        <li><a href="#">Changes to business</a></li>
+        <li><a href="#">Construction and industry</a></li>
+        <li><a href="#">IT and internet industry</a></li>
+        <li><a href="#">International trade</a></li>
+        <li><a href="#">Manufacturing and production</a></li>
+        <li><a href="#">Retail industry</a></li>
+        <li><a href="#">Tourism industry</a></li>
+      </ul>
+    </li>
+    <li class="nav__expandable js-expandable nav--primary__active">
+      <a href="/pages/t3">Economy</a>
+      <ul class="nav--primary__sub js-expandable__content js-nav-hidden">
+        <li><a href="#">Economic output and productivity</a></li>
+        <li><a href="#">Environmental account</a></li>
+        <li class="nav--primary__active"><a href="#">Government, public sector, and taxes</a></li>
+        <li><a href="#">Gross Domestic Product (GDP)</a></li>
+        <li><a href="#">Gross Values Added (GVA)</a></li>
+        <li><a href="/pages/t3">Inflation and price indices</a></li>
+        <li><a href="#">Investment and pension trust</a></li>
+        <li><a href="#">National accounts</a></li>
+        <li><a href="#">Regional accounts</a></li>
+      </ul>
+    </li>
+    <li class="nav__expandable js-expandable">
+      <a href="#">Employment and Labour Market</a>
+      <ul class="nav--primary__sub js-expandable__content js-nav-hidden">
+        <li><a href="#">People in work</a></li>
+        <li><a href="#">People not in work</a></li>
+        <li><a href="#">Public sector personnel</a></li>
+      </ul>
+    </li>
+    <li class="nav__expandable js-expandable">
+      <a href="#">People, Population, and Community</a>
+      <ul class="nav--primary__sub js-expandable__content js-nav-hidden">
+        <li><a href="#">Births, deaths, and marriages</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Education and childcare</a></li>
+        <li><a href="#">Crime and justice</a></li>
+        <li><a href="#">Household characteristics</a></li>
+        <li><a href="#">Well-being</a></li>
+        <li><a href="#">Health and social care</a></li>
+        <li><a href="#">Elections</a></li>
+        <li><a href="#">Personal and household finances</a></li>
+        <li><a href="#">Population and migration</a></li>
+        <li><a href="#">Cultural identity</a></li>
+        <li><a href="#">Housing</a></li>
+        <li><a href="#">Leisure and tourism</a></li>
+      </ul>
+    </li>
+    <li class="nav--primary__respondents">
+      <a href="#">
+        <span class="icon-comment icon--inline" role="presentation"></span>
+        Taking part in a survey?
+      </a>
+    </li>
+    <li class="nav--primary__secondary-content">
+      <a href="#">Release calendar</a>
+    </li>
+    <li class="nav--primary__secondary-content">
+      <a href="#">Methodology</a>
+    </li>
+    <li class="nav--primary__secondary-content">
+      <a href="#">About</a>
+    </li>
+  </ul>
+  <div class="slate--grey search-wrapper">
+    <form class="nav-search nav-search--hidden" id="searchBar">
+      <div class="nav-search__container">
+        <label class="visuallyhidden" for="nav-search">Search for keyword or time series ID</label>
+        <input type="search" class="nav-search__field" id="nav-search" name="nav-search" value="" placeholder="Enter keyword or time series ID">
+      </div>
+      <button type="submit" class="btn btn--primary btn--nav-search" id="nav-search-submit">
+        <span class="icon-search-1" role="presentation"></span>
+        <span class="visuallyhidden">Search</span>
+      </button>
+    </form>
+  </div>
+</nav>
+
+<!--- // -->
+{% endblock %}

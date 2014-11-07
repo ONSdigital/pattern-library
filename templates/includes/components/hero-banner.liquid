@@ -1,0 +1,128 @@
+{% layout 'bare' %}
+{% block page_title %}Hero Banner{% endblock %}
+{% block custom_head %}
+  <style>
+  body {
+    padding: 0;
+  }
+  </style>
+{% endblock %}
+{% block content %}
+  <div class="wrapper">
+    <h1>Hero Banner</h1>
+  </div>
+
+  <!---
+  title: Hero banner
+  group: Global
+  usage: The hero banner should be used to highlight key content on your site. There is a maximum of 7 characters recommended for the stat. Any headline with more than about 10 words will look a bit odd.
+  -->
+  <section class="hero-banner panel--pad panel--bottom-mar-large slate--hero-banner">
+    <div class="wrapper">
+      <div class="hero-banner__inner">
+        <h2 class="hero-banner__headline">Latest release</h2>
+        <h3 class="hero-banner__main-title">CPI Annual Rate Percentage Change over 12 months</h3>
+        <div class="hero-banner__stat stat stat--hero">
+          <div class="stat__figure">
+            £456,789
+            <span class="stat__figure__unit">%</span>
+          </div>
+          <p class="stat__description">
+            <span class="lozenge--fat lozenge--semi-opaque">Jan 2014
+              <span class="icon icon--green icon--fat icon-up-bold"></span>
+              0.7%
+            </span>
+          </p>
+        </div>
+        <a href="#">View the statistical bulletin</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrapper">
+    <h1>Hero banner with example of really long title</h1>
+  </div>
+
+  <section class="hero-banner panel--pad panel--bottom-mar-large slate--hero-banner">
+    <div class="wrapper">
+      <div class="hero-banner__inner">
+        <h2 class="hero-banner__headline">Latest release</h2>
+        <h3 class="hero-banner__main-title">Impact of the Implementation of IRIS Software for ICD-10 Cause of Death Coding on Mortality Statistics, England and Wales</h3>
+        <div class="hero-banner__stat stat stat--hero">
+          <div class="stat__figure">
+            £456,789
+            <span class="stat__figure__unit">%</span>
+          </div>
+          <p class="stat__description">
+            <span class="lozenge--fat lozenge--semi-opaque">Sep 2014
+              <span class="icon icon--warm icon--fat icon-down-bold"></span>
+              £123.456bn
+            </span>
+          </p>
+        </div>
+        <a href="#">View the statistical bulletin</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrapper">
+    <h1>Supersized stat (&lt;= 4 chars)</h1>
+  </div>
+
+  <!---
+  title: Hero banner with extra large stat
+  group: Global
+  devnotes: Add the `.hero-banner--xl` class to top-level element.
+  usage: Only use this for stats that are no more than 4 characters.
+  -->
+  <section class="hero-banner hero-banner--xl panel--pad panel--mar slate--hero-banner">
+    <div class="wrapper">
+      <div class="hero-banner__inner">
+        <h2 class="hero-banner__headline">Latest release</h2>
+        <h3 class="hero-banner__main-title">Short title</h3>
+        <div class="hero-banner__stat stat stat--hero">
+          <div class="stat__figure">
+            126.9
+            <span class="stat__figure__unit">%</span>
+          </div>
+          <p class="stat__description">
+            <span class="lozenge--fat lozenge--semi-opaque">Jan 2014
+              <span class="icon icon--green icon--fat icon-up-bold"></span>
+              0.7%
+            </span>
+          </p>
+        </div>
+        <a href="#">View the statistical bulletin</a>
+      </div>
+    </div>
+  </section>
+
+<div class="wrapper">
+  <h1>Hero banner with example of really long title and supersized stat</h1>
+</div>
+
+<section class="hero-banner hero-banner--xl panel--pad panel--bottom-mar-large slate--hero-banner">
+  <div class="wrapper">
+    <div class="hero-banner__inner">
+      <h2 class="hero-banner__headline">Latest release</h2>
+      <h3 class="hero-banner__main-title">Impact of the Implementation of IRIS Software for ICD-10 Cause of Death Coding on Mortality Statistics, England and Wales</h3>
+      <div class="hero-banner__stat stat stat--hero">
+        <div class="stat__figure">
+          678.9
+          <span class="stat__figure__unit">%</span>
+        </div>
+        <p class="stat__description">
+          <span class="lozenge--fat lozenge--semi-opaque">Sep 2014
+            <span class="icon icon--warm icon--fat icon-down-bold"></span>
+            £123.456bn
+          </span>
+        </p>
+      </div>
+      <a href="#">View the statistical bulletin</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+{% block custom_scripts %}
+{% endblock %}

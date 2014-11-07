@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html class="no-js ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"><!--<![endif]-->
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>ONS Alpha Pattern Library</title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <meta content="on" http-equiv="cleartype"/>
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="shortcut icon" href="./sg-assets/img/favicon.png">
+
+  <!-- These are the project stylesheets and scripts -->
+
+  <link rel="stylesheet" href="./dist/css/main.css"/>
+
+  <link href="./sg-assets/prismjs/prism.css" rel="stylesheet"/>
+  <script src="./ui/js/lib/modernizr.min.js"></script>
+
+  <!-- // -->
+
+  <!-- These are the styleguide stylesheets -->
+
+  <!-- IE friendly media query replacements as per http://jakearchibald.github.io/sass-ie/ -->
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="./sg-assets/css/main-oldie.css"/>
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="./sg-assets/css/main.css"/>
+  <!--<![endif]-->
+
+  <!-- // -->
+
+  <!-- Styles that are required to make the project display correctly in the pattern library. -->
+  <link rel="stylesheet" href="./sg-assets/css/project.css"/>
+
+</head>
+<body class="sgcxp">
+<div class="sgcxp__outer-wrapper">
+  <div class="sgcxp__inner-wrapper">
+    <a class="skiplink visuallyhidden focusable" href="#sgcxp__main" tabindex="0">
+      <span>Skip to main content</span>
+    </a>
+
+    <header class="sgcxp__header" id="header" role="banner">
+      <div class="sgcxp__update-panel">
+        <p class="sgcxp__update-panel__inner">Last updated: 07 November 2014</p>
+      </div>
+      <!--/sgcxp__update-panel-->
+      <div class="sgcxp__header__inner sgxcp-icons">
+        <a href="#menu" class="mobile-only offcanvas-menu-toggle offcanvas-menu-toggle--open"><span
+          class="icon icon-menu" role="presentation"></span><span
+          class="offcanvas-menu-toggle__text">Menu</span></a>
+        <a itemprop="url" class="sgcxp__logo" href="./">
+          <span itemprop="name">ONS</span>
+          <link itemprop="logo" href="./sg-assets/img/logo.png"/>
+        </a>
+
+        <div class="sgcxp__nav" id="menu">
+          <a href="#masthead" class="mobile-only offcanvas-menu-toggle offcanvas-menu-toggle--close"><span
+            class="icon icon-close" role="presentation"></span></a>
+          <nav>
+            <ul class="sgcxp__nav__list">
+
+
+
+                  <li class="sgcxp__nav__item">
+                    <a class="sgcxp__nav__link" href="#">Components<span
+                      class="icon-down-arrow desktop-only"></span></a>
+
+                    <div class="sgcxp__nav__dropdown grid-wrap">
+                    <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="components-buttons.html">Buttons</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-buttons-primary.html"
+                                         class="sgcxp__linklist__link">Primary</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-buttons-primary-with-icon.html"
+                                         class="sgcxp__linklist__link">Primary, with icon</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-buttons-sizes.html"
+                                         class="sgcxp__linklist__link">Sizes</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-buttons-primary-block.html"
+                                         class="sgcxp__linklist__link">Primary, block</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-buttons-secondary.html"
+                                         class="sgcxp__linklist__link">Secondary</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-buttons-secondary-active.html"
+                                         class="sgcxp__linklist__link">Secondary, active</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-buttons-button-bar.html"
+                                         class="sgcxp__linklist__link">Button bar</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="components-global.html">Global</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-global-footer.html"
+                                         class="sgcxp__linklist__link">Footer</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-global-header-with-breadcrumb.html"
+                                         class="sgcxp__linklist__link">Header with breadcrumb</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-global-header.html"
+                                         class="sgcxp__linklist__link">Header</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-global-hero-banner.html"
+                                         class="sgcxp__linklist__link">Hero banner</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-global-hero-banner-with-extra-large-stat.html"
+                                         class="sgcxp__linklist__link">Hero banner with extra large stat</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-global-page-header.html"
+                                         class="sgcxp__linklist__link">Page header</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="components-charts.html">Charts</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-charts-chart-controls.html"
+                                         class="sgcxp__linklist__link">Chart Controls</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-charts-horizontal-bar-chart.html"
+                                         class="sgcxp__linklist__link">Horizontal Bar Chart</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-charts-multi-series-chart.html"
+                                         class="sgcxp__linklist__link">Multi Series Chart</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-charts-population-pyramid.html"
+                                         class="sgcxp__linklist__link">Population Pyramid</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-charts-stacked-bar-chart.html"
+                                         class="sgcxp__linklist__link">Stacked Bar Chart</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-charts-line-chart.html"
+                                         class="sgcxp__linklist__link">Line Chart</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="components-data-tables.html">Data Tables</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-data-tables-data-table-with-toggle.html"
+                                         class="sgcxp__linklist__link">Data Table with Toggle</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-data-tables-data-table-with-mode-switcher.html"
+                                         class="sgcxp__linklist__link">Data Table with Mode Switcher</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-data-tables-data-table-with-swipe-control.html"
+                                         class="sgcxp__linklist__link">Data Table with Swipe Control</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-data-tables-bare-data-table.html"
+                                         class="sgcxp__linklist__link">Bare Data Table</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-data-tables-responsive-table.html"
+                                         class="sgcxp__linklist__link">Responsive table</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+                            </div>
+                            <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="components-misc.html">Misc</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="components-misc-tooltips.html"
+                                         class="sgcxp__linklist__link">Tooltips</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+                    </div>
+                    </div>
+                    <!--/sgcxp__nav__dropdown-->
+                  </li>
+
+
+                  <li class="sgcxp__nav__item">
+                    <a class="sgcxp__nav__link" href="#">Patterns<span
+                      class="icon-down-arrow desktop-only"></span></a>
+
+                    <div class="sgcxp__nav__dropdown grid-wrap">
+                    <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-boxes.html">Boxes</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-standard-box.html"
+                                         class="sgcxp__linklist__link">Standard box</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-padded-box.html"
+                                         class="sgcxp__linklist__link">Padded box</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-sectioned-box.html"
+                                         class="sgcxp__linklist__link">Sectioned box</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-lifted-box.html"
+                                         class="sgcxp__linklist__link">Lifted box</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-combinations.html"
+                                         class="sgcxp__linklist__link">Combinations</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-vertically-sectioned-box.html"
+                                         class="sgcxp__linklist__link">Vertically sectioned box</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-box-with-border.html"
+                                         class="sgcxp__linklist__link">Box with border</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-orange-box.html"
+                                         class="sgcxp__linklist__link">Orange box</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-orange-box-with-large-left-border.html"
+                                         class="sgcxp__linklist__link">Orange box with large left border</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-orange-coloured-box-with-icon.html"
+                                         class="sgcxp__linklist__link">Orange-coloured box with icon</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-negative-offset.html"
+                                         class="sgcxp__linklist__link">Negative offset</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-boxes-dark-lifted-box.html"
+                                         class="sgcxp__linklist__link">Dark lifted box</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-navs.html">Navs</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-navs-nav.html"
+                                         class="sgcxp__linklist__link">Nav</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-navs-nav-inline-block.html"
+                                         class="sgcxp__linklist__link">Nav inline-block</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-navs-nav-block.html"
+                                         class="sgcxp__linklist__link">Nav, block</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-navs-nav-block-spaced.html"
+                                         class="sgcxp__linklist__link">Nav, block spaced</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-navs-nav-dark.html"
+                                         class="sgcxp__linklist__link">Nav dark</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-navs-nav-heavy.html"
+                                         class="sgcxp__linklist__link">Nav heavy</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-navs-simple-breadcrumb-nav.html"
+                                         class="sgcxp__linklist__link">Simple breadcrumb nav</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-navs-breadcrumb.html"
+                                         class="sgcxp__linklist__link">Breadcrumb</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-general.html">General</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-general-actionable-header.html"
+                                         class="sgcxp__linklist__link">Actionable header</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-general-actionable-header-tight.html"
+                                         class="sgcxp__linklist__link">Actionable header, tight</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-general-content-reveal-class.html"
+                                         class="sgcxp__linklist__link">Content reveal class</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-general-stacked-date-microcomponent.html"
+                                         class="sgcxp__linklist__link">Stacked date microcomponent</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-general-divider.html"
+                                         class="sgcxp__linklist__link">Divider</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-general-lozenges.html"
+                                         class="sgcxp__linklist__link">Lozenges</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-general-table-of-contents.html"
+                                         class="sgcxp__linklist__link">Table of Contents</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-general-standard-tabbed-ui.html"
+                                         class="sgcxp__linklist__link">Standard tabbed UI</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-stats.html">Stats</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-stats-hero-stat-headline.html"
+                                         class="sgcxp__linklist__link">Hero stat headline</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-stats-basic.html"
+                                         class="sgcxp__linklist__link">Basic</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-stats-basic-with-unit.html"
+                                         class="sgcxp__linklist__link">Basic, with unit</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-stats-basic-with-unit-and-description.html"
+                                         class="sgcxp__linklist__link">Basic, with unit and description</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-stats-small.html"
+                                         class="sgcxp__linklist__link">Small</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-stats-headline-stat.html"
+                                         class="sgcxp__linklist__link">Headline stat</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-stats-xl-headline-stat.html"
+                                         class="sgcxp__linklist__link">XL Headline stat</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+                            </div>
+                            <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-panels.html">Panels</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-panels-nav-panel-with-stats.html"
+                                         class="sgcxp__linklist__link">Nav panel with stats</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-panels-nav-panel-without-stats.html"
+                                         class="sgcxp__linklist__link">Nav panel without stats</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-panels-panel.html"
+                                         class="sgcxp__linklist__link">Panel</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-panels-panel-separated.html"
+                                         class="sgcxp__linklist__link">Panel, separated</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-panels-panel-with-padding.html"
+                                         class="sgcxp__linklist__link">Panel, with padding</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-panels-panel-with-margin.html"
+                                         class="sgcxp__linklist__link">Panel, with margin</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-lists.html">Lists</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-lists-standard-unordered-list.html"
+                                         class="sgcxp__linklist__link">Standard unordered list</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-lists-standard-ordered-list.html"
+                                         class="sgcxp__linklist__link">Standard ordered list</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-lists-neutral-list.html"
+                                         class="sgcxp__linklist__link">Neutral list</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-lists-stacking-definition-list.html"
+                                         class="sgcxp__linklist__link">Stacking definition list</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-lists-inline-definition-list.html"
+                                         class="sgcxp__linklist__link">Inline definition list</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-lists-inline-split-definition-list.html"
+                                         class="sgcxp__linklist__link">Inline, split definition list</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-slates.html">Slates</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-slates-light-grey-slate.html"
+                                         class="sgcxp__linklist__link">Light grey slate</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-slates-off-white-slate.html"
+                                         class="sgcxp__linklist__link">Off-white slate</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-slates-mid-grey-slate.html"
+                                         class="sgcxp__linklist__link">Mid grey slate</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-slates-grey-slate.html"
+                                         class="sgcxp__linklist__link">Grey slate</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-media.html">Media</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-media-content-image.html"
+                                         class="sgcxp__linklist__link">Content image</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-media-media-object.html"
+                                         class="sgcxp__linklist__link">Media object</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-media-media-object-with-reverse-image.html"
+                                         class="sgcxp__linklist__link">Media object with reverse image</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+                            </div>
+                            <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="patterns-type.html">Type</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="patterns-type-complex-link.html"
+                                         class="sgcxp__linklist__link">Complex link</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+                    </div>
+                    </div>
+                    <!--/sgcxp__nav__dropdown-->
+                  </li>
+
+
+                  <li class="sgcxp__nav__item">
+                    <a class="sgcxp__nav__link" href="#">Visual Language<span
+                      class="icon-down-arrow desktop-only"></span></a>
+
+                    <div class="sgcxp__nav__dropdown grid-wrap">
+                    <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="visual-language-forms.html">Forms</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-forms-text-input.html"
+                                         class="sgcxp__linklist__link">Text input</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-forms-text-input-with-supporting-text.html"
+                                         class="sgcxp__linklist__link">Text input with supporting text</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-forms-input-with-error.html"
+                                         class="sgcxp__linklist__link">Input with error</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-forms-input-with-button.html"
+                                         class="sgcxp__linklist__link">Input with button</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-forms-textarea.html"
+                                         class="sgcxp__linklist__link">Textarea</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-forms-checkboxes.html"
+                                         class="sgcxp__linklist__link">Checkboxes</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-forms-selectbox.html"
+                                         class="sgcxp__linklist__link">Selectbox</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="visual-language-grid.html">Grid</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-grid-desktop-grid.html"
+                                         class="sgcxp__linklist__link">Desktop grid</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-grid-tablet-and-up-grid.html"
+                                         class="sgcxp__linklist__link">Tablet (and up) grid</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-grid-mobile-and-up-grid.html"
+                                         class="sgcxp__linklist__link">Mobile (and up) grid</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-grid-mixed-mobiletabletdesktop-grid.html"
+                                         class="sgcxp__linklist__link">Mixed Mobile/Tablet/Desktop grid</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-grid-push-pull-grid.html"
+                                         class="sgcxp__linklist__link">Push pull grid</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-grid-nested-grid.html"
+                                         class="sgcxp__linklist__link">Nested grid</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="visual-language-type.html">Type</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-type-headings.html"
+                                         class="sgcxp__linklist__link">Headings</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-type-paragraph.html"
+                                         class="sgcxp__linklist__link">Paragraph</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-type-links.html"
+                                         class="sgcxp__linklist__link">Links</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="visual-language-colors.html">Colors</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-colors-primary.html"
+                                         class="sgcxp__linklist__link">Primary</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-colors-global.html"
+                                         class="sgcxp__linklist__link">Global</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-colors-accent.html"
+                                         class="sgcxp__linklist__link">Accent</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+                            </div>
+                            <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="visual-language-graphical-elements.html">Graphical elements</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="visual-language-graphical-elements-icons.html"
+                                         class="sgcxp__linklist__link">Icons</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+                    </div>
+                    </div>
+                    <!--/sgcxp__nav__dropdown-->
+                  </li>
+
+
+                  <li class="sgcxp__nav__item">
+                    <a class="sgcxp__nav__link" href="#">Templates<span
+                      class="icon-down-arrow desktop-only"></span></a>
+
+                    <div class="sgcxp__nav__dropdown grid-wrap">
+                    <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="templates-templates.html">Templates</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="templates-templates-homepage-template-t1.html"
+                                         class="sgcxp__linklist__link">Homepage Template (T1)</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="templates-templates-product-page-t3.html"
+                                         class="sgcxp__linklist__link">Product Page (T3)</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="templates-templates-stat-bulletin-page-t4-1.html"
+                                         class="sgcxp__linklist__link">Stat Bulletin Page (T4-1)</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="templates-templates-expert-analysis-page-t4-2.html"
+                                         class="sgcxp__linklist__link">Expert Analysis  Page (T4-2)</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="templates-templates-time-series-page-t5.html"
+                                         class="sgcxp__linklist__link">Time Series Page (T5)</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="templates-examples.html">Examples</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="templates-examples-desktop-grid.html"
+                                         class="sgcxp__linklist__link">Desktop Grid</a>
+                                    </li>
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="templates-examples-basic-starter.html"
+                                         class="sgcxp__linklist__link">Basic starter</a>
+                                    </li>
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+
+                    </div>
+                    </div>
+                    <!--/sgcxp__nav__dropdown-->
+                  </li>
+
+
+
+              <!--<li class="sgcxp__nav__item no-subnav">-->
+              <!--<a class="sgcxp__nav__link" href="#">Pages</a>-->
+              <!--</li>-->
+            </ul>
+          </nav>
+        </div>
+        <!--/sgcxp__nav-->
+
+      </div>
+      <!--/sgcxp__header__inner-->
+    </header>
+
+
+    <main id="sgcxp__main" role="main">
+      <div class="sgcxp__wrapper">
+
+
+<div class="grid-wrap">
+  <div class="grid-col">
+    <ul class="sgcxp__breadcrumb">
+      <li class="sgcxp__breadcrumb__item">
+          Components
+      </li>
+      <li class="sgcxp__breadcrumb__item">
+          
+      </li>
+    </ul>
+  </div><!--/grid-col-->
+</div><!--/grid-wrap-->
+<div class="grid-wrap">
+  <div class="grid-col">
+    <h1 class="sgcxp__page-title">Charts</h1>
+  </div><!--/grid-col-->
+</div><!--/grid-wrap-->
+
+
+
+  <div class="grid-wrap">
+    <div class="grid-col">
+      <h2 class="sgcxp__page-subtitle"><a class="sgcxp__page-subtitle__link" href="components-charts-chart-controls.html">Chart Controls</a></h2>
+    </div><!--/grid-col-->
+  </div><!--/grid-wrap-->
+
+  <div class="grid-wrap sgcxp__content">
+
+
+          <div class="grid-col sgcxp__block--imgs grid-three-fifths">
+              <div class="sgcxp__block sgcxp__block--lifted">
+                  <div class="sgcxp__block__desc">
+                      <div class="wrapper">
+  <div class="actionable-header--tight panel--mar-small">
+    <!-- This title will need to be dynamically generated on the server -->
+    <h2 class="actionable-header--tight__title gamma flush--bottom body-type--heavy">Download this entire time series
+      from 1988&#x2014;2014</h2>
+
+    <div class="actionable-header--tight__action actionable-header--tight__action--left">
+      <a class="btn btn--primary btn--small" href="#">
+        .csv
+        <span class="icon-download icon--button-inline" role="presentation"></span>
+      </a>
+      <a class="btn btn--primary btn--small" href="#">
+        .xls
+        <span class="icon-download icon--button-inline" role="presentation"></span>
+      </a>
+    </div>
+  </div>
+  <div class="chart-area slate">
+    <div class="chart-area__controls">
+      <form data-chart-controls="" data-chart-controls-for="[&quot;chart1&quot;, &quot;table1&quot;]">
+        <div class="button-bar chart-area__controls__buttons">
+          <div class="button-group chart-area__controls__type">
+            <label class="btn btn--secondary btn--small btn--narrow btn--thin btn--secondary--active">
+              <span class="icon--button-inline--rev-small icon-chart" role="presentation"></span>
+              Chart
+              <input type="radio" name="type" data-chart-controls-type="" value="chart1" checked>
+            </label>
+            <label class="btn btn--secondary btn--small btn--narrow btn--thin">
+              <span class="icon--button-inline--rev-small icon-table" role="presentation"></span>
+              Table
+              <input type="radio" name="type" data-chart-controls-type="" value="table1">
+            </label>
+          </div>
+          <div class="button-group chart-area__controls__timespan">
+            <label class="btn btn--secondary btn--small btn--narrow btn--thin">
+              Monthly
+              <input type="radio" name="scale" data-chart-controls-scale="" value="month" checked>
+            </label>
+            <label class="btn btn--secondary btn--small btn--narrow btn--thin">
+              Quarterly
+              <input type="radio" name="scale" data-chart-controls-scale="" value="quarter">
+            </label>
+            <label class="btn btn--secondary btn--small btn--narrow btn--thin">
+              Yearly
+              <input type="radio" name="scale" data-chart-controls-scale="" value="year">
+            </label>
+          </div>
+        </div>
+        <!-- /chart-area__controls__buttons -->
+        <div class="chart-area__controls__time">
+          <span class="chart-area__controls__time__label">Time period:</span>
+          <ul class="nav flush--top chart-area__controls__time__ranges">
+            <li>
+              <a href="#" data-chart-controls-range="all">All</a>
+            </li>
+            <li>
+              <a href="#" data-chart-controls-range="10yr">Last 10 yrs</a>
+            </li>
+            <li>
+              <a href="#" data-chart-controls-range="5yr" class="chart-area__controls__active">Last 5 yrs</a>
+            </li>
+            <li data-chart-control-custom-range="">
+              <a href="#" class="link-complex" data-chart-control-custom-trigger-for="chart-area__controls__custom">
+                <span class="link-complex__target">Custom</span>
+                <span class="icon-down-open-big icon--inline" role="presentation"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- /chart-area__controls__time -->
+
+        <div class="chart-area__controls__custom js-hidden" id="customControls">
+
+          <div class="chart-area__controls__custom__errors"></div>
+
+          <div class="chart-area__controls__custom__container">
+            <div class="chart-area__controls__dropdowns">
+              <fieldset class="chart-area__controls__date">
+                <legend class="chart-area__controls__date__label">From</legend>
+                <label class="visuallyhidden" for="from-month-1">Month</label>
+                <select class="chart-area__controls__month" id="from-month-1" name="from-month" data-chart-controls-from-month="">
+                  <option value="1">Jan</option>
+                  <option value="2">Feb</option>
+                  <option value="3">Mar</option>
+                  <option value="4">Apr</option>
+                  <option value="5">May</option>
+                  <option value="6">Jun</option>
+                  <option value="7">Jul</option>
+                  <option value="8">Aug</option>
+                  <option value="9" selected>Sep</option>
+                  <option value="10">Oct</option>
+                  <option value="11">Nov</option>
+                  <option value="12">Dec</option>
+                </select>
+
+                <label class="visuallyhidden" for="from-year-1">Year</label>
+                <select class="chart-area__controls__year" id="from-year-1" name="from-year" data-chart-controls-from-year="">
+                  <option value="1988">1988</option>
+                  <option value="1989">1989</option>
+                  <option value="1990">1990</option>
+                  <option value="1991">1991</option>
+                  <option value="1992">1992</option>
+                  <option value="1993">1993</option>
+                  <option value="1994">1994</option>
+                  <option value="1995">1995</option>
+                  <option value="1996">1996</option>
+                  <option value="1997">1997</option>
+                  <option value="1998">1998</option>
+                  <option value="1999">1999</option>
+                  <option value="2000">2000</option>
+                  <option value="2001">2001</option>
+                  <option value="2002">2002</option>
+                  <option value="2003">2003</option>
+                  <option value="2004">2004</option>
+                  <option value="2005">2005</option>
+                  <option value="2006">2006</option>
+                  <option value="2007">2007</option>
+                  <option value="2008">2008</option>
+                  <option value="2009" selected>2009</option>
+                  <option value="2010">2010</option>
+                  <option value="2011">2011</option>
+                  <option value="2012">2012</option>
+                  <option value="2013">2013</option>
+                  <option value="2014">2014</option>
+                </select>
+              </fieldset>
+
+              <fieldset class="chart-area__controls__date">
+                <legend class="chart-area__controls__date__label">To</legend>
+                <label class="visuallyhidden" for="to-month-2">Month</label>
+                <select class="chart-area__controls__month" id="to-month-2" name="to-month" data-chart-controls-to-month="">
+                  <option value="1">Jan</option>
+                  <option value="2">Feb</option>
+                  <option value="3">Mar</option>
+                  <option value="4">Apr</option>
+                  <option value="5">May</option>
+                  <option value="6">Jun</option>
+                  <option value="7">Jul</option>
+                  <option value="8">Aug</option>
+                  <option value="9" selected>Sep</option>
+                  <option value="10">Oct</option>
+                  <option value="11">Nov</option>
+                  <option value="12">Dec</option>
+                </select>
+                <label class="visuallyhidden" for="to-year-2">Month</label>
+                <select class="chart-area__controls__year" id="to-year-2" name="to-year" data-chart-controls-to-year="">
+                  <option value="1986">1986</option>
+                  <option value="1987">1987</option>
+                  <option value="1988">1988</option>
+                  <option value="1989">1989</option>
+                  <option value="1990">1990</option>
+                  <option value="1991">1991</option>
+                  <option value="1992">1992</option>
+                  <option value="1993">1993</option>
+                  <option value="1994">1994</option>
+                  <option value="1995">1995</option>
+                  <option value="1996">1996</option>
+                  <option value="1997">1997</option>
+                  <option value="1998">1998</option>
+                  <option value="1999">1999</option>
+                  <option value="2000">2000</option>
+                  <option value="2001">2001</option>
+                  <option value="2002">2002</option>
+                  <option value="2003">2003</option>
+                  <option value="2004">2004</option>
+                  <option value="2005">2005</option>
+                  <option value="2006">2006</option>
+                  <option value="2007">2007</option>
+                  <option value="2008">2008</option>
+                  <option value="2009">2009</option>
+                  <option value="2010">2010</option>
+                  <option value="2011">2011</option>
+                  <option value="2012">2012</option>
+                  <option value="2013">2013</option>
+                  <option value="2014" selected>2014</option>
+                </select>
+              </fieldset>
+            </div>
+            <div class="chart-area__controls__submit">
+              <input class="btn btn--small btn--thin btn--narrow btn--primary" type="submit" name="submit" data-chart-controls-submit="" value="Show">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- /chart-area__controls -->
+
+    <!-- The actual chart goes here.  In this example, it is represented as an image that -->
+    <!-- on a production site would be the no-js fallback, that is generated dynamically  -->
+    <!-- by the server.                                                                   -->
+    <img src="http://placehold.it/875x400&amp;text=No+-+JS+Chart+area+goes+here" alt="Chart title" width="875" height="400">
+
+    <div class="chart-area__footer">
+      <span class="chart-area__footer__label">Download custom data</span>
+
+      <div class="chart-area__footer__actions">
+        <a class="btn btn--primary btn--small" href="#">
+          .csv
+          <span class="icon-download icon--button-inline" role="presentation"></span>
+        </a>
+        <a class="btn btn--primary btn--small" href="#">
+          .xsl
+          <span class="icon-download icon--button-inline" role="presentation"></span>
+        </a>
+        <a class="btn btn--primary btn--small" href="#">
+          Image
+          <span class="icon-download icon--button-inline" role="presentation"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- /chart-area -->
+</div>
+                  </div>
+              </div>
+          </div>
+
+    <div class="grid-col grid-two-fifths">
+          <div class="sgcxp__block--notes sgcxp__block--padding-large">
+            <h2 class="sgcxp__block--notes__header">Usage notes</h2>
+            <p><p>An example of this component, in use with a chart and data-table can be found on the <a href="./templates-templates-time-series-page-t5.html">T5 template</a>.<br><br>The chart control was created mainly for use in the time-series to ensure that the primary and secondary user needs are met, specifically:</p>
+<ul>
+<li>Allow the download of the time series data as CSV or Excel files (for the expert analysts), as user surveys have highlighted that the majority of users had downloaded data from the ONS website</li>
+<li>Download additional data (for expert analysts and information foragers)</li>
+<li>View this time series as chart (for information foragers)</li>
+</ul>
+</p>
+          </div>
+
+
+      &nbsp;
+    </div><!--/grid-col-->
+
+  </div><!--/grid-wrap-->
+
+
+  <div class="grid-wrap">
+    <div class="grid-col">
+      <h2 class="sgcxp__page-subtitle"><a class="sgcxp__page-subtitle__link" href="components-charts-horizontal-bar-chart.html">Horizontal Bar Chart</a></h2>
+    </div><!--/grid-col-->
+  </div><!--/grid-wrap-->
+
+  <div class="grid-wrap sgcxp__content">
+
+
+          <div class="grid-col sgcxp__block--imgs grid-three-fifths">
+              <div class="sgcxp__block sgcxp__block--lifted">
+                  <div class="sgcxp__block__desc">
+                      <div data-chart="horizontal-bar">
+  <!-- this is a no-js image representation of the graph, which needs to be built on the server -->
+  <noscript>
+    <img src="http://placehold.it/1000x500&amp;text=No+-+JS+Chart+area+goes+here" alt="">
+  </noscript>
+</div>
+                  </div>
+              </div>
+          </div>
+
+    <div class="grid-col grid-two-fifths">
+          <div class="sgcxp__block--notes sgcxp__block--padding-large">
+            <h2 class="sgcxp__block--notes__header">Usage notes</h2>
+            <p><p>In general, horizontal bar charts should be used as they display well on reduced screen sizes.<br><br>Zebra striping has been included to allow the user to determine the category to which the value applies.</p>
+</p>
+          </div>
+
+
+      &nbsp;
+    </div><!--/grid-col-->
+
+  </div><!--/grid-wrap-->
+
+
+  <div class="grid-wrap">
+    <div class="grid-col">
+      <h2 class="sgcxp__page-subtitle"><a class="sgcxp__page-subtitle__link" href="components-charts-multi-series-chart.html">Multi Series Chart</a></h2>
+    </div><!--/grid-col-->
+  </div><!--/grid-wrap-->
+
+  <div class="grid-wrap sgcxp__content">
+
+
+          <div class="grid-col sgcxp__block--imgs grid-three-fifths">
+              <div class="sgcxp__block sgcxp__block--lifted">
+                  <div class="sgcxp__block__desc">
+                      <div data-chart="multi-series" style="height:500px;">
+  <!-- this is a no-js image representation of the graph, which needs to be built on the server -->
+  <noscript>
+    <img src="http://placehold.it/1000x500&amp;text=No+-+JS+Chart+area+goes+here" alt="">
+  </noscript>
+</div>
+                  </div>
+              </div>
+          </div>
+
+    <div class="grid-col grid-two-fifths">
+          <div class="sgcxp__block--notes sgcxp__block--padding-large">
+            <h2 class="sgcxp__block--notes__header">Usage notes</h2>
+            <p><p>Different shaped points are used as well as colour (which are in keeping with the ONS <a href="http://localhost:3000/visual-language-colors.html">colour guidelines</a> so that colour alone isn&#39;t used to indicate which data set the line is applicable to.<br><br>Adding the shapes to the tooltip helps differentiate between the data points.<br><br>All data values are shown in the tooltip (as a pose to the point currently hovered over) as some points may stack.<br><br>Note: The inline height style is shown here as an example.  Inline styles should not be used in production ready code.</p>
+</p>
+          </div>
+
+
+      &nbsp;
+    </div><!--/grid-col-->
+
+  </div><!--/grid-wrap-->
+
+
+  <div class="grid-wrap">
+    <div class="grid-col">
+      <h2 class="sgcxp__page-subtitle"><a class="sgcxp__page-subtitle__link" href="components-charts-population-pyramid.html">Population Pyramid</a></h2>
+    </div><!--/grid-col-->
+  </div><!--/grid-wrap-->
+
+  <div class="grid-wrap sgcxp__content">
+
+
+          <div class="grid-col sgcxp__block--imgs grid-three-fifths">
+              <div class="sgcxp__block sgcxp__block--lifted">
+                  <div class="sgcxp__block__desc">
+                      <div data-chart="pyramid" style="height:600px">
+  <!-- this is a no-js image representation of the graph, which needs to be built on the server -->
+  <noscript>
+    <img src="http://placehold.it/1000x500&amp;text=No+-+JS+Chart+area+goes+here" alt="">
+  </noscript>
+</div>
+                  </div>
+              </div>
+          </div>
+
+    <div class="grid-col grid-two-fifths">
+
+
+      &nbsp;
+    </div><!--/grid-col-->
+
+  </div><!--/grid-wrap-->
+
+
+  <div class="grid-wrap">
+    <div class="grid-col">
+      <h2 class="sgcxp__page-subtitle"><a class="sgcxp__page-subtitle__link" href="components-charts-stacked-bar-chart.html">Stacked Bar Chart</a></h2>
+    </div><!--/grid-col-->
+  </div><!--/grid-wrap-->
+
+  <div class="grid-wrap sgcxp__content">
+
+
+          <div class="grid-col sgcxp__block--imgs grid-three-fifths">
+              <div class="sgcxp__block sgcxp__block--lifted">
+                  <div class="sgcxp__block__desc">
+                      <div data-chart="stacked-bar" style="height: 600px">
+  <!-- this is a no-js image representation of the graph, which needs to be built on the server -->
+  <noscript>
+    <img src="http://placehold.it/1000x500&amp;text=No+-+JS+Chart+area+goes+here" alt="">
+  </noscript>
+</div>
+                  </div>
+              </div>
+          </div>
+
+    <div class="grid-col grid-two-fifths">
+          <div class="sgcxp__block--notes sgcxp__block--padding-large">
+            <h2 class="sgcxp__block--notes__header">Usage notes</h2>
+            <p><p>The stacked bar chart changes from vertical to horizontal on devices of reduced screen sizes. Switching type rather than relying on resizing the chart is a more robust approach, as managing chart labels at smaller sizes becomes a difficult challenge.<br><br>The interactive legend is important for a data set such as the one used in this example.  <em>Renewable sources</em> has a much smaller range than the other values, and so to show any kind of meaning within the chart, the ability to toggle other values, to include and exclude them from the chart, is required.<br><br>Changing the scale on filter in this way could lead to misrepresentation of the data. However, whilst this isn&#39;t ideal, it represents the best solution.</p>
+</p>
+          </div>
+
+
+      &nbsp;
+    </div><!--/grid-col-->
+
+  </div><!--/grid-wrap-->
+
+
+  <div class="grid-wrap">
+    <div class="grid-col">
+      <h2 class="sgcxp__page-subtitle"><a class="sgcxp__page-subtitle__link" href="components-charts-line-chart.html">Line Chart</a></h2>
+    </div><!--/grid-col-->
+  </div><!--/grid-wrap-->
+
+  <div class="grid-wrap sgcxp__content">
+
+
+          <div class="grid-col sgcxp__block--imgs grid-three-fifths">
+              <div class="sgcxp__block sgcxp__block--lifted">
+                  <div class="sgcxp__block__desc">
+                      <div data-chart="time-series" data-chart-title="Consumer Price Indices - CPI indices: 1988 to 2014" data-chart-tooltip="D7BT" data-chart-ylabel="D7BT" class="chart">
+      <!-- this is a no-js image representation of the graph, which needs to be built on the server -->
+      <noscript>
+        <img src="http://placehold.it/1000x500&amp;text=No+-+JS+Chart+area+goes+here" alt="">
+      </noscript>
+    </div>
+                  </div>
+              </div>
+          </div>
+
+    <div class="grid-col grid-two-fifths">
+          <div class="sgcxp__block--notes sgcxp__block--padding-large">
+            <h2 class="sgcxp__block--notes__header">Usage notes</h2>
+            <p><p>These charts are primarily used in the <a href="./templates-templates-time-series-page-t5.html">Time Series pages</a>.<br><br>In the context of the time-series pages (and ideally most situations), the line chart should be used at full page width so that any onward journey is secondary to the primary requirement of displaying data.<br><br>This is particularly important when considering one of the core design principles of &#39;it’s all about the numbers&#39;.<br><br>In addition, whilst the charts are responsive, as much space should be given to the chart so that the information can be clearly relayed to the user.<br><br>On resizing, the number of data points that are included in the x-axis are reduced so that the chart displays well on small screen sizes.</p>
+</p>
+          </div>
+
+
+      &nbsp;
+    </div><!--/grid-col-->
+
+  </div><!--/grid-wrap-->
+
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- project js -->
+
+<script src="./dist/js/footer.js"></script>
+
+<!-- / -->
+
+<!-- pattern library JS (@optimise: minify) -->
+
+<script src="./sg-assets/js/charts.js"></script>
+<script src="./sg-assets/js/lib/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="./sg-assets/js/lib/media.match.js"></script>
+<script src="./sg-assets/js/lib/enquire.min.js"></script>
+<script src="./sg-assets/js/lib/tiny-pubsub.js"></script>
+<script src="./sg-assets/js/lib/jquery.uniform.min.js"></script>
+<script src="./sg-assets/js/lib/jquery.hoverIntent.js"></script>
+
+<script src="./sg-assets/js/app/widgets/offcanvas-menu.js"></script>
+<script src="./sg-assets/js/app/widgets/skiplink.js"></script>
+<script src="./sg-assets/js/app/widgets/jquery.cx.jump-to.js"></script>
+
+<script src="./sg-assets/js/app/app.js"></script>
+
+
+<!-- Fast Click - for speedy clicks and to fix the meganav dropdown on touch  -->
+<script src="./sg-assets/js/lib/fastclick.js"></script>
+<script>
+  window.addEventListener('load', function () {
+    new FastClick(document.body);
+  }, false);
+</script>
+
+
+<!-- Font -->
+<script type="text/javascript">
+  WebFontConfig = { fontdeck: { id: '42695' } };
+
+  (function () {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+
+</script>
+
+<script src="./sg-assets/prismjs/prism.js"></script>
+<script>
+$('table').addClass('tablesaw');
+$('pre').addClass('language-markup');
+$('code').addClass('language-markup');
+</script>
+</body>
+</html>

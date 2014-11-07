@@ -1,0 +1,20 @@
+{% block content %}
+<!---
+title: Stacked Bar Chart
+group: Charts
+usage: |
+  The stacked bar chart changes from vertical to horizontal on devices of reduced screen sizes. Switching type rather than relying on resizing the chart is a more robust approach, as managing chart labels at smaller sizes becomes a difficult challenge.
+  The interactive legend is important for a data set such as the one used in this example.  *Renewable sources* has a much smaller range than the other values, and so to show any kind of meaning within the chart, the ability to toggle other values, to include and exclude them from the chart, is required.
+  Changing the scale on filter in this way could lead to misrepresentation of the data. However, whilst this isn't ideal, it represents the best solution.
+devnotes:
+  external: file://docs/stacked-bar.md
+
+-->
+<div data-chart="stacked-bar" style="height: 600px">
+  <!-- this is a no-js image representation of the graph, which needs to be built on the server -->
+  <noscript>
+    <img src="http://placehold.it/1000x500&amp;text=No+-+JS+Chart+area+goes+here" alt="">
+  </noscript>
+</div>
+
+{% endblock %}

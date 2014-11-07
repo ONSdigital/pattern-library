@@ -1,0 +1,85 @@
+
+<div class="grid-wrap">
+  <div class="grid-col">
+    <ul class="sgcxp__breadcrumb">
+      <li class="sgcxp__breadcrumb__item">
+          {{category}}
+      </li>
+      <li class="sgcxp__breadcrumb__item">
+          {{group}}
+      </li>
+    </ul>
+  </div><!--/grid-col-->
+</div><!--/grid-wrap-->
+<div class="grid-wrap">
+  <div class="grid-col">
+    <h1 class="sgcxp__page-title">{{title}}</h1>
+  </div><!--/grid-col-->
+</div><!--/grid-wrap-->
+
+
+{{#each components}}
+
+  <div class="grid-wrap">
+    <div class="grid-col">
+      <h2 class="sgcxp__page-subtitle"><a class="sgcxp__page-subtitle__link" href="{{url this}}">{{title}}</a></h2>
+    </div><!--/grid-col-->
+  </div><!--/grid-wrap-->
+
+  <div class="grid-wrap sgcxp__content">
+
+      {{#if content}}
+
+        {{#unless external}}
+          <div class="grid-col sgcxp__block--imgs grid-three-fifths">
+              <div class="sgcxp__block sgcxp__block--lifted">
+                  <div class="sgcxp__block__desc">
+                      {{{content}}}
+                  </div>
+              </div>
+          </div>
+          {{else}}
+          <div class="grid-col sgcxp__block--imgs grid-three-fifths">
+                        <div class="sgcxp__block sgcxp__block--lifted">
+                            <div class="sgcxp__block__desc">
+                                <a href="{{ url-external this }}">View on separate page</a>
+                            </div>
+                        </div>
+                    </div>
+        {{/unless}}
+      {{else}}
+
+          <div class="grid-col sgcxp__block--imgs grid-three-fifths">
+              {{#each designs}}
+                  {{#if img}}
+                    <figure class="sgcxp__figure">
+                      <img class="sgcxp__figure__img" src="{{img}}" />
+                    </figure>
+                  {{else}}
+                    <img class="sgcxp__block__img" src="{{{this}}}" /><br />
+                  {{/if}}
+              {{/each}}
+          </div>
+        {{/if}}
+
+    <div class="grid-col grid-two-fifths">
+        {{#if description}}
+          <div class="sgcxp__block--notes sgcxp__block--padding-large">
+            <h2 class="sgcxp__block--notes__header">Designer notes</h2>
+            <p>{{{markdown description}}}</p>
+          </div>
+        {{/if}}
+        {{#if usage}}
+          <div class="sgcxp__block--notes sgcxp__block--padding-large">
+            <h2 class="sgcxp__block--notes__header">Usage notes</h2>
+            <p>{{{markdown usage}}}</p>
+          </div>
+        {{/if}}
+
+
+      &nbsp;
+    </div><!--/grid-col-->
+
+  </div><!--/grid-wrap-->
+
+{{/each}}

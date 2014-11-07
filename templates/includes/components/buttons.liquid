@@ -1,0 +1,153 @@
+{% layout 'bare' %}
+{% block page_title %} Buttons {% endblock %}
+
+{% block content %}
+<div class="wrapper">
+  <h1>Buttons</h1>
+  <p>
+    Buttons are written to be able to be extended in many different ways to support a wide range of contexts.
+  </p>
+
+  <div class="grid-wrap">
+    <div class="grid-col desktop-grid-one-third">
+      <h2>Primary</h2>
+      <!---
+      title: Primary
+      usage: |
+        Buttons are written to be able to be extended in many different ways to support a wide range of contexts.
+        There should usually only be two types of button; primary and secondary.
+        A primary button is used to highlight the most important action on the page, and generally there should only be one of these per page.
+        If more than one primary button is required, then consider splitting the form over multiple pages.
+      -->
+      <a href="#" class="btn btn--primary">Button</a>
+    </div>
+
+    <div class="grid-col desktop-grid-one-third">
+      <h2>Primary, with icon (icon--button-inline applied)</h2>
+      <!---
+      title: Primary, with icon
+      usage: |
+        Icons can be used to impart additional information about the nature of the button.
+        For example, consider placing a 'tick' icon ` (class="icon-check"`) on a primary button, to give confidence to the user to click.
+      -->
+      <a href="#" class="btn btn--primary">Button <span class="icon icon-download icon--button-inline"></span></a>
+    </div>
+  </div>
+
+  <div class="grid-wrap">
+    <div class="grid-col desktop-grid-one-third">
+      <!---
+      title: Sizes
+      inline: Wide
+      usage: |
+        Buttons can be different sizes, and have combinations of sizes.  Generally, the primary button should be the largest button on the page.
+      -->
+      <a href="#" class="btn btn--primary btn--wide">Wide</a>
+
+      <!---
+      title: Sizes
+      inline: Narrow
+      -->
+      <a href="#" class="btn btn--secondary btn--narrow">Narrow</a>
+
+      <!---
+      title: Sizes
+      inline: Thin
+      -->
+      <a href="#" class="btn btn--secondary btn--thin">Thin</a>
+
+
+      <!---
+      title: Sizes
+      inline: Wide & small
+      -->
+      <a href="#" class="btn btn--secondary btn--wide btn--small">Wide and small</a>
+
+    </div>
+  </div>
+  <div class="grid-wrap">
+    <div class="grid-col tablet-grid-one-half desktop-grid-one-third">
+      <h2>Primary, full-width</h2>
+      <!---
+      title: Primary, block
+      usage: Use when you always want a button to be as wide as its parent.
+      -->
+      <a href="#" class="btn btn--primary btn--block">Button</a>
+    </div>
+
+  </div>
+  <div class="grid-wrap">
+    <div class="grid-col desktop-grid-one-third">
+      <h2>Secondary</h2>
+      <!---
+      title: Secondary
+      usage: |
+        There should usually only be two types of button; primary and secondary.
+        A secondary button represents a 'support' action.  For example, 'look-up', 'back' etc.
+      -->
+      <a href="#" class="btn btn--secondary">Button</a>
+    </div>
+
+    <div class="grid-col desktop-grid-one-third">
+      <h2>Secondary, active</h2>
+      <!---
+      title: Secondary, active
+      usage: Buttons will appear pressed (with a darker background, darker border, and inset shadow) when active.
+      -->
+      <a href="#" class="btn btn--secondary btn--secondary--active">Button</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper panel--mar">
+  <h1>Button groups</h1>
+
+  <div class="grid-wrap">
+    <div class="grid-col tablet-grid-one-half">
+      <!-- title: Button group -->
+      <div class="button-group">
+        <a class="btn btn--primary" href="#">Button 1</a>
+        <a class="btn btn--primary" href="#">Button 2</a>
+        <a class="btn btn--primary" href="#">Button 3</a>
+      </div>
+    </div>
+    <div class="grid-col tablet-grid-one-half">
+      <div class="button-group">
+        <a class="btn btn--secondary btn--small btn--secondary--active" href="#">Button 1</a>
+        <a class="btn btn--secondary btn--small" href="#">Button 2</a>
+        <a class="btn btn--secondary btn--small" href="#">Button 3</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper panel--mar">
+  <h1>Button bar</h1>
+
+
+  <div class="grid-wrap">
+    <div class="grid-col">
+      <!---
+      title: Button bar
+      usage: >
+        Group a set of buttons together on a single line to form a button bar.
+      devnotes: |
+        Any button styles can be applied to the button var.
+        Presentation is completely separated from markup semantics, so that the 'buttons' can be implemented as links or button inputs.
+      -->
+      <div class="button-bar">
+        <div class="button-group">
+          <a class="btn btn--primary" href="#">Button 1</a>
+          <a class="btn btn--primary" href="#">Button 2</a>
+          <a class="btn btn--primary" href="#">Button 3</a>
+        </div>
+        <div class="button-group">
+          <button type="button" class="btn btn--secondary btn--small btn--secondary--active">Button 4</button>
+          <button type="button" class="btn btn--secondary btn--small">Button 5</button>
+          <button type="button" class="btn btn--secondary btn--small">Button 6</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

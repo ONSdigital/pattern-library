@@ -1,0 +1,18 @@
+{% block content %}
+<!---
+title: Horizontal Bar Chart
+group: Charts
+usage: |
+  In general, horizontal bar charts should be used as they display well on reduced screen sizes.
+  Zebra striping has been included to allow the user to determine the category to which the value applies.
+devnotes:
+  external: file://docs/horizontal-bar.md
+-->
+<div data-chart="horizontal-bar">
+  <!-- this is a no-js image representation of the graph, which needs to be built on the server -->
+  <noscript>
+    <img src="http://placehold.it/1000x500&amp;text=No+-+JS+Chart+area+goes+here" alt="">
+  </noscript>
+</div>
+
+{% endblock %}

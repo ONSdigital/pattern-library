@@ -1,0 +1,10 @@
+@import "settings";
+
+$old-ie: true;
+$fix-mqs: $bp-desktop-wider-min;
+
+body {
+  min-width: 1000px;
+}
+
+@import 'main';
