@@ -1317,7 +1317,7 @@
 <p>The library contains valid HTML(5), and has been validated against the W3C specification using the <a href="http://validator.w3.org/unicorn/">W3C&#39;s Unified Validator</a>.</p>
 <p>There a number of whitelisted HTML errors that are excluded from the HTML validation, for example, this proprietary meta tag allows us to activate ClearType for smoothing fonts for easy reading in Mobile Internet Explorer:.</p>
 <p><code>&lt;meta content=&quot;on&quot; http-equiv=&quot;cleartype&quot; /&gt;</code></p>
-<p>These are listed in: <a href="https://github.com/ONSdigital/pattern-library/blob/master/.config/.htmlvalidation.yaml"><code>./.config/.htmlvalidation.yaml</code></a>.</p>
+<p>These are listed in: <a href="https://github.com/ONSdigital/pattern-library/blob/master/.config/.htmlvalidation.build.yaml"><code>./.config/.htmlvalidation.build.yaml</code></a>.</p>
 <h4 id="javascript">Javascript</h4>
 <p>The Javascript source files are validated using <a href="http://www.jshint.com/">JSHint</a> in accordance with the configuration file found in <a href="https://github.com/ONSdigital/pattern-library/blob/master/.config/.jshintrc"><code>./.config/.jshintrc</code></a>.</p>
 <h4 id="scss">SCSS</h4>
@@ -1326,10 +1326,12 @@
 <h2 id="documentation">Documentation</h2>
 <p>Within the library, documentation is generated from <a href="https://github.com/cxpartners/HTMLDoc">annotations contained within the HTML source files</a> and built to the directory <code>./docs</code>.</p>
 <p>The information contained within these annotations is combined with templates and markdown documents in <code>./.styleguide</code> to create the site that you are currently reading.</p>
-<p>The documentation is hosted using <a href="https://pages.github.com/">GitHub pages</a> and so the contents of the generated documentation directory needs to push to the appropriate branch.</p>
+<p>The documentation is hosted using <a href="https://pages.github.com/">GitHub pages</a> and so the contents of the generated documentation directory (i.e. <code>./docs</code>) needs to be pushed to the <code>gh-pages</code>.</p>
+<p>The easiest way of doing this is to use the Git <code>subtree</code> command.</p>
+<p> git subtree push --prefix docs/ origin gh-pages</p>
 <h2 id="known-issues">Known Issues</h2>
 <p>Some of the components produced for this pattern library were created as part of <a href="http://scaledagileframework.com/spikes/">research spikes</a>. In addition, the work in general has been produced to the <a href="https://www.gov.uk/service-manual/phases/alpha.html">GDS Alpha standard</a>.</p>
-<p>As such there are a number of known issues and bugs.  These have been captured during development, and any that were determined by the product owner as not needing resolution for the Alpha release, have been added to the Github projects issue tracker.</p>
+<p>As such there are a number of known issues and bugs.  These have been captured during development, and any that were determined by the product owner as not needing resolution for the Alpha release, have been added to the Github project&#39;s <a href="https://github.com/ONSdigital/pattern-library/issues">issue tracker</a>.</p>
 
 </div>
 

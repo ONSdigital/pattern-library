@@ -329,7 +329,7 @@ There a number of whitelisted HTML errors that are excluded from the HTML valida
 
 `<meta content="on" http-equiv="cleartype" />`
 
-These are listed in: [`./.config/.htmlvalidation.yaml`](https://github.com/ONSdigital/pattern-library/blob/master/.config/.htmlvalidation.yaml).
+These are listed in: [`./.config/.htmlvalidation.build.yaml`](https://github.com/ONSdigital/pattern-library/blob/master/.config/.htmlvalidation.build.yaml).
 
 #### Javascript
 
@@ -348,14 +348,18 @@ Within the library, documentation is generated from [annotations contained withi
 
 The information contained within these annotations is combined with templates and markdown documents in `./.styleguide` to create the site that you are currently reading.
 
-The documentation is hosted using [GitHub pages](https://pages.github.com/) and so the contents of the generated documentation directory needs to push to the appropriate branch.
+The documentation is hosted using [GitHub pages](https://pages.github.com/) and so the contents of the generated documentation directory (i.e. `./docs`) needs to be pushed to the `gh-pages`.
+
+The easiest way of doing this is to use the Git `subtree` command.
+
+ git subtree push --prefix docs/ origin gh-pages
 
 
 ## Known Issues
 
 Some of the components produced for this pattern library were created as part of [research spikes](http://scaledagileframework.com/spikes/). In addition, the work in general has been produced to the [GDS Alpha standard](https://www.gov.uk/service-manual/phases/alpha.html).
 
-As such there are a number of known issues and bugs.  These have been captured during development, and any that were determined by the product owner as not needing resolution for the Alpha release, have been added to the Github projects issue tracker.
+As such there are a number of known issues and bugs.  These have been captured during development, and any that were determined by the product owner as not needing resolution for the Alpha release, have been added to the Github project's [issue tracker](https://github.com/ONSdigital/pattern-library/issues).
 
 
 
