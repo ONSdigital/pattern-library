@@ -352,7 +352,7 @@ The documentation is hosted using [GitHub pages](https://pages.github.com/) and 
 
 The easiest way of doing this is to use the Git `subtree` command.
 
- git subtree push --prefix docs/ origin gh-pages
+`git subtree push --prefix docs/ origin gh-pages`
 
 
 ## Known Issues
