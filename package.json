@@ -1,6 +1,6 @@
 {
   "name": "ONS-Pattern-Library",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "ONS Alpha Pattern Library",
   "main": "Gruntfile.js",
   "repository": {

@@ -1,12 +1,17 @@
 {
   "name": "pattern-library",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "http://onsdigital.github.io/pattern-library",
   "authors": [
     "Bren <brneser@gmail.com>"
   ],
   "description": "ONS Alpha Pattern Library",
-  "main": "Gruntfile.js",
+  "main": [
+    "dist/css/main.css",
+    "dist/css/oldie.css",
+    "dist/js/footer.js",
+    "dist/js/header.js"
+  ],
   "keywords": [
     "ONSdigital",
     "pattern-library",
