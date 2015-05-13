@@ -6,63 +6,9 @@
  */
 
 span.placeholder{position:absolute;font-size:75%;color:#999;font-family:sans-serif;padding:4px 3px;z-index:1;cursor:text}span.placeholder-hide-except-screenreader{clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);padding:0!important;border:0!important;height:1px!important;width:1px!important;overflow:hidden}span.placeholder-hide{display:none}label.visuallyhidden-with-placeholder{height:auto!important;overflow:visible!important;position:absolute!important;left:-999em}
-/*
- * Simple jQuery Dialog
- * https://github.com/filamentgroup/dialog
- *
- * Copyright (c) 2013 Filament Group, Inc.
- * Licensed under the MIT, GPL licenses.
- */
-.dialog-content,
-.dialog-background {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	display: none;
-}
-.dialog-background {
-	background: #aaa;
-	background-color: rgba(0,0,0,.4);
-	z-index: 99999;
-	height: 100%;
-	bottom: 0;
-}
-.dialog-content {
-	margin: 1em;
-	background: #fff;
-	padding: 1em 2em;
-	max-width: 30em;
-	box-shadow: 0 1px 2px #777;
-	z-index: 100000;
-}
-/*
-	IE8+ issue with centering dialog
-	https://github.com/filamentgroup/dialog/issues/6
-	requires Respond.JS for IE8
-*/
-@media (min-width: 30em) {
-	.dialog-content {
-		width: 30em;
-	}
-}
-.dialog-open,
-.dialog-background-open {
-	display: block;
-}
-.dialog-background-trans {
-	background: transparent;
-}
-
-@media (min-width: 32em){
-	.dialog-content {
-		margin: 4em auto 1em;
-	}
-}
-
-/*! Tablesaw - v0.1.6 - 2014-07-23
+/*! Tablesaw - v1.0.4 - 2015-02-19
 * https://github.com/filamentgroup/tablesaw
-* Copyright (c) 2014 Filament Group; Licensed MIT */
+* Copyright (c) 2015 Filament Group; Licensed MIT */
 
 table.tablesaw {
   empty-cells: show;
@@ -216,13 +162,13 @@ table.tablesaw {
 }
 
 .tablesaw-bar .btn.btn-small {
-  font-size: 17px;
+  font-size: 1.0625em;
   line-height: 19px;
   padding: .3em 1em .3em 1em;
 }
 
 .tablesaw-bar .btn.btn-micro {
-  font-size: 13px;
+  font-size: .8125em;
   padding: .4em .7em .25em .7em;
 }
 
@@ -276,11 +222,6 @@ table.tablesaw {
 
 /* Column navigation buttons for swipe and columntoggle tables */
 
-.tablesaw-bar .tablesaw-advance {
-  position: relative;
-  top: -2.6em;
-}
-
 .tablesaw-advance .btn {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -293,7 +234,7 @@ table.tablesaw {
 
 .tablesaw-advance .btn.btn-micro {
   font-size: .8125em;
-  padding: .4em .7em .25em .7em;
+  padding: .3em .7em .25em .7em;
 }
 
 .tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn {
@@ -303,6 +244,51 @@ table.tablesaw {
   height: 1.8em;
   background-position: 50% 50%;
   margin-left: .5em;
+  position: relative;
+}
+
+.tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.left:before,
+.tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.right:before,
+.tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.down:before,
+.tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.up:before {
+  content: "\0020";
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.down:before {
+  left: .5em;
+  top: .65em;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #808080;
+}
+
+.tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.up:before {
+  left: .5em;
+  top: .65em;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #808080;
+}
+
+.tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.left:before,
+.tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.right:before {
+  top: .45em;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.left:before {
+  left: .6em;
+  border-right: 5px solid #808080;
+}
+
+.tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.right:before {
+  left: .7em;
+  border-left: 5px solid #808080;
 }
 
 .tablesaw-advance a.tablesaw-nav-btn.disabled {
@@ -319,15 +305,9 @@ table.tablesaw {
   font-family: sans-serif;
 }
 
-.tablesaw-bar.mode-swipe,
-.tablesaw-bar.mode-columntoggle {
-  margin-top: -2em;
-  position: relative;
-  top: 2em;
-}
-
 .tablesaw-toolbar {
   font-size: .875em;
+  float: left;
 }
 
 .tablesaw-toolbar label {
@@ -399,23 +379,6 @@ table.tablesaw {
   }
 }
 
-@media (min-width: 40em) {
-  .tablesaw-bar.mode-swipe,
-  .tablesaw-bar.mode-columntoggle {
-    margin-top: 0;
-    top: 0;
-  }
-
-  .tablesaw-bar .tablesaw-advance {
-    position: static;
-  }
-
-  .tablesaw-bar {
-    margin-top: 0;
-    position: static;
-  }
-}
-
 
 
 table.tablesaw tbody th {
@@ -477,9 +440,17 @@ table.tablesaw thead td {
 
 .tablesaw caption {
   text-align: left;
-  margin-bottom: 1.4em;
+  margin-bottom: 0;
   opacity: .5;
   filter: alpha(opacity=50);
+  line-height: 2.4;
+}
+
+@media (min-width: 25em) {
+  .tablesaw caption {
+    margin-bottom: .6em;
+    line-height: 1.2;
+  }
 }
 
 /* Stack */
@@ -500,6 +471,17 @@ table.tablesaw thead td {
 @media (min-width: 40em) {
   .tablesaw td {
     line-height: 2em;
+  }
+}
+
+@media only all {
+  .tablesaw-swipe .tablesaw-cell-persist {
+    border-right: 1px solid #e4e1de;
+  }
+
+  .tablesaw-swipe .tablesaw-cell-persist {
+    -webkit-box-shadow: 3px 0 4px -1px #e4e1de;
+    box-shadow: 3px 0 4px -1px #e4e1de;
   }
 }
 
@@ -536,7 +518,7 @@ table.tablesaw thead td {
   .tablesaw-stack th .tablesaw-cell-label {
     display: block;
     padding: 0 .6em 0 0;
-    min-width: 30%;
+    width: 30%;
     display: inline-block;
   }
 
@@ -578,6 +560,20 @@ table.tablesaw thead td {
     float: left;
     width: 100%;
   }
+
+  .tablesaw-cell-label {
+    vertical-align: top;
+  }
+
+  .tablesaw-cell-content {
+    max-width: 67%;
+    display: inline-block;
+  }
+
+  .tablesaw-stack td:empty,
+  .tablesaw-stack th:empty {
+    display: none;
+  }
 }
 
 /* Media query to show as a standard table at 560px (35em x 16px) or wider */
@@ -609,15 +605,23 @@ table.tablesaw thead td {
   table-layout: fixed;
 }
 
-/* see Gruntfile.js for grunticon selector */
+@media only all {
+  /* Unchecked manually: Always hide */
 
-.btn.tablesaw-columntoggle-btn {
-  float: right;
+  .tablesaw-swipe th.tablesaw-cell-hidden,
+  .tablesaw-swipe td.tablesaw-cell-hidden {
+    display: none;
+  }
 }
 
 .btn.tablesaw-columntoggle-btn span {
   text-indent: -9999px;
   display: inline-block;
+}
+
+.tablesaw-columntoggle-btnwrap {
+  position: relative;
+  /* for dialog positioning */
 }
 
 .tablesaw-columntoggle-btnwrap .dialog-content {
@@ -629,6 +633,24 @@ table.tablesaw thead td {
 }
 
 /* Remove top/bottom margins around the fieldcontain on check list */
+
+.tablesaw-columntoggle-popup {
+  display: none;
+}
+
+.tablesaw-columntoggle-btnwrap.visible .tablesaw-columntoggle-popup {
+  display: block;
+  position: absolute;
+  top: 2em;
+  right: 0;
+  background-color: #fff;
+  padding: .5em .8em;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: 0 1px 2px #ccc;
+  box-shadow: 0 1px 2px #ccc;
+  border-radius: .2em;
+  z-index: 1;
+}
 
 .tablesaw-columntoggle-popup fieldset {
   margin: 0;
@@ -653,11 +675,6 @@ table.tablesaw thead td {
   }
 }
 
-.tablesaw-columntoggle-btnwrap {
-  position: relative;
-  float: right;
-}
-
 .tablesaw-columntoggle-btnwrap .dialog-content {
   top: 0 !important;
   right: 1em;
@@ -669,10 +686,6 @@ table.tablesaw thead td {
 
 .tablesaw-columntoggle-btnwrap .dialog-content:focus {
   outline-style: none;
-}
-
-.dialog-table-coltoggle {
-  border-radius: .5em;
 }
 
 /* Preset breakpoints if "" class added to table */
@@ -736,19 +749,8 @@ table.tablesaw thead td {
 }
 
 @media only all {
-  .tablesaw-swipe .tablesaw-cell-persist {
-    border-right: 1px solid #e4e1de;
-  }
-
-  .tablesaw-swipe .tablesaw-cell-persist {
-    -webkit-box-shadow: 3px 0 4px -1px #e4e1de;
-    box-shadow: 3px 0 4px -1px #e4e1de;
-  }
-
   /* Unchecked manually: Always hide */
 
-  .tablesaw-swipe th.tablesaw-cell-hidden,
-  .tablesaw-swipe td.tablesaw-cell-hidden,
   .tablesaw-columntoggle th.tablesaw-cell-hidden,
   .tablesaw-columntoggle td.tablesaw-cell-hidden {
     display: none;
@@ -765,6 +767,7 @@ table.tablesaw thead td {
 .tablesaw-columntoggle-popup .btn-group > label {
   display: block;
   padding: .2em 0;
+  white-space: nowrap;
 }
 
 .tablesaw-columntoggle-popup .btn-group > label input {
@@ -783,19 +786,19 @@ table.tablesaw thead td {
   vertical-align: top;
 }
 
-.tablesaw-sortable th.sortable-head,
-.tablesaw-sortable tr:first-child th.sortable-head {
+.tablesaw-sortable th.tablesaw-sortable-head,
+.tablesaw-sortable tr:first-child th.tablesaw-sortable-head {
   padding: 0;
 }
 
-.tablesaw-sortable th.sortable-head button {
+.tablesaw-sortable th.tablesaw-sortable-head button {
   padding-top: .9em;
   padding-bottom: .7em;
   padding-left: .6em;
   padding-right: 1.6em;
 }
 
-.tablesaw-sortable .sortable-head button {
+.tablesaw-sortable .tablesaw-sortable-head button {
   min-width: 100%;
   color: inherit;
   background: transparent;
@@ -807,13 +810,21 @@ table.tablesaw thead td {
   position: relative;
 }
 
-.tablesaw-sortable .sortable-head.sortable-ascending button:after,
-.tablesaw-sortable .sortable-head.sortable-descending button:after {
+.tablesaw-sortable .tablesaw-sortable-head.tablesaw-sortable-ascending button:after,
+.tablesaw-sortable .tablesaw-sortable-head.tablesaw-sortable-descending button:after {
   width: 7px;
   height: 10px;
   content: "\0020";
   position: absolute;
   right: .5em;
+}
+
+.tablesaw-sortable .tablesaw-sortable-head.tablesaw-sortable-ascending button:after {
+  content: "↑";
+}
+
+.tablesaw-sortable .tablesaw-sortable-head.tablesaw-sortable-descending button:after {
+  content: "↓";
 }
 
 .tablesaw-sortable .not-applicable:after {
@@ -825,19 +836,7 @@ table.tablesaw thead td {
   display: none;
 }
 
-.tablesaw-sortable-switch {
-  float: left;
-  width: 100%;
-}
-
-@media (min-width: 40em) {
-  .tablesaw-sortable-switch {
-    width: auto;
-  }
-}
-
 .tablesaw-advance {
-  display: block;
   float: right;
 }
 
@@ -871,25 +870,6 @@ table.tablesaw thead td {
   filter: alpha(opacity=25);
   cursor: default;
   pointer-events: none;
-}
-
-.tablesaw-modeswitch {
-  clear: both;
-}
-
-.tablesaw-sortable-switch + .tablesaw-modeswitch {
-  border-top: 1px solid #eae8e6;
-}
-
-@media (min-width: 40em) {
-  .tablesaw-modeswitch {
-    float: left;
-    clear: none;
-  }
-
-  .tablesaw-sortable-switch + .tablesaw-modeswitch {
-    border-top: none;
-  }
 }
 /*
   CSS file for ONS
@@ -3048,7 +3028,6 @@ a {
 
 .tablesaw thead tr:first-child th, .tablesaw thead {
   background-color: #dedfdc;
-  background-image: -webkit-linear-gradient(#e8e9e7, #dedfdc);
   background-image: linear-gradient(#e8e9e7, #dedfdc); }
 
 .tablesaw-enhanced .tablesaw-bar .btn {
@@ -3450,12 +3429,9 @@ Button styles
   text-align: center;
   text-decoration: none !important;
   text-transform: uppercase;
-  -webkit-transition-duration: 200ms;
-          transition-duration: 200ms;
-  -webkit-transition-property: background-color, color;
-          transition-property: background-color, color;
-  -webkit-transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
-          transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+  transition-duration: 200ms;
+  transition-property: background-color, color;
+  transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86); }
   .btn:focus {
     outline: 0; }
 
@@ -3485,13 +3461,11 @@ lesser , applied styles
 
 .btn--secondary--active {
   background: #c5c7c1;
-  background: -webkit-radial-gradient(center, ellipse, #d5d6d2 0%, #c8c9c4 100%);
   background: radial-gradient(ellipse at center, #d5d6d2 0%, #c8c9c4 100%); }
   .btn--secondary--active, .btn--secondary--active:visited, .btn--secondary--active:hover {
     color: #303030; }
   .btn--secondary--active:hover, .btn--secondary--active:focus {
     background: #acaea7;
-    background: -webkit-radial-gradient(center, ellipse, #bcbeb7 0%, #afb1a9 100%);
     background: radial-gradient(ellipse at center, #bcbeb7 0%, #afb1a9 100%); }
 
 .btn--thin {
@@ -3692,7 +3666,6 @@ lesser , applied styles
   border-top-color: #cbcdc8;
   border-bottom-width: 2px;
   background-color: #dedfdc;
-  background-image: -webkit-linear-gradient(#e8e9e7, #dedfdc);
   background-image: linear-gradient(#e8e9e7, #dedfdc); }
   .list--table__footer > .list--table__item__body {
     width: 100%; }
@@ -5071,7 +5044,6 @@ $SPLIT
   .table tfoot tr {
     border-top-color: #cbcdc8;
     border-bottom-width: 2px;
-    background-image: -webkit-linear-gradient(#d8d9d5, #cbcdc8);
     background-image: linear-gradient(#d8d9d5, #cbcdc8); }
   .table .name {
     width: 35%; }
@@ -5361,7 +5333,6 @@ table actions
 /* Some CSS magic for the awesome animations - feel free to make your own custom animations and reference it in your Tooltipster settings! */
 .tooltipster-fade {
   opacity: 0;
-  -webkit-transition-property: opacity;
   transition-property: opacity; }
 
 .tooltipster-fade-show {
@@ -5371,7 +5342,7 @@ table actions
   -webkit-transform: scale(0, 0);
   -ms-transform: scale(0, 0);
   transform: scale(0, 0);
-  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
   transition-property: transform;
   -webkit-backface-visibility: hidden; }
 
@@ -5379,8 +5350,6 @@ table actions
   -webkit-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
   transform: scale(1, 1);
-  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15); }
 
 .tooltipster-swing {
@@ -5388,7 +5357,7 @@ table actions
   -webkit-transform: rotateZ(4deg);
   -ms-transform: rotateZ(4deg);
   transform: rotateZ(4deg);
-  -webkit-transition-property: -webkit-transform, opacity;
+  transition-property: -webkit-transform;
   transition-property: transform; }
 
 .tooltipster-swing-show {
@@ -5396,36 +5365,26 @@ table actions
   -webkit-transform: rotateZ(0deg);
   -ms-transform: rotateZ(0deg);
   transform: rotateZ(0deg);
-  -webkit-transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 1);
-  -webkit-transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 2.4);
   transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 2.4); }
 
 .tooltipster-fall {
   top: 0;
-  -webkit-transition-property: top;
   transition-property: top;
-  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15); }
 
 
 .tooltipster-fall.tooltipster-dying {
-  -webkit-transition-property: all;
   transition-property: all;
   top: 0px !important;
   opacity: 0; }
 
 .tooltipster-slide {
   left: -40px;
-  -webkit-transition-property: left;
   transition-property: left;
-  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15); }
 
 
 .tooltipster-slide.tooltipster-dying {
-  -webkit-transition-property: all;
   transition-property: all;
   left: 0px !important;
   opacity: 0; }
