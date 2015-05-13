@@ -1,0 +1,39 @@
+{
+  "name": "pattern-library",
+  "version": "0.1.0",
+  "homepage": "http://onsdigital.github.io/pattern-library",
+  "authors": [
+    "Bren <brneser@gmail.com>"
+  ],
+  "description": "ONS Alpha Pattern Library",
+  "main": "Gruntfile.js",
+  "keywords": [
+    "ONSdigital",
+    "pattern-library",
+    "ons",
+    "sass",
+    "css",
+    "js"
+  ],
+  "license": "Open Government Licence v2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "ui/js/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.11.0",
+    "tooltipster": "3.2.6",
+    "highcharts": "~4.1.5",
+    "html5-placeholder-polyfill": "~2.0.10",
+    "svgeezy": "~1.0.0",
+    "moment": "^2.8.3",
+    "mustache": "^0.8.2",
+    "lodash": "^2.4.1",
+    "tablesaw": "~0.1.6",
+    "modernizr": "~2.8.3"
+  }
+}

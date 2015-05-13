@@ -8,9 +8,6 @@
     "url": "git@github.com:ONSdigital/pattern-library.git"
   },
   "homepage": "http://onsdigital.github.io/pattern-library",
-  "scripts": {
-    "install": "napa"
-  },
   "engines": {
     "node": ">= 0.10.27"
   },
@@ -46,7 +43,6 @@
     "grunt-scss-lint": "^0.3.3",
     "grunt-string-replace": "~0.2.4",
     "grunt-usemin": "~2.0.2",
-    "html5-placeholder-polyfill": "git://github.com/ginader/HTML5-placeholder-polyfill",
     "jasmine-jquery": "^2.0.5",
     "jshint-stylish": "0.2.0",
     "karma": "^0.12.24",
@@ -55,22 +51,12 @@
     "karma-jasmine-jquery": "^0.1.1",
     "karma-junit-reporter": "^0.2.2",
     "karma-phantomjs-launcher": "^0.1.4",
-    "lodash": "^2.4.1",
-    "moment": "^2.8.3",
-    "mustache": "^0.8.2",
-    "napa": "^1.0.1",
     "pixrem": "^0.1.4",
     "q": "~1.0.0",
-    "tablesaw": "~0.1.6",
-    "svgeezy": "benhowdle89/svgeezy",
     "fs.extra": "^1.2.1"
   },
   "dependencies": {
-    "napa": "^1.0.1",
     "jquery": "~1.11.0"
-  },
-  "napa": {
-    "tooltipster": "iamceege/tooltipster#3.2.6",
-    "highcharts": "highslide-software/highcharts.com"
   }
+  
 }
