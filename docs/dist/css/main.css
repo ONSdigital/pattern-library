@@ -1088,6 +1088,17 @@ textarea {
   .lt-ie8 .grid-pull-five-sixths {
     left: -83%; }
 
+.grid-one-fifth, .grid-set-one-fifth .grid-col {
+  width: 20%; }
+  .lt-ie8 .grid-one-fifth, .lt-ie8 .grid-set-one-fifth .grid-col {
+    width: 17.75%; }
+
+.grid-push-one-fifth, .lt-ie8 .grid-push-one-fifth {
+  left: 20%; }
+
+.grid-pull-one-fifth, .lt-ie8 .grid-pull-one-fifth {
+  left: -20%; }
+
 @media screen and (min-width: 38em) {
   .tablet-grid-wrap {
     margin-left: -25px;
@@ -1188,7 +1199,15 @@ textarea {
   .tablet-grid-pull-five-sixths {
     left: -83.33333%; }
     .lt-ie8 .tablet-grid-pull-five-sixths {
-      left: -83%; } }
+      left: -83%; }
+  .tablet-grid-one-fifth, .tablet-grid-set-one-fifth .tablet-grid-col {
+    width: 20%; }
+    .lt-ie8 .tablet-grid-one-fifth, .lt-ie8 .tablet-grid-set-one-fifth .tablet-grid-col {
+      width: 17.75%; }
+  .tablet-grid-push-one-fifth, .lt-ie8 .tablet-grid-push-one-fifth {
+    left: 20%; }
+  .tablet-grid-pull-one-fifth, .lt-ie8 .tablet-grid-pull-one-fifth {
+    left: -20%; } }
 
 @media screen and (min-width: 50em) {
   .tablet-wide-grid-wrap {
@@ -1290,7 +1309,15 @@ textarea {
   .tablet-wide-grid-pull-five-sixths {
     left: -83.33333%; }
     .lt-ie8 .tablet-wide-grid-pull-five-sixths {
-      left: -83%; } }
+      left: -83%; }
+  .tablet-wide-grid-one-fifth, .tablet-wide-grid-set-one-fifth .tablet-wide-grid-col {
+    width: 20%; }
+    .lt-ie8 .tablet-wide-grid-one-fifth, .lt-ie8 .tablet-wide-grid-set-one-fifth .tablet-wide-grid-col {
+      width: 17.75%; }
+  .tablet-wide-grid-push-one-fifth, .lt-ie8 .tablet-wide-grid-push-one-fifth {
+    left: 20%; }
+  .tablet-wide-grid-pull-one-fifth, .lt-ie8 .tablet-wide-grid-pull-one-fifth {
+    left: -20%; } }
 
 @media screen and (min-width: 56em) {
   .desktop-grid-wrap {
@@ -1392,7 +1419,15 @@ textarea {
   .desktop-grid-pull-five-sixths {
     left: -83.33333%; }
     .lt-ie8 .desktop-grid-pull-five-sixths {
-      left: -83%; } }
+      left: -83%; }
+  .desktop-grid-one-fifth, .desktop-grid-set-one-fifth .desktop-grid-col {
+    width: 20%; }
+    .lt-ie8 .desktop-grid-one-fifth, .lt-ie8 .desktop-grid-set-one-fifth .desktop-grid-col {
+      width: 17.75%; }
+  .desktop-grid-push-one-fifth, .lt-ie8 .desktop-grid-push-one-fifth {
+    left: 20%; }
+  .desktop-grid-pull-one-fifth, .lt-ie8 .desktop-grid-pull-one-fifth {
+    left: -20%; } }
 
 .list--definition--float dt, .list--definition--float dd {
   float: left;
