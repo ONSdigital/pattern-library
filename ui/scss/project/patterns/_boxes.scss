@@ -203,6 +203,36 @@
   }
 }
 
+// Custom boxes
+
+.box--teal--separated--left {
+  @extend %big-left;
+
+  &:before {
+    border-left-color: $teal;
+  }
+}
+
+
+.box--purple--separated--left {
+  @extend %big-left;
+
+  &:before {
+    border-left-color: $purple;
+  }
+}
+
+
+.box--green--separated--left {
+  @extend %big-left;
+
+  &:before {
+    border-left-color: $ons-green;
+  }
+}
+
+// end custom boxes
+
 %orange {
   a {
     color: $orange;
