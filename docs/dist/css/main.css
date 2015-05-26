@@ -380,8 +380,7 @@ body, button, input, select, textarea {
   font-family: "open-sans-n4", "open-sans", sans-serif; }
 
 * {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box; }
+  box-sizing: border-box; }
 
 img {
   max-width: 100%; }
@@ -2198,6 +2197,7 @@ a {
 
 .tablesaw thead tr:first-child th, .tablesaw thead {
   background-color: #dedfdc;
+  background-image: -webkit-linear-gradient(#e8e9e7, #dedfdc);
   background-image: linear-gradient(#e8e9e7, #dedfdc); }
 
 .tablesaw-enhanced .tablesaw-bar .btn {
@@ -2608,9 +2608,12 @@ Button styles
   text-align: center;
   text-decoration: none !important;
   text-transform: uppercase;
-  transition-duration: 200ms;
-  transition-property: background-color, color;
-  transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-property: background-color, color;
+          transition-property: background-color, color;
+  -webkit-transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+          transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86); }
   .btn:focus {
     outline: 0; }
 
@@ -2640,11 +2643,13 @@ lesser , applied styles
 
 .btn--secondary--active {
   background: #c5c7c1;
+  background: -webkit-radial-gradient(center, ellipse, #d5d6d2 0%, #c8c9c4 100%);
   background: radial-gradient(ellipse at center, #d5d6d2 0%, #c8c9c4 100%); }
   .btn--secondary--active, .btn--secondary--active:visited, .btn--secondary--active:hover {
     color: #303030; }
   .btn--secondary--active:hover, .btn--secondary--active:focus {
     background: #acaea7;
+    background: -webkit-radial-gradient(center, ellipse, #bcbeb7 0%, #afb1a9 100%);
     background: radial-gradient(ellipse at center, #bcbeb7 0%, #afb1a9 100%); }
 
 .btn--thin {
@@ -2845,6 +2850,7 @@ lesser , applied styles
   border-top-color: #cbcdc8;
   border-bottom-width: 2px;
   background-color: #dedfdc;
+  background-image: -webkit-linear-gradient(#e8e9e7, #dedfdc);
   background-image: linear-gradient(#e8e9e7, #dedfdc); }
   .list--table__footer > .list--table__item__body {
     width: 100%; }
@@ -4223,6 +4229,7 @@ $SPLIT
   .table tfoot tr {
     border-top-color: #cbcdc8;
     border-bottom-width: 2px;
+    background-image: -webkit-linear-gradient(#d8d9d5, #cbcdc8);
     background-image: linear-gradient(#d8d9d5, #cbcdc8); }
   .table .name {
     width: 35%; }
@@ -4512,6 +4519,7 @@ table actions
 /* Some CSS magic for the awesome animations - feel free to make your own custom animations and reference it in your Tooltipster settings! */
 .tooltipster-fade {
   opacity: 0;
+  -webkit-transition-property: opacity;
   transition-property: opacity; }
 
 .tooltipster-fade-show {
@@ -4521,7 +4529,7 @@ table actions
   -webkit-transform: scale(0, 0);
   -ms-transform: scale(0, 0);
   transform: scale(0, 0);
-  transition-property: -webkit-transform;
+  -webkit-transition-property: -webkit-transform;
   transition-property: transform;
   -webkit-backface-visibility: hidden; }
 
@@ -4529,6 +4537,8 @@ table actions
   -webkit-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
   transform: scale(1, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15); }
 
 .tooltipster-swing {
@@ -4536,7 +4546,7 @@ table actions
   -webkit-transform: rotateZ(4deg);
   -ms-transform: rotateZ(4deg);
   transform: rotateZ(4deg);
-  transition-property: -webkit-transform;
+  -webkit-transition-property: -webkit-transform, opacity;
   transition-property: transform; }
 
 .tooltipster-swing-show {
@@ -4544,26 +4554,36 @@ table actions
   -webkit-transform: rotateZ(0deg);
   -ms-transform: rotateZ(0deg);
   transform: rotateZ(0deg);
+  -webkit-transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 2.4);
   transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 2.4); }
 
 .tooltipster-fall {
   top: 0;
+  -webkit-transition-property: top;
   transition-property: top;
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15); }
 
 
 .tooltipster-fall.tooltipster-dying {
+  -webkit-transition-property: all;
   transition-property: all;
   top: 0px !important;
   opacity: 0; }
 
 .tooltipster-slide {
   left: -40px;
+  -webkit-transition-property: left;
   transition-property: left;
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15); }
 
 
 .tooltipster-slide.tooltipster-dying {
+  -webkit-transition-property: all;
   transition-property: all;
   left: 0px !important;
   opacity: 0; }
@@ -4574,8 +4594,6 @@ table actions
   -webkit-transform: scale(1.1, 1.1);
   -ms-transform: scale(1.1, 1.1);
   transform: scale(1.1, 1.1); }
-
-/*# sourceMappingURL=tooltipster.css.map */
 /* ======================================================
    Print styles (via H5BP)
    Inlined to avoid required HTTP connection: h5bp.com/r

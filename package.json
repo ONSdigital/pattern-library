@@ -22,7 +22,7 @@
   "devDependencies": {
     "express": "4.9.1",
     "grunt": "~0.4.1",
-    "grunt-autoprefixer": "^0.8.2",
+    "grunt-autoprefixer": "~3.0.0",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-compass": "~0.2.0",
     "grunt-contrib-concat": "~0.3.0",
@@ -61,9 +61,10 @@
     "napa": "^1.0.1",
     "pixrem": "^0.1.4",
     "q": "~1.0.0",
-    "tablesaw": "~0.1.6",
+    "tablesaw": "~1.0.3",
     "svgeezy": "benhowdle89/svgeezy",
-    "fs.extra": "^1.2.1"
+    "fs.extra": "^1.2.1",
+    "grunt-cli": "~0.1.13"
   },
   "dependencies": {
     "napa": "^1.0.1",

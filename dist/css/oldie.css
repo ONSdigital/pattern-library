@@ -377,8 +377,7 @@ body, button, input, select, textarea {
   font-family: "open-sans-n4", "open-sans", sans-serif; }
 
 * {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box; }
+  box-sizing: border-box; }
 
 img {
   max-width: 100%; }
@@ -2242,9 +2241,12 @@ Button styles
   text-align: center;
   text-decoration: none !important;
   text-transform: uppercase;
-  transition-duration: 200ms;
-  transition-property: background-color, color;
-  transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-property: background-color, color;
+          transition-property: background-color, color;
+  -webkit-transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+          transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86); }
   .btn:focus {
     outline: 0; }
 
@@ -2274,11 +2276,13 @@ lesser , applied styles
 
 .btn--secondary--active {
   background: #c5c7c1;
+  background: -webkit-radial-gradient(center, ellipse, #d5d6d2 0%, #c8c9c4 100%);
   background: radial-gradient(ellipse at center, #d5d6d2 0%, #c8c9c4 100%); }
   .btn--secondary--active, .btn--secondary--active:visited, .btn--secondary--active:hover {
     color: #303030; }
   .btn--secondary--active:hover, .btn--secondary--active:focus {
     background: #acaea7;
+    background: -webkit-radial-gradient(center, ellipse, #bcbeb7 0%, #afb1a9 100%);
     background: radial-gradient(ellipse at center, #bcbeb7 0%, #afb1a9 100%); }
 
 .btn--thin {
@@ -2458,6 +2462,7 @@ lesser , applied styles
   border-top-color: #cbcdc8;
   border-bottom-width: 2px;
   background-color: #dedfdc;
+  background-image: -webkit-linear-gradient(#e8e9e7, #dedfdc);
   background-image: linear-gradient(#e8e9e7, #dedfdc); }
   .list--table__footer > .list--table__item__body {
     width: 100%; }
@@ -3520,6 +3525,7 @@ $SPLIT
   .table tfoot tr {
     border-top-color: #cbcdc8;
     border-bottom-width: 2px;
+    background-image: -webkit-linear-gradient(#d8d9d5, #cbcdc8);
     background-image: linear-gradient(#d8d9d5, #cbcdc8); }
   .table .name {
     width: 35%;
