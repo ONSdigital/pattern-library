@@ -16,6 +16,16 @@
   }
 }
 
+.page-header__meta-block-with-img {
+    padding-left: 75px;
+
+    img {
+        width: 40px;
+        margin-left: -50px;
+    }
+
+}
+
 @include respond-min($bp-tablet-wide) {
   .page-header {
     padding: 4rem 0 1rem;

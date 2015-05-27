@@ -2989,6 +2989,12 @@ a {
   .page-header__icons .icon {
     margin: 0 0.25em; }
 
+.page-header__meta-block-with-img {
+  padding-left: 75px; }
+  .page-header__meta-block-with-img img {
+    width: 40px;
+    margin-left: -50px; }
+
 @media screen and (min-width: 50em) {
   .page-header {
     padding: 40px 0 10px;
@@ -3634,15 +3640,12 @@ lesser , applied styles
 .date--stacked__month--shorthand {
   text-transform: uppercase; }
 
-.divider--border-left, .divider__half--border-last, .divider__quarter--border-last, .divider__half--border-first, .divider__quarter--border-first {
+.divider__half--border-last, .divider__quarter--border-last, .divider__half--border-first, .divider__quarter--border-first, .divider--border-left {
   border-color: #909090;
   border-style: solid; }
 
 .divider {
   clear: both; }
-
-.divider--border-left {
-  border-width: 0 0 0 1px; }
 
 .divider__half {
   padding: 15px 10px;
@@ -3659,6 +3662,8 @@ lesser , applied styles
   border-width: 0 0 1px; }
 
 @media screen and (min-width: 47em) {
+  .divider--border-left {
+    border-width: 0 0 0 1px; }
   .divider__half {
     float: left;
     width: 50%;
