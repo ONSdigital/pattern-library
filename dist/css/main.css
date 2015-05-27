@@ -1175,13 +1175,13 @@ body {
 /* ------------------------------
  * Misc utilities
  */
-.cf:before, .rule-above:before, .rule-below:before, .field:before, .list--definition--float:before, .list--definition--inline:before, .page-header--article__split:before, .chart-area:before, .chart-area__controls:before, .chart-area__controls__time:before, .chart-area__controls__custom:before, .chart-area__footer:before, .actionable-header:before, .button-group:before, .divider:before, .divider__half:before, .list--table__item:before, .media:before, .nav:before, .nav-search:before, .callout__stat:before, .cf:after, .rule-above:after, .rule-below:after, .field:after, .list--definition--float:after, .list--definition--inline:after, .page-header--article__split:after, .chart-area:after, .chart-area__controls:after, .chart-area__controls__time:after, .chart-area__controls__custom:after, .chart-area__footer:after, .actionable-header:after, .button-group:after, .divider:after, .divider__half:after, .list--table__item:after, .media:after, .nav:after, .nav-search:after, .callout__stat:after {
+.cf:before, .rule-above:before, .rule-below:before, .field:before, .list--definition--float:before, .list--definition--inline:before, .page-header--article__split:before, .chart-area:before, .chart-area__controls:before, .chart-area__controls__time:before, .chart-area__controls__custom:before, .chart-area__footer:before, .actionable-header:before, .button-group:before, .divider:before, .divider__half:before, .divider__quarter:before, .list--table__item:before, .media:before, .nav:before, .nav-search:before, .callout__stat:before, .cf:after, .rule-above:after, .rule-below:after, .field:after, .list--definition--float:after, .list--definition--inline:after, .page-header--article__split:after, .chart-area:after, .chart-area__controls:after, .chart-area__controls__time:after, .chart-area__controls__custom:after, .chart-area__footer:after, .actionable-header:after, .button-group:after, .divider:after, .divider__half:after, .divider__quarter:after, .list--table__item:after, .media:after, .nav:after, .nav-search:after, .callout__stat:after {
   display: table;
   /* 2 */
   content: " ";
   /* 1 */ }
 
-.cf:after, .rule-above:after, .rule-below:after, .field:after, .list--definition--float:after, .list--definition--inline:after, .page-header--article__split:after, .chart-area:after, .chart-area__controls:after, .chart-area__controls__time:after, .chart-area__controls__custom:after, .chart-area__footer:after, .actionable-header:after, .button-group:after, .divider:after, .divider__half:after, .list--table__item:after, .media:after, .nav:after, .nav-search:after, .callout__stat:after {
+.cf:after, .rule-above:after, .rule-below:after, .field:after, .list--definition--float:after, .list--definition--inline:after, .page-header--article__split:after, .chart-area:after, .chart-area__controls:after, .chart-area__controls__time:after, .chart-area__controls__custom:after, .chart-area__footer:after, .actionable-header:after, .button-group:after, .divider:after, .divider__half:after, .divider__quarter:after, .list--table__item:after, .media:after, .nav:after, .nav-search:after, .callout__stat:after {
   clear: both; }
 
 
@@ -3634,6 +3634,10 @@ lesser , applied styles
 .date--stacked__month--shorthand {
   text-transform: uppercase; }
 
+.divider__half--border-last, .divider__quarter--border-last, .divider__half--border-first, .divider__quarter--border-first {
+  border-color: #f1f1f1;
+  border-style: solid; }
+
 .divider {
   clear: both; }
 
@@ -3641,14 +3645,14 @@ lesser , applied styles
   padding: 15px 10px;
   padding: 1.5rem 1rem; }
 
-.divider__half--border-last, .divider__half--border-first {
-  border-color: #f1f1f1;
-  border-style: solid; }
+.divider__quarter {
+  padding: 15px 10px;
+  padding: 1.5rem 1rem; }
 
-.divider__half--border-last {
+.divider__half--border-last, .divider__quarter--border-last {
   border-width: 1px 0 0; }
 
-.divider__half--border-first {
+.divider__half--border-first, .divider__quarter--border-first {
   border-width: 0 0 1px; }
 
 @media screen and (min-width: 47em) {
@@ -3657,9 +3661,14 @@ lesser , applied styles
     width: 50%;
     padding: 0 30px;
     padding: 0 3rem; }
-  .divider__half--border-last {
+  .divider__quarter {
+    float: left;
+    width: 25%;
+    padding: 0 30px;
+    padding: 0 3rem; }
+  .divider__half--border-last, .divider__quarter--border-last {
     border-width: 0 0 0 1px; }
-  .divider__half--border-first {
+  .divider__half--border-first, .divider__quarter--border-last {
     border-width: 0 1px 0 0; } }
 
 .hero {

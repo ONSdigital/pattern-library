@@ -1,3 +1,8 @@
+%divider-border {
+  border-color: mix($grey, $white, 10%);
+  border-style: solid;
+}
+
 .divider {
   @extend %cf;
   clear: both;
@@ -8,17 +13,17 @@
   padding: 1.5rem 1rem;
 }
 
-%divider-border {
-  border-color: mix($grey, $white, 10%);
-  border-style: solid;
+.divider__quarter {
+  @extend %cf;
+  padding: 1.5rem 1rem;
 }
 
-.divider__half--border-last {
+.divider__half--border-last, .divider__quarter--border-last {
   @extend %divider-border;
   border-width: 1px 0 0;
 }
 
-.divider__half--border-first {
+.divider__half--border-first, .divider__quarter--border-first {
   @extend %divider-border;
   border-width: 0 0 1px;
 }
@@ -30,11 +35,17 @@
     padding: 0 3rem;
   }
 
-  .divider__half--border-last {
+  .divider__quarter {
+    float: left;
+    width: 25%;
+    padding: 0 3rem;
+  }
+
+  .divider__half--border-last, .divider__quarter--border-last {
     border-width: 0 0 0 1px;
   }
 
-  .divider__half--border-first {
+  .divider__half--border-first, .divider__quarter--border-last {
     border-width: 0 1px 0 0;
   }
 }
