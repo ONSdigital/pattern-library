@@ -8,6 +8,11 @@
   clear: both;
 }
 
+.divider--border-left {
+  @extend %divider-border;
+  border-width: 0 0 0 1px;
+}
+
 .divider__half {
   @extend %cf;
   padding: 1.5rem 1rem;

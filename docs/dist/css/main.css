@@ -3634,12 +3634,15 @@ lesser , applied styles
 .date--stacked__month--shorthand {
   text-transform: uppercase; }
 
-.divider__half--border-last, .divider__quarter--border-last, .divider__half--border-first, .divider__quarter--border-first {
+.divider--border-left, .divider__half--border-last, .divider__quarter--border-last, .divider__half--border-first, .divider__quarter--border-first {
   border-color: #f1f1f1;
   border-style: solid; }
 
 .divider {
   clear: both; }
+
+.divider--border-left {
+  border-width: 0 0 0 1px; }
 
 .divider__half {
   padding: 15px 10px;
