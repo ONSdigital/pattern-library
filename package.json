@@ -21,6 +21,7 @@
   "readmeFilename": "README.md",
   "devDependencies": {
     "express": "4.9.1",
+    "bower": "*",
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~3.0.0",
     "grunt-contrib-clean": "~0.5.0",
