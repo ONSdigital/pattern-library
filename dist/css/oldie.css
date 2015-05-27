@@ -2870,7 +2870,8 @@ a {
   padding-left: 75px; }
   .page-header__meta-block-with-img img {
     width: 40px;
-    margin-left: -50px; }
+    margin-left: -50px;
+    float: left; }
 
 .page-header {
   padding: 40px 0 10px; }

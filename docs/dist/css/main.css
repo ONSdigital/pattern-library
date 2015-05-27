@@ -2993,7 +2993,8 @@ a {
   padding-left: 75px; }
   .page-header__meta-block-with-img img {
     width: 40px;
-    margin-left: -50px; }
+    margin-left: -50px;
+    float: left; }
 
 @media screen and (min-width: 50em) {
   .page-header {
