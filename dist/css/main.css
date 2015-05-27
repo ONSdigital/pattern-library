@@ -3635,7 +3635,7 @@ lesser , applied styles
   text-transform: uppercase; }
 
 .divider--border-left, .divider__half--border-last, .divider__quarter--border-last, .divider__half--border-first, .divider__quarter--border-first {
-  border-color: #f1f1f1;
+  border-color: #909090;
   border-style: solid; }
 
 .divider {
