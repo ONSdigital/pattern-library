@@ -3648,6 +3648,9 @@ lesser , applied styles
   border-color: #909090;
   border-style: solid; }
 
+.divider--border-left {
+  border: none; }
+
 .divider {
   clear: both; }
 

@@ -3,6 +3,10 @@
   border-style: solid;
 }
 
+.divider--border-left {
+  border: none;
+}
+
 .divider {
   @extend %cf;
   clear: both;
@@ -29,7 +33,7 @@
 }
 
 @include respond-min(47em) {
-    
+
     .divider--border-left {
       @extend %divider-border;
       border-width: 0 0 0 1px;
