@@ -2999,7 +2999,7 @@ a {
 .page-header__meta-block-with-ul ul {
   margin: 0; }
 
-@media screen and (min-width: 38em) {
+@media screen and (min-width: 50em) {
   .page-header {
     padding: 40px 0 10px;
     padding: 4rem 0 1rem; }
@@ -3668,7 +3668,7 @@ lesser , applied styles
 .divider__half--border-first, .divider__quarter--border-first {
   border-width: 0 0 1px; }
 
-@media screen and (min-width: 56em) {
+@media screen and (min-width: 38em) {
   .divider--border-left {
     border-width: 0 0 0 1px; } }
 

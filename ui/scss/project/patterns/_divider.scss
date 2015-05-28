@@ -33,7 +33,7 @@
   border-width: 0 0 1px;
 }
 
-@include respond-min($bp-desktop) {
+@include respond-min($bp-tablet) {
     .divider--border-left {
       border-width: 0 0 0 1px;
     }
