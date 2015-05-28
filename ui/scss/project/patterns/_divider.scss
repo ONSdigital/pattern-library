@@ -4,7 +4,8 @@
 }
 
 .divider--border-left {
-  border-width: 0 0 0 1px;
+    @extend %divider-border;
+    border-width: 0;
 }
 
 .divider {
@@ -32,9 +33,9 @@
   border-width: 0 0 1px;
 }
 
-@include respond-max($bp-tablet) {
+@include respond-min($bp-desktop) {
     .divider--border-left {
-      border-width: 0;
+      border-width: 0 0 0 1px;
     }
 }
 

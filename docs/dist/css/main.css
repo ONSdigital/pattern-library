@@ -3644,12 +3644,12 @@ lesser , applied styles
 .date--stacked__month--shorthand {
   text-transform: uppercase; }
 
-.divider__half--border-last, .divider__quarter--border-last, .divider__half--border-first, .divider__quarter--border-first {
+.divider--border-left, .divider__half--border-last, .divider__quarter--border-last, .divider__half--border-first, .divider__quarter--border-first {
   border-color: #909090;
   border-style: solid; }
 
 .divider--border-left {
-  border-width: 0 0 0 1px; }
+  border-width: 0; }
 
 .divider {
   clear: both; }
@@ -3668,9 +3668,9 @@ lesser , applied styles
 .divider__half--border-first, .divider__quarter--border-first {
   border-width: 0 0 1px; }
 
-@media screen and (max-width: 38em) {
+@media screen and (min-width: 56em) {
   .divider--border-left {
-    border-width: 0; } }
+    border-width: 0 0 0 1px; } }
 
 @media screen and (min-width: 47em) {
   .divider__half {
