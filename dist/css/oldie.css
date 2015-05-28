@@ -4478,6 +4478,14 @@ table actions
       content: counter(toc) ". ";
       counter-increment: toc; }
 
+.table-of-contents-ordered-list {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  padding: 0; }
+  .table-of-contents-ordered-list li {
+    margin-left: 2em; }
+
 .tab-pane__tabs-container {
   margin: 0;
   font-size: 16px;
