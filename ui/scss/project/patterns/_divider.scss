@@ -4,7 +4,7 @@
 }
 
 .divider--border-left {
-  border: none;
+  border-width: 0 0 0 1px;
 }
 
 .divider {
@@ -32,12 +32,18 @@
   border-width: 0 0 1px;
 }
 
+@include respond-max($bp-tablet) {
+    .divider--border-left {
+      border-width: 0;
+    }
+}
+
 @include respond-min(47em) {
 
-    .divider--border-left {
-      @extend %divider-border;
-      border-width: 0 0 0 1px;
-    }
+    // .divider--border-left {
+    //   @extend %divider-border;
+    //   border-width: 0 0 0 1px;
+    // }
 
   .divider__half {
     float: left;
