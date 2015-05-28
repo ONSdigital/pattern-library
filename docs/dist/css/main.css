@@ -4225,7 +4225,7 @@ lesser , applied styles
 .breadcrumb_hero {
   margin-top: 0; }
 
-.nav__active a {
+.nav__active, .nav__active a {
   color: #757575;
   text-decoration: none; }
 

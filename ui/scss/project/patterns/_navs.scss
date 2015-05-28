@@ -91,9 +91,7 @@
     margin-top: 0;
 }
 
-.nav__active {
-  a {
+.nav__active, .nav__active a {
     color: $grey;
     text-decoration: none;
-  }
 }
