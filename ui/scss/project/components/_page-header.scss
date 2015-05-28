@@ -30,7 +30,7 @@
     margin: 0;
 }
 
-@include respond-min($bp-tablet-wide) {
+@include respond-min($bp-tablet) {
   .page-header {
     padding: 4rem 0 1rem;
   }
