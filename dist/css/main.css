@@ -4199,7 +4199,7 @@ lesser , applied styles
 .nav--block--spaced a {
   margin: 0.5em 0; }
 
-.nav--block-landing:nth-child(4n+4) {
+.nav--block-landing:nth-child(3n+4) {
   clear: left; }
 
 .nav--dark a {
