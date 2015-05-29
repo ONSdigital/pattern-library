@@ -2493,10 +2493,10 @@ a {
   margin-bottom: 3rem; }
   .page-header--article:after {
     position: absolute;
-    right: 5%;
+    right: 0;
     bottom: -5px;
     bottom: -0.5rem;
-    left: 5%;
+    left: 0;
     display: block;
     width: auto;
     height: 5px;

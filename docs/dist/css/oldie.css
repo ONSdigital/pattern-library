@@ -2500,9 +2500,9 @@ a {
   margin-bottom: 30px; }
   .page-header--article:after {
     position: absolute;
-    right: 5%;
+    right: 0;
     bottom: -5px;
-    left: 5%;
+    left: 0;
     display: block;
     width: auto;
     height: 5px;
