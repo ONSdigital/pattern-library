@@ -131,6 +131,12 @@
       "css": "gplus",
       "code": 59398,
       "src": "entypo"
+    },
+    {
+      "uid": "7132e1233bc16cd1b6efe7e29d3613a5",
+      "css": "linkedin",
+      "code": 59413,
+      "src": "entypo"
     }
   ]
 }
