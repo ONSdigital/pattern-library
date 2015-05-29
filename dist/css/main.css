@@ -2579,10 +2579,7 @@ a {
     width: 85px;
     width: 8.5rem; } }
 
-@media screen and (min-width: 50em) {
-  .page-header--article .page-header__icons {
-    top: -17px;
-    top: -1.75rem; } }
+@media screen and (min-width: 50em) { }
 
 @media screen and (min-width: 53em) {
   .page-header--stat-bulletin .split__multiline-break, .page-header--expert-analysis .split__multiline-break {

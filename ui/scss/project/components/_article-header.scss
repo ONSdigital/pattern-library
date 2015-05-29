@@ -132,7 +132,7 @@
 // compensate for header above main header offsetting space a bit
 @include respond-min(50em) {
   .page-header--article .page-header__icons {
-    top: -1.75rem;
+    // top: -1.75rem;
   }
 }
 
