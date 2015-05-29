@@ -5205,13 +5205,16 @@ table actions
       counter-increment: toc; }
 
 .table-of-contents-ordered-list {
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  -ms-column-count: 3;
-  column-count: 3;
   padding: 0; }
   .table-of-contents-ordered-list li {
     margin-left: 2em; }
+
+@media screen and (min-width: 38em) {
+  .table-of-contents-ordered-list {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    -ms-column-count: 3;
+    column-count: 3; } }
 
 .tab-pane__tabs-container {
   margin: 0;
