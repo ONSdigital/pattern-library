@@ -250,7 +250,7 @@
 
 .box--orange {
   @extend %orange;
-  @extend %solid;
+  // @extend %solid;
 }
 
 .box__section {
