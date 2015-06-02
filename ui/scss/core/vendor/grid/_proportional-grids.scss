@@ -67,11 +67,11 @@ $offset: false !default;
     }
   }
 
-  .#{$namespace}#{$grid-wrap-class}#--home-hero {
+  .#{$namespace}#{$grid-wrap-class}#{--home-hero} {
     margin-left: -5px;
   }
 
-  .#{$namespace}#{$grid-col-class}#--home-hero {
+  .#{$namespace}#{$grid-col-class}#{--home-hero} {
     padding-left: 5px;
   }
 }

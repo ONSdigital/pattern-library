@@ -1806,10 +1806,10 @@ textarea {
   .lt-ie8 .grid-col {
     padding-left: 2%; }
 
-.grid-wrap#--home-hero {
+.grid-wrap--home-hero {
   margin-left: -5px; }
 
-.grid-col#--home-hero {
+.grid-col--home-hero {
   padding-left: 5px; }
 
 .grid-full-width, .grid-set-full-width .grid-col {
@@ -1949,10 +1949,10 @@ textarea {
   .lt-ie8 .tablet-grid-col {
     padding-left: 2%; }
 
-.tablet-grid-wrap#--home-hero {
+.tablet-grid-wrap--home-hero {
   margin-left: -5px; }
 
-.tablet-grid-col#--home-hero {
+.tablet-grid-col--home-hero {
   padding-left: 5px; }
 
 .tablet-grid-full-width, .tablet-grid-set-full-width .tablet-grid-col {
@@ -2092,10 +2092,10 @@ textarea {
   .lt-ie8 .tablet-wide-grid-col {
     padding-left: 2%; }
 
-.tablet-wide-grid-wrap#--home-hero {
+.tablet-wide-grid-wrap--home-hero {
   margin-left: -5px; }
 
-.tablet-wide-grid-col#--home-hero {
+.tablet-wide-grid-col--home-hero {
   padding-left: 5px; }
 
 .tablet-wide-grid-full-width, .tablet-wide-grid-set-full-width .tablet-wide-grid-col {
@@ -2235,10 +2235,10 @@ textarea {
   .lt-ie8 .desktop-grid-col {
     padding-left: 2%; }
 
-.desktop-grid-wrap#--home-hero {
+.desktop-grid-wrap--home-hero {
   margin-left: -5px; }
 
-.desktop-grid-col#--home-hero {
+.desktop-grid-col--home-hero {
   padding-left: 5px; }
 
 .desktop-grid-full-width, .desktop-grid-set-full-width .desktop-grid-col {
