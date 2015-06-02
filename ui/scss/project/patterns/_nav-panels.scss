@@ -9,6 +9,10 @@
   background-color: lighten($blue-light, 55%);
 }
 
+.nav-panel--home-hero {
+    display: block;
+}
+
 .nav-panel__header {
   padding-top: 2rem;
   padding-bottom: .5rem;

@@ -1851,6 +1851,12 @@ textarea {
   .lt-ie8 .grid-col {
     padding-left: 2%; }
 
+.grid-wrap#--home-hero {
+  margin-left: -5px; }
+
+.grid-col#--home-hero {
+  padding-left: 5px; }
+
 .grid-full-width, .grid-set-full-width .grid-col {
   width: 100%; }
   .lt-ie8 .grid-full-width, .lt-ie8 .grid-set-full-width .grid-col {
@@ -1987,6 +1993,10 @@ textarea {
     position: relative; }
     .lt-ie8 .tablet-grid-col {
       padding-left: 2%; }
+  .tablet-grid-wrap#--home-hero {
+    margin-left: -5px; }
+  .tablet-grid-col#--home-hero {
+    padding-left: 5px; }
   .tablet-grid-full-width, .tablet-grid-set-full-width .tablet-grid-col {
     width: 100%; }
     .lt-ie8 .tablet-grid-full-width, .lt-ie8 .tablet-grid-set-full-width .tablet-grid-col {
@@ -2097,6 +2107,10 @@ textarea {
     position: relative; }
     .lt-ie8 .tablet-wide-grid-col {
       padding-left: 2%; }
+  .tablet-wide-grid-wrap#--home-hero {
+    margin-left: -5px; }
+  .tablet-wide-grid-col#--home-hero {
+    padding-left: 5px; }
   .tablet-wide-grid-full-width, .tablet-wide-grid-set-full-width .tablet-wide-grid-col {
     width: 100%; }
     .lt-ie8 .tablet-wide-grid-full-width, .lt-ie8 .tablet-wide-grid-set-full-width .tablet-wide-grid-col {
@@ -2207,6 +2221,10 @@ textarea {
     position: relative; }
     .lt-ie8 .desktop-grid-col {
       padding-left: 2%; }
+  .desktop-grid-wrap#--home-hero {
+    margin-left: -5px; }
+  .desktop-grid-col#--home-hero {
+    padding-left: 5px; }
   .desktop-grid-full-width, .desktop-grid-set-full-width .desktop-grid-col {
     width: 100%; }
     .lt-ie8 .desktop-grid-full-width, .lt-ie8 .desktop-grid-set-full-width .desktop-grid-col {
@@ -4049,6 +4067,9 @@ lesser , applied styles
 
 .nav-panel--statless {
   background-color: #ddf3ff; }
+
+.nav-panel--home-hero {
+  display: block; }
 
 .nav-panel__header {
   padding-top: 20px;
