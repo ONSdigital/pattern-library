@@ -25,9 +25,27 @@
       "src": "entypo"
     },
     {
+      "uid": "ecf8edb95c3f45eb433b4cce7ba9f740",
+      "css": "users",
+      "code": 59412,
+      "src": "entypo"
+    },
+    {
+      "uid": "2cfb3f2b46b34a1790aec0aa846297b6",
+      "css": "menu",
+      "code": 59417,
+      "src": "entypo"
+    },
+    {
       "uid": "14017aae737730faeda4a6fd8fb3a5f0",
       "css": "check",
       "code": 59407,
+      "src": "entypo"
+    },
+    {
+      "uid": "c709da589c923ba3c2ad48d9fc563e93",
+      "css": "cancel",
+      "code": 59418,
       "src": "entypo"
     },
     {
@@ -46,6 +64,12 @@
       "uid": "28f124a10127a47b9d9472699193d75a",
       "css": "print",
       "code": 59401,
+      "src": "entypo"
+    },
+    {
+      "uid": "16890362e811b4cb8de36282b071fe30",
+      "css": "comment",
+      "code": 59419,
       "src": "entypo"
     },
     {
@@ -73,6 +97,12 @@
       "src": "entypo"
     },
     {
+      "uid": "f11c9e95ae5eaa84d193e8fa1d38c6f9",
+      "css": "down-open-mini",
+      "code": 59416,
+      "src": "entypo"
+    },
+    {
       "uid": "289b5f92f23acf1059c93fbf401c1ad5",
       "css": "down-open-big",
       "code": 59403,
@@ -81,7 +111,7 @@
     {
       "uid": "884cfc3e6e2d456dd2a2ca0dbb9e6337",
       "css": "left-open-big",
-      "code": 59412,
+      "code": 59420,
       "src": "entypo"
     },
     {
@@ -115,6 +145,12 @@
       "src": "entypo"
     },
     {
+      "uid": "7184d8171b6a9b18eabbace94cca21db",
+      "css": "chart",
+      "code": 59414,
+      "src": "entypo"
+    },
+    {
       "uid": "d090355c31f497b61d676416c1fd39fb",
       "css": "twitter",
       "code": 59395,
@@ -130,6 +166,18 @@
       "uid": "b945f4ac2439565661e8e4878e35d379",
       "css": "gplus",
       "code": 59398,
+      "src": "entypo"
+    },
+    {
+      "uid": "7132e1233bc16cd1b6efe7e29d3613a5",
+      "css": "linkedin",
+      "code": 59413,
+      "src": "entypo"
+    },
+    {
+      "uid": "c22c5fa36d200793ad39b984fb5c8610",
+      "css": "table",
+      "code": 59415,
       "src": "entypo"
     }
   ]

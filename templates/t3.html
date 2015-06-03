@@ -1,0 +1,676 @@
+<!--[if IE]><![endif]-->
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html class="no-js ie9"><![endif]-->
+<!--[if gt IE 8]><!--><!-->
+<html class="no-js">
+    <!--<![endif]-->
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>T3</title>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,initial-scale=1.0" name="viewport" />
+        <meta content="on" http-equiv="cleartype" />
+        <meta name="format-detection" content="telephone=no">
+        <!--[if IE]><![endif]-->
+        <!--[if lte IE 8]>
+        <link rel="stylesheet" href="../dist/css/oldie.css" />
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="../dist/css/main.css" />
+        <![endif]-->
+        <script type="text/javascript" src="../dist/js/header.js"></script>
+    </head>
+    <body class="">
+        <a class="skiplinks visuallyhidden focusable" href="#main" tabindex="0">
+            <span>Skip to main content</span>
+        </a>
+        <!---
+        title: Stats Bulletin Page
+        external: true
+        type: template
+        group: Examples
+        usage: |
+        This is template for stats bulletin page.
+        -->
+        <!-- Pattern Library Header -->
+        <header class="global-header">
+            <div class="global-header__wrapper">
+                <a class="main-logo" href="/">
+                    <img src="../dist/img/ons-logo.png" alt="Office for National Statistics">
+                </a>
+                <ul class="nav globaltop-nav">
+                    <li>
+                        <a href="#">Release Calendar</a>
+                    </li>
+                    <li>
+                        <a href="#">Methodology</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <nav class="ons-nav">
+            <ul class="nav nav--controls">
+                <li class="nav--controls__menu">
+                    <a href="#nav-primary" id="menu-toggle" aria-controls="nav-primary">
+                        <span class="nav--controls__icon icon-menu icon--inline icon--large" role="presentation"></span>
+                        <span class="nav--controls__text">Menu</span>
+                    </a>
+                </li>
+                <li class="nav--controls__search">
+                    <a href="#nav-search" id="search-toggle" aria-controls="nav-search">
+                        <span class="nav--controls__icon icon-search-1 icon--inline icon--large" role="presentation"></span>
+                        <span class="nav--controls__text">Search</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav nav--block nav--primary" id="nav-primary">
+                <li class="nav--primary__hide-small-med">
+                    <a href="/pages/t1">Home</a>
+                </li>
+                <li class="nav__expandable js-expandable">
+                    <a href="#">Business, Industry, and Trade</a>
+                    <ul class="nav--primary__sub js-expandable__content js-nav-hidden">
+                        <li>
+                            <a href="#">Business</a>
+                        </li>
+                        <li>
+                            <a href="#">Changes to business</a>
+                        </li>
+                        <li>
+                            <a href="#">Construction and industry</a>
+                        </li>
+                        <li>
+                            <a href="#">IT and internet industry</a>
+                        </li>
+                        <li>
+                            <a href="#">International trade</a>
+                        </li>
+                        <li>
+                            <a href="#">Manufacturing and production</a>
+                        </li>
+                        <li>
+                            <a href="#">Retail industry</a>
+                        </li>
+                        <li>
+                            <a href="#">Tourism industry</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav__expandable js-expandable">
+                    <a href="/pages/t3">Economy</a>
+                    <ul class="nav--primary__sub js-expandable__content js-nav-hidden">
+                        <li>
+                            <a href="#">Economic output and productivity</a>
+                        </li>
+                        <li>
+                            <a href="#">Environmental account</a>
+                        </li>
+                        <li>
+                            <a href="#">Government, public sector, and taxes</a>
+                        </li>
+                        <li>
+                            <a href="#">Gross Domestic Product (GDP)</a>
+                        </li>
+                        <li>
+                            <a href="#">Gross Values Added (GVA)</a>
+                        </li>
+                        <li>
+                            <a href="t3.html">Inflation and price indices</a>
+                        </li>
+                        <li>
+                            <a href="#">Investment and pension trust</a>
+                        </li>
+                        <li>
+                            <a href="#">National accounts</a>
+                        </li>
+                        <li>
+                            <a href="#">Regional accounts</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav__expandable js-expandable">
+                    <a href="#">Employment and Labour Market</a>
+                    <ul class="nav--primary__sub js-expandable__content js-nav-hidden">
+                        <li>
+                            <a href="#">People in work</a>
+                        </li>
+                        <li>
+                            <a href="#">People not in work</a>
+                        </li>
+                        <li>
+                            <a href="#">Public sector personnel</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav__expandable js-expandable">
+                    <a href="#">People, Population, and Community</a>
+                    <ul class="nav--primary__sub js-expandable__content js-nav-hidden">
+                        <li>
+                            <a href="#">Births, deaths, and marriages</a>
+                        </li>
+                        <li>
+                            <a href="#">Community</a>
+                        </li>
+                        <li>
+                            <a href="#">Education and childcare</a>
+                        </li>
+                        <li>
+                            <a href="#">Crime and justice</a>
+                        </li>
+                        <li>
+                            <a href="#">Household characteristics</a>
+                        </li>
+                        <li>
+                            <a href="#">Well-being</a>
+                        </li>
+                        <li>
+                            <a href="#">Health and social care</a>
+                        </li>
+                        <li>
+                            <a href="#">Elections</a>
+                        </li>
+                        <li>
+                            <a href="#">Personal and household finances</a>
+                        </li>
+                        <li>
+                            <a href="#">Population and migration</a>
+                        </li>
+                        <li>
+                            <a href="#">Cultural identity</a>
+                        </li>
+                        <li>
+                            <a href="#">Housing</a>
+                        </li>
+                        <li>
+                            <a href="#">Leisure and tourism</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav--primary__respondents">
+                    <a href="#">
+                        <span class="icon-comment icon--inline" role="presentation"></span>
+                        Taking part in a survey?
+                    </a>
+                </li>
+                <li class="nav--primary__secondary-content">
+                    <a href="#">Release calendar</a>
+                </li>
+                <li class="nav--primary__secondary-content">
+                    <a href="#">Methodology</a>
+                </li>
+                <li class="nav--primary__secondary-content">
+                    <a href="#">About</a>
+                </li>
+            </ul>
+            <div class="slate--grey search-wrapper">
+                <form class="nav-search nav-search--hidden" id="searchBar">
+                    <div class="nav-search__container">
+                        <label class="visuallyhidden" for="nav-search">Search for keyword or time series ID</label>
+                        <input type="search" class="nav-search__field" id="nav-search" name="nav-search" value="" placeholder="Search for keyword or time series ID">
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--nav-search" id="nav-search-submit">
+                    <span class="icon-search-1" role="presentation"></span>
+                    <span class="visuallyhidden">Search</span>
+                    </button>
+                </form>
+            </div>
+        </nav>
+
+        <div class="page-header slate">
+
+            <div class="wrapper" >
+                <ol class="nav nav--heavy breadcrumb mini flush--half--top" >
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Economy</a>
+                    </li>
+                    <li class="nav__active breadcrumb">
+                        Inflation and price indices
+                    </li>
+                </ol>
+                <!-- /Wrapper panel -->
+            </div>
+            <div class="wrapper">
+                <h1 class="page-header__title flush--half--bottom">Inflation and price indices</h1>
+                <div class="lede">
+                    <p>Inflation measures the rate of increase in prices for goods and services using price indices. The rate of inflation used in the UK government’s
+                        inflation target is measured using the Consumer Prices Index (CPI). One way to understand the CPI is to think of a very large shopping basket
+                        containing a large selection of the goods and services bought by households, the CPI estimates changes to the total cost of this basket.
+                    </p>
+
+                </div>
+                <div class="grid-wrap">
+                    <div class="grid-col tablet-grid-one-half headline--box-container">
+                        <div class="box--padded solid panel--bottom-mar">
+                            <h2>Latest Data</h2>
+                            <div>
+                                <header class="box___section">
+                                    <h3 class="navpanel-list-heading lede box--padded-bottom-small">
+                                    <a href="#">CPI annual rate percentage change over 12 months</a>
+                                    </h3>
+                                </header>
+
+                                <div class="grid-wrap">
+                                    <div class="grid-col grid-two-thirds">
+                                        <div class="box box--padded--small headline--stat-centred">
+                                            [sparkline goes here]
+                                        </div>
+                                    </div>
+                                    <div class="grid-col grid-one-third">
+                                        <div class="stat">
+                                            <div class="stat__figure ">
+                                                <div>
+                                                    <span class="stat__figure__unit">%</span>1.2<span class="stat__figure__unit"> m</span>
+                                                </div>
+                                                <div class="stat__description">February 2015</div>
+                                            </div>
+                                        </div>
+                                        <dl class="micro definition-list definition-list--inline flush--half--vertical">
+                                            <dt>Last updated:</dt>
+                                            <dd>16 Sep 2014</dd>
+                                            <dt>Next update:</dt>
+                                            <dd class="[red_highlight]" >14 Oct 2014</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn--primary">view latest data
+                            <span class="icon icon-down-open-big icon--button-inline"></span>
+                        </a>
+                    </div>
+
+                    <div class="grid-col tablet-grid-one-half headline--box-container">
+                        <div class="panel--bottom-mar box--padded solid">
+                            <h2>Latest statistical bulletin</h2>
+                            <div>
+                                <header class="box___section">
+                                    <h3 class="navpanel-list-heading lede box--padded-bottom-small">
+                                    <a href="#">Consumer Price Inflation: February 2015</a>
+                                    </h3>
+                                </header>
+                                <h3>What's in the bulletin?</h3>
+                                <ul class="list--bullet mini flush--half--top navpanel-list headline--box-container-text">
+                                    <li>1.2% growth in Consumer Prices Index (CPI) in the year to February 2015, down from 2.0% in January 2014.</li>
+                                    <li>1.8% growth in CPIH in the year to February 2015, down from 1.9% in January 2014.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn--primary">view latest reports
+                            <span class="icon icon-down-open-big icon--button-inline"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="page-header__icons">
+                    <a href="#" class="link-complex">
+                        <span class="icon icon-twitter icon--grey">
+                            <span class="visuallyhidden">Share on Twitter</span>
+                        </span>
+                   </a>
+                   <a href="#" class="link-complex">
+                       <span class="icon icon-facebook icon--grey">
+                           <span class="visuallyhidden">Share on Facebook</span>
+                       </span>
+                   </a>
+                   <a href="#" class="link-complex">
+                       <span class="icon icon-linkedin icon--grey">
+                           <span class="visuallyhidden">Share on LinkedIn</span>
+                       </span>
+                   </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Body Sections -->
+        <section class="panel wrapper panel--bottom-mar">
+            <div class="box box--green box--green--separated--left" >
+                <div class="box__inner border box--padded">
+                    <div class="box__section">
+                        <header class="[box__header]">
+                            <h2 class="panel--bottom-pad">Time series related to inflation and price indices</h2>
+                        </header>
+                        <ol class="list--table list--table--complex table--striped-light table-light--sectioned">
+                            <!-- /list- -table__head -->
+                            <li class="list--table__item list--table__body">
+                                <div class="list--table__item__body list--table__item__body--caption">
+                                    <h3 >
+                                    <a class="[no_underline]"> Name</a>
+                                    </h3>
+                                    <p class="list--table__item__description">Description</p>
+                                </div>
+                                <div class="list--table__item__body list--table__item__body--update">
+                                    [Sparkline goes here]
+                                </div>
+                                <div class="list--table__item__body list--table__item__body--stat">
+                                    <div class="stat__figure [list--table__item--stat]">
+                                        <div>
+                                            <span class="stat__figure__unit">£</span>1.2
+                                            <span class="stat__figure__unit">m</span>
+                                        </div>
+                                        <div class="stat__description  [list--table--stat_description]">February 2015</div>
+                                    </div>
+                                </div>
+                                <div class="list--table__item__body list--table__item__body--update">
+                                    <dl class="micro [definition-list] [definition-list--inline] flush--half--vertical">
+                                        <dt>Last updated:</dt>
+                                        <dd>19 February 2014</dd>
+                                        <dt>Next update:</dt>
+                                        <dd class="[red_highlight]">19 March 2014</dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <li class="list--table__item list--table__body">
+                                <div class="list--table__item__body list--table__item__body--caption">
+                                    <h3 >
+                                    <a class="[no_underline]"> Name</a>
+                                    </h3>
+                                    <p class="list--table__item__description">Description</p>
+                                </div>
+                                <div class="list--table__item__body list--table__item__body--update">
+                                    [Sparkline goes here]
+                                </div>
+                                <div class="list--table__item__body list--table__item__body--stat">
+                                    <div class="stat__figure [list--table__item--stat]">
+                                        <div>
+                                            <span class="stat__figure__unit">£</span>1.2
+                                            <span class="stat__figure__unit">m</span>
+                                        </div>
+                                        <div class="stat__description  [list--table--stat_description]">February 2015</div>
+                                    </div>
+                                </div>
+                                <div class="list--table__item__body list--table__item__body--update">
+                                    <dl class="micro [definition-list] [definition-list--inline] flush--half--vertical">
+                                        <dt>Last updated:</dt>
+                                        <dd>19 February 2014</dd>
+                                        <dt>Next update:</dt>
+                                        <dd class="[red_highlight]">19 March 2014</dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <li class="list--table__item list--table__body">
+                                <div class="list--table__item__body list--table__item__body--caption">
+                                    <h3 >
+                                    <a class="[no_underline]"> Name</a>
+                                    </h3>
+                                    <p class="list--table__item__description">Description</p>
+                                </div>
+                                <div class="list--table__item__body list--table__item__body--update">
+                                    [Sparkline goes here]
+                                </div>
+                                <div class="list--table__item__body list--table__item__body--stat">
+                                    <div class="stat__figure [list--table__item--stat]">
+                                        <div>
+                                            <span class="stat__figure__unit">£</span>1.2
+                                            <span class="stat__figure__unit">m</span>
+                                        </div>
+                                        <div class="stat__description  [list--table--stat_description]">February 2015</div>
+                                    </div>
+                                </div>
+                                <div class="list--table__item__body list--table__item__body--update">
+                                    <dl class="micro [definition-list] [definition-list--inline] flush--half--vertical">
+                                        <dt>Last updated:</dt>
+                                        <dd>19 February 2014</dd>
+                                        <dt>Next update:</dt>
+                                        <dd class="[red_highlight]">19 March 2014</dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <li class="list--table__item list--table__body">
+                                <div class="list--table__item__body list--table__item__body--caption">
+                                    <h3 >
+                                    <a class="[no_underline]"> Name</a>
+                                    </h3>
+                                    <p class="list--table__item__description">Description</p>
+                                </div>
+                                <div class="list--table__item__body list--table__item__body--update">
+                                    [Sparkline goes here]
+                                </div>
+                                <div class="list--table__item__body list--table__item__body--stat">
+                                    <div class="stat__figure [list--table__item--stat]">
+                                        <div>
+                                            <span class="stat__figure__unit">£</span>1.2
+                                            <span class="stat__figure__unit">m</span>
+                                        </div>
+                                        <div class="stat__description  [list--table--stat_description]">February 2015</div>
+                                    </div>
+                                </div>
+                                <div class="list--table__item__body list--table__item__body--update">
+                                    <dl class="micro [definition-list] [definition-list--inline] flush--half--vertical">
+                                        <dt>Last updated:</dt>
+                                        <dd>19 February 2014</dd>
+                                        <dt>Next update:</dt>
+                                        <dd class="[red_highlight]">19 March 2014</dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- /list- -table__body -->
+                            <li class="list--table__item list--table__footer">
+                                <div class="table__actions box--inline box__footer--right ">
+                                    <a href="">View all 12,000 time series for inflation and price indices <span class="icon-down-open-big"></span> </a>
+                                </div>
+                            </li>
+                        </ol>
+                        <!-- /list- -table -->
+                    </div>
+                    <!-- KEY DATASETS -->
+                    <div class="panel flush">
+                        <div class="grid-wrap">
+                            <div class="grid-col desktop-grid-two-thirds">
+                                <h2 class="flush">Key datasets</h2>
+                                <div class="grid-wrap">
+                                    <ul class="list--neutral">
+                						<li class="grid-col desktop-grid-one-half panel--bottom-mar-small">
+                							<a href="#"><h3 class="flush">Inflation data collection</h3></a>
+                							<p>
+                                                Measures of inflation data, including CPI, RPI, CPIH and RPIJ
+                							</p>
+                						</li>
+                                        <li class="grid-col desktop-grid-one-half panel--bottom-mar-small">
+                							<a href="#"><h3 class="flush">Retail prices index</h3></a>
+                							<p>
+                                                Measures of inflation data, including CPI, RPI, CPIH and RPIJ
+                							</p>
+                						</li>
+                                    </ul>
+                                </div>
+                                <!-- /grid-col -->
+                            </div>
+                            <div class="grid-col desktop-grid-one-third">
+                                <div class="box box--padded slate">
+                                    <h3>
+                                        User requested data
+                                    </h3>
+
+                                    <article>
+                                        <header class="box__header">
+                                            <h3 class="flush">
+                                            <a href="#">Looking for our adhoc data?</a>
+                                            </h3>
+                                        </header>
+                                        <!-- /box__header -->
+                                        <div class="box__content">
+                                            <ul class="list--table">
+                                                <li class="">We also produce data not included in our standard publications</li>
+                                            </ul>
+                                            <!-- /list- -bullet -->
+                                            <!-- /box__content -->
+                                        </div>
+                                        <!-- /box -->
+                                    </article>
+                                </div>
+                                <!-- /grid-col -->
+                            </div>
+                            <!-- /grid-wrap -->
+                        </div>
+                        <a  href="#">View more datasets</a>
+                        <!-- /grid-wrap -->
+                    </div>
+                    <!-- grid-wrap -->
+                </div>
+                <!-- /box__content -->
+            </div>
+        </div>
+    </section>
+    <!-- Latest statistical bulletins and Related articles-->
+    <section class="panel wrapper panel--bottom-mar">
+        <div class="box box--teal box--teal--separated--left" >
+            <div class="box__inner border box--padded">
+                <!-- Latest statistical bulletins -->
+                <div class="panel flush">
+                    <div class="grid-wrap">
+                        <div class="grid-col desktop-grid-full-width">
+                            <h2 class="flush">Latest statistical bulletins</h2>
+                            <div class="grid-wrap">
+                                <ul class="list--neutral">
+                                    <li class="grid-col desktop-grid-one-third panel--bottom-mar-small">
+                                        <a href="#"><h3 class="flush">Consumer Price Inflation:February 2015</h3></a>
+                                        <p>
+                                            The Consumer Price Inflation is a monthly release that contains percentage changes and weights for the CPI, CPIH, RPI and RPIJ.
+                                        </p>
+                                    </li>
+                                    <li class="grid-col desktop-grid-one-third panel--bottom-mar-small">
+                                        <a href="#"><h3 class="flush">House Price Index: February 2015</h3></a>
+                                        <p>
+                                            The ONS House Price Index (HPI) is a monthly release that publishes figures for mix-adjusted average house prices
+                                        </p>
+                                    </li>
+                                    <li class="grid-col desktop-grid-one-third panel--bottom-mar-small">
+                                        <a href="#"><h3 class="flush">Retail sales: February 2015</h3></a>
+                                        <p>
+                                            A first estimate of retail sales in volume and value terms, seasonally and non-seasonally adjusted.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- /grid-col -->
+                        </div>
+                        <!-- /grid-wrap -->
+                    </div>
+                    <a  href="#">View all statistical bulletins</a>
+                    <!-- /grid-wrap -->
+                </div>
+                <!-- Related articles-->
+                <div class="panel flush">
+                    <div class="grid-wrap">
+                        <div class="grid-col desktop-grid-full-width">
+                            <h2 class="flush">Related articles</h2>
+                            <div class="grid-wrap">
+                                <ul class="list--neutral">
+                                    <li class="grid-col desktop-grid-one-third panel--bottom-mar-small">
+                                        <a href="#"><h3 class="flush">Economic review: January 2015</h3></a>
+                                        <p>
+                                            A comprehensive review on the UK economy, including the latest GDP estimate and other statistical outputs of ONS.
+                                        </p>
+                                    </li>
+                                    <li class="grid-col desktop-grid-one-third panel--bottom-mar-small">
+                                        <a href="#"><h3 class="flush">Contracting out of private sector defined benefit pension schemes: 2013</h3></a>
+                                        <p>
+                                            Membership and contributions, by contracted out status, is presented for private sector defined benefit occupational schemes.
+                                        </p>
+                                    </li>
+                                    <li class="grid-col desktop-grid-one-third panel--bottom-mar-small">
+                                        <a href="#"><h3 class="flush">National accounts classifications, forward workplan: March 2015</h3></a>
+                                        <p>
+                                            Gives an overview of the cases ONS expects to decide over the next 12 months, in order of when they are expected to be completed.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- /grid-col -->
+                        </div>
+                        <!-- /grid-wrap -->
+                    </div>
+                    <a  href="#">View all related articles</a>
+                    <!-- /grid-wrap -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="global-footer">
+        <h2 class="visuallyhidden">Footer links</h2>
+        <div class="slate--light panel--pad-large panel--separated">
+            <div class="wrapper">
+                <nav class="grid-wrap">
+                    <div class="grid-col tablet-grid-one-third">
+                        <h3 class="delta headline-separated">Legal</h3>
+                        <ul class="list--neutral list--grid list--spaced">
+                            <li>
+                                <a href="#">Business Transparency</a>
+                            </li>
+                            <li>
+                                <a href="#">Terms and Conditions</a>
+                            </li>
+                            <li>
+                                <a href="#">Copyright</a>
+                            </li>
+                            <li>
+                                <a href="#">Cookies and Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid-col tablet-grid-one-third">
+                        <h3 class="delta headline-separated">About ONS</h3>
+                        <ul class="list--neutral list--grid list--spaced">
+                            <li>
+                                <a href="#">Who we are</a>
+                            </li>
+                            <li>
+                                <a href="#">Careers</a>
+                            </li>
+                            <li>
+                                <a href="#">Products and Services</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact us</a>
+                            </li>
+                            <li>
+                                <a href="#">Our offices</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid-col tablet-grid-one-third">
+                        <h3 class="delta headline-separated">Connect with us</h3>
+                        <ul class="list--neutral list--grid list--spaced">
+                            <li>
+                                <a href="#">Facebook</a>
+                            </li>
+                            <li>
+                                <a href="#">Twitter</a>
+                            </li>
+                            <li>
+                                <a href="#">YouTube</a>
+                            </li>
+                            <li>
+                                <a href="#">Email subscriptions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <!-- /wrapper -->
+        </div>
+        <!-- /slate -->
+        <div class="slate--mid-grey">
+            <div class="wrapper">
+                <div class="footer__license">
+                    <img class="footer__license__img" alt="OGL" width="60" src="../ui/img/ogl.png">
+                    <p class="footer__license__body">
+                        All content is available under the Open Government Licence v2.0, except where otherwise stated
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="../dist/js/footer.js"></script>
+    <script type="text/javascript" src="../ui/js/lib/highcharts.js"></script>
+    <script type="text/javascript" src="../ui/js/lib/jquery.tooltipster.min.js"></script>
+</body>
+</html>
