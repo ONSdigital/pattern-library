@@ -1194,16 +1194,16 @@ body {
     text-decoration: none !important; }
 
 .float-left {
-  float: left; }
+  float: left !important; }
 
 .float-right {
-  float: right; }
+  float: right !important; }
 
 .text-left {
-  text-align: left; }
+  text-align: left !important; }
 
 .text-right {
-  text-align: right; }
+  text-align: right !important; }
 
 
 /*
