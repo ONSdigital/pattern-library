@@ -51,7 +51,7 @@
 }
 
 .slate--red {
-  background-color: lighten($crispin-red, 52.5%);
+  background-color: $carousel-pink  ;
 
   &:after {
     background-color: $crispin-red;
