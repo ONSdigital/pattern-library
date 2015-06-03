@@ -231,6 +231,14 @@
   }
 }
 
+.box--orange--separated--left {
+  @extend %big-left;
+
+  &:before {
+    border-left-color: $orange;
+  }
+}
+
 .box--az-item {
   border: 1px solid $grey-light;
   margin: 2px;
