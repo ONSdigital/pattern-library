@@ -4540,7 +4540,7 @@ $SPLIT
   border-style: solid;
   border-width: 2px 2px 0; }
   .table-light--sectioned > .list--table__body:first-child, .table-light--sectioned > tr:first-child {
-    border-top-width: 0; }
+    border-top-width: 2px; }
 
 .table--child tbody tr:first-child {
   border-top: 0; }
