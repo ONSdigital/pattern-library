@@ -4201,10 +4201,10 @@ _:-ms-input-placeholder, :root .nav--primary__sub {
     position: absolute;
     right: 0;
     left: 0;
+    bottom: -5px;
     background-color: transparent; }
   .slate:after {
-    left: 0;
-    right: 0; }
+    max-width: 912px; }
 
 .slate--light {
   background-color: #f3f3f3; }
@@ -4217,9 +4217,18 @@ _:-ms-input-placeholder, :root .nav--primary__sub {
 
 .slate--blue {
   background-color: #e5fcff; }
+  .slate--blue:after {
+    background-color: #008998; }
 
 .slate--green {
   background-color: #fafbe7; }
+  .slate--green:after {
+    background-color: #00543D; }
+
+.slate--red {
+  background-color: #f8dfe4; }
+  .slate--red:after {
+    background-color: #A8233E; }
 
 .slate--hero-banner {
   background-color: #757575;

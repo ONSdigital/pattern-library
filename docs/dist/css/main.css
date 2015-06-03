@@ -4795,11 +4795,13 @@ lesser , applied styles
     position: absolute;
     right: 0;
     left: 0;
+    bottom: -5px;
+    bottom: -0.5rem;
     background-color: transparent; }
   @media screen and (min-width: 56em) {
     .slate:after {
-      left: 0;
-      right: 0; } }
+      max-width: 912px;
+      max-width: 91.2rem; } }
 
 .slate--light {
   background-color: #f3f3f3; }
@@ -4812,9 +4814,18 @@ lesser , applied styles
 
 .slate--blue {
   background-color: #e5fcff; }
+  .slate--blue:after {
+    background-color: #008998; }
 
 .slate--green {
   background-color: #fafbe7; }
+  .slate--green:after {
+    background-color: #00543D; }
+
+.slate--red {
+  background-color: #f8dfe4; }
+  .slate--red:after {
+    background-color: #A8233E; }
 
 .slate--hero-banner {
   background-color: #757575;

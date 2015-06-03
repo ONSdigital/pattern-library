@@ -9,14 +9,14 @@
     position: absolute;
     right: 0;
     left: 0;
+    bottom: -0.5rem;
     background-color: transparent;
     
   }
   
   @include respond-min($bp-desktop) {
     &:after {
-      left: 0;
-      right: 0;
+       max-width: 91.2rem;
     }
   }
 
@@ -36,10 +36,26 @@
 
 .slate--blue {
   background-color: lighten($azure, 55%);
+
+  &:after {
+    background-color: $teal;
+  }
 }
 
 .slate--green {
   background-color: lighten($ons-green, 52.5%);
+
+  &:after {
+    background-color: $aqua-deep;
+  }
+}
+
+.slate--red {
+  background-color: lighten($crispin-red, 52.5%);
+
+  &:after {
+    background-color: $crispin-red;
+  }
 }
 
 .slate--hero-banner {
@@ -48,3 +64,5 @@
   background-position: 50% 50%;
   background-size: cover;
 }
+
+
