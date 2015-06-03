@@ -43,7 +43,7 @@
 }
 
 .slate--green {
-  background-color: lighten($ons-green, 52.5%);
+  background-color: $clear-day;
 
   &:after {
     background-color: $aqua-deep;
