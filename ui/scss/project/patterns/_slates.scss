@@ -50,6 +50,14 @@
   }
 }
 
+.slate--light-green {
+  background-color: lighten($ons-green, 40.5%);
+
+  &:after {
+    background-color: $ons-green;
+  }
+}
+
 .slate--red {
   background-color: $carousel-pink  ;
 

@@ -4822,6 +4822,11 @@ lesser , applied styles
   .slate--green:after {
     background-color: #00543D; }
 
+.slate--light-green {
+  background-color: #f0f3b2; }
+  .slate--light-green:after {
+    background-color: #b2bb1c; }
+
 .slate--red {
   background-color: #FDF4F5; }
   .slate--red:after {
