@@ -3782,6 +3782,8 @@ lesser , applied styles
   .nav--az-side-bar li {
     float: left;
     width: 16.66667%; }
+  .nav--az-side-bar li {
+    width: 50px; }
 
 .nav--dark a {
   color: #303030;

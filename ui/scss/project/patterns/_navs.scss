@@ -59,6 +59,12 @@
     float: left;
     width: 16.6666667%;
   }
+
+  @include respond-min($bp-tablet) {
+      li {
+        width: 50px;
+      }
+  }
 }
 
 .nav--dark {
