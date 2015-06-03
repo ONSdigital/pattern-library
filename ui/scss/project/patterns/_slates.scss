@@ -40,6 +40,10 @@
   &:after {
     background-color: $teal;
   }
+
+  .page-header__title {
+    color: $teal;
+  }
 }
 
 .slate--green {
@@ -48,13 +52,21 @@
   &:after {
     background-color: $aqua-deep;
   }
+
+  .page-header__title {
+    color: $aqua-deep;
+  }
 }
 
 .slate--light-green {
-  background-color: lighten($ons-green, 40.5%);
+  background-color: lighten($ons-green, 50%);
 
   &:after {
     background-color: $ons-green;
+  }
+
+  .page-header__title {
+    color: $ons-green;
   }
 }
 
@@ -62,6 +74,10 @@
   background-color: $carousel-pink  ;
 
   &:after {
+    background-color: $crispin-red;
+  }
+
+  .page-header__title {
     background-color: $crispin-red;
   }
 }

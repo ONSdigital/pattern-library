@@ -4219,20 +4219,28 @@ _:-ms-input-placeholder, :root .nav--primary__sub {
   background-color: #e5fcff; }
   .slate--blue:after {
     background-color: #008998; }
+  .slate--blue .page-header__title {
+    color: #008998; }
 
 .slate--green {
   background-color: #F1FFFB; }
   .slate--green:after {
     background-color: #00543D; }
+  .slate--green .page-header__title {
+    color: #00543D; }
 
 .slate--light-green {
-  background-color: #f0f3b2; }
+  background-color: #f8fadc; }
   .slate--light-green:after {
     background-color: #b2bb1c; }
+  .slate--light-green .page-header__title {
+    color: #b2bb1c; }
 
 .slate--red {
   background-color: #FDF4F5; }
   .slate--red:after {
+    background-color: #A8233E; }
+  .slate--red .page-header__title {
     background-color: #A8233E; }
 
 .slate--hero-banner {
