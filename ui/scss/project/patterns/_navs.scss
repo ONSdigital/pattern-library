@@ -50,13 +50,14 @@
     }
 }
 
-.nav--az-block {
+.nav--az-side-bar {
   display: inline-block;
-  margin-left: -5px;
-  margin-right: -5px;
+  margin-left: -2px;
+  margin-right: -2px;
 
   li {
     float: left;
+    width: 16.6666667%;
   }
 }
 

@@ -3090,8 +3090,10 @@ a {
 
 .box--az-item {
   border: 1px solid #dedfdc;
-  margin: 5px;
-  display: block; }
+  margin: 2px;
+  padding: 5px;
+  display: block;
+  text-align: center; }
 
 .box--orange a {
   color: #f37121; }
@@ -3773,12 +3775,13 @@ lesser , applied styles
 .nav--block-landing:nth-child(3n+4) {
   clear: left; }
 
-.nav--az-block {
+.nav--az-side-bar {
   display: inline-block;
-  margin-left: -5px;
-  margin-right: -5px; }
-  .nav--az-block li {
-    float: left; }
+  margin-left: -2px;
+  margin-right: -2px; }
+  .nav--az-side-bar li {
+    float: left;
+    width: 16.66667%; }
 
 .nav--dark a {
   color: #303030;
