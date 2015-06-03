@@ -1,0 +1,19 @@
+<div class="wrapper">
+	<ol class="nav nav--heavy breadcrumb breadcrumb_hero mini">
+		<li>
+				<a href="index.html">Home</a>
+		</li>
+
+		{{#each breadcrumb}}
+			<li>
+				<a href="{{uri}}">{{name}}</a>
+			</li>
+		{{/each}}
+
+		<li class="nav__active breadcrumb">
+			{{name}}
+		</li>
+	</ol>
+	<!-- /breadcrumb -->
+</div>
+<!-- /wrapper -->

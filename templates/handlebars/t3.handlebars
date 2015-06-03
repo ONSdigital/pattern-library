@@ -1,0 +1,303 @@
+<head>
+	<link rel="stylesheet" href="../../node_modules/ONS-Pattern-Library/dist/css/main.min.css"/>
+	<script src="../../node_modules/ONS-Pattern-Library/dist/js/header.js"></script>
+</head>
+
+<div class="page-header slate">
+	<div class="wrapper" >
+		<ol class="nav nav--heavy breadcrumb breadcrumb_hero mini">
+			<li>
+				Need to add breadcrumb and social media partials
+			</li>
+		</ol>
+		<!-- /breadcrumb -->
+	</div>
+	<!-- /wrapper -->
+
+	<div class="wrapper">
+	  <h1 class="page-header__title flush--half--bottom">{{name}}</h1>
+	  <div class="lede content-reveal">
+			<p>
+				{{{lede}}}
+			</p>
+		</div>
+		<!-- /lede -->
+
+		<div class="grid-wrap">
+			<div class="grid-col tablet-grid-one-half headline--box-container">
+				<div class="box--padded solid panel--bottom-mar">
+					<h2>Latest data</h2>
+					<header class="box___section">
+							<h3 class="navpanel-list-heading lede box--padded-bottom-small">
+								<a href="">{{headline.name}}</a>
+							</h3>
+					</header>
+					<div class="grid-wrap">
+							<div class="grid-col grid-two-thirds">
+									<div class="box box--padded--small headline--stat-centred">
+											[sparkline goes here]
+									</div>
+							</div>
+							<div class="grid-col grid-one-third">
+									<div class="stat">
+											<div class="stat__figure ">
+													<div>
+															{{headline.figure}}<span class="stat__figure__unit"> {{headline.unit}}</span>
+													</div>
+													<div class="stat__description">
+														{{headline.period}}
+													</div>
+											</div>
+									</div>
+									<dl class="micro definition-list definition-list--inline flush--half--vertical">
+											<dt>Last updated:</dt>
+											<dd>{{headline.lastUpdate}}</dd>
+											<dt>Next update:</dt>
+											<dd>{{headline.nextUpdate}}</dd>
+									</dl>
+							</div>
+							<!-- /grid-col -->
+					</div>
+					<!-- /grid-wrap -->
+				</div>
+				<!-- /box--padded -->
+        <a href="#datasets" class="btn btn--primary">view latest data
+            <span class="icon icon-down-open-big icon--button-inline"></span>
+        </a>
+			</div>
+			<!-- /grid-col -->
+
+			<div class="grid-col tablet-grid-one-half headline--box-container">
+				<div class="panel--bottom-mar box--padded solid">
+					<h2>Latest statistical bulletin</h2>
+					<header class="box___section">
+							<h3 class="navpanel-list-heading lede box--padded-bottom-small">
+							<a href="{{statsBulletinHeadline.uri}}">{{statsBulletinHeadline.name}}</a>
+							</h3>
+					</header>
+					<h3>What's in the bulletin?</h3>
+					<ul class="list--bullet mini flush--half--top navpanel-list headline--box-container-text">
+						{{#each statsBulletinHeadline.data}}
+						<li>
+							{{item}}
+						</li>
+						{{/each}}
+					</ul>
+				</div>
+				<a href="#reports" class="btn btn--primary">view latest reports
+					<span class="icon icon-down-open-big icon--button-inline"></span>
+				</a>
+			</div>
+			<!-- /grid-col -->
+		</div>
+		<!-- /grid-wrap -->
+	</div>
+	<!-- /wrapper -->
+</div>
+<!-- /page-header -->
+
+<!-- Body sections -->
+<section class="panel wrapper panel--bottom-mar">
+	<div class="box box--green box--green--separated--left" >
+		<div class="box__inner border box--padded">
+			<div class="box__section">
+				<header>
+				  <h2 class="list--table-header panel--pad">Time series related to {{name}}</h2>
+				  <div class="grid-col">
+			      <a href="#">View more datasets</a>
+				  </div>
+				</header>
+				<ol class="list--table list--table--complex table--striped-light table-light--sectioned">
+					{{#each items}}
+						<li class="list--table__item list--table__body">
+							<div class="list--table__item__body list--table__item__body--caption">
+								<h3 class="flush--half--bottom">
+									<a href="{{uri}}">{{name}}</a>
+								</h3>
+								{{#if description}}
+									<p class="list--table__item__description">
+										{{description}}
+									</p>
+								{{/if}}
+							</div>
+							<div class="list--table__item__body list--table__item__body--update">
+								[Sparkline goes here]
+							</div>
+							<div class="list--table__item__body list--table__item__body--stat">
+								<div class="stat__figure">
+									{{figure}}<span class="stat__figure__unit"> {{unit}}</span>
+									<div class="stat__description">{{period}}</div>
+								</div>
+							</div>
+							<div class="list--table__item__body list--table__item__body--update">
+								<dl class="micro flush--half--vertical">
+									<dt>Last updated:</dt>
+									<dd>{{lastUpdate}}</dd>
+									<dt>Next update:</dt>
+									<dd>{{nextUpdate}}</dd>
+								</dl>
+							</div>
+						</li>
+						<!-- /list-table__item -->
+					{{/each}}
+          <li class="list--table__item list--table__footer">
+            <div class="table__actions box--inline box__footer--right ">
+              <a href="">View all 12,000 time series for inflation and price indices <span class="icon-right-open-big"></span> </a>
+            </div>
+          </li>
+				</ol>
+				<!-- /list--table -->
+			</div>
+			<!-- /box-section -->
+
+			<div class="box__section">
+				<div class="grid-wrap">
+					<div class="grid-col desktop-grid-two-thirds">
+						<header class="actionable-header__title">
+							<h2 class="actionable-header__title table-inline" id="datasets">Key datasets</h2>
+							<a class="hide-med-down" href="#">View more datasets</a>
+						</header>
+
+						<div class="grid-wrap">
+							{{#each datasets}}
+								<div class="grid-col tablet-grid-one-half">
+									<article class="box box--padded">
+										<header class="box__header">
+											<h3>
+												<a href="{{uri}}">{{name}}</a>
+											</h3>
+										</header>
+										<!-- /box__header -->
+										<div class="box__content">
+											<ul class="list--table">
+												<li>{{summary}}</li>
+											</ul>
+											<!-- /list- -bullet -->
+										</div>
+										<!-- /box__content -->
+									</article>
+									<!-- /box -->
+								</div>
+								<!-- /grid-col -->
+							{{/each}}
+						</div>
+						<!-- /grid-wrap -->
+					</div>
+					<!-- /grid-col -->
+
+					<div class="grid-col desktop-grid-one-third">
+						<div class="box box--padded slate">
+							<header class="box__section__header">
+								<h3>
+								User requested data
+								</h3>
+							</header>
+							<article>
+								<header class="box__header">
+									<h3>
+										<a href="#">Looking for our adhoc data?</a>
+									</h3>
+								</header>
+								<!-- /box__header -->
+								<div class="box__content">
+									<ul class="list--table">
+										<li class="">We also produce data not included in our standard publications</li>
+									</ul>
+									<!-- /list- -bullet -->
+								</div>
+								<!-- /box__content -->
+							</article>
+						</div>
+						<!-- /box -->
+					</div>
+					<!-- /grid-col -->
+				</div>
+				<!-- /grid-wrap -->
+
+        <div class="grid-col hide-large">
+          <a  href="#">View more datasets</a>
+        </div>
+				<!-- /grid-col -->
+			</div>
+			<!-- /box__section -->
+		</div>
+		<!-- /box__inner -->
+	</div>
+	<!-- /box -->
+</section>
+<!-- /panel wrapper -->
+
+<!-- Latest statistical bulletins and Related articles-->
+<section class="panel wrapper panel--bottom-mar">
+  <div class="box box--teal box--teal--separated--left" >
+    <div class="box__inner border box--padded">
+      <div class="box__section">
+        <header class="actionable-header__title">
+          <h2 class="actionable-header__title table-inline" id="reports">Latest statistical bulletins</h2>
+          <a class="hide-med-down" href="#" id="viewAllStatsBulletins">View all statistical bulletins</a>
+        </header>
+
+				<!-- Static Content if there is not related stats bulletin in the data -->
+				<div class="grid-wrap">
+					{{#each statsBulletins}}
+						<div class="grid-col desktop-grid-one-third">
+							<article class="box--padded">
+								<header class="box__header">
+									<h3>
+										<a href="{{uri}}">{{name}}</a>
+									</h3>
+								</header>
+								<div class="box__content">
+									<ul class="list--table">
+										<li>{{summary}}</li>
+									</ul>
+								</div>
+							</article>
+						</div>
+						<!-- /grid-col -->
+					{{/each}}
+				</div>
+				<!-- /grid-wrap -->
+			</div>
+			<!-- /box__section -->
+
+			<div class="box__section flush--half--bottom">
+        <header class="actionable-header__title">
+          <h2 class="actionable-header__title table-inline" id="reports">Related articles</h2>
+          <a class="hide-med-down" href="#" id="viewAllStatsBulletins">View all articles</a>
+        </header>
+
+				<!-- Static Content if there is not related stats bulletin in the data -->
+				<div class="grid-wrap">
+					{{#each articles}}
+						<div class="grid-col desktop-grid-one-third">
+							<article class="box--padded">
+								<header class="box__header">
+									<h3>
+										<a href="{{uri}}">{{name}}</a>
+									</h3>
+								</header>
+								<div class="box__content">
+									<ul class="list--table">
+										<li>{{summary}}</li>
+									</ul>
+								</div>
+							</article>
+						</div>
+						<!-- /grid-col -->
+					{{/each}}
+				</div>
+				<!-- /grid-wrap -->
+			</div>
+			<!-- /box__section -->
+
+			<div class="grid-col hide-large">
+        <a href="#" id="viewAllStatsBulletins">View all statistical bulletins</a>
+      </div>
+			<!-- /grid-col -->
+		</div>
+		<!-- /box__inner -->
+	</div>
+	<!-- /box -->
+</section>
+<!--/panel wrapper -->

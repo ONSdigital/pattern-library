@@ -1,0 +1,28 @@
+	<link rel="stylesheet" href="https://onsdigital.github.io/pattern-library/dist/css/main.min.css"/>
+	<script src="https://onsdigital.github.io/pattern-library/dist/js/header.js"></script>
+
+<footer class="global-footer">
+	<h2 class="visuallyhidden">Footer links</h2>
+	<div class="slate--light panel--pad-large panel--separated">
+		<div class="wrapper">
+			<nav class="grid-wrap">
+				{{#each sections}}
+					<div class="grid-col tablet-grid-one-third">
+						<h3 class="delta headline-separated">{{name}}</h3>
+						<ul class="list--neutral list--grid list--spaced">
+							{{#each data}}
+								<li>
+									<a href="{{url}}">{{item}}</a>
+								</li>
+							{{/each}}
+						</ul>
+					</div>
+					<!-- /grid-col -->
+				{{/each}}
+			</nav>
+			<!-- /grid-wrap -->
+		</div>
+		<!-- /wrapper -->
+	</div>
+	<!-- /slate -->
+</footer>

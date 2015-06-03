@@ -1,0 +1,22 @@
+{
+  "index": 0,
+  "name": "Inflation and price indices",
+  "fileName": "inflationandpriceindices",
+  "uri": "economy/breadcrumbtest/inflationandpriceindices",
+  "breadcrumb": [
+    {
+      "index": 0,
+      "type": "home",
+      "name": "Economy",
+      "fileName": "economy",
+      "uri": "economy"
+    },
+		{
+			"index": 0,
+			"type": "home",
+			"name": "Breadcrumb test",
+			"fileName": "breadcrumbtest",
+      "uri": "economy/breadcrumbtest"
+		}
+  ]
+}

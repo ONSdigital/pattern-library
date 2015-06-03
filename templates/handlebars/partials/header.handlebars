@@ -1,0 +1,112 @@
+<!--[if IE]><![endif]-->
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html class="no-js ie9"><![endif]-->
+<!--[if gt IE 8]><!--><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>{{title}}</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1.0" name="viewport" />
+    <meta content="on" http-equiv="cleartype" />
+    <meta name="format-detection" content="telephone=no">
+    <!--[if IE]><![endif]-->
+    <!--[if lte IE 8]>
+<link rel="stylesheet" href="./dist/css/oldie.css"/>
+<![endif]-->
+    <!--[if gt IE 8]><!-->
+		<link rel="stylesheet" href="../../node_modules/ONS-Pattern-Library/dist/css/main.min.css"/>
+		<![endif]-->
+  	<script src="../../node_modules/ONS-Pattern-Library/dist/js/header.js"></script>
+  </head>
+  <body class="">
+		<a class="skiplinks visuallyhidden focusable" href="#main" tabindex="0">
+			<span>Skip to main content</span>
+		</a>
+
+		<!-- Pattern library page header -->
+		<header class="global-header">
+			<div class="global-header__wrapper">
+				<a class="main-logo" href="/">
+					<img src="../../node_modules/ONS-Pattern-Library/dist/img/ons-logo.png" alt="Office for National Statistics">
+				</a>
+				<ul class="nav globaltop-nav">
+					<li>
+						<a href="#">Release Calendar</a>
+					</li>
+					<li>
+						<a href="#">Methodology</a>
+					</li>
+					<li>
+						<a href="#">About</a>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<nav class="ons-nav">
+			<ul class="nav nav--controls">
+				<li class="nav--controls__menu">
+					<a href="#nav-primary" id="menu-toggle" aria-controls="nav-primary">
+						<span class="nav--controls__icon icon-menu icon--inline icon--large" role="presentation"></span>
+						<span class="nav--controls__text">Menu</span>
+					</a>
+				</li>
+				<li class="nav--controls__search">
+					<a href="#nav-search" id="search-toggle" aria-controls="nav-search">
+						<span class="nav--controls__icon icon-search-1 icon--inline icon--large" role="presentation"></span>
+						<span class="nav--controls__text">Search</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="nav nav--block nav--primary" id="nav-primary">
+				<li class="nav--primary__hide-small-med">
+					<a href="/pages/t1">Home</a>
+				</li>
+				{{#each themes}}
+					<li class="nav__expandable js-expandable">
+						<a href="{{url}}">{{name}}</a>
+						{{#if children}}
+							<ul class="nav--primary__sub js-expandable__content js-nav-hidden">
+								{{#each}}
+									<li>
+										<a href="{{url}}">{{name}}</a>
+									</li>
+								{{/each}} <!-- /each to find 2nd level nodes -->
+							</ul>
+						{{/if}}
+					</li>
+				{{/each}} <!-- /each to find 1st level nodes -->
+				<li class="nav--primary__respondents">
+					<a href="#">
+						<span class="icon-comment icon--inline" role="presentation"></span>
+						Taking part in a survey?
+					</a>
+				</li>
+				<li class="nav--primary__secondary-content">
+					<a href="#">Release calendar</a>
+				</li>
+				<li class="nav--primary__secondary-content">
+					<a href="#">Methodology</a>
+				</li>
+				<li class="nav--primary__secondary-content">
+					<a href="#">About</a>
+				</li>
+			</ul> <!-- /nav-primary -->
+
+			<div class="slate--grey search-wrapper">
+				<form class="nav-search nav-search--hidden" id="searchBar">
+					<div class="nav-search__container">
+						<label class="visuallyhidden" for="nav-search">Search for keyword or time series ID</label>
+						<input type="search" class="nav-search__field" id="nav-search" name="nav-search" value="" placeholder="Search for keyword or time series ID">
+					</div>
+					<button type="submit" class="btn btn--primary btn--nav-search" id="nav-search-submit">
+					<span class="icon-search-1" role="presentation"></span>
+					<span class="visuallyhidden">Search</span>
+					</button>
+				</form>
+			</div>
+		</nav>

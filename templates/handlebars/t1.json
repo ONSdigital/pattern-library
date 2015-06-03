@@ -1,0 +1,88 @@
+
+{
+  "sections": [
+    {
+      "name": "Economy",
+      "link": "economy",
+      "index": 0,
+      "items": [
+        {
+          "name": "CPI: Consumer Prices Index (% change)",
+          "uri": "/economy/inflationakendpriceindices/timeseries/d7g7"
+        }
+      ]
+    },
+    {
+      "name": "Economy",
+      "link": "economy",
+      "index": 0,
+      "items": [
+        {
+          "name": "GDP Quarter on Quarter growth (CVM)",
+          "uri": "/economy/grossdomesticproductgdp/timeseries/ihyq"
+        }
+      ]
+    },
+    {
+      "name": "Business, industry and trade",
+      "link": "businessindustryandtrade",
+      "index": 0,
+      "items": [
+        {
+          "name": "Trade in goods and services deficit (or surplus)",
+          "uri": "/businessindustryandtrade/internationaltrade/timeseries/ikbj"
+        }
+      ]
+    },
+    {
+      "name": "Employment and Labour market",
+      "link": "employmentandlabourmarket",
+      "index": 0,
+      "items": [
+        {
+          "name": "Employment rate (aged 16-64)",
+          "uri": "/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/timeseries/lf24"
+        }
+      ]
+    },
+    {
+      "name": "People, population and community",
+      "link": "peoplepopulationandcommunity",
+      "index": 0,
+      "items": [
+        {
+          "name": "UK population",
+          "uri": "/peoplepopulationandcommunity/populationandmigration/populationestimates/timeseries/raid121"
+        }
+      ]
+    }
+  ],
+
+  "level": "t1",
+  "index": 0,
+  "type": "home",
+  "name": "Home",
+  "fileName": "/",
+  "breadcrumb": [],
+
+  "releases": [
+    {
+      "name": "Population estimates",
+      "link": "releases/populationestimates",
+      "index": 0,
+      "description": "Annual estimates of the size of the UK &#34;usually resident population&#34; are calculated at the mid-year point (30 June)."
+    },
+    {
+      "name": "Inflation and price indices",
+      "link": "releases/inflationakendpriceindices",
+      "index": 0,
+      "description": "Inflation measures the rate of increase in prices for goods and services using price indices."
+    },
+    {
+      "name": "Drug use, alcohol and smoking",
+      "link": "releases/drugusealcoholandsmoking",
+      "index": 0,
+      "description": "Statistics on drug use, alcohol and smoking focus on deaths and illnesses related to these areas."
+    }
+  ]
+}

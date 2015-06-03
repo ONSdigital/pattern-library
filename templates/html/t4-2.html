@@ -1,0 +1,527 @@
+<!--[if IE]><![endif]-->
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html class="no-js ie9"><![endif]-->
+<!--[if gt IE 8]><!--><!-->
+<html class="no-js">
+    <!--<![endif]-->
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>T4.2</title>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,initial-scale=1.0" name="viewport" />
+        <meta content="on" http-equiv="cleartype" />
+        <meta name="format-detection" content="telephone=no">
+        <!--[if IE]><![endif]-->
+        <!--[if lte IE 8]>
+        <link rel="stylesheet" href="../../node_modules/ONS-Pattern-Library/dist/css/oldie.css" />
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="../../node_modules/ONS-Pattern-Library/dist/css/main.css" />
+        <![endif]-->
+        <script type="text/javascript" src="../../node_modules/ONS-Pattern-Library/dist/js/header.js"></script>
+    </head>
+    <body class="">
+        <a class="skiplinks visuallyhidden focusable" href="#main" tabindex="0">
+            <span>Skip to main content</span>
+        </a>
+        <!---
+        title: Stats Bulletin Page
+        external: true
+        type: template
+        group: Examples
+        usage: |
+        This is template for stats bulletin page.
+        -->
+        <!-- Pattern Library Header -->
+        <header class="global-header">
+            <div class="global-header__wrapper">
+                <a class="main-logo" href="/">
+                    <img src="../../node_modules/ONS-Pattern-Library/dist/img/ons-logo.png" alt="Office for National Statistics">
+                </a>
+                <ul class="nav globaltop-nav">
+                    <li>
+                        <a href="#">Release Calendar</a>
+                    </li>
+                    <li>
+                        <a href="#">Methodology</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <nav class="ons-nav">
+            <ul class="nav nav--controls">
+                <li class="nav--controls__menu">
+                    <a href="#nav-primary" id="menu-toggle" aria-controls="nav-primary">
+                        <span class="nav--controls__icon icon-menu icon--inline icon--large" role="presentation"></span>
+                        <span class="nav--controls__text">Menu</span>
+                    </a>
+                </li>
+                <li class="nav--controls__search">
+                    <a href="#nav-search" id="search-toggle" aria-controls="nav-search">
+                        <span class="nav--controls__icon icon-search-1 icon--inline icon--large" role="presentation"></span>
+                        <span class="nav--controls__text">Search</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav nav--block nav--primary" id="nav-primary">
+                <li class="nav--primary__hide-small-med">
+                    <a href="/pages/t1">Home</a>
+                </li>
+                <li class="nav__expandable js-expandable">
+                    <a href="#">Business, Industry, and Trade</a>
+                    <ul class="nav--primary__sub js-expandable__content js-nav-hidden">
+                        <li>
+                            <a href="#">Business</a>
+                        </li>
+                        <li>
+                            <a href="#">Changes to business</a>
+                        </li>
+                        <li>
+                            <a href="#">Construction and industry</a>
+                        </li>
+                        <li>
+                            <a href="#">IT and internet industry</a>
+                        </li>
+                        <li>
+                            <a href="#">International trade</a>
+                        </li>
+                        <li>
+                            <a href="#">Manufacturing and production</a>
+                        </li>
+                        <li>
+                            <a href="#">Retail industry</a>
+                        </li>
+                        <li>
+                            <a href="#">Tourism industry</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav__expandable js-expandable">
+                    <a href="/pages/t3">Economy</a>
+                    <ul class="nav--primary__sub js-expandable__content js-nav-hidden">
+                        <li>
+                            <a href="#">Economic output and productivity</a>
+                        </li>
+                        <li>
+                            <a href="#">Environmental account</a>
+                        </li>
+                        <li>
+                            <a href="#">Government, public sector, and taxes</a>
+                        </li>
+                        <li>
+                            <a href="#">Gross Domestic Product (GDP)</a>
+                        </li>
+                        <li>
+                            <a href="#">Gross Values Added (GVA)</a>
+                        </li>
+                        <li>
+                            <a href="t3.html">Inflation and price indices</a>
+                        </li>
+                        <li>
+                            <a href="#">Investment and pension trust</a>
+                        </li>
+                        <li>
+                            <a href="#">National accounts</a>
+                        </li>
+                        <li>
+                            <a href="#">Regional accounts</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav__expandable js-expandable">
+                    <a href="#">Employment and Labour Market</a>
+                    <ul class="nav--primary__sub js-expandable__content js-nav-hidden">
+                        <li>
+                            <a href="#">People in work</a>
+                        </li>
+                        <li>
+                            <a href="#">People not in work</a>
+                        </li>
+                        <li>
+                            <a href="#">Public sector personnel</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav__expandable js-expandable">
+                    <a href="#">People, Population, and Community</a>
+                    <ul class="nav--primary__sub js-expandable__content js-nav-hidden">
+                        <li>
+                            <a href="#">Births, deaths, and marriages</a>
+                        </li>
+                        <li>
+                            <a href="#">Community</a>
+                        </li>
+                        <li>
+                            <a href="#">Education and childcare</a>
+                        </li>
+                        <li>
+                            <a href="#">Crime and justice</a>
+                        </li>
+                        <li>
+                            <a href="#">Household characteristics</a>
+                        </li>
+                        <li>
+                            <a href="#">Well-being</a>
+                        </li>
+                        <li>
+                            <a href="#">Health and social care</a>
+                        </li>
+                        <li>
+                            <a href="#">Elections</a>
+                        </li>
+                        <li>
+                            <a href="#">Personal and household finances</a>
+                        </li>
+                        <li>
+                            <a href="#">Population and migration</a>
+                        </li>
+                        <li>
+                            <a href="#">Cultural identity</a>
+                        </li>
+                        <li>
+                            <a href="#">Housing</a>
+                        </li>
+                        <li>
+                            <a href="#">Leisure and tourism</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav--primary__respondents">
+                    <a href="#">
+                        <span class="icon-comment icon--inline" role="presentation"></span>
+                        Taking part in a survey?
+                    </a>
+                </li>
+                <li class="nav--primary__secondary-content">
+                    <a href="#">Release calendar</a>
+                </li>
+                <li class="nav--primary__secondary-content">
+                    <a href="#">Methodology</a>
+                </li>
+                <li class="nav--primary__secondary-content">
+                    <a href="#">About</a>
+                </li>
+            </ul>
+            <div class="slate--grey search-wrapper">
+                <form class="nav-search nav-search--hidden" id="searchBar">
+                    <div class="nav-search__container">
+                        <label class="visuallyhidden" for="nav-search">Search for keyword or time series ID</label>
+                        <input type="search" class="nav-search__field" id="nav-search" name="nav-search" value="" placeholder="Search for keyword or time series ID">
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--nav-search" id="nav-search-submit">
+                    <span class="icon-search-1" role="presentation"></span>
+                    <span class="visuallyhidden">Search</span>
+                    </button>
+                </form>
+            </div>
+        </nav>
+
+        <!-- title and social icons -->
+        <div class="page-header slate">
+            <div class="wrapper">
+                <ol class="nav nav--heavy breadcrumb mini flush--half--top" >
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="nav__active breadcrumb">
+                        <a href="#">Economy</a>
+                    </li>
+                </ol>
+                <!-- /Wrapper panel -->
+                <p class="page-header__title">
+                    <strong>Article</strong>
+                </p>
+                <h1 class="page-header__title flush--half--bottom">Economic review: January 2014</h1>
+                <div class="grid-wrap">
+                    <p class="grid-col tablet-grid-one-quarter page-header__meta-block-with-img">
+                        <img src="http://alpha.ons.gov.uk/ui/img/national-statistics.png" alt="" />
+                        <span>Contact: </span><br/>Phillip Wales
+                    </p>
+                    <p class="grid-col tablet-grid-one-quarter divider--border-left">
+                        <span>Release date: </span><br/>19 Feb 2014<br/><a href="#">previous versions</a>
+                    </p>
+                    <p class="grid-col tablet-grid-one-quarter divider--border-left">
+                        <span>Next release: </span><br/>19 Mar 2014
+                    </p>
+                    <div class="grid-col tablet-grid-one-quarter divider--border-left page-header__meta-block-with-ul">
+                        <ul class="list--neutral">
+                            <li>
+                                <span class="icon icon-print icon--blue-alt">
+                                    <span class="visuallyhidden">Print full report</span>&nbsp;Print full report (38 pages)
+                                    <ons-help-tooltip tip="This link will not be available on the prototype, however in the future you will be able to print the full report"></ons-help-tooltip>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="icon icon-download icon--blue-alt">
+                                    <span class="visuallyhidden">Download PDF</span>&nbsp;Download PDF (95KB)
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="page-header__icons">
+                    <a href="#" class="link-complex">
+                        <span class="icon icon-twitter icon--grey">
+                            <span class="visuallyhidden">Share on Twitter</span>
+                        </span>
+                   </a>
+                   <a href="#" class="link-complex">
+                       <span class="icon icon-facebook icon--grey">
+                           <span class="visuallyhidden">Share on Facebook</span>
+                       </span>
+                   </a>
+                   <a href="#" class="link-complex">
+                       <span class="icon icon-linkedin icon--grey">
+                           <span class="visuallyhidden">Share on LinkedIn</span>
+                       </span>
+                   </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table of contents -->
+        <div class="wrapper">
+            <p class="lede">The main economic stories from ONS publications produced over the latest month, painting a coherent picture of the UK economic performance using recent economic data.</p>
+            <article class="box panel--separated--bottom">
+                <h3 id="top">Table of contents</h3>
+                    <ol class="table-of-contents-ordered-list">
+                        <li>
+                            <a href="#keypoints">Key points</a>
+                        </li>
+                        <li>
+                            <a href="#introduction">Introduction</a>
+                        </li>
+                        <li>
+                            <a>Title</a>
+                        </li>
+                        <li>
+                            <a>Title</a>
+                        </li>
+                        <li>
+                            <a>Title</a>
+                        </li>
+                        <li>
+                            <a>Title</a>
+                        </li>
+                        <li>
+                            <a>Title</a>
+                        </li>
+                        <li>
+                            <a>Title</a>
+                        </li>
+                        <li>
+                            <a>Title</a>
+                        </li>
+                        <li>
+                            <a>Title</a>
+                        </li>
+                        <li>
+                            <a>Title</a>
+                        </li>
+                        <li>
+                            <a>Title</a>
+                        </li>
+                        <li>
+                            <a>Title</a>
+                        </li>
+                        <li>
+                            <a>Title</a>
+                        </li>
+                        <li>
+                            <a>Title</a>
+                        </li>
+                        <li>
+                            <a>Title</a>
+                        </li>
+                        <li>
+                            <a>Title</a>
+                        </li>
+                        <li>
+                            <a>Title</a>
+                        </li>
+                    </ol>
+            </article>
+        </div>
+        <!-- Body Sections -->
+        <div class="wrapper panel--bottom-mar">
+            <div class="grid-wrap">
+                <div class="grid-col desktop-grid-two-thirds">
+
+                    <h2 id="keypoints">1. Key points</h2>
+
+                    <ul>
+                        <li>Gross Domestic Product (GDP) grew at an unrevised rate of 0.8% in the third quarter of 2013. Growth was broadly based across the services, production and construction sectors, while the expenditure measure was supported by stronger household spending.</li>
+                        <li>Revisions have been introduced to expenditure estimates which raise the rate of GDP growth during 2012 and 2013. The UK economy is now 2.0% below its pre- downturn level of output, compared to 2.5% on previous estimates.</li>
+                        <li>The average number of hours per worker has returned to its pre-downturn peak. Combined with recent reductions in the unemployment rate, this points to a broad intensiﬁcation in the use of labour in production.</li>
+                        <li>At the start of the New Year, this Review highlights several key features of the UK’s economic recovery, including labour productivity, investment, trade, regional house prices and real wages, in the light of information published during 2013.</li>
+                    </ul>
+
+                    <h2 id="introduction">2. Introduction</h2>
+
+                    <p>The third estimate of Gross Domestic Product (GDP) conﬁrmed that the UK economy grew by 0.8% in the three months to September 2013. The Quarterly National Accounts also introduced revisions to recent quarters, raising growth rates in 2012 and 2013 which mean that the economy is now estimated to be 2.0% below its pre-downturn peak, compared with previous estimates of 2.5%. This edition of the Economic Review unpacks these changes and highlights the recent contribution of households to the economic recovery.</p>
+
+                    <p>The January edition of the Economic Review also considers recent developments in the UK’s labour market. Average hours per worker returned to their pre- downturn peak in the third quarter of 2013 which, combined with recent falls in the unemployment rate, points to a broad intensiﬁcation of the use of labour in the production process in recent months.</p>
+
+                    <p>The ﬁnal section of the Economic Review considers how our understanding of the UK economy has changed during 2013. It sets out ﬁve key characteristics of the UK’s economic recovery which have only been partially explained by data and analysis published during the last twelve months, and which have implications for the economy’s development in the New Year. </p>
+
+                    <!-- Accordian -->
+                    <div class"panel--mar">
+                        <div class="accordion is-expanded panel--bottom-mar">
+    						<h2 id="sc-1" class="accordion__title" aria-controls="content-1">References</h2>
+    						<div id="content-1" class="accordion__content" aria-labelledby="sc-1">
+    							<ul class="list--neutral">
+    								<li>
+    									<p>
+                                            <a>See economic review</a>: December 2013 for an analysis of the relationship between output per worker and labour costs per worker. For an in-depth analysis of the UK’s trade performance since 2007, see this ONS article: <a>‘Explanations beyond exchange rates - trends in the UK since 2007'</a>
+    									</p>
+    								</li>
+    							</ul>
+    						</div>
+    					</div>
+                    </div>
+                    <!-- /Accordian -->
+                </div>
+                <div class="grid-col desktop-grid-one-third">
+
+                    <article class="box box--green box--green--separated--left">
+                        <div class="box__inner border box--padded [border--large-left]">
+                            <header class="box__header">
+                                <h3>Data in this bulletin</h3>
+                            </header>
+                            <div class="box__content">
+                                <ul class="list--neutral">
+                                    <li><a href="">Consumer Price Inflation data collection</a></li>
+                                    <li><a href="">Consumer Price Inflation time series</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="box">
+                        <div class="box__inner border box--padded">
+                            <header class="box__header">
+                                <h3>Contact details for this statistical bulletin</h3>
+                            </header>
+                            <!-- /box__header -->
+                            <div class="box__content">
+                                <p>
+                                    Phillip Wales</br>
+                                    <a href="">pw@ons.gsi.gov.uk</a></br>
+                                    Telephone: +44 (0)1633 456468
+                                </p>
+                            </div>
+                            <!-- /box__content -->
+                        </div>
+                    </article>
+                    <!-- /article__content -->
+            </div>
+        </div>
+    </div>
+    <!-- panel -->
+    <div class="slate--mid-grey">
+        <!-- wrapper -->
+        <div class="wrapper panel--top-pad">
+            <!-- grid-wrap -->
+            <div class="grid-wrap">
+                <div class="grid-col desktop-grid-two-thirds tablet-grid-full-width">
+                    <article class="box box--blue box--blue--separated--left">
+                        <div class="box__inner border box--padded">
+                            <h3>Related bulletins</h3>
+                            <ul class="list--neutral">
+                                <li>
+                                    <h3 class="flush--bottom">
+                                    <a href="#">Producer Price Inflation, January 2014</a>
+                                    </h3>
+
+                                    <p>The Consumer Price Inflation is a monthly release that contains percentage changes and weights for the CPI, CPIH, RPI and RPIJ.
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+            </div>
+            <div class="grid-col desktop-grid-one-third tablet-grid-full-width">
+                <!-- article__content -->
+                <article class="box box--orange box--orange--separated-left">
+                    <div class="box__inner border box--padded ">
+                        <h3 class="flush--bottom"><a href="">Looking for local statistics?</a></h3>
+                        <p>A handy guide to let you know where to find local statistics.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="global-footer">
+  <h2 class="visuallyhidden">Footer links</h2>
+  <div class="slate--light panel--pad-large panel--separated">
+    <div class="wrapper">
+      <nav class="grid-wrap">
+        <div class="grid-col tablet-grid-one-third">
+          <h3 class="delta headline-separated">Legal</h3>
+          <ul class="list--neutral list--grid list--spaced">
+            <li><a href="#">Business Transparency</a>
+            </li>
+            <li><a href="#">Terms and Conditions</a>
+            </li>
+            <li><a href="#">Copyright</a>
+            </li>
+            <li><a href="#">Cookies and Privacy</a>
+            </li>
+          </ul>
+        </div>
+        <div class="grid-col tablet-grid-one-third">
+          <h3 class="delta headline-separated">About ONS</h3>
+          <ul class="list--neutral list--grid list--spaced">
+            <li><a href="#">Who we are</a>
+            </li>
+            <li><a href="#">Careers</a>
+            </li>
+            <li><a href="#">Products and Services</a>
+            </li>
+            <li><a href="#">Contact us</a>
+            </li>
+            <li><a href="#">Our offices</a>
+            </li>
+          </ul>
+        </div>
+        <div class="grid-col tablet-grid-one-third">
+          <h3 class="delta headline-separated">Connect with us</h3>
+          <ul class="list--neutral list--grid list--spaced">
+            <li><a href="#">Facebook</a>
+            </li>
+            <li><a href="#">Twitter</a>
+            </li>
+            <li><a href="#">YouTube</a>
+            </li>
+            <li><a href="#">Email subscriptions</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- /wrapper -->
+  </div>
+  <!-- /slate -->
+  <div class="slate--mid-grey">
+    <div class="wrapper">
+      <div class="footer__license">
+        <img class="footer__license__img" alt="OGL" width="60" src="../../ui/img/ogl.png">
+        <p class="footer__license__body">
+          All content is available under the Open Government Licence v2.0, except where otherwise
+          stated
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript" src="../../node_modules/ONS-Pattern-Library/dist/js/footer.js"></script>
+<script type="text/javascript" src="../../ui/js/lib/highcharts.js"></script>
+<script type="text/javascript" src="../../ui/js/lib/jquery.tooltipster.min.js"></script>
+</body>
+</html>

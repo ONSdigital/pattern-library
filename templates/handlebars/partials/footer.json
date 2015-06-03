@@ -1,0 +1,38 @@
+{
+	"sections": [
+		{
+			"name": "Legal",
+			"data": [
+				{"item": "Accessibility"},
+				{"item": "Cookies and privacy"}
+			]
+		},
+		{
+			"name": "About ONS",
+			"data": [
+				{"item": "Who we are"},
+				{"item": "Careers"},
+				{"item": "Products and services"},
+				{"item": "Contact us"},
+				{"item": "Our offices"}
+			]
+		},
+		{
+			"name": "Connect with us",
+			"data": [
+				{
+					"item": "Twitter",
+					"url": "https://twitter.com/ONS"
+				},
+				{
+					"item": "Facebook",
+					"url": "https://www.facebook.com/ONS"
+				},
+				{
+					"item": "Linked",
+					"url": "https://www.linkedin.com/company/office-for-national-statistics"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,140 @@
+
+{
+  "headline": {
+    "name": "CPI: Consumer Prices Index (% change)",
+    "uri": "/economy/inflationandpriceindices/timeseries/d7g7",
+		"figure": "1.2",
+		"unit": "%",
+		"period": "February 2015",
+    "lastUpdate": "16 Sep 2014",
+    "nextUpdate": "14 Oct 2014"
+  },
+  "statsBulletinHeadline": {
+    "summary": "CPI, CPIH, RPI and RPIJ inflation price indices for February 2015 - brief description and analysis",
+    "name": "Consumer Price Inflation, February 2015",
+    "uri": "/economy/inflationandpriceindices/bulletins/consumerpriceinflationfebruary2015",
+    "data": [
+      {"item": "1.2% growth in Consumer Prices Index (CPI) in the year to February 2015, down from 2.0% in January 2014."},
+      {"item": "1.8% growth in CPIH in the year to February 2015, down from 1.9% in January 2014."}
+    ]
+  },
+  "items": [
+    {
+      "name": "CPI: Consumer Prices Index (% change)",
+      "uri": "/economy/inflationandpriceindices/timeseries/d7g7",
+      "figure": "1.2",
+      "unit": "%",
+      "period": "February 2015",
+      "lastUpdate": "19 Feb 2015",
+      "nextUpdate": "19 Mar 2015"
+    },
+    {
+      "name": "RPI: Retail Price Index (% change)",
+      "uri": "/economy/inflationandpriceindices/timeseries/czbh",
+      "figure": "2.3",
+      "unit": "%",
+      "period": "February 2015",
+      "lastUpdate": "19 Feb 2015",
+      "nextUpdate": "19 Mar 2015"
+    },
+    {
+      "name": "CPIH (% change)",
+      "uri": "/economy/inflationandpriceindices/timeseries/l55o",
+      "figure": "1.2",
+      "unit": "%",
+      "period": "February 2015",
+      "lastUpdate": "19 Feb 2015",
+      "nextUpdate": "19 Mar 2015"
+    },
+    {
+      "name": "RPIJ (% change)",
+      "uri": "/economy/inflationandpriceindices/timeseries/kvr9",
+      "figure": "1.6",
+      "unit": "%",
+      "period": "February 2015",
+      "lastUpdate": "19 Feb 2015",
+      "nextUpdate": "19 Mar 2015"
+    },
+    {
+      "name": "CPI: Consumer Prices Index",
+      "uri": "/economy/inflationandpriceindices/timeseries/d7bt",
+      "figure": "128.4",
+      "unit": "index",
+      "period": "February 2015",
+      "lastUpdate": "19 Feb 2015",
+      "nextUpdate": "19 Mar 2015",
+      "description": "Index, 2005 = 100"
+    }
+  ],
+  "statsBulletins": [
+    {
+      "summary": "The Consumer Price Inflation is a monthly release that contains percentage changes and weights for the CPI, CPIH, RPI and RPIJ.",
+      "name": "Consumer Price Inflation, February 2015",
+      "uri": "/economy/inflationandpriceindices/bulletins/consumeconsumerpriceinflationfebruary2015"
+    },
+    {
+      "summary": "The ONS House Price Index (HPI) is a monthly release that publishes figures for mix-adjusted average house prices",
+      "name": "House Price Index: February 2015",
+      "uri": "/economy/inflationandpriceindices/bulletins/housepriceindexfebruary2015"
+    },
+    {
+      "summary": "A first estimate of retail sales in volume and value terms, seasonally and non-seasonally adjusted.",
+      "name": "Retails Sales: February 2015",
+      "uri": "/economy/inflationandpriceindices/bulletins/retailsalefebruary2015"
+    }
+  ],
+  "articles": [
+    {
+      "summary": "A comprehensive review on the UK economy, including the latest GDP estimate and other statistical outputs of ONS.",
+      "name": "Economic review: January 2015",
+      "uri": "/economy/inflationandpriceindices/articles/economicreviewjanuary2015"
+    },
+    {
+      "summary": "Membership and contributions, by contracted out status, is presented for private sector defined benefit occupational schemes.",
+      "name": "Contracting out of private sector defined benefit pension schemes: 2013",
+      "uri": "/economy/inflationandpriceindices/articles/contraccontractingoutofprivatesectordefinedbenefitpensionschemes2013"
+    },
+    {
+      "summary": "Gives an overview of the cases ONS expects to decide over the next 12 months, in order of when they are expected to be completed.",
+      "name": "National accounts classifications, forward workplan: March 2015",
+      "uri": "/economy/inflationandpriceindices/articles/nationalaccountsclassificationsforwardworkplanmarch2015"
+    }
+  ],
+  "datasets": [
+    {
+      "summary": "Measures of inflation data, including CPI, RPI, CPIH and RPIJ",
+      "name": "Inflation data collection",
+      "uri": "/economy/inflationandpriceindices/datasets/inflationdatacollection"
+    },
+    {
+      "summary": "Complete dataset covering all RPI statistics. Not a National Statistic.",
+      "name": "Retail Prices Index",
+      "uri": "/economy/inflationandpriceindices/datasets/retailpricesindex"
+    },
+    {
+      "summary": "Comprehensive dataset covering input and output index series",
+      "name": "Producer Prices Inflation",
+      "uri": "/economy/inflationandpriceindices/datasets/producerpricesinflation"
+    }
+  ],
+  "level": "t3",
+  "index": 0,
+  "lede": "Inflation measures the rate of increase in prices for goods and services using price indices. The rate of inflation used in the UK government&#39;s inflation target is measured using the Consumer Prices Index (CPI). One way to understand the CPI is to think of a very large shopping basket containing a large selection of the goods and services bought by households, the CPI estimates changes to the total cost of this basket.",
+  "type": "home",
+  "name": "Inflation and price indices",
+  "fileName": "inflationandpriceindices",
+  "breadcrumb": [
+    {
+      "index": 0,
+      "type": "home",
+      "name": "Economy",
+      "fileName": "economy"
+    },
+		{
+			"index": 0,
+			"type": "home",
+			"name": "Breadcrumb test",
+			"fileName": "breadcrumbtest"
+		}
+  ]
+}
