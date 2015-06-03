@@ -39,6 +39,22 @@
   }
 }
 
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
 
 // Hanging indent
 // In situations where you have a floated element followed by an element containing paragraphs of text, you can use this
