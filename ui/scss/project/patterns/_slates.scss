@@ -20,6 +20,10 @@
     }
   }
 
+  p.page-header__title {
+    color: $grey;
+  }
+
 }
 
 .slate--light {
@@ -32,6 +36,13 @@
 
 .slate--mid-grey {
   background-color: lighten($grey-light, 2.5%);
+}
+
+.slate--grey-bar {
+
+  &:after {
+    background-color: $grey;
+  }
 }
 
 .slate--blue {

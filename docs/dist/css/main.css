@@ -4802,6 +4802,8 @@ lesser , applied styles
     .slate:after {
       max-width: 912px;
       max-width: 91.2rem; } }
+  .slate p.page-header__title {
+    color: #757575; }
 
 .slate--light {
   background-color: #f3f3f3; }
@@ -4811,6 +4813,9 @@ lesser , applied styles
 
 .slate--mid-grey {
   background-color: #e4e5e3; }
+
+.slate--grey-bar:after {
+  background-color: #757575; }
 
 .slate--blue {
   background-color: #e5fcff; }
