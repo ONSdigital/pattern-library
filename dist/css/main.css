@@ -1559,6 +1559,10 @@ img {
 .text-right {
   text-align: right !important; }
 
+.stand-out-text {
+  font-size: 1.4em;
+  font-weight: bold; }
+
 /* ======================================================
    A standard wrapping block to limit the width of blocks - this allows for full width elements
    and contained elements without constraining it at <body> level
