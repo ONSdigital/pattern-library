@@ -41,7 +41,7 @@
     background-color: $teal;
   }
 
-  .page-header__title {
+  p.page-header__title {
     color: $teal;
   }
 }
@@ -53,7 +53,7 @@
     background-color: $aqua-deep;
   }
 
-  .page-header__title {
+  p.page-header__title {
     color: $aqua-deep;
   }
 }
@@ -65,7 +65,7 @@
     background-color: $ons-green;
   }
 
-  .page-header__title {
+  p.page-header__title {
     color: $ons-green;
   }
 }
@@ -77,8 +77,8 @@
     background-color: $crispin-red;
   }
 
-  .page-header__title {
-    background-color: $crispin-red;
+  p.page-header__title {
+    color: $crispin-red;
   }
 }
 
