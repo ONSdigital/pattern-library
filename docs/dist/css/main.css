@@ -4236,10 +4236,10 @@ lesser , applied styles
   margin-right: -2px; }
   .nav--az-side-bar li {
     float: left;
-    width: 16.66667%; }
-  @media screen and (min-width: 38em) {
+    width: 50px; }
+  @media screen and (min-width: 56em) {
     .nav--az-side-bar li {
-      width: 50px; } }
+      width: 16.66667%; } }
 
 .nav--dark a {
   color: #303030;

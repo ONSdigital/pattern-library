@@ -57,12 +57,12 @@
 
   li {
     float: left;
-    width: 16.6666667%;
+    width: 50px;
   }
 
-  @include respond-min($bp-tablet) {
+  @include respond-min($bp-desktop) {
       li {
-        width: 50px;
+        width: 16.6666667%;
       }
   }
 }
