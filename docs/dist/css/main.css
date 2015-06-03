@@ -3594,6 +3594,9 @@ lesser , applied styles
   padding-right: 3em;
   padding-left: 3em; }
 
+.btn--clear-results {
+  margin-top: -7px; }
+
 .btn--form {
   padding-top: 0;
   padding-bottom: 0;
