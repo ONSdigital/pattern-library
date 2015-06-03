@@ -2894,7 +2894,8 @@ a {
 
 .page-header {
   position: relative;
-  padding: 20px 0; }
+  padding: 20px 0;
+  margin-bottom: 30px; }
 
 
 .page-header__icons {
@@ -4192,6 +4193,18 @@ _:-ms-input-placeholder, :root .nav--primary__sub {
 
 .slate {
   background-color: #eeefed; }
+  .slate:after {
+    height: 5px;
+    margin: 0 auto;
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    background-color: transparent; }
+  .slate:after {
+    left: 0;
+    right: 0; }
 
 .slate--light {
   background-color: #f3f3f3; }

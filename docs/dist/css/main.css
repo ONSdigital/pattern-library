@@ -3008,7 +3008,9 @@ a {
 .page-header {
   position: relative;
   padding: 20px 0;
-  padding: 2rem 0; }
+  padding: 2rem 0;
+  margin-bottom: 30px;
+  margin-bottom: 3rem; }
 
 
 .page-header__icons {
@@ -4784,6 +4786,20 @@ lesser , applied styles
 
 .slate {
   background-color: #eeefed; }
+  .slate:after {
+    height: 5px;
+    height: 0.5rem;
+    margin: 0 auto;
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    background-color: transparent; }
+  @media screen and (min-width: 56em) {
+    .slate:after {
+      left: 0;
+      right: 0; } }
 
 .slate--light {
   background-color: #f3f3f3; }
