@@ -491,6 +491,9 @@ img {
 .icon-linkedin:before {
   content: '\e815'; }
 
+.icon-rss:before {
+  content: '\e81d'; }
+
 /*------------------------------
   Temporary wrapping classes
 
