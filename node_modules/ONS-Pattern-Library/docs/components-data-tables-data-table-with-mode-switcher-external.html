@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html class="no-js ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"><!--<![endif]-->
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>ONS Alpha Pattern Library</title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <meta content="on" http-equiv="cleartype"/>
+
+  <link rel="stylesheet" href="/dist/css/main.css"/>
+  <script src="/ui/js/lib/modernizr.min.js"></script>
+
+
+  <!-- These are inline styles, should be refactored into a file -->
+  <style>
+    /*
+     * Put styles in here which are required to make the style guide work with the project
+     */
+    body {
+      max-width: 100%;
+    }
+
+    .color-block {
+      float: none;
+      display: inline-block;
+    }
+
+    .language-markup {
+      overflow-wrap: normal;
+    }
+
+    .grid-col {
+      word-wrap: break-word;
+    }
+
+    .swatch {
+      border-radius: 100%;
+      display: inline-table;
+      width: 110px;
+      height: 110px;
+      padding: 15px;
+      margin: 20px;
+      text-align: center;
+      border: 1px solid black;
+      position: relative;
+     }
+
+    .swatch div {
+      display: table-cell;
+      height: 100%;
+      width: 100%;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    .grid-wrap {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .grid-col code {
+      border: 1px dashed #ccc;
+      background: #fff;
+      padding: 10px;
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+<table class="tablesaw" data-mode-switch="" data-mode-exclude="stack" data-minimap="" data-mode="columntoggle">
+  <thead>
+  <tr>
+    <th data-priority="persist">Year</th>
+    <th data-priority="1">Jan</th>
+    <th data-priority="1">Feb</th>
+    <th data-priority="1">Mar</th>
+    <th data-priority="1">Apr</th>
+    <th data-priority="1">May</th>
+    <th data-priority="1">Jun</th>
+    <th data-priority="1">Jul</th>
+    <th data-priority="6">Aug</th>
+    <th data-priority="6">Sep</th>
+    <th data-priority="6">Oct</th>
+    <th data-priority="6">Nov</th>
+    <th data-priority="6">Dec</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th>1997</th>
+    <td>109.5</td>
+    <td>107.1</td>
+    <td>111.8</td>
+    <td>109.6</td>
+    <td>105.2</td>
+    <td>106.4</td>
+    <td>109.1</td>
+    <td>97.3</td>
+    <td>110.5</td>
+    <td>118</td>
+    <td>113</td>
+    <td>109.9</td>
+  </tr>
+  <tr>
+    <th>1998</th>
+    <td>107.4</td>
+    <td>108.4</td>
+    <td>120</td>
+    <td>109.7</td>
+    <td>105.2</td>
+    <td>111.4</td>
+    <td>109.8</td>
+    <td>98.7</td>
+    <td>112.2</td>
+    <td>115.1</td>
+    <td>114.8</td>
+    <td>109.8</td>
+  </tr>
+
+  <tr>
+    <th>1999</th>
+    <td>104.3</td>
+    <td>106.9</td>
+    <td>122.2</td>
+    <td>107.4</td>
+    <td>105.3</td>
+    <td>112.7</td>
+    <td>107.9</td>
+    <td>104.5</td>
+    <td>116.3</td>
+    <td>115.6</td>
+    <td>121.4</td>
+    <td>112.7</td>
+  </tr>
+  <tr>
+    <th>2000</th>
+    <td>107.1</td>
+    <td>114</td>
+    <td>125.8</td>
+    <td>106.4</td>
+    <td>113.9</td>
+    <td>115.7</td>
+    <td>107</td>
+    <td>109</td>
+    <td>113.5</td>
+    <td>118.1</td>
+    <td>122.5</td>
+    <td>109.3</td>
+  </tr>
+
+  <tr>
+    <th>2001</th>
+    <td>113.5</td>
+    <td>109.9</td>
+    <td>122.2</td>
+    <td>107.6</td>
+    <td>112.2</td>
+    <td>110.6</td>
+    <td>107.7</td>
+    <td>107.5</td>
+    <td>108.9</td>
+    <td>117.6</td>
+    <td>117.2</td>
+    <td>105.7</td>
+  </tr>
+  <tr>
+    <th>2002</th>
+    <td>110</td>
+    <td>107.1</td>
+    <td>114.6</td>
+    <td>111.5</td>
+    <td>112.9</td>
+    <td>103</td>
+    <td>108.8</td>
+    <td>102.3</td>
+    <td>109.9</td>
+    <td>116.6</td>
+    <td>113.8</td>
+    <td>106.7</td>
+  </tr>
+
+  <tr>
+    <th>2003</th>
+    <td>108.2</td>
+    <td>106.2</td>
+    <td>114.7</td>
+    <td>107.1</td>
+    <td>106.4</td>
+    <td>107.4</td>
+    <td>109.2</td>
+    <td>99.6</td>
+    <td>111.2</td>
+    <td>117.1</td>
+    <td>111.2</td>
+    <td>109.5</td>
+  </tr>
+  <tr>
+    <th>2004</th>
+    <td>107.2</td>
+    <td>107.1</td>
+    <td>122</td>
+    <td>109.4</td>
+    <td>106.2</td>
+    <td>111.5</td>
+    <td>106</td>
+    <td>100.9</td>
+    <td>111.1</td>
+    <td>111</td>
+    <td>116.5</td>
+    <td>109.6</td>
+  </tr>
+  <tr>
+    <th>2005</th>
+    <td>104.9</td>
+    <td>106.6</td>
+    <td>115.3</td>
+    <td>109.2</td>
+    <td>108.7</td>
+    <td>111.4</td>
+    <td>104.8</td>
+    <td>103.8</td>
+    <td>110.4</td>
+    <td>110.1</td>
+    <td>116</td>
+    <td>107.6</td>
+  </tr>
+  <tr>
+    <th>2006</th>
+    <td>108</td>
+    <td>106.8</td>
+    <td>120.8</td>
+    <td>104.3</td>
+    <td>110.6</td>
+    <td>111.3</td>
+    <td>104.4</td>
+    <td>105.1</td>
+    <td>110.3</td>
+    <td>114.4</td>
+    <td>117.3</td>
+    <td>104.7</td>
+  </tr>
+  <tr>
+    <th>2007</th>
+    <td>111.4</td>
+    <td>107.2</td>
+    <td>118</td>
+    <td>106.8</td>
+    <td>112.6</td>
+    <td>108.5</td>
+    <td>106.7</td>
+    <td>104.6</td>
+    <td>106.5</td>
+    <td>117</td>
+    <td>116.9</td>
+    <td>105.7</td>
+  </tr>
+  <tr>
+    <th>2008</th>
+    <td>111</td>
+    <td>110.7</td>
+    <td>111.5</td>
+    <td>111.5</td>
+    <td>107.6</td>
+    <td>106.1</td>
+    <td>106.2</td>
+    <td>98.3</td>
+    <td>108.1</td>
+    <td>111.5</td>
+    <td>103.3</td>
+    <td>100.7</td>
+  </tr>
+  <tr>
+    <th>2009</th>
+    <td>96.8</td>
+    <td>94.9</td>
+    <td>104.3</td>
+    <td>98.3</td>
+    <td>94.7</td>
+    <td>99</td>
+    <td>98.1</td>
+    <td>87.4</td>
+    <td>98.7</td>
+    <td>101.8</td>
+    <td>101.8</td>
+    <td>98</td>
+  </tr>
+  <tr>
+    <th>2010</th>
+    <td>95.4</td>
+    <td>96.9</td>
+    <td>111</td>
+    <td>99.9</td>
+    <td>97.6</td>
+    <td>101.3</td>
+    <td>97.9</td>
+    <td>94.1</td>
+    <td>103.2</td>
+    <td>103</td>
+    <td>107.6</td>
+    <td>102.2</td>
+  </tr>
+  <tr>
+    <th>2011</th>
+    <td>98.2</td>
+    <td>97</td>
+    <td>111.4</td>
+    <td>96.5</td>
+    <td>99.5</td>
+    <td>102.7</td>
+    <td>96.2</td>
+    <td>95.3</td>
+    <td>101.6</td>
+    <td>100.6</td>
+    <td>104.3</td>
+    <td>96.6</td>
+  </tr>
+  <tr>
+    <th>2012</th>
+    <td>97.1</td>
+    <td>98.3</td>
+    <td>106.2</td>
+    <td>94.6</td>
+    <td>99.8</td>
+    <td>96.2</td>
+    <td>97.1</td>
+    <td>93.5</td>
+    <td>92.6</td>
+    <td>99.3</td>
+    <td>100.4</td>
+    <td>92.4</td>
+  </tr>
+  <tr>
+    <th>2013</th>
+    <td>95.9</td>
+    <td>93.2</td>
+    <td>100.8</td>
+    <td>96.9</td>
+    <td>98.5</td>
+    <td>95.7</td>
+    <td>98.1</td>
+    <td>90.1</td>
+    <td>97.5</td>
+    <td>102.6</td>
+    <td>100.6</td>
+    <td>96.1</td>
+  </tr>
+  <tr>
+    <th>2014</th>
+    <td>97.9</td>
+    <td>96.5</td>
+    <td>106</td>
+    <td>98.5</td>
+    <td>98.8</td>
+    <td>99.1</td>
+    <td>100.5</td>
+    <td>90.3</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  </tbody>
+  </table>
+
+<script src="/dist/js/footer.js"></script>
+
+
+</body>
+</html>
