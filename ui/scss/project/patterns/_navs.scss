@@ -50,6 +50,12 @@
     }
 }
 
+.nav--block-landing--pairs {
+    &:nth-child(2n+0) {
+        clear: left;
+    }
+}
+
 .nav--az-side-bar {
   display: inline-block;
   margin-left: -2px;
