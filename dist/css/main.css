@@ -3400,7 +3400,7 @@ lesser , applied styles
 .nav--block-landing:nth-child(3n+4) {
   clear: left; }
 
-.nav--block-landing--pairs:nth-child(2n+0) {
+.nav--block-landing--pairs:nth-child(2n+3) {
   clear: left; }
 
 .nav--az-side-bar {
