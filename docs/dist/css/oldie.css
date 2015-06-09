@@ -3821,6 +3821,7 @@ lesser , applied styles
   clear: left; }
 
 .nav--block-home-highlighted-content {
+  width: 100%;
   width: 33.33333%; }
   .nav--block-home-highlighted-content:nth-child(4) {
     width: 50%;
