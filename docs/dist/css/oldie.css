@@ -3820,6 +3820,9 @@ lesser , applied styles
 .nav--block-landing--pairs:nth-child(2n+3) {
   clear: left; }
 
+.nav--block-home-highlighted-content:nth-child(4) {
+  clear: left; }
+
 .nav--az-side-bar {
   display: inline-block;
   margin-left: -2px;
