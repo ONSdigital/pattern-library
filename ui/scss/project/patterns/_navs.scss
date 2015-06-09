@@ -56,16 +56,24 @@
   }
 }
 
-.nav--block-home-highlighted-content .box {
+.nav--block-home-highlighted-content {
   width: 100%;
-  @extend .box--purple--separated--left;
+  .box {
+    @extend .box--purple--separated--left;
+  }
 
     &:nth-child(3) {
-      @extend .box--orange--separated--left;
+
+      .box {
+        @extend .box--orange--separated--left;
+      }
+      
     }
 
     &:nth-child(5) {
-      @extend .box--green--separated--left;
+      .box {
+        @extend .box--green--separated--left;
+      }
     }
 
 
