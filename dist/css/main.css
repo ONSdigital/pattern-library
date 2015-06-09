@@ -4276,8 +4276,13 @@ lesser , applied styles
 .nav--block-landing--pairs:nth-child(2n+3) {
   clear: left; }
 
-.nav--block-home-highlighted-content:nth-child(4) {
-  clear: left; }
+.nav--block-home-highlighted-content {
+  width: 33.33333%; }
+  .nav--block-home-highlighted-content:nth-child(4) {
+    width: 50%;
+    clear: left; }
+  .nav--block-home-highlighted-content:nth-child(5) {
+    width: 50%; }
 
 .nav--az-side-bar {
   display: inline-block;
