@@ -58,6 +58,16 @@
 
 .nav--block-home-highlighted-content {
   width: 100%;
+  @extend .box--purple--separated--left;
+
+    &:nth-child(3) {
+      @extend .box--orange--separated--left;
+    }
+
+    &:nth-child(5) {
+      @extend .box--green--separated--left;
+    }
+
 
   @include respond-min($bp-desktop) {
     width: 33.333333333333%;
