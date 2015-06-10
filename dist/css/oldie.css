@@ -1241,7 +1241,8 @@ body, button, input, select, textarea {
   font-family: "open-sans-n4", "open-sans", sans-serif; }
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  outline: none !important; }
 
 img {
   max-width: 100%; }
