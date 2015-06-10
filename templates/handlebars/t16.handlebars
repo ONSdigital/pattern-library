@@ -1,0 +1,113 @@
+<head>
+	<link rel="stylesheet" href="../../node_modules/ONS-Pattern-Library/dist/css/main.min.css"/>
+	<script src="../../node_modules/ONS-Pattern-Library/dist/js/header.js"></script>
+</head>
+
+<!-- Pattern Library Header -->
+<p>Add header partial</p>
+
+<div class="page-header slate slate--green">
+	<div class="wrapper">
+		<p>Add breadcrumb partial</p>
+		<p class="page-header__title">
+			<strong>Release</strong>
+		</p>
+		<h1 class="page-header__title flush--half--bottom">{{name}}</h1>
+		<div class="grid-wrap">
+			<p class="grid-col tablet-grid-one-quarter page-header__meta-block-with-img">
+				<img src="../../node_modules/ONS-Pattern-Library/ui/img/national-statistics.png" alt="ONS logo">
+				<span>Contact:</span>
+				</br>
+				{{contact.name}}
+				</br>
+				{{contact.email}}
+				</br>
+				{{contact.telephone}}
+			</p>
+			<p class="grid-col tablet-grid-one-quarter divider--border-left">
+				<span>Release date:</span>
+				</br>
+				{{releaseDate}}
+			</p>
+			<p class="grid-col tablet-grid-one-quarter divider--border-left">
+				<span>Next release:</span>
+				{{nextRelease}}
+				</br>
+				<a href="#">pre-release access list</a>
+			</p>
+		</div>
+		<!-- /grip-wrap -->
+		<p>
+			Add social icons partial
+		</p>
+	</div>
+</div>
+<!-- /page-header -->
+<div class="wrapper panel--mar ">
+	<div class="grid-wrap">
+		<div class="grid-col desktop-grid-full-width">
+			<p>
+
+			</p>
+			<div class="grid-wrap panel--pad">
+				<div class="grid-col desktop-grid-one-third">
+					<h2>Statistical bulletin and articles</h2>
+				</div>
+				<!-- /desktop-grid-one-third -->
+				{{#each bulletins}}
+				<div class="grid-col desktop-grid-one-third">
+					<h3 class="flush"><a href="{{uri}}">{{title}}</a></h3>
+					<p>
+						{{description}}
+					</p>
+				</div>
+				<!-- /desktop-grid-one-third -->
+				{{/each}}
+			</div>
+			<!-- /grid-wrap -->
+			<div class="grid-wrap panel--bottom-pad">
+				<div class="grid-col desktop-grid-one-third">
+					<h2 class="flush">Datasets in this release</h2>
+					<p><a href="{{allData}}">See all datasets in this release &#62;</a></p>
+				</div>
+				<!-- /desktop-grid-one-third -->
+				{{#each datasets}}
+				<div class="grid-col desktop-grid-one-third">
+					<h3 class="flush"><a href="{{uri}}">{{title}}</a></h3>
+					<p>
+						{{description}}
+					</p>
+				</div>
+				<!-- /desktop-grid-one-third -->
+				{{/each}}
+			</div>
+			<!-- /grid-wrap -->
+			{{#each sections}}
+			<h2 class="delta">{{title}}</h2>
+			<p>
+				{{markdown}}
+			</p>
+			{{/each}}
+			{{#if accordions}}
+				{{#each}}
+				<div class="accordion is-collapsed">
+					<h2 id="sc-1" class="accordion__title delta" aria-controls="content-1">{{title}}</h2>
+					<div id="content-1" class="accordion__content" aria-labelledby="sc-1">
+						{{markdown}}
+					</div>
+					<!-- /accordion__content -->
+				</div>
+				<!-- /accordion -->
+				{{/each}}
+			{{/if}}
+		</div>
+		<!-- / desktop-grid-full-width -->
+	</div>
+	<!-- / grid-wrap -->
+</div>
+<!-- / wrapper panel--mar -->
+<p>
+	Add footer partial
+</p>
+
+<script src="http://onsdigital.github.io/pattern-library/dist/js/footer.js"></script>

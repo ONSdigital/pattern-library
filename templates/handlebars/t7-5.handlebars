@@ -1,0 +1,54 @@
+<head>
+		<link rel="stylesheet" href="../../node_modules/ONS-Pattern-Library/dist/css/main.min.css"/>
+  	<script src="../../node_modules/ONS-Pattern-Library/dist/js/header.js"></script>
+</head>
+
+<!-- Pattern Library Header -->
+<p>Add header partial</p>
+
+<div class="page-header slate slate--red">
+	<div class="wrapper">
+		<p>Add breadcrumb partial</p>
+		<h1 class="page-header__title flush--half--bottom">{{name}}</h1>
+		<p>Add social icons partial</p>
+	</div>
+</div>
+<!-- /page-header 'slate' -->
+<div class="wrapper panel--mar">
+	<div class="grid-wrap">
+		<div class="grid-col desktop-grid-two-thirds">
+			<p>
+				{{summary}}
+			</p>
+		</div>
+		<!-- /desktop-grid-two-thirds -->
+		<div class="grid-col desktop-grid-one-third">
+			<article class="box solid box--purple--separated--left">
+				<div class="box__inner border box--padded">
+					<h3 class="box__section__header">
+						You may also be interested in
+					</h3>
+					<!-- /box__header -->
+					<div class="box__content">
+						<ul class="list--neutral">
+							{{#each relatedLinks}}
+							<li><a href="{{uri}}">{{title}}</a></li>
+							{{/each}}
+						</ul>
+					</div>
+					<!-- /box__content -->
+				</div>
+				<!-- /box__inner -->
+			</article>
+			<!-- /box -->
+		</div>
+		<!-- /desktop-grid-one-third -->
+	</div>
+	<!-- /grid-wrap -->
+</div>
+<!-- /wrapper -->
+<p>
+	Add footer partial
+</p>
+
+<script src="../../node_modules/ONS-Pattern-Library/dist/js/footer.js"></script>

@@ -1,0 +1,98 @@
+{
+	"title": "Chapter 1: An introduction to the UK national accounts",
+	"releaseDate": "19 August 2014",
+	"nextRelease": "22 August 2015",
+	"contact": {
+		"name": "Philip Gooding",
+		"email": "cpi@ons.gsi.gov.uk",
+		"telephone": "+44 (0)1633 456468"
+	},
+	"type": "compendium",
+	"name": "Chapter 1: An introduction to the UK national accounts",
+	"breadcrumb": {
+		"type": "home",
+		"name": "Economy",
+		"uri": "/economy/bluebook/2014"
+	},
+	"print": {
+		"uri": "economy/bluebook/print",
+		"size": 37
+	},
+	"download": {
+		"uri": "economy/bluebook/download",
+		"size": "95KB"
+	},
+	"parent": {
+		"title": "Blue book, 2014",
+		"uri": "economy/bluebook/2014"
+	},
+	"sections": [
+		{
+			"title": "Blue Book chapters explained",
+			"uri": "bluebookchaptersexplained",
+			"markdown": "Chapter 1 of the Blue Book provides a summary of the UK National Accounts, including explanations and tables covering the main national and domestic aggregates"
+		},
+		{
+			"title": "Overview of the UK National Accounts",
+			"uri": "overviewoftheuknationalaccounts",
+			"markdown": "Input-Output Supply and Use tables, analyses of gross value added at current market prices and chained volume measures, capital formation, workforce jobs by industry."
+		},
+		{
+			"title": "Summary of changes",
+			"uri": "summaryofchanges",
+			"markdown": "A description of the institutional sectors, the sequence of the accounts and balance sheets, an explanation of the statistical adjustment items needed to reconcile the accounts, the fullest available set of accounts providing transactions by sectors and appropriate sub-sectors of the economy (including the rest of the world)."
+		},
+		{
+			"title": "The basic accounting framework",
+			"uri": "thebasicaccountingframework",
+			"markdown": "The economic accounts provide the framework for a system of volume and price indices, to allow chained volume measures of aggregates such as GDP to be produced. It should be noted that in this system value added, from the production approach, is measured at basic prices (including other taxes less subsidies on production but not on products) rather than at factor cost (which excludes all taxes less subsidies on production).The whole economy is subdivided into institutional sectors with current price accounts running in sequence from the production account through to the balance sheet."
+		},
+		{
+			"title": "Table numbering system",
+			"uri": "tablenumberingsystem",
+			"markdown": "The table numbering system is designed to show relationships between the UK, its sectors and the rest of the world. For accounts drawn directly from the European System of Accounts 2010 (ESA 2010), a three-part numbering system is used, whereby the first two digits denote the sector with the third digit denoting the ESA account. Not all sectors can have all types of account, so the numbering is not necessarily consecutive within each sector’s chapter. The rest of the world’s identified components of accounts 2-6 inclusive are given in a single account numbered 2. UK whole economy accounts consistent with ESA 2010 are given in section 1.6 (816.5 Kb Excel sheet) as a time series and in section 1.7 (816.5 Kb Excel sheet) in detailed matrix format with all sectors, the rest of the world, and the UK total identified."
+		},
+		{
+			"title": "What is an account? What is its purpose?",
+			"uri": "whatisanaccount",
+			"markdown": "An account records and displays all flows and stocks for a given aspect of economic life. The sum of resources is equal to the sum of uses with a balancing item to ensure this equality. The system of economic accounts allows the build up of accounts for different areas of the economy, highlighting, for example, production, income and financial transactions."
+		}
+	],
+	"accordions": [
+		{
+			"title": "Methodology",
+			"markdown": "Quality and Methodology Information (QMI). Impact of rebasing the Consumer Price Index to 2010=100. Consumer Price Index and Retail Price Index methodology"
+		},
+		{
+			"title": "Background notes",
+			"markdown": "The United Kingdom National Accounts Blue Book was first published in August 1952 and presents a full set of economic accounts (National Accounts) for the United Kingdom."
+		}
+	],
+	"data": [
+		{
+			"title": "Consumer price inflation data collection",
+			"uri": "economy/inflationandpriceindices/cpidatacollection"
+		},
+		{
+			"title": "Consumer price inflation time series",
+			"uri": "economy/inflationandpriceindices/dataset/HDIG"
+		}
+	],
+	"relatedBulletins": [
+		{
+			"title": "Producer Price Inflation, January 2014",
+			"uri": "economy/inflationandpriceindices/ppi",
+			"description": "The Consumer Price Inflation is a monthly release that contains percentage changes and weights for the CPI, CPIH, RPI and RPIJ."
+		},
+		{
+			"title": "Retail Sales, January 2014",
+			"uri": "economy/inflationandpriceindices/retailsales",
+			"description": "A first estimate of retail sales in volume and value terms, seasonally and non-seasonally adjusted."
+		}
+	],
+	"local": {
+		"title": "Looking for local statistics?",
+		"uri": "local",
+		"description": "A handy guide to let you know where to find local statistics."
+	}
+}

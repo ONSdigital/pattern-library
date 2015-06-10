@@ -1,0 +1,126 @@
+<head>
+	<link rel="stylesheet" href="../../node_modules/ONS-Pattern-Library/dist/css/main.min.css"/>
+	<script src="../../node_modules/ONS-Pattern-Library/dist/js/header.js"></script>
+</head>
+
+<!-- Pattern Library Header -->
+<p>Add header partial</p>
+
+<div class="page-header slate slate--blue">
+	<div class="wrapper">
+		<p>Add breadcrumb partial</p>
+		<p class="page-header__title">
+			<strong>Compendium</strong>
+		</p>
+		<h1 class="page-header__title flush--half--bottom">{{name}}</h1>
+		<div class="grid-wrap">
+			<p class="grid-col tablet-grid-one-quarter page-header__meta-block-with-img">
+				<img src="../../node_modules/ONS-Pattern-Library/ui/img/national-statistics.png" alt="ONS logo" width="50rem">
+				<span>Contact: </span></br>
+				<a href="mailto:{{contact.email}}">{{contact.name}}</a>
+			<p class="grid-col tablet-grid-one-quarter divider--border-left">
+				<span>Release date: </span>{{releaseDate}}
+				</br>
+				<a href="#">previous versions</a>
+			</p>
+			<p class="grid-col tablet-grid-one-quarter divider--border-left">
+				<span>Next release: </span>
+				{{nextRelease}}
+			</p>
+			<p class="grid-col tablet-grid-one-quarter divider--border-left">
+				<a href="{{print.size}}" class ="icon-print">Print full report</a> ({{print.size}} pages)
+				</br>
+				<a href="{{download.uri}}" class="icon-download">Download PDF</a> ({{download.size}})
+			</p>
+		</div>
+		<!-- /grip-wrap -->
+		<p>Add social icons partial</p>
+	</div>
+	<!-- /wrapper -->
+</div>
+<!-- /page-header -->
+<div class="wrapper panel--mar ">
+	<div class="grid-wrap">
+		<div class="grid-col desktop-grid-full-width">
+			<p class="lede">
+				{{lede}}
+			</p>
+			<div class="accordion is-collapsed">
+				<h2 id="sc-1" class="accordion__title" aria-controls="content-1">Chapters</h2>
+				<div id="content-1" class="accordion__content" aria-labelledby="sc-1">
+					<ul class="list--neutral">
+						{{#each chapters}}
+						<li>
+							<h3 class="flush" ><a href="{{uri}}">{{title}}</a></h3>
+							<p>
+								{{description}}
+							</p>
+						</li>
+						{{/each}}
+					</ul>
+				</div>
+			</div>
+			<!-- /accordion -->
+			<div class="accordion is-collapsed">
+				<h2 id="sc-1" class="accordion__title" aria-controls="content-1">Data</h2>
+				<div id="content-1" class="accordion__content" aria-labelledby="sc-1">
+					<ul class="list--neutral">
+						{{#each data}}
+						<li>
+							<h3 class="flush"><a href="{{uri}}">{{title}}</a></h3>
+							<p>{{description}}</p>
+						</li>
+						{{/each}}
+					</ul>
+				</div>
+			</div>
+			<!-- /accordion -->
+			<div class="grid-wrap panel--top-pad-large">
+				<div class="grid-col desktop-grid-one-half">
+					<article class="box box--padded sectioned">
+						<header class="box__header">
+							<h3>Methodology</h3>
+						</header>
+						<div class="box__content">
+							<ul class="list--neutral">
+								{{#each methodology}}
+								<li>
+									<a href="uri">{{title}}</a>
+								</li>
+								{{/each}}
+							</ul>
+						</div>
+					</article>
+				</div>
+				<!-- /grid-desktop-one-half -->
+				<div class="grid-col desktop-grid-one-half">
+					<article class="box box--padded sectioned">
+						<header class="box__header">
+							<h3>Contact details</h3>
+						</header>
+						<div class="box__content">
+							<ul class="list--neutral">
+								<li>
+									{{contact.name}}
+								</li>
+								<li>
+									<a href="{{contact.uri}}">{{contact.email}}</a>
+								</li>
+								<li>
+									{{contact.telephone}}
+								</li>
+							</ul>
+						</div>
+					</article>
+				</div>
+				<!-- /grid-desktop-one-half -->
+			</div>
+			<!-- /grid-wrap panel--top -->
+		</div>
+		<!-- /desktop-grid-full-width -->
+	</div>
+	<!-- /grid-wrap -->
+</div>
+<!-- /wrapper -->
+
+<script src="http://onsdigital.github.io/pattern-library/dist/js/footer.js"></script>

@@ -1,6 +1,8 @@
 
 {
-  "sections": [
+    "title": "Welcome to the Office for National Statistics",
+    "lede": "The UK's largest independent producer official statistics and the recognised national statistical institute of the UK, producing a variety of statistics covering business and industry, the UK economy, employment and the population.",
+  "highlightedData": [
     {
       "name": "Economy",
       "link": "economy",
@@ -8,7 +10,10 @@
       "items": [
         {
           "name": "CPI: Consumer Prices Index (% change)",
-          "uri": "/economy/inflationakendpriceindices/timeseries/d7g7"
+          "uri": "/economy/inflationakendpriceindices/timeseries/d7g7",
+          "figure": "1.2",
+          "unit": "%",
+          "releaseDate": "September 2014"
         }
       ]
     },
@@ -19,7 +24,10 @@
       "items": [
         {
           "name": "GDP Quarter on Quarter growth (CVM)",
-          "uri": "/economy/grossdomesticproductgdp/timeseries/ihyq"
+          "uri": "/economy/grossdomesticproductgdp/timeseries/ihyq",
+          "figure": "0.9",
+          "unit": "%",
+          "releaseDate": "Q2 2014"
         }
       ]
     },
@@ -30,7 +38,11 @@
       "items": [
         {
           "name": "Trade in goods and services deficit (or surplus)",
-          "uri": "/businessindustryandtrade/internationaltrade/timeseries/ikbj"
+          "uri": "/businessindustryandtrade/internationaltrade/timeseries/ikbj",
+          "prefixUnit": "£",
+          "figure": "-6.5",
+          "unit": "m",
+          "releaseDate": "September 2014"
         }
       ]
     },
@@ -41,7 +53,10 @@
       "items": [
         {
           "name": "Employment rate (aged 16-64)",
-          "uri": "/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/timeseries/lf24"
+          "uri": "/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/timeseries/lf24",
+          "figure": "73",
+          "unit": "%",
+          "releaseDate": "September 2014"
         }
       ]
     },
@@ -52,7 +67,10 @@
       "items": [
         {
           "name": "UK population",
-          "uri": "/peoplepopulationandcommunity/populationandmigration/populationestimates/timeseries/raid121"
+          "uri": "/peoplepopulationandcommunity/populationandmigration/populationestimates/timeseries/raid121",
+          "figure": "64.1",
+          "unit": "m",
+          "releaseDate": "Mid-2013"
         }
       ]
     }
@@ -70,7 +88,7 @@
       "name": "Population estimates",
       "link": "releases/populationestimates",
       "index": 0,
-      "description": "Annual estimates of the size of the UK &#34;usually resident population&#34; are calculated at the mid-year point (30 June)."
+      "description": "Annual estimates of the size of the UK usually resident population are calculated at the mid-year point (30 June)."
     },
     {
       "name": "Inflation and price indices",
@@ -84,5 +102,39 @@
       "index": 0,
       "description": "Statistics on drug use, alcohol and smoking focus on deaths and illnesses related to these areas."
     }
-  ]
+],
+  "highlightedContent": [
+    {
+      "name": "What's coming and when?",
+      "link": "#",
+      "index": 0,
+      "description": "Find out when our statistics are released and sign-up to receive notifications."
+    },
+    {
+      "name": "Other official statistics",
+      "link": "#",
+      "index": 0,
+      "description": "Find official statistics produced by other government departments."
+    },
+    {
+      "name": "Looking for local statistics?",
+      "link": "#",
+      "index": 0,
+      "description": "A handy guide to let you know where to find local statistics."
+    },
+    {
+      "name": "Census",
+      "link": "#",
+      "index": 0,
+      "boxText": "Who we are. How we live. What we do.",
+      "description": "Discover how our census statistics help paint a picture of the nation and how we live."
+    },
+    {
+      "name": "Visual.ONS",
+      "link": "#",
+      "index": 0,
+      "boxText": "Introducing Visual.ONS",
+      "description": "Visual.ONS is a website exploring new approaches to making ONS statistics accessible and relevant to a wide public audience."
+    }
+]
 }

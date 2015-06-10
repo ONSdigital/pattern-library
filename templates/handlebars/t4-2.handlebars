@@ -1,0 +1,174 @@
+<head>
+		<link rel="stylesheet" href="../../node_modules/ONS-Pattern-Library/dist/css/main.min.css"/>
+  	<script src="../../node_modules/ONS-Pattern-Library/dist/js/header.js"></script>
+</head>
+
+<!-- Pattern Library Header -->
+<p>Add header partial</p>
+
+<!-- title and social icons -->
+<div class="page-header slate slate--grey-bar">
+		<div class="wrapper" >
+				<p>Add breadcrumb partial</p>
+				<p class="page-header__title page-header--stat-bulletin-desc">
+						<strong>Article</strong>
+				</p>
+				<h1 class="page-header__title flush--half--bottom">{{name}}</h1>
+				<div class="grid-wrap">
+						<p class="grid-col tablet-grid-one-quarter page-header__meta-block-with-img">
+						    <img src="http://alpha.ons.gov.uk/ui/img/national-statistics.png" alt="" />
+								<span>Contact: </span><br/><a href="{{contact.email}}">{{contact.name}}</a>
+						</p>
+			      <p class="grid-col tablet-grid-one-quarter divider--border-left">
+			          <span>Release date: </span><br/>{{releaseDate}}<br/><a href="#">previous versions</a>
+			      </p>
+			      <p class="grid-col tablet-grid-one-quarter divider--border-left">
+			          <span>Next release: </span><br/>{{nextRelease}}
+			      </p>
+						<div class="grid-col tablet-grid-one-quarter divider--border-left page-header__meta-block-with-ul">
+								<ul class="list--neutral">
+										<li>
+												<span class="icon icon-print icon--blue-alt">
+														<span class="visuallyhidden">Print full report</span>&nbsp;Print full report (38 pages)
+														<ons-help-tooltip tip="This link will not be available on the prototype, however in the future you will be able to print the full report"></ons-help-tooltip>
+												</span>
+										</li>
+										<li>
+												<span class="icon icon-download icon--blue-alt">
+														<span class="visuallyhidden">Download PDF</span>&nbsp;Download PDF (95KB)
+												</span>
+										</li>
+								</ul>
+						</div>
+				</div>
+				<p>Add social icons partial</p>
+		</div>
+</div>
+
+<!-- Table of contents -->
+<div class="wrapper">
+		<p class="lede">{{lede}}</p>
+		<article class="box panel--separated--bottom">
+				<h3 id="top">Table of contents</h3>
+				<ol class="table-of-contents-ordered-list">
+						{{#each sections}}
+						<li>
+							<a href="#">{{title}}</a>
+						</li>
+						{{/each}}
+				</ol>
+		</article>
+</div>
+<!-- Body Sections -->
+<div class="wrapper panel--bottom-mar">
+		<div class="grid-wrap">
+				<div class="grid-col desktop-grid-two-thirds tablet-grid-full-width">
+						{{#each sections}}
+						<article class="box border-horizontal-single content-section">
+								<header class="box__header">
+										<h2 id="#">{{title}}</h2>
+								</header>
+								<!-- /box__header -->
+								<div class="box__content">
+										<div>
+												<p>
+												{{markdown}}
+												</p>
+										</div>
+								</div>
+						</article>
+						{{/each}}
+						<!-- Accordian -->
+						{{#if accordion}}
+						<div class"panel--mar">
+								{{#each accordion}}
+								<div class="accordion is-collapsed">
+										<h2 class="accordion__title" aria-controls="content-1">{{title}}</h2>
+										<div class="accordion__content" aria-labelledby="sc-1">
+											{{markdown}}
+										</div>
+								</div>
+								{{/each}}
+						</div>
+						{{/if}}
+				</div>
+				<!-- Sidebar -->
+				<div class="grid-col desktop-grid-one-third tablet-grid-full-width">
+						<!-- article__content -->
+						<article class="box box--green box--green--separated--left">
+								<div class="box__inner border box--padded [border--large-left]">
+										<header class="box__header">
+												<h3>Data in this bulletin</h3>
+										</header>
+										<div class="box__content">
+												<ul class="list--neutral">
+														{{#each data}}
+														<li><a href="{{url}}">{{title}}</a></li>
+														{{/each}}
+												</ul>
+										</div>
+								</div>
+						</article>
+						<!-- /article__content -->
+            <article class="box">
+                <div class="box__inner border box--padded">
+                    <header class="box__header">
+                        <h3>Contact details for this statistical bulletin</h3>
+                    </header>
+                    <!-- /box__header -->
+                    <div class="box__content">
+                        <p>
+													{{contact.name}}</br>
+                          <a href="mailto:{{email}}">{{contact.email}}</a></br>
+                          Telephone: {{contact.telephone}}
+                        </p>
+                    </div>
+                    <!-- /box__content -->
+                </div>
+            </article>
+            <!-- /article__content -->
+				</div>
+		</div>
+</div>
+<!-- panel -->
+<div class="slate--mid-grey">
+		<!-- wrapper -->
+		<div class="wrapper panel--top-pad">
+				<!-- grid-wrap -->
+				<div class="grid-wrap">
+						<div class="grid-col desktop-grid-two-thirds tablet-grid-full-width">
+								<article class="box box--teal--separated--left">
+										<div class="box__inner border box--padded">
+												<h3>Related bulletins</h3>
+												<ul class="list--neutral">
+														{{#each relatedBulletins}}
+														<li>
+																<h3 class="flush--bottom">
+																<a href="{{uri}}">{{title}}</a>
+																</h3>
+
+																<p>{{summary}}</p>
+														</li>
+														{{/each}}
+												</ul>
+										</div>
+								</article>
+						</div>
+            <div class="grid-col desktop-grid-one-third tablet-grid-full-width">
+                <!-- article__content -->
+                <article class="box box--orange box--orange--separated-left">
+                    <div class="box__inner border box--padded ">
+                        <h3 class="flush--bottom"><a href="">Looking for local statistics?</a></h3>
+                        <p>A handy guide to let you know where to find local statistics.</p>
+                    </div>
+                </article>
+            </div>
+				</div>
+		</div>
+</div>
+
+<p>
+	Add footer partial
+</p>
+
+<script src="../../node_modules/ONS-Pattern-Library/dist/js/footer.js"></script>

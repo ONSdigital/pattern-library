@@ -1,0 +1,65 @@
+
+{
+	"title": "Blue book, 2014",
+	"releaseDate": "19 August 2014",
+	"nextRelease": "22 August 2015",
+	"contact": {
+		"name": "Philip Gooding",
+		"email": "cpi@ons.gsi.gov.uk",
+		"telephone": "+44 (0)1633 456468"
+	},
+	"type": "compendium",
+	"name": "Blue book, 2014",
+	"breadcrumb": {
+		"type": "home",
+		"name": "Economy",
+		"uri": "economy/"
+	},
+	"print": {
+		"uri": "economy/bluebook/print",
+		"size": 37
+	},
+	"download": {
+		"uri": "economy/bluebook/download",
+		"size": "95KB"
+	},
+	"lede": "The United Kingdom National Accounts Blue Book was first published in August 1952 and presents a full set of economic accounts (National Accounts) for the United Kingdom. These accounts are compiled by the Office for National Statistics (ONS). They record and describe economic activity in the UK and as such are used to support the formulation and monitoring of economic and social policies.",
+	"chapters": [
+		{
+			"title": "Chapter 01: An introduction to the UK national accounts",
+			"description": "An explanation of everything contained in this compendium.",
+			"uri": "economy/bluebook/introductiontotheuknationalaccounts"
+		},
+		{
+			"title": "Chapter 02: An introduction to the UK sector accounts",
+			"description": "What are the UK sector accounts and what do they mean?",
+			"uri": "economy/bluebook/introductiontotheuksectoraccounts"
+		}
+		],
+		"data": [
+		{
+			"title": "United Kingdom National Accounts - The Blue Book, 2014 dataset",
+			"description": "All the time series data in this compendium",
+			"uri": "economy/bluebook/nationalaccountsdataset"
+		},
+		{
+			"title": "Chapter 01: National accounts at a glance dataset",
+			"description": "Summary of the 2014 UK national accounts",
+			"uri": "economy/bluebook/nationalaccountsdataset"
+		}
+	],
+	"methodology": [
+		{
+			"title": "Changes to National Accounts for Blue Book 2015: the deflation of investment in software",
+			"uri": "economy/bluebook/changestonationalaccounts"
+		},
+		{
+			"title": "Methodological improvements and ESA 2010 changes to historic GDP datasets for Blue Book 2014",
+			"uri": "economy/bluebook/methodologicalimprovements"
+		},
+		{
+			"title": "Latest developments to national accounts and Balance of Payments",
+			"uri": "economy/blue/developtonationalaccountsandbalanceofpayments"
+		}
+	]
+}

@@ -1,0 +1,67 @@
+<head>
+	<link rel="stylesheet" href="../../node_modules/ONS-Pattern-Library/dist/css/main.min.css"/>
+	<script src="../../node_modules/ONS-Pattern-Library/dist/js/header.js"></script>
+</head>
+
+<!-- Pattern Library Header -->
+<p>Add header partial</p>
+
+<div class="page-header slate slate--red">
+	<div class="wrapper">
+		<p>Add breadcrumb partial</p>
+		<h1 class="page-header__title flush--half--bottom">{{name}}</h1>
+		<p>Add social icons partial</p>
+	</div>
+	<!-- /wrapper -->
+</div>
+<!-- /page-header -->
+
+<div class="wrapper panel--mar ">
+	<div class="grid-wrap">
+		<div class="grid-col desktop-grid-full-width">
+			<p>
+				{{lede}}
+			</p>
+		</div>
+		<!-- /desktop-grid-full-width -->
+		<div class="grid-col desktop-grid-two-thirds">
+			<div class="grid-wrap">
+				{{#each sections}}
+				<div class="grid-col desktop-grid-one-half nav--block-landing--pairs">
+					<article class="box">
+						<header class="box__header">
+							<h3><a href="{{uri}}">{{name}}</a></h3>
+						</header>
+						<div class="box__content">
+							<p>
+								{{description}}
+							</p>
+						</div>
+					</article>
+				</div>
+				<!-- /desktop-grid-one-half -->
+				{{/each}}
+			</div>
+			<!-- /grid-wrap -->
+		</div>
+		<!-- /desktop-grid-two-thirds -->
+		{{#if box}}
+		<div class="grid-col desktop-grid-one-third">
+			<article class="box solid box--purple--separated--left">
+				<div class="box__inner border box--padded">
+					<h3>{{title}}</h3>
+					{{content}}
+				</div>
+				<!-- / box__inner border box--padded -->
+			</article>
+			<!-- / box solid box--purple--separated--left -->
+		</div>
+		<!-- /desktop-grid-one-third -->
+		{{/if}}
+	</div>
+	<!-- /grid-wrap -->
+</div>
+<!-- /wrapper -->
+<p>
+	Add footer partial
+</p>

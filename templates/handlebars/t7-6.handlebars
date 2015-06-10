@@ -1,0 +1,137 @@
+<head>
+		<link rel="stylesheet" href="../../node_modules/ONS-Pattern-Library/dist/css/main.min.css"/>
+  	<script src="../../node_modules/ONS-Pattern-Library/dist/js/header.js"></script>
+</head>
+
+<!-- Pattern Library Header -->
+<p>Add header partial</p>
+
+<div class="page-header slate slate--red">
+	<div class="wrapper">
+		<p>Add breadcrumb partial</p>
+		<h1 class="page-header__title flush--half--bottom">{{name}}</h1>
+		<div class="grid-wrap">
+			<p class="grid-col tablet-grid-one-quarter">
+				<span>Contact: </span><br/><a href="#">{{contact.name}}</a>
+			</p>
+			<p class="grid-col tablet-grid-one-quarter divider--border-left">
+				<span>Last revised: </span>{{lastRevised}}<br/>
+				<a href="#">previous versions</a>
+			</p>
+		</div>
+		<p>Add social icons partial</p>
+	</div>
+</div>
+<!-- /page-header 'slate' -->
+<div class="wrapper panel--mar">
+	<div class="grid-wrap">
+		<div class="grid-col desktop-grid-full-width">
+			<p class="lede">
+				{{lede}}
+			</p>
+		</div>
+	</div>
+	<!-- table of contents -->
+	<article class="box panel--separated--bottom">
+		<h2>In this section</h2>
+			<ol class="table-of-contents-ordered-list">
+				{{#each sections}}
+				<li><a href="#{{this.uri}}" title="{{this.title}}">{{this.title}}</a></li>
+				{{/each}}
+			</ol>
+	</article>
+	<!-- /table of contents -->
+	<div class="grid-wrap">
+		<div class="grid-col desktop-grid-two-thirds">
+			{{#each sections}}
+			<h2 id="{{this.uri}}">{{this.title}}</h2>
+			<p>{{this.markdown}}</p>
+			{{/each}}
+		</div><!-- /grid-two-thirds -->
+		<div class="grid-col desktop-grid-one-third">
+			<article class="box solid box--green--separated--left">
+				<div class="box__inner border box--padded">
+					<div class="box__section">
+						<h3 class="box__section__header">
+							Data related to this content
+						</h3>
+					</header>
+					<!-- /box__header -->
+					<div class="box__content">
+						<ul class="list--neutral">
+							{{#each data}}
+							<li><a href="{{this.uri}}">{{this.title}}</a></li>
+							{{/each}}
+						</ul>
+					</div>
+					<!-- /box__content -->
+				</div>
+				<!-- /box__inner -->
+			</article>
+			<!-- /box--blue -->
+			<article class="box solid box--teal--separated--left">
+				<div class="box__inner border box--padded">
+					<div class="box__section">
+						<h3 class="box__section__header">
+							Statistical bulletins related to this content
+						</h3>
+					</header>
+					<!-- /box__header -->
+
+					<div class="box__content">
+						<ul class="list--neutral">
+							{{#each relatedBulletins}}
+							<li><a href="{{this.uri}}">{{this.title}}</a></li>
+							{{/each}}
+						</ul>
+					</div>
+					<!-- /box__content -->
+				</div>
+				<!-- /box__inner -->
+			</article>
+			<!-- /box--blue -->
+			<article class="box solid box--purple--separated--left">
+				<div class="box__inner border box--padded">
+					<div class="box__section">
+						<h3 class="box__section__header">
+							Download our guide
+						</h3>
+					</header>
+					<!-- /box__header -->
+					<div class="box__content">
+						<ul class="list--neutral">
+							{{#each downloads}}
+							<li><a href="{{this.uri}}">{{this.title}}</a></li>
+							{{/each}}
+						</ul>
+					</div>
+					<!-- /box__content -->
+				</div>
+				<!-- /box__inner -->
+			</article>
+			<!-- /box--blue -->
+			<!-- lifted box -->
+			<article class="box box--padded lifted sectioned">
+				<div class="box__section">
+					<h3 class="box__section__header">
+						Contact details for this methodology
+					</h3>
+				</header>
+				<!-- /box__header -->
+				<div class="box__content">
+					<p>{{contact.name}}<br/>
+					<a href="#">{{contact.email}}</a><br/>
+					Telehpone: {{contact.telephone}}</p>
+				</div>
+				<!-- /box__content -->
+			</article>
+			<!-- /box--lifted -->
+		</div><!-- /grid-one-third -->
+	</div><!-- /grid-wrap -->
+</div>
+<!-- /wrapper -->
+<p>
+	Add footer partial
+</p>
+
+<script src="../../node_modules/ONS-Pattern-Library/dist/js/footer.js"></script>

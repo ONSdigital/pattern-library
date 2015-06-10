@@ -1,0 +1,190 @@
+<head>
+	<link rel="stylesheet" href="../../node_modules/ONS-Pattern-Library/dist/css/main.min.css"/>
+	<script src="../../node_modules/ONS-Pattern-Library/dist/js/header.js"></script>
+</head>
+
+<!-- Pattern Library Header -->
+<p>Add header partial</p>
+
+<div class="page-header slate slate--blue">
+	<div class="wrapper">
+		<p>Add breadcrumb partial</p>
+		<p class="page-header__title">
+			<strong>Compendium</strong>
+		</p>
+		<h1 class="page-header__title flush--half--bottom">{{name}}</h1>
+		<div class="grid-wrap">
+			<p class="grid-col tablet-grid-one-quarter page-header__meta-block-with-img">
+				<img src="../../node_modules/ONS-Pattern-Library/ui/img/national-statistics.png" alt="ONS logo" width="50rem">
+				<span>Contact: </span></br>
+				<a href="mailto:{{contact.email}}">{{contact.name}}</a>
+			<p class="grid-col tablet-grid-one-quarter divider--border-left">
+				<span>Release date: </span>{{releaseDate}}
+				</br>
+				<a href="#">previous versions</a>
+			</p>
+			<p class="grid-col tablet-grid-one-quarter divider--border-left">
+				<span>Next release: </span>
+				{{nextRelease}}
+			</p>
+			<p class="grid-col tablet-grid-one-quarter divider--border-left">
+				<a href="{{print.size}}" class ="icon-print">Print full report</a> ({{print.size}} pages)
+				</br>
+				<a href="{{download.uri}}" class="icon-download">Download PDF</a> ({{download.size}})
+			</p>
+		</div>
+		<!-- /grip-wrap -->
+		<p>Add social icons partial</p>
+	</div>
+	<!-- /wrapper -->
+</div>
+<!-- /page-header -->
+
+<div class="wrapper panel--mar">
+	<div class="grid-wrap">
+		<div class="grid-col desktop-grid-full-width">
+			<h2 class="flush">
+				&lt; Return to <a href="{{parent.uri}}">{{parent.title}}</a>
+			</h2>
+		</div>
+		<!-- /desktop-grid-full-width -->
+	</div>
+	<!-- /grid-wrap -->
+</div>
+<!-- /wrapper -->
+<div class="wrapper panel--mar panel--bottom-pad panel--separated--bottom">
+	<ol class="table-of-contents-ordered-list">
+		{{#each sections}}
+		<li>
+			<a href="#{{uri}}">{{title}}</a>
+		</li>
+		{{/each}}
+	</ol>
+	<!-- /table-of-contents -->
+</div>
+<!-- /wrapper panel--separated--bottom -->
+<div class="wrapper panel--mar ">
+	<div class="grid-wrap">
+		<div class="grid-col desktop-grid-two-thirds">
+			{{#each sections}}
+			<h2 id="{{uri}}">{{title}}</h2>
+			<p>
+				{{markdown}}
+			</p>
+			{{/each}}
+			{{#if accordions}}
+				{{#each accordions}}
+				<div class="accordion is-collapsed">
+					<h3 id="sc-1" class="accordion__title" aria-controls="content-1">{{title}}</h3>
+					<div id="content-1" class="accordion__content" aria-labelledby="sc-1">
+						<p>
+							{{markdown}}
+						</p>
+					</div>
+				</div>
+				<!-- /accordion -->
+				{{/each}}
+			{{/if}}
+		</div>
+		<!-- /desktop-grid-two-thirds -->
+		<div class="grid-col desktop-grid-one-third">
+			<article class="box solid box--green--separated--left">
+				<div class="ox__inner border box--padded">
+					<header class="box__header">
+						<h3 class="gamma">Data in this chapter</h3>
+					</header>
+					<div class="box__content">
+						<ul class="list--neutral">
+							{{#each data}}
+							<li>
+								<a href="{{uri}}">{{title}}</a>
+							</li>
+							{{/each}}
+						</ul>
+					</div>
+				</div>
+				<!-- /box__inner -->
+			</article>
+			<!-- /box -->
+			<div class="box box--padded sectioned">
+				<header class="box__header">
+					<h3 class="gamma">Contact details for this compendium</h3>
+				</header>
+				<div class="box__content">
+					<p>
+						{{contact.name}}
+						</br>
+						<a href="mailto:{{contact.email}}">{{contact.email}}</a>
+						</br>
+						{{contact.telephone}}
+					</p>
+				</div>
+			</div>
+			<!-- /box -->
+		</div>
+		<!-- /desktop-grid-one-third -->
+	</div>
+	<!-- /grid-wrap -->
+</div>
+<!-- /wrapper -->
+<div class="slate--mid-grey">
+	<div class="wrapper panel--top-pad">
+		<div class="grid-wrap">
+			<div class="grid-col desktop-grid-full-width">
+				<div class="grid-wrap">
+					<div class="grid-col desktop-grid-two-thirds">
+						<article class="box box--teal--separated--left">
+							<div class="box__inner border box--padded">
+								<header class="box__header">
+									<h3>Related articles and bulletins</h3>
+								</header>
+								<div class="box__content">
+									<ul class="list--neutral">
+										{{#each relatedBulletins}}
+										<li>
+											<h4 class="flush"><a href="{{uri}}">{{title}}</a></h4>
+											<p>
+												{{description}}
+											</p>
+										</li>
+										{{/each}}
+									</ul>
+								</div>
+							</div>
+							<!-- /box__inner -->
+						</article>
+						<!-- /box -->
+					</div>
+					<!-- /grid-desktop-two-thirds -->
+					<div class="grid-col desktop-grid-one-third">
+						<article class="box box--orange box--orange--separated-left">
+							<div class="box__inner border box--padded has-icon">
+								<header class="box__header">
+									<h3><a href="{{local.uri}}">{{local.title}}</a></h3>
+								</header>
+								<div class="box__content">
+									<p>
+										{{local.description}}
+									</p>
+								</div>
+							</div>
+							<!-- /box__inner -->
+						</article>
+						<!-- /box -->
+					</div>
+					<!-- /desktop-grid-one-third -->
+				</div>
+				<!-- /grid-wrap -->
+			</div>
+			<!-- /desktop-grid-full-width -->
+		</div>
+		<!-- /grid-wrap -->
+	</div>
+	<!-- /wrapper -->
+</div>
+<!-- /slate -->
+
+<p>
+	Add footer partial
+</p>
+<script src="http://onsdigital.github.io/pattern-library/dist/js/footer.js"></script>

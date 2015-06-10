@@ -1,0 +1,70 @@
+
+{
+	"level": "t7-4-1",
+	"index": 1,
+	"lede": "Methodology papers, notes, reports and other useful information relating to each statistical theme.",
+	"type": "home",
+	"name": "Economy",
+	"fileName": "economy",
+	"breadcrumb": [],
+
+	"sections": [
+	{
+		"name": "Business, industry and trade",
+		"link": "methodology/businessindustryandtrade",
+		"index": 0,
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor eu nibh at pharetra. Morbi."
+	},
+	{
+		"name": "Economy",
+		"link": "methodology/economy",
+		"index": 1,
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor eu nibh at pharetra. Morbi."
+	},
+	{
+		"name": "Employment and labour market",
+		"link": "methodology/emplyomentandlabourmarket",
+		"index": 3,
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor eu nibh at pharetra. Morbi."
+	},
+	{
+		"name": "People, population and community",
+		"link": "methodology/peoplepopulationandcommunity",
+		"index": 4,
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor eu nibh at pharetra. Morbi."
+	},
+	{
+		"name": "Classifications",
+		"link": "methodology/classifications",
+		"index": 5,
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor eu nibh at pharetra. Morbi."
+	},
+	{
+		"name": "Geography",
+		"link": "methodology/geography",
+		"index": 6,
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor eu nibh at pharetra. Morbi."
+	}
+	],
+	"more": {
+		"title": "More on methodology",
+		"items": [
+		{
+			"title": "Our classifications are changing - see how",
+			"uri": "classifications/2015"
+		},
+		{
+			"title": "What’s in the basket of goods?",
+			"uri": "economy/inflationandpriceindices/"
+		},
+		{
+			"title": "The ONS big data project",
+			"uri": "bigdata"
+		}
+		]
+	},
+	"box": {
+	"title": "Call to action",
+	"content": "Other useful CTAs can appear down here. Important notices for instance"
+	}
+}

@@ -1,22 +1,11 @@
-<head>
-	<link rel="stylesheet" href="../../node_modules/ONS-Pattern-Library/dist/css/main.min.css"/>
-	<script src="../../node_modules/ONS-Pattern-Library/dist/js/header.js"></script>
-</head>
-
+{{> partials/header}}
 <div class="page-header slate">
 	<div class="wrapper">
-		<ul class="nav nav--heavy breadcrumb mini flush--half--top">
-			<li>
-				<a href="#">Home</a>
-			</li>
-			<li class="nav__active">
-				{{name}}
-			</li>
-		</ul>
-		<h1 class="page-header__title flush--half--bottom">{{name}}</h1>
+		{{> partials/breadcrumb}}
+		<h1 class="page-header__title flush--half--bottom">{{title}}</h1>
 		<div class="content-reveal lede">
 			<p>
-				{{lede}}
+				{{summary}}
 				<a href="#" class="content-reveal__action hidden" data-content-reveal>See more</a>
 			</p>
 		</div>
@@ -44,21 +33,17 @@
 
 <div class="wrapper box box--padded-vertical">
 	<div class="grid-wrap">
+		<ul class="list--neutral">
 		{{#each sections}}
-		<div class="grid-col tablet-grid-one-third clearfix nav--block-landing">
-			<article class="box box--padded-vertical">
-				<header class="box__header">
-						<h3 class="flush">
-							<a href="">{{name}}</a>
-						</h3>
-				</header>
-				<div class="box__content">
-					<p>{{description}}</p>
-				</div>
-			</article>
-		</div>
+            <li class="grid-col desktop-grid-one-third box--padded-vertical nav--block-landing">
+             	<h3>
+					<a href="{{uri}}">{{title}}</a>
+				</h3>
+				<p>{{summary}}</p>
+			</li>
 		{{/each}}
-		<div class="grid-col tablet-grid-one-third clearfix nav--block-landing">
+		</ul>
+		<div class="grid-col tablet-grid-one-third nav--block-landing clear-left">
 				<article class="box box--orange">
 					<div class="box__inner border box--padded has-icon box--orange--separated-left">
 						<header class="box__header">

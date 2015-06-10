@@ -1,0 +1,79 @@
+
+{
+  "nextRelease": "19 August 2014",
+  "contact": {
+    "name": "Katherine Pegler",
+    "email": "ppi@ons.gsi.gov.uk",
+    "telephone": "+44(0)000 000000"
+  },
+  "lede": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi ipsum, rhoncus cursus vehicula vitae, sagittis sit amet nulla. Sed volutpat pharetra quam, vel aliquet nibh posuere ut. Curabitur in eros in magna posuere vehicula. Etiam leo tortor, fringilla et convallis quis, porta eget lectus. Morbi vitae purus urna. Quisque lobortis pulvinar porta. Duis sit amet sollicitudin est. Suspendisse sem enim, maximus quis ante sit amet, hendrerit commodo tortor. Quisque at turpis nunc. Pellentesque ac massa et lorem sollicitudin volutpat in vitae ante. Aliquam nec pretium velit, eu dictum turpis. Pellentesque sagittis urna non lobortis mattis. Donec ex lectus, hendrerit sit amet dolor lacinia, tincidunt dapibus risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet libero quis augue tempus imperdiet.",
+  "more": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi ipsum, rhoncus cursus vehicula vitae, sagittis sit amet nulla. Sed volutpat pharetra quam, vel aliquet nibh posuere ut. Curabitur in eros in magna posuere vehicula. Etiam leo tortor, fringilla et convallis quis, porta eget lectus. Morbi vitae purus urna. Quisque lobortis pulvinar porta. Duis sit amet sollicitudin est. Suspendisse sem enim, maximus quis ante sit amet, hendrerit commodo tortor. Quisque at turpis nunc. Pellentesque ac massa et lorem sollicitudin volutpat in vitae ante. Aliquam nec pretium velit, eu dictum turpis. Pellentesque sagittis urna non lobortis mattis. Donec ex lectus, hendrerit sit amet dolor lacinia, tincidunt dapibus risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet libero quis augue tempus imperdiet.",
+  "sections": [
+    {
+      "title": "Understanding inflation",
+      "uri": "understandinginflation",
+      "markdown": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi ipsum, rhoncus cursus vehicula vitae, sagittis sit amet nulla. Sed volutpat pharetra quam, vel aliquet nibh posuere ut. Curabitur in eros in magna posuere vehicula. Etiam leo tortor, fringilla et convallis quis, porta eget lectus. Morbi vitae purus urna. Quisque lobortis pulvinar porta. Duis sit amet sollicitudin est. Suspendisse sem enim, maximus quis ante sit amet, hendrerit commodo tortor. Quisque at turpis nunc. Pellentesque ac massa et lorem sollicitudin volutpat in vitae ante. Aliquam nec pretium velit, eu dictum turpis. Pellentesque sagittis urna non lobortis mattis. Donec ex lectus, hendrerit sit amet dolor lacinia, tincidunt dapibus risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet libero quis augue tempus imperdiet."
+    },
+    {
+      "title": "Inflation data",
+      "uri": "inflationdata",
+      "markdown": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi ipsum, rhoncus cursus vehicula vitae, sagittis sit amet nulla. Sed volutpat pharetra quam, vel aliquet nibh posuere ut. Curabitur in eros in magna posuere vehicula. Etiam leo tortor, fringilla et convallis quis, porta eget lectus. Morbi vitae purus urna. Quisque lobortis pulvinar porta. Duis sit amet sollicitudin est. Suspendisse sem enim, maximus quis ante sit amet, hendrerit commodo tortor. Quisque at turpis nunc. Pellentesque ac massa et lorem sollicitudin volutpat in vitae ante. Aliquam nec pretium velit, eu dictum turpis. Pellentesque sagittis urna non lobortis mattis. Donec ex lectus, hendrerit sit amet dolor lacinia, tincidunt dapibus risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet libero quis augue tempus imperdiet."
+    },
+    {
+      "title": "Current methodology",
+      "uri": "currentmethodology",
+      "markdown": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi ipsum, rhoncus cursus vehicula vitae, sagittis sit amet nulla. Sed volutpat pharetra quam, vel aliquet nibh posuere ut. Curabitur in eros in magna posuere vehicula. Etiam leo tortor, fringilla et convallis quis, porta eget lectus. Morbi vitae purus urna. Quisque lobortis pulvinar porta. Duis sit amet sollicitudin est. Suspendisse sem enim, maximus quis ante sit amet, hendrerit commodo tortor. Quisque at turpis nunc. Pellentesque ac massa et lorem sollicitudin volutpat in vitae ante. Aliquam nec pretium velit, eu dictum turpis. Pellentesque sagittis urna non lobortis mattis. Donec ex lectus, hendrerit sit amet dolor lacinia, tincidunt dapibus risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet libero quis augue tempus imperdiet."
+    },
+    {
+      "title": "Developing the indices",
+      "uri": "developingtheindices",
+      "markdown": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi ipsum, rhoncus cursus vehicula vitae, sagittis sit amet nulla. Sed volutpat pharetra quam, vel aliquet nibh posuere ut. Curabitur in eros in magna posuere vehicula. Etiam leo tortor, fringilla et convallis quis, porta eget lectus. Morbi vitae purus urna. Quisque lobortis pulvinar porta. Duis sit amet sollicitudin est. Suspendisse sem enim, maximus quis ante sit amet, hendrerit commodo tortor. Quisque at turpis nunc. Pellentesque ac massa et lorem sollicitudin volutpat in vitae ante. Aliquam nec pretium velit, eu dictum turpis. Pellentesque sagittis urna non lobortis mattis. Donec ex lectus, hendrerit sit amet dolor lacinia, tincidunt dapibus risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet libero quis augue tempus imperdiet."
+    }
+  ],
+  "data": [
+    {
+      "title": "Consumer price inflation data collection",
+      "uri": "economy/inflationandpriceindices/data/IGFH"
+    },
+    {
+      "title": "Consumer price inflation time series",
+      "uri": "economy/inflationandpriceindices/data/CISP"
+  },
+  {
+    "title": "Producer price inflation data collection",
+    "uri": "economy/inflationandpriceindices/data/CISP"
+  }
+  ],
+  "relatedBulletins": [
+    {
+      "title": "Consumer price inflation, July 2014",
+      "summary": "Consumer price inflation, July 2014 - Summary",
+      "uri": "economy/inflationandpriceindices/producerpriceinflationjanuary2014"
+    },
+    {
+      "title": "Consumer price inflation, June 2014",
+      "summary": "Consumer price inflation, June 2014 - Summary",
+      "uri": "businessindustryandtrade/retailsalesjanuary2014"
+    },
+    {
+    "title": "Economic review, June 2014",
+    "summary": "Economic review, June 2014 - Summary",
+    "uri": "businessindustryandtrade/retailsalesjanuary2014"
+    }
+    ],
+    "downloads": [
+      {
+        "title": "Consumer price index: A brief guide",
+        "summary": "Consumer price index: A brief guide - Summary",
+        "uri": "downloadfile"
+      }
+      ],
+  "title": "Inflation and price indices",
+  "releaseDate": "19 August 2014",
+  "lastRevised": "19 August 2014",
+  "type": "bulletin",
+  "name": "Inflation and price indices",
+  "uri": "",
+  "fileName": "",
+  "breadcrumb": []
+}

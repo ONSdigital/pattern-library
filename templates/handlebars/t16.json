@@ -1,0 +1,51 @@
+{
+	"title": "Consumer Price Inflation, January 2015",
+	"releaseDate": "19 August 2014",
+	"nextRelease": "22 August 2015",
+	"contact": {
+		"name": "Philip Gooding",
+		"email": "cpi@ons.gsi.gov.uk",
+		"telephone": "+44 (0)1633 456468"
+	},
+	"type": "release",
+	"name": "Consumer Price Inflation, January 2015",
+	"breadcrumb": {
+		"type": "home",
+		"name": "Economy",
+		"uri": "economy/"
+	},
+	"preRelease": "economy/inflationandpriceindices/cpi/prerelease",
+	"lede": "Inflation measures the rate of increase in prices for goods and services using price indices. The rate of inflation used in the UK government’s inflation target is measured using the Consumer Prices Index (CPI). One way to understand the CPI is to think of a very large shopping basket containing a large selection of the goods and services bought by households, the CPI estimateschanges to the total cost of this basket.",
+	"bulletins": [
+		{
+			"title": "Consumer Price Inflation: January 2015",
+			"uri": "/economy/inflationandpriceindices/cpi",
+			"description": "The Consumer Price Inflation is a monthly release that contains percentage changes and weights for the CPI, CPIH, RPI and RPIJ."
+		}
+	],
+	"datasets": [
+		{
+			"title": "Consumer Price Inflation time series dataset",
+			"uri": "economy/inflationandpriceindices/cpidatset",
+			"description": "Measures of inflation over time, including CPI, RPI, CPIH and RPIJ."
+		},
+		{
+			"title": "CPI special aggregates (CPICOP)",
+			"uri": "economy/inflationandpriceindices/cpidatset2",
+			"description": "This dataset gives access to a comprehensive database of time series from major national statistics and social economic releases."
+		}
+	],
+	"allData": "economy/inflationandpriceindices/cpi/data",
+	"sections": [
+		{
+			"title": "Important release information",
+			"markdown": "The United Kingdom Statistics Authority has designated these statistics as National Statistics, in accordance with the Statistics and Registration Service Act 2007 and signifying compliance with the Code of Practice for Official Statistics. Designation can be broadly interpreted to mean that the statistics: meet identified user needs, are well explained and readily accessible, are produced according to sound methods, and are managed impartially and objectively in the public interest. Once statistics have been designated as National Statistics it is a statutory requirement that the Code of Practice shall continue to be observed."
+		}
+	],
+	"accordions": [
+		{
+			"title": "Pre-release access list for August 2015",
+			"markdown": "The phrase 'Pre-release Access' refers to the practice whereby official statistics in their final form, and any accompanying written commentary, are made available to an eligible person in advance of their publication. The rules and principles which govern pre-release access are featured within the Pre-release Access to Official Statistics Order 2008. Besides ONS staff, the following persons are given pre-release access by the period indicated before release."
+		}
+	]
+}

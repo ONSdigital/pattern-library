@@ -1,0 +1,72 @@
+
+{
+  "level": "t7-4-1",
+  "index": 1,
+  "lede": "An economy or economic system consists of the production, distribution, consumption and trade of limited goods and services by different agents in a given geographical location. The economic agents can be individuals, businesses, organisations, or governments. ",
+  "type": "home",
+  "name": "Economy",
+  "fileName": "economy",
+  "breadcrumb": [],
+
+  "sections": [
+    {
+      "name": "Inflation and price indices",
+      "link": "inflationandpriceindices",
+      "index": 0,
+			"description": "The Consumer Prices Index, the Retail Price Index and other statistics measure changes and trends in the UK economy."
+    },
+    {
+      "name": "Gross Domestic Product (GDP)",
+      "link": "grossdomesticproductgdp",
+      "index": 1,
+			"description": "The value of all finished goods and services produced in the UK in a specific time period."
+    },
+    {
+      "name": "Government, public sector and taxes",
+      "link": "governmentpublicsectorandtaxes",
+      "index": 2,
+		"description": "Revenue and spending in the public sector and research and development."
+    },
+    {
+      "name": "Economic output and productivity",
+      "link": "economicoutputandproductivity",
+      "index": 3,
+			"description": "Statistics on the output of sectors including production, manufacturing, agriculture, forestry and fishing and others."
+    },
+    {
+      "name": "Regional accounts",
+      "link": "regionalaccounts",
+      "index": 4,
+			"description": "Breakdown of Gross Disposable Household Income by regions of the UK."
+    },
+    {
+      "name": "Gross Value Added (GVA)",
+      "link": "grossvalueaddedgva",
+      "index": 5,
+			"description": "Measures the contribution to the economy of each individual producer, industry or sector. Breakdown by region."
+    },
+    {
+      "name": "National Accounts",
+      "link": "nationalaccounts",
+      "index": 6,
+			"description": "The UK's Balance of Payments, calculated from imports, exports and other transactions."
+    },
+    {
+      "name": "Environmental accounts",
+      "link": "environmentalaccounts",
+      "index": 7,
+			"description": "Assessments of the UK's impact on the environment, including total energy consumption and greenhouse gas emissions."
+    },
+    {
+      "name": "Investments, pensions and trusts",
+      "link": "investmentspensionsandtrusts",
+      "index": 8,
+			"description": "Net investment flows into the UK and investment abroad by UK companies."
+    }
+],
+
+"box": {
+    "title": "Call to action",
+    "content": "Other useful CTAs can appear down here. Important notices for instance"
+}
+}

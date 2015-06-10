@@ -3,22 +3,16 @@
 	<script src="../../node_modules/ONS-Pattern-Library/dist/js/header.js"></script>
 </head>
 
+<!-- Pattern Library Header -->
+{{> partials/header}}
+
 <div class="page-header slate">
 	<div class="wrapper" >
-		<ol class="nav nav--heavy breadcrumb breadcrumb_hero mini">
-			<li>
-				Need to add breadcrumb and social media partials
-			</li>
-		</ol>
-		<!-- /breadcrumb -->
-	</div>
-	<!-- /wrapper -->
-
-	<div class="wrapper">
-	  <h1 class="page-header__title flush--half--bottom">{{name}}</h1>
-	  <div class="lede content-reveal">
+		{{> partials/breadcrumb}}
+	  	<h1 class="page-header__title flush--half--bottom">{{title}}</h1>
+	  	<div class="lede content-reveal">
 			<p>
-				{{{lede}}}
+				{{summary}}
 			</p>
 		</div>
 		<!-- /lede -->
@@ -29,7 +23,7 @@
 					<h2>Latest data</h2>
 					<header class="box___section">
 							<h3 class="navpanel-list-heading lede box--padded-bottom-small">
-								<a href="">{{headline.name}}</a>
+								<a href="">{{headline.title}}</a>
 							</h3>
 					</header>
 					<div class="grid-wrap">
@@ -72,7 +66,7 @@
 					<h2>Latest statistical bulletin</h2>
 					<header class="box___section">
 							<h3 class="navpanel-list-heading lede box--padded-bottom-small">
-							<a href="{{statsBulletinHeadline.uri}}">{{statsBulletinHeadline.name}}</a>
+							<a href="{{statsBulletinHeadline.uri}}">{{statsBulletinHeadline.title}}</a>
 							</h3>
 					</header>
 					<h3>What's in the bulletin?</h3>
@@ -102,17 +96,14 @@
 		<div class="box__inner border box--padded">
 			<div class="box__section">
 				<header>
-				  <h2 class="list--table-header panel--pad">Time series related to {{name}}</h2>
-				  <div class="grid-col">
-			      <a href="#">View more datasets</a>
-				  </div>
+					<h2 class="list--table-header panel--pad">Time series related to {{title}}</h2>
 				</header>
 				<ol class="list--table list--table--complex table--striped-light table-light--sectioned">
 					{{#each items}}
 						<li class="list--table__item list--table__body">
 							<div class="list--table__item__body list--table__item__body--caption">
 								<h3 class="flush--half--bottom">
-									<a href="{{uri}}">{{name}}</a>
+									<a href="{{uri}}">{{title}}</a>
 								</h3>
 								{{#if description}}
 									<p class="list--table__item__description">
@@ -150,51 +141,37 @@
 			</div>
 			<!-- /box-section -->
 
-			<div class="box__section">
+			<div class="panel flush">
 				<div class="grid-wrap">
 					<div class="grid-col desktop-grid-two-thirds">
-						<header class="actionable-header__title">
-							<h2 class="actionable-header__title table-inline" id="datasets">Key datasets</h2>
-							<a class="hide-med-down" href="#">View more datasets</a>
-						</header>
-
+						<h2 class="flush">Key datasets</h2>
 						<div class="grid-wrap">
-							{{#each datasets}}
-								<div class="grid-col tablet-grid-one-half">
-									<article class="box box--padded">
-										<header class="box__header">
-											<h3>
-												<a href="{{uri}}">{{name}}</a>
-											</h3>
-										</header>
-										<!-- /box__header -->
-										<div class="box__content">
-											<ul class="list--table">
-												<li>{{summary}}</li>
-											</ul>
-											<!-- /list- -bullet -->
-										</div>
-										<!-- /box__content -->
-									</article>
-									<!-- /box -->
-								</div>
-								<!-- /grid-col -->
-							{{/each}}
+							<ul class="list--neutral">
+								{{#each datasets}}
+								<li class="grid-col desktop-grid-one-half panel--bottom-mar-small">
+									<h3 class="flush">
+										<a href="{{uri}}" title="{{title}}">
+											{{title}}
+										</a>
+									</h3>
+									<p>
+										{{summary}}
+									</p>
+								</li>
+								{{/each}}
+							</ul>
 						</div>
-						<!-- /grid-wrap -->
+						<!-- /grid-col -->
 					</div>
-					<!-- /grid-col -->
-
 					<div class="grid-col desktop-grid-one-third">
 						<div class="box box--padded slate">
-							<header class="box__section__header">
-								<h3>
+							<h3>
 								User requested data
-								</h3>
-							</header>
+							</h3>
+
 							<article>
 								<header class="box__header">
-									<h3>
+									<h3 class="flush">
 										<a href="#">Looking for our adhoc data?</a>
 									</h3>
 								</header>
@@ -204,19 +181,17 @@
 										<li class="">We also produce data not included in our standard publications</li>
 									</ul>
 									<!-- /list- -bullet -->
+									<!-- /box__content -->
 								</div>
-								<!-- /box__content -->
+								<!-- /box -->
 							</article>
 						</div>
-						<!-- /box -->
+						<!-- /grid-col -->
 					</div>
-					<!-- /grid-col -->
+					<!-- /grid-wrap -->
 				</div>
+				<a  href="#">View more datasets</a>
 				<!-- /grid-wrap -->
-
-        <div class="grid-col hide-large">
-          <a  href="#">View more datasets</a>
-        </div>
 				<!-- /grid-col -->
 			</div>
 			<!-- /box__section -->
@@ -229,75 +204,65 @@
 
 <!-- Latest statistical bulletins and Related articles-->
 <section class="panel wrapper panel--bottom-mar">
-  <div class="box box--teal box--teal--separated--left" >
-    <div class="box__inner border box--padded">
-      <div class="box__section">
-        <header class="actionable-header__title">
-          <h2 class="actionable-header__title table-inline" id="reports">Latest statistical bulletins</h2>
-          <a class="hide-med-down" href="#" id="viewAllStatsBulletins">View all statistical bulletins</a>
-        </header>
-
-				<!-- Static Content if there is not related stats bulletin in the data -->
+  	<div class="box box--teal box--teal--separated--left" >
+    	<div class="box__inner border box--padded">
+		<!-- Latest statistical bulletins -->
+			<div class="panel flush">
 				<div class="grid-wrap">
-					{{#each statsBulletins}}
-						<div class="grid-col desktop-grid-one-third">
-							<article class="box--padded">
-								<header class="box__header">
-									<h3>
-										<a href="{{uri}}">{{name}}</a>
+					<div class="grid-col desktop-grid-full-width">
+						<h2 class="flush">Latest statistical bulletins</h2>
+						<div class="grid-wrap">
+							<ul class="list--neutral">
+								{{#each statsBulletins}}
+								<li class="grid-col desktop-grid-one-third panel--bottom-mar-small">
+									<h3 class="flush">
+										<a href="{{uri}}" title="{{title}}">
+											{{title}}
+										</a>
 									</h3>
-								</header>
-								<div class="box__content">
-									<ul class="list--table">
-										<li>{{summary}}</li>
-									</ul>
-								</div>
-							</article>
+									<p>
+										{{summary}}
+									</p>
+								</li>
+								{{/each}}
+							</ul>
 						</div>
 						<!-- /grid-col -->
-					{{/each}}
+					</div>
+					<!-- /grid-wrap -->
 				</div>
+				<a  href="#">View all statistical bulletins</a>
 				<!-- /grid-wrap -->
 			</div>
-			<!-- /box__section -->
-
-			<div class="box__section flush--half--bottom">
-        <header class="actionable-header__title">
-          <h2 class="actionable-header__title table-inline" id="reports">Related articles</h2>
-          <a class="hide-med-down" href="#" id="viewAllStatsBulletins">View all articles</a>
-        </header>
-
-				<!-- Static Content if there is not related stats bulletin in the data -->
+			<!-- Related articles-->
+			<div class="panel flush">
 				<div class="grid-wrap">
-					{{#each articles}}
-						<div class="grid-col desktop-grid-one-third">
-							<article class="box--padded">
-								<header class="box__header">
-									<h3>
-										<a href="{{uri}}">{{name}}</a>
+					<div class="grid-col desktop-grid-full-width">
+						<h2 class="flush">Related articles</h2>
+						<div class="grid-wrap">
+							<ul class="list--neutral">
+								{{#each articles}}
+								<li class="grid-col desktop-grid-one-third panel--bottom-mar-small">
+									<h3 class="flush">
+										<a href="{{uri}}" title="{{title}}">
+											{{title}}
+										</a>
 									</h3>
-								</header>
-								<div class="box__content">
-									<ul class="list--table">
-										<li>{{summary}}</li>
-									</ul>
-								</div>
-							</article>
+									<p>
+										{{summary}}
+									</p>
+								</li>
+								{{/each}}
+							</ul>
 						</div>
 						<!-- /grid-col -->
-					{{/each}}
+					</div>
+					<!-- /grid-wrap -->
 				</div>
+				<a  href="#">View all related articles</a>
 				<!-- /grid-wrap -->
 			</div>
-			<!-- /box__section -->
-
-			<div class="grid-col hide-large">
-        <a href="#" id="viewAllStatsBulletins">View all statistical bulletins</a>
-      </div>
-			<!-- /grid-col -->
 		</div>
-		<!-- /box__inner -->
 	</div>
-	<!-- /box -->
 </section>
 <!--/panel wrapper -->

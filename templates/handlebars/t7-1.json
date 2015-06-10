@@ -1,0 +1,31 @@
+{
+	"name": "Consumer Price Inflation",
+	"contact": {
+    "name": "Philip Gooding",
+    "email": "cpi@ons.gsi.gov.uk",
+    "telephone": "+44 (0)1633 456468"
+  },
+	"lastRevised": "19 February 2014",
+	"download": {
+			"title": "Consumer Price Inflation: quality and methodology information",
+			"uri": "https://www.ons.gov.uk/economy/inflationandpriceindices/methodology2015",
+			"size": "2.85MB"
+	},
+	"details": {
+		"survey": "Survey name",
+		"frequency": "Monthly",
+		"dataSource": "Sample survey based",
+		"coverage": "UK"
+	},
+	"summary": "Donec fringilla, ante et imperdiet interdum, arcu ipsum mollis odio, vitae euismod augue mi at velit. Ut egestas tortor vel ipsum interdum suscipit. Etiam commodo dolor ut nisl consequat feugiat. Nulla facilisi. Morbi tempus mauris sem, sit amet facilisis tellus facilisis id. Nunc a tortor lacus. Maecenas fermentum libero arcu, at tempus risus laoreet sed. Sed blandit mauris a neque viverra malesuada. Maecenas accumsan maximus leo, nec porta arcu accumsan vel. Praesent rutrum vel turpis vel euismod. Etiam et commodo justo.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer pellentesque imperdiet lacus, eu efficitur sapien maximus ut. Phasellus ut rhoncus est. Mauris non dapibus massa. Cras id interdum elit. Vivamus nec turpis vitae erat dictum dapibus eu eget turpis. Maecenas eu velit id nunc molestie vestibulum nec sit amet nulla. Duis eget mauris nec lorem faucibus egestas nec vitae augue. Curabitur ut scelerisque tortor, at euismod erat. Integer blandit dui vitae orci auctor accumsan. Nam rhoncus dapibus mauris, sit amet iaculis lacus semper quis. Nulla laoreet, quam eu semper malesuada, quam eros malesuada leo, eget cursus tellus purus quis mauris. Donec rhoncus finibus tortor et interdum. Donec in massa sed orci sagittis auctor non congue tortor. Nam porta dui eu dui hendrerit condimentum.",
+	"usedIn": [
+		{
+			"title": "Consumer price inflation",
+			"uri": "economy/inflationandpriceindices/consumerpriceinflation"
+		},
+		{
+			"title": "Economic review",
+			"uri": "economy/economicreview"
+		}
+	]
+}

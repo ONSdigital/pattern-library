@@ -1,0 +1,105 @@
+
+{
+  "nextRelease": "19 August 2014",
+  "contact": {
+    "name": "Philip Gooding",
+    "email": "cpi@ons.gsi.gov.uk",
+    "telephone": "+44 (0)1633 456468"
+  },
+  "lede": "Producer Price Inflation (PPI) measures the price changes of goods bought and sold by UK manufacturers this month compared to the same month a year ago. PPI provides a key measure of inflation alongside other indicators such as the Consumer Prices Index (CPI) and Services Producer Price Index (SPPI).PPI is split into two components: output price inflation and input price inflation. The input price indices capture changes in the cost of the material and fuel inputs that producers face whereas the output price indices capture the changing prices of goods sold by producers.This article looks at the trends in both producer price indices since 2000 and which components contribute most towards changes in each price index in recent years.",
+  "more": "Annual output and input price changes follow similar trends, but with the latter tending to have higher price growth1. In Figure 1, trends in producer price inflation can be split into three distinct periods: 2000 to 2005, 2005 to 2012 and 2012 to June 2014.  Both indices experience greater variability within the second period of 2005 to 2012 than compared with the first and third period. From 2005 to 2012 the average growth rate was 2.9% for output price inflation and 8.1% for input price inflation.  The largest peaks and troughs experienced for both indices throughout the time series shown below occurred in the second period of 2005 to 2012. Output price inflation rose to 8.9% in July 2008 while input price inflation rose to 34.8% in June 2008 and both fell to their lowest rates in July 2009: output price inflation falling by 1.6% and input price inflation falling by 14.8%.",
+  "sections": [
+    {
+      "title": "Key points",
+      "uri": "keypoints",
+      "markdown": "- The Consumer Prices Index (CPI) grew by 1.9% in the year to June 2014, up from 1.5% in May.\n- The largest contributions to the rise in the rate came from the clothing, food \u0026 non-alcoholic drinks and air transport sectors.\n- CPIH grew by 1.8% in the year to June 2014, up from 1.4% in May. RPIJ grew by 2.0%, up from 1.7% in May.\n"
+    },
+    {
+      "title": "A brief description of Consumer Price Inflation",
+      "markdown": "Consumer price inflation is the speed at which the prices of goods and services bought by households rise or fall. Consumer price inflation is estimated by using price indices. One way to understand a price index is to think of a very large shopping basket containing all the goods and services bought by households. The price index estimates changes to the total cost of this basket. ONS consumer price indices are published monthly.\n\nA price index can be used to measure inflation in a number of ways. The most common is to look at how the index has changed over a year. This is calculated by comparing the price index for the latest month with the same month a year ago. This is known as the 12-month inflation rate. This bulletin measures inflation to June 2014, so the 12-month rate measures changes in prices between June 2013 and June 2014.\n\nONS publishes a range of measures of consumer price and other price inflation. A tale of many price indices summarises information on the different measures.\n"
+    },
+    {
+      "title": "A longer description of Consumer Price Inflation",
+      "markdown": "#### What is the CPI?\n \nThe CPI is a measure of consumer price inflation produced to international standards and in line with European regulations. First published in 1997 as the Harmonised Index of Consumer Prices (HICP), the CPI is the inflation measure used in the Government’s target for inflation.\n \nThe CPI is also used for purposes such as uprating pensions, wages and benefits and can aid in the understanding of inflation on family budgets. For more information see Users and uses of consumer price inflation statistics.\n\n#### Latest figure and long-term trend \n\nThe CPI 12-month rate (the amount prices change over a year) between June 2013 and June 2014 stood at 1.9%. This means that a basket of goods and services that cost £100.00 in June 2013 would have cost £101.90 in June 2014. The latest information continues the trend of below 2.0% inflation during 2014. This is only the second time since June 2013 that the inflation rate has risen compared with the previous month and it is the largest increase between two months since the rise from 2.2% to 2.7% between September and October 2012.\n \nOver the last five years, the three main contributors to the 12-month inflation rate have been food \u0026 non-alcoholic beverages, housing, water, electricity, gas \u0026 other fuels and transport (including motor fuels)."
+    },
+    {
+      "title": "Consumer Prices Index (CPI): What are the main movements?",
+      "uri": "consumerpricesindexcpiwhatarethemainmovements",
+      "markdown": " This section explains which goods and services had the biggest impact on the change to the 12-month rate between May and June 2014 and, where relevant, considers the longer-term inflationary trends for these goods and services.\n \nThe change in the CPI 12-month rate can be calculated by comparing the 12-month rates for two consecutive months. An alternative, and equally valid, approach is to calculate it by comparing the price change between the latest two months and the price change between the same two months a year ago. Explaining the contribution to change in the 12-month rate is a diagram explaining the calculation.\n \nThe CPI rose by 0.2% between May and June 2014, compared with a fall of 0.2% between the same two months in 2013. The 1-month movement was therefore 0.4 percentage points higher this year compared with last year. This led to the CPI 12-month rate rising from 1.5% in May to 1.9% in June.\n \nThe largest upward contributions to the change in the CPI 12-month rate between May and June 2014 came from:\n\n- clothing \u0026 footwear: prices, overall, rose by 0.6% between May and June this year compared with a fall of 1.9% a year ago. Prices usually fall between May and June as the summer sales begin but this year the average prices of a number of products have risen. The main upward effect came from garments, particularly women’s outerwear where there were upward contributions from nearly all items, the largest from trousers and skirts."
+    },
+    {
+      "title": "Retail Prices Index (RPI) and RPIJ",
+      "markdown": "In accordance with the Statistics and Registration Service Act 2007, the Retail Prices Index and its derivatives have been assessed against the Code of Practice for Official Statistics and found not to meet the required standard for designation as National Statistics. The full assessment report can be found on the UK Statistics Authority website.\n \nThe RPI is a long-standing measure of UK inflation that has historically been used for a wide range of purposes such as the indexation of pensions, rents and index-linked gilts. For further information see Users and uses of consumer price inflation statistics.\n \nRPIJ is an improved variant of the Retail Prices Index, which is calculated using formulae that meet international standards. The rationale for creating RPIJ was to give users a better alternative to the RPI if their needs were for a measure of inflation based on the same population, classifications, weights etc as the RPI. Currently, RPIJ also acts as an analytical series in that it allows users to see the impact of using the Jevons (which meets international standards) in place of the Carli formula (which does not meet international standards) in the RPI. The use of the different formulae at the elementary aggregate level is currently the only difference between the two indices. ONS does not produce detailed goods and services indices for RPIJ.\n \nIn June 2014, the 12-month rate for RPIJ stood at 2.0%, up from 1.7% in May. CPIH and RPIJ broadly continue to track each other as they have done for the last two years.\n \nThe RPI 12-month rate for June 2014 stood at 2.6%, meaning that it was 0.6 percentage points higher than it would have been had it used formulae that meet international standards.\n \nFigure D shows the RPI and RPIJ 12-month rates for the last 10 years. Over this period the RPIJ 12-month rate has been, on average, 0.5 percentage points lower than the RPI but the difference has increased to an average of 0.7 percentage points over the last 3 years. Cumulatively, inflation as measured by the RPI is 37.2% over the 10 year period, compared with 30.4% as measured by the RPIJ. The use of the Carli formula has therefore added 6.8 percentage points to the change in prices over the last 10 years.\n\n#### Figure D: RPI and RPIJ 12-month rates for the last 10 years: June 2004 to June 2014"
+    },
+    {
+      "title": "Another section",
+      "markdown": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget velit vulputate, posuere est et, pulvinar magna. Vivamus imperdiet diam lorem, id maximus augue gravida ac. Duis nec semper nibh. Sed vulputate ultricies felis eu egestas. Duis vehicula tristique metus ac dignissim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus id euismod nunc, eu ullamcorper orci. Aenean egestas aliquet arcu, ac euismod eros consequat non. Nam pulvinar, mi id sagittis iaculis, augue massa feugiat justo, non sagittis arcu est non felis. Proin non eros sed lacus placerat ultrices nec in est. Vivamus sed lacus malesuada, pulvinar diam sit amet, consectetur dolor. Donec tristique eu augue quis vulputate. Duis ultricies odio erat, sed porta lacus interdum id. Maecenas et lorem ac augue imperdiet semper. Praesent eu tortor eget dui rutrum dictum. Morbi euismod odio ipsum, sed tincidunt augue feugiat ut."
+    },
+    {
+      "title": "More sections",
+      "markdown": "Vestibulum faucibus ante vel elit feugiat vehicula. Fusce vel ante nec justo pretium posuere. Praesent congue nibh in ipsum sodales semper. Nunc eleifend enim at rutrum cursus. Mauris porttitor dapibus auctor. Integer a tellus id nulla ornare rutrum. Vivamus tristique eros eget eleifend pharetra."
+    },
+    {
+      "title": "Another section to test the table of contents",
+      "markdown": "In aliquam luctus magna, vitae placerat erat sagittis ut. Nulla felis nisi, mattis ut tempus sit amet, tincidunt nec enim. Sed nec molestie urna. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent ornare quis eros fringilla ultrices. Ut accumsan mi id interdum porttitor. Vestibulum fermentum at ligula sit amet rutrum. Donec scelerisque sapien lectus, id aliquet mauris interdum vel. Maecenas vehicula ligula et nisl suscipit, porttitor mattis purus porta. Curabitur consectetur porttitor nunc id accumsan. Praesent euismod ipsum elit, at consequat nunc pulvinar vel. Nam cursus eros ligula, ac condimentum odio scelerisque in. Aenean tempus semper nunc, ut congue ante. Nullam lacinia sagittis arcu, non blandit nibh tincidunt ac."
+    },
+    {
+      "title": "Sections should split into 3 columns",
+      "markdown": "Aliquam vulputate consectetur quam eget consequat. Sed pellentesque lorem eget massa vestibulum accumsan. Nullam pharetra ipsum vitae dui scelerisque, vitae viverra neque faucibus. Vestibulum efficitur elit tempor, ornare libero quis, congue nibh. Donec ultricies lobortis ex, eget lacinia elit ullamcorper ut. Etiam in tristique diam. Vestibulum consequat sem orci, id sagittis velit lobortis eu. Donec at convallis eros, quis euismod ex. Nulla facilisi."
+    },
+    {
+      "title": "Almost the final section",
+      "markdown": "Cras a eros at quam euismod luctus sit amet a massa. Phasellus eu odio purus. Pellentesque pulvinar molestie lacus eget tincidunt. Integer volutpat fringilla porta. Sed nisl sem, viverra et dolor vel, porta tempus ante. Nullam eget mauris sollicitudin, porta turpis ac, gravida felis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse mattis mi ut magna lobortis vehicula."
+    },
+    {
+      "title": "Final section",
+      "markdown": "In aliquam luctus magna, vitae placerat erat sagittis ut. Nulla felis nisi, mattis ut tempus sit amet, tincidunt nec enim. Sed nec molestie urna. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent ornare quis eros fringilla ultrices. Ut accumsan mi id interdum porttitor. Vestibulum fermentum at ligula sit amet rutrum. Donec scelerisque sapien lectus, id aliquet mauris interdum vel. Maecenas vehicula ligula et nisl suscipit, porttitor mattis purus porta. Curabitur consectetur porttitor nunc id accumsan. Praesent euismod ipsum elit, at consequat nunc pulvinar vel. Nam cursus eros ligula, ac condimentum odio scelerisque in. Aenean tempus semper nunc, ut congue ante. Nullam lacinia sagittis arcu, non blandit nibh tincidunt ac."
+    }
+  ],
+  "accordion": [
+    {
+      "title": "References",
+      "markdown": "The CPI, CPIH, RPIJ and RPI are compiled using the same underlying price data, based on a large and representative selection of around 700 individual goods and services for which price movements are measured in around 140 randomly selected areas throughout the UK. Around 180,000 separate price quotations are used every month to compile the indices. The outlets in which the prices are collected are selected randomly. Expenditure weights are held constant for 1 year at a time."
+    }
+  ],
+  "data": [
+    {
+      "title": "Consumer price inflation data collection",
+      "uri": "economy/inflationandpriceindices/data/IGFH"
+    },
+    {
+      "title": "Consumer price inflation time series",
+      "uri": "economy/inflationandpriceindices/data/CISP"
+    }
+  ],
+  "headline1": "The Consumer Prices Index (CPI) grew by 1.9% in the year to June 2014, up from 1.5% in May.",
+  "headline2": "The largest contributions to the rise in the rate came from the clothing, food \u0026 non-alcoholic drinks and air transport sectors.",
+  "headline3": "CPIH grew by 1.8% in the year to June 2014, up from 1.4% in May. RPIJ grew by 2.0%, up from 1.7% in May.",
+  "summary": "CPI, CPIH, RPI and RPIJ inflation price indices for June 2014 - brief description and analysis",
+  "relatedBulletins": [
+    {
+      "title": "Produer Price Inflation: January 2014",
+      "summary": "The Consumer Price Inflation is a monthly release that contains percentage changes and weights for the CPI, CPIH, RPI and RPIJ.",
+      "uri": "economy/inflationandpriceindices/producerpriceinflationjanuary2014"
+    },
+    {
+      "title": "Retail sales: January 2014",
+      "summary": "A first estimate of retail sales in volume and value terms, seasonally and non-seasonally adjusted.",
+      "uri": "businessindustryandtrade/retailsalesjanuary2014"
+    }
+  ],
+  "title": "Economic Review, June 2014",
+  "releaseDate": "19 August 2014",
+  "type": "bulletin",
+  "name": "Economic Review, June 2014",
+  "uri": "/economy/economicreviewjune2014",
+  "fileName": "economicreviewjune2014",
+  "breadcrumb": [
+    {
+      "index": 0,
+      "type": "home",
+      "name": "Economy",
+      "fileName": "economy"
+    }
+  ]
+}
