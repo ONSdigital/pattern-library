@@ -4279,7 +4279,7 @@ lesser , applied styles
   height: 161px;
   margin-bottom: 20px; }
 
-@media screen and (min-width: 38em) {
+@media screen and (min-width: 50em) {
   .nav--block-landing > * {
     float: right;
     width: 100%;

@@ -59,7 +59,7 @@
 
 // Pure css multi line ellipsis: http://www.mobify.com/blog/multiline-ellipsis-in-pure-css/
 
-@include respond-min($bp-tablet) {
+@include respond-min($bp-tablet-wide) {
   .nav--block-landing > * {
     float: right;
     width: 100%;
