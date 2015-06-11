@@ -3819,9 +3819,11 @@ lesser , applied styles
   clear: left; }
 
 .nav--block-landing {
-  overflow: hidden;
-  height: 161px;
   margin-bottom: 20px; }
+
+.nav--block-landing {
+  overflow: hidden;
+  height: 161px; }
 
 .nav--block-landing > * {
   float: right;

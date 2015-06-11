@@ -4275,11 +4275,12 @@ lesser , applied styles
   clear: left; }
 
 .nav--block-landing {
-  overflow: hidden;
-  height: 161px;
   margin-bottom: 20px; }
 
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 38em) {
+  .nav--block-landing {
+    overflow: hidden;
+    height: 161px; }
   .nav--block-landing > * {
     float: right;
     width: 100%;

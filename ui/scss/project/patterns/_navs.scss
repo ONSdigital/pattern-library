@@ -52,14 +52,16 @@
 
 
 .nav--block-landing {
-  overflow: hidden;
-  height: 161px;
   margin-bottom: 20px;
 }
 
 // Pure css multi line ellipsis: http://www.mobify.com/blog/multiline-ellipsis-in-pure-css/
 
-@include respond-min($bp-tablet-wide) {
+@include respond-min($bp-tablet) {
+  .nav--block-landing {
+    overflow: hidden;
+    height: 161px;
+  }
   .nav--block-landing > * {
     float: right;
     width: 100%;
