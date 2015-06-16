@@ -5459,7 +5459,8 @@ table actions
 
 .tab-pane__panel {
   margin-top: 0;
-  border: 2px solid #dedfdc; }
+  border: 2px solid #dedfdc;
+  overflow: hidden; }
   .tab-pane__panel:focus {
     background: #dedfdc;
     outline: thin dotted; }
