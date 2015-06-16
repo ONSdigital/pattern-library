@@ -42389,7 +42389,7 @@ $(document).ready(function() {
 
   // The setup
 
-  $($container +' ul').attr('role','tablist').addClass('nav tab-pane__tabs-container').removeClass('nav--block--spaced');
+  $($container +' ul').first().attr('role','tablist').addClass('nav tab-pane__tabs-container').removeClass('nav--block--spaced');
   $($container +' [role="tablist"] li').attr('role','presentation').addClass('tab-pane__tab-container');
   $('[role="tablist"] a').attr({
     'role' : 'tab',
