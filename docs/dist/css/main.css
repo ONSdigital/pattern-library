@@ -4063,13 +4063,7 @@ lesser , applied styles
   letter-spacing: 0.1em;
   color: #fff;
   text-transform: uppercase;
-  cursor: pointer;
   background-color: #adafa7; }
-  .lozenge:hover, .lozenge:active, .lozenge:focus {
-    color: #fff;
-    text-decoration: none !important;
-    background-color: #a1a39a;
-    outline: 0; }
   .lozenge.is-collapsed {
     display: inline-block;
     max-width: inherit;
@@ -4088,8 +4082,6 @@ lesser , applied styles
 
 .lozenge--cold {
   background-color: #00b5cb; }
-  .lozenge--cold:hover, .lozenge--cold:active, .lozenge--cold:focus {
-    background-color: #00a0b2; }
 
 .media {
   display: block; }
