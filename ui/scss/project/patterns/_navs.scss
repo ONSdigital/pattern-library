@@ -67,7 +67,7 @@
     overflow: hidden;
     height: 161px;
   }
-  .nav--block-landing > *, .nav--block-landing--pairs {
+  .nav--block-landing > *, .nav--block-landing--pairs > * {
     float: right;
     width: 100%;
     margin-left: -5px;
