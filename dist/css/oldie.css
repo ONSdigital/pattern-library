@@ -3138,13 +3138,6 @@ a {
   display: block;
   text-align: center; }
 
-.box--orange a {
-  color: #f37121; }
-  .box--orange a:visited {
-    color: #ee5f0d; }
-  .box--orange a:hover, .box--orange a:focus {
-    color: #d5560c; }
-
 
 .box__section {
   margin-bottom: 30px; }
