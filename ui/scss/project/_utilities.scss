@@ -93,11 +93,11 @@
   }
 }
 
-.no-js .nojs-hidden {
+.no-js .nojs-hidden, .nojs-hidden {
   display: none !important;
 }
 
-.js .js-hidden {
+.js .js-hidden, .js-hidden  {
   display: none !important;
 }
 
