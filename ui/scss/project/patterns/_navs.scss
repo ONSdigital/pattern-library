@@ -26,7 +26,6 @@
     margin: 0 1em 0 0;
   }
 }
-
 .nav--block {
   a {
     padding: .5em 0;
@@ -55,25 +54,31 @@
   margin-bottom: 20px;
 }
 
+.nav--block-landing--pairs {
+  &:nth-child(2n+3) {
+      clear: left;
+  }
+}
+
 // Pure css multi line ellipsis: http://www.mobify.com/blog/multiline-ellipsis-in-pure-css/
 
 @include respond-min($bp-tablet) {
-  .nav--block-landing {
+  .nav--block-landing, .nav--block-landing--pairs {
     overflow: hidden;
     height: 161px;
   }
-  .nav--block-landing > * {
+  .nav--block-landing > *, .nav--block-landing--pairs > * {
     float: right;
     width: 100%;
     margin-left: -5px;
   }
-  .nav--block-landing:before {
+  .nav--block-landing:before, .nav--block-landing--pairs:before {
     content: "";
     float: left;
     width: 5px;
     height: 161px;
   }
-  .nav--block-landing:after {
+  .nav--block-landing:after, .nav--block-landing--pairs:after {
     content: "\02026";  
     box-sizing: content-box;
     -webkit-box-sizing: content-box;
@@ -94,12 +99,6 @@
     background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
     background: -ms-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
     background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
-  }
-}
-
-.nav--block-landing--pairs {
-  &:nth-child(2n+3) {
-      clear: left;
   }
 }
 

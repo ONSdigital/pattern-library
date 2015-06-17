@@ -4265,20 +4265,23 @@ lesser , applied styles
 .nav--block-landing {
   margin-bottom: 20px; }
 
+.nav--block-landing--pairs:nth-child(2n+3) {
+  clear: left; }
+
 @media screen and (min-width: 38em) {
-  .nav--block-landing {
+  .nav--block-landing, .nav--block-landing--pairs {
     overflow: hidden;
     height: 161px; }
-  .nav--block-landing > * {
+  .nav--block-landing > *, .nav--block-landing--pairs > * {
     float: right;
     width: 100%;
     margin-left: -5px; }
-  .nav--block-landing:before {
+  .nav--block-landing:before, .nav--block-landing--pairs:before {
     content: "";
     float: left;
     width: 5px;
     height: 161px; }
-  .nav--block-landing:after {
+  .nav--block-landing:after, .nav--block-landing--pairs:after {
     content: "\02026";
     box-sizing: content-box;
     -webkit-box-sizing: content-box;
@@ -4297,9 +4300,6 @@ lesser , applied styles
     background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(#ffffff), color-stop(50%, #ffffff));
     background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), white 50%, #ffffff);
     background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, #ffffff); } }
-
-.nav--block-landing--pairs:nth-child(2n+3) {
-  clear: left; }
 
 .nav--block-home-highlighted-content {
   width: 100%; }
