@@ -94,7 +94,9 @@
 }
 
 .print-hidden {
-  display:none !important;
+  @media print {
+    display:none !important;
+  }
 }
 
 .no-js .nojs-hidden, .nojs-hidden {
