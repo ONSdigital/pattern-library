@@ -1508,6 +1508,9 @@ img {
 .hide-med-up {
   display: none !important; }
 
+.print-hidden {
+  display: none !important; }
+
 .no-js .nojs-hidden, .nojs-hidden {
   display: none !important; }
 
