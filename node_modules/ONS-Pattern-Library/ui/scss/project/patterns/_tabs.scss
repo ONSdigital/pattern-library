@@ -82,6 +82,7 @@
 .tab-pane__panel {
   margin-top: 0;
   border: 2px solid $grey-light;
+  overflow: hidden;
 
   &:focus {
     background: $grey-light;

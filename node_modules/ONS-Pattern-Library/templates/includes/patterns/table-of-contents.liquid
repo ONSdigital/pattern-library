@@ -1,0 +1,42 @@
+{% block page_title %}Table of contents{% endblock %}
+{% block custom_head %}
+  <style>
+  </style>
+{% endblock %}
+{% block content %}
+  <div class="wrapper">
+    <h1>Table of contents</h1>
+  </div>
+
+  <div class="wrapper">
+    <!---
+    title: Table of Contents
+    group: General
+    devnotes: This is reliant on CSS counters to generate the numbers. The presentation aspect is, unfortunately, handled by grids, as CSS columns are not mature enough for production even with polyfills.
+    -->
+    <div class="panel--pad panel--separated">
+      <nav role="navigation" class="table-of-contents grid-wrap">
+        <div class="grid-col">
+          <h2 class="delta">Table of contents</h2>
+        </div>
+
+        <div class="grid-col tablet-grid-one-third">
+          <a href="#">Summary</a>
+          <a href="#">Key Findings</a>
+        </div>
+
+        <div class="grid-col tablet-grid-one-third">
+          <a href="#">Preliminary GDP Estimate</a>
+          <a href="#">Inflation</a>
+        </div>
+
+        <div class="grid-col tablet-grid-one-third">
+          <a href="#">International inflation, the exchange rate, and producer prices</a>
+          <a href="#">Labour market</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+{% endblock %}
+{% block custom_scripts %}
+{% endblock %}

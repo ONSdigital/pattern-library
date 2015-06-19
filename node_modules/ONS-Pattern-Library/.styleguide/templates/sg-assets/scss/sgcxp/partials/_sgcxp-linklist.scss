@@ -1,0 +1,43 @@
+/* ======================================================
+   Link list
+   ======================================================*/
+
+.sgcxp__linklist__col__wrapper {
+  a {
+    text-decoration:none;
+    &:hover {text-decoration:underline}
+  }
+  ul,ol {
+    list-style: none;
+    list-style-image: none;
+  }
+}
+
+  .sgcxp__linklist__section {
+    @include rem (margin-bottom, 20); 
+    @include line-height (25); 
+    }
+
+    .sgcxp__linklist__heading {
+      @include font-size(14);
+      @include rem(margin, 0);
+      line-height: 1.2;
+      color:$dark-grey;
+      text-transform: uppercase;
+      @include rem(margin-bottom, 10);
+      a {
+        color:$dark-grey;
+      }
+    }
+
+      .sgcxp__linklist__item {
+        @include font-size(16);
+        a {color:$accent-link-colour;}
+      }
+
+        .sgcxp__linklist__link {
+          @include respond-min($bp-desktop-min) {
+            color:$content-colour;    
+          }
+        }
+

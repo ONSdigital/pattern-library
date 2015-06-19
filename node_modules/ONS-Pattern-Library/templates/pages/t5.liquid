@@ -1,0 +1,468 @@
+{% layout "full-page" %}
+{% block page_title %}T5. Time Series{% endblock %}
+{% block content %}
+<!---
+title: Time Series Page (T5)
+external: true
+type: template
+group: Templates
+markup: false
+usage: |
+  The core design principle of 'it’s all about the numbers', including the following requirements, has been applied to this template:
+
+  *Primary Needs*
+
+  - Download the time series as CVS or Excel (expert analyst)
+  - View the time series as chart (information forager)
+
+  *Secondary Needs*
+
+  - Understand what the time series is (information forager)
+  - Download additional data (expert analyst; information forager)
+
+  *Additional needs*
+
+  - Understand broader context by reading a bulletin/report (information forager)
+  - Check usage notes and methodology (expert analyst)
+  - View time series as table
+  - Customise Y-axis: yearly vs quarterly vs monthly
+  - Customise the date range shown
+
+  This design strongly prioritises the above specific primary needs rather than any requirement to facilitate any onward journey.
+  Additionally, user research has shown that the most preferred data formats were high level summaries and charts and raw data.
+-->
+
+<div class="page-header page-header--article page-header--time-series slate--green">
+    <div class="wrapper wrapper--article">
+      <p class="page-header__title page-header--time-series-desc">Time Series:</p>
+      <h1 class="alpha flush--third--bottom">Consumer Price Indices - CPI indices: 1988 to 2014</h1>
+
+      <img class="page-header--article__img" src="/ui/img/national-statistics.png" alt="The official National Statistics badge"/>
+
+      <div class="page-header--article__body">
+        <div class="page-header--article__split">
+          <dl class="split--fixed page-header--article__split__meta">
+            <dt class="split--fixed__title definition-emphasis">Release date: </dt>
+            <dd><span class="definition-emphasis">19 February 2014</span> <a href="#" class="split__multiline-break">View previous versions</a></dd>
+
+            <dt class="split--fixed__title">Next release: </dt>
+            <dd>19 March 2014</dd>
+
+            <dt class="split--fixed__title">Contact: </dt>
+            <dd><a href="#contact-box">Kate Pegler</a></dd>
+          </dl>
+
+          <dl class="split--fixed page-header--article__split__meta--narrow">
+            <dt class="split--fixed__title split--fixed__title--small definition-emphasis">Series ID: </dt>
+            <dd class="definition-emphasis">MC6A</dd>
+
+            <dt class="split--fixed__title split--fixed__title--small definition-emphasis">Units: </dt>
+            <dd class="definition-emphasis">Index 2010=100</dd>
+            <dd>Not seasonally adjusted</dd>
+          </dl>
+        </div>
+      </div><!-- /page-header-article__body -->
+
+      <div class="page-header__icons">
+        <a href="#" class="link-complex">
+          <span class="icon icon-twitter icon--grey">
+            <span class="visuallyhidden">Share on Twitter</span>
+          </span>
+        </a>
+        <a href="#" class="link-complex">
+          <span class="icon icon-facebook icon--grey">
+            <span class="visuallyhidden">Share on Facebook</span>
+          </span>
+        </a>
+        <a href="#" class="link-complex">
+          <span class="icon icon-gplus icon--grey">
+            <span class="visuallyhidden">Share on Google Plus</span>
+          </span>
+        </a>
+      </div>
+    </div><!-- /wrapper -->
+  </div><!-- /page-header -->
+
+
+  <div class="wrapper">
+    <div class="actionable-header--tight panel--mar-small">
+      <!-- This title will need to be dynamically generated on the server -->
+      <span class="actionable-header--tight__title gamma flush--bottom body-type--heavy">Download this entire time series from 1988—2014</span>
+      <div class="actionable-header--tight__action actionable-header--tight__action--left">
+        <a class="btn btn--primary btn--small" href="#">
+          .csv
+          <span class="icon-download icon--button-inline" role="presentation"></span>
+        </a>
+        <a class="btn btn--primary btn--small" href="#">
+          .xls
+          <span class="icon-download icon--button-inline" role="presentation"></span>
+        </a>
+      </div>
+    </div>
+    <div class="chart-area slate">
+      <div class="chart-area__controls">
+        <form data-chart-controls data-chart-controls-for='["chart1", "table1"]' >
+          <div class="button-bar chart-area__controls__buttons">
+            <div class="button-group chart-area__controls__type">
+              <label class="btn btn--secondary btn--small btn--narrow btn--thin btn--secondary--active">
+                Chart
+                <input type="radio" name="type" data-chart-controls-type value="chart1" checked />
+              </label>
+              <label class="btn btn--secondary btn--small btn--narrow btn--thin">
+                Table
+                <input type="radio" name="type" data-chart-controls-type value="table1"/>
+              </label>
+            </div>
+            <div class="button-group chart-area__controls__timespan">
+              <label class="btn btn--secondary btn--small btn--narrow btn--thin">
+                Monthly
+                <input type="radio" name="scale" data-chart-controls-scale value="month" checked/>
+              </label>
+              <label class="btn btn--secondary btn--small btn--narrow btn--thin">
+                Quarterly
+                <input type="radio" name="scale" data-chart-controls-scale value="quarter"/>
+              </label>
+              <label class="btn btn--secondary btn--small btn--narrow btn--thin">
+                Yearly
+                <input type="radio" name="scale" data-chart-controls-scale value="year"/>
+              </label>
+            </div>
+          </div>
+          <!-- /chart-area__controls__buttons -->
+          <div class="chart-area__controls__time">
+            <span class="chart-area__controls__time__label">Time period:</span>
+            <ul class="nav flush--top chart-area__controls__time__ranges">
+              <li>
+                <a href="#" data-chart-controls-range="all">All</a>
+              </li>
+              <li>
+                <a href="#" data-chart-controls-range="10yr">Last 10 yrs</a>
+              </li>
+              <li>
+                <a href="#" data-chart-controls-range="5yr" class="chart-area__controls__active">Last 5 yrs</a>
+              </li>
+              <li data-chart-control-custom-range>
+                <a href="#" class="link-complex" data-chart-control-custom-trigger-for="chart-area__controls__custom">
+                  <span class="link-complex__target">Custom</span>
+                  <span class="icon-down-open-big icon--inline" role="presentation"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- /chart-area__controls__time -->
+
+          <div class="chart-area__controls__custom js-hidden" id="customControls">
+
+            <div class="chart-area__controls__custom__errors"></div>
+
+            <div class="chart-area__controls__custom__container">
+              <div class="chart-area__controls__dropdowns">
+                <fieldset class="chart-area__controls__date">
+                  <legend class="chart-area__controls__date__label">From</legend>
+
+                  <label class="visuallyhidden" for="from-month">Month</label>
+                  <select class="chart-area__controls__month" id="from-month" name="from-month" data-chart-controls-from-month>
+                    <option value="1">Jan</option>
+                    <option value="2">Feb</option>
+                    <option value="3">Mar</option>
+                    <option value="4">Apr</option>
+                    <option value="5">May</option>
+                    <option value="6">Jun</option>
+                    <option value="7">Jul</option>
+                    <option value="8">Aug</option>
+                    <option value="9" selected>Sep</option>
+                    <option value="10">Oct</option>
+                    <option value="11">Nov</option>
+                    <option value="12">Dec</option>
+                  </select>
+
+                  <label class="visuallyhidden" for="from-year">Year</label>
+                  <select class="chart-area__controls__year" id="from-year" name="from-year" data-chart-controls-from-year>
+
+                    <option value="1988">1988</option>
+
+                    <option value="1989">1989</option>
+
+                    <option value="1990">1990</option>
+
+                    <option value="1991">1991</option>
+
+                    <option value="1992">1992</option>
+
+                    <option value="1993">1993</option>
+
+                    <option value="1994">1994</option>
+
+                    <option value="1995">1995</option>
+
+                    <option value="1996">1996</option>
+
+                    <option value="1997">1997</option>
+
+                    <option value="1998">1998</option>
+
+                    <option value="1999">1999</option>
+
+                    <option value="2000">2000</option>
+
+                    <option value="2001">2001</option>
+
+                    <option value="2002">2002</option>
+
+                    <option value="2003">2003</option>
+
+                    <option value="2004">2004</option>
+
+                    <option value="2005">2005</option>
+
+                    <option value="2006">2006</option>
+
+                    <option value="2007">2007</option>
+
+                    <option value="2008">2008</option>
+
+                    <option value="2009" selected>2009</option>
+
+                    <option value="2010">2010</option>
+
+                    <option value="2011">2011</option>
+
+                    <option value="2012">2012</option>
+
+                    <option value="2013">2013</option>
+
+                    <option value="2014">2014</option>
+
+                  </select>
+                </fieldset>
+
+                <fieldset class="chart-area__controls__date">
+                  <legend class="chart-area__controls__date__label">To</legend>
+
+                  <label class="visuallyhidden" for="to-month">Month</label>
+                  <select class="chart-area__controls__month" id="to-month" name="to-month" data-chart-controls-to-month>
+                    <option value="1">Jan</option>
+                    <option value="2">Feb</option>
+                    <option value="3">Mar</option>
+                    <option value="4">Apr</option>
+                    <option value="5">May</option>
+                    <option value="6">Jun</option>
+                    <option value="7">Jul</option>
+                    <option value="8">Aug</option>
+                    <option value="9" selected>Sep</option>
+                    <option value="10">Oct</option>
+                    <option value="11">Nov</option>
+                    <option value="12">Dec</option>
+                  </select>
+
+                  <label class="visuallyhidden" for="to-year">Month</label>
+                  <select class="chart-area__controls__year" id="to-year" name="to-year" data-chart-controls-to-year>
+                    <option value="1986">1986</option>
+
+                    <option value="1987">1987</option>
+
+                    <option value="1988">1988</option>
+
+                    <option value="1989">1989</option>
+
+                    <option value="1990">1990</option>
+
+                    <option value="1991">1991</option>
+
+                    <option value="1992">1992</option>
+
+                    <option value="1993">1993</option>
+
+                    <option value="1994">1994</option>
+
+                    <option value="1995">1995</option>
+
+                    <option value="1996">1996</option>
+
+                    <option value="1997">1997</option>
+
+                    <option value="1998">1998</option>
+
+                    <option value="1999">1999</option>
+
+                    <option value="2000">2000</option>
+
+                    <option value="2001">2001</option>
+
+                    <option value="2002">2002</option>
+
+                    <option value="2003">2003</option>
+
+                    <option value="2004">2004</option>
+
+                    <option value="2005">2005</option>
+
+                    <option value="2006">2006</option>
+
+                    <option value="2007">2007</option>
+
+                    <option value="2008">2008</option>
+
+                    <option value="2009">2009</option>
+
+                    <option value="2010">2010</option>
+
+                    <option value="2011">2011</option>
+
+                    <option value="2012">2012</option>
+
+                    <option value="2013">2013</option>
+
+                    <option value="2014" selected>2014</option>
+
+                  </select>
+                </fieldset>
+              </div>
+              <div class="chart-area__controls__submit">
+                <input class="btn btn--small btn--thin btn--narrow btn--primary" type="submit" name="submit" data-chart-controls-submit value="Show">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div><!-- /chart-area__controls -->
+
+
+
+      <div data-chart="timeseries"
+           data-chart-title="Consumer Price Indices - CPI indices: 1988 to 2014"
+           data-chart-tooltip="D7BT"
+           data-chart-ylabel="D7BT"
+           data-chart-data-id="chart1" class="chart">
+
+        <!-- this is a no-js image representation of the graph, which needs to be built on the server -->
+        <noscript>
+          <img src="http://placehold.it/1000x500&amp;text=No+-+JS+Chart+area+goes+here" alt="">
+        </noscript>
+      </div>
+
+      <div data-chart="datatable"
+           data-chart-data-id="table1"
+           data-chart-col-label="D7BT" class="js-hidden">
+
+        <!-- no-js table set by the server -->
+        <table class="tablesaw"><thead><tr><th data-priority="persist">Period</th><th>D7BT</th></tr></thead><tbody><tr><th>Sep 2009</th><td>111.5</td></tr><tr><th>Oct 2009</th><td>111.7</td></tr><tr><th>Nov 2009</th><td>112</td></tr><tr><th>Dec 2009</th><td>112.6</td></tr><tr><th>Jan 2010</th><td>112.4</td></tr><tr><th>Feb 2010</th><td>112.9</td></tr><tr><th>Mar 2010</th><td>113.5</td></tr><tr><th>Apr 2010</th><td>114.2</td></tr><tr><th>May 2010</th><td>114.4</td></tr><tr><th>Jun 2010</th><td>114.6</td></tr><tr><th>Jul 2010</th><td>114.3</td></tr><tr><th>Aug 2010</th><td>114.9</td></tr><tr><th>Sep 2010</th><td>114.9</td></tr><tr><th>Oct 2010</th><td>115.2</td></tr><tr><th>Nov 2010</th><td>115.6</td></tr><tr><th>Dec 2010</th><td>116.8</td></tr><tr><th>Jan 2011</th><td>116.9</td></tr><tr><th>Feb 2011</th><td>117.8</td></tr><tr><th>Mar 2011</th><td>118.1</td></tr><tr><th>Apr 2011</th><td>119.3</td></tr><tr><th>May 2011</th><td>119.5</td></tr><tr><th>Jun 2011</th><td>119.4</td></tr><tr><th>Jul 2011</th><td>119.4</td></tr><tr><th>Aug 2011</th><td>120.1</td></tr><tr><th>Sep 2011</th><td>120.9</td></tr><tr><th>Oct 2011</th><td>121</td></tr><tr><th>Nov 2011</th><td>121.2</td></tr><tr><th>Dec 2011</th><td>121.7</td></tr><tr><th>Jan 2012</th><td>121.1</td></tr><tr><th>Feb 2012</th><td>121.8</td></tr><tr><th>Mar 2012</th><td>122.2</td></tr><tr><th>Apr 2012</th><td>122.9</td></tr><tr><th>May 2012</th><td>122.8</td></tr><tr><th>Jun 2012</th><td>122.3</td></tr><tr><th>Jul 2012</th><td>122.5</td></tr><tr><th>Aug 2012</th><td>123.1</td></tr><tr><th>Sep 2012</th><td>123.5</td></tr><tr><th>Oct 2012</th><td>124.2</td></tr><tr><th>Nov 2012</th><td>124.4</td></tr><tr><th>Dec 2012</th><td>125</td></tr><tr><th>Jan 2013</th><td>124.4</td></tr><tr><th>Feb 2013</th><td>125.2</td></tr><tr><th>Mar 2013</th><td>125.6</td></tr><tr><th>Apr 2013</th><td>125.9</td></tr><tr><th>May 2013</th><td>126.1</td></tr><tr><th>Jun 2013</th><td>125.9</td></tr><tr><th>Jul 2013</th><td>125.8</td></tr><tr><th>Aug 2013</th><td>126.4</td></tr><tr><th>Sep 2013</th><td>126.8</td></tr><tr><th>Oct 2013</th><td>126.9</td></tr><tr><th>Nov 2013</th><td>127</td></tr><tr><th>Dec 2013</th><td>127.5</td></tr><tr><th>Jan 2014</th><td>126.7</td></tr><tr><th>Feb 2014</th><td>127.4</td></tr><tr><th>Mar 2014</th><td>127.7</td></tr><tr><th>Apr 2014</th><td>128.1</td></tr><tr><th>May 2014</th><td>128</td></tr><tr><th>Jun 2014</th><td>128.3</td></tr><tr><th>Jul 2014</th><td>127.8</td></tr><tr><th>Aug 2014</th><td>128.3</td></tr><tr><th>Sep 2014</th><td>128.4</td></tr></tbody></table>
+      </div>
+
+      <!--
+      This script tag contains the full data for the time series.
+
+      It has been placed separately within a script block so that this can be placed at bottom of the page
+      for performance gain.
+
+      Data values are for months.
+      -->
+      <script type="application/json" data-chart-data-for='["chart1", "table1"]'>
+        {
+          "start": {
+            "year": "1988",
+            "month": "1"
+          },
+          "values": [61.9, 62.1, 62.3, 63.1, 63.4, 63.6, 63.6, 63.8, 64.1, 64.4, 64.7, 64.8, 65, 65.2, 65.5, 66.4, 66.7, 67, 66.9, 67, 67.5, 68, 68.2, 68.3, 68.6, 69, 69.4, 70.6, 71.3, 71.6, 71.4, 72.2, 72.9, 73.5, 73.6, 73.5, 73.5, 73.9, 74.1, 76.6, 77.2, 77.6, 77.4, 77.7, 78.1, 78.5, 78.8, 78.8, 78.6, 79, 79.4, 80.2, 80.5, 80.6, 80.2, 80.2, 80.5, 80.7, 80.8, 80.8, 80.4, 80.9, 81.3, 82.2, 82.5, 82.5, 82.2, 82.5, 82.9, 82.8, 82.6, 82.8, 82.5, 82.9, 83.1, 83.9, 84.1, 84.1, 83.6, 84.1, 84.2, 84, 84.1, 84.5, 84.5, 84.9, 85.3, 85.8, 86.2, 86.3, 85.8, 86.3, 86.7, 86.5, 86.5, 87, 86.8, 87.2, 87.5, 88, 88.3, 88.4, 87.8, 88.3, 88.7, 88.7, 88.7, 89, 88.6, 88.8, 89, 89.4, 89.6, 89.8, 89.5, 90, 90.3, 90.3, 90.4, 90.5, 89.9, 90.3, 90.5, 91, 91.5, 91.3, 90.8, 91.2, 91.6, 91.6, 91.7, 91.9, 91.4, 91.5, 92, 92.4, 92.7, 92.6, 92, 92.3, 92.7, 92.6, 92.7, 93, 92.1, 92.4, 92.6, 92.9, 93.2, 93.3, 92.8, 92.8, 93.6, 93.5, 93.7, 93.7, 92.9, 93.1, 93.4, 94, 94.7, 94.9, 94.2, 94.5, 94.8, 94.7, 94.5, 94.7, 94.4, 94.5, 94.9, 95.3, 95.5, 95.5, 95.2, 95.5, 95.7, 95.9, 95.9, 96.3, 95.7, 96, 96.3, 96.7, 96.7, 96.5, 96.5, 96.8, 97.1, 97.2, 97.2, 97.5, 97, 97.2, 97.4, 97.8, 98.1, 98.1, 97.8, 98.1, 98.2, 98.4, 98.6, 99.1, 98.6, 98.8, 99.3, 99.7, 100, 100, 100.1, 100.4, 100.6, 100.7, 100.7, 101, 100.5, 100.9, 101.1, 101.7, 102.2, 102.5, 102.5, 102.9, 103, 103.2, 103.4, 104, 103.2, 103.7, 104.2, 104.5, 104.8, 105, 104.4, 104.7, 104.8, 105.3, 105.6, 106.2, 105.5, 106.3, 106.7, 107.6, 108.3, 109, 109, 109.7, 110.3, 110, 109.9, 109.5, 108.7, 109.6, 109.8, 110.1, 110.7, 111, 110.9, 111.4, 111.5, 111.7, 112, 112.6, 112.4, 112.9, 113.5, 114.2, 114.4, 114.6, 114.3, 114.9, 114.9, 115.2, 115.6, 116.8, 116.9, 117.8, 118.1, 119.3, 119.5, 119.4, 119.4, 120.1, 120.9, 121, 121.2, 121.7, 121.1, 121.8, 122.2, 122.9, 122.8, 122.3, 122.5, 123.1, 123.5, 124.2, 124.4, 125, 124.4, 125.2, 125.6, 125.9, 126.1, 125.9, 125.8, 126.4, 126.8, 126.9, 127, 127.5, 126.7, 127.4, 127.7, 128.1, 128, 128.3, 127.8, 128.3, 128.4]
+        }
+      </script>
+
+      <div class="chart-area__footer">
+        <span class="chart-area__footer__label">Download custom data</span>
+        <div class="chart-area__footer__actions">
+          <a class="btn btn--primary btn--small" href="#">
+            .csv
+            <span class="icon-download icon--button-inline" role="presentation"></span>
+          </a>
+          <a class="btn btn--primary btn--small" href="#">
+            .xls
+            <span class="icon-download icon--button-inline" role="presentation"></span>
+          </a>
+          <a class="btn btn--primary btn--small" href="#">
+            Image
+            <span class="icon-download icon--button-inline" role="presentation"></span>
+          </a>
+        </div>
+      </div>
+    </div><!-- /chart-area -->
+  </div>
+
+  <div class="wrapper panel--mar">
+    <div class="grid-wrap">
+      <div class="grid-col tablet-wide-grid-two-thirds">
+        <div class="lede">
+          <p>
+            <b>The alcoholic beverages index</b>
+            is calculating weights based on sales to UK businesses and government outside of the service sector. For example, sales of legal services to a UK manufacturing company would be included, but sales to an accountancy company (another service provider) would be excluded. This index gives a measure of inflation that is specific to non-service sector businesses.
+          </p>
+        </div>
+
+        <h2 class="delta flush--half--bottom">Important Information and Usage Notes</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione dolores consequatur ipsa officia, facilis eveniet, tempore cum temporibus animi et sapiente quisquam vero ad expedita delectus ducimus enim! Molestias, ea!</p>
+        <p>Ut quibusdam, repellat. Cumque, explicabo, quod deleniti eos repellat iure sunt optio iusto inventore debitis aperiam, temporibus mollitia non harum nulla sit libero corporis quisquam tempore vel iste. Laborum, minus!</p>
+      </div>
+      <div class="grid-col tablet-wide-grid-one-third">
+        <div class="box box--padded lifted sectioned">
+          <h2 class="delta flush--half--bottom">Related data</h2>
+          <p>This data is also available in these larger datasets:</p>
+          <ul class="list--neutral list--spaced">
+            <li><a href="#">Producer Price Index dataset</a></li>
+            <li><a href="#">Gross Domestic Product dataset</a></li>
+            <li><a href="#">Producer Price Indices</a></li>
+          </ul>
+        </div>
+
+        <div class="box box--padded lifted sectioned">
+          <h2 class="delta flush--half--bottom">Related bulletins</h2>
+          <ul class="list--neutral list--spaced">
+            <li><a href="#">Producer Price Inflation, January 2014</a></li>
+            <li><a href="#">Consumer Price Inflation, January 2014</a></li>
+            <li><a href="#">Economic Review, January 2014</a></li>
+          </ul>
+          <div class="box__footer">
+            <p>
+              <a href="#">See all (6) bulletins</a>
+            </p>
+          </div>
+        </div>
+      </div><!-- /grid-col -->
+    </div><!-- /grid-wrap -->
+  </div><!-- /wrapper -->
+  <div class="wrapper panel--mar">
+    <div class="grid-wrap">
+      <div class="grid-col tablet-wide-grid-two-thirds">
+        <div class="panel--bottom-mar">
+          <div class="accordion is-expanded" role="tablist">
+            <h2 aria-selected="false" tabindex="0" role="tab" class="delta accordion__title">Methodology</h2>
+            <div aria-expanded="false" role="tabpanel" class="accordion__content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea animi, soluta vitae ratione ab optio hic numquam fugiat harum culpa cum dolore voluptatibus et voluptas autem est laborum minima, libero!</p>
+              <p>Vitae officiis accusamus quas? Natus reiciendis dolor dolore delectus, magnam maiores necessitatibus facere, iste dolores cum laboriosam animi facilis id consectetur laudantium at perspiciatis, eos. Non possimus distinctio, quaerat beatae.</p>
+            </div>
+          </div>
+        </div>
+      </div><!-- /grid-col -->
+
+      <div class="grid-col tablet-wide-grid-one-third">
+        <div class="box box--padded lifted sectioned" id="contact-box">
+          <span class="icon icon--mega icon--grey icon--flush icon-info-circled"></span>
+          <h2 class="body-type--heavy gamma">Contact Details for this time series</h2>
+          <div class="vcard">
+             <div class="name">Philip Wales</div>
+             <div class="organisation">Business Prices</div>
+             <div class="email"><a href="mailto:PhilipWales@ons.gsi.gov.uk">PhilipWales@ons.gsi.gov.uk</a></div>
+             <div class="tel">Telephone: +44 (0)1633 456468</div>
+          </div>
+
+          <footer class="box__footer box__footer--right">
+            <a class="link-complex mini" href="#">
+              <span class="link-complex__target box__action__text">View all contacts</span>
+              <span class="icon-book" role="presentation"></span>
+            </a>
+          </footer>
+        </div> <!-- /box -->
+      </div><!-- /grid-col -->
+    </div><!-- /grid-wrap -->
+  </div><!-- /wrapper -->
+
+{% endblock %}
+{% block custom_scripts %}
+{% endblock %}

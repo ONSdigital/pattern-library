@@ -1,0 +1,11 @@
+.skiplink {
+  position: absolute!important; // Important to override the effects of .visuallyhidden.focusable
+  top: 0;
+  left: 0;
+  background-color: $off-black;
+  display: block;
+  width: 100%!important; // Important to override the effects of .visuallyhidden.focusable
+  text-align: center;
+  @include rem(line-height, 45);
+  z-index: 1001;
+}

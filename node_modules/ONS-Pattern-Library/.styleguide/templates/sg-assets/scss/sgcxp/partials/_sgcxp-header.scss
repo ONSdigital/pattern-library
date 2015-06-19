@@ -1,0 +1,120 @@
+/* ======================================================
+   Header
+   ======================================================*/
+
+
+/* ------------------------------
+ * Main header layout
+ */
+.sgcxp__header {
+  background-color: $white;
+  @include font-weight(normal);
+  position: relative;
+  z-index: 1000;
+  border-bottom: 1px solid $mid-grey;
+  @include box-shadow(3px 3px 5px 0 rgba(0,0,0,0.04));
+}
+
+.sgcxp__header__inner {
+  height:90px;
+  margin: 0 auto;
+  max-width: $max-width;
+  position: relative;
+  @include pie-clearfix;
+  @include rem(padding, 20 15 0);  
+  @include respond-min($bp-desktop-min) {
+    height:100px;
+    padding-top:0;
+  }
+}
+
+
+/* ------------------------------
+ * Logo
+ */
+.sgcxp__logo {
+  width: 70px;
+  height: 65px;
+  float: left;
+  display: block;
+  overflow: hidden;
+  text-indent: -1000px;
+  background: transparent image-url('logo.svg') no-repeat 0 0;
+  background-size: cover;
+  @extend %vertical-align;
+
+  .no-svg & {
+    background-image: image-url('logo.png');
+  }
+
+  @include respond-min($bp-menu-min) {
+    margin: 0;
+    width: 295px;
+    height: 65px;
+  }
+
+  &:focus {
+    outline: 1px dotted black;
+  }
+}
+
+
+/* ------------------------------
+ * Update panel to show 'Last updated' content
+ */
+
+.sgcxp__update-panel {
+  background: $off-black;
+  color: $mid-grey;
+  left:0;
+  position:absolute; 
+  text-transform:uppercase;
+  text-align:right;
+  top:0;
+  width:100%;
+  @include font-size(10);
+  @include respond-min($bp-desktop-min) {
+    @include font-size(13);
+    position:static; 
+  }
+}
+
+  .sgcxp__update-panel__inner {
+    margin: 0 auto;
+    max-width: $max-width;
+    @include rem(padding, 5 15 3);
+    @include respond-min($bp-desktop-min) {
+      @include rem(padding, 10 15);
+    }
+  }
+
+/* ------------------------------
+ * Support panel to show support details
+ */
+
+.sgcxp__support-panel {
+  background: $light-grey;
+  color:$dark-grey;
+  @include font-size(12);
+  @include font-weight(normal);
+  @include respond-min($bp-desktop-min) {
+    text-align:right;
+    @include font-size(15);
+  }
+  a {color:$dark-grey;}
+}
+
+  .sgcxp__support-panel__inner {
+    margin: 0 auto;
+    max-width: $max-width;
+    @include rem(padding, 10 15);
+    @include respond-min($bp-desktop-min) {
+      @include rem(padding, 15);
+    }
+  }
+
+
+
+
+
+

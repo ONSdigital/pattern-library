@@ -1,0 +1,170 @@
+{% block page_title %} Upcoming releases {% endblock %}
+
+{% block custom_head %}
+<style media="screen">
+  body {
+    padding: 0;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+  <h1 class="alpha">Upcoming releases component</h1>
+  <h2>Combines a table, a tab interface, and the dates pattern</h2>
+  <div class="grid-wrap">
+    <div class="grid-col desktop-grid-two-thirds">
+      <div class="next-releases tab-pane tab-pane--dual">
+        <ul class="list--neutral nav--block--spaced">
+          <li>
+            <a href="#published" class="tab-pane__tab">
+              <h2 class="tab-pane__tab__header">Published <br class="tab-pane__tab__break">Releases</h2>
+            </a>
+          </li>
+          <li>
+            <a href="#upcoming" class="tab-pane__tab">
+              <h2 class="tab-pane__tab__header">Upcoming <br class="tab-pane__tab__break">Releases</h2>
+            </a>
+          </li>
+        </ul>
+        <section id="published">
+          <ol class="list--table list--table--cushy table--striped-light list--table--releases">
+            <li class="list--table__item list--table__body">
+              <div class="list--table__item__body list--table__item__body--date">
+                <div class="list--table__item__body__inner">
+                  <time class="date date--stacked" datetime="2014-04-29">
+                    <span class="date--stacked__date">5</span>
+                    <span class="date--stacked__month date--stacked__month--shorthand">Jul</span>
+                    <span class="date--stacked__year">2014</span>
+                  </time>
+                </div>
+              </div>
+
+              <div class="list--table__item__body list--table__item__body--release-caption">
+                <div class="list--table__item__body__inner list--table__item__body__split">
+                  <div class="list--table__item__body__three-fifths">
+                    <h3 class="delta flush--half--bottom headline-spacious">
+                      <a href="#">National Accounts Sector Classification - Classification update, July 2014</a>
+                      <span tabindex="0" title="Lorem ipsum dolor sit amet" class="tooltip icon-info-circled icon--warm icon--inline icon--left-margin"></span>
+                    </h3>
+                  </div>
+                  <div class="list--table__item__body__two-fifths">
+                    <dl class="list--definition flush micro">
+                      <dt>Categories:</dt>
+                      <dd>Inflation and Price Indices</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="list--table__item list--table__body">
+              <div class="list--table__item__body list--table__item__body--date">
+                <div class="list--table__item__body__inner">
+                  <time class="date date--stacked" datetime="2014-04-29">
+                    <span class="date--stacked__date">27</span>
+                    <span class="date--stacked__month date--stacked__month--shorthand">Aug</span>
+                    <span class="date--stacked__year">2014</span>
+                  </time>
+                </div>
+              </div>
+
+              <div class="list--table__item__body list--table__item__body--release-caption">
+                <div class="list--table__item__body__inner list--table__item__body__split">
+                  <div class="list--table__item__body__three-fifths">
+                    <h3 class="delta flush--half--bottom headline-spacious">
+                      <a href="#">Retail Sales - July 2014</a>
+                      <span tabindex="0" title="Lorem ipsum dolor sit amet" class="tooltip icon-info-circled icon--warm icon--inline icon--left-margin"></span>
+                    </h3>
+                  </div>
+                  <div class="list--table__item__body__two-fifths">
+                    <dl class="list--definition flush micro">
+                      <dt>Categories:</dt>
+                      <dd>Inflation and Price Indices</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ol>
+          <div class="list--table__item list--table__footer list--table--footer--releases">
+            <div class="list--table__item__body">
+              <a href="#" class="link-muted">View all scheduled releases</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="upcoming">
+          <ol class="list--table list--table--cushy table--striped-light list--table--releases">
+            <li class="list--table__item list--table__body">
+              <div class="list--table__item__body list--table__item__body--date">
+                <div class="list--table__item__body__inner">
+                  <time class="date date--stacked" datetime="2014-04-29">
+                    <span class="date--stacked__date">5</span>
+                    <span class="date--stacked__month date--stacked__month--shorthand">Jul</span>
+                    <span class="date--stacked__year">2014</span>
+                  </time>
+                </div>
+              </div>
+
+              <div class="list--table__item__body list--table__item__body--release-caption">
+                <div class="list--table__item__body__inner list--table__item__body__split">
+                  <div class="list--table__item__body__three-fifths">
+                    <h3 class="delta flush--half--bottom headline-spacious">
+                      <a href="#">Reaaaaally long title. National Accounts Sector Classification - Classification update, July 2014. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita ullam, possimus ratione optio dolores, est architecto ad rem saepe incidunt deleniti tempora labore excepturi culpa quae praesentium! Architecto, assumenda, dicta.</a>
+                      <span tabindex="0" title="Lorem ipsum dolor sit amet" class="tooltip icon-info-circled icon--warm icon--inline icon--left-margin"></span>
+                    </h3>
+                  </div>
+                  <div class="list--table__item__body__two-fifths">
+                    <dl class="list--definition flush micro">
+                      <dt>Categories:</dt>
+                      <dd>Inflation and Price Indices</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="list--table__item list--table__body">
+              <div class="list--table__item__body list--table__item__body--date">
+                <div class="list--table__item__body__inner">
+                  <time class="date date--stacked" datetime="2014-04-29">
+                    <span class="date--stacked__date">27</span>
+                    <span class="date--stacked__month date--stacked__month--shorthand">Aug</span>
+                    <span class="date--stacked__year">2014</span>
+                  </time>
+                </div>
+              </div>
+
+              <div class="list--table__item__body list--table__item__body--release-caption">
+                <div class="list--table__item__body__inner list--table__item__body__split">
+                  <div class="list--table__item__body__three-fifths">
+                    <h3 class="delta flush--half--bottom headline-spacious">
+                      <a href="#">Short.</a>
+                      <span tabindex="0" title="Lorem ipsum dolor sit amet" class="tooltip icon-info-circled icon--warm icon--inline icon--left-margin"></span>
+                    </h3>
+                  </div>
+                  <div class="list--table__item__body__two-fifths">
+                    <dl class="list--definition flush micro">
+                      <dt>Categories:</dt>
+                      <dd>Inflation and Price Indices,</dd>
+                      <dd>Indices Inflations Price And,</dd>
+                      <dd>Random Category Name,</dd>
+                      <dd>Inflation and Price Indices</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ol>
+          <div class="list--table__item list--table__footer list--table--footer--releases">
+            <div class="list--table__item__body">
+              <a href="#" class="link-muted">View all scheduled releases</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

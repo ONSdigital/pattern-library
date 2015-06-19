@@ -1,0 +1,36 @@
+{% block page_title %} Divider (layout system) {% endblock %}
+
+{% block custom_head %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+  <h1>Divider layout system</h1>
+  <p>
+    For when you need a layout which is divided vertically on narrow viewports and horizontally on wider viewports
+  </p>
+  <div>
+    <!---
+    title: Divider
+    group: General
+    usage: >
+      Lightweight dividers, to create clearer sections with horizontal space on
+      medium viewports and up ('tablet')
+      and vertical space on narrow viewports ('mobile')
+    devnotes: >
+      What side the border is on needs to be specified as one side can be taller
+      than the other. Use `.divider__half--border-first` and
+      `.divider__half--border-last` classes to specify which
+      DOM element it's being applied to.
+    -->
+    <div class="divider">
+      <div class="divider__half divider__half--border divider__half--border-first">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed ad nam iure vel, quibusdam tempore quod nostrum eos dolore in saepe laboriosam accusamus sapiente atque voluptas repellendus perspiciatis itaque, nihil.</div>
+      <div class="divider__half">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi illum, possimus quod, nisi exercitationem et aperiam nesciunt dolor fugiat sunt nemo iusto aliquid a provident dolorum officiis animi, saepe cupiditate.</div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

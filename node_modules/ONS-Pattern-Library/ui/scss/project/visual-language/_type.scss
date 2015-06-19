@@ -210,3 +210,7 @@ a {
 .link-muted {
   @extend %link-muted;
 }
+
+address {
+  font-style: normal;
+}

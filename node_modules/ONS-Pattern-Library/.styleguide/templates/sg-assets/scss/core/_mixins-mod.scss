@@ -1,0 +1,63 @@
+//==============================================================
+// Typography helpers
+//
+
+// @TODO: check for newer rem mixin
+//
+//--------------------------
+// Rem helper mixin
+// Use to apply a rem measurement to a certain css property
+//
+// @param $property
+//   The CSS property to apply the value to.
+//   (E.g. margin-bottom or margin)
+//
+// @param $value
+//   The measurement to apply to the property. This should be a value in pixels, but *without* the unit and can be shorthand.
+//   (E.g. 27 or 10 20)
+//
+// @TODO: Replace explicit rem and px declarations throughout stie styles with this mixin
+// @OPTIMIZE: Explore potential improvements, including how to set SASS vars to null without the use of an 'ambiguous zero'
+
+@mixin rem($property, $size_in_px) {
+  // Init shorthand variables (must use 0 for null...)
+  $shorthand_in_px: 0;
+  $shorthand_in_rem: 0;
+
+  @each $size in $size_in_px { // Loop through values and concatenate
+    $shorthand_in_px: $shorthand_in_px + ($size) + px + " ";
+    $shorthand_in_rem: $shorthand_in_rem + ($size/10) + rem + " ";
+  }
+  // Output styles
+  // IE8 and below don't support REMs so based on our $old-ie variable we will serve it pixels
+  // We use rems so users can resize text - (IE9 still doesnt support text resizing)
+  $old-ie: false !default;
+  @if $old-ie {
+    #{$property}: $shorthand_in_px;
+  } @else {
+    #{$property}: $shorthand_in_rem;
+  }
+}
+
+// Shorthand wrapper around the rem helper for font size
+@mixin font-size($size_in_px) {
+  @include rem(font-size, $size_in_px);
+}
+
+// Shorthand wrapper around the rem helper for line height
+@mixin line-height($size_in_px) {
+  @include rem(line-height, $size_in_px);
+}
+
+
+//  Vertically align anything
+//  http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+%vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

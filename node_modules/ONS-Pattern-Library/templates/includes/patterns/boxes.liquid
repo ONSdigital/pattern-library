@@ -1,0 +1,444 @@
+{% block page_title %} Boxes {% endblock %}
+
+{% block custom_head %}
+
+  <style>
+    .demo-background {
+      background-color: #E6E3DA;
+      padding: 5rem 2rem;
+    }
+
+  </style>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+  <h1 class="alpha">Boxes</h1>
+</div>
+
+<section class="panel panel--separated--top wrapper">
+  <div class="grid-wrap">
+
+    <div class="grid-col desktop-grid-one-third  tablet-grid-one-half ">
+      <h2 class="delta">Box:</h2>
+      <!---
+      title: Standard box
+      usage: |
+        Boxes are components that can be used to visually compartmentalise different sections of the page.
+        Their look can be extended in a number of ways to place emphasis on different areas of the page.
+      -->
+      <article class="box">
+        <header class="box__header">
+          <h3 class="gamma">
+            Regional Gross Value Added (Income Approach)
+          </h3>
+        </header><!-- /box__header -->
+
+        <div class="box__content">
+          <ul class="list--bullet">
+            <li>In 2012 the South East had the largest increase in GVA</li>
+            <li>Between 1997 and 2011 the contribution of building to total GVA decreased in each of the NUTS1 regions. </li>
+          </ul><!--  /list-bullet -->
+        </div><!-- /box__content -->
+
+        <footer class="box__footer box__actions">
+          <a class="btn btn--primary btn--small btn--narrow" href="#">
+            Download .xls
+            <span class="icon icon-download icon--button-inline"></span>
+          </a>
+        </footer><!-- /box__actions -->
+      </article><!-- /box -->
+    </div>
+
+    <div class="grid-col desktop-grid-one-third  tablet-grid-one-half ">
+      <h2 class="delta">Padded box:</h2>
+      <!--- title: Padded box -->
+      <article class="box box--padded">
+        <header class="box__header">
+          <h3 class="gamma">
+            Consumer Price Inflation
+          </h3>
+        </header><!-- /box__header -->
+        <div class="box__content">
+          <ul class="list--bullet">
+            <li>The Consumer Prices Index (CPI) grew by 1.5%</li>
+            <li>Falls in transport services costs, notably air fares</li>
+          </ul><!--  /list-bullet -->
+        </div><!-- /box__content -->
+        <footer class="box__footer box__actions">
+          <a class="btn btn--primary btn--small btn--narrow" href="#">
+            Download .xls
+            <span class="icon icon-download icon--button-inline"></span>
+          </a>
+        </footer>
+      </article><!-- /box -->
+    </div>
+
+    <div class="grid-col desktop-grid-one-third  tablet-grid-one-half tablet-grid-clear ">
+      <h2 class="delta">Sectioned box</h2>
+      <!---
+      title: Sectioned box
+      usage: >
+       Adds a border to the box class.
+       To be used when the box sits on a white background.
+      -->
+      <article class="box sectioned">
+        <header class="box__header">
+          <h3 class="gamma">
+            Regional Gross Value Added (Income Approach)
+          </h3>
+        </header><!-- /box__header -->
+
+        <div class="box__content">
+          <ul class="list--bullet">
+            <li>In 2012 the South East had the largest increase in GVA</li>
+            <li>Between 1997 and 2011 the contribution of building to total GVA decreased in each of the NUTS1 regions. </li>
+          </ul><!--  /list-bullet -->
+
+        </div><!-- /box__content -->
+        <footer class="box__footer box__actions">
+          <a class="btn btn--primary btn--small btn--narrow" href="#">
+            Download .xls
+            <span class="icon icon-download icon--button-inline"></span>
+          </a>
+        </footer>
+      </article><!-- /box -->
+    </div>
+
+    <div class="grid-col desktop-grid-one-third tablet-grid-one-half ">
+      <h2 class="delta">Lifted box</h2>
+      <!---
+      title: Lifted box
+      devnotes: >
+        Uses box-shadow, so comes with the normal CSS3 browser compatibility caveats.
+        Don't rely solely on this to create a visual emphasis.
+      usage: >
+        Adds a drop-shadow to a box element.
+        To be used when the box sits on a white background.
+      -->
+      <article class="box lifted">
+        <header class="box__header">
+          <h3 class="gamma">
+            Regional Gross Value Added (Income Approach)
+          </h3>
+        </header><!-- /box__header -->
+
+        <div class="box__content">
+          <ul class="list--bullet">
+            <li>In 2012 the South East had the largest increase in GVA</li>
+            <li>Between 1997 and 2011 the contribution of building to total GVA decreased in each of the NUTS1 regions. </li>
+          </ul><!--  /list-bullet -->
+
+        </div><!-- /box__content -->
+        <footer class="box__footer box__actions">
+          <a class="btn btn--primary btn--small btn--narrow" href="#">
+            Download .xls
+            <span class="icon icon-download icon--button-inline"></span>
+          </a>
+        </footer>
+      </article><!-- /box -->
+    </div>
+
+    <div class="grid-col desktop-grid-one-third  tablet-grid-one-half tablet-grid-clear">
+      <h2 class="delta">Lifted, sectioned, and padded box</h2>
+      <!---
+      title: Combinations
+      inline: Lifted, sectioned, and padded box
+      devnotes: |
+        Different combinations of classes can be used for different effects.
+      -->
+
+      <article class="box box--padded lifted sectioned">
+        <header class="box__header">
+          <h3 class="gamma">
+            Regional Gross Value Added (Income Approach)
+          </h3>
+        </header><!-- /box__header -->
+
+        <div class="box__content">
+          <ul class="list--bullet">
+            <li>In 2012 the South East had the largest increase in GVA</li>
+            <li>Between 1997 and 2011 the contribution of building to total GVA decreased in each of the NUTS1 regions. </li>
+          </ul><!--  /list-bullet -->
+
+        </div><!-- /box__content -->
+        <footer class="box__footer box__actions">
+          <a class="btn btn--primary btn--small btn--narrow" href="#">
+            Download .xls
+            <span class="icon icon-download icon--button-inline"></span>
+          </a>
+        </footer>
+      </article><!-- /box -->
+    </div>
+
+    <div class="grid-col desktop-grid-one-third tablet-grid-one-half">
+      <h2 class="delta">Vertically sectioned box</h2>
+      <!---
+      title: Vertically sectioned box
+      usage: This will add top and bottom borders to a box.
+      devnotes: >
+        Keep in mind vertical spacing and responsiveness as two borders near/
+        on top of each other look really awful. This may need to be  combined
+        with panels or other means of keeping the distance between elements.
+      -->
+      <article class="box border-vertical">
+        <div class="box__inner box--padded-vertical">
+          <header class="box__header">
+            <h2 class="delta">
+              Contact Details for Business Prices
+            </h2>
+          </header><!-- /box__header -->
+
+          <div class="box__content">
+            <div class="vcard">
+               <div class="name">Kat Pegler</div>
+               <div class="organisation">Business Prices</div>
+               <div class="email"><a href="mailto:ppi@ons.gsi.gov.uk">ppi@ons.gsi.gov.uk</a></div>
+               <div class="tel">Telephone: +44 (0)1633 456468</div>
+            </div>
+          </div><!-- /box__content -->
+
+          <footer class="box__footer">
+            <a class="link-complex mini" href="#">
+              <span class="link-complex__target box__action__text">View all contacts</span>
+              <span class="icon-book" role="presentation"></span>
+            </a>
+          </footer>
+        </div>
+
+      </article><!-- /box -->
+    </div>
+  </div><!-- /grid-wrap -->
+  <div class="grid-wrap">
+    <div class="grid-col desktop-grid-one-third tablet-grid-one-half tablet-grid-clear">
+      <h2 class="delta">ONS-brand sectioned box</h2>
+      <!---
+      title: Box with border
+      inline: Top border
+      usage: >
+        The background is usually white, but may also be tinted off-white using the class `.muted`.
+      -->
+      <article class="box box--padded muted sectioned sectioned-ons-top">
+        <div class="box__inner">
+          <header class="box__header">
+            <h2 class="delta">
+              Contact Details for Business Prices
+            </h2>
+          </header><!-- /box__header -->
+
+          <div class="box__content">
+            <div class="vcard">
+               <div class="name">Kat Pegler</div>
+               <div class="organisation">Business Prices</div>
+               <div class="email"><a href="mailto:ppi@ons.gsi.gov.uk">ppi@ons.gsi.gov.uk</a></div>
+               <div class="tel">Telephone: +44 (0)1633 456468</div>
+            </div>
+          </div><!-- /box__content -->
+
+          <footer class="box__footer">
+            <a class="link-complex mini" href="#">
+              <span class="link-complex__target box__action__text">View all contacts</span>
+              <span class="icon-book" role="presentation"></span>
+            </a>
+          </footer>
+        </div>
+      </article><!-- /box -->
+    </div>
+    <div class="grid-col">
+      <h2 class="delta">
+        Call-out box
+      </h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod ex, sunt ipsam, at labore aut dicta minima eligendi, eaque veritatis fuga quia nulla delectus voluptates. Ipsum quibusdam ex asperiores nihil.</p>
+        <div class="box box--callout">
+          <div class="box__content">
+            <h2 class="delta flush--half--bottom">This is an explanation box</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+        </div>
+      <p>Consequatur ipsum natus harum consequuntur in modi, a, pariatur ad praesentium libero minima aperiam, commodi asperiores perspiciatis numquam repudiandae autem nostrum blanditiis maxime nam sunt. Fugiat mollitia doloribus velit enim.</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel wrapper">
+  <div class="grid-wrap">
+    <div class="grid-col desktop-grid-one-third  tablet-grid-one-half ">
+      <h2 class="delta">Orange box</h2>
+      <!---
+      title: Orange box
+      devnotes: Any anchors and icons will be orange instead of the default blue.
+      usage: >
+        Normally used to highlight content not directly related to the content
+        you are currently viewing.
+      -->
+      <article class="box box--orange box--orange--separated-left">
+        <div class="box__inner border box--padded has-icon">
+          <header class="box__header">
+            <h2 class="gamma">
+              <a href="#">
+                Personal Inflation Calculator
+              </a>
+            </h2>
+          </header><!-- /box__header -->
+
+          <div class="box__content">
+            <p>
+              A first estimate of retail sales in volume and value terms, seasonally and non-seasonally adjusted.
+            </p>
+            <p class="description mini">(4,497 words)</p>
+          </div><!-- /box__content -->
+        </div><!-- /box__inner -->
+      </article><!-- /box -->
+    </div><!-- /grid-col -->
+
+    <div class="grid-col desktop-grid-one-third  tablet-grid-one-half ">
+      <h2 class="delta">Orange box with large left border</h2>
+      <!---
+      title: Orange box with large left border
+      usage: >
+        Use to add particular emphasis to a certain orange box in a row of boxes.
+      -->
+      <article class="box box--orange box--orange--separated-left">
+        <div class="box__inner border box--padded has-icon">
+          <header class="box__header">
+            <h2 class="gamma">
+              <a href="#">
+                Personal Inflation Calculator
+              </a>
+            </h2>
+          </header><!-- /box__header -->
+
+          <div class="box__content">
+            <p>
+              A first estimate of retail sales in volume and value terms, seasonally and non-seasonally adjusted.
+            </p>
+            <p class="description mini">(4,497 words)</p>
+          </div><!-- /box__content -->
+        </div><!-- /box__inner -->
+      </article><!-- /box -->
+    </div><!-- /grid-col -->
+
+    <div class="grid-col desktop-grid-one-third  tablet-grid-one-half ">
+      <h2 class="delta">Orange box with icon</h2>
+      <!---
+      title: Orange-coloured box with icon
+      usage: >
+        View [icons](/visual-language-graphical-elements-icons.html) for list of available icons.
+      -->
+      <article class="box box--orange">
+        <div class="box__inner border box--padded has-icon">
+          <header class="box__header">
+            <h2 class="gamma">
+              <a href="#">
+                Personal Inflation Calculator
+                <span class="icon-popup detached"></span>
+              </a>
+            </h2>
+          </header><!-- /box__header -->
+
+          <div class="box__content">
+            <p>
+              A first estimate of retail sales in volume and value terms, seasonally and non-seasonally adjusted.
+            </p>
+          </div><!-- /box__content -->
+        </div><!-- /box__inner -->
+      </article><!-- /box -->
+    </div><!-- /grid-col -->
+  </div>
+</section>
+
+<section class="panel wrapper">
+  <div class="grid-wrap">
+    <div class="grid-col desktop-grid-one-third  tablet-grid-one-half ">
+      <h2 class="delta">Blue box, lifted, with left border</h2>
+      <!---
+      title: Combinations
+      inline: Blue box, lifted with left border
+      -->
+      <article class="box solid box--blue--separated--left">
+        <div class="box__inner border box--padded">
+          <div class="box__section">
+            <h3 class="box__section__header">More on <a href="#">Inflation</a></h3>
+            <p>See lorem ipsum dolor sit amet sadipscing consectrue</p>
+          </div>
+          <div class="box__section">
+            <h3 class="box__section__header">More on <a href="#">Inflation</a></h3>
+            <p>See lorem ipsum dolor sit amet sadipscing consectrue</p>
+          </div>
+        </div><!-- /box__inner -->
+      </article><!-- /box -->
+    </div><!-- /grid-col -->
+  </div>
+</section>
+
+<div class="demo-background">
+  <h1>Example of a box with offset top</h1>
+</div>
+
+<div class="wrapper">
+  <div class="grid-wrap">
+    <div class="grid-col">
+      <!---
+      title: Negative offset
+      devnotes: This is an example of a box with `.offset-top` applied.
+      usage: >
+        Use in order to create a overlap that only requires one element to
+        be aware of it.
+      -->
+      <article class="box box--padded solid border offset-top">
+        <header class="box__header">
+          <h2 class="beta">
+            Regional Gross Value Added (Income Approach)
+          </h2>
+        </header><!-- /box__header -->
+
+        <div class="box__content">
+          <p class="lede">
+            This is an example of a box with <code>.offet-top</code> applied.
+          </p>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div><!-- /box__content -->
+      </article><!-- /box -->
+    </div><!-- /grid-col -->
+  </div><!-- /grid-wrap -->
+</div>
+
+<section class="slate panel wrapper">
+  <h2 class="delta">Box solid lifted dark</h2>
+  <!---
+  title: Dark lifted box
+  devnotes: >
+    Uses box-shadow, so comes with the normal CSS3 browser compatibility caveats.
+    Don't rely solely on this to create a visual emphasis.
+  usage: >
+    Adds a dark drop-shadow to a box element.
+    To be used for visual emphasis when the box sits on a light grey background.
+  -->
+  <article class="box solid lifted--dark">
+    <div class="box__inner border box--padded" id="lifteddark">
+      <header class="box__header">
+        <h2 class="gamma">
+          <a href="#">
+            Personal Inflation Calculator
+          </a>
+        </h2>
+      </header><!-- /box__header -->
+
+      <div class="box__content">
+        <p>
+          A first estimate of retail sales in volume and value terms, seasonally and non-seasonally adjusted.
+        </p>
+        <p class="description mini">(4,497 words)</p>
+      </div><!-- /box__content -->
+    </div><!-- /box__inner -->
+  </article><!-- /box -->
+</section>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+// SETTINGS
+
+
+// ------------------------
+// Breakpoints
+$bp-mobile-max: 767 / 16 * 1em;
+$bp-desktop-min: 768 / 16 * 1em;
+
+$bp-menu-min: 1050 / 16 * 1em;
+
+$bp-tablet-small-min: $bp-desktop-min * 0.8;
+$bp-desktop-wide-min: $bp-desktop-min * 1.25;
+$bp-desktop-wider-min: $bp-desktop-min * 1.5;
+
+// ------------------------
+// Layout
+$max-width: 1140 / 10 * 1rem;
+$grid-gutter: 40 / 10 * 1rem;
+$grid-columns:  full-width      1,
+                one-half        1/2,
+
+                one-third       1/3,
+                two-thirds      2/3,
+
+                one-quarter     1/4,
+                three-quarters  3/4,
+
+                one-fifth       1/5,
+                two-fifths      2/5,
+                three-fifths    3/5,
+                four-fifths     4/5;
+
+
+
+// Older versions of IE don't support rems
+$old-ie: false !default;
+@if $old-ie {
+  $max-width: 1140px;
+  $grid-gutter: 40px;
+}
+
+
+// ------------------------
+// Basic colours
+$black: #000;
+$white: #fff;
+$off-white: #f3f3f3;
+$off-black: #3f3f3f;
+
+
+// Main colours
+$pink: #b30041;
+
+$light-grey: #eaeaea;
+$mid-grey: #d9d9d9;
+$dark-grey: #7b7b7b;
+
+
+$body-colour: $off-white;
+$body-bg: $off-white;
+$body-link-colour: $pink;
+
+
+// Colours for <header>/<main> flip back to dark on light
+$content-colour: $off-black;
+$content-bg: $off-white;
+$content-link-colour: $off-black;
+$accent-link-colour: $pink;
+
+
+// ------------------------
+// Font stacks
+$font-regular: "KievitWeb Book", "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;
+$font-bold: "KievitWeb Black", "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;

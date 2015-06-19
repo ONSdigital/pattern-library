@@ -1,0 +1,242 @@
+{% block page_title %}Chart area{% endblock %}
+{% block custom_head %}
+  <style>
+  </style>
+{% endblock %}
+{% block content %}
+<div class="wrapper">
+  <h1>Chart Controls</h1>
+</div>
+<!---
+title: Chart Controls
+group: Charts
+usage: |
+  An example of this component, in use with a chart and data-table can be found on the [T5 template](/templates-templates-time-series-page-t5.html).
+  The chart control was created mainly for use in the time-series to ensure that the primary and secondary user needs are met, specifically:
+
+  - Allow the download of the time series data as CSV or Excel files (for the expert analysts), as user surveys have highlighted that the majority of users had downloaded data from the ONS website
+  - Download additional data (for expert analysts and information foragers)
+  - View this time series as chart (for information foragers)
+
+devnotes:
+  external: file://docs/chart-controls.md
+-->
+<div class="wrapper">
+  <div class="actionable-header--tight panel--mar-small">
+    <!-- This title will need to be dynamically generated on the server -->
+    <h2 class="actionable-header--tight__title gamma flush--bottom body-type--heavy">Download this entire time series
+      from 1988—2014</h2>
+
+    <div class="actionable-header--tight__action actionable-header--tight__action--left">
+      <a class="btn btn--primary btn--small" href="#">
+        .csv
+        <span class="icon-download icon--button-inline" role="presentation"></span>
+      </a>
+      <a class="btn btn--primary btn--small" href="#">
+        .xls
+        <span class="icon-download icon--button-inline" role="presentation"></span>
+      </a>
+    </div>
+  </div>
+  <div class="chart-area slate">
+    <div class="chart-area__controls">
+      <form data-chart-controls data-chart-controls-for='["chart1", "table1"]'>
+        <div class="button-bar chart-area__controls__buttons">
+          <div class="button-group chart-area__controls__type">
+            <label class="btn btn--secondary btn--small btn--narrow btn--thin btn--secondary--active">
+              <span class="icon--button-inline--rev-small icon-chart" role="presentation"></span>
+              Chart
+              <input type="radio" name="type" data-chart-controls-type value="chart1" checked/>
+            </label>
+            <label class="btn btn--secondary btn--small btn--narrow btn--thin">
+              <span class="icon--button-inline--rev-small icon-table" role="presentation"></span>
+              Table
+              <input type="radio" name="type" data-chart-controls-type value="table1"/>
+            </label>
+          </div>
+          <div class="button-group chart-area__controls__timespan">
+            <label class="btn btn--secondary btn--small btn--narrow btn--thin">
+              Monthly
+              <input type="radio" name="scale" data-chart-controls-scale value="month" checked/>
+            </label>
+            <label class="btn btn--secondary btn--small btn--narrow btn--thin">
+              Quarterly
+              <input type="radio" name="scale" data-chart-controls-scale value="quarter"/>
+            </label>
+            <label class="btn btn--secondary btn--small btn--narrow btn--thin">
+              Yearly
+              <input type="radio" name="scale" data-chart-controls-scale value="year"/>
+            </label>
+          </div>
+        </div>
+        <!-- /chart-area__controls__buttons -->
+        <div class="chart-area__controls__time">
+          <span class="chart-area__controls__time__label">Time period:</span>
+          <ul class="nav flush--top chart-area__controls__time__ranges">
+            <li>
+              <a href="#" data-chart-controls-range="all">All</a>
+            </li>
+            <li>
+              <a href="#" data-chart-controls-range="10yr">Last 10 yrs</a>
+            </li>
+            <li>
+              <a href="#" data-chart-controls-range="5yr" class="chart-area__controls__active">Last 5 yrs</a>
+            </li>
+            <li data-chart-control-custom-range>
+              <a href="#" class="link-complex" data-chart-control-custom-trigger-for="chart-area__controls__custom">
+                <span class="link-complex__target">Custom</span>
+                <span class="icon-down-open-big icon--inline" role="presentation"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- /chart-area__controls__time -->
+
+        <div class="chart-area__controls__custom js-hidden" id="customControls">
+
+          <div class="chart-area__controls__custom__errors"></div>
+
+          <div class="chart-area__controls__custom__container">
+            <div class="chart-area__controls__dropdowns">
+              <fieldset class="chart-area__controls__date">
+                <legend class="chart-area__controls__date__label">From</legend>
+                <label class="visuallyhidden" for="from-month-1">Month</label>
+                <select class="chart-area__controls__month" id="from-month-1" name="from-month"
+                        data-chart-controls-from-month>
+                  <option value="1">Jan</option>
+                  <option value="2">Feb</option>
+                  <option value="3">Mar</option>
+                  <option value="4">Apr</option>
+                  <option value="5">May</option>
+                  <option value="6">Jun</option>
+                  <option value="7">Jul</option>
+                  <option value="8">Aug</option>
+                  <option value="9" selected>Sep</option>
+                  <option value="10">Oct</option>
+                  <option value="11">Nov</option>
+                  <option value="12">Dec</option>
+                </select>
+
+                <label class="visuallyhidden" for="from-year-1">Year</label>
+                <select class="chart-area__controls__year" id="from-year-1" name="from-year"
+                        data-chart-controls-from-year>
+                  <option value="1988">1988</option>
+                  <option value="1989">1989</option>
+                  <option value="1990">1990</option>
+                  <option value="1991">1991</option>
+                  <option value="1992">1992</option>
+                  <option value="1993">1993</option>
+                  <option value="1994">1994</option>
+                  <option value="1995">1995</option>
+                  <option value="1996">1996</option>
+                  <option value="1997">1997</option>
+                  <option value="1998">1998</option>
+                  <option value="1999">1999</option>
+                  <option value="2000">2000</option>
+                  <option value="2001">2001</option>
+                  <option value="2002">2002</option>
+                  <option value="2003">2003</option>
+                  <option value="2004">2004</option>
+                  <option value="2005">2005</option>
+                  <option value="2006">2006</option>
+                  <option value="2007">2007</option>
+                  <option value="2008">2008</option>
+                  <option value="2009" selected>2009</option>
+                  <option value="2010">2010</option>
+                  <option value="2011">2011</option>
+                  <option value="2012">2012</option>
+                  <option value="2013">2013</option>
+                  <option value="2014">2014</option>
+                </select>
+              </fieldset>
+
+              <fieldset class="chart-area__controls__date">
+                <legend class="chart-area__controls__date__label">To</legend>
+                <label class="visuallyhidden" for="to-month-2">Month</label>
+                <select class="chart-area__controls__month" id="to-month-2" name="to-month" data-chart-controls-to-month>
+                  <option value="1">Jan</option>
+                  <option value="2">Feb</option>
+                  <option value="3">Mar</option>
+                  <option value="4">Apr</option>
+                  <option value="5">May</option>
+                  <option value="6">Jun</option>
+                  <option value="7">Jul</option>
+                  <option value="8">Aug</option>
+                  <option value="9" selected>Sep</option>
+                  <option value="10">Oct</option>
+                  <option value="11">Nov</option>
+                  <option value="12">Dec</option>
+                </select>
+                <label class="visuallyhidden" for="to-year-2">Month</label>
+                <select class="chart-area__controls__year" id="to-year-2" name="to-year" data-chart-controls-to-year>
+                  <option value="1986">1986</option>
+                  <option value="1987">1987</option>
+                  <option value="1988">1988</option>
+                  <option value="1989">1989</option>
+                  <option value="1990">1990</option>
+                  <option value="1991">1991</option>
+                  <option value="1992">1992</option>
+                  <option value="1993">1993</option>
+                  <option value="1994">1994</option>
+                  <option value="1995">1995</option>
+                  <option value="1996">1996</option>
+                  <option value="1997">1997</option>
+                  <option value="1998">1998</option>
+                  <option value="1999">1999</option>
+                  <option value="2000">2000</option>
+                  <option value="2001">2001</option>
+                  <option value="2002">2002</option>
+                  <option value="2003">2003</option>
+                  <option value="2004">2004</option>
+                  <option value="2005">2005</option>
+                  <option value="2006">2006</option>
+                  <option value="2007">2007</option>
+                  <option value="2008">2008</option>
+                  <option value="2009">2009</option>
+                  <option value="2010">2010</option>
+                  <option value="2011">2011</option>
+                  <option value="2012">2012</option>
+                  <option value="2013">2013</option>
+                  <option value="2014" selected>2014</option>
+                </select>
+              </fieldset>
+            </div>
+            <div class="chart-area__controls__submit">
+              <input class="btn btn--small btn--thin btn--narrow btn--primary" type="submit" name="submit"
+                     data-chart-controls-submit value="Show">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- /chart-area__controls -->
+
+    <!-- The actual chart goes here.  In this example, it is represented as an image that -->
+    <!-- on a production site would be the no-js fallback, that is generated dynamically  -->
+    <!-- by the server.                                                                   -->
+    <img src="http://placehold.it/875x400&amp;text=No+-+JS+Chart+area+goes+here" alt="Chart title" width="875" height="400">
+
+    <div class="chart-area__footer">
+      <span class="chart-area__footer__label">Download custom data</span>
+
+      <div class="chart-area__footer__actions">
+        <a class="btn btn--primary btn--small" href="#">
+          .csv
+          <span class="icon-download icon--button-inline" role="presentation"></span>
+        </a>
+        <a class="btn btn--primary btn--small" href="#">
+          .xsl
+          <span class="icon-download icon--button-inline" role="presentation"></span>
+        </a>
+        <a class="btn btn--primary btn--small" href="#">
+          Image
+          <span class="icon-download icon--button-inline" role="presentation"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- /chart-area -->
+</div>
+{% endblock %}
+{% block custom_scripts %}
+{% endblock %}

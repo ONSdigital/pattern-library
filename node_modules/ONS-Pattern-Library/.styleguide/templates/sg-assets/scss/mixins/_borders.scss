@@ -1,0 +1,18 @@
+// A mixin for combining multiple border properties
+
+@mixin borders ($style,  $sides){
+    @if ($style != "") {
+        @if ($sides == "") {
+            border: $style;
+        } @else {
+            @each $side in $sides {
+               @if ($side == 'top' or
+                    $side == 'right' or
+                    $side == 'bottom' or
+                    $side == 'left') {
+                    border-#{$side}: $style;
+                }
+            }
+        }
+    }
+}

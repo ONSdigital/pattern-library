@@ -1,0 +1,341 @@
+<form data-chart-controls data-chart-controls-for="chart1">
+<div class="button-bar chart-area__controls__buttons">
+  <div class="button-group chart-area__controls__type">
+    <label class="btn btn--secondary btn--small btn--narrow btn--thin btn--secondary--active">
+      Chart
+      <input type="radio" name="type" value="chart" checked/>
+    </label>
+    <label class="btn btn--secondary btn--small btn--narrow btn--thin">
+      Table
+      <input type="radio" name="type" value="table"/>
+    </label>
+  </div>
+  <div class="button-group chart-area__controls__timespan">
+    <label class="btn btn--secondary btn--small btn--narrow btn--thin">
+      Month
+      <input type="radio" name="scale" data-chart-controls-scale value="month" checked/>
+    </label>
+    <label class="btn btn--secondary btn--small btn--narrow btn--thin">
+      Quarter
+      <input type="radio" name="scale" data-chart-controls-scale value="quarter"/>
+    </label>
+    <label class="btn btn--secondary btn--small btn--narrow btn--thin">
+      Year
+      <input type="radio" name="scale" data-chart-controls-scale value="year"/>
+    </label>
+  </div>
+</div>
+<!-- /chart-area__controls__buttons -->
+<div class="chart-area__controls__time">
+  <span class="chart-area__controls__time__label">Time period:</span>
+  <ul class="nav flush--top chart-area__controls__time__ranges">
+    <li>
+      <a href="#">All</a>
+    </li>
+    <li>
+      <a href="#" class="chart-area__controls__active">Last 10 yrs</a>
+    </li>
+    <li>
+      <a href="#">Last 5 yrs</a>
+    </li>
+    <li class="chart-area__controls__custom--active">
+      <a href="#" class="link-complex">
+        <span class="link-complex__target">Custom</span>
+        <span class="icon-down-open-big icon--inline" role="presentation"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+<!-- /chart-area__controls__time -->
+
+<div class="chart-area__controls__custom" id="customControls">
+
+<div class="chart-area__controls__custom__errors"></div>
+
+<div class="chart-area__controls__custom__container">
+<div class="chart-area__controls__dropdowns">
+<fieldset class="chart-area__controls__date">
+  <legend class="chart-area__controls__date__label">From</legend>
+  <select class="chart-area__controls__month" id="from-month" name="from-month" data-chart-controls-from-month>
+    <option value="1">Jan</option>
+    <option value="2">Feb</option>
+    <option value="3">Mar</option>
+    <option value="4">Apr</option>
+    <option value="5">May</option>
+    <option value="6">Jun</option>
+    <option value="7">Jul</option>
+    <option value="8">Aug</option>
+    <option value="9">Sep</option>
+    <option value="10">Oct</option>
+    <option value="11">Nov</option>
+    <option value="12">Dec</option>
+  </select>
+  <select class="chart-area__controls__year" id="from-year" name="from-year" data-chart-controls-from-year>
+
+    <option name="1956">1956</option>
+
+    <option name="1957">1957</option>
+
+    <option name="1958">1958</option>
+
+    <option name="1959">1959</option>
+
+    <option name="1960">1960</option>
+
+    <option name="1961">1961</option>
+
+    <option name="1962">1962</option>
+
+    <option name="1963">1963</option>
+
+    <option name="1964">1964</option>
+
+    <option name="1965">1965</option>
+
+    <option name="1966">1966</option>
+
+    <option name="1967">1967</option>
+
+    <option name="1968">1968</option>
+
+    <option name="1969">1969</option>
+
+    <option name="1970">1970</option>
+
+    <option name="1971">1971</option>
+
+    <option name="1972">1972</option>
+
+    <option name="1973">1973</option>
+
+    <option name="1974">1974</option>
+
+    <option name="1975">1975</option>
+
+    <option name="1976">1976</option>
+
+    <option name="1977">1977</option>
+
+    <option name="1978">1978</option>
+
+    <option name="1979">1979</option>
+
+    <option name="1980">1980</option>
+
+    <option name="1981">1981</option>
+
+    <option name="1982">1982</option>
+
+    <option name="1983">1983</option>
+
+    <option name="1984">1984</option>
+
+    <option name="1985">1985</option>
+
+    <option name="1986">1986</option>
+
+    <option name="1987">1987</option>
+
+    <option name="1988">1988</option>
+
+    <option name="1989">1989</option>
+
+    <option name="1990">1990</option>
+
+    <option name="1991">1991</option>
+
+    <option name="1992">1992</option>
+
+    <option name="1993">1993</option>
+
+    <option name="1994">1994</option>
+
+    <option name="1995">1995</option>
+
+    <option name="1996">1996</option>
+
+    <option name="1997">1997</option>
+
+    <option name="1998">1998</option>
+
+    <option name="1999">1999</option>
+
+    <option name="2000">2000</option>
+
+    <option name="2001">2001</option>
+
+    <option name="2002">2002</option>
+
+    <option name="2003">2003</option>
+
+    <option name="2004">2004</option>
+
+    <option name="2005">2005</option>
+
+    <option name="2006">2006</option>
+
+    <option name="2007">2007</option>
+
+    <option name="2008">2008</option>
+
+    <option name="2009">2009</option>
+
+    <option name="2010">2010</option>
+
+    <option name="2011">2011</option>
+
+    <option name="2012">2012</option>
+
+    <option name="2013">2013</option>
+
+    <option name="2014">2014</option>
+
+  </select>
+</fieldset>
+
+<fieldset class="chart-area__controls__date">
+  <legend class="chart-area__controls__date__label">To</legend>
+  <select class="chart-area__controls__month" id="to-month" name="to-month" data-chart-controls-to-month>
+    <option value="1">Jan</option>
+    <option value="2">Feb</option>
+    <option value="3">Mar</option>
+    <option value="4">Apr</option>
+    <option value="5">May</option>
+    <option value="6">Jun</option>
+    <option value="7">Jul</option>
+    <option value="8">Aug</option>
+    <option value="9">Sep</option>
+    <option value="10">Oct</option>
+    <option value="11">Nov</option>
+    <option value="12">Dec</option>
+  </select>
+  <select class="chart-area__controls__year" id="from-year" name="to-year" data-chart-controls-to-year>
+
+    <option name="1956">1956</option>
+
+    <option name="1957">1957</option>
+
+    <option name="1958">1958</option>
+
+    <option name="1959">1959</option>
+
+    <option name="1960">1960</option>
+
+    <option name="1961">1961</option>
+
+    <option name="1962">1962</option>
+
+    <option name="1963">1963</option>
+
+    <option name="1964">1964</option>
+
+    <option name="1965">1965</option>
+
+    <option name="1966">1966</option>
+
+    <option name="1967">1967</option>
+
+    <option name="1968">1968</option>
+
+    <option name="1969">1969</option>
+
+    <option name="1970">1970</option>
+
+    <option name="1971">1971</option>
+
+    <option name="1972">1972</option>
+
+    <option name="1973">1973</option>
+
+    <option name="1974">1974</option>
+
+    <option name="1975">1975</option>
+
+    <option name="1976">1976</option>
+
+    <option name="1977">1977</option>
+
+    <option name="1978">1978</option>
+
+    <option name="1979">1979</option>
+
+    <option name="1980">1980</option>
+
+    <option name="1981">1981</option>
+
+    <option name="1982">1982</option>
+
+    <option name="1983">1983</option>
+
+    <option name="1984">1984</option>
+
+    <option name="1985">1985</option>
+
+    <option name="1986">1986</option>
+
+    <option name="1987">1987</option>
+
+    <option name="1988">1988</option>
+
+    <option name="1989">1989</option>
+
+    <option name="1990">1990</option>
+
+    <option name="1991">1991</option>
+
+    <option name="1992">1992</option>
+
+    <option name="1993">1993</option>
+
+    <option name="1994">1994</option>
+
+    <option name="1995">1995</option>
+
+    <option name="1996">1996</option>
+
+    <option name="1997">1997</option>
+
+    <option name="1998">1998</option>
+
+    <option name="1999">1999</option>
+
+    <option name="2000">2000</option>
+
+    <option name="2001">2001</option>
+
+    <option name="2002">2002</option>
+
+    <option name="2003">2003</option>
+
+    <option name="2004">2004</option>
+
+    <option name="2005">2005</option>
+
+    <option name="2006">2006</option>
+
+    <option name="2007">2007</option>
+
+    <option name="2008">2008</option>
+
+    <option name="2009">2009</option>
+
+    <option name="2010">2010</option>
+
+    <option name="2011">2011</option>
+
+    <option name="2012">2012</option>
+
+    <option name="2013">2013</option>
+
+    <option name="2014">2014</option>
+
+  </select>
+</fieldset>
+</div>
+<div class="chart-area__controls__submit">
+  <input class="btn btn--small btn--thin btn--narrow btn--primary" type="submit" name="submit"
+         data-chart-controls-submit value="Show">
+</div>
+</div>
+</div>
+</form>

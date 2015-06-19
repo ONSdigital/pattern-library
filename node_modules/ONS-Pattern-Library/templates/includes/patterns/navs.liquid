@@ -1,0 +1,101 @@
+{% block page_title %} Navs {% endblock %}
+
+{% block custom_head %}
+<style>
+img {
+  max-width: 100%;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+  <h1>Navs</h1>
+</div>
+
+<div class="wrapper panel--pad-small">
+  <!---
+  title: Nav
+  usage: This very simple abstraction lets you turn a list into a horizontal element.
+  devnotes: See http://csswizardry.com/2011/09/the-nav-abstraction/
+  -->
+  <ul class="nav">
+    <li><a href="#">Item 1</a></li>
+    <li><a href="#">Item 2</a></li>
+  </ul>
+
+  <!---
+  title: Nav inline-block
+  usage: Adds extra horizontal space to nav
+  -->
+  <ul class="nav nav--inline-block">
+    <li><a href="#">Item 1</a></li>
+    <li><a href="#">Item 2</a></li>
+  </ul>
+
+  <!---
+  title: Nav, block
+  usage: Extends nav, for vertical stacking
+  -->
+  <ul class="nav nav--block">
+    <li><a href="#">Item 1</a></li>
+    <li><a href="#">Item 2</a></li>
+  </ul>
+
+  <!---
+  title: Nav, block spaced
+  usage: Extends nav block, with extra margin between links
+  -->
+  <ul class="nav nav--block nav--block--spaced">
+    <li><a href="#">Item 1</a></li>
+    <li><a href="#">Item 2</a></li>
+  </ul>
+
+  <!---
+  title: Nav dark
+  usage: Dark/black links instead of default blue
+  -->
+  <ul class="nav nav--dark">
+    <li><a href="#">Item 1</a></li>
+    <li><a href="#">Item 2</a></li>
+  </ul>
+
+  <!---
+  title: Nav heavy
+  usage: Bold, no underline.
+  -->
+  <ul class="nav nav--heavy">
+    <li><a href="#">Item 1</a></li>
+    <li><a href="#">Item 2</a></li>
+  </ul>
+
+  <!---
+  title: Simple breadcrumb nav
+  usage: Visually separates nav items.
+  -->
+  <ul class="nav breadcrumb">
+    <li><a href="#">Item 1</a></li>
+    <li><a href="#">Item 2</a></li>
+  </ul>
+</div>
+
+<!---
+title: Breadcrumb
+usage: Responsive breadcrumb
+-->
+<div class="wrapper panel--pad-small">
+  <ol class="nav nav--heavy breadcrumb mini flush">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Economy</a></li>
+    <li class="nav__active"><a href="#">Government, Public Sector, and Taxes</a></li>
+  </ol>
+
+  <ol class="nav nav--inline-block nav--dark mini">
+    <li><a href="#">Local Government Finance</a></li>
+    <li><a href="#">Public Sector Finance</a></li>
+    <li class="nav__active"><a href="#">Public Spending</a></li>
+    <li><a href="#">Research and Development Expenditure</a></li>
+    <li><a href="#">Taxes and Revenue</a></li>
+  </ol>
+</div>
+{% endblock %}

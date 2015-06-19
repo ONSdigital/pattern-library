@@ -1,0 +1,21 @@
+{% block content %}
+<!---
+title: Multi Series Chart
+group: Charts
+usage: |
+  Different shaped points are used as well as colour (which are in keeping with the ONS [colour guidelines](http://localhost:3000/visual-language-colors.html) so that colour alone isn't used to indicate which data set the line is applicable to.
+  Adding the shapes to the tooltip helps differentiate between the data points.
+  All data values are shown in the tooltip (as a pose to the point currently hovered over) as some points may stack.
+  Note: The inline height style is shown here as an example.  Inline styles should not be used in production ready code.
+devnotes:
+  external: file://docs/multi-series-chart.md
+
+-->
+<div data-chart="multi-series" style="height:500px;">
+  <!-- this is a no-js image representation of the graph, which needs to be built on the server -->
+  <noscript>
+    <img src="http://placehold.it/1000x500&amp;text=No+-+JS+Chart+area+goes+here" alt="">
+  </noscript>
+</div>
+
+{% endblock %}

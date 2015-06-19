@@ -1,0 +1,2050 @@
+{% block content %}
+<div class="wrapper">
+  <h1>Data Tables</h1>
+
+  <h2>Toggle Table</h2>
+  <div class="panel--top-pad-large">
+  <!---
+  title: Data Table with Toggle
+  group: Data Tables
+  external: true
+  usage: |
+    The most robust solution to displaying data which is required to be compared, is to give the user control over what they see by allowing them to show and hide the columns of the table.
+    However, it needs to be kept in mind that presenting data in tables where content editors have the ability to determine which columns are shown by default could be seen as hiding information.
+    View the [original source](http://www.ons.gov.uk/ons/rel/iop/index-of-production/august-2014/stb-iop-aug-2014.html#tab-GDP-Impact-and-Components) for this chart.
+  devnotes: |
+    All data-tables are based on Filament Group's [Tablesaw library](https://github.com/filamentgroup/tablesaw), which provides an out of the box solution to responsive tables.  This implementation is based on the [Toggle Table](http://filamentgroup.github.io/tablesaw/demo/toggle.html).
+    The extent to the customisations for use within the pattern library is limited - specifically, the only additions are to present the tables in keeping with the of the pattern libraries look.
+    To define a table as a responsive table use `class="tablesaw"` on the table element and specify the appropriate mode e.g. `data-mode="columntoggle"` in this case.
+
+    The columns which are shown by default are controlled as such:
+
+    ```
+
+    <th data-priority="persist">Not eligible for toggle, always shows</th>
+    <th data-priority="1">Shows at (min-width: 20em) (320px)</th>
+    <th data-priority="2">Shows at (min-width: 30em) (480px)</th>
+    <th data-priority="3">Shows at (min-width: 40em) (640px)</th>
+    <th data-priority="4">Shows at (min-width: 50em) (800px)</th>
+    <th data-priority="5">Shows at (min-width: 60em) (960px)</th>
+    <th data-priority="6">Shows at (min-width: 70em) (1120px)</th>
+    ```
+
+    Adding the attribute `data-minimap` adds an element to the chart indicating to the user which columns are currently visible.
+
+  -->
+  <table class="tablesaw" data-mode="columntoggle" data-minimap>
+    <thead>
+      <tr>
+        <th data-priority="persist">Publication</th>
+        <th data-priority="persist">% of GDP</th>
+        <th data-priority="1">Release date</th>
+        <th data-priority="1">Month / Quarter of GDP</th>
+        <th data-priority="6">Most recent 3 months on a year earlier</th>
+        <th data-priority="6">Most recent 3 months on 3 months earlier</th>
+        <th data-priority="6">Most recent month on the same month a year ago</th>
+        <th data-priority="6">Most recent month on the previous month</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Index of&nbsp;</td>
+      <td>14.6</td>
+      <td>07 Oct</td>
+      <td>Aug</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>2.5</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>Production <sup>1</sup> </td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>Jul</td>
+      <td>2.0</td>
+      <td>-0.3</td>
+      <td>2.2</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>Construction&nbsp;</td>
+      <td>6.4</td>
+      <td>12 Sep</td>
+      <td>Jul</td>
+      <td>3.9</td>
+      <td>0.6</td>
+      <td>2.6</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>Index of&nbsp;</td>
+      <td>78.4</td>
+      <td>30 Sep</td>
+      <td>Jul</td>
+      <td>3.4</td>
+      <td>1.0</td>
+      <td>3.4</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <td>Services</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>Jun</td>
+      <td>3.2</td>
+      <td>1.1</td>
+      <td>3.6</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <td>Retail&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>18 Sep</td>
+      <td>Aug</td>
+      <td>3.2</td>
+      <td>0.5</td>
+      <td>3.9</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>Sales</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>Jul</td>
+      <td>3.1</td>
+      <td>0.6</td>
+      <td>2.5</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>Agriculture</td>
+      <td>0.6</td>
+      <td>&nbsp;</td>
+      <td>Q2</td>
+      <td>1.4</td>
+      <td>-0.3</td>
+      <td>..</td>
+      <td>..</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+  <p></p>
+
+  <h2>Mode Switcher</h2>
+  <div class="panel--top-pad-large">
+  <!---
+  title: Data Table with Mode Switcher
+  group: Data Tables
+  external: true
+  usage: |
+    The mode switcher gives the user the ability to choose the most appropriate control for the data they are viewing.  Whilst generally this should be left to the content editor in charge of creating the table, giving the user the option to switch between the 'toogle' and 'swipe' controls allows them choose the best control for their needs.
+  devnotes: |
+    All data-tables are based on Filament Group's [Tablesaw library](https://github.com/filamentgroup/tablesaw), which provides an out of the box solution to responsive tables.  This implementation is based on the [Toggle Table](http://filamentgroup.github.io/tablesaw/demo/toggle.html).
+    The extent to the customisations for use within the pattern library is limited - specifically, the only additions are to present the tables in keeping with the of the pattern libraries look.
+    To define a table as a responsive table use `class="tablesaw"` on the table element and specify the appropriate mode e.g. `data-mode="columntoggle"` in this case.
+    `data-mode="columntoggle"` specifies that the table can be switched. Tablesaw includes a stack mode which we don't want to offer to the user, so needs to be excluded using `data-mode-switch data-mode-exclude="stack"`.
+    Adding the attribute `data-minimap` adds an element to the chart indicating to the user which columns are currently visible.
+  -->
+  <table class="tablesaw" data-mode-switch data-mode-exclude="stack" data-minimap data-mode="columntoggle">
+  <thead>
+  <tr>
+    <th data-priority="persist">Year</th>
+    <th data-priority="1">Jan</th>
+    <th data-priority="1">Feb</th>
+    <th data-priority="1">Mar</th>
+    <th data-priority="1">Apr</th>
+    <th data-priority="1">May</th>
+    <th data-priority="1">Jun</th>
+    <th data-priority="1">Jul</th>
+    <th data-priority="6">Aug</th>
+    <th data-priority="6">Sep</th>
+    <th data-priority="6">Oct</th>
+    <th data-priority="6">Nov</th>
+    <th data-priority="6">Dec</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th>1997</th>
+    <td>109.5</td>
+    <td>107.1</td>
+    <td>111.8</td>
+    <td>109.6</td>
+    <td>105.2</td>
+    <td>106.4</td>
+    <td>109.1</td>
+    <td>97.3</td>
+    <td>110.5</td>
+    <td>118</td>
+    <td>113</td>
+    <td>109.9</td>
+  </tr>
+  <tr>
+    <th>1998</th>
+    <td>107.4</td>
+    <td>108.4</td>
+    <td>120</td>
+    <td>109.7</td>
+    <td>105.2</td>
+    <td>111.4</td>
+    <td>109.8</td>
+    <td>98.7</td>
+    <td>112.2</td>
+    <td>115.1</td>
+    <td>114.8</td>
+    <td>109.8</td>
+  </tr>
+
+  <tr>
+    <th>1999</th>
+    <td>104.3</td>
+    <td>106.9</td>
+    <td>122.2</td>
+    <td>107.4</td>
+    <td>105.3</td>
+    <td>112.7</td>
+    <td>107.9</td>
+    <td>104.5</td>
+    <td>116.3</td>
+    <td>115.6</td>
+    <td>121.4</td>
+    <td>112.7</td>
+  </tr>
+  <tr>
+    <th>2000</th>
+    <td>107.1</td>
+    <td>114</td>
+    <td>125.8</td>
+    <td>106.4</td>
+    <td>113.9</td>
+    <td>115.7</td>
+    <td>107</td>
+    <td>109</td>
+    <td>113.5</td>
+    <td>118.1</td>
+    <td>122.5</td>
+    <td>109.3</td>
+  </tr>
+
+  <tr>
+    <th>2001</th>
+    <td>113.5</td>
+    <td>109.9</td>
+    <td>122.2</td>
+    <td>107.6</td>
+    <td>112.2</td>
+    <td>110.6</td>
+    <td>107.7</td>
+    <td>107.5</td>
+    <td>108.9</td>
+    <td>117.6</td>
+    <td>117.2</td>
+    <td>105.7</td>
+  </tr>
+  <tr>
+    <th>2002</th>
+    <td>110</td>
+    <td>107.1</td>
+    <td>114.6</td>
+    <td>111.5</td>
+    <td>112.9</td>
+    <td>103</td>
+    <td>108.8</td>
+    <td>102.3</td>
+    <td>109.9</td>
+    <td>116.6</td>
+    <td>113.8</td>
+    <td>106.7</td>
+  </tr>
+
+  <tr>
+    <th>2003</th>
+    <td>108.2</td>
+    <td>106.2</td>
+    <td>114.7</td>
+    <td>107.1</td>
+    <td>106.4</td>
+    <td>107.4</td>
+    <td>109.2</td>
+    <td>99.6</td>
+    <td>111.2</td>
+    <td>117.1</td>
+    <td>111.2</td>
+    <td>109.5</td>
+  </tr>
+  <tr>
+    <th>2004</th>
+    <td>107.2</td>
+    <td>107.1</td>
+    <td>122</td>
+    <td>109.4</td>
+    <td>106.2</td>
+    <td>111.5</td>
+    <td>106</td>
+    <td>100.9</td>
+    <td>111.1</td>
+    <td>111</td>
+    <td>116.5</td>
+    <td>109.6</td>
+  </tr>
+  <tr>
+    <th>2005</th>
+    <td>104.9</td>
+    <td>106.6</td>
+    <td>115.3</td>
+    <td>109.2</td>
+    <td>108.7</td>
+    <td>111.4</td>
+    <td>104.8</td>
+    <td>103.8</td>
+    <td>110.4</td>
+    <td>110.1</td>
+    <td>116</td>
+    <td>107.6</td>
+  </tr>
+  <tr>
+    <th>2006</th>
+    <td>108</td>
+    <td>106.8</td>
+    <td>120.8</td>
+    <td>104.3</td>
+    <td>110.6</td>
+    <td>111.3</td>
+    <td>104.4</td>
+    <td>105.1</td>
+    <td>110.3</td>
+    <td>114.4</td>
+    <td>117.3</td>
+    <td>104.7</td>
+  </tr>
+  <tr>
+    <th>2007</th>
+    <td>111.4</td>
+    <td>107.2</td>
+    <td>118</td>
+    <td>106.8</td>
+    <td>112.6</td>
+    <td>108.5</td>
+    <td>106.7</td>
+    <td>104.6</td>
+    <td>106.5</td>
+    <td>117</td>
+    <td>116.9</td>
+    <td>105.7</td>
+  </tr>
+  <tr>
+    <th>2008</th>
+    <td>111</td>
+    <td>110.7</td>
+    <td>111.5</td>
+    <td>111.5</td>
+    <td>107.6</td>
+    <td>106.1</td>
+    <td>106.2</td>
+    <td>98.3</td>
+    <td>108.1</td>
+    <td>111.5</td>
+    <td>103.3</td>
+    <td>100.7</td>
+  </tr>
+  <tr>
+    <th>2009</th>
+    <td>96.8</td>
+    <td>94.9</td>
+    <td>104.3</td>
+    <td>98.3</td>
+    <td>94.7</td>
+    <td>99</td>
+    <td>98.1</td>
+    <td>87.4</td>
+    <td>98.7</td>
+    <td>101.8</td>
+    <td>101.8</td>
+    <td>98</td>
+  </tr>
+  <tr>
+    <th>2010</th>
+    <td>95.4</td>
+    <td>96.9</td>
+    <td>111</td>
+    <td>99.9</td>
+    <td>97.6</td>
+    <td>101.3</td>
+    <td>97.9</td>
+    <td>94.1</td>
+    <td>103.2</td>
+    <td>103</td>
+    <td>107.6</td>
+    <td>102.2</td>
+  </tr>
+  <tr>
+    <th>2011</th>
+    <td>98.2</td>
+    <td>97</td>
+    <td>111.4</td>
+    <td>96.5</td>
+    <td>99.5</td>
+    <td>102.7</td>
+    <td>96.2</td>
+    <td>95.3</td>
+    <td>101.6</td>
+    <td>100.6</td>
+    <td>104.3</td>
+    <td>96.6</td>
+  </tr>
+  <tr>
+    <th>2012</th>
+    <td>97.1</td>
+    <td>98.3</td>
+    <td>106.2</td>
+    <td>94.6</td>
+    <td>99.8</td>
+    <td>96.2</td>
+    <td>97.1</td>
+    <td>93.5</td>
+    <td>92.6</td>
+    <td>99.3</td>
+    <td>100.4</td>
+    <td>92.4</td>
+  </tr>
+  <tr>
+    <th>2013</th>
+    <td>95.9</td>
+    <td>93.2</td>
+    <td>100.8</td>
+    <td>96.9</td>
+    <td>98.5</td>
+    <td>95.7</td>
+    <td>98.1</td>
+    <td>90.1</td>
+    <td>97.5</td>
+    <td>102.6</td>
+    <td>100.6</td>
+    <td>96.1</td>
+  </tr>
+  <tr>
+    <th>2014</th>
+    <td>97.9</td>
+    <td>96.5</td>
+    <td>106</td>
+    <td>98.5</td>
+    <td>98.8</td>
+    <td>99.1</td>
+    <td>100.5</td>
+    <td>90.3</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+
+
+  <h2>Swipe table</h2>
+  <div class="panel--top-pad-large">
+  <!---
+  title: Data Table with Swipe Control
+  group: Data Tables
+  usage: |
+    Tables that have data that is not always required to be directly comparable suit this pattern.
+    The swipe table allows the user to browse the columns, using the prev / next controls or by swiping on a device that supports touch events.  The only deficiency with this component is that it is harder to compare individual columns that are spread out from one another.
+  devnotes: |
+    All data-tables are based on Filament Group's [Tablesaw library](https://github.com/filamentgroup/tablesaw), which provides an out of the box solution to responsive tables.
+    To define a table as a responsive table use `class="tablesaw"` on the table element and specify the appropriate mode e.g. `data-mode="swipe"` in this case.
+    The extent to the customisations for use within the pattern library is limited - specifically, the only additions are to present the tables in keeping with the of the pattern libraries look.
+    Use `<th data-priority="persist">Always shows</th>` to fix a column so that it is always visible.
+    Adding the attribute `data-minimap` adds an element to the chart indicating to the user which columns are currently visible.
+  -->
+
+  <table class="tablesaw" data-mode="swipe" data-minimap>
+    <thead>
+      <tr>
+        <th data-priority="persist">Year</th>
+        <th>Annual average</th>
+        <th>Jan</th>
+        <th>Feb</th>
+        <th>Mar</th>
+        <th>Apr</th>
+        <th>May</th>
+        <th>Jun</th>
+        <th>Jul</th>
+        <th>Aug</th>
+        <th>Sep</th>
+        <th>Oct</th>
+        <th>Nov</th>
+        <th>Dec</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>1988</th>
+        <td>63.5</td>
+        <td>61.9</td>
+        <td>62.1</td>
+        <td>62.3</td>
+        <td>63.1</td>
+        <td>63.4</td>
+        <td>63.6</td>
+        <td>63.6</td>
+        <td>63.8</td>
+        <td>64.1</td>
+        <td>64.4</td>
+        <td>64.7</td>
+        <td>64.8</td>
+      </tr>
+      <tr>
+        <th>1989</th>
+        <td>66.8</td>
+        <td>65.0</td>
+        <td>65.2</td>
+        <td>65.5</td>
+        <td>66.4</td>
+        <td>66.7</td>
+        <td>67.0</td>
+        <td>66.9</td>
+        <td>67.0</td>
+        <td>67.5</td>
+        <td>68.0</td>
+        <td>68.2</td>
+        <td>68.3</td>
+      </tr>
+      <tr>
+        <th>1990</th>
+        <td>71.5</td>
+        <td>68.6</td>
+        <td>69.0</td>
+        <td>69.4</td>
+        <td>70.6</td>
+        <td>71.3</td>
+        <td>71.6</td>
+        <td>71.4</td>
+        <td>72.2</td>
+        <td>72.9</td>
+        <td>73.5</td>
+        <td>73.6</td>
+        <td>73.5</td>
+      </tr>
+      <tr>
+        <th>1991</th>
+        <td>76.8</td>
+        <td>73.5</td>
+        <td>73.9</td>
+        <td>74.1</td>
+        <td>76.6</td>
+        <td>77.2</td>
+        <td>77.6</td>
+        <td>77.4</td>
+        <td>77.7</td>
+        <td>78.1</td>
+        <td>78.5</td>
+        <td>78.8</td>
+        <td>78.8</td>
+      </tr>
+      <tr>
+        <th>1992</th>
+        <td>80.1</td>
+        <td>78.6</td>
+        <td>79.0</td>
+        <td>79.4</td>
+        <td>80.2</td>
+        <td>80.5</td>
+        <td>80.6</td>
+        <td>80.2</td>
+        <td>80.2</td>
+        <td>80.5</td>
+        <td>80.7</td>
+        <td>80.8</td>
+        <td>80.8</td>
+      </tr>
+      <tr>
+        <th>1993</th>
+        <td>82.1</td>
+        <td>80.4</td>
+        <td>80.9</td>
+        <td>81.3</td>
+        <td>82.2</td>
+        <td>82.5</td>
+        <td>82.5</td>
+        <td>82.2</td>
+        <td>82.5</td>
+        <td>82.9</td>
+        <td>82.8</td>
+        <td>82.6</td>
+        <td>82.8</td>
+      </tr>
+      <tr>
+        <th>1994</th>
+        <td>83.8</td>
+        <td>82.5</td>
+        <td>82.9</td>
+        <td>83.1</td>
+        <td>83.9</td>
+        <td>84.1</td>
+        <td>84.1</td>
+        <td>83.6</td>
+        <td>84.1</td>
+        <td>84.2</td>
+        <td>84.0</td>
+        <td>84.1</td>
+        <td>84.5</td>
+      </tr>
+      <tr>
+        <th>1995</th>
+        <td>86.0</td>
+        <td>84.5</td>
+        <td>84.9</td>
+        <td>85.3</td>
+        <td>85.8</td>
+        <td>86.2</td>
+        <td>86.3</td>
+        <td>85.8</td>
+        <td>86.3</td>
+        <td>86.7</td>
+        <td>86.5</td>
+        <td>86.5</td>
+        <td>87.0</td>
+      </tr>
+      <tr>
+        <th>1996</th>
+        <td>88.1</td>
+        <td>86.8</td>
+        <td>87.2</td>
+        <td>87.5</td>
+        <td>88.0</td>
+        <td>88.3</td>
+        <td>88.4</td>
+        <td>87.8</td>
+        <td>88.3</td>
+        <td>88.7</td>
+        <td>88.7</td>
+        <td>88.7</td>
+        <td>89.0</td>
+      </tr>
+      <tr>
+        <th>1997</th>
+        <td>89.7</td>
+        <td>88.6</td>
+        <td>88.8</td>
+        <td>89.0</td>
+        <td>89.4</td>
+        <td>89.6</td>
+        <td>89.8</td>
+        <td>89.5</td>
+        <td>90.0</td>
+        <td>90.3</td>
+        <td>90.3</td>
+        <td>90.4</td>
+        <td>90.5</td>
+      </tr>
+      <tr>
+        <th>1998</th>
+        <td>91.1</td>
+        <td>89.9</td>
+        <td>90.3</td>
+        <td>90.5</td>
+        <td>91.0</td>
+        <td>91.5</td>
+        <td>91.3</td>
+        <td>90.8</td>
+        <td>91.2</td>
+        <td>91.6</td>
+        <td>91.6</td>
+        <td>91.7</td>
+        <td>91.9</td>
+      </tr>
+      <tr>
+        <th>1999</th>
+        <td>92.3</td>
+        <td>91.4</td>
+        <td>91.5</td>
+        <td>92.0</td>
+        <td>92.4</td>
+        <td>92.7</td>
+        <td>92.6</td>
+        <td>92.0</td>
+        <td>92.3</td>
+        <td>92.7</td>
+        <td>92.6</td>
+        <td>92.7</td>
+        <td>93.0</td>
+      </tr>
+      <tr>
+        <th>2000</th>
+        <td>93.1</td>
+        <td>92.1</td>
+        <td>92.4</td>
+        <td>92.6</td>
+        <td>92.9</td>
+        <td>93.2</td>
+        <td>93.3</td>
+        <td>92.8</td>
+        <td>92.8</td>
+        <td>93.6</td>
+        <td>93.5</td>
+        <td>93.7</td>
+        <td>93.7</td>
+      </tr>
+      <tr>
+        <th>2001</th>
+        <td>94.2</td>
+        <td>92.9</td>
+        <td>93.1</td>
+        <td>93.4</td>
+        <td>94.0</td>
+        <td>94.7</td>
+        <td>94.9</td>
+        <td>94.2</td>
+        <td>94.5</td>
+        <td>94.8</td>
+        <td>94.7</td>
+        <td>94.5</td>
+        <td>94.7</td>
+      </tr>
+      <tr>
+        <th>2002</th>
+        <td>95.4</td>
+        <td>94.4</td>
+        <td>94.5</td>
+        <td>94.9</td>
+        <td>95.3</td>
+        <td>95.5</td>
+        <td>95.5</td>
+        <td>95.2</td>
+        <td>95.5</td>
+        <td>95.7</td>
+        <td>95.9</td>
+        <td>95.9</td>
+        <td>96.3</td>
+      </tr>
+      <tr>
+        <th>2003</th>
+        <td>96.7</td>
+        <td>95.7</td>
+        <td>96.0</td>
+        <td>96.3</td>
+        <td>96.7</td>
+        <td>96.7</td>
+        <td>96.5</td>
+        <td>96.5</td>
+        <td>96.8</td>
+        <td>97.1</td>
+        <td>97.2</td>
+        <td>97.2</td>
+        <td>97.5</td>
+      </tr>
+      <tr>
+        <th>2004</th>
+        <td>98.0</td>
+        <td>97.0</td>
+        <td>97.2</td>
+        <td>97.4</td>
+        <td>97.8</td>
+        <td>98.1</td>
+        <td>98.1</td>
+        <td>97.8</td>
+        <td>98.1</td>
+        <td>98.2</td>
+        <td>98.4</td>
+        <td>98.6</td>
+        <td>99.1</td>
+      </tr>
+      <tr>
+        <th>2005</th>
+        <td>100.0</td>
+        <td>98.6</td>
+        <td>98.8</td>
+        <td>99.3</td>
+        <td>99.7</td>
+        <td>100.0</td>
+        <td>100.0</td>
+        <td>100.1</td>
+        <td>100.4</td>
+        <td>100.6</td>
+        <td>100.7</td>
+        <td>100.7</td>
+        <td>101.0</td>
+      </tr>
+      <tr>
+        <th>2006</th>
+        <td>102.3</td>
+        <td>100.5</td>
+        <td>100.9</td>
+        <td>101.1</td>
+        <td>101.7</td>
+        <td>102.2</td>
+        <td>102.5</td>
+        <td>102.5</td>
+        <td>102.9</td>
+        <td>103.0</td>
+        <td>103.2</td>
+        <td>103.4</td>
+        <td>104.0</td>
+      </tr>
+      <tr>
+        <th>2007</th>
+        <td>104.7</td>
+        <td>103.2</td>
+        <td>103.7</td>
+        <td>104.2</td>
+        <td>104.5</td>
+        <td>104.8</td>
+        <td>105.0</td>
+        <td>104.4</td>
+        <td>104.7</td>
+        <td>104.8</td>
+        <td>105.3</td>
+        <td>105.6</td>
+        <td>106.2</td>
+      </tr>
+      <tr>
+        <th>2008</th>
+        <td>..</td>
+        <td>105.5</td>
+        <td>106.3</td>
+        <td>106.7</td>
+        <td>107.6</td>
+        <td>108.3</td>
+        <td>109.0</td>
+        <td>109.0</td>
+        <td>109.7</td>
+        <td>110.3</td>
+        <td>..</td>
+        <td>..</td>
+        <td>..</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+  <h2>Plain Data Table</h2>
+  <div class="panel--top-pad-large">
+  <!---
+  title: Bare Data Table
+  group: Data Tables
+  usage: |
+    This is an example of a bare table i.e. it has no controls.
+    This type of chart is suited to tables with no more than two columns (for example a time-series table), as a two column table should comfortably fit a mobile device (depending on the nature of the values within the column).
+  devnotes: |
+    All data-tables are based on Filament Group's [Tablesaw library](https://github.com/filamentgroup/tablesaw), which provides an out of the box solution to responsive tables.
+    Out of the box, the library features 3 different table types; [Swipe table](/components-data-tables-data-table-with-swipe-control.html), [Toggle table](/components-data-tables-data-table-with-toggle.html) and [Bare table](/components-data-tables-data-table-with-toggle.html).  It also has a mode which allows [switching between the different types](/components-data-tables-data-table-with-mode-switcher.html).
+    The extent to the customisations for use within the pattern library is limited - specifically, the only additions are to present the tables in keeping with the of the pattern libraries look.
+    Although no swipe or toggle controls are used in this pattern, it is still required that the `class="tablesaw"` is used to ensure it works responsively.
+  -->
+
+  <table class="tablesaw">
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th>K24V</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>1997</th>
+        <td>109</td>
+      </tr>
+      <tr>
+        <th>1998</th>
+        <td>110.2</td>
+      </tr>
+      <tr>
+        <th>1999</th>
+        <td>111.4</td>
+      </tr>
+      <tr>
+        <th>2000</th>
+        <td>113.5</td>
+      </tr>
+      <tr>
+        <th>2001</th>
+        <td>111.7</td>
+      </tr>
+      <tr>
+        <th>2002</th>
+        <td>109.8</td>
+      </tr>
+      <tr>
+        <th>2003</th>
+        <td>109</td>
+      </tr>
+      <tr>
+        <th>2004</th>
+        <td>109.9</td>
+      </tr>
+      <tr>
+        <th>2005</th>
+        <td>109.1</td>
+      </tr>
+      <tr>
+        <th>2006</th>
+        <td>109.8</td>
+      </tr>
+      <tr>
+        <th>2007</th>
+        <td>110.2</td>
+      </tr>
+      <tr>
+        <th>2008</th>
+        <td>107.2</td>
+      </tr>
+      <tr>
+        <th>2009</th>
+        <td>97.8</td>
+      </tr>
+      <tr>
+        <th>2010</th>
+        <td>100.8</td>
+      </tr>
+      <tr>
+        <th>2011</th>
+        <td>100</td>
+      </tr>
+      <tr>
+        <th>2012</th>
+        <td>97.3</td>
+      </tr>
+      <tr>
+        <th>2013</th>
+        <td>97.2</td>
+      </tr>
+      <tr>
+        <th>1997 Q1</th>
+        <td>109.5</td>
+      </tr>
+      <tr>
+        <th>1997 Q2</th>
+        <td>107.1</td>
+      </tr>
+      <tr>
+        <th>1997 Q3</th>
+        <td>105.7</td>
+      </tr>
+      <tr>
+        <th>1997 Q4</th>
+        <td>113.6</td>
+      </tr>
+      <tr>
+        <th>1998 Q1</th>
+        <td>111.9</td>
+      </tr>
+      <tr>
+        <th>1998 Q2</th>
+        <td>108.8</td>
+      </tr>
+      <tr>
+        <th>1998 Q3</th>
+        <td>106.9</td>
+      </tr>
+      <tr>
+        <th>1998 Q4</th>
+        <td>113.2</td>
+      </tr>
+      <tr>
+        <th>1999 Q1</th>
+        <td>111.2</td>
+      </tr>
+      <tr>
+        <th>1999 Q2</th>
+        <td>108.5</td>
+      </tr>
+      <tr>
+        <th>1999 Q3</th>
+        <td>109.6</td>
+      </tr>
+      <tr>
+        <th>1999 Q4</th>
+        <td>116.5</td>
+      </tr>
+      <tr>
+        <th>2000 Q1</th>
+        <td>115.7</td>
+      </tr>
+      <tr>
+        <th>2000 Q2</th>
+        <td>112</td>
+      </tr>
+      <tr>
+        <th>2000 Q3</th>
+        <td>109.8</td>
+      </tr>
+      <tr>
+        <th>2000 Q4</th>
+        <td>116.6</td>
+      </tr>
+      <tr>
+        <th>2001 Q1</th>
+        <td>115.2</td>
+      </tr>
+      <tr>
+        <th>2001 Q2</th>
+        <td>110.1</td>
+      </tr>
+      <tr>
+        <th>2001 Q3</th>
+        <td>108</td>
+      </tr>
+      <tr>
+        <th>2001 Q4</th>
+        <td>113.5</td>
+      </tr>
+      <tr>
+        <th>2002 Q1</th>
+        <td>110.6</td>
+      </tr>
+      <tr>
+        <th>2002 Q2</th>
+        <td>109.1</td>
+      </tr>
+      <tr>
+        <th>2002 Q3</th>
+        <td>107</td>
+      </tr>
+      <tr>
+        <th>2002 Q4</th>
+        <td>112.4</td>
+      </tr>
+      <tr>
+        <th>2003 Q1</th>
+        <td>109.7</td>
+      </tr>
+      <tr>
+        <th>2003 Q2</th>
+        <td>107</td>
+      </tr>
+      <tr>
+        <th>2003 Q3</th>
+        <td>106.7</td>
+      </tr>
+      <tr>
+        <th>2003 Q4</th>
+        <td>112.6</td>
+      </tr>
+      <tr>
+        <th>2004 Q1</th>
+        <td>112.1</td>
+      </tr>
+      <tr>
+        <th>2004 Q2</th>
+        <td>109</td>
+      </tr>
+      <tr>
+        <th>2004 Q3</th>
+        <td>106</td>
+      </tr>
+      <tr>
+        <th>2004 Q4</th>
+        <td>112.4</td>
+      </tr>
+      <tr>
+        <th>2005 Q1</th>
+        <td>108.9</td>
+      </tr>
+      <tr>
+        <th>2005 Q2</th>
+        <td>109.7</td>
+      </tr>
+      <tr>
+        <th>2005 Q3</th>
+        <td>106.3</td>
+      </tr>
+      <tr>
+        <th>2005 Q4</th>
+        <td>111.2</td>
+      </tr>
+      <tr>
+        <th>2006 Q1</th>
+        <td>111.9</td>
+      </tr>
+      <tr>
+        <th>2006 Q2</th>
+        <td>108.7</td>
+      </tr>
+      <tr>
+        <th>2006 Q3</th>
+        <td>106.6</td>
+      </tr>
+      <tr>
+        <th>2006 Q4</th>
+        <td>112.1</td>
+      </tr>
+      <tr>
+        <th>2007 Q1</th>
+        <td>112.2</td>
+      </tr>
+      <tr>
+        <th>2007 Q2</th>
+        <td>109.3</td>
+      </tr>
+      <tr>
+        <th>2007 Q3</th>
+        <td>105.9</td>
+      </tr>
+      <tr>
+        <th>2007 Q4</th>
+        <td>113.2</td>
+      </tr>
+      <tr>
+        <th>2008 Q1</th>
+        <td>111.1</td>
+      </tr>
+      <tr>
+        <th>2008 Q2</th>
+        <td>108.4</td>
+      </tr>
+      <tr>
+        <th>2008 Q3</th>
+        <td>104.2</td>
+      </tr>
+      <tr>
+        <th>2008 Q4</th>
+        <td>105.1</td>
+      </tr>
+      <tr>
+        <th>2009 Q1</th>
+        <td>98.7</td>
+      </tr>
+      <tr>
+        <th>2009 Q2</th>
+        <td>97.3</td>
+      </tr>
+      <tr>
+        <th>2009 Q3</th>
+        <td>94.7</td>
+      </tr>
+      <tr>
+        <th>2009 Q4</th>
+        <td>100.5</td>
+      </tr>
+      <tr>
+        <th>2010 Q1</th>
+        <td>101.1</td>
+      </tr>
+      <tr>
+        <th>2010 Q2</th>
+        <td>99.6</td>
+      </tr>
+      <tr>
+        <th>2010 Q3</th>
+        <td>98.4</td>
+      </tr>
+      <tr>
+        <th>2010 Q4</th>
+        <td>104.3</td>
+      </tr>
+      <tr>
+        <th>2011 Q1</th>
+        <td>102.2</td>
+      </tr>
+      <tr>
+        <th>2011 Q2</th>
+        <td>99.6</td>
+      </tr>
+      <tr>
+        <th>2011 Q3</th>
+        <td>97.7</td>
+      </tr>
+      <tr>
+        <th>2011 Q4</th>
+        <td>100.5</td>
+      </tr>
+      <tr>
+        <th>2012 Q1</th>
+        <td>100.5</td>
+      </tr>
+      <tr>
+        <th>2012 Q2</th>
+        <td>96.9</td>
+      </tr>
+      <tr>
+        <th>2012 Q3</th>
+        <td>94.4</td>
+      </tr>
+      <tr>
+        <th>2012 Q4</th>
+        <td>97.3</td>
+      </tr>
+      <tr>
+        <th>2013 Q1</th>
+        <td>96.6</td>
+      </tr>
+      <tr>
+        <th>2013 Q2</th>
+        <td>97</td>
+      </tr>
+      <tr>
+        <th>2013 Q3</th>
+        <td>95.2</td>
+      </tr>
+      <tr>
+        <th>2013 Q4</th>
+        <td>99.7</td>
+      </tr>
+      <tr>
+        <th>2014 Q1</th>
+        <td>100.1</td>
+      </tr>
+      <tr>
+        <th>2014 Q2</th>
+        <td>98.8</td>
+      </tr>
+      <tr>
+        <th>1997 JAN</th>
+        <td>109.5</td>
+      </tr>
+      <tr>
+        <th>1997 FEB</th>
+        <td>107.1</td>
+      </tr>
+      <tr>
+        <th>1997 MAR</th>
+        <td>111.8</td>
+      </tr>
+      <tr>
+        <th>1997 APR</th>
+        <td>109.6</td>
+      </tr>
+      <tr>
+        <th>1997 MAY</th>
+        <td>105.2</td>
+      </tr>
+      <tr>
+        <th>1997 JUN</th>
+        <td>106.4</td>
+      </tr>
+      <tr>
+        <th>1997 JUL</th>
+        <td>109.1</td>
+      </tr>
+      <tr>
+        <th>1997 AUG</th>
+        <td>97.3</td>
+      </tr>
+      <tr>
+        <th>1997 SEP</th>
+        <td>110.5</td>
+      </tr>
+      <tr>
+        <th>1997 OCT</th>
+        <td>118</td>
+      </tr>
+      <tr>
+        <th>1997 NOV</th>
+        <td>113</td>
+      </tr>
+      <tr>
+        <th>1997 DEC</th>
+        <td>109.9</td>
+      </tr>
+      <tr>
+        <th>1998 JAN</th>
+        <td>107.4</td>
+      </tr>
+      <tr>
+        <th>1998 FEB</th>
+        <td>108.4</td>
+      </tr>
+      <tr>
+        <th>1998 MAR</th>
+        <td>120</td>
+      </tr>
+      <tr>
+        <th>1998 APR</th>
+        <td>109.7</td>
+      </tr>
+      <tr>
+        <th>1998 MAY</th>
+        <td>105.2</td>
+      </tr>
+      <tr>
+        <th>1998 JUN</th>
+        <td>111.4</td>
+      </tr>
+      <tr>
+        <th>1998 JUL</th>
+        <td>109.8</td>
+      </tr>
+      <tr>
+        <th>1998 AUG</th>
+        <td>98.7</td>
+      </tr>
+      <tr>
+        <th>1998 SEP</th>
+        <td>112.2</td>
+      </tr>
+      <tr>
+        <th>1998 OCT</th>
+        <td>115.1</td>
+      </tr>
+      <tr>
+        <th>1998 NOV</th>
+        <td>114.8</td>
+      </tr>
+      <tr>
+        <th>1998 DEC</th>
+        <td>109.8</td>
+      </tr>
+      <tr>
+        <th>1999 JAN</th>
+        <td>104.3</td>
+      </tr>
+      <tr>
+        <th>1999 FEB</th>
+        <td>106.9</td>
+      </tr>
+      <tr>
+        <th>1999 MAR</th>
+        <td>122.2</td>
+      </tr>
+      <tr>
+        <th>1999 APR</th>
+        <td>107.4</td>
+      </tr>
+      <tr>
+        <th>1999 MAY</th>
+        <td>105.3</td>
+      </tr>
+      <tr>
+        <th>1999 JUN</th>
+        <td>112.7</td>
+      </tr>
+      <tr>
+        <th>1999 JUL</th>
+        <td>107.9</td>
+      </tr>
+      <tr>
+        <th>1999 AUG</th>
+        <td>104.5</td>
+      </tr>
+      <tr>
+        <th>1999 SEP</th>
+        <td>116.3</td>
+      </tr>
+      <tr>
+        <th>1999 OCT</th>
+        <td>115.6</td>
+      </tr>
+      <tr>
+        <th>1999 NOV</th>
+        <td>121.4</td>
+      </tr>
+      <tr>
+        <th>1999 DEC</th>
+        <td>112.7</td>
+      </tr>
+      <tr>
+        <th>2000 JAN</th>
+        <td>107.1</td>
+      </tr>
+      <tr>
+        <th>2000 FEB</th>
+        <td>114</td>
+      </tr>
+      <tr>
+        <th>2000 MAR</th>
+        <td>125.8</td>
+      </tr>
+      <tr>
+        <th>2000 APR</th>
+        <td>106.4</td>
+      </tr>
+      <tr>
+        <th>2000 MAY</th>
+        <td>113.9</td>
+      </tr>
+      <tr>
+        <th>2000 JUN</th>
+        <td>115.7</td>
+      </tr>
+      <tr>
+        <th>2000 JUL</th>
+        <td>107</td>
+      </tr>
+      <tr>
+        <th>2000 AUG</th>
+        <td>109</td>
+      </tr>
+      <tr>
+        <th>2000 SEP</th>
+        <td>113.5</td>
+      </tr>
+      <tr>
+        <th>2000 OCT</th>
+        <td>118.1</td>
+      </tr>
+      <tr>
+        <th>2000 NOV</th>
+        <td>122.5</td>
+      </tr>
+      <tr>
+        <th>2000 DEC</th>
+        <td>109.3</td>
+      </tr>
+      <tr>
+        <th>2001 JAN</th>
+        <td>113.5</td>
+      </tr>
+      <tr>
+        <th>2001 FEB</th>
+        <td>109.9</td>
+      </tr>
+      <tr>
+        <th>2001 MAR</th>
+        <td>122.2</td>
+      </tr>
+      <tr>
+        <th>2001 APR</th>
+        <td>107.6</td>
+      </tr>
+      <tr>
+        <th>2001 MAY</th>
+        <td>112.2</td>
+      </tr>
+      <tr>
+        <th>2001 JUN</th>
+        <td>110.6</td>
+      </tr>
+      <tr>
+        <th>2001 JUL</th>
+        <td>107.7</td>
+      </tr>
+      <tr>
+        <th>2001 AUG</th>
+        <td>107.5</td>
+      </tr>
+      <tr>
+        <th>2001 SEP</th>
+        <td>108.9</td>
+      </tr>
+      <tr>
+        <th>2001 OCT</th>
+        <td>117.6</td>
+      </tr>
+      <tr>
+        <th>2001 NOV</th>
+        <td>117.2</td>
+      </tr>
+      <tr>
+        <th>2001 DEC</th>
+        <td>105.7</td>
+      </tr>
+      <tr>
+        <th>2002 JAN</th>
+        <td>110</td>
+      </tr>
+      <tr>
+        <th>2002 FEB</th>
+        <td>107.1</td>
+      </tr>
+      <tr>
+        <th>2002 MAR</th>
+        <td>114.6</td>
+      </tr>
+      <tr>
+        <th>2002 APR</th>
+        <td>111.5</td>
+      </tr>
+      <tr>
+        <th>2002 MAY</th>
+        <td>112.9</td>
+      </tr>
+      <tr>
+        <th>2002 JUN</th>
+        <td>103</td>
+      </tr>
+      <tr>
+        <th>2002 JUL</th>
+        <td>108.8</td>
+      </tr>
+      <tr>
+        <th>2002 AUG</th>
+        <td>102.3</td>
+      </tr>
+      <tr>
+        <th>2002 SEP</th>
+        <td>109.9</td>
+      </tr>
+      <tr>
+        <th>2002 OCT</th>
+        <td>116.6</td>
+      </tr>
+      <tr>
+        <th>2002 NOV</th>
+        <td>113.8</td>
+      </tr>
+      <tr>
+        <th>2002 DEC</th>
+        <td>106.7</td>
+      </tr>
+      <tr>
+        <th>2003 JAN</th>
+        <td>108.2</td>
+      </tr>
+      <tr>
+        <th>2003 FEB</th>
+        <td>106.2</td>
+      </tr>
+      <tr>
+        <th>2003 MAR</th>
+        <td>114.7</td>
+      </tr>
+      <tr>
+        <th>2003 APR</th>
+        <td>107.1</td>
+      </tr>
+      <tr>
+        <th>2003 MAY</th>
+        <td>106.4</td>
+      </tr>
+      <tr>
+        <th>2003 JUN</th>
+        <td>107.4</td>
+      </tr>
+      <tr>
+        <th>2003 JUL</th>
+        <td>109.2</td>
+      </tr>
+      <tr>
+        <th>2003 AUG</th>
+        <td>99.6</td>
+      </tr>
+      <tr>
+        <th>2003 SEP</th>
+        <td>111.2</td>
+      </tr>
+      <tr>
+        <th>2003 OCT</th>
+        <td>117.1</td>
+      </tr>
+      <tr>
+        <th>2003 NOV</th>
+        <td>111.2</td>
+      </tr>
+      <tr>
+        <th>2003 DEC</th>
+        <td>109.5</td>
+      </tr>
+      <tr>
+        <th>2004 JAN</th>
+        <td>107.2</td>
+      </tr>
+      <tr>
+        <th>2004 FEB</th>
+        <td>107.1</td>
+      </tr>
+      <tr>
+        <th>2004 MAR</th>
+        <td>122</td>
+      </tr>
+      <tr>
+        <th>2004 APR</th>
+        <td>109.4</td>
+      </tr>
+      <tr>
+        <th>2004 MAY</th>
+        <td>106.2</td>
+      </tr>
+      <tr>
+        <th>2004 JUN</th>
+        <td>111.5</td>
+      </tr>
+      <tr>
+        <th>2004 JUL</th>
+        <td>106</td>
+      </tr>
+      <tr>
+        <th>2004 AUG</th>
+        <td>100.9</td>
+      </tr>
+      <tr>
+        <th>2004 SEP</th>
+        <td>111.1</td>
+      </tr>
+      <tr>
+        <th>2004 OCT</th>
+        <td>111</td>
+      </tr>
+      <tr>
+        <th>2004 NOV</th>
+        <td>116.5</td>
+      </tr>
+      <tr>
+        <th>2004 DEC</th>
+        <td>109.6</td>
+      </tr>
+      <tr>
+        <th>2005 JAN</th>
+        <td>104.9</td>
+      </tr>
+      <tr>
+        <th>2005 FEB</th>
+        <td>106.6</td>
+      </tr>
+      <tr>
+        <th>2005 MAR</th>
+        <td>115.3</td>
+      </tr>
+      <tr>
+        <th>2005 APR</th>
+        <td>109.2</td>
+      </tr>
+      <tr>
+        <th>2005 MAY</th>
+        <td>108.7</td>
+      </tr>
+      <tr>
+        <th>2005 JUN</th>
+        <td>111.4</td>
+      </tr>
+      <tr>
+        <th>2005 JUL</th>
+        <td>104.8</td>
+      </tr>
+      <tr>
+        <th>2005 AUG</th>
+        <td>103.8</td>
+      </tr>
+      <tr>
+        <th>2005 SEP</th>
+        <td>110.4</td>
+      </tr>
+      <tr>
+        <th>2005 OCT</th>
+        <td>110.1</td>
+      </tr>
+      <tr>
+        <th>2005 NOV</th>
+        <td>116</td>
+      </tr>
+      <tr>
+        <th>2005 DEC</th>
+        <td>107.6</td>
+      </tr>
+      <tr>
+        <th>2006 JAN</th>
+        <td>108</td>
+      </tr>
+      <tr>
+        <th>2006 FEB</th>
+        <td>106.8</td>
+      </tr>
+      <tr>
+        <th>2006 MAR</th>
+        <td>120.8</td>
+      </tr>
+      <tr>
+        <th>2006 APR</th>
+        <td>104.3</td>
+      </tr>
+      <tr>
+        <th>2006 MAY</th>
+        <td>110.6</td>
+      </tr>
+      <tr>
+        <th>2006 JUN</th>
+        <td>111.3</td>
+      </tr>
+      <tr>
+        <th>2006 JUL</th>
+        <td>104.4</td>
+      </tr>
+      <tr>
+        <th>2006 AUG</th>
+        <td>105.1</td>
+      </tr>
+      <tr>
+        <th>2006 SEP</th>
+        <td>110.3</td>
+      </tr>
+      <tr>
+        <th>2006 OCT</th>
+        <td>114.4</td>
+      </tr>
+      <tr>
+        <th>2006 NOV</th>
+        <td>117.3</td>
+      </tr>
+      <tr>
+        <th>2006 DEC</th>
+        <td>104.7</td>
+      </tr>
+      <tr>
+        <th>2007 JAN</th>
+        <td>111.4</td>
+      </tr>
+      <tr>
+        <th>2007 FEB</th>
+        <td>107.2</td>
+      </tr>
+      <tr>
+        <th>2007 MAR</th>
+        <td>118</td>
+      </tr>
+      <tr>
+        <th>2007 APR</th>
+        <td>106.8</td>
+      </tr>
+      <tr>
+        <th>2007 MAY</th>
+        <td>112.6</td>
+      </tr>
+      <tr>
+        <th>2007 JUN</th>
+        <td>108.5</td>
+      </tr>
+      <tr>
+        <th>2007 JUL</th>
+        <td>106.7</td>
+      </tr>
+      <tr>
+        <th>2007 AUG</th>
+        <td>104.6</td>
+      </tr>
+      <tr>
+        <th>2007 SEP</th>
+        <td>106.5</td>
+      </tr>
+      <tr>
+        <th>2007 OCT</th>
+        <td>117</td>
+      </tr>
+      <tr>
+        <th>2007 NOV</th>
+        <td>116.9</td>
+      </tr>
+      <tr>
+        <th>2007 DEC</th>
+        <td>105.7</td>
+      </tr>
+      <tr>
+        <th>2008 JAN</th>
+        <td>111</td>
+      </tr>
+      <tr>
+        <th>2008 FEB</th>
+        <td>110.7</td>
+      </tr>
+      <tr>
+        <th>2008 MAR</th>
+        <td>111.5</td>
+      </tr>
+      <tr>
+        <th>2008 APR</th>
+        <td>111.5</td>
+      </tr>
+      <tr>
+        <th>2008 MAY</th>
+        <td>107.6</td>
+      </tr>
+      <tr>
+        <th>2008 JUN</th>
+        <td>106.1</td>
+      </tr>
+      <tr>
+        <th>2008 JUL</th>
+        <td>106.2</td>
+      </tr>
+      <tr>
+        <th>2008 AUG</th>
+        <td>98.3</td>
+      </tr>
+      <tr>
+        <th>2008 SEP</th>
+        <td>108.1</td>
+      </tr>
+      <tr>
+        <th>2008 OCT</th>
+        <td>111.5</td>
+      </tr>
+      <tr>
+        <th>2008 NOV</th>
+        <td>103.3</td>
+      </tr>
+      <tr>
+        <th>2008 DEC</th>
+        <td>100.7</td>
+      </tr>
+      <tr>
+        <th>2009 JAN</th>
+        <td>96.8</td>
+      </tr>
+      <tr>
+        <th>2009 FEB</th>
+        <td>94.9</td>
+      </tr>
+      <tr>
+        <th>2009 MAR</th>
+        <td>104.3</td>
+      </tr>
+      <tr>
+        <th>2009 APR</th>
+        <td>98.3</td>
+      </tr>
+      <tr>
+        <th>2009 MAY</th>
+        <td>94.7</td>
+      </tr>
+      <tr>
+        <th>2009 JUN</th>
+        <td>99</td>
+      </tr>
+      <tr>
+        <th>2009 JUL</th>
+        <td>98.1</td>
+      </tr>
+      <tr>
+        <th>2009 AUG</th>
+        <td>87.4</td>
+      </tr>
+      <tr>
+        <th>2009 SEP</th>
+        <td>98.7</td>
+      </tr>
+      <tr>
+        <th>2009 OCT</th>
+        <td>101.8</td>
+      </tr>
+      <tr>
+        <th>2009 NOV</th>
+        <td>101.8</td>
+      </tr>
+      <tr>
+        <th>2009 DEC</th>
+        <td>98</td>
+      </tr>
+      <tr>
+        <th>2010 JAN</th>
+        <td>95.4</td>
+      </tr>
+      <tr>
+        <th>2010 FEB</th>
+        <td>96.9</td>
+      </tr>
+      <tr>
+        <th>2010 MAR</th>
+        <td>111</td>
+      </tr>
+      <tr>
+        <th>2010 APR</th>
+        <td>99.9</td>
+      </tr>
+      <tr>
+        <th>2010 MAY</th>
+        <td>97.6</td>
+      </tr>
+      <tr>
+        <th>2010 JUN</th>
+        <td>101.3</td>
+      </tr>
+      <tr>
+        <th>2010 JUL</th>
+        <td>97.9</td>
+      </tr>
+      <tr>
+        <th>2010 AUG</th>
+        <td>94.1</td>
+      </tr>
+      <tr>
+        <th>2010 SEP</th>
+        <td>103.2</td>
+      </tr>
+      <tr>
+        <th>2010 OCT</th>
+        <td>103</td>
+      </tr>
+      <tr>
+        <th>2010 NOV</th>
+        <td>107.6</td>
+      </tr>
+      <tr>
+        <th>2010 DEC</th>
+        <td>102.2</td>
+      </tr>
+      <tr>
+        <th>2011 JAN</th>
+        <td>98.2</td>
+      </tr>
+      <tr>
+        <th>2011 FEB</th>
+        <td>97</td>
+      </tr>
+      <tr>
+        <th>2011 MAR</th>
+        <td>111.4</td>
+      </tr>
+      <tr>
+        <th>2011 APR</th>
+        <td>96.5</td>
+      </tr>
+      <tr>
+        <th>2011 MAY</th>
+        <td>99.5</td>
+      </tr>
+      <tr>
+        <th>2011 JUN</th>
+        <td>102.7</td>
+      </tr>
+      <tr>
+        <th>2011 JUL</th>
+        <td>96.2</td>
+      </tr>
+      <tr>
+        <th>2011 AUG</th>
+        <td>95.3</td>
+      </tr>
+      <tr>
+        <th>2011 SEP</th>
+        <td>101.6</td>
+      </tr>
+      <tr>
+        <th>2011 OCT</th>
+        <td>100.6</td>
+      </tr>
+      <tr>
+        <th>2011 NOV</th>
+        <td>104.3</td>
+      </tr>
+      <tr>
+        <th>2011 DEC</th>
+        <td>96.6</td>
+      </tr>
+      <tr>
+        <th>2012 JAN</th>
+        <td>97.1</td>
+      </tr>
+      <tr>
+        <th>2012 FEB</th>
+        <td>98.3</td>
+      </tr>
+      <tr>
+        <th>2012 MAR</th>
+        <td>106.2</td>
+      </tr>
+      <tr>
+        <th>2012 APR</th>
+        <td>94.6</td>
+      </tr>
+      <tr>
+        <th>2012 MAY</th>
+        <td>99.8</td>
+      </tr>
+      <tr>
+        <th>2012 JUN</th>
+        <td>96.2</td>
+      </tr>
+      <tr>
+        <th>2012 JUL</th>
+        <td>97.1</td>
+      </tr>
+      <tr>
+        <th>2012 AUG</th>
+        <td>93.5</td>
+      </tr>
+      <tr>
+        <th>2012 SEP</th>
+        <td>92.6</td>
+      </tr>
+      <tr>
+        <th>2012 OCT</th>
+        <td>99.3</td>
+      </tr>
+      <tr>
+        <th>2012 NOV</th>
+        <td>100.4</td>
+      </tr>
+      <tr>
+        <th>2012 DEC</th>
+        <td>92.4</td>
+      </tr>
+      <tr>
+        <th>2013 JAN</th>
+        <td>95.9</td>
+      </tr>
+      <tr>
+        <th>2013 FEB</th>
+        <td>93.2</td>
+      </tr>
+      <tr>
+        <th>2013 MAR</th>
+        <td>100.8</td>
+      </tr>
+      <tr>
+        <th>2013 APR</th>
+        <td>96.9</td>
+      </tr>
+      <tr>
+        <th>2013 MAY</th>
+        <td>98.5</td>
+      </tr>
+      <tr>
+        <th>2013 JUN</th>
+        <td>95.7</td>
+      </tr>
+      <tr>
+        <th>2013 JUL</th>
+        <td>98.1</td>
+      </tr>
+      <tr>
+        <th>2013 AUG</th>
+        <td>90.1</td>
+      </tr>
+      <tr>
+        <th>2013 SEP</th>
+        <td>97.5</td>
+      </tr>
+      <tr>
+        <th>2013 OCT</th>
+        <td>102.6</td>
+      </tr>
+      <tr>
+        <th>2013 NOV</th>
+        <td>100.6</td>
+      </tr>
+      <tr>
+        <th>2013 DEC</th>
+        <td>96.1</td>
+      </tr>
+      <tr>
+        <th>2014 JAN</th>
+        <td>97.9</td>
+      </tr>
+      <tr>
+        <th>2014 FEB</th>
+        <td>96.5</td>
+      </tr>
+      <tr>
+        <th>2014 MAR</th>
+        <td>106</td>
+      </tr>
+      <tr>
+        <th>2014 APR</th>
+        <td>98.5</td>
+      </tr>
+      <tr>
+        <th>2014 MAY</th>
+        <td>98.8</td>
+      </tr>
+      <tr>
+        <th>2014 JUN</th>
+        <td>99.1</td>
+      </tr>
+      <tr>
+        <th>2014 JUL</th>
+        <td>100.5</td>
+      </tr>
+      <tr>
+        <th>2014 AUG</th>
+        <td>90.3</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+</div>
+
+{% endblock %}

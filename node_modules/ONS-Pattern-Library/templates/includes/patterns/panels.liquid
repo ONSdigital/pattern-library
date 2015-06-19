@@ -1,0 +1,123 @@
+{% block page_title %} Panels {% endblock %}
+
+{% block custom_head %}
+<style>
+[class*=panel] {
+  background-color: #eee;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+  <div class="wrapper">
+    <h1>Panels</h1>
+    <p>A pattern for vertical spacing</p>
+  </div>
+  <div class="wrapper">
+    <!---
+    title: Panel
+    usage: Use this for general-purpose spacing to and around large global elements.
+    devnote: Provides vertical spacing with padding and margin, not responsive
+    -->
+    <div class="panel">
+      <p class="flush">Hi. I'm a panel</p>
+    </div>
+
+    <!---
+    title: Panel, separated
+    usage: Use for visually separating elements and borders
+    devnote: Has modifiers for either top or bottom borders, has both by default
+    -->
+    <div>
+      <div class="panel panel--separated">
+        <p class="flush">I've got a top and bottom border</p>
+      </div>
+      <div class="panel panel--separated--top">
+        <p>My border is only a top border.</p>
+      </div>
+      <div class="panel panel--separated--top--large">
+        <p>My border is a large top border.</p>
+      </div>
+      <div class="panel panel--separated--bottom">
+        <p>Mine's a bottom border.</p>
+      </div>
+      <div class="panel panel--separated--bottom--large">
+        <p>Mine's a large bottom border.</p>
+      </div>
+    </div>
+
+    <!---
+    title: Panel, with padding
+    usage: Use for visually separating elements with padding, when you have a background that needs extending past the initial boundary of the element (good when you need to fine-tune layout spacing). Otherwise use the margin element.
+    devnote: Has modifiers for either top or bottom padding, as well as sizes. Has both by default. Is responsive, small viewports have half the padding of medium to large viewports
+    -->
+    <div>
+      <div class="panel--pad-small">
+        <p class="flush">I've got a small top and bottom padding</p>
+      </div>
+      <div class="panel--pad">
+        <p class="flush">I've got a medium top and bottom padding</p>
+      </div>
+      <div class="panel--pad-large">
+        <p class="flush">I've got a large top and bottom padding</p>
+      </div>
+
+      <div class="panel--top-pad-small">
+        <p class="flush">I've got a small top padding</p>
+      </div>
+      <div class="panel--top-pad">
+        <p class="flush">I've got a medium top padding</p>
+      </div>
+      <div class="panel--top-pad-large">
+        <p class="flush">I've got a large top padding</p>
+      </div>
+
+      <div class="panel--bottom-pad-small">
+        <p class="flush">I've got a small bottom padding</p>
+      </div>
+      <div class="panel--bottom-pad">
+        <p class="flush">I've got a medium bottom padding</p>
+      </div>
+      <div class="panel--bottom-pad-large">
+        <p class="flush">I've got a large bottom padding</p>
+      </div>
+    </div>
+
+    <!---
+    title: Panel, with margin
+    usage: Use for visually separating elements with margin.
+    devnote: Has modifiers for either top or bottom margin, as well as sizes. Has both by default. Is responsive, small viewports have half the margin of medium to large viewports
+    -->
+    <div>
+      <div class="panel--mar-small">
+        <p class="flush">I've got a small top and bottom margin</p>
+      </div>
+      <div class="panel--mar">
+        <p class="flush">I've got a medium top and bottom margin</p>
+      </div>
+      <div class="panel--mar-large">
+        <p class="flush">I've got a large top and bottom margin</p>
+      </div>
+
+      <div class="panel--top-mar-small">
+        <p class="flush">I've got a small top margin</p>
+      </div>
+      <div class="panel--top-mar">
+        <p class="flush">I've got a medium top margin</p>
+      </div>
+      <div class="panel--top-mar-large">
+        <p class="flush">I've got a large top margin</p>
+      </div>
+
+      <div class="panel--bottom-mar-small">
+        <p class="flush">I've got a small bottom margin</p>
+      </div>
+      <div class="panel--bottom-mar">
+        <p class="flush">I've got a medium bottom margin</p>
+      </div>
+      <div class="panel--bottom-mar-large">
+        <p class="flush">I've got a large bottom margin</p>
+      </div>
+    </div>
+  </div> <!-- /wrapper -->
+{% endblock %}

@@ -1,0 +1,43 @@
+/* ======================================================
+   Icons
+   See /ui/font/icon-font/README.md for instructions on how to
+   update the icons in this font
+   ======================================================*/
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('../font/icon-font/icomoon.eot?6t1epn');
+  src: url('../font/icon-font/icomoon.eot?#iefix6t1epn') format('embedded-opentype'),
+    url('../font/icon-font/icomoon.woff?6t1epn') format('woff'),
+    url('../font/icon-font/icomoon.ttf?6t1epn') format('truetype'),
+    url('../font/icon-font/icomoon.svg?6t1epn#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.sgcxp {
+  [class^="icon-"],
+  [class*=" icon-"] {
+    &:before {
+      font-family: 'icomoon';
+      font-style: normal;
+      font-variant: normal;
+      font-weight: normal;
+      line-height: 1;
+      text-transform: none;
+      speak: none;
+    }
+  }
+
+  .icon-menu:before {
+    content: "\e600";
+  }
+
+  .icon-down-arrow:before {
+    content: "\e601";
+  }
+
+  .icon-close:before {
+    content: "\e602";
+  }
+}

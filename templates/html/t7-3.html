@@ -1,363 +1,394 @@
+<!--[if IE]><![endif]-->
 <!DOCTYPE html>
-<html>
-<head lang="en">
-   <meta charset="UTF-8">
-   <title>T7-3</title>
-   <link rel="stylesheet" type="text/css" href="../../node_modules/ONS-Pattern-Library/dist/css/main.css">
-   <script src="../../node_modules/ONS-Pattern-Library/dist/js/header.min.js"></script>
-</head>
-<body>
-    <header class="global-header">
-        <div class="global-header__wrapper">
-            <a class="main-logo" href="/">
-                <img src="../../ui/img/ons-logo.svg" alt="Office for National Statistics">
-            </a>
-            <ul class="nav globaltop-nav">
-                <li>
-                    <a href="#">Release Calendar</a>
-                </li>
-                <li>
-                    <a href="#">Methodology</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-            </ul>
-        </div>
-    </header>
-    <nav class="ons-nav">
-        <ul class="nav nav--controls">
-            <li class="nav--controls__menu">
-                <a href="#nav-primary" id="menu-toggle" aria-controls="nav-primary">
-                    <span class="nav--controls__icon icon-menu icon--inline icon--large" role="presentation"></span>
-                    <span class="nav--controls__text">Menu</span>
-                </a>
-            </li>
-            <li class="nav--controls__search">
-                <a href="#nav-search" id="search-toggle" aria-controls="nav-search">
-                    <span class="nav--controls__icon icon-search-1 icon--inline icon--large" role="presentation"></span>
-                    <span class="nav--controls__text">Search</span>
-                </a>
-            </li>
-        </ul>
-        <ul class="nav nav--block nav--primary" id="nav-primary">
-            <li class="nav--primary__hide-small-med">
-                <a href="/pages/t1">Home</a>
-            </li>
-            <li class="nav__expandable js-expandable">
-                <a href="#">Business, Industry, and Trade</a>
-                <ul class="nav--primary__sub js-expandable__content js-nav-hidden">
-                    <li>
-                        <a href="#">Business</a>
-                        </li>
-                        <li>
-                            <a href="#">Changes to business</a>
-                        </li>
-                        <li>
-                            <a href="#">Construction and industry</a>
-                        </li>
-                        <li>
-                            <a href="#">IT and internet industry</a>
-                        </li>
-                        <li>
-                            <a href="#">International trade</a>
-                        </li>
-                        <li>
-                            <a href="#">Manufacturing and production</a>
-                        </li>
-                        <li>
-                            <a href="#">Retail industry</a>
-                        </li>
-                        <li>
-                            <a href="#">Tourism industry</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav__expandable js-expandable nav--primary__active">
-                    <a href="/pages/t3">Economy</a>
-                    <ul class="nav--primary__sub js-expandable__content js-nav-hidden">
-                        <li>
-                            <a href="#">Economic output and productivity</a>
-                        </li>
-                        <li>
-                            <a href="#">Environmental account</a>
-                        </li>
-                        <li class="nav--primary__active">
-                            <a href="#">Government, public sector, and taxes</a>
-                        </li>
-                        <li>
-                            <a href="#">Gross Domestic Product (GDP)</a>
-                        </li>
-                        <li>
-                            <a href="#">Gross Values Added (GVA)</a>
-                        </li>
-                        <li>
-                            <a href="/pages/t3">Inflation and price indices</a>
-                        </li>
-                        <li>
-                            <a href="#">Investment and pension trust</a>
-                        </li>
-                        <li>
-                            <a href="#">National accounts</a>
-                        </li>
-                        <li>
-                            <a href="#">Regional accounts</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav__expandable js-expandable">
-                    <a href="#">Employment and Labour Market</a>
-                    <ul class="nav--primary__sub js-expandable__content js-nav-hidden">
-                        <li>
-                            <a href="#">People in work</a>
-                        </li>
-                        <li>
-                            <a href="#">People not in work</a>
-                        </li>
-                        <li>
-                            <a href="#">Public sector personnel</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav__expandable js-expandable">
-                    <a href="#">People, Population, and Community</a>
-                    <ul class="nav--primary__sub js-expandable__content js-nav-hidden">
-                        <li>
-                            <a href="#">Births, deaths, and marriages</a>
-                        </li>
-                        <li>
-                            <a href="#">Community</a>
-                        </li>
-                        <li>
-                            <a href="#">Education and childcare</a>
-                        </li>
-                        <li>
-                            <a href="#">Crime and justice</a>
-                        </li>
-                        <li>
-                            <a href="#">Household characteristics</a>
-                        </li>
-                        <li>
-                            <a href="#">Well-being</a>
-                        </li>
-                        <li>
-                            <a href="#">Health and social care</a>
-                        </li>
-                        <li>
-                            <a href="#">Elections</a>
-                        </li>
-                        <li>
-                            <a href="#">Personal and household finances</a>
-                        </li>
-                        <li>
-                            <a href="#">Population and migration</a>
-                        </li>
-                        <li>
-                            <a href="#">Cultural identity</a>
-                        </li>
-                        <li>
-                            <a href="#">Housing</a>
-                        </li>
-                        <li>
-                            <a href="#">Leisure and tourism</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav--primary__respondents">
-                    <a href="#">
-                        <span class="icon-comment icon--inline" role="presentation"></span>
-                        Taking part in a survey?
-                    </a>
-                </li>
-                <li class="nav--primary__secondary-content">
-                    <a href="#">Release calendar</a>
-                </li>
-                <li class="nav--primary__secondary-content">
-                    <a href="#">Methodology</a>
-                </li>
-                <li class="nav--primary__secondary-content">
-                    <a href="#">About</a>
-                </li>
-            </ul>
-            <div class="slate--grey search-wrapper">
-                <form class="nav-search nav-search--hidden" id="searchBar">
-                    <div class="nav-search__container">
-                        <label class="visuallyhidden" for="nav-search">Search for keyword or time series ID</label>
-                        <input type="search" class="nav-search__field" id="nav-search" name="nav-search" value="" placeholder="Enter keyword or time series ID">
-                    </div>
-                    <button type="submit" class="btn btn--primary btn--nav-search" id="nav-search-submit">
-                        <span class="icon-search-1" role="presentation"></span>
-                        <span class="visuallyhidden">Search</span>
-                    </button>
-                </form>
-            </div>
-    </nav>
-    <!-- /header -->
-    <!-- page header ("slate") -->
-    <div class="page-header slate slate--red">
-        <div class="wrapper">
-            <!-- breadcrumb -->
-                <ol class="nav nav--heavy breadcrumb mini flush--half--top">
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">About us</a>
-                    </li>
-                    <li>
-                        <a href="#">Corporate information</a>
-                    </li>
-                    <li>
-                        <a href="#">Freedom of infomation</a>
-                    </li>
-                    <li>
-                        <a href="#">Disclosure log</a>
-                    </li>
-                    <li class="nav__active">
-                        Raspberry production
-                    </li>
-                </ol>
-            <!-- /breadcrumb -->
-            <p class="page-header__title">
-                <strong>Freedom of information (FOI)</strong>
-            </p>
-            <h1 class="page-header__title flush--half--bottom">Raspberry production</h1>
-            <div class="grid-wrap">
-                <p class="grid-col desktop-grid-one-quarter">
-                    <span>Release date: </span><br/>23 Mar 2015
-                </p>
-            </div>
-            <div class="page-header__icons">
-                <a href="#" class="link-complex">
-                    <span class="icon icon-twitter icon--grey">
-                        <span class="visuallyhidden">Share on Twitter</span>
-                    </span>
-               </a>
-               <a href="#" class="link-complex">
-                   <span class="icon icon-facebook icon--grey">
-                       <span class="visuallyhidden">Share on Facebook</span>
-                   </span>
-               </a>
-               <a href="#" class="link-complex">
-                   <span class="icon icon-linkedin icon--grey">
-                       <span class="visuallyhidden">Share on LinkedIn</span>
-                   </span>
-               </a>
-            </div>
-        </div>
-    </div>
-    <!-- /page header ("slate") -->
-    <div class="wrapper panel--mar">
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html class="no-js ie9"><![endif]-->
+<!--[if gt IE 8]><!--><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Contributions to the annual CPI inflation rate, by degree of import penetration</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1.0" name="viewport" />
+    <meta content="on" http-equiv="cleartype" />
+    <meta name="format-detection" content="telephone=no">
+    <!--[if IE]><![endif]-->
+    <!--[if lte IE 8]>
+<link rel="stylesheet" href="./dist/css/oldie.css"/>
+<![endif]-->
+    <!--[if gt IE 8]><!-->
+		<link rel="stylesheet" href="../../node_modules/ONS-Pattern-Library/dist/css/main.min.css"/>
+		<![endif]-->
+		<link rel="stylesheet" href="../../css/js-enhance.css"/>
+  	<script src="../../node_modules/ONS-Pattern-Library/dist/js/header.js"></script>
+  </head>
+  <body class="">
+  	<!--<script type="text/javascript" src="/js/js-enhance-loading.js"></script>-->
+	<a class="skiplinks visuallyhidden focusable" href="#main" tabindex="0">
+		<span>Skip to main content</span>
+	</a>
 
-        <div class="grid-wrap">
-            <div class="grid-col desktop-grid-two-thirds">
-                <h2>Summary of request</h2>
-                <p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit.</a> Donec nulla odio, laoreet sit amet ipsum a, maximus feugiat urna. Integer eget ultrices lorem. Mauris a tincidunt dolor. Donec sed ligula ac neque dignissim ultricies congue et nibh. Phasellus nec turpis diam. Ut dapibus euismod mi non fringilla. Cras fringilla neque arcu, eget tristique turpis consectetur eu. Curabitur leo nisi, pulvinar sit amet molestie ac, faucibus sit amet turpis. Maecenas non sollicitudin magna, et convallis turpis.</p>
+	<!-- Pattern library page header -->
+	<header class="global-header">
+		<div class="global-header__wrapper">
+			<a class="main-logo" href="/">
+				<img src="../../node_modules/ONS-Pattern-Library/dist/img/ons-logo.png" alt="Office for National Statistics">
+			</a>
+			<ul class="nav globaltop-nav">
+				<li>
+					<a href="#">Release Calendar</a>
+				</li>
+				<li>
+					<a href="#">Methodology</a>
+				</li>
+				<li>
+					<a href="#">About</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<nav class="ons-nav print-hidden">
+		<ul class="nav nav--controls">
+			<li class="nav--controls__menu">
+				<a href="#nav-primary" id="menu-toggle" aria-controls="nav-primary">
+					<span class="nav--controls__icon icon-menu icon--inline icon--large" role="presentation"></span>
+					<span class="nav--controls__text">Menu</span>
+				</a>
+			</li>
+			<li class="nav--controls__search">
+				<a href="#nav-search" id="search-toggle" aria-controls="nav-search">
+					<span class="nav--controls__icon icon-search-1 icon--inline icon--large" role="presentation"></span>
+					<span class="nav--controls__text">Search</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="nav nav--block nav--primary" id="nav-primary">
+			<li class="nav--primary__hide-small-med">
+				<a href="/">Home</a>
+			</li>
+			
+				<li class="nav__expandable js-expandable">
+					<a href="/businessindustryandtrade">Business, industry and trade</a>
+						<ul class="nav--primary__sub js-expandable__content js-nav-hidden">
+							
+								<li>
+									<a href="/businessindustryandtrade/retailindustry">Retail industry</a>
+								</li>
+							
+								<li>
+									<a href="/businessindustryandtrade/internationaltrade">International trade</a>
+								</li>
+							
+								<li>
+									<a href="/businessindustryandtrade/manufacturingandproductionindustry">Manufacturing and production industry</a>
+								</li>
+							
+								<li>
+									<a href="/businessindustryandtrade/constructionindustry">Construction industry</a>
+								</li>
+							
+								<li>
+									<a href="/businessindustryandtrade/businessactivitysizeandlocation">Business activity, size and location</a>
+								</li>
+							
+								<li>
+									<a href="/businessindustryandtrade/changestobusiness">Changes to business</a>
+								</li>
+							
+								<li>
+									<a href="/businessindustryandtrade/itandinternetindustry">IT and internet industry</a>
+								</li>
+							
+								<li>
+									<a href="/businessindustryandtrade/tourismindustry">Tourism industry</a>
+								</li>
+							 <!-- /each to find 2nd level nodes -->
+						</ul>
+				</li>
+			
+				<li class="nav__expandable js-expandable">
+					<a href="/economy">Economy</a>
+						<ul class="nav--primary__sub js-expandable__content js-nav-hidden">
+							
+								<li>
+									<a href="/economy/inflationandpriceindices">Inflation and price indices</a>
+								</li>
+							
+								<li>
+									<a href="/economy/grossdomesticproductgdp">Gross Domestic Product (GDP)</a>
+								</li>
+							
+								<li>
+									<a href="/economy/governmentpublicsectorandtaxes">Government, public sector and taxes</a>
+								</li>
+							
+								<li>
+									<a href="/economy/economicoutputandproductivity">Economic output and productivity</a>
+								</li>
+							
+								<li>
+									<a href="/economy/regionalaccounts">Regional accounts</a>
+								</li>
+							
+								<li>
+									<a href="/economy/grossvalueaddedgva">Gross Value Added (GVA)</a>
+								</li>
+							
+								<li>
+									<a href="/economy/nationalaccounts">National Accounts</a>
+								</li>
+							
+								<li>
+									<a href="/economy/environmentalaccounts">Environmental accounts</a>
+								</li>
+							
+								<li>
+									<a href="/economy/investmentspensionsandtrusts">Investments, pensions and trusts</a>
+								</li>
+							 <!-- /each to find 2nd level nodes -->
+						</ul>
+				</li>
+			
+				<li class="nav__expandable js-expandable">
+					<a href="/employmentandlabourmarket">Employment and Labour market</a>
+						<ul class="nav--primary__sub js-expandable__content js-nav-hidden">
+							
+								<li>
+									<a href="/employmentandlabourmarket/peopleinwork">People in work</a>
+								</li>
+							
+								<li>
+									<a href="/employmentandlabourmarket/unemployment">Unemployment</a>
+								</li>
+							
+								<li>
+									<a href="/employmentandlabourmarket/publicsectorpersonnel">Public sector personnel</a>
+								</li>
+							 <!-- /each to find 2nd level nodes -->
+						</ul>
+				</li>
+			
+				<li class="nav__expandable js-expandable">
+					<a href="/peoplepopulationandcommunity">People, population and community</a>
+						<ul class="nav--primary__sub js-expandable__content js-nav-hidden">
+							
+								<li>
+									<a href="/peoplepopulationandcommunity/birthsdeathsandmarriages">Births, deaths and marriages</a>
+								</li>
+							
+								<li>
+									<a href="/peoplepopulationandcommunity/populationandmigration">Population and migration</a>
+								</li>
+							
+								<li>
+									<a href="/peoplepopulationandcommunity/healthandsocialcare">Health and social care</a>
+								</li>
+							
+								<li>
+									<a href="/peoplepopulationandcommunity/culturalidentity">Cultural identity</a>
+								</li>
+							
+								<li>
+									<a href="/peoplepopulationandcommunity/crimeandjustice">Crime and justice</a>
+								</li>
+							
+								<li>
+									<a href="/peoplepopulationandcommunity/housing">Housing</a>
+								</li>
+							
+								<li>
+									<a href="/peoplepopulationandcommunity/personalandhouseholdfinances">Personal and household finances</a>
+								</li>
+							
+								<li>
+									<a href="/peoplepopulationandcommunity/wellbeing">Well-being</a>
+								</li>
+							
+								<li>
+									<a href="/peoplepopulationandcommunity/leisureandtourism">Leisure and tourism</a>
+								</li>
+							
+								<li>
+									<a href="/peoplepopulationandcommunity/homeinternetandsocialmediausage">Home internet and social media usage</a>
+								</li>
+							
+								<li>
+									<a href="/peoplepopulationandcommunity/elections">Elections</a>
+								</li>
+							 <!-- /each to find 2nd level nodes -->
+						</ul>
+				</li>
+			 <!-- /each to find 1st level nodes -->
+			<li class="nav--primary__respondents">
+				<a href="#">
+					<span class="icon-comment icon--inline" role="presentation"></span>
+					Taking part in a survey?
+				</a>
+			</li>
+			<li class="nav--primary__secondary-content">
+				<a href="#">Release calendar</a>
+			</li>
+			<li class="nav--primary__secondary-content">
+				<a href="#">Methodology</a>
+			</li>
+			<li class="nav--primary__secondary-content">
+				<a href="#">About</a>
+			</li>
+		</ul> <!-- /nav-primary -->
 
-                <h2>Summary of response</h2>
-                <p>Donec fringilla, ante et imperdiet interdum, arcu ipsum mollis odio, vitae euismod augue mi at velit. </p>
+		<div class="slate--grey search-wrapper">
+			<form class="nav-search nav-search--hidden" id="searchBar">
+				<div class="nav-search__container">
+					<label class="visuallyhidden" for="nav-search">Search for keyword or time series ID</label>
+					<input type="search" class="nav-search__field" id="nav-search" name="nav-search" value="" placeholder="Search for keyword or time series ID">
+				</div>
+				<button type="submit" class="btn btn--primary btn--nav-search" id="nav-search-submit">
+				<span class="icon-search-1" role="presentation"></span>
+				<span class="visuallyhidden">Search</span>
+				</button>
+			</form>
+		</div>
+	</nav>
 
-                <p>Ut egestas tortor vel ipsum interdum suscipit. Etiam commodo dolor ut nisl consequat feugiat. Nulla facilisi. Morbi tempus mauris sem, sit amet facilisis tellus facilisis id. Nunc a tortor lacus. Maecenas fermentum libero arcu, at tempus risus laoreet sed. Sed blandit mauris a neque viverra malesuada. Maecenas accumsan maximus leo, nec porta arcu accumsan vel. Praesent rutrum vel turpis vel euismod. Etiam et commodo justo.</p>
+<main id="main" role="main" tabindex="-1">
+	<div class="page-header slate slate--red">
+		<div class="wrapper">
+				<ol class="nav nav--heavy breadcrumb breadcrumb_hero mini">
+		
+		<li class="nav__active breadcrumb">
+			Contributions to the annual CPI inflation rate, by degree of import penetration
+		</li>
+	</ol>
+	<!-- /breadcrumb -->
 
-                <p><a href="">Contributions to the annual CPI inflation rate, by degree of import penetration</a></p>
-            </div><!-- /grid-two-thirds -->
-            <div class="grid-col desktop-grid-one-third">
-                <article class="box solid box--purple--separated--left">
-                    <div class="box__inner border box--padded">
-                        <div class="box__section">
-                            <h3 class="box__section__header">
-                                Making a FOI request
-                            </h3>
-                        </header>
-                        <!-- /box__header -->
-                        <div class="box__content">
-                                <a href="#">Everything you need to about FOIs</a>
-                        </div>
-                        <!-- /box__content -->
-                    </div>
-                    <!-- /box__inner -->
-                </article>
-                <!-- /box--blue -->
+			<p class="page-header__title">
+				Freedom of information (FOI)
+			</p>
+			<h1 class="page-header__title flush--half--bottom">Contributions to the annual CPI inflation rate, by degree of import penetration</h1>
+			<div class="grid-wrap">
+				<p class="grid-col tablet-grid-one-quarter">
+					<span>Release date: </span><br/>21 March 2015
+				</p>
+			</div>
+			
+		</div>
+	</div>
+	<!-- /page-header 'slate' -->
+	<div class="wrapper panel--mar">
+		<div class="grid-wrap">
+			<div class="grid-col desktop-grid-two-thirds">
+				<h2>Summary of request</h2>
+				<p>Donec fringilla, ante et imperdiet interdum, arcu ipsum mollis odio, vitae euismod augue mi at velit. Ut egestas tortor vel ipsum interdum suscipit. Etiam commodo dolor ut nisl consequat feugiat. Nulla facilisi. Morbi tempus mauris sem, sit amet facilisis tellus facilisis id. Nunc a tortor lacus. Maecenas fermentum libero arcu, at tempus risus laoreet sed. Sed blandit mauris a neque viverra malesuada.</p>
+				<h2>Summary of response</h2>
+				<p>Maecenas eu velit id nunc molestie vestibulum nec sit amet nulla. Duis eget mauris nec lorem faucibus egestas nec vitae augue. Curabitur ut scelerisque tortor, at euismod erat. Integer blandit dui vitae orci auctor accumsan. Nam rhoncus dapibus mauris, sit amet iaculis lacus semper quis. Nulla laoreet, quam eu semper malesuada, quam eros malesuada leo, eget cursus tellus purus quis mauris. Donec rhoncus finibus tortor et interdum. Donec in massa sed orci sagittis auctor non congue tortor. Nam porta dui eu dui hendrerit condimentum. Donec fringilla, ante et imperdiet interdum, arcu ipsum mollis odio, vitae euismod augue mi at velit. Ut egestas tortor vel ipsum interdum suscipit. Etiam commodo dolor ut nisl consequat feugiat. Nulla facilisi. Morbi tempus mauris sem, sit amet facilisis tellus facilisis id. Nunc a tortor lacus. Maecenas fermentum libero arcu, at tempus risus laoreet sed. Sed blandit mauris a neque viverra malesuada. </p>
+			</div>
+			<!-- /desktop-grid-two-thirds -->
+			<div class="grid-col desktop-grid-one-third">
+				<div class="box solid box--purple--separated--left">
+					<div class="box__inner border box--padded">
+						<h3 class="box__section__header">
+							Making an FOI request
+						</h3>
+						<!-- /box__header -->
+						<div class="box__content">
+							<a href="#">Everything you need to know about Freedom of Information and how to go about making a request.</a>
+						</div>
+						<!-- /box__content -->
+					</div>
+					<!-- /box__inner -->
+				</div>
+				<!-- /box -->
+			</div>
+			<!-- /desktop-grid-one-third -->
+		</div>
+		<!-- /grid-wrap -->
+	</div>
+	<!-- /wrapper -->
+</main>
+<footer class="global-footer">
+	<h2 class="visuallyhidden">Footer links</h2>
+	<div class="slate--light panel--pad-large panel--separated">
+	<div class="wrapper">
+	  <nav class="grid-wrap">
+	    <div class="grid-col tablet-grid-one-third">
+	      <h3 class="delta headline-separated">Legal</h3>
+	      <ul class="list--neutral list--grid list--spaced">
+	        <li>
+	          <a href="#">Business Transparency</a>
+	        </li>
+	        <li>
+	          <a href="#">Terms and Conditions</a>
+	        </li>
+	        <li>
+	          <a href="#">Copyright</a>
+	        </li>
+	        <li>
+	          <a href="#">Cookies and Privacy</a>
+	        </li>
+	      </ul>
+	    </div>
 
-            </div><!-- /grid-one-third -->
-        </div><!-- /grid-wrap -->
-    </div>
-    <footer class="global-footer">
-      <h2 class="visuallyhidden">Footer links</h2>
-      <div class="slate--light panel--pad-large panel--separated">
-        <div class="wrapper">
-          <nav class="grid-wrap">
-            <div class="grid-col tablet-grid-one-third">
-              <h3 class="delta headline-separated">Legal</h3>
-              <ul class="list--neutral list--grid list--spaced">
-                <li>
-                  <a href="#">Business Transparency</a>
-                </li>
-                <li>
-                  <a href="#">Terms and Conditions</a>
-                </li>
-                <li>
-                  <a href="#">Copyright</a>
-                </li>
-                <li>
-                  <a href="#">Cookies and Privacy</a>
-                </li>
-              </ul>
-            </div>
+	    <div class="grid-col tablet-grid-one-third">
+	      <h3 class="delta headline-separated">About ONS</h3>
+	      <ul class="list--neutral list--grid list--spaced">
+	        <li>
+	          <a href="#">Who we are</a>
+	        </li>
+	        <li>
+	          <a href="#">Careers</a>
+	        </li>
+	        <li>
+	          <a href="#">Products and Services</a>
+	        </li>
+	        <li>
+	          <a href="#">Contact us</a>
+	        </li>
+	        <li>
+	          <a href="#">Our offices</a>
+	        </li>
+	      </ul>
+	    </div>
 
-            <div class="grid-col tablet-grid-one-third">
-              <h3 class="delta headline-separated">About ONS</h3>
-              <ul class="list--neutral list--grid list--spaced">
-                <li>
-                  <a href="#">Who we are</a>
-                </li>
-                <li>
-                  <a href="#">Careers</a>
-                </li>
-                <li>
-                  <a href="#">Products and Services</a>
-                </li>
-                <li>
-                  <a href="#">Contact us</a>
-                </li>
-                <li>
-                  <a href="#">Our offices</a>
-                </li>
-              </ul>
-            </div>
+	    <div class="grid-col tablet-grid-one-third">
+	      <h3 class="delta headline-separated">Connect with us</h3>
+	      <ul class="list--neutral list--grid list--spaced">
+	        <li>
+	          <a href="#">Facebook</a>
+	        </li>
+	        <li>
+	          <a href="#">Twitter</a>
+	        </li>
+	        <li>
+	          <a href="#">YouTube</a>
+	        </li>
+	        <li>
+	          <a href="#">Email subscriptions</a>
+	        </li>
+	      </ul>
+	    </div>
+	  </nav>
+	</div>
+	<!-- /wrapper -->
+	</div>
+	<!-- /slate -->
+	<div class="slate--mid-grey">
+	<div class="wrapper">
+	  <div class="footer__license">
+	    <img class="footer__license__img" alt="OGL" width="60" src="/node_modules/ONS-Pattern-Library/ui/img/ogl.png">
+	    <p class="footer__license__body">
+	      All content is available under the Open Government Licence v2.0, except where otherwise stated
+	    </p>
+	  </div>
+	</div>
+	</div>
+</footer>
 
-            <div class="grid-col tablet-grid-one-third">
-              <h3 class="delta headline-separated">Connect with us</h3>
-              <ul class="list--neutral list--grid list--spaced">
-                <li>
-                  <a href="#">Facebook</a>
-                </li>
-                <li>
-                  <a href="#">Twitter</a>
-                </li>
-                <li>
-                  <a href="#">LinkedIn</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-        <!-- /wrapper -->
-      </div>
-      <!-- /slate -->
-      <div class="slate--mid-grey">
-        <div class="wrapper">
-          <div class="footer__license">
-            <img class="footer__license__img" alt="OGL" width="60" src="../../ui/img/ogl.png">
-            <p class="footer__license__body">
-              All content is available under the Open Government Licence v2.0, except where otherwise stated
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <script src="../../node_modules/ONS-Pattern-Library/dist/js/footer.min.js"></script>
+<script type="text/javascript" src="../../ui/js/lib/highcharts.js"></script>
+<script type="text/javascript" src="../../ui/js/lib/jquery.tooltipster.min.js"></script>
+<script type="text/javascript" src="../../node_modules/ONS-Pattern-Library/dist/js/footer.js"></script>
+<script type="text/javascript" src="../../js/js-enhance.js"></script>
 </body>
-<script src="js/jquery.min.js"></script>
-
 </html>
+

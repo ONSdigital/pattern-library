@@ -1,0 +1,31 @@
+{% layout 'bare' %}
+{% block page_title %} Homepage search component {% endblock %}
+
+{% block custom_head %}
+  <style>
+    @media screen and (max-width: 559px) {
+      .slate {
+        display: none;
+      }
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+
+<h1>Homepage search component</h1>
+<p>
+  (hidden below 560px as this is where the nav search will take over)
+</p>
+<div class="slate">
+  <div class="wrapper panel">
+    <form action="#" class="hero">
+      <label for="homepageSearch" class="visuallyhidden">Search term:</label>
+      <input id="homepageSearch" type="text" class="input-med-large--flex--four-fifths input--lede" name="homepageSearch" value="" placeholder="Search for postcode, release number, or keyword">
+      <button type="submit" class="btn btn--primary btn--narrow btn--form--large-icon input--lede-btn-icon">
+        <span class="icon icon-search"><span class="visuallyhidden">Search</span></span>
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

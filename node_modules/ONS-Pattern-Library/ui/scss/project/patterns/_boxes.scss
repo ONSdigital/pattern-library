@@ -258,20 +258,20 @@
 
 // end custom boxes
 
-%orange {
-  a {
-    color: $orange;
+//%orange {
+  //a {
+    //color: $orange;
 
-    &:visited {
-      color: darken($orange, 5%);
-    }
+    //&:visited {
+      //color: darken($orange, 5%);
+    //}
 
-    &:hover,
-    &:focus {
-      color: darken($orange, 10%);
-    }
-  }
-}
+    //&:hover,
+    //&:focus {
+      //color: darken($orange, 10%);
+    //}
+  //}
+//}
 
 .box--orange {
   @extend %orange;

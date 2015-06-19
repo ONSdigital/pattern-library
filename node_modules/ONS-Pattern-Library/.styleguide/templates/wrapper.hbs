@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8 ie7"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9 ie8"><![endif]-->
+<!--[if IE 9]><html class="no-js ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"><!--<![endif]-->
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>ONS Alpha Pattern Library</title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <meta content="on" http-equiv="cleartype"/>
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="shortcut icon" href="/sg-assets/img/favicon.png">
+
+  <!-- These are the project stylesheets and scripts -->
+
+  <link rel="stylesheet" href="/dist/css/main.css"/>
+
+  <link href="/sg-assets/prismjs/prism.css" rel="stylesheet"/>
+  <script src="/ui/js/lib/modernizr.min.js"></script>
+
+  <!-- // -->
+
+  <!-- These are the styleguide stylesheets -->
+
+  <!-- IE friendly media query replacements as per http://jakearchibald.github.io/sass-ie/ -->
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/sg-assets/css/main-oldie.css"/>
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/sg-assets/css/main.css"/>
+  <!--<![endif]-->
+
+  <!-- // -->
+
+  <!-- Styles that are required to make the project display correctly in the pattern library. -->
+  <link rel="stylesheet" href="/sg-assets/css/project.css"/>
+
+</head>
+<body class="sgcxp">
+<div class="sgcxp__outer-wrapper">
+  <div class="sgcxp__inner-wrapper">
+    <a class="skiplink visuallyhidden focusable" href="#sgcxp__main" tabindex="0">
+      <span>Skip to main content</span>
+    </a>
+
+    <header class="sgcxp__header" id="header" role="banner">
+      <div class="sgcxp__update-panel">
+        <p class="sgcxp__update-panel__inner">Last updated: {{ global.date }}</p>
+      </div>
+      <!--/sgcxp__update-panel-->
+      <div class="sgcxp__header__inner sgxcp-icons">
+        <a href="#menu" class="mobile-only offcanvas-menu-toggle offcanvas-menu-toggle--open"><span
+          class="icon icon-menu" role="presentation"></span><span
+          class="offcanvas-menu-toggle__text">Menu</span></a>
+        <a itemprop="url" class="sgcxp__logo" href="/">
+          <span itemprop="name">ONS</span>
+          <link itemprop="logo" href="/sg-assets/img/logo.png"/>
+        </a>
+
+        <div class="sgcxp__nav" id="menu">
+          <a href="#masthead" class="mobile-only offcanvas-menu-toggle offcanvas-menu-toggle--close"><span
+            class="icon icon-close" role="presentation"></span></a>
+          <nav>
+            <ul class="sgcxp__nav__list">
+
+                {{#each pages}}
+                  <li class="sgcxp__nav__item"><a  class="sgcxp__nav__link" href="{{link}}">{{title}}</a></li>
+                {{/each}}
+
+
+                {{#each nav}}
+                  <li class="sgcxp__nav__item">
+                    <a class="sgcxp__nav__link" href="#">{{category}}<span
+                      class="icon-down-arrow desktop-only"></span></a>
+
+                    <div class="sgcxp__nav__dropdown grid-wrap">
+                    <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+
+                        {{#each items}}
+
+                          <div class="sgcxp__linklist__col grid-col grid-one-quarter">
+
+
+                            <div class="sgcxp__linklist__section">
+                              <h3 class="sgcxp__linklist__heading">
+                                <a href="{{ url this }}">{{group}}</a>
+
+                              </h3>
+                              <ul class="sgcxp__linklist__item__wrapper desktop-only">
+                                  {{#each items}}
+                                    <li class="sgcxp__linklist__item">
+                                      <a href="{{ url this }}"
+                                         class="sgcxp__linklist__link">{{title}}</a>
+                                    </li>
+                                  {{/each}}
+                              </ul>
+                              <!--/sgcxp__linklist__item__wrapper-->
+                            </div>
+                            <!--/sgcxp__linklist__section-->
+
+                          </div><!--/sgcxp__linklist__col-->
+
+                            {{#modulo @index 4}}
+                            </div>
+                            <div class="sgcxp__linklist__col__wrapper grid-wrap grid-col">
+                            {{/modulo}}
+
+                        {{/each}}
+                    </div>
+                    </div>
+                    <!--/sgcxp__nav__dropdown-->
+                  </li>
+
+
+                {{/each}}
+
+              <!--<li class="sgcxp__nav__item no-subnav">-->
+              <!--<a class="sgcxp__nav__link" href="#">Pages</a>-->
+              <!--</li>-->
+            </ul>
+          </nav>
+        </div>
+        <!--/sgcxp__nav-->
+
+      </div>
+      <!--/sgcxp__header__inner-->
+    </header>
+
+
+    <main id="sgcxp__main" role="main">
+      <div class="sgcxp__wrapper">
+
+{{>body}}
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- project js -->
+
+<script src="/dist/js/footer.js"></script>
+
+<!-- / -->
+
+<!-- pattern library JS (@optimise: minify) -->
+
+<script src="/sg-assets/js/charts.js"></script>
+<script src="/sg-assets/js/lib/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="/sg-assets/js/lib/media.match.js"></script>
+<script src="/sg-assets/js/lib/enquire.min.js"></script>
+<script src="/sg-assets/js/lib/tiny-pubsub.js"></script>
+<script src="/sg-assets/js/lib/jquery.uniform.min.js"></script>
+<script src="/sg-assets/js/lib/jquery.hoverIntent.js"></script>
+
+<script src="/sg-assets/js/app/widgets/offcanvas-menu.js"></script>
+<script src="/sg-assets/js/app/widgets/skiplink.js"></script>
+<script src="/sg-assets/js/app/widgets/jquery.cx.jump-to.js"></script>
+
+<script src="/sg-assets/js/app/app.js"></script>
+
+
+<!-- Fast Click - for speedy clicks and to fix the meganav dropdown on touch  -->
+<script src="/sg-assets/js/lib/fastclick.js"></script>
+<script>
+  window.addEventListener('load', function () {
+    new FastClick(document.body);
+  }, false);
+</script>
+
+
+<!-- Font -->
+<script type="text/javascript">
+  WebFontConfig = { fontdeck: { id: '42695' } };
+
+  (function () {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+
+</script>
+
+<script src="/sg-assets/prismjs/prism.js"></script>
+<script>
+$('table').addClass('tablesaw');
+$('pre').addClass('language-markup');
+$('code').addClass('language-markup');
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+/*
+ * Styles which are required to make sure the project works with the Pattern Library CSS
+ */
+/* line 5, ../scss/project.scss */
+body {
+  max-width: 100%;
+  padding: 0;
+}
+
+/* line 10, ../scss/project.scss */
+.color-block {
+  float: none;
+  display: inline-block;
+}
+
+/* line 15, ../scss/project.scss */
+.language-markup {
+  overflow-wrap: normal;
+}
+
+/* line 19, ../scss/project.scss */
+#panel1 {
+  background-color: palegoldenrod;
+}
+
+/* line 23, ../scss/project.scss */
+#panel3 {
+  background-color: mistyrose;
+}
+
+/* line 27, ../scss/project.scss */
+#panel4 {
+  background-color: honeydew;
+}
+
+/* line 31, ../scss/project.scss */
+.language-markup {
+  overflow-wrap: normal;
+}
+
+/* line 35, ../scss/project.scss */
+.sgcxp {
+  max-width: 100%;
+}
+
+/* line 39, ../scss/project.scss */
+.grid-col {
+  word-wrap: break-word;
+}
+
+/* line 43, ../scss/project.scss */
+.sgcxp__block--notes__header {
+  color: #fff;
+}
+
+/* line 47, ../scss/project.scss */
+.sgcxp__nav__item .grid-col {
+  word-wrap: normal;
+}
+
+/* line 53, ../scss/project.scss */
+.sgcxp__block--notes a,
+.sgcxp__block--notes a:visited,
+.sgcxp__block--notes a:hover {
+  color: #fff;
+}
+
+/* line 57, ../scss/project.scss */
+.sgcxp__block--code {
+  word-wrap: normal;
+  white-space: pre;
+  overflow: auto;
+}
+
+/* line 63, ../scss/project.scss */
+.swatch {
+  border-radius: 100%;
+  display: inline-table;
+  width: 110px;
+  height: 110px;
+  padding: 15px;
+  margin: 20px;
+  text-align: center;
+  border: 1px solid black;
+  position: relative;
+}
+
+/* line 75, ../scss/project.scss */
+.swatch div {
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* line 83, ../scss/project.scss */
+.token.tag {
+  padding: 0;
+  text-transform: none;
+  background-color: #eaeaea;
+}
+
+/* line 89, ../scss/project.scss */
+.hljs {
+  background: #fff;
+}
+
+/* line 94, ../scss/project.scss */
+.sgcxp__wrapper [class*="icon-"]:before,
+.sgcxp__wrapper [class^="icon-"]:before {
+  font-family: 'fontello' !important;
+}
+
+/* line 98, ../scss/project.scss */
+.sgcxp__block--markdown h2 {
+  margin-top: 40px;
+}
+
+/* line 104, ../scss/project.scss */
+.sgcxp__block--markdown h3,
+.sgcxp__block--markdown h4,
+.sgcxp__block--markdown h5 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 110, ../scss/project.scss */
+.sgcxp__block--markdown h1,
+.sgcxp__block--markdown h2 {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* line 116, ../scss/project.scss */
+h5 .language-markup,
+h4 .language-markup {
+  font-size: 1.6rem;
+}
+
+/* line 120, ../scss/project.scss */
+.sgcxp__code {
+  margin-bottom: 4rem;
+}
+
+/* line 124, ../scss/project.scss */
+.sgcxp__block--markdown blockquote {
+  font-style: italic;
+}
