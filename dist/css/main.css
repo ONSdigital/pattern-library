@@ -2544,6 +2544,9 @@ a {
     color: #424242; }
 
 
+address {
+  font-style: normal; }
+
 .page-header--article {
   margin-bottom: 30px;
   margin-bottom: 3rem; }

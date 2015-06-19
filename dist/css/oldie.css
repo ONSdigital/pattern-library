@@ -2558,6 +2558,9 @@ a {
     color: #424242; }
 
 
+address {
+  font-style: normal; }
+
 .page-header--article {
   margin-bottom: 30px; }
   .page-header--article:after {
