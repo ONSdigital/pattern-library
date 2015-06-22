@@ -28,6 +28,19 @@
   font-size: 2.4rem;
 }
 
+.stat__image--home {
+  
+  width: 50%;
+
+  @include respond-min($bp-tablet-wide) {
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+}
+
 .stat__figure__unit {
   /*---------------------
     Offset number so it appears visually closer to the stat figure.
