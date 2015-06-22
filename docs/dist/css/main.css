@@ -4115,7 +4115,10 @@ lesser , applied styles
   background-color: #ddf3ff; }
 
 .nav-panel--home-hero {
-  display: block; }
+  display: block;
+  height: 350px;
+  overflow: hidden;
+  text-align: center; }
 
 .nav-panel__header {
   padding-top: 20px;
@@ -4214,6 +4217,10 @@ lesser , applied styles
       padding-top: 3rem;
       padding-bottom: 30px;
       padding-bottom: 3rem; } }
+
+nav-panel__footer-home-hero {
+  font-size: 13px;
+  padding: 30px; }
 
 .nav-panel__title, .nav-panel__value {
   display: table-cell;

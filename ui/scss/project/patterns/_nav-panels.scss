@@ -11,6 +11,9 @@
 
 .nav-panel--home-hero {
     display: block;
+    height: 350px;
+    overflow: hidden;
+    text-align: center;
 }
 
 .nav-panel__header {
@@ -110,6 +113,11 @@
       padding-bottom: 3rem;
     }
   }
+}
+
+nav-panel__footer-home-hero {
+    font-size: 13px;
+    padding: 30px;
 }
 
 

@@ -3700,7 +3700,10 @@ lesser , applied styles
   background-color: #ddf3ff; }
 
 .nav-panel--home-hero {
-  display: block; }
+  display: block;
+  height: 350px;
+  overflow: hidden;
+  text-align: center; }
 
 .nav-panel__header {
   padding-top: 20px;
@@ -3762,6 +3765,10 @@ lesser , applied styles
   padding-bottom: 15px;
   padding-top: 30px;
   padding-bottom: 30px; }
+
+nav-panel__footer-home-hero {
+  font-size: 13px;
+  padding: 30px; }
 
 .nav-panel__title, .nav-panel__value {
   display: table-cell;
