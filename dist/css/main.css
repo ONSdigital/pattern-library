@@ -4116,9 +4116,10 @@ lesser , applied styles
 
 .nav-panel--home-hero {
   display: block;
-  height: 350px;
+  height: 400px;
   overflow: hidden;
-  text-align: center; }
+  text-align: center;
+  position: relative; }
 
 .nav-panel__header {
   padding-top: 20px;
@@ -4204,6 +4205,9 @@ lesser , applied styles
         padding-right: 70px;
         padding-right: 7rem; } }
 
+.nav-panel__action--home-hero {
+  background-color: transparent; }
+
 .nav-panel__footer .nav-panel__action:after {
   font-size: 200%; }
 .nav-panel__footer a {
@@ -4218,9 +4222,15 @@ lesser , applied styles
       padding-bottom: 30px;
       padding-bottom: 3rem; } }
 
-nav-panel__footer-home-hero {
+.nav-panel__footer-home-hero {
   font-size: 13px;
-  padding: 30px; }
+  padding: 0 30px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  display: block; }
 
 .nav-panel__title, .nav-panel__value {
   display: table-cell;

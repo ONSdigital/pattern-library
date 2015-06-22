@@ -11,9 +11,10 @@
 
 .nav-panel--home-hero {
     display: block;
-    height: 350px;
+    height: 400px;
     overflow: hidden;
     text-align: center;
+    position: relative;
 }
 
 .nav-panel__header {
@@ -99,6 +100,10 @@
   }
 }
 
+.nav-panel__action--home-hero {
+  background-color: transparent;
+}
+
 .nav-panel__footer {
   .nav-panel__action:after {
     font-size: 200%;
@@ -115,9 +120,15 @@
   }
 }
 
-nav-panel__footer-home-hero {
-    font-size: 13px;
-    padding: 30px;
+.nav-panel__footer-home-hero {
+  font-size: 13px;
+  padding: 0 30px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  display: block;
 }
 
 
