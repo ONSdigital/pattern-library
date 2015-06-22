@@ -3772,13 +3772,26 @@ lesser , applied styles
 
 .nav-panel__footer-home-hero {
   font-size: 13px;
-  padding: 0 30px;
-  position: relative;
+  padding: 20px 30px 0 10px;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 90px;
   display: block; }
+  .nav-panel__footer-home-hero:after {
+    content: "\e80c";
+    font-family: "fontello";
+    position: absolute;
+    right: 15px;
+    color: red;
+    font-size: 200%;
+    top: 10px;
+    color: #b4def4; }
+
+.nav-panel__footer-home-hero a {
+  text-decoration: none;
+  font-family: open-sans-n7, open-sans, sans-serif; }
 
 .nav-panel__title, .nav-panel__value {
   display: table-cell;
