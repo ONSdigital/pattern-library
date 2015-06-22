@@ -4451,6 +4451,10 @@ $SPLIT
   font-family: "open-sans-n7", "open-sans", sans-serif;
   font-size: 39px; }
 
+.stat__figure--home {
+  font-family: "open-sans-n7", "open-sans", sans-serif;
+  font-size: 24px; }
+
 .stat__figure__unit {
   /*---------------------
     Offset number so it appears visually closer to the stat figure.
