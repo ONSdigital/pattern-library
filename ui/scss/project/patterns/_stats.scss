@@ -34,11 +34,16 @@
 
   @include respond-min($bp-tablet-wide) {
     position: absolute;
-    bottom: 90px;
+    bottom: 0px;
     left: 0;
     right: 0;
     width: 100%;
   }
+}
+
+.stat__wrap--home {
+  height: 300px;
+  position: relative;
 }
 
 .stat__figure__unit {
