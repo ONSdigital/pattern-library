@@ -45,6 +45,11 @@
   height: 300px;
   position: relative;
   padding: 0 10px;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: lighten($ons-green, 50%);
+  }
 }
 
 .stat__figure__unit {
