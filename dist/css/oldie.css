@@ -4496,10 +4496,7 @@ $SPLIT
 .stat__wrap--home {
   height: 300px;
   position: relative;
-  padding: 0 10px;
-  cursor: pointer; }
-  .stat__wrap--home:hover {
-    background-color: #f8fadc; }
+  padding: 0 10px; }
 
 .stat__figure__unit {
   /*---------------------
