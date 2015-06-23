@@ -3704,8 +3704,7 @@ lesser , applied styles
   height: 400px;
   overflow: hidden;
   text-align: center;
-  position: relative;
-  padding: 0 10px; }
+  position: relative; }
 
 .nav-panel__header {
   padding-top: 20px;
@@ -4496,7 +4495,8 @@ $SPLIT
 
 .stat__wrap--home {
   height: 300px;
-  position: relative; }
+  position: relative;
+  padding: 0 10px; }
 
 .stat__figure__unit {
   /*---------------------
