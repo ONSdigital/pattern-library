@@ -133,6 +133,10 @@
       
     }
 
+    &:nth-child(4) {
+      clear: left;
+    }
+
     &:nth-child(5) {
       .img-block {
         border-left-color: $ons-green;

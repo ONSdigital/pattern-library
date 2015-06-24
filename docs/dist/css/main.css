@@ -4353,6 +4353,8 @@ lesser , applied styles
       border-left: none; }
   .nav--block-home-highlighted-content:nth-child(3) .img-block {
     border-left-color: #f37121; }
+  .nav--block-home-highlighted-content:nth-child(4) {
+    clear: left; }
   .nav--block-home-highlighted-content:nth-child(5) .img-block {
     border-left-color: #b2bb1c; }
 
