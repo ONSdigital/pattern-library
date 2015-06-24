@@ -52,7 +52,8 @@
   }
 
   tr,
-  img {
+  img,
+  .box {
     page-break-inside: avoid;
   }
 
