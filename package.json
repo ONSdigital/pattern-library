@@ -9,7 +9,7 @@
   },
   "homepage": "http://onsdigital.github.io/pattern-library",
   "scripts": {
-    "install": "napa"
+    "postinstall": "napa"
   },
   "engines": {
     "node": ">= 0.10.27"

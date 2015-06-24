@@ -18420,1256 +18420,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	}
 })( jQuery, window, document );
 
-/*! Tablesaw - v1.0.3 - 2015-01-27
-* https://github.com/filamentgroup/tablesaw
-* Copyright (c) 2015 Filament Group; Licensed MIT */
-;(function( $ ) {
-	var div = document.createElement('div'),
-		all = div.getElementsByTagName('i'),
-		$doc = $( document.documentElement );
-
-	div.innerHTML = '<!--[if lte IE 8]><i></i><![endif]-->';
-	if( all[ 0 ] ) {
-		$doc.addClass( 'ie-lte8' );
-	}
-
-	// Cut the mustard
-	if( !( 'querySelector' in document ) ||
-			( window.blackberry && !window.WebKitPoint ) ||
-			window.operamini ) {
-		return;
-	} else {
-		$doc.addClass( 'tablesaw-enhanced' );
-
-		// DOM-ready auto-init of plugins.
-		// Many plugins bind to an "enhance" event to init themselves on dom ready, or when new markup is inserted into the DOM
-		$( function(){
-			$( document ).trigger( "enhance.tablesaw" );
-		});
-	}
-
-})( jQuery );
-/*
-* tablesaw: A set of plugins for responsive tables
-* Stack and Column Toggle tables
-* Copyright (c) 2013 Filament Group, Inc.
-* MIT License
-*/
-
-if( typeof Tablesaw === "undefined" ) {
-	Tablesaw = {};
-}
-if( !Tablesaw.config ) {
-	Tablesaw.config = {};
-}
-
-;(function( $ ) {
-	var pluginName = "table",
-		classes = {
-			toolbar: "tablesaw-bar"
-		},
-		events = {
-			create: "tablesawcreate",
-			destroy: "tablesawdestroy",
-			refresh: "tablesawrefresh"
-		},
-		defaultMode = "stack",
-		initSelector = "table[data-tablesaw-mode],table[data-tablesaw-sortable]";
-
-	var Table = function( element ) {
-		if( !element ) {
-			throw new Error( "Tablesaw requires an element." );
-		}
-
-		this.table = element;
-		this.$table = $( element );
-
-		this.mode = this.$table.attr( "data-tablesaw-mode" ) || defaultMode;
-
-		this.init();
-	};
-
-	Table.prototype.init = function() {
-		// assign an id if there is none
-		if ( !this.$table.attr( "id" ) ) {
-			this.$table.attr( "id", pluginName + "-" + Math.round( Math.random() * 10000 ) );
-		}
-
-		this.createToolbar();
-
-		var colstart = this._initCells();
-
-		this.$table.trigger( events.create, [ this, colstart ] );
-	};
-
-	Table.prototype._initCells = function() {
-		var colstart,
-			thrs = this.table.querySelectorAll( "thead tr" ),
-			self = this;
-
-		$( thrs ).each( function(){
-			var coltally = 0;
-
-			$( this ).children().each( function(){
-				var span = parseInt( this.getAttribute( "colspan" ), 10 ),
-					sel = ":nth-child(" + ( coltally + 1 ) + ")";
-
-				colstart = coltally + 1;
-
-				if( span ){
-					for( var k = 0; k < span - 1; k++ ){
-						coltally++;
-						sel += ", :nth-child(" + ( coltally + 1 ) + ")";
-					}
-				}
-
-				// Store "cells" data on header as a reference to all cells in the same column as this TH
-				this.cells = self.$table.find("tr").not( $( thrs ).eq( 0 ) ).not( this ).children( sel );
-				coltally++;
-			});
-		});
-
-		return colstart;
-	};
-
-	Table.prototype.refresh = function() {
-		this._initCells();
-
-		this.$table.trigger( events.refresh );
-	};
-
-	Table.prototype.createToolbar = function() {
-		// Insert the toolbar
-		// TODO move this into a separate component
-		var $toolbar = this.$table.prev( '.' + classes.toolbar );
-		if( !$toolbar.length ) {
-			$toolbar = $( '<div>' )
-				.addClass( classes.toolbar )
-				.insertBefore( this.$table );
-		}
-		this.$toolbar = $toolbar;
-
-		if( this.mode ) {
-			this.$toolbar.addClass( 'mode-' + this.mode );
-		}
-	};
-
-	Table.prototype.destroy = function() {
-		// Don’t remove the toolbar. Some of the table features are not yet destroy-friendly.
-		this.$table.prev( '.' + classes.toolbar ).each(function() {
-			this.className = this.className.replace( /\bmode\-\w*\b/gi, '' );
-		});
-
-		var tableId = this.$table.attr( 'id' );
-		$( document ).unbind( "." + tableId );
-		$( window ).unbind( "." + tableId );
-
-		// other plugins
-		this.$table.trigger( events.destroy, [ this ] );
-
-		this.$table.removeAttr( 'data-tablesaw-mode' );
-
-		this.$table.removeData( pluginName );
-	};
-
-	// Collection method.
-	$.fn[ pluginName ] = function() {
-		return this.each( function() {
-			var $t = $( this );
-
-			if( $t.data( pluginName ) ){
-				return;
-			}
-
-			var table = new Table( this );
-			$t.data( pluginName, table );
-		});
-	};
-
-	$( document ).on( "enhance.tablesaw", function( e ) {
-		$( e.target ).find( initSelector )[ pluginName ]();
-	});
-
-}( jQuery ));
-
-;(function( win, $, undefined ){
-
-	var classes = {
-		stackTable: 'tablesaw-stack',
-		cellLabels: 'tablesaw-cell-label',
-		cellContentLabels: 'tablesaw-cell-content'
-	};
-
-	var data = {
-		obj: 'tablesaw-stack'
-	};
-
-	var attrs = {
-		labelless: 'data-tablesaw-no-labels',
-		hideempty: 'data-tablesaw-hide-empty'
-	};
-
-	var Stack = function( element ) {
-
-		this.$table = $( element );
-
-		this.labelless = this.$table.is( '[' + attrs.labelless + ']' );
-		this.hideempty = this.$table.is( '[' + attrs.hideempty + ']' );
-
-		if( !this.labelless ) {
-			// allHeaders references headers, plus all THs in the thead, which may include several rows, or not
-			this.allHeaders = this.$table.find( "th" );
-		}
-
-		this.$table.data( data.obj, this );
-	};
-
-	Stack.prototype.init = function( colstart ) {
-		this.$table.addClass( classes.stackTable );
-
-		if( this.labelless ) {
-			return;
-		}
-
-		// get headers in reverse order so that top-level headers are appended last
-		var reverseHeaders = $( this.allHeaders );
-		var hideempty = this.hideempty;
-		
-		// create the hide/show toggles
-		reverseHeaders.each(function(){
-			var $t = $( this ),
-				$cells = $( this.cells ).filter(function() {
-					return !$( this ).parent().is( "[" + attrs.labelless + "]" ) && ( !hideempty || !$( this ).is( ":empty" ) );
-				}),
-				hierarchyClass = $cells.not( this ).filter( "thead th" ).length && " tablesaw-cell-label-top",
-				// TODO reduce coupling with sortable
-				$sortableButton = $t.find( ".tablesaw-sortable-btn" ),
-				html = $sortableButton.length ? $sortableButton.html() : $t.html();
-
-			if( html !== "" ){
-				if( hierarchyClass ){
-					var iteration = parseInt( $( this ).attr( "colspan" ), 10 ),
-						filter = "";
-
-					if( iteration ){
-						filter = "td:nth-child("+ iteration +"n + " + ( colstart ) +")";
-					}
-					$cells.filter( filter ).prepend( "<b class='" + classes.cellLabels + hierarchyClass + "'>" + html + "</b>"  );
-				} else {
-					$cells.wrapInner( "<span class='" + classes.cellContentLabels + "'></span>" );
-					$cells.prepend( "<b class='" + classes.cellLabels + "'>" + html + "</b>"  );
-				}
-			}
-		});
-	};
-
-	Stack.prototype.destroy = function() {
-		this.$table.removeClass( classes.stackTable );
-		this.$table.find( '.' + classes.cellLabels ).remove();
-		this.$table.find( '.' + classes.cellContentLabels ).each(function() {
-			$( this ).replaceWith( this.childNodes );
-		});
-	};
-
-	// on tablecreate, init
-	$( document ).on( "tablesawcreate", function( e, Tablesaw, colstart ){
-		if( Tablesaw.mode === 'stack' ){
-			var table = new Stack( Tablesaw.table );
-			table.init( colstart );
-		}
-
-	} );
-
-	$( document ).on( "tablesawdestroy", function( e, Tablesaw ){
-
-		if( Tablesaw.mode === 'stack' ){
-			$( Tablesaw.table ).data( data.obj ).destroy();
-		}
-
-	} );
-
-}( this, jQuery ));
-;(function( $ ) {
-	var pluginName = "tablesawbtn",
-		initSelector = ".btn",
-		methods = {
-			_create: function(){
-				return $( this ).each(function() {
-					$( this )
-						.trigger( "beforecreate." + pluginName )
-						[ pluginName ]( "_init" )
-						.trigger( "create." + pluginName );
-				});
-			},
-			_init: function(){
-				var oEl = $( this ),
-					sel = this.getElementsByTagName( "select" )[ 0 ];
-
-				if( sel ) {
-					$( this )
-						.addClass( "btn-select" )
-						[ pluginName ]( "_select", sel );
-				}
-				return oEl;
-			},
-			_select: function( sel ) {
-				var update = function( oEl, sel ) {
-					var opts = $( sel ).find( "option" ),
-						label, el, children;
-
-					opts.each(function() {
-						var opt = this;
-						if( opt.selected ) {
-							label = document.createTextNode( opt.text );
-						}
-					});
-
-					children = oEl.childNodes;
-					if( opts.length > 0 ){
-						for( var i = 0, l = children.length; i < l; i++ ) {
-							el = children[ i ];
-
-							if( el && el.nodeType === 3 ) {
-								oEl.replaceChild( label, el );
-							}
-						}
-					}
-				};
-
-				update( this, sel );
-				$( this ).bind( "change refresh", function() {
-					update( this, sel );
-				});
-			}
-		};
-
-	// Collection method.
-	$.fn[ pluginName ] = function( arrg, a, b, c ) {
-		return this.each(function() {
-
-		// if it's a method
-		if( arrg && typeof( arrg ) === "string" ){
-			return $.fn[ pluginName ].prototype[ arrg ].call( this, a, b, c );
-		}
-
-		// don't re-init
-		if( $( this ).data( pluginName + "active" ) ){
-			return $( this );
-		}
-
-		// otherwise, init
-
-		$( this ).data( pluginName + "active", true );
-			$.fn[ pluginName ].prototype._create.call( this );
-		});
-	};
-
-	// add methods
-	$.extend( $.fn[ pluginName ].prototype, methods );
-
-	$( document ).on( "enhance", function( e ) {
-		$( initSelector, e.target )[ pluginName ]();
-	});
-
-}( jQuery ));
-;(function( win, $, undefined ){
-
-	var ColumnToggle = function( element ) {
-
-		this.$table = $( element );
-
-		this.classes = {
-			columnToggleTable: 'tablesaw-columntoggle',
-			columnBtnContain: 'tablesaw-columntoggle-btnwrap tablesaw-advance',
-			columnBtn: 'tablesaw-columntoggle-btn tablesaw-nav-btn down',
-			popup: 'tablesaw-columntoggle-popup',
-			priorityPrefix: 'tablesaw-priority-',
-			// TODO duplicate class, also in tables.js
-			toolbar: 'tablesaw-bar'
-		};
-
-		this.i18n = {
-			columnBtnText: 'Columns',
-			columnsDialogError: 'No eligible columns.'
-		};
-
-		// Expose headers and allHeaders properties on the widget
-		// headers references the THs within the first TR in the table
-		this.headers = this.$table.find( 'tr:first > th' );
-
-		this.$table.data( 'tablesaw-coltoggle', this );
-	};
-
-	ColumnToggle.prototype.init = function() {
-
-		var tableId,
-			id,
-			$menuButton,
-			$popup,
-			$menu,
-			$btnContain,
-			self = this;
-
-		this.$table.addClass( this.classes.columnToggleTable );
-
-		tableId = this.$table.attr( "id" );
-		id = tableId + "-popup";
-		$btnContain = $( "<div class='" + this.classes.columnBtnContain + "'></div>" );
-		$menuButton = $( "<a href='#" + id + "' class='btn btn-micro " + this.classes.columnBtn +"' data-popup-link>" +
-										"<span>" + this.i18n.columnBtnText + "</span></a>" );
-		$popup = $( "<div class='dialog-table-coltoggle " + this.classes.popup + "' id='" + id + "'></div>" );
-		$menu = $( "<div class='btn-group'></div>" );
-
-		var hasNonPersistentHeaders = false;
-		$( this.headers ).not( "td" ).each( function() {
-			var $this = $( this ),
-				priority = $this.attr("data-tablesaw-priority"),
-				$cells = $this.add( this.cells );
-
-			if( priority && priority !== "persist" ) {
-				$cells.addClass( self.classes.priorityPrefix + priority );
-
-				$("<label><input type='checkbox' checked>" + $this.text() + "</label>" )
-					.appendTo( $menu )
-					.children( 0 )
-					.data( "cells", $cells );
-
-				hasNonPersistentHeaders = true;
-			}
-		});
-
-		if( !hasNonPersistentHeaders ) {
-			$menu.append( '<label>' + this.i18n.columnsDialogError + '</label>' );
-		}
-
-		$menu.appendTo( $popup );
-
-		// bind change event listeners to inputs - TODO: move to a private method?
-		$menu.find( 'input[type="checkbox"]' ).on( "change", function(e) {
-			var checked = e.target.checked;
-
-			$( e.target ).data( "cells" )
-				.toggleClass( "tablesaw-cell-hidden", !checked )
-				.toggleClass( "tablesaw-cell-visible", checked );
-
-			self.$table.trigger( 'tablesawcolumns' );
-		});
-
-		$menuButton.appendTo( $btnContain );
-		$btnContain.appendTo( this.$table.prev( '.' + this.classes.toolbar ) );
-
-		var closeTimeout;
-		function openPopup() {
-			$btnContain.addClass( 'visible' );
-			$menuButton.removeClass( 'down' ).addClass( 'up' );
-
-			$( document ).unbind( 'click.' + tableId, closePopup );
-
-			window.clearTimeout( closeTimeout );
-			closeTimeout = window.setTimeout(function() {
-				$( document ).one( 'click.' + tableId, closePopup );
-			}, 15 );
-		}
-
-		function closePopup( event ) {
-			// Click came from inside the popup, ignore.
-			if( event && $( event.target ).closest( "." + self.classes.popup ).length ) {
-				return;
-			}
-
-			$( document ).unbind( 'click.' + tableId );
-			$menuButton.removeClass( 'up' ).addClass( 'down' );
-			$btnContain.removeClass( 'visible' );
-		}
-
-		$menuButton.on( "click.tablesaw", function( event ) {
-			event.preventDefault();
-
-			if( !$btnContain.is( ".visible" ) ) {
-				openPopup();
-			} else {
-				closePopup();
-			}
-		});
-
-		$popup.appendTo( $btnContain );
-
-		this.$menu = $menu;
-
-		$(window).on( "resize." + tableId, function(){
-			self.refreshToggle();
-		});
-
-		this.refreshToggle();
-	};
-
-	ColumnToggle.prototype.refreshToggle = function() {
-		this.$menu.find( "input" ).each( function() {
-			var $this = $( this );
-
-			this.checked = $this.data( "cells" ).eq( 0 ).css( "display" ) === "table-cell";
-		});
-	};
-
-	ColumnToggle.prototype.refreshPriority = function(){
-		var self = this;
-		$(this.headers).not( "td" ).each( function() {
-			var $this = $( this ),
-				priority = $this.attr("data-tablesaw-priority"),
-				$cells = $this.add( this.cells );
-
-			if( priority && priority !== "persist" ) {
-				$cells.addClass( self.classes.priorityPrefix + priority );
-			}
-		});
-	};
-
-	ColumnToggle.prototype.destroy = function() {
-		// table toolbars, document and window .tableId events
-		// removed in parent tables.js destroy method
-
-		this.$table.removeClass( this.classes.columnToggleTable );
-		this.$table.find( 'th, td' ).each(function() {
-			var $cell = $( this );
-			$cell.removeClass( 'tablesaw-cell-hidden' )
-				.removeClass( 'tablesaw-cell-visible' );
-
-			this.className = this.className.replace( /\bui\-table\-priority\-\d\b/g, '' );
-		});
-	};
-
-	// on tablecreate, init
-	$( document ).on( "tablesawcreate", function( e, Tablesaw ){
-
-		if( Tablesaw.mode === 'columntoggle' ){
-			var table = new ColumnToggle( Tablesaw.table );
-			table.init();
-		}
-
-	} );
-
-	$( document ).on( "tablesawdestroy", function( e, Tablesaw ){
-		if( Tablesaw.mode === 'columntoggle' ){
-			$( Tablesaw.table ).data( 'tablesaw-coltoggle' ).destroy();
-		}
-	} );
-
-}( this, jQuery ));
-;(function( win, $, undefined ){
-
-	$.extend( Tablesaw.config, {
-		swipe: {
-			horizontalThreshold: 15,
-			verticalThreshold: 30
-		}
-	});
-
-	function createSwipeTable( $table ){
-
-		var $btns = $( "<div class='tablesaw-advance'></div>" ),
-			$prevBtn = $( "<a href='#' class='tablesaw-nav-btn btn btn-micro left' title='Previous Column'></a>" ).appendTo( $btns ),
-			$nextBtn = $( "<a href='#' class='tablesaw-nav-btn btn btn-micro right' title='Next Column'></a>" ).appendTo( $btns ),
-			hideBtn = 'disabled',
-			persistWidths = 'tablesaw-fix-persist',
-			$headerCells = $table.find( "thead th" ),
-			$headerCellsNoPersist = $headerCells.not( '[data-tablesaw-priority="persist"]' ),
-			headerWidths = [],
-			$head = $( document.head || 'head' ),
-			tableId = $table.attr( 'id' ),
-			// TODO switch this to an nth-child feature test
-			isIE8 = $( 'html' ).is( '.ie-lte8' );
-
-		if( !$headerCells.length ) {
-			throw new Error( "tablesaw swipe: no header cells found. Are you using <th> inside of <thead>?" );
-		}
-
-		// Calculate initial widths
-		var initialWidth = $table.css( 'width' );
-		$table.css('width', 'auto');
-		$headerCells.each(function() {
-			headerWidths.push( $( this ).outerWidth() );
-		});
-		$table.css( 'width', initialWidth );
-
-		$btns.appendTo( $table.prev( '.tablesaw-bar' ) );
-
-		$table.addClass( "tablesaw-swipe" );
-
-		if( !tableId ) {
-			tableId = 'tableswipe-' + Math.round( Math.random() * 10000 );
-			$table.attr( 'id', tableId );
-		}
-
-		function $getCells( headerCell ) {
-			return $( headerCell.cells ).add( headerCell );
-		}
-
-		function showColumn( headerCell ) {
-			$getCells( headerCell ).removeClass( 'tablesaw-cell-hidden' );
-		}
-
-		function hideColumn( headerCell ) {
-			$getCells( headerCell ).addClass( 'tablesaw-cell-hidden' );
-		}
-
-		function persistColumn( headerCell ) {
-			$getCells( headerCell ).addClass( 'tablesaw-cell-persist' );
-		}
-
-		function isPersistent( headerCell ) {
-			return $( headerCell ).is( '[data-tablesaw-priority="persist"]' );
-		}
-
-		function unmaintainWidths() {
-			$table.removeClass( persistWidths );
-			$( '#' + tableId + '-persist' ).remove();
-		}
-
-		function maintainWidths() {
-			var prefix = '#' + tableId + '.tablesaw-swipe ',
-				styles = [],
-				tableWidth = $table.width();
-
-			$headerCells.each(function( index ) {
-				var width;
-				if( isPersistent( this ) ) {
-					width = $( this ).outerWidth();
-
-					// Only save width on non-greedy columns (take up less than 75% of table width)
-					if( width < tableWidth * 0.75 ) {
-						styles.push( prefix + ' .tablesaw-cell-persist:nth-child(' + ( index + 1 ) + ') { width: ' + width + 'px; }' );
-					}
-				}
-			});
-
-			unmaintainWidths();
-			$table.addClass( persistWidths );
-			$head.append( $( '<style>' + styles.join( "\n" ) + '</style>' ).attr( 'id', tableId + '-persist' ) );
-		}
-
-		function getNext(){
-			var next = [],
-				checkFound;
-
-			$headerCellsNoPersist.each(function( i ) {
-				var $t = $( this ),
-					isHidden = $t.css( "display" ) === "none" || $t.is( ".tablesaw-cell-hidden" );
-
-				if( !isHidden && !checkFound ) {
-					checkFound = true;
-					next[ 0 ] = i;
-				} else if( isHidden && checkFound ) {
-					next[ 1 ] = i;
-
-					return false;
-				}
-			});
-
-			return next;
-		}
-
-		function getPrev(){
-			var next = getNext();
-			return [ next[ 1 ] - 1 , next[ 0 ] - 1 ];
-		}
-
-		function nextpair( fwd ){
-			return fwd ? getNext() : getPrev();
-		}
-
-		function canAdvance( pair ){
-			return pair[ 1 ] > -1 && pair[ 1 ] < $headerCellsNoPersist.length;
-		}
-
-		function matchesMedia() {
-			var matchMedia = $table.attr( "data-tablesaw-swipe-media" );
-			return !matchMedia || ( "matchMedia" in win ) && win.matchMedia( matchMedia ).matches;
-		}
-
-		function fakeBreakpoints() {
-			if( !matchesMedia() ) {
-				return;
-			}
-
-			var extraPaddingPixels = 20,
-				tableWidth = $table.width(),
-				persist = [],
-				sum = 0,
-				sums = [],
-				visibleNonPersistantCount = $headerCells.length;
-
-			$headerCells.each(function( index ) {
-				var $t = $( this ),
-					isPersist = $t.is( '[data-tablesaw-priority="persist"]' );
-
-				persist.push( isPersist );
-
-				sum += headerWidths[ index ] + ( isPersist ? 0 : extraPaddingPixels );
-				sums.push( sum );
-
-				// is persistent or is hidden
-				if( isPersist || sum > tableWidth ) {
-					visibleNonPersistantCount--;
-				}
-			});
-
-			var needsNonPersistentColumn = visibleNonPersistantCount === 0;
-
-			$headerCells.each(function( index ) {
-				if( persist[ index ] ) {
-
-					// for visual box-shadow
-					persistColumn( this );
-					return;
-				}
-
-				if( sums[ index ] <= tableWidth || needsNonPersistentColumn ) {
-					needsNonPersistentColumn = false;
-					showColumn( this );
-				} else {
-					hideColumn( this );
-				}
-			});
-
-			if( !isIE8 ) {
-				unmaintainWidths();
-			}
-			$table.trigger( 'tablesawcolumns' );
-		}
-
-		function advance( fwd ){
-			var pair = nextpair( fwd );
-			if( canAdvance( pair ) ){
-				if( isNaN( pair[ 0 ] ) ){
-					if( fwd ){
-						pair[0] = 0;
-					}
-					else {
-						pair[0] = $headerCellsNoPersist.length - 1;
-					}
-				}
-
-				if( !isIE8 ) {
-					maintainWidths();
-				}
-
-				hideColumn( $headerCellsNoPersist.get( pair[ 0 ] ) );
-				showColumn( $headerCellsNoPersist.get( pair[ 1 ] ) );
-
-				$table.trigger( 'tablesawcolumns' );
-			}
-		}
-
-		$prevBtn.add( $nextBtn ).click(function( e ){
-			advance( !!$( e.target ).closest( $nextBtn ).length );
-			e.preventDefault();
-		});
-
-		function getCoord( event, key ) {
-			return ( event.touches || event.originalEvent.touches )[ 0 ][ key ];
-		}
-
-		$table
-			.bind( "touchstart.swipetoggle", function( e ){
-				var originX = getCoord( e, 'pageX' ),
-					originY = getCoord( e, 'pageY' ),
-					x,
-					y;
-
-				$( win ).off( "resize", fakeBreakpoints );
-
-				$( this )
-					.bind( "touchmove", function( e ){
-						x = getCoord( e, 'pageX' );
-						y = getCoord( e, 'pageY' );
-						var cfg = Tablesaw.config.swipe;
-						if( Math.abs( x - originX ) > cfg.horizontalThreshold && Math.abs( y - originY ) < cfg.verticalThreshold ) {
-							e.preventDefault();
-						}
-					})
-					.bind( "touchend.swipetoggle", function(){
-						var cfg = Tablesaw.config.swipe;
-						if( Math.abs( y - originY ) < cfg.verticalThreshold ) {
-							if( x - originX < -1 * cfg.horizontalThreshold ){
-								advance( true );
-							}
-							if( x - originX > cfg.horizontalThreshold ){
-								advance( false );
-							}
-						}
-
-						window.setTimeout(function() {
-							$( win ).on( "resize", fakeBreakpoints );
-						}, 300);
-						$( this ).unbind( "touchmove touchend" );
-					});
-
-			})
-			.bind( "tablesawcolumns.swipetoggle", function(){
-				$prevBtn[ canAdvance( getPrev() ) ? "removeClass" : "addClass" ]( hideBtn );
-				$nextBtn[ canAdvance( getNext() ) ? "removeClass" : "addClass" ]( hideBtn );
-			})
-			.bind( "tablesawnext.swipetoggle", function(){
-				advance( true );
-			} )
-			.bind( "tablesawprev.swipetoggle", function(){
-				advance( false );
-			} )
-			.bind( "tablesawdestroy.swipetoggle", function(){
-				var $t = $( this );
-
-				$t.removeClass( 'tablesaw-swipe' );
-				$t.prev( '.tablesaw-bar' ).find( '.tablesaw-advance' ).remove();
-				$( win ).off( "resize", fakeBreakpoints );
-
-				$t.unbind( ".swipetoggle" );
-			});
-
-		fakeBreakpoints();
-		$( win ).on( "resize", fakeBreakpoints );
-	}
-
-
-
-	// on tablecreate, init
-	$( document ).on( "tablesawcreate", function( e, Tablesaw ){
-
-		if( Tablesaw.mode === 'swipe' ){
-			createSwipeTable( Tablesaw.$table );
-		}
-
-	} );
-
-}( this, jQuery ));
-
-;(function( $ ) {
-	function getSortValue( cell ) {
-		return $.map( cell.childNodes, function( el ) {
-				var $el = $( el );
-				if( $el.is( 'input, select' ) ) {
-					return $el.val();
-				} else if( $el.hasClass( 'tablesaw-cell-label' ) ) {
-					return;
-				}
-				return $.trim( $el.text() );
-			}).join( '' );
-	}
-
-	var pluginName = "tablesaw-sortable",
-		initSelector = "table[data-" + pluginName + "]",
-		sortableSwitchSelector = "[data-" + pluginName + "-switch]",
-		attrs = {
-			defaultCol: "data-tablesaw-sortable-default-col"
-		},
-		classes = {
-			head: pluginName + "-head",
-			ascend: pluginName + "-ascending",
-			descend: pluginName + "-descending",
-			switcher: pluginName + "-switch",
-			tableToolbar: 'tablesaw-toolbar',
-			sortButton: pluginName + "-btn"
-		},
-		i18n = {
-			sort: 'Sort'
-		},
-		methods = {
-			_create: function( o ){
-				return $( this ).each(function() {
-					var init = $( this ).data( "init" + pluginName );
-					if( init ) {
-						return false;
-					}
-					$( this )
-						.data( "init"+ pluginName, true )
-						.trigger( "beforecreate." + pluginName )
-						[ pluginName ]( "_init" , o )
-						.trigger( "create." + pluginName );
-				});
-			},
-			_init: function(){
-				var el = $( this ),
-					heads,
-					$switcher;
-
-				var addClassToTable = function(){
-						el.addClass( pluginName );
-					},
-					addClassToHeads = function( h ){
-						$.each( h , function( i , v ){
-							$( v ).addClass( classes.head );
-						});
-					},
-					makeHeadsActionable = function( h , fn ){
-						$.each( h , function( i , v ){
-							var b = $( "<button class='" + classes.sortButton + "'/>" );
-							b.bind( "click" , { col: v } , fn );
-							$( v ).wrapInner( b );
-						});
-					},
-					clearOthers = function( sibs ){
-						$.each( sibs , function( i , v ){
-							var col = $( v );
-							col.removeAttr( attrs.defaultCol );
-							col.removeClass( classes.ascend );
-							col.removeClass( classes.descend );
-						});
-					},
-					headsOnAction = function( e ){
-						if( $( e.target ).is( 'a[href]' ) ) {
-							return;
-						}
-
-						e.stopPropagation();
-						var head = $( this ).parent(),
-							v = e.data.col,
-							newSortValue = heads.index( head );
-
-						clearOthers( head.siblings() );
-						if( head.hasClass( classes.descend ) ){
-							el[ pluginName ]( "sortBy" , v , true);
-							newSortValue += '_asc';
-						} else {
-							el[ pluginName ]( "sortBy" , v );
-							newSortValue += '_desc';
-						}
-						if( $switcher ) {
-							$switcher.find( 'select' ).val( newSortValue ).trigger( 'refresh' );
-						}
-
-						e.preventDefault();
-					},
-					handleDefault = function( heads ){
-						$.each( heads , function( idx , el ){
-							var $el = $( el );
-							if( $el.is( "[" + attrs.defaultCol + "]" ) ){
-								if( !$el.hasClass( classes.descend ) ) {
-									$el.addClass( classes.ascend );
-								}
-							}
-						});
-					},
-					addSwitcher = function( heads ){
-						$switcher = $( '<div>' ).addClass( classes.switcher ).addClass( classes.tableToolbar ).html(function() {
-							var html = [ '<label>' + i18n.sort + ':' ];
-
-							html.push( '<span class="btn btn-small">&#160;<select>' );
-							heads.each(function( j ) {
-								var $t = $( this ),
-									isDefaultCol = $t.is( "[" + attrs.defaultCol + "]" ),
-									isDescending = $t.hasClass( classes.descend ),
-									isNumeric = false;
-
-								// Check only the first three rows to see if the column is numbers.
-								$( this.cells ).slice( 0, 3 ).each(function() {
-									if( !isNaN( parseInt( getSortValue( this ), 10 ) ) ) {
-										isNumeric = true;
-										return false;
-									}
-								});
-
-								html.push( '<option' + ( isDefaultCol && !isDescending ? ' selected' : '' ) + ' value="' + j + '_asc">' + $t.text() + ' ' + ( isNumeric ? '↑' : '(A-Z)' ) + '</option>' );
-								html.push( '<option' + ( isDefaultCol && isDescending ? ' selected' : '' ) + ' value="' + j + '_desc">' + $t.text() + ' ' + ( isNumeric ? '↓' : '(Z-A)' ) + '</option>' );
-							});
-							html.push( '</select></span></label>' );
-
-							return html.join('');
-						});
-
-						var $toolbar = el.prev( '.tablesaw-bar' ),
-							$firstChild = $toolbar.children().eq( 0 );
-
-						if( $firstChild.length ) {
-							$switcher.insertBefore( $firstChild );
-						} else {
-							$switcher.appendTo( $toolbar );
-						}
-						$switcher.find( '.btn' ).tablesawbtn();
-						$switcher.find( 'select' ).on( 'change', function() {
-							var val = $( this ).val().split( '_' ),
-								head = heads.eq( val[ 0 ] );
-
-							clearOthers( head.siblings() );
-							el[ pluginName ]( 'sortBy', head.get( 0 ), val[ 1 ] === 'asc' );
-						});
-					};
-
-					addClassToTable();
-					heads = el.find( "thead th[data-" + pluginName + "-col]" );
-					addClassToHeads( heads );
-					makeHeadsActionable( heads , headsOnAction );
-					handleDefault( heads );
-
-					if( el.is( sortableSwitchSelector ) ) {
-						addSwitcher( heads, el.find('tbody tr:nth-child(-n+3)') );
-					}
-			},
-			getColumnNumber: function( col ){
-				return $( col ).prevAll().length;
-			},
-			getTableRows: function(){
-				return $( this ).find( "tbody tr" );
-			},
-			sortRows: function( rows , colNum , ascending, col ){
-				var cells, fn, sorted;
-				var getCells = function( rows ){
-						var cells = [];
-						$.each( rows , function( i , r ){
-							cells.push({
-								cell: getSortValue( $( r ).children().get( colNum ) ),
-								rowNum: i
-							});
-						});
-						return cells;
-					},
-					getSortFxn = function( ascending, forceNumeric ){
-						var fn,
-							regex = /[^\-\+\d\.]/g;
-						if( ascending ){
-							fn = function( a , b ){
-								if( forceNumeric || !isNaN( parseFloat( a.cell ) ) ) {
-									return parseFloat( a.cell.replace( regex, '' ) ) - parseFloat( b.cell.replace( regex, '' ) );
-								} else {
-									return a.cell.toLowerCase() > b.cell.toLowerCase() ? 1 : -1;
-								}
-							};
-						} else {
-							fn = function( a , b ){
-								if( forceNumeric || !isNaN( parseFloat( a.cell ) ) ) {
-									return parseFloat( b.cell.replace( regex, '' ) ) - parseFloat( a.cell.replace( regex, '' ) );
-								} else {
-									return a.cell.toLowerCase() < b.cell.toLowerCase() ? 1 : -1;
-								}
-							};
-						}
-						return fn;
-					},
-					applyToRows = function( sorted , rows ){
-						var newRows = [], i, l, cur;
-						for( i = 0, l = sorted.length ; i < l ; i++ ){
-							cur = sorted[ i ].rowNum;
-							newRows.push( rows[cur] );
-						}
-						return newRows;
-					};
-
-				cells = getCells( rows );
-				var customFn = $( col ).data( 'tablesaw-sort' );
-				fn = ( customFn && typeof customFn === "function" ? customFn( ascending ) : false ) ||
-					getSortFxn( ascending, $( col ).is( '[data-sortable-numeric]' ) );
-				sorted = cells.sort( fn );
-				rows = applyToRows( sorted , rows );
-				return rows;
-			},
-			replaceTableRows: function( rows ){
-				var el = $( this ),
-					body = el.find( "tbody" );
-				body.html( rows );
-			},
-			makeColDefault: function( col , a ){
-				var c = $( col );
-				c.attr( attrs.defaultCol , "true" );
-				if( a ){
-					c.removeClass( classes.descend );
-					c.addClass( classes.ascend );
-				} else {
-					c.removeClass( classes.ascend );
-					c.addClass( classes.descend );
-				}
-			},
-			sortBy: function( col , ascending ){
-				var el = $( this ), colNum, rows;
-
-				colNum = el[ pluginName ]( "getColumnNumber" , col );
-				rows = el[ pluginName ]( "getTableRows" );
-				rows = el[ pluginName ]( "sortRows" , rows , colNum , ascending, col );
-				el[ pluginName ]( "replaceTableRows" , rows );
-				el[ pluginName ]( "makeColDefault" , col , ascending );
-			}
-		};
-
-	// Collection method.
-	$.fn[ pluginName ] = function( arrg ) {
-		var args = Array.prototype.slice.call( arguments , 1),
-			returnVal;
-
-		// if it's a method
-		if( arrg && typeof( arrg ) === "string" ){
-			returnVal = $.fn[ pluginName ].prototype[ arrg ].apply( this[0], args );
-			return (typeof returnVal !== "undefined")? returnVal:$(this);
-		}
-		// check init
-		if( !$( this ).data( pluginName + "data" ) ){
-			$( this ).data( pluginName + "active", true );
-			$.fn[ pluginName ].prototype._create.call( this , arrg );
-		}
-		return $(this);
-	};
-	// add methods
-	$.extend( $.fn[ pluginName ].prototype, methods );
-
-	$( document ).on( "tablesawcreate", function( e, Tablesaw ) {
-		if( Tablesaw.$table.is( initSelector ) ) {
-			Tablesaw.$table[ pluginName ]();
-		}
-	});
-
-}( jQuery ));
-
-;(function( win, $, undefined ){
-
-	var MM = {
-		attr: {
-			init: 'data-tablesaw-minimap'
-		}
-	};
-
-	function createMiniMap( $table ){
-
-		var $btns = $( '<div class="tablesaw-advance minimap">' ),
-			$dotNav = $( '<ul class="tablesaw-advance-dots">' ).appendTo( $btns ),
-			hideDot = 'tablesaw-advance-dots-hide',
-			$headerCells = $table.find( 'thead th' );
-
-		// populate dots
-		$headerCells.each(function(){
-			$dotNav.append( '<li><i></i></li>' );
-		});
-
-		$btns.appendTo( $table.prev( '.tablesaw-bar' ) );
-
-		function showMinimap( $table ) {
-			var mq = $table.attr( MM.attr.init );
-			return !mq || win.matchMedia && win.matchMedia( mq ).matches;
-		}
-
-		function showHideNav(){
-			if( !showMinimap( $table ) ) {
-				$btns.hide();
-				return;
-			}
-			$btns.show();
-
-			// show/hide dots
-			var dots = $dotNav.find( "li" ).removeClass( hideDot );
-			$table.find( "thead th" ).each(function(i){
-				if( $( this ).css( "display" ) === "none" ){
-					dots.eq( i ).addClass( hideDot );
-				}
-			});
-		}
-
-		// run on init and resize
-		showHideNav();
-		$( win ).on( "resize", showHideNav );
-
-
-		$table
-			.bind( "tablesawcolumns.minimap", function(){
-				showHideNav();
-			})
-			.bind( "tablesawdestroy.minimap", function(){
-				var $t = $( this );
-
-				$t.prev( '.tablesaw-bar' ).find( '.tablesaw-advance' ).remove();
-				$( win ).off( "resize", showHideNav );
-
-				$t.unbind( ".minimap" );
-			});
-	}
-
-
-
-	// on tablecreate, init
-	$( document ).on( "tablesawcreate", function( e, Tablesaw ){
-
-		if( ( Tablesaw.mode === 'swipe' || Tablesaw.mode === 'columntoggle' ) && Tablesaw.$table.is( '[ ' + MM.attr.init + ']' ) ){
-			createMiniMap( Tablesaw.$table );
-		}
-
-	} );
-
-}( this, jQuery ));
-
-;(function( win, $ ) {
-
-	var S = {
-		selectors: {
-			init: 'table[data-tablesaw-mode-switch]'
-		},
-		attributes: {
-			excludeMode: 'data-tablesaw-mode-exclude'
-		},
-		classes: {
-			main: 'tablesaw-modeswitch',
-			toolbar: 'tablesaw-toolbar'
-		},
-		modes: [ 'stack', 'swipe', 'columntoggle' ],
-		i18n: {
-			modes: [ 'Stack', 'Swipe', 'Toggle' ],
-			columns: 'Col<span class="a11y-sm">umn</span>s'
-		},
-		init: function( table ) {
-			var $table = $( table ),
-				ignoreMode = $table.attr( S.attributes.excludeMode ),
-				$toolbar = $table.prev( '.tablesaw-bar' ),
-				modeVal = '',
-				$switcher = $( '<div>' ).addClass( S.classes.main + ' ' + S.classes.toolbar ).html(function() {
-					var html = [ '<label>' + S.i18n.columns + ':' ],
-						dataMode = $table.attr( 'data-tablesaw-mode' ),
-						isSelected;
-
-					html.push( '<span class="btn btn-small">&#160;<select>' );
-					for( var j=0, k = S.modes.length; j<k; j++ ) {
-						if( ignoreMode && ignoreMode.toLowerCase() === S.modes[ j ] ) {
-							continue;
-						}
-
-						isSelected = dataMode === S.modes[ j ];
-
-						if( isSelected ) {
-							modeVal = S.modes[ j ];
-						}
-
-						html.push( '<option' +
-							( isSelected ? ' selected' : '' ) +
-							' value="' + S.modes[ j ] + '">' + S.i18n.modes[ j ] + '</option>' );
-					}
-					html.push( '</select></span></label>' );
-
-					return html.join('');
-				});
-
-			var $otherToolbarItems = $toolbar.find( '.tablesaw-advance' ).eq( 0 );
-			if( $otherToolbarItems.length ) {
-				$switcher.insertBefore( $otherToolbarItems );
-			} else {
-				$switcher.appendTo( $toolbar );
-			}
-
-			$switcher.find( '.btn' ).tablesawbtn();
-			$switcher.find( 'select' ).bind( 'change', S.onModeChange );
-		},
-		onModeChange: function() {
-			var $t = $( this ),
-				$switcher = $t.closest( '.' + S.classes.main ),
-				$table = $t.closest( '.tablesaw-bar' ).nextUntil( $table ).eq( 0 ),
-				val = $t.val();
-
-			$switcher.remove();
-			$table.data( 'table' ).destroy();
-
-			$table.attr( 'data-tablesaw-mode', val );
-			$table.table();
-		}
-	};
-
-	$( win.document ).on( "tablesawcreate", function( e, Tablesaw ) {
-		if( Tablesaw.$table.is( S.selectors.init ) ) {
-			S.init( Tablesaw.table );
-		}
-	});
-
-})( this, jQuery );
 /** * Copyright (c) 2008 Tom Deater (http://www.tomdeater.com) 
  * Licensed under the MIT License: 
  * http://www.opensource.org/licenses/mit-license.php 
@@ -19687,7 +18437,7 @@ jQuery.onFontResize=function(e){return e(document).ready(function(){var t=e("<if
 // @compilation_level SIMPLE_OPTIMIZATIONS
 
 /**
- * @license Highcharts JS v4.1.5-modified ()
+ * @license Highcharts JS v4.1.6-modified ()
  *
  * (c) 2009-2014 Torstein Honsi
  *
@@ -19741,7 +18491,7 @@ var UNDEFINED,
 	charts = [],
 	chartCount = 0,
 	PRODUCT = 'Highcharts',
-	VERSION = '4.1.5-modified',
+	VERSION = '4.1.6-modified',
 
 	// some constants for frequently used strings
 	DIV = 'div',
@@ -20051,6 +18801,13 @@ function extendClass(parent, members) {
 function pad(number, length) {
 	// Create an array of the remaining length +1 and join it with 0's
 	return new Array((length || 2) + 1 - String(number).length).join(0) + number;
+}
+
+/**
+ * Return a length based on either the integer value, or a percentage of a base.
+ */
+function relativeLength (value, base) {
+	return (/%$/).test(value) ? base * parseFloat(value) / 100 : parseFloat(value);
 }
 
 /**
@@ -20946,8 +19703,8 @@ defaultOptions = {
 	global: {
 		useUTC: true,
 		//timezoneOffset: 0,
-		canvasToolsURL: 'http://code.highcharts.com/4.1.5-modified/modules/canvas-tools.js',
-		VMLRadialGradientURL: 'http://code.highcharts.com/4.1.5-modified/gfx/vml-radial-gradient.png'
+		canvasToolsURL: 'http://code.highcharts.com/4.1.6-modified/modules/canvas-tools.js',
+		VMLRadialGradientURL: 'http://code.highcharts.com/4.1.6-modified/gfx/vml-radial-gradient.png'
 	},
 	chart: {
 		//animation: true,
@@ -21636,11 +20393,14 @@ SVGElement.prototype = {
 
 		// When the text shadow is set to contrast, use dark stroke for light text and vice versa
 		if (hasContrast) {
-			styles.textShadow = textShadow.replace(/contrast/g, this.renderer.getContrast(elem.style.fill));
+			styles.textShadow = textShadow = textShadow.replace(/contrast/g, this.renderer.getContrast(elem.style.fill));
 		}
 
-		// Safari with retina displays as well as PhantomJS bug (#3974)
-		styles.textRendering = 'geometricPrecision';
+		// Safari with retina displays as well as PhantomJS bug (#3974). Firefox does not tolerate this,
+		// it removes the text shadows.
+		if (isWebKit) {
+			styles.textRendering = 'geometricPrecision';
+		}
 
 		/* Selective side-by-side testing in supported browser (http://jsfiddle.net/highcharts/73L1ptrh/)
 		if (elem.textContent.indexOf('2.') === 0) {
@@ -22518,7 +21278,11 @@ SVGElement.prototype = {
 			titleNode = doc.createElementNS(SVG_NS, 'title');
 			this.element.appendChild(titleNode);
 		}
-		titleNode.textContent = (String(pick(value), '')).replace(/<[^>]*>/g, ''); // #3276 #3895
+		titleNode.appendChild(
+			doc.createTextNode(
+				(String(pick(value), '')).replace(/<[^>]*>/g, '') // #3276, #3895
+			)
+		);
 	},
 	textSetter: function (value) {
 		if (value !== this.textStr) {
@@ -23050,7 +21814,7 @@ SVGRenderer.prototype = {
 	 */
 	getContrast: function (color) {
 		color = Color(color).rgba;
-		return color[0] + color[1] + color[2] > 384 ? '#000' : '#FFF';
+		return color[0] + color[1] + color[2] > 384 ? '#000000' : '#FFFFFF';
 	},
 
 	/**
@@ -23574,11 +22338,8 @@ SVGRenderer.prototype = {
 				safeDistance = r + halfDistance,
 				anchorX = options && options.anchorX,
 				anchorY = options && options.anchorY,
-				path,
-				normalizer = mathRound(options.strokeWidth || 0) % 2 / 2; // mathRound because strokeWidth can sometimes have roundoff errors;
+				path;
 
-			x += normalizer;
-			y += normalizer;
 			path = [
 				'M', x + r, y, 
 				'L', x + w - r, y, // top side
@@ -23713,17 +22474,22 @@ SVGRenderer.prototype = {
 	 * Utility to return the baseline offset and total line height from the font size
 	 */
 	fontMetrics: function (fontSize, elem) {
+		var lineHeight,
+			baseline,
+			style;
+
 		fontSize = fontSize || this.style.fontSize;
 		if (elem && win.getComputedStyle) {
 			elem = elem.element || elem; // SVGElement
-			fontSize = win.getComputedStyle(elem, "").fontSize;
+			style = win.getComputedStyle(elem, "");
+			fontSize = style && style.fontSize; // #4309, the style doesn't exist inside a hidden iframe in Firefox
 		}
 		fontSize = /px/.test(fontSize) ? pInt(fontSize) : /em/.test(fontSize) ? parseFloat(fontSize) * 12 : 12;
 
 		// Empirical values found by comparing font size and bounding box height.
 		// Applies to the default font family. http://jsfiddle.net/highcharts/7xvn7/
-		var lineHeight = fontSize < 24 ? fontSize + 3 : mathRound(fontSize * 1.2),
-			baseline = mathRound(lineHeight * 0.8);
+		lineHeight = fontSize < 24 ? fontSize + 3 : mathRound(fontSize * 1.2);
+		baseline = mathRound(lineHeight * 0.8);
 
 		return {
 			h: lineHeight,
@@ -23806,8 +22572,8 @@ SVGRenderer.prototype = {
 
 				// create the border box if it is not already present
 				if (!box) {
-					boxX = mathRound(-alignFactor * padding);
-					boxY = baseline ? -baselineOffset : 0;
+					boxX = mathRound(-alignFactor * padding) + crispAdjust;
+					boxY = (baseline ? -baselineOffset : 0) + crispAdjust;
 
 					wrapper.box = box = shape ?
 						renderer.symbol(shape, boxX, boxY, wrapper.width, wrapper.height, deferredAttr) :
@@ -23944,7 +22710,7 @@ SVGRenderer.prototype = {
 		};
 		wrapper.anchorXSetter = function (value, key) {
 			anchorX = value;
-			boxAttr(key, value + crispAdjust - wrapperX);
+			boxAttr(key, mathRound(value) - crispAdjust - wrapperX);
 		};
 		wrapper.anchorYSetter = function (value, key) {
 			anchorY = value;
@@ -24277,13 +23043,16 @@ extend(SVGRenderer.prototype, {
 
 						// Ensure dynamically updating position when any parent is translated
 						each(parents.reverse(), function (parentGroup) {
-							var htmlGroupStyle;
+							var htmlGroupStyle,
+								cls = attr(parentGroup.element, 'class');
+
+							if (cls) {
+								cls = { className: cls };
+							} // else null
 
 							// Create a HTML div and append it to the parent div to emulate
 							// the SVG group structure
-							htmlGroup = parentGroup.div = parentGroup.div || createElement(DIV, {
-								className: attr(parentGroup.element, 'class')
-							}, {
+							htmlGroup = parentGroup.div = parentGroup.div || createElement(DIV, cls, {
 								position: ABSOLUTE,
 								left: (parentGroup.translateX || 0) + PX,
 								top: (parentGroup.translateY || 0) + PX
@@ -25570,17 +24339,19 @@ Tick.prototype = {
 			pxPos = xy.x,
 			chartWidth = axis.chart.chartWidth,
 			spacing = axis.chart.spacing,
-			leftBound = pick(axis.labelLeft, spacing[3]),
-			rightBound = pick(axis.labelRight, chartWidth - spacing[1]),
+			leftBound = pick(axis.labelLeft, mathMin(axis.pos, spacing[3])),
+			rightBound = pick(axis.labelRight, mathMax(axis.pos + axis.len, chartWidth - spacing[1])),
 			label = this.label,
 			rotation = this.rotation,
 			factor = { left: 0, center: 0.5, right: 1 }[axis.labelAlign],
 			labelWidth = label.getBBox().width,
 			slotWidth = axis.slotWidth,
 			xCorrection = factor,
+			goRight = 1,
 			leftPos,
 			rightPos,
-			textWidth;
+			textWidth,
+			css = {};
 
 		// Check if the label overshoots the chart spacing box. If it does, move it.
 		// If it now overshoots the slotWidth, add ellipsis.
@@ -25590,14 +24361,14 @@ Tick.prototype = {
 
 			if (leftPos < leftBound) {
 				slotWidth = xy.x + slotWidth * (1 - factor) - leftBound;
-				xCorrection -= 1;
 			} else if (rightPos > rightBound) {
 				slotWidth = rightBound - xy.x + slotWidth * factor;
+				goRight = -1;
 			}
 
 			slotWidth = mathMin(axis.slotWidth, slotWidth); // #4177
-			if (slotWidth < axis.slotWidth) {
-				xy.x -= xCorrection * (axis.slotWidth - slotWidth); // align it within the new slot
+			if (slotWidth < axis.slotWidth && axis.labelAlign === 'center') {
+				xy.x += goRight * (axis.slotWidth - slotWidth - xCorrection * (axis.slotWidth - mathMin(labelWidth, slotWidth)));				
 			}
 			// If the label width exceeds the available space, set a text width to be 
 			// picked up below. Also, if a width has been set before, we need to set a new
@@ -25614,10 +24385,11 @@ Tick.prototype = {
 		}
 
 		if (textWidth) {
-			label.css({
-				width: textWidth,
-				textOverflow: 'ellipsis'
-			});
+			css.width = textWidth;
+			if (!axis.options.labels.style.textOverflow) {
+				css.textOverflow = 'ellipsis';
+			}
+			label.css(css);
 		}
 	},
 
@@ -26495,7 +25267,7 @@ Axis.prototype = {
 			// logic to the numberFormatter and enable it by a parameter.
 			while (i-- && ret === UNDEFINED) {
 				multi = Math.pow(1000, i + 1);
-				if (numericSymbolDetector >= multi && numericSymbols[i] !== null) {
+				if (numericSymbolDetector >= multi && (value * 10) % multi === 0 && numericSymbols[i] !== null) {
 					ret = Highcharts.numberFormat(value / multi, -1) + numericSymbols[i];
 				}
 			}
@@ -26503,7 +25275,7 @@ Axis.prototype = {
 
 		if (ret === UNDEFINED) {
 			if (mathAbs(value) >= 10000) { // add thousands separators
-				ret = Highcharts.numberFormat(value, 0);
+				ret = Highcharts.numberFormat(value, -1);
 
 			} else { // small numbers
 				ret = Highcharts.numberFormat(value, -1, UNDEFINED, ''); // #2466
@@ -27141,7 +25913,7 @@ Axis.prototype = {
 			this.tickInterval / 5 : options.minorTickInterval;
 
 		// Find the tick positions
-		this.tickPositions = tickPositions = options.tickPositions && options.tickPositions.slice(); // Work on a copy (#1565)
+		this.tickPositions = tickPositions = tickPositionsOption && tickPositionsOption.slice(); // Work on a copy (#1565)
 		if (!tickPositions) {
 
 			if (this.isDatetimeAxis) {
@@ -27518,12 +26290,15 @@ Axis.prototype = {
 	 */
 	getThreshold: function (threshold) {
 		var axis = this,
-			isLog = axis.isLog;
-
-		var realMin = isLog ? lin2log(axis.min) : axis.min,
+			isLog = axis.isLog,
+			realMin = isLog ? lin2log(axis.min) : axis.min,
 			realMax = isLog ? lin2log(axis.max) : axis.max;
 
-		if (realMin > threshold || threshold === null) {
+		// With a threshold of null, make the columns/areas rise from the top or bottom 
+		// depending on the value, assuming an actual threshold of 0 (#4233).
+		if (threshold === null) {
+			threshold = realMax < 0 ? realMax : realMin;
+		} else if (realMin > threshold) {
 			threshold = realMin;
 		} else if (realMax < threshold) {
 			threshold = realMax;
@@ -27628,6 +26403,7 @@ Axis.prototype = {
 			innerWidth = mathMax(1, mathRound(slotWidth - 2 * (labelOptions.padding || 5))),
 			attr = {},
 			labelMetrics = renderer.fontMetrics(labelOptions.style.fontSize, ticks[0] && ticks[0].label),
+			textOverflowOption = labelOptions.style.textOverflow,
 			css,
 			labelLength = 0,
 			label,
@@ -27661,20 +26437,24 @@ Axis.prototype = {
 		// Handle word-wrap or ellipsis on vertical axis
 		} else if (slotWidth) {
 			// For word-wrap or ellipsis
-			css = { width: innerWidth + PX, textOverflow: 'clip' };
+			css = { width: innerWidth + PX };
 
-			// On vertical axis, only allow word wrap if there is room for more lines.
-			i = tickPositions.length;
-			while (!horiz && i--) {
-				pos = tickPositions[i];
-				label = ticks[pos].label;
-				if (label) {
-					// Reset ellipsis in order to get the correct bounding box (#4070)
-					if (label.styles.textOverflow === 'ellipsis') {
-						label.css({ textOverflow: 'clip' });
-					}
-					if (label.getBBox().height > this.len / tickPositions.length - (labelMetrics.h - labelMetrics.f)) {
-						label.specCss = { textOverflow: 'ellipsis' };
+			if (!textOverflowOption) {
+				css.textOverflow = 'clip';
+
+				// On vertical axis, only allow word wrap if there is room for more lines.
+				i = tickPositions.length;
+				while (!horiz && i--) {
+					pos = tickPositions[i];
+					label = ticks[pos].label;
+					if (label) {
+						// Reset ellipsis in order to get the correct bounding box (#4070)
+						if (label.styles.textOverflow === 'ellipsis') {
+							label.css({ textOverflow: 'clip' });
+						}
+						if (label.getBBox().height > this.len / tickPositions.length - (labelMetrics.h - labelMetrics.f)) {
+							label.specCss = { textOverflow: 'ellipsis' };
+						}
 					}
 				}
 			}
@@ -27684,9 +26464,11 @@ Axis.prototype = {
 		// Add ellipsis if the label length is significantly longer than ideal
 		if (attr.rotation) {
 			css = { 
-				width: (labelLength > chart.chartHeight * 0.5 ? chart.chartHeight * 0.33 : chart.chartHeight) + PX,
-				textOverflow: 'ellipsis'
+				width: (labelLength > chart.chartHeight * 0.5 ? chart.chartHeight * 0.33 : chart.chartHeight) + PX
 			};
+			if (!textOverflowOption) {
+				css.textOverflow = 'ellipsis';
+			}
 		}
 
 		// Set the explicit or automatic label alignment
@@ -27708,6 +26490,13 @@ Axis.prototype = {
 
 		// TODO: Why not part of getLabelPosition?
 		this.tickRotCorr = renderer.rotCorr(labelMetrics.b, this.labelRotation || 0, this.side === 2);
+	},
+
+	/**
+	 * Return true if the axis has associated data
+	 */
+	hasData: function () {
+		return this.hasVisibleSeries || (defined(this.min) && defined(this.max) && !!this.tickPositions);
 	},
 
 	/**
@@ -27734,12 +26523,13 @@ Axis.prototype = {
 			labelOffsetPadded,
 			axisOffset = chart.axisOffset,
 			clipOffset = chart.clipOffset,
+			clip,
 			directionFactor = [-1, 1, 1, -1][side],
 			n,
 			lineHeightCorrection;
 
 		// For reuse in Axis.render
-		axis.hasData = hasData = (axis.hasVisibleSeries || (defined(axis.min) && defined(axis.max) && !!tickPositions));
+		hasData = axis.hasData();
 		axis.showAxis = showAxis = hasData || pick(options.showEmpty, true);
 
 		// Set/reset staggerLines
@@ -27842,7 +26632,13 @@ Axis.prototype = {
 			axis.axisTitleMargin + titleOffset + directionFactor * axis.offset,
 			labelOffsetPadded // #3027
 		);
-		clipOffset[invertedSide] = mathMax(clipOffset[invertedSide], mathFloor(options.lineWidth / 2) * 2);
+
+		// Decide the clipping needed to keep the graph inside the plot area and axis lines
+		clip = mathFloor(options.lineWidth / 2) * 2;
+		if (options.offset) {
+			clip = mathMax(0, clip - options.offset);		
+		}
+		clipOffset[invertedSide] = mathMax(clipOffset[invertedSide], clip);
 	},
 
 	/**
@@ -27891,7 +26687,7 @@ Axis.prototype = {
 			margin = horiz ? axisLeft : axisTop,
 			opposite = this.opposite,
 			offset = this.offset,
-			xOption = axisTitleOptions.x || 0, // docs
+			xOption = axisTitleOptions.x || 0,
 			yOption = axisTitleOptions.y || 0,
 			fontSize = pInt(axisTitleOptions.style.fontSize || 12),
 
@@ -27941,7 +26737,6 @@ Axis.prototype = {
 			linePath,
 			hasRendered = chart.hasRendered,
 			slideInTicks = hasRendered && defined(axis.oldMin) && !isNaN(axis.oldMin),
-			hasData = axis.hasData,
 			showAxis = axis.showAxis,
 			from,
 			to;
@@ -27960,7 +26755,7 @@ Axis.prototype = {
 		});
 
 		// If the series has data draw the ticks. Else only the line and title
-		if (hasData || isLinked) {
+		if (axis.hasData() || isLinked) {
 
 			// minor ticks
 			if (axis.minorTickInterval && !axis.categories) {
@@ -29230,8 +28025,8 @@ Pointer.prototype = {
 		}
 
 		// If it has a hoverPoint and that series requires direct touch (like columns), 
-		// use the hoverPoint (#3899). Otherwise, search the k-d tree.	
-		if (hoverSeries && ((!shared && hoverSeries.directTouch) || hoverSeries.noSharedTooltip) && hoverPoint) {
+		// use the hoverPoint (#3899). Otherwise, search the k-d tree.
+		if (!shared && hoverSeries && hoverSeries.directTouch && hoverPoint) {
 			kdpoint = hoverPoint;
 
 		// Handle shared tooltip or cases where a series is not yet hovered
@@ -29242,7 +28037,7 @@ Pointer.prototype = {
 				noSharedTooltip = s.noSharedTooltip && shared;
 				directTouch = !shared && s.directTouch;
 				if (s.visible && !noSharedTooltip && !directTouch && pick(s.options.enableMouseTracking, true)) { // #3821
-					kdpointT = s.searchPoint(e, !noSharedTooltip); // #3828
+					kdpointT = s.searchPoint(e, !noSharedTooltip && s.kdDimensions === 1); // #3828
 					if (kdpointT) {
 						kdpoints.push(kdpointT);
 					}
@@ -30196,10 +28991,11 @@ Legend.prototype = {
 			legendItemPos = item._legendItemPos,
 			itemX = legendItemPos[0],
 			itemY = legendItemPos[1],
-			checkbox = item.checkbox;
+			checkbox = item.checkbox,
+			legendGroup = item.legendGroup;
 
-		if (item.legendGroup) {
-			item.legendGroup.translate(
+		if (legendGroup && legendGroup.element) {
+			legendGroup.translate(
 				ltr ? itemX : legend.legendWidth - itemX - 2 * symbolPadding - 4,
 				itemY
 			);
@@ -30642,8 +29438,20 @@ Legend.prototype = {
 			arrowSize = navOptions.arrowSize || 12,
 			nav = this.nav,
 			pages = this.pages,
+			padding = this.padding,
 			lastY,
-			allItems = this.allItems;
+			allItems = this.allItems,
+			clipToHeight = function (height) {
+				clipRect.attr({
+					height: height
+				});
+
+				// useHTML
+				if (legend.contentGroup.div) { // docs: navigation now supported with useHTML
+					legend.contentGroup.div.style.clip = 'rect(' + padding + 'px,9999px,' + (padding + height) + 'px,0)';
+				}
+			};
+
 			
 		// Adjust the height
 		if (options.layout === 'horizontal') {
@@ -30655,9 +29463,9 @@ Legend.prototype = {
 		
 		// Reset the legend height and adjust the clipping rectangle
 		pages.length = 0;
-		if (legendHeight > spaceHeight && !options.useHTML) {
+		if (legendHeight > spaceHeight) {
 
-			this.clipHeight = clipHeight = mathMax(spaceHeight - 20 - this.titleHeight - this.padding, 0);
+			this.clipHeight = clipHeight = mathMax(spaceHeight - 20 - this.titleHeight - padding, 0);
 			this.currentPage = pick(this.currentPage, 1);
 			this.fullHeight = legendHeight;
 			
@@ -30683,13 +29491,12 @@ Legend.prototype = {
 
 			// Only apply clipping if needed. Clipping causes blurred legend in PDF export (#1787)
 			if (!clipRect) {
-				clipRect = legend.clipRect = renderer.clipRect(0, this.padding, 9999, 0);
+				clipRect = legend.clipRect = renderer.clipRect(0, padding, 9999, 0);
 				legend.contentGroup.clip(clipRect);
 			}
-			clipRect.attr({
-				height: clipHeight
-			});
-			
+				
+			clipToHeight(clipHeight);
+
 			// Add navigation elements
 			if (!nav) {
 				this.nav = nav = renderer.g().attr({ zIndex: 1 }).add(this.group);
@@ -30714,9 +29521,7 @@ Legend.prototype = {
 			legendHeight = spaceHeight;
 			
 		} else if (nav) {
-			clipRect.attr({
-				height: chart.chartHeight
-			});
+			clipToHeight(chart.chartHeight);
 			nav.hide();
 			this.scrollGroup.attr({
 				translateY: 1
@@ -32324,7 +31129,7 @@ var CenteredSeriesMixin = Highcharts.CenteredSeriesMixin = {
 	 * Get the center of the pie based on the size and center options relative to the  
 	 * plot area. Borrowed by the polar and gauge series types.
 	 */
-	getCenter: function (size) {
+	getCenter: function () {
 		
 		var options = this.options,
 			chart = this.chart,
@@ -32335,28 +31140,20 @@ var CenteredSeriesMixin = Highcharts.CenteredSeriesMixin = {
 			centerOption = options.center,
 			positions = [pick(centerOption[0], '50%'), pick(centerOption[1], '50%'), options.size || '100%', options.innerSize || 0],
 			smallestSize = mathMin(plotWidth, plotHeight),
-			isPercent,
 			i,
 			value;
 
 		for (i = 0; i < 4; ++i) {
 			value = positions[i];
-			isPercent = /%$/.test(value);
-			handleSlicingRoom = i < 2 || (i === 2 && isPercent);
-			positions[i] = (isPercent ?
-				// i == 0: centerX, relative to width
-				// i == 1: centerY, relative to height
-				// i == 2: size, relative to smallestSize
-				// i == 3: innerSize, relative to size
-				[plotWidth, plotHeight, smallestSize, positions[2]][i] * pInt(value) / 100 :
-								
-				pInt(value)) + (handleSlicingRoom ? slicingRoom : 0);
+			handleSlicingRoom = i < 2 || (i === 2 && /%$/.test(value));
+			
+			// i == 0: centerX, relative to width
+			// i == 1: centerY, relative to height
+			// i == 2: size, relative to smallestSize
+			// i == 3: innerSize, relative to size
+			positions[i] = relativeLength(value, [plotWidth, plotHeight, smallestSize, positions[2]][i]) +
+				(handleSlicingRoom ? slicingRoom : 0);
 
-			// If the size is set, we're in a recursive loop trying to fit data labels.
-			// The inner size must follow (#2077)
-			if (i === 2 && size) {
-				positions[i] = size;
-			}
 		}
 		return positions;
 	}
@@ -32431,7 +31228,7 @@ Point.prototype = {
 	optionsToObject: function (options) {
 		var ret = {},
 			series = this.series,
-			keys = series.options.keys, // docs: http://jsfiddle.net/ch4v7n8v/1
+			keys = series.options.keys,
 			pointArrayMap = keys || series.pointArrayMap || ['y'],
 			valueCount = pointArrayMap.length,
 			firstItemType,
@@ -32595,7 +31392,9 @@ Point.prototype = {
 		if (eventType === 'click' && seriesOptions.allowPointSelect) {
 			defaultFunction = function (event) {
 				// Control key is for Windows, meta (= Cmd key) for Mac, Shift for Opera
-				point.select(null, event.ctrlKey || event.metaKey || event.shiftKey);
+				if (point.select) { // Could be destroyed by prior event handlers (#2911)
+					point.select(null, event.ctrlKey || event.metaKey || event.shiftKey);
+				}
 			};
 		}
 
@@ -32983,7 +31782,9 @@ Series.prototype = {
 		// cheaper, allows animation, and keeps references to points.
 		if (updatePoints !== false && dataLength && oldDataLength === dataLength && !series.cropped && !series.hasGroupedData && series.visible) {
 			each(data, function (point, i) {
-				oldData[i].update(point, false, null, false);
+				if (oldData[i].update) { // Linked, previously hidden series (#3709)
+					oldData[i].update(point, false, null, false);
+				}
 			});
 
 		} else {
@@ -33294,8 +32095,8 @@ Series.prototype = {
 			// For points within the visible range, including the first point outside the
 			// visible range, consider y extremes
 			validValue = y !== null && y !== UNDEFINED && (!yAxis.isLog || (y.length || y > 0));
-			withinRange = this.getExtremesFromAll || this.cropped || ((xData[i + 1] || x) >= xMin &&
-				(xData[i - 1] || x) <= xMax);
+			withinRange = this.getExtremesFromAll || this.options.getExtremesFromAll || this.cropped ||
+				((xData[i + 1] || x) >= xMin &&	(xData[i - 1] || x) <= xMax);
 
 			if (validValue && withinRange) {
 
@@ -34026,8 +32827,11 @@ Series.prototype = {
 			axis = this[zoneAxis + 'Axis'],
 			extremes,
 			reversed = axis.reversed,
+			inverted = chart.inverted,
 			horiz = axis.horiz,
 			pxRange,
+			pxPosMin,
+			pxPosMax,
 			ignoreZones = false;
 
 		if (zones.length && (graph || area)) {
@@ -34047,24 +32851,19 @@ Series.prototype = {
 				translatedFrom = reversed ? 
 					(horiz ? chart.plotWidth : 0) : 
 					(horiz ? 0 : axis.toPixels(extremes.min));
-				translatedFrom = mathMin(pick(translatedTo, translatedFrom), chartSizeMax);
-				translatedTo = mathMin(mathRound(axis.toPixels(pick(threshold.value, extremes.max), true)), chartSizeMax);
-
-				// From should be less or equal then to (#4006)
-				if (axis.isXAxis) {
-					translatedFrom = translatedFrom > translatedTo ? translatedTo : translatedFrom; 
-				} else {
-					translatedFrom = translatedFrom < translatedTo ? translatedTo : translatedFrom;
-				}
-
+				translatedFrom = mathMin(mathMax(pick(translatedTo, translatedFrom), 0), chartSizeMax);
+				translatedTo = mathMin(mathMax(mathRound(axis.toPixels(pick(threshold.value, extremes.max), true)), 0), chartSizeMax);
+				
 				if (ignoreZones) {
 					translatedFrom = translatedTo = axis.toPixels(extremes.max);
 				}
 
 				pxRange = Math.abs(translatedFrom - translatedTo);
+				pxPosMin = mathMin(translatedFrom, translatedTo);
+				pxPosMax = mathMax(translatedFrom, translatedTo);
 				if (axis.isXAxis) {
 					clipAttr = {
-						x: reversed ? translatedTo : translatedFrom,
+						x: inverted ? pxPosMax : pxPosMin,
 						y: 0,
 						width: pxRange, 
 						height: chartSizeMax
@@ -34075,10 +32874,10 @@ Series.prototype = {
 				} else {
 					clipAttr = {
 						x: 0,
-						y: reversed ? translatedFrom : translatedTo,
+						y: inverted ? pxPosMax : pxPosMin,
 						width: chartSizeMax, 
 						height: pxRange
-					};
+					};					
 					if (horiz) {
 						clipAttr.y = chart.plotWidth - clipAttr.y;
 					}
@@ -34089,7 +32888,7 @@ Series.prototype = {
 					if (axis.isXAxis) {			
 						clipAttr = {
 							x: 0,
-							y: reversed ? translatedFrom : translatedTo,
+							y: reversed ? pxPosMin : pxPosMax,
 							height: clipAttr.width,
 							width: chart.chartWidth
 						};		
@@ -34946,7 +33745,7 @@ extend(Point.prototype, {
 						if (options && options.marker && options.marker.symbol) {
 							point.graphic = graphic.destroy();
 						} else {
-							graphic.attr(point.pointAttr[point.state || ''])[point.visible ? 'show' : 'hide'](); // #2430
+							graphic.attr(point.pointAttr[point.state || ''])[point.visible === false ? 'hide' : 'show'](); // #2430
 						}
 					}
 					if (options && options.dataLabels && point.dataLabel) { // #2468
@@ -35247,7 +34046,7 @@ extend(Axis.prototype, {
 		newOptions = chart.options[this.coll][this.options.index] = merge(this.userOptions, newOptions);
 
 		this.destroy(true);
-		this._addedPlotLB = UNDEFINED; // #1611, #2887
+		this._addedPlotLB = this.chart._labelPanes = UNDEFINED; // #1611, #2887, #4314
 
 		this.init(chart, extend(newOptions, { events: UNDEFINED }));
 
@@ -35853,7 +34652,8 @@ var ColumnSeries = extendClass(Series, {
 		// Record the new values
 		each(series.points, function (point) {
 			var yBottom = pick(point.yBottom, translatedThreshold),
-				plotY = mathMin(mathMax(-999 - yBottom, point.plotY), yAxis.len + 999 + yBottom), // Don't draw too far outside plot area (#1303, #2241)
+				safeDistance = 999 + mathAbs(yBottom),
+				plotY = mathMin(mathMax(-safeDistance, point.plotY), yAxis.len + safeDistance), // Don't draw too far outside plot area (#1303, #2241, #4264)
 				barX = point.plotX + pointXOffset,
 				barW = seriesBarW,
 				barY = mathMin(plotY, yBottom),
@@ -35908,7 +34708,6 @@ var ColumnSeries = extendClass(Series, {
 				width: barW,
 				height: barH
 			};
-
 		});
 
 	},
@@ -36152,7 +34951,7 @@ var PiePoint = extendClass(Point, {
 	 * @param {Boolean} vis Whether to show the slice or not. If undefined, the
 	 *    visibility is toggled
 	 */
-	setVisible: function (vis, redraw) { // docs: redraw parameter. Radrawing calculates new percentages and totals and moves other slices.
+	setVisible: function (vis, redraw) {
 		var point = this,
 			series = point.series,
 			chart = series.chart,
@@ -36176,6 +34975,11 @@ var PiePoint = extendClass(Point, {
 
 			if (point.legendItem) {
 				chart.legend.colorizeItem(point, vis);
+			}
+
+			// #4170, hide halo after hiding point
+			if (!vis && point.state === 'hover') {
+				point.setState('');
 			}
 			
 			// Handle ignore hidden slices
@@ -36242,6 +35046,7 @@ var PieSeries = {
 	isCartesian: false,
 	pointClass: PiePoint,
 	requireSorting: false,
+	directTouch: true,
 	noSharedTooltip: true,
 	trackerGroups: ['group', 'dataLabelsGroup'],
 	axisTypes: [],
@@ -36464,7 +35269,8 @@ var PieSeries = {
 			//group,
 			shadow = series.options.shadow,
 			shadowGroup,
-			shapeArgs;
+			shapeArgs,
+			attr;
 
 		if (shadow && !series.shadowGroup) {
 			series.shadowGroup = renderer.g('shadow')
@@ -36498,15 +35304,17 @@ var PieSeries = {
 			if (graphic) {
 				graphic.animate(extend(shapeArgs, groupTranslation));				
 			} else {
+				attr = { 'stroke-linejoin': 'round' };
+				if (!point.visible) {
+					attr.visibility = 'hidden';
+				}
+
 				point.graphic = graphic = renderer[point.shapeType](shapeArgs)
 					.setRadialReference(series.center)
 					.attr(
 						point.pointAttr[point.selected ? SELECT_STATE : NORMAL_STATE]
 					)
-					.attr({ 
-						'stroke-linejoin': 'round'
-						//zIndex: 1 // #2722 (reversed)
-					})
+					.attr(attr)
 					.attr(groupTranslation)
 					.add(series.group)
 					.shadow(shadow, shadowGroup);	
@@ -37043,7 +35851,7 @@ if (seriesTypes.pie) {
 				point = points[j];
 				labelPos = point.labelPos;
 				dataLabel = point.dataLabel;
-				visibility = point.visible === false ? HIDDEN : VISIBLE;
+				visibility = point.visible === false ? HIDDEN : 'inherit';
 				naturalY = labelPos[1];
 
 				if (distanceOption > 0) {
@@ -37230,8 +36038,9 @@ if (seriesTypes.pie) {
 
 		// If the size must be decreased, we need to run translate and drawDataLabels again
 		if (newSize < center[2]) {
-			this.center = this.getCenter(newSize);
-			this.translate(this.center);
+			center[2] = newSize;
+			center[3] = relativeLength(options.innerSize || 0, newSize);
+			this.translate(center);
 			each(this.points, function (point) {
 				if (point.dataLabel) {
 					point.dataLabel._pos = null; // reset
@@ -37306,7 +36115,7 @@ if (seriesTypes.column) {
 
 
 /**
- * Highcharts JS v4.1.5-modified ()
+ * Highcharts JS v4.1.6-modified ()
  * Highcharts module to hide overlapping data labels. This module is included by default in Highmaps.
  *
  * (c) 2010-2014 Torstein Honsi
@@ -37830,17 +36639,20 @@ extend(Point.prototype, {
 			hoverPoint.onMouseOut();
 		}
 
-		// trigger the event
-		point.firePointEvent('mouseOver');
+		if (point.series) { // It may have been destroyed, #4130
 
-		// update the tooltip
-		if (tooltip && (!tooltip.shared || series.noSharedTooltip)) {
-			tooltip.refresh(point, e);
+			// trigger the event
+			point.firePointEvent('mouseOver');
+
+			// update the tooltip
+			if (tooltip && (!tooltip.shared || series.noSharedTooltip)) {
+				tooltip.refresh(point, e);
+			}
+
+			// hover this
+			point.setState(HOVER_STATE);
+			chart.hoverPoint = point;
 		}
-
-		// hover this
-		point.setState(HOVER_STATE);
-		chart.hoverPoint = point;
 	},
 
 	/**
@@ -42521,636 +41333,6 @@ $(document).ready(function() {
   });
 
 });
-/**
- * @file Utility file to:
- *
- * i)  Convert a chart data format that is optimised for space into a format
- *     suitable for the charts and data tables
- * ii) Provide a method by which this data can be filtered so that a date range
- *     and data by month, year and quarter can be viewed.
- *
- * @param data
- * @returns {DataFilter}
- * @constructor
- */
-
-/**
- * @param data
- * @returns {DataFilter}
- * @constructor
- */
-function DataFilter(data) {
-
-  this.rawData = data;
-
-  return this;
-}
-
-/**
- * Allow chart plugins to get the filtered data they require.
- *
- * A filter is of the following format:
- *
- * var defaultFilter = {
- *   scale: '<month|year|quarter>',
- *   period: {
- *     start: {
- *       year: <YYYY>,
- *       month: <MM>
- *     },
- *     end: {
- *       year: <YYYY>,
- *       month: <MM>
- *     }
- *   }
- * };
- *
- * @param filter
- * @returns {*}
- */
-DataFilter.prototype.getData = function(filter) {
-  return this._filter(filter, this.rawData);
-};
-
-/**
- * Filter the data
- *
- * @param filter
- * @param data
- * @returns {{labels: Array, values: Array}}
- * @private
- */
-DataFilter.prototype._filter = function(filter, data) {
-
-  var dataStartDate;
-  var filterEndDate;
-  var filterStartDate;
-  var filteredDates = [];
-  var currentDate;
-  var labels = [];
-  var values = [];
-
-
-  filterStartDate = moment({
-    year: filter.period.start.year,
-    month: filter.period.start.month-1,
-    day: 1
-  });
-
-  if ( !filterStartDate.isValid() ) {
-    throw new Error('Invalid start filter date');
-  }
-
-  filterEndDate = moment({
-    year: filter.period.end.year,
-    month: filter.period.end.month-1,
-    day: 1
-  });
-
-  if ( !filterEndDate.isValid() ) {
-    throw new Error('Invalid end filter date');
-  }
-
-  dataStartDate = moment({
-    year: data.start.year,
-    month: data.start.month-1,
-    day: 1
-  });
-
-  if ( !dataStartDate.isValid() ) {
-    throw new Error('Invalid start data date');
-  }
-
-  /*
-   * Ensure the filters are within the range of the data
-   */
-  if ( filterStartDate.isBefore(dataStartDate) ) {
-    filterStartDate = dataStartDate;
-  }
-
-
-  /*
-   * Get the difference between the filter start date, and the
-   * beginning date of the data set.  This will give us the first
-   * location in the array of the data.
-   */
-  var start = filterStartDate.diff(dataStartDate, 'months');
-
-  /*
-   * Get the difference between the start and end filter dates so
-   * we know how many array values to include
-   */
-  var length = filterEndDate.diff(filterStartDate, 'months')+1;
-
-  /*
-   * Slice the data array
-   */
-  var filteredSet = data.values.slice(start, start + length);
-
-  /*
-   * Loop through the filtered set and add labels for year, quarter & month
-   */
-
-  currentDate = filterStartDate;
-
-  for ( var i=0; i<filteredSet.length; i++ ) {
-    if ( i > 0 ) {
-      currentDate = filterStartDate.add(1, 'month');
-    }
-
-    filteredDates.push({
-      'value': filteredSet[i],
-      'month': currentDate.format('MMM YYYY'),
-      'year': currentDate.year(),
-      'quarter': 'Q' + currentDate.quarter() + ' ' + currentDate.year()
-    });
-  }
-
-  /*
-   * Now group by scale and average values
-   */
-  filteredDates = _.chain(filteredDates)
-    .groupBy(filter.scale)
-    .map(function(value, key) {
-      var mean = _.reduce(value, function(sum, item) {
-        sum += item.value;
-        return sum;
-      }, 0)  / value.length;
-
-      return {
-        label: key,
-        total: Math.round(mean * 100) / 100
-      };
-    })
-    .value();
-
-  _.forEach(filteredDates, function(item) {
-    labels.push(item.label);
-    values.push(item.total);
-  });
-
-  return {
-    labels: labels,
-    values: values
-  };
-};
-
-(function ($) {
-
-  var defaults = {
-    filter: {
-      scale: 'month',
-      period: {
-        start: {
-          year: 2010,
-          month: 1
-        },
-        end: {
-          year: 2011,
-          month: 12
-        }
-      }
-    }
-  };
-
-  /**
-   * Collect the values from the various controls
-   */
-  ChartControl.prototype.getValues = function() {
-    return {
-      scale: $('input[data-chart-controls-scale]:checked').val(),
-      period: {
-        start: {
-          year: $('[data-chart-controls-from-year]').val(),
-          month: $('[data-chart-controls-from-month]').val()
-        },
-        end: {
-          year: $('[data-chart-controls-to-year]').val(),
-          month: $('[data-chart-controls-to-month]').val()
-        }
-      }
-    };
-  };
-
-  /**
-   * Toggle the UI selected state for the buttons
-   */
-  ChartControl.prototype.toggleSelectedButton = function() {
-
-    var selectedElement = $('input:checked', this.element);
-    $('label', this.element).removeClass('btn--secondary--active');
-
-    selectedElement.each(function() {
-      $(this).parent('label').addClass('btn--secondary--active');
-    });
-
-  };
-
-  /**
-   * Toggle the UI selected state for the links
-   */
-  ChartControl.prototype.toggleSelectedLink = function(clickedElem) {
-    $('a', this.element).removeClass('chart-area__controls__active');
-    clickedElem.addClass('chart-area__controls__active');
-  };
-
-  /**
-   * Validate the entered dates.  The chart does validation as well, but this
-   * is for the controls interface.
-   *
-   * @param filter
-   */
-  ChartControl.prototype.validate = function(filter) {
-
-    var filterStartDate;
-    var filterEndDate;
-
-    filterStartDate = moment({
-      year: filter.period.start.year,
-      month: filter.period.start.month-1,
-      day: 1
-    });
-
-    filterEndDate = moment({
-      year: filter.period.end.year,
-      month: filter.period.end.month-1,
-      day: 1
-    });
-
-    if ( filterEndDate.isSame(filterStartDate) ) {
-      throw new Error('Sorry, the start date and end date cannot be the same');
-    } else if ( filterEndDate.isBefore(filterStartDate) ) {
-      throw new Error('Sorry, the chosen date range is not valid');
-    }
-
-  };
-
-  /**
-   * Add events to the all / 5yr / 10yr links
-   */
-  ChartControl.prototype.attachLinkEvents = function() {
-
-    var self = this;
-
-    $('[data-chart-controls-range]', this.element).on('click', function(e) {
-
-      var elem = $(this);
-      var filterDate;
-      var fromYear;
-      var fromMonth;
-
-      e.preventDefault();
-
-      self.toggleSelectedLink(elem);
-
-      /*
-       * Work out what the dates are
-       */
-
-      switch ( elem.data('chart-controls-range') ) {
-        case '10yr':
-          filterDate = moment().subtract(10, 'years');
-
-          fromMonth = filterDate.month()+1;
-          fromYear = filterDate.year();
-
-          break;
-
-        case '5yr':
-          filterDate = moment().subtract(5, 'years');
-
-          fromMonth = filterDate.month()+1;
-          fromYear = filterDate.year();
-
-          break;
-
-        case 'all':
-
-          fromMonth = $('[data-chart-controls-from-month] option:first-child', this.element).val();
-          fromYear = $('[data-chart-controls-from-year] option:first-child', this.element).val();
-
-          break;
-      }
-
-      /*
-       * Set the select options
-       */
-      $('[data-chart-controls-from-month]', this.element).find('option[value="' + fromMonth + '"]').attr('selected', true);
-      $('[data-chart-controls-from-year]', this.element).find('option[value="' + fromYear + '"]').attr('selected', true);
-      $('[data-chart-controls-to-month]', this.element).find('option[value="' + (moment().month()+1) + '"]').attr('selected', true);
-      $('[data-chart-controls-to-year]', this.element).find('option[value="' + moment().year() + '"]').attr('selected', true);
-
-      /*
-       * Trigger a click
-       */
-      $('[data-chart-controls-submit]').trigger('click', {
-        custom: false
-      });
-    });
-  };
-
-  /**
-   * Update the filter: validate user input and trigger event.
-   */
-  ChartControl.prototype.updateFilter = function() {
-
-    var newFilter;
-
-    newFilter = this.getValues();
-
-    try {
-      $('.chart-area__controls__custom__errors').empty();
-      this.validate(newFilter);
-
-    } catch ( err ) {
-      $('<p>' + err.message +'</p>').appendTo('.chart-area__controls__custom__errors');
-      return;
-    }
-
-    $(this.element).trigger('chart-filter-change', {
-      filter: newFilter,
-      chartIds: this.chartIds
-    });
-
-    this.options.filter = newFilter;
-  };
-
-  /**
-   * Add the collape / expand behaviour to the custom date filter
-   */
-  ChartControl.prototype.setCollapsible = function() {
-
-    var customControl = $('[data-chart-control-custom-range]', self.element);
-    var elem;
-    var target;
-
-    $('[data-chart-control-custom-trigger-for]', customControl).on('click', function(e) {
-      elem = $(this);
-      target = $('.' + elem.data('chart-control-custom-trigger-for'));
-
-      if ( customControl.data('chart-control-custom-expanded') == true ) {
-        target.slideUp('fast', function() {
-          customControl.data('chart-control-custom-expanded', false);
-          customControl.removeClass('chart-area__controls__custom--active');
-          $('.icon-up-open-big', customControl)
-            .removeClass('icon-up-open-big')
-            .addClass('icon-down-open-big');
-        });
-
-      }
-      else {
-        customControl.addClass('chart-area__controls__custom--active');
-
-        // remove our nice no-js friendly hiding now we know js is active
-        target.hide().removeClass('js-hidden');
-
-        target.slideDown('fast', function() {
-          customControl.data('chart-control-custom-expanded', true);
-          $('.icon-down-open-big', customControl)
-            .removeClass('icon-down-open-big')
-            .addClass('icon-up-open-big');
-
-        });
-      }
-
-    });
-
-    //
-    // remove .js-hidden00
-
-  };
-
-  /**
-   * Initialise
-   */
-  ChartControl.prototype.init = function() {
-
-    var self = this;
-
-    this.toggleSelectedButton();
-
-    this.setCollapsible();
-
-    this.attachLinkEvents();
-
-    /*
-     * Add event to submit button
-     */
-    $('[data-chart-controls-submit]', this.element).on('click', function(e, data) {
-
-      data = data || {};
-
-      e.preventDefault();
-
-      _.defaults(data, {
-        custom: true
-      });
-
-      if ( data.custom !== false ) {
-        self.toggleSelectedLink($('.link-complex', self.element));
-      }
-
-      self.updateFilter();
-    });
-
-    /*
-     * Add click handlers to the controls
-     */
-    $('[data-chart-controls-scale]', this.element).on('click', function(e, data) {
-      self.toggleSelectedButton();
-      self.updateFilter();
-    });
-
-    $('[data-chart-controls-type]', this.element).on('click', function(e, data) {
-      self.toggleSelectedButton();
-
-      $('[data-chart]').addClass('js-hidden');
-      $('[data-chart-data-id="' + $(this).val() + '"]').removeClass('js-hidden');
-
-    });
-  };
-
-  /**
-   * @param element
-   * @param options
-   * @constructor
-   */
-  function ChartControl( element, options ) {
-    this.element = element;
-
-    this.chartIds = $(this.element).data('chart-controls-for');
-
-    this.options = $.extend(true, {}, defaults, options) ;
-
-    this.init();
-  }
-
-  /**
-   * Attach the plugin to the JQuery object.
-   *
-   * @param options
-   * @returns {*}
-   */
-  $.fn.chartControl = function ( options ) {
-    return this.each(function() {
-      if (!$.data(this, 'plugin_chartControl')) {
-        $.data(this, 'plugin_chartControl', new ChartControl( this, options ));
-      }
-    });
-  };
-
-})( jQuery );
-
-(function ($) {
-
-  var marker = {
-    symbol:'circle',
-    states: {
-      hover: {
-        fillColor: '#007dc3',
-        radiusPlus: 0,
-        lineWidthPlus: 0
-      }
-    }
-  };
-
-
-  /**
-   * Time Series Chart defaults.  The main Highcharts defaults
-   * are set in the charts controller.
-   *
-   */
-  var defaults = {
-    series: [{
-      marker: marker
-    }],
-    chart: {
-      type: 'line',
-      spacingTop: 70,
-      spacingRight: 40
-    },
-    legend: {
-      enabled: false
-    },
-    plotOptions: {
-      series: {
-        shadow: false,
-        marker: {
-          enabled: false
-        }
-      }
-    }
-  };
-
-
-  /**
-   * @param element
-   * @param options
-   * @constructor
-   */
-  function TimeSeriesChart( element, options ) {
-    this.element = element;
-
-    this.chartId = $(this.element).data('chart-data-id');
-
-    this.options = $.extend(true, {}, {
-      chart: defaults
-    }, options, this.formatData(options.data));
-
-    this.init();
-  }
-
-  /**
-   * Update the chart according to a change in the filter
-   */
-  TimeSeriesChart.prototype.updateChart = function(data) {
-
-    var chartData = this.formatData(data);
-    var chart;
-
-    /*
-     * Update the chart
-     */
-    chart = this.chart.highcharts();
-
-    chart.series[0].setData(chartData.chart.series[0].data, true, true);
-    chart.xAxis[0].setCategories(chartData.chart.xAxis.categories, true, true);
-
-    this.setMarkers();
-  };
-
-  /**
-   * Only show the markers if the width of the chart is big enough to ensure
-   * they aren't too close together.
-   *
-   * @todo determine whether this should be fire on chart redraw, rather than
-   * we explcitly change the data, or initialise the chart.
-   */
-  TimeSeriesChart.prototype.setMarkers = function() {
-
-    var chart = this.chart.highcharts();
-
-    if ( chart && (chart.series[0].points.length * 14) < chart.chartWidth ) {
-      _.each(chart.series[0].points, function (point) {
-        point.update({
-          marker: {
-            enabled: true
-          }
-        });
-      });
-    }
-  };
-
-  /**
-   * Format the data according to HighCharts format.
-   * @param filter
-   * @param data
-   */
-  TimeSeriesChart.prototype.formatData = function(data) {
-
-    /*
-     * Re-arrange the data so that it is inline with how highcharts expects it.
-     */
-    var chartData = {
-      series: [{
-        data: data.values
-      }],
-      xAxis: {
-        categories: data.labels
-      }
-    };
-
-    return {
-      chart: chartData
-    };
-  };
-
-  /**
-   * Initialise the Highchart
-   */
-  TimeSeriesChart.prototype.init = function () {
-    this.chart = $(this.element).highcharts(this.options.chart);
-    this.setMarkers();
-  };
-
-  /**
-   * Attach the plugin to the JQuery object.
-   *
-   * @param options
-   * @returns {*}
-   */
-  $.fn.timeSeriesChart = function ( options ) {
-    return this.each(function () {
-      if (!$.data(this, 'plugin_chart')) {
-        $.data(this, 'plugin_chart', new TimeSeriesChart( this, options ));
-      }
-    });
-  };
-
-})( jQuery );
-
-
-
 (function ($) {
 
   /**
@@ -43245,475 +41427,6 @@ DataFilter.prototype._filter = function(filter, data) {
   };
 
 })( jQuery );
-/**
- * @file a controller to intialise the appropriate plugins,
- * deal with chart control events and to provide custom chart
- * functions to external libraries.
- */
-
-var ONS = ONS || {};
-
-ONS.charts = ONS.charts || {};
-
-ONS.charts = (function() {
-
-
-  /**
-   * Convert a stacked bar chart from vertical to horizontal.
-   *
-   * @param chart
-   * @param options
-   */
-  var stackedResize = function(chart, options){
-
-    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-
-    if(w<768){
-      options.chart.type="bar";
-      options.plotOptions.column = {};
-      options.plotOptions.series = {stacking: 'normal'};
-      stackedBar =  chart.highcharts(options);
-
-    } else {
-      options.chart.type="column";
-
-      yAxis = chart.highcharts().yAxis[0]
-      titleWidth=0;
-
-      if(yAxis.axisTitle){
-        titleWidth = yAxis.axisTitle.getBBox().width;
-        yAxis.update({
-          title: {
-            offset: -titleWidth,
-            align: 'high'
-          }
-        });
-      }
-
-      options.plotOptions.series = {};
-      options.plotOptions.column = {stacking: 'normal'};
-      stackedBar = chart.highcharts(options);
-
-    }
-  };
-
-
-  /**
-   * A generic Highcharts tooltip formatter.
-   *
-   * @param title
-   * @param content
-   * @returns {string}
-   */
-  var textTooltipFormatter = function(title, content) {
-
-    var html = '<div id="custom-tooltip">';
-
-    html += '<div class="maintext">';
-    html += '<h4 class="maintext__title">' + title + ': </h4>';
-    html += '<div class="tiptext">' + content + '</div>'
-    html += '</div></div>';
-
-    return html;
-  };
-
-
-  /**
-   * Format the tooltip for mainly time-series and multi-series charts.
-   * This is the default tooltip formatter.
-   *
-   * @returns {string}
-   */
-  var tooltipFormatter = function() {
-
-    var id = '<div id="custom-tooltip" class="tooltip-left tooltip-right">';
-    var block = id + '<div class="sidebar">';
-    var title = '<h4 class="maintext__title">' + this.x + ': </h4>';
-    var symbol = ['<div class="circle">●</div>', '<div class="square">■</div>', '<div class="diamond">♦</div>', '<div class="triangle">▲</div>', '<div class="triangle">▼</div>'];
-
-    var content = block + '<div class="title">&nbsp;</div>';
-
-    // symbols
-    $.each(this.points, function (i, val) {
-      content += symbol[i];
-    });
-
-    content += '</div>';
-    content += '<div class="maintext">';
-    content += title;
-
-    // series names and values
-    $.each(this.points, function (i, val) {
-      content += '<div class="tiptext"><b>' + val.point.series.chart.series[i].name + '= </b>' + Highcharts.numberFormat(val.y, 2) + '</div>';
-    });
-
-    content += '</div>';
-    return content;
-
-  };
-
-
-
-  /**
-   * Position the tooltip.  The position is conditional on the chart type.
-   *
-   * @param labelWidth
-   * @param labelHeight
-   * @param point
-   * @returns {{x: number, y: number}}
-   */
-  var tooltipPositioner = function (labelWidth, labelHeight, point) {
-
-    /*
-     * We've only applied a custom formatter to the line charts.
-     */
-    if ( this.chart.options.chart.type !== 'line' ) {
-
-      $('#custom-tooltip').removeClass('tooltip-right tooltip-left');
-
-
-      /*
-       * This is the default Highcharts position, adjusted
-       * for our custom tooltip style.
-       */
-      return {
-        x: point.plotX + this.chart.plotLeft - 100,
-        y: point.plotY + this.chart.plotTop
-      };
-    }
-
-    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    var points = {x: 30, y: 42};
-    var tooltipX, tooltipY;
-
-    if (w > 768) {
-
-      if (point.plotX + labelWidth > this.chart.plotWidth) {
-        tooltipX = point.plotX + this.chart.plotLeft - labelWidth - 10;
-        $('#custom-tooltip').removeClass('tooltip-left');
-      } else {
-        tooltipX = point.plotX + this.chart.plotLeft + 10;
-        $('#custom-tooltip').removeClass('tooltip-right');
-      }
-
-      tooltipY = 100;
-      points = {x: tooltipX, y: tooltipY};
-    } else {
-      $('#custom-tooltip').removeClass('tooltip-left');
-      $('#custom-tooltip').removeClass('tooltip-right');
-    }
-
-    return points;
-  };
-
-
-  /**
-   * Format the xaxis labels.
-   *
-   * @returns {string}
-   */
-
-  var labelFormatter = function() {
-
-    /*
-     * We've only applied a custom formatter to the line charts.
-     */
-    if ( this.chart.options.chart.type !== 'line' ) {
-      return this.value;
-    }
-
-    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    var response = '';
-    var items = this.chart.xAxis[0].categories.length;
-
-    var maxItemsDesktop = 8;
-    var maxItemsTablet = 4;
-
-    var modulo;
-
-    if( w < 768 ){
-      modulo = Math.round(items / maxItemsTablet);
-    }
-    else {
-      modulo = Math.round(items / maxItemsDesktop);
-    }
-
-    if(this.isFirst){
-      count=0;
-    }
-    if(count % modulo===0){
-      response = this.value;
-    }
-
-    count++;
-
-    return response;
-  };
-
-
-  return {
-    textTooltipFormatter: textTooltipFormatter,
-    tooltipFormatter: tooltipFormatter,
-    labelFormatter: labelFormatter,
-    tooltipPositioner: tooltipPositioner,
-    stackedResize: stackedResize
-  };
-}());
-
-
-(function ($) {
-
-  var marker = {
-    states: {
-      hover: {
-        radiusPlus: 0,
-        lineWidthPlus: 0
-      }
-    }
-  };
-
-  /**
-   * These are global chart options
-   */
-  function setOptions() {
-
-    Highcharts.setOptions({
-      colors: ['#007dc3', '#409ed2', '#7fbee1', '#007dc3', '#409ed2', '#7fbee1'],
-      series: [{
-        marker: marker
-      }],
-      chart: {
-        style: {
-          fontFamily: 'open-sans-n4',
-          color:'#000'
-        },
-        spacingTop: 70,
-        spacingLeft: 30,
-        spacingBottom: 60,
-        backgroundColor:'#fff'
-      },
-
-      title: {
-        align: 'left',
-        y: -15,
-        x: 15
-      },
-
-      plotOptions: {
-        series: {
-          shadow:false,
-          marker: {
-            enabled: true
-          },
-          animation: false,
-          states: {
-            hover:{
-              halo: {
-                size: 0
-              },
-              enabled:true,
-              shadow:false,
-              lineWidth: 2,
-              lineWidthPlus: 0,
-              marker:{
-                height:0,
-                width:0,
-                halo:false,
-                enabled: true,
-                fillColor: null,
-                radiusPlus: null,
-                lineWidth: 3,
-                lineWidthPlus: 0
-              }
-            }
-          }
-        },
-        line: {
-          marker: {
-            radius: 4,
-            fillColor: '#fff',
-            lineColor: null,
-            lineWidth: 2
-          },
-          shadow:true,
-          dataLabels: {
-            enabled: false
-          }
-        }
-      },
-      xAxis: {
-        labels: {
-          formatter: ONS.charts.labelFormatter,
-          step: 1
-        },
-        tickmarkPlacement: 'on'
-      },
-      yAxis: {
-        lineWidth: 1,
-        title: {
-          style: {
-            color: '#000',
-            fontWeight:300
-          },
-          offset: -30,
-          align: 'high',
-          rotation: 0,
-          y: -15
-        }
-
-      },
-
-      legend: {
-        borderColor: null,
-        borderRadius: 0,
-        borderWidth: 1
-      },
-
-      credits:{
-        enabled:false
-      },
-
-      tooltip: {
-        shared: true,
-        crosshairs: {
-          width: 1,
-          color: '#f37121'
-        },
-        positioner: ONS.charts.tooltipPositioner,
-        formatter: ONS.charts.tooltipFormatter,
-        backgroundColor: 'rgba(255, 255, 255, 0)',
-        borderWidth: 0,
-        borderColor: 'rgba(255, 255, 255, 0)',
-        shadow: false,
-        useHTML: true
-      }
-    });
-  }
-
-
-  $(document).ready(function(){
-
-    var processedData = [];
-    var defaultFilter;
-
-
-    /*
-     * Set default chart options
-     */
-    setOptions();
-
-    /*
-     * Get an format the data on the page.  We are using a data object
-     * that may at first appear a bit wrong.  Specifically, it only contains
-     * the start date.  This is because we want to keep this object as small
-     * as possible to aid performance.  If we know that each value is a month,
-     * and we know the start month, then the full data range month lables will
-     * be known.
-     */
-    $('[data-chart-data-for]').each(function() {
-      var dataElem = $(this);
-      var chartData = dataElem.data('chart-data-for');
-
-      /*
-       * Determine defaults from selected dropdowns (i.e. set by server)
-       */
-      defaultFilter = {
-        scale: 'month',
-        period: {
-          start: {
-            year: $('select[data-chart-controls-from-year] option:selected').val(),
-            month: $('select[data-chart-controls-from-month] option:selected').val()
-          },
-          end: {
-            year: $('select[data-chart-controls-to-year] option:selected').val(),
-            month: $('select[data-chart-controls-to-month] option:selected').val()
-          }
-        }
-      };
-
-
-      /*
-       * Reformat the data so that we can use it in our
-       * tables and charts
-       */
-      var data = new DataFilter($.parseJSON(dataElem.html()));
-
-      /*
-       * For each chart and table it is data for, initialise
-       * the chart or table.
-       */
-      _.each(chartData, function(elem) {
-        processedData[elem] = data;
-      });
-    });
-
-    /**
-     * Auto initialise the charts
-     */
-    $('[data-chart]').each(function() {
-      var chart = $(this);
-
-      switch ( chart.data('chart') ) {
-        case 'timeseries':
-          chart.timeSeriesChart({
-            data: processedData[chart.data('chart-data-id')].getData(defaultFilter),
-            chart: {
-              series: [{
-                name: chart.data('chart-tooltip')
-              }],
-              title: {
-                text: chart.data('chart-title')
-              },
-              yAxis: {
-                title: {
-                  text: chart.data('chart-ylabel')
-                }
-              }
-            }
-          });
-          break;
-
-        case 'datatable':
-          chart.dataTable({
-            data: processedData[chart.data('chart-data-id')].getData(defaultFilter),
-            colLabel: chart.data('chart-col-label')
-          });
-          break;
-      }
-
-    });
-
-    /*
-     * Initialise the chart controls
-     */
-    $('[data-chart-controls]').chartControl();
-
-    /*
-     * List for changes in chart controls
-     */
-    $('[data-chart-controls]').on('chart-filter-change', function(e, data) {
-
-      var newData;
-      var chart;
-
-      /*
-       * Get the target chart
-       */
-      _.each(data.chartIds, function(chartId) {
-        newData = processedData[chartId].getData(data.filter);
-
-        chart = $('[data-chart-data-id="' + chartId + '"]').data('plugin_chart');
-
-        /*
-         * Update the chart
-         */
-        chart.updateChart(newData);
-      });
-    });
-  });
-
-})( jQuery );
-
 $(document).ready(function() {
 
   $('body').addClass('js');
