@@ -103,7 +103,9 @@
 }
 
 .nav--block-home-highlighted-content {
-  // width: 100%;
+    //nth child stuff is more for automating the styling if and when this content is data driven (currently hardcoded) - still being used for border colouring currently however
+
+  margin-bottom: 20px;
 
   .img-block {
     display: block;
@@ -111,7 +113,7 @@
     overflow: hidden;
     border-left: 6px solid transparent;
     border-left-color: $purple;
-    margin: 5px 0 -15px 0;
+    margin: 5px 0 5px 0;
   
     img {
         float: left;
@@ -139,18 +141,18 @@
     }
 
 
-  @include respond-min($bp-desktop) {
-    width: 33.333333333333%;
+  // @include respond-min($bp-desktop) {
+  //   width: 33.333333333333%;
 
-    &:nth-child(4) {
-      width: 50%;
-      clear: left;
-    }
+  //   &:nth-child(4) {
+  //     width: 50%;
+  //     clear: left;
+  //   }
 
-    &:nth-child(5) {
-      width: 50%;
-    }
-  }
+  //   &:nth-child(5) {
+  //     width: 50%;
+  //   }
+  // }
 }
 
 .nav--az-side-bar {

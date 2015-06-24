@@ -3885,14 +3885,14 @@ lesser , applied styles
   background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, #ffffff); }
 
 .nav--block-home-highlighted-content {
-  width: 33.33333%; }
+  margin-bottom: 20px; }
   .nav--block-home-highlighted-content .img-block {
     display: block;
     margin: 0;
     overflow: hidden;
     border-left: 6px solid transparent;
     border-left-color: #4c2c92;
-    margin: 5px 0 -15px 0; }
+    margin: 5px 0 5px 0; }
     .nav--block-home-highlighted-content .img-block img {
       float: left;
       border: 1px solid #dedfdc;
@@ -3901,11 +3901,6 @@ lesser , applied styles
     border-left-color: #f37121; }
   .nav--block-home-highlighted-content:nth-child(5) .img-block {
     border-left-color: #b2bb1c; }
-  .nav--block-home-highlighted-content:nth-child(4) {
-    width: 50%;
-    clear: left; }
-  .nav--block-home-highlighted-content:nth-child(5) {
-    width: 50%; }
 
 .nav--az-side-bar {
   display: inline-block;
