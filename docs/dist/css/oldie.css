@@ -3885,9 +3885,10 @@ lesser , applied styles
   background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, #ffffff); }
 
 .nav--block-home-highlighted-content {
-  border-left: 6px solid transparent;
   width: 33.33333%; }
   .nav--block-home-highlighted-content img {
+    border: 1px solid #dedfdc;
+    border-left: 6px solid transparent;
     border-left-color: #4c2c92; }
   .nav--block-home-highlighted-content:nth-child(3) img {
     border-left-color: #f37121; }

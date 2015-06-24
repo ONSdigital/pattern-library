@@ -104,8 +104,10 @@
 
 .nav--block-home-highlighted-content {
   // width: 100%;
-  border-left: 6px solid transparent;
+  
   img {
+      border: 1px solid $grey-light;
+      border-left: 6px solid transparent;
       border-left-color: $purple;
     // @extend .box--purple--separated--left;
   }
