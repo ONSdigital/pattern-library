@@ -4338,13 +4338,20 @@ lesser , applied styles
     background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), white 50%, #ffffff);
     background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, #ffffff); } }
 
-.nav--block-home-highlighted-content img {
-  border: 1px solid #dedfdc;
+.nav--block-home-highlighted-content .img-block {
+  display: block;
+  margin: 0;
+  overflow: hidden;
   border-left: 6px solid transparent;
-  border-left-color: #4c2c92; }
-.nav--block-home-highlighted-content:nth-child(3) img {
+  border-left-color: #4c2c92;
+  margin: 5px 0 -15px 0; }
+  .nav--block-home-highlighted-content .img-block img {
+    float: left;
+    border: 1px solid #dedfdc;
+    border-left: none; }
+.nav--block-home-highlighted-content:nth-child(3) .img-block {
   border-left-color: #f37121; }
-.nav--block-home-highlighted-content:nth-child(5) img {
+.nav--block-home-highlighted-content:nth-child(5) .img-block {
   border-left-color: #b2bb1c; }
 @media screen and (min-width: 56em) {
   .nav--block-home-highlighted-content {

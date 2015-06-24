@@ -104,17 +104,27 @@
 
 .nav--block-home-highlighted-content {
   // width: 100%;
+
+  .img-block {
+    display: block;
+    margin: 0;
+    overflow: hidden;
+    border-left: 6px solid transparent;
+    border-left-color: $purple;
+    margin: 5px 0 -15px 0;
   
-  img {
-      border: 1px solid $grey-light;
-      border-left: 6px solid transparent;
-      border-left-color: $purple;
-    // @extend .box--purple--separated--left;
+    img {
+        float: left;
+        border: 1px solid $grey-light;
+        border-left: none;
+        
+      // @extend .box--purple--separated--left;
+    }
   }
 
     &:nth-child(3) {
 
-      img {
+      .img-block {
         border-left-color: $orange;
         // @extend .box--orange--separated--left;
       }
@@ -122,7 +132,7 @@
     }
 
     &:nth-child(5) {
-      img {
+      .img-block {
         border-left-color: $ons-green;
         // @extend .box--green--separated--left;
       }
