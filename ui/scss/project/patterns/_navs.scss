@@ -103,22 +103,26 @@
 }
 
 .nav--block-home-highlighted-content {
-  width: 100%;
-  .box {
-    @extend .box--purple--separated--left;
+  // width: 100%;
+  border-left: 6px solid transparent;
+  img {
+      border-left-color: $purple;
+    // @extend .box--purple--separated--left;
   }
 
     &:nth-child(3) {
 
-      .box {
-        @extend .box--orange--separated--left;
+      img {
+        border-left-color: $orange;
+        // @extend .box--orange--separated--left;
       }
       
     }
 
     &:nth-child(5) {
-      .box {
-        @extend .box--green--separated--left;
+      img {
+        border-left-color: $ons-green;
+        // @extend .box--green--separated--left;
       }
     }
 
