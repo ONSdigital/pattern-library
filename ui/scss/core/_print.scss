@@ -22,17 +22,6 @@
     text-decoration: underline;
   }
 
-  /*
-   * Don't show links for images, javascript, internal links or email addresses
-   */
-
-  .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after,
-  a[href^="mailto:"]:after {
-    content: "";
-  } 
-
   article,
   .print-links {
 
@@ -53,6 +42,16 @@
     abbr[title^="http://"]:after {
       content: " (" attr(title) ")";
     }
+
+    /*
+     * Don't show links for images, javascript, internal links or email addresses
+     */
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after,
+    a[href^="mailto:"]:after {
+      content: "";
+    } 
   }
 
   pre,

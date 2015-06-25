@@ -4804,9 +4804,6 @@ table actions
   margin: 0.5cm; }
 
 @media print {
-  /*
-   * Don't show links for images, javascript, internal links or email addresses
-   */
   * {
     color: #000 !important;
     /* Black prints faster: h5bp.com/s */
@@ -4815,11 +4812,12 @@ table actions
     box-shadow: none !important; }
   a, a:visited {
     text-decoration: underline; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after, a[href^="mailto:"]:after {
-    content: ""; }
   article, .print-links {
     /* Append 'https://www.ons.gov.uk/' to internal urls using a relative path */
-    /* Stop urls starting with https or http being appended with ons url */ }
+    /* Stop urls starting with https or http being appended with ons url */
+    /*
+     * Don't show links for images, javascript, internal links or email addresses
+     */ }
     article a[href]:after, .print-links a[href]:after {
       content: " (https://www.ons.gov.uk" attr(href) ")"; }
     article abbr[title]:after, .print-links abbr[title]:after {
@@ -4828,6 +4826,8 @@ table actions
       content: " (" attr(href) ")"; }
     article abbr[title^="https://"]:after, article abbr[title^="http://"]:after, .print-links abbr[title^="https://"]:after, .print-links abbr[title^="http://"]:after {
       content: " (" attr(title) ")"; }
+    article .ir a:after, article a[href^="javascript:"]:after, article a[href^="#"]:after, article a[href^="mailto:"]:after, .print-links .ir a:after, .print-links a[href^="javascript:"]:after, .print-links a[href^="#"]:after, .print-links a[href^="mailto:"]:after {
+      content: ""; }
   pre, blockquote {
     border: 1px solid #999;
     page-break-inside: avoid; }
