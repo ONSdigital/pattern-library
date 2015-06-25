@@ -22,11 +22,24 @@
     text-decoration: underline;
   }
 
+  article,
   .print-links {
+
+    /* Append 'https://www.ons.gov.uk/' to internal urls using a relative path */
     a[href]:after {
-      content: " (" attr(href) ")";
+      content: " (https://www.ons.gov.uk/" attr(href) ")";
     }
     abbr[title]:after {
+      content: " (" attr(title) ")";
+    }
+    
+    /* Stop urls starting with https or http being appended with ons url */
+    a[href^="https://"]:after,
+    a[href^="http://"]:after {
+      content: " (" attr(href) ")";
+    }
+    abbr[title^="https://"]:after,
+    abbr[title^="http://"]:after {
       content: " (" attr(title) ")";
     }
   }
@@ -37,7 +50,8 @@
 
   .ir a:after,
   a[href^="javascript:"]:after,
-  a[href^="#"]:after {
+  a[href^="#"]:after,
+  a[href^="mailto:"]:after {
     content: "";
   }
 
