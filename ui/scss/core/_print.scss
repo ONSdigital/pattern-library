@@ -25,18 +25,20 @@
   article,
   .print-links {
 
-    /* Append 'https://www.ons.gov.uk/' to internal urls using a relative path */
+    /* Append 'https://www.ons.gov.uk/' to internal links using a relative path */
     a[href]:after {
       content: " (https://www.ons.gov.uk" attr(href) ")";
+      word-wrap: break-word;
     }
     abbr[title]:after {
       content: " (" attr(title) ")";
     }
     
-    /* Stop urls starting with https or http being appended with ons url */
+    /* Stop links starting with https or http being appended with ons url */
     a[href^="https://"]:after,
     a[href^="http://"]:after {
       content: " (" attr(href) ")";
+      word-wrap: break-word;
     }
     abbr[title^="https://"]:after,
     abbr[title^="http://"]:after {
