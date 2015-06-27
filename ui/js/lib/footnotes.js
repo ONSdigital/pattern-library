@@ -1,10 +1,11 @@
 $(document).on('ready', function() {
   // Expand footnotes section if it's collapsed and you click on footnote anchor
   $('.footnote-body').on('click', function(e) {
-    var footnotesSection = $('.accordion--footnotes');
-    if (footnotesSection.hasClass('is-collapsed')) {
-      footnotesSection.removeClass('is-collapsed').addClass('is-expanded');
-    }
+        var href = $(this).attr('href');
+        var footnotesSection = $(href);
+        if (footnotesSection.hasClass('is-collapsed')) {
+          footnotesSection.removeClass('is-collapsed').addClass('is-expanded');     
+        };
   });
 
   // If pageload links to a footnote, expand footnotes section and scroll to it
