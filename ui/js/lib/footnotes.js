@@ -10,11 +10,16 @@ $(document).on('ready', function() {
 
   // If pageload links to a footnote, expand footnotes section and scroll to it
   if (location.hash) {
-    var $fragment = $(location.hash);
-    var $fragmentContainer = $fragment.parents('.accordion--footnotes');
-    if ($fragmentContainer.length) {
-      $fragmentContainer.removeClass('is-collapsed').addClass('is-expanded');
-      $fragment.get(0).scrollIntoView();
+    var section = $(location.hash);
+    if (section.hasClass('is-collapsed')) {
+      section.removeClass('is-collapsed').addClass('is-expanded');
+      section.get(0).scrollIntoView();
     }
+    // var $fragment = $(location.hash);
+    // var $fragmentContainer = $fragment.parents('.accordion--footnotes');
+    // if ($fragmentContainer.length) {
+    //   $fragmentContainer.removeClass('is-collapsed').addClass('is-expanded');
+    //   $fragment.get(0).scrollIntoView();
+    // }
   }
 });

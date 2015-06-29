@@ -19687,7 +19687,7 @@ jQuery.onFontResize=function(e){return e(document).ready(function(){var t=e("<if
 // @compilation_level SIMPLE_OPTIMIZATIONS
 
 /**
- * @license Highcharts JS v4.1.6-modified ()
+ * @license Highcharts JS v4.1.7-modified ()
  *
  * (c) 2009-2014 Torstein Honsi
  *
@@ -19741,7 +19741,7 @@ var UNDEFINED,
 	charts = [],
 	chartCount = 0,
 	PRODUCT = 'Highcharts',
-	VERSION = '4.1.6-modified',
+	VERSION = '4.1.7-modified',
 
 	// some constants for frequently used strings
 	DIV = 'div',
@@ -20953,8 +20953,8 @@ defaultOptions = {
 	global: {
 		useUTC: true,
 		//timezoneOffset: 0,
-		canvasToolsURL: 'http://code.highcharts.com/4.1.6-modified/modules/canvas-tools.js',
-		VMLRadialGradientURL: 'http://code.highcharts.com/4.1.6-modified/gfx/vml-radial-gradient.png'
+		canvasToolsURL: 'http://code.highcharts.com/4.1.7-modified/modules/canvas-tools.js',
+		VMLRadialGradientURL: 'http://code.highcharts.com/4.1.7-modified/gfx/vml-radial-gradient.png'
 	},
 	chart: {
 		//animation: true,
@@ -22254,7 +22254,9 @@ SVGElement.prototype = {
 			}
 
 			// Cache it
-			renderer.cache[cacheKey] = bBox;
+			if (cacheKey) {
+				renderer.cache[cacheKey] = bBox;
+			}
 		}
 		return bBox;
 	},
@@ -30697,7 +30699,7 @@ Legend.prototype = {
 				});
 
 				// useHTML
-				if (legend.contentGroup.div) { // docs: navigation now supported with useHTML
+				if (legend.contentGroup.div) {
 					legend.contentGroup.div.style.clip = 'rect(' + padding + 'px,9999px,' + (padding + height) + 'px,0)';
 				}
 			};
@@ -37365,7 +37367,7 @@ if (seriesTypes.column) {
 
 
 /**
- * Highcharts JS v4.1.6-modified ()
+ * Highcharts JS v4.1.7-modified ()
  * Highcharts module to hide overlapping data labels. This module is included by default in Highmaps.
  *
  * (c) 2010-2014 Torstein Honsi
@@ -42123,15 +42125,19 @@ $(document).on('ready', function() {
 
   // If pageload links to a footnote, expand footnotes section and scroll to it
   if (location.hash) {
-    var $fragment = $(location.hash);
-    var $fragmentContainer = $fragment.parents('.accordion--footnotes');
-    if ($fragmentContainer.length) {
-      $fragmentContainer.removeClass('is-collapsed').addClass('is-expanded');
-      $fragment.get(0).scrollIntoView();
+    var section = $(location.hash);
+    if (section.hasClass('is-collapsed')) {
+      section.removeClass('is-collapsed').addClass('is-expanded');
+      section.get(0).scrollIntoView();
     }
+    // var $fragment = $(location.hash);
+    // var $fragmentContainer = $fragment.parents('.accordion--footnotes');
+    // if ($fragmentContainer.length) {
+    //   $fragmentContainer.removeClass('is-collapsed').addClass('is-expanded');
+    //   $fragment.get(0).scrollIntoView();
+    // }
   }
 });
-
 function toggleSubnav(element) {
   element
     .toggleClass('js-expandable-active')
