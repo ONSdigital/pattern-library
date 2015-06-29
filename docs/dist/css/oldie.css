@@ -3416,6 +3416,8 @@ lesser , applied styles
   border-width: 0 0 2px; }
   .list--table--sectioned .list--table__item:first-child {
     border-top: 2px solid #d8d9d5; }
+  .list--table--sectioned .list--table__item:last-child {
+    border-bottom: 2px solid #d8d9d5; }
 
 .list--table__item__body {
   position: relative;

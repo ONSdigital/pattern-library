@@ -32,6 +32,9 @@
     &:first-child {
       border-top: 2px solid darken($table-color, 2.5%);
     }
+    &:last-child {
+      border-bottom: 2px solid darken($table-color, 2.5%);
+    }
   }
 }
 
