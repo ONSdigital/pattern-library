@@ -143,6 +143,9 @@
     &:first-child {
       border-top-width: 2px;
     }
+    &:last-child {
+      border-bottom-width: 2px;
+    }
   }
 }
 

@@ -5393,6 +5393,8 @@ $SPLIT
   border-width: 2px 2px 0; }
   .table-light--sectioned > .list--table__body:first-child, .table-light--sectioned > tr:first-child {
     border-top-width: 2px; }
+  .table-light--sectioned > .list--table__body:last-child, .table-light--sectioned > tr:last-child {
+    border-bottom-width: 2px; }
 
 .table--child tbody tr:first-child {
   border-top: 0; }
