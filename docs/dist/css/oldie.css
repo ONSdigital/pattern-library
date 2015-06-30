@@ -1563,7 +1563,7 @@ img {
   display: inline; }
 
 .no-border {
-  border: none; }
+  border: none !important; }
 
 /* ======================================================
    A standard wrapping block to limit the width of blocks - this allows for full width elements
