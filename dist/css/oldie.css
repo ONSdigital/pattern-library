@@ -1247,9 +1247,6 @@ body, button, input, select, textarea {
 img {
   max-width: 100%; }
 
-a {
-  text-decoration: none; }
-
 /*
 ============================
   Icons and temporary classes for their display
@@ -2542,11 +2539,12 @@ h2, .beta {
 
 a {
   color: #0054aa;
-  text-decoration: underline; }
+  text-decoration: none; }
   a:visited {
     color: #004890; }
   a:hover, a:focus {
-    color: #007bf6; }
+    color: #007bf6;
+    text-decoration: underline; }
   a[href^="mailto:"] {
     word-wrap: break-word; }
 

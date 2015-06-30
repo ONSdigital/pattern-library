@@ -166,7 +166,7 @@ small {
 
 a {
   color: $link-color;
-  text-decoration: underline;
+  text-decoration: none;
 
   &:visited {
     color: darken($link-color, 5%);
@@ -175,6 +175,7 @@ a {
   &:hover,
   &:focus {
     color: lighten($link-color, 15%);
+    text-decoration: underline;
   }
 
   // Prevent long emails from breaking out of containers
