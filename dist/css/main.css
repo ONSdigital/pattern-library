@@ -1250,6 +1250,9 @@ body, button, input, select, textarea {
 img {
   max-width: 100%; }
 
+a {
+  text-decoration: none; }
+
 /*
 ============================
   Icons and temporary classes for their display
@@ -4314,6 +4317,8 @@ lesser , applied styles
   .nav--block-landing, .nav--block-landing--pairs {
     overflow: hidden;
     height: 157px; }
+    .nav--block-landing h3, .nav--block-landing--pairs h3 {
+      line-height: 22px; }
   .nav--block-landing > *, .nav--block-landing--pairs > * {
     float: right;
     width: 100%;
