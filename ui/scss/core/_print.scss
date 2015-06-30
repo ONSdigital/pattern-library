@@ -92,4 +92,12 @@
     display: block !important;
   }
 
+  .print__break-before {
+    page-break-before: always;
+  }
+
+  .print__break-after {
+    page-break-after: always;
+  }
+
 }

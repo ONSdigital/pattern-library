@@ -5800,5 +5800,9 @@ table actions
   h2, h3 {
     page-break-after: avoid; }
   .accordion__content {
-    display: block !important; } }
+    display: block !important; }
+  .print__break-before {
+    page-break-before: always; }
+  .print__break-after {
+    page-break-after: always; } }
 
