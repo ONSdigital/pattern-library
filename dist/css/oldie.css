@@ -1562,6 +1562,9 @@ img {
 .inline {
   display: inline; }
 
+.no-border {
+  border: none; }
+
 /* ======================================================
    A standard wrapping block to limit the width of blocks - this allows for full width elements
    and contained elements without constraining it at <body> level
