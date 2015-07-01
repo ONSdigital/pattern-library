@@ -1588,6 +1588,9 @@ img {
 .no-border {
   border: none !important; }
 
+.full-width {
+  width: 100%; }
+
 /* ======================================================
    A standard wrapping block to limit the width of blocks - this allows for full width elements
    and contained elements without constraining it at <body> level
