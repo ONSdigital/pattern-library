@@ -45,6 +45,10 @@
   height: 300px;
   position: relative;
   padding: 0 10px;
+
+    dt, dt, dl {
+    margin: 0;
+  }
 }
 
 .stat__figure__unit {

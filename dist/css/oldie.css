@@ -4522,6 +4522,8 @@ $SPLIT
   height: 300px;
   position: relative;
   padding: 0 10px; }
+  .stat__wrap--home dt, .stat__wrap--home dt, .stat__wrap--home dl {
+    margin: 0; }
 
 .stat__figure__unit {
   /*---------------------
