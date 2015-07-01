@@ -3645,7 +3645,7 @@ lesser , applied styles
 .list--table--complex .list--table__item__body--select-all {
   padding-right: 32px; }
 .list--table--complex .list--table__item__body--update {
-  min-width: 200px; }
+  min-width: 150px; }
 .list--table--complex .list--table__item__body--stat {
   width: 25%;
   padding-right: 5%; }
@@ -3653,7 +3653,7 @@ lesser , applied styles
   width: 0.5%; }
 .list--table--complex .list--table__item__body--caption {
   width: 50%;
-  padding-right: 7.5%; }
+  padding-right: 3%; }
 
 .lozenge {
   display: inline-block;
@@ -4504,7 +4504,7 @@ $SPLIT
 
 .stat__figure {
   font-family: "open-sans-n7", "open-sans", sans-serif;
-  font-size: 39px; }
+  font-size: 30px; }
 
 .stat__figure--home {
   font-family: "open-sans-n7", "open-sans", sans-serif;
@@ -4528,7 +4528,14 @@ $SPLIT
     Offset number so it appears visually closer to the stat figure.
     @TODO: Fix magic number
   */
-  margin-left: -7px;
+  /* margin-left: -.7rem; 
+  Breaking timeseries boxes on T3
+  */
+  font-size: 22px;
+  vertical-align: baseline; }
+
+.stat__figure__preunit {
+  margin-right: -6px;
   font-size: 22px;
   vertical-align: baseline; }
 
