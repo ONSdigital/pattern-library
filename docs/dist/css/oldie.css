@@ -4335,8 +4335,6 @@ _:-ms-input-placeholder, :root .nav--primary__sub {
     max-width: 912px;
     position: relative;
     bottom: -15px; }
-  .slate:after {
-    max-width: 912px; }
   .slate p.page-header__title {
     color: #757575; }
 

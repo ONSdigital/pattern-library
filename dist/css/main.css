@@ -4932,10 +4932,6 @@ lesser , applied styles
         position: relative;
         bottom: -15px;
         bottom: -1.5rem; } }
-  @media screen and (min-width: 56em) {
-    .slate:after {
-      max-width: 912px;
-      max-width: 91.2rem; } }
   .slate p.page-header__title {
     color: #757575; }
 

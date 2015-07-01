@@ -24,11 +24,11 @@
     
   }
   
-  @include respond-min($bp-desktop) {
-    &:after {
-       max-width: 91.2rem;
-    }
-  }
+  // @include respond-min($bp-desktop) {
+  //   &:after {
+  //      max-width: 91.2rem;
+  //   }
+  // }
 
   p.page-header__title {
     color: $grey;
