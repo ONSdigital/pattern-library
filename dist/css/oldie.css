@@ -4329,7 +4329,12 @@ _:-ms-input-placeholder, :root .nav--primary__sub {
     right: 0;
     left: 0;
     bottom: -5px;
-    background-color: transparent; }
+    background-color: transparent;
+    left: 0;
+    right: 0;
+    max-width: 912px;
+    position: relative;
+    bottom: -15px; }
   .slate:after {
     max-width: 912px; }
   .slate p.page-header__title {

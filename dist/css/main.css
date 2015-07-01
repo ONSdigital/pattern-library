@@ -4923,6 +4923,15 @@ lesser , applied styles
     bottom: -5px;
     bottom: -0.5rem;
     background-color: transparent; }
+    @media screen and (min-width: 62em) {
+      .slate:after {
+        left: 0;
+        right: 0;
+        max-width: 912px;
+        max-width: 91.2rem;
+        position: relative;
+        bottom: -15px;
+        bottom: -1.5rem; } }
   @media screen and (min-width: 56em) {
     .slate:after {
       max-width: 912px;

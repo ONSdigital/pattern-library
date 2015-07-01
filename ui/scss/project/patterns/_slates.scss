@@ -11,6 +11,16 @@
     left: 0;
     bottom: -0.5rem;
     background-color: transparent;
+
+    @include respond-min($bp-desktop+6) {
+      // Needs to be set back to relative to fix IE bug with pseudoelements &
+      // left-right widths not centering element
+      left: 0;
+      right: 0;
+      max-width: 91.2rem;
+      position: relative;
+      bottom: -1.5rem;
+    }
     
   }
   
