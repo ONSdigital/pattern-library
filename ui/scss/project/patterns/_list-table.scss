@@ -326,7 +326,7 @@
   }
 
   .list--table__item__body--update {
-    width: 25%;
+    width: 20%;
   }
 
   .list--table__item__body--stat {
@@ -360,14 +360,18 @@
 }
 
 @include respond-min(52em) {
-  .list--table__item__body--update,
+  .list--table__item__body--update {
+    width: 20%;
+    padding-right: 0;
+  }
+
   .list--table__item__body--stat {
     width: 25%;
     padding-right: 0;
   }
 
   .list--table__item__body--caption {
-    width: 42.5%;
+    width: 40%;
   }
 }
 
@@ -397,7 +401,7 @@
     }
 
     .list--table__item__body--caption {
-      width: 50%;
+      width: 42.5%;
       padding-right: 3%;
     }
   }

@@ -1591,6 +1591,9 @@ img {
 .full-width {
   width: 100%; }
 
+.no-padding {
+  padding: 0 !important; }
+
 /* ======================================================
    A standard wrapping block to limit the width of blocks - this allows for full width elements
    and contained elements without constraining it at <body> level
@@ -4020,7 +4023,7 @@ lesser , applied styles
       .js .list--table--complex .list--table__item__body--select-all {
         display: block; }
   .list--table__item__body--update {
-    width: 25%; }
+    width: 20%; }
   .list--table__item__body--stat {
     width: 25%;
     padding-right: 2.5%; }
@@ -4039,11 +4042,14 @@ lesser , applied styles
     max-width: 80%; } }
 
 @media screen and (min-width: 52em) {
-  .list--table__item__body--update, .list--table__item__body--stat {
+  .list--table__item__body--update {
+    width: 20%;
+    padding-right: 0; }
+  .list--table__item__body--stat {
     width: 25%;
     padding-right: 0; }
   .list--table__item__body--caption {
-    width: 42.5%; } }
+    width: 40%; } }
 
 @media screen and (min-width: 56.5em) {
   .list--table--complex .list--table__body, .list--table--complex .list--table__footer {
@@ -4061,7 +4067,7 @@ lesser , applied styles
   .list--table--complex .list--table__item__body--select {
     width: 0.5%; }
   .list--table--complex .list--table__item__body--caption {
-    width: 50%;
+    width: 42.5%;
     padding-right: 3%; } }
 
 .lozenge {
