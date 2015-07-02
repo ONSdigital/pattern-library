@@ -326,7 +326,7 @@
   }
 
   .list--table__item__body--update {
-    width: auto;
+    width: 20%;
     min-width: 11.5rem;
   }
 
@@ -364,6 +364,7 @@
 
 @include respond-min(52em) {
   .list--table__item__body--update {
+    width: 20%;
     padding-right: 0;
   }
 

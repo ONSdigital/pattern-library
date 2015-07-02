@@ -3614,7 +3614,7 @@ lesser , applied styles
       display: block; }
 
 .list--table__item__body--update {
-  width: auto;
+  width: 20%;
   min-width: 115px; }
 
 .list--table__item__body--stat {
@@ -3641,6 +3641,7 @@ lesser , applied styles
   max-width: 80%; }
 
 .list--table__item__body--update {
+  width: 20%;
   padding-right: 0; }
 
 .list--table__item__body--stat {

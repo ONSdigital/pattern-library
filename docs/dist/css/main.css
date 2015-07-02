@@ -4024,7 +4024,7 @@ lesser , applied styles
       .js .list--table--complex .list--table__item__body--select-all {
         display: block; }
   .list--table__item__body--update {
-    width: auto;
+    width: 20%;
     min-width: 115px;
     min-width: 11.5rem; }
   .list--table__item__body--stat {
@@ -4050,6 +4050,7 @@ lesser , applied styles
 
 @media screen and (min-width: 52em) {
   .list--table__item__body--update {
+    width: 20%;
     padding-right: 0; }
   .list--table__item__body--stat {
     width: 25%;
