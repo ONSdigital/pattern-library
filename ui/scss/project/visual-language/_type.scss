@@ -167,6 +167,7 @@ small {
 a {
   color: $link-color;
   text-decoration: none;
+  word-wrap: break-word;
 
   &:visited {
     color: darken($link-color, 5%);

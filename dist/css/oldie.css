@@ -2545,7 +2545,8 @@ h2, .beta {
 
 a {
   color: #0054aa;
-  text-decoration: none; }
+  text-decoration: none;
+  word-wrap: break-word; }
   a:visited {
     color: #004890; }
   a:hover, a:focus {
@@ -3617,7 +3618,7 @@ lesser , applied styles
 
 .list--table__item__body--stat {
   width: 25%;
-  padding-right: 2.5%; }
+  padding-right: 1%; }
 
 .list--table__item__body--select {
   width: 3.5%;
@@ -3642,7 +3643,7 @@ lesser , applied styles
 
 .list--table__item__body--stat {
   width: 25%;
-  padding-right: 0; }
+  padding-right: 1%; }
 
 .list--table__item__body--caption {
   width: 40%; }
@@ -3652,10 +3653,10 @@ lesser , applied styles
 .list--table--complex .list--table__item__body--select-all {
   padding-right: 32px; }
 .list--table--complex .list--table__item__body--update {
-  min-width: 150px; }
+  min-width: 125px; }
 .list--table--complex .list--table__item__body--stat {
   width: 25%;
-  padding-right: 5%; }
+  padding-right: 1%; }
 .list--table--complex .list--table__item__body--select {
   width: 0.5%; }
 .list--table--complex .list--table__item__body--caption {
