@@ -4024,10 +4024,16 @@ lesser , applied styles
       .js .list--table--complex .list--table__item__body--select-all {
         display: block; }
   .list--table__item__body--update {
-    width: 20%; }
+    width: auto;
+    min-width: 115px;
+    min-width: 11.5rem; }
   .list--table__item__body--stat {
-    width: 25%;
-    padding-right: 1%; }
+    width: auto;
+    padding-right: 1%;
+    min-width: 150px;
+    min-width: 15rem;
+    margin-bottom: 10px;
+    margin-bottom: 1rem; }
   .list--table__item__body--select {
     width: 3.5%;
     text-align: center; }
@@ -4044,7 +4050,6 @@ lesser , applied styles
 
 @media screen and (min-width: 52em) {
   .list--table__item__body--update {
-    width: 20%;
     padding-right: 0; }
   .list--table__item__body--stat {
     width: 25%;
@@ -4053,23 +4058,23 @@ lesser , applied styles
     width: 40%; } }
 
 @media screen and (min-width: 56.5em) {
-  .list--table--complex .list--table__body, .list--table--complex .list--table__footer {
-    padding: 15px 25px;
-    padding: 1.5rem 2.5rem; }
-  .list--table--complex .list--table__item__body--select-all {
-    padding-right: 32px;
-    padding-right: 3.2rem; }
-  .list--table--complex .list--table__item__body--update {
-    min-width: 125px;
-    min-width: 12.5rem; }
-  .list--table--complex .list--table__item__body--stat {
-    width: 25%;
-    padding-right: 1%; }
-  .list--table--complex .list--table__item__body--select {
-    width: 0.5%; }
-  .list--table--complex .list--table__item__body--caption {
-    width: 42.5%;
-    padding-right: 3%; } }
+  .list--table--complex {
+    /*.list--table__item__body--update {
+      min-width: 11.5rem;
+    }*/ }
+    .list--table--complex .list--table__body, .list--table--complex .list--table__footer {
+      padding: 15px 25px;
+      padding: 1.5rem 2.5rem; }
+    .list--table--complex .list--table__item__body--select-all {
+      padding-right: 32px;
+      padding-right: 3.2rem; }
+    .list--table--complex .list--table__item__body--stat {
+      padding-right: 1%; }
+    .list--table--complex .list--table__item__body--select {
+      width: 0.5%; }
+    .list--table--complex .list--table__item__body--caption {
+      width: 42.5%;
+      padding-right: 3%; } }
 
 .lozenge {
   display: inline-block;
@@ -5168,14 +5173,14 @@ $SPLIT
   /* margin-left: -.7rem; 
   Breaking timeseries boxes on T3
   */
-  font-size: 22px;
-  font-size: 2.2rem;
+  font-size: 20px;
+  font-size: 2rem;
   vertical-align: baseline; }
 
 .stat__figure__preunit {
   margin-right: -6px;
-  font-size: 22px;
-  font-size: 2.2rem;
+  font-size: 20px;
+  font-size: 2rem;
   vertical-align: baseline; }
 
 .stat__description {

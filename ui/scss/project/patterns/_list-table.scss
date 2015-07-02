@@ -326,12 +326,15 @@
   }
 
   .list--table__item__body--update {
-    width: 20%;
+    width: auto;
+    min-width: 11.5rem;
   }
 
   .list--table__item__body--stat {
-    width: 25%;
-    padding-right: 1%
+    width: auto;
+    padding-right: 1%;
+    min-width: 15rem;
+    margin-bottom: 1rem;
   }
 
   .list--table__item__body--select {
@@ -361,7 +364,6 @@
 
 @include respond-min(52em) {
   .list--table__item__body--update {
-    width: 20%;
     padding-right: 0;
   }
 
@@ -387,13 +389,12 @@
       padding-right: 3.2rem;
     }
 
-    .list--table__item__body--update {
-      min-width: 12.5rem;
-    }
+    /*.list--table__item__body--update {
+      min-width: 11.5rem;
+    }*/
 
     .list--table__item__body--stat {
-      width: 25%;
-      padding-right: 1%
+      padding-right: 1%;
     }
 
     .list--table__item__body--select {
