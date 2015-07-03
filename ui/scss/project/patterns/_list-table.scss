@@ -280,8 +280,8 @@
 
   .list--table__item__body--stat {
     float: left;
-    width: 30%;
-    margin-bottom: -1em; //to allow Updated to flow under caption
+    width: auto;
+    /*margin-bottom: -1em; */ //to allow Updated to flow under caption
   }
 
   .list--table__item__body--caption {

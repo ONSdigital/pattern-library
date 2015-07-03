@@ -3995,8 +3995,8 @@ lesser , applied styles
       clear: none; }
   .list--table__item__body--stat {
     float: left;
-    width: 30%;
-    margin-bottom: -1em; }
+    width: auto;
+    /*margin-bottom: -1em; */ }
   .list--table__item__body--caption {
     float: left;
     width: 65%; }
