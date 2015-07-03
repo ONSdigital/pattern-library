@@ -3615,13 +3615,13 @@ lesser , applied styles
 
 .list--table__item__body--update {
   width: 20%;
-  min-width: 115px; }
+  min-width: 90px; }
 
 .list--table__item__body--stat {
   width: auto;
-  padding-right: 1%;
-  min-width: 150px;
-  margin-bottom: 10px; }
+  padding-right: 3%;
+  min-width: 175px;
+  margin-bottom: 0; }
 
 .list--table__item__body--select {
   width: 3.5%;
@@ -3645,8 +3645,8 @@ lesser , applied styles
   padding-right: 0; }
 
 .list--table__item__body--stat {
-  width: 25%;
-  padding-right: 1%; }
+  /*width: 25%;*/
+  padding-right: 3%; }
 
 .list--table__item__body--caption {
   width: 40%; }
@@ -3660,7 +3660,8 @@ lesser , applied styles
   .list--table--complex .list--table__item__body--select-all {
     padding-right: 32px; }
   .list--table--complex .list--table__item__body--stat {
-    padding-right: 1%; }
+    min-width: 185px;
+    padding-right: 3%; }
   .list--table--complex .list--table__item__body--select {
     width: 0.5%; }
   .list--table--complex .list--table__item__body--caption {

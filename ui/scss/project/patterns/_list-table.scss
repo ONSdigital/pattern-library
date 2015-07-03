@@ -327,14 +327,14 @@
 
   .list--table__item__body--update {
     width: 20%;
-    min-width: 11.5rem;
+    min-width: 9rem;
   }
 
   .list--table__item__body--stat {
     width: auto;
-    padding-right: 1%;
-    min-width: 15rem;
-    margin-bottom: 1rem;
+    padding-right: 3%;
+    min-width: 17.5rem;
+    margin-bottom: 0;
   }
 
   .list--table__item__body--select {
@@ -369,8 +369,8 @@
   }
 
   .list--table__item__body--stat {
-    width: 25%;
-    padding-right: 1%;
+    /*width: 25%;*/
+    padding-right: 3%;
   }
 
   .list--table__item__body--caption {
@@ -395,7 +395,8 @@
     }*/
 
     .list--table__item__body--stat {
-      padding-right: 1%;
+      min-width: 18.5rem;
+      padding-right: 3%;
     }
 
     .list--table__item__body--select {
