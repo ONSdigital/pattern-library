@@ -87,7 +87,8 @@ h1,
   @extend %alpha;
 
   @include respond-min($bp-tablet) {
-    font-size: 4.2rem;
+    // font-size: 4.2rem;
+    font-size: 3.2rem;
     line-height: 1.071428571; // 45
   }
 }

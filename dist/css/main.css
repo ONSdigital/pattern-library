@@ -2493,8 +2493,8 @@ h4, .gamma, .list--table__item__header {
 
 @media screen and (min-width: 38em) {
   h1, .alpha {
-    font-size: 42px;
-    font-size: 4.2rem;
+    font-size: 32px;
+    font-size: 3.2rem;
     line-height: 1.07143; } }
 
 @media screen and (min-width: 38em) {
