@@ -2876,11 +2876,11 @@ address {
     margin-bottom: 0.5rem; }
 
 .chart-area__footer__label, .chart-area__footer__actions {
-  display: inline-block; }
+  display: inline-block;
+  margin-right: 20px;
+  margin-right: 2rem; }
 
 .chart-area__footer__label {
-  margin-right: 20px;
-  margin-right: 2rem;
   font-family: "open-sans-n7", "open-sans", sans-serif; }
 
 .footnote:target, .footnote-body:target {

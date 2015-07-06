@@ -2801,10 +2801,10 @@ address {
     margin-bottom: 5px; }
 
 .chart-area__footer__label, .chart-area__footer__actions {
-  display: inline-block; }
+  display: inline-block;
+  margin-right: 20px; }
 
 .chart-area__footer__label {
-  margin-right: 20px;
   font-family: "open-sans-n7", "open-sans", sans-serif; }
 
 .footnote:target, .footnote-body:target {
