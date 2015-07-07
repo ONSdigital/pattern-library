@@ -31,7 +31,11 @@
 
 .stat__image--home {
   
-  width: 50%;
+  width: 85%;
+
+  @include respond-min(28em) {
+    width: 40%;
+  }
 
   @include respond-min($bp-tablet-wide) {
     position: absolute;

@@ -4530,7 +4530,8 @@ $SPLIT
   font-size: 24px; }
 
 .stat__image--home {
-  width: 50%;
+  width: 85%;
+  width: 40%;
   position: absolute;
   bottom: 0px;
   left: 0;
