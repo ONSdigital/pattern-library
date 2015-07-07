@@ -36,12 +36,14 @@
     
     /* Stop links starting with https or http being appended with ons url */
     a[href^="https://"]:after,
-    a[href^="http://"]:after {
+    a[href^="http://"]:after,
+    a[href^="www."]:after {
       content: " (" attr(href) ")";
       word-wrap: break-word;
     }
     abbr[title^="https://"]:after,
-    abbr[title^="http://"]:after {
+    abbr[title^="http://"]:after,
+    abbr[title^="www."]:after {
       content: " (" attr(title) ")";
     }
 
@@ -68,8 +70,10 @@
 
   tr,
   img,
-  .box {
+  .box,
+  section {
     page-break-inside: avoid;
+    position: relative;
   }
 
   img {

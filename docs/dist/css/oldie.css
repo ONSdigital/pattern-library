@@ -4864,10 +4864,10 @@ table actions
       word-wrap: break-word; }
     article abbr[title]:after, .print-links abbr[title]:after {
       content: " (" attr(title) ")"; }
-    article a[href^="https://"]:after, article a[href^="http://"]:after, .print-links a[href^="https://"]:after, .print-links a[href^="http://"]:after {
+    article a[href^="https://"]:after, article a[href^="http://"]:after, article a[href^="www."]:after, .print-links a[href^="https://"]:after, .print-links a[href^="http://"]:after, .print-links a[href^="www."]:after {
       content: " (" attr(href) ")";
       word-wrap: break-word; }
-    article abbr[title^="https://"]:after, article abbr[title^="http://"]:after, .print-links abbr[title^="https://"]:after, .print-links abbr[title^="http://"]:after {
+    article abbr[title^="https://"]:after, article abbr[title^="http://"]:after, article abbr[title^="www."]:after, .print-links abbr[title^="https://"]:after, .print-links abbr[title^="http://"]:after, .print-links abbr[title^="www."]:after {
       content: " (" attr(title) ")"; }
     article .ir a:after, article a[href^="javascript:"]:after, article a[href^="#"]:after, article a[href^="mailto:"]:after, .print-links .ir a:after, .print-links a[href^="javascript:"]:after, .print-links a[href^="#"]:after, .print-links a[href^="mailto:"]:after {
       content: ""; }
@@ -4877,8 +4877,9 @@ table actions
   thead {
     display: table-header-group;
     /* h5bp.com/t */ }
-  tr, img, .box {
-    page-break-inside: avoid; }
+  tr, img, .box, section {
+    page-break-inside: avoid;
+    position: relative; }
   img {
     max-width: 100% !important; }
   p, h2, h3 {
