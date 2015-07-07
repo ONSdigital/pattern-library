@@ -4334,6 +4334,12 @@ _:-ms-input-placeholder, :root .nav--primary__sub {
   margin-bottom: 30px;
   margin-bottom: 60px; }
 
+.panel--mobile-mar, .panel--mobile-top-mar {
+  margin-top: 60px; }
+
+.panel--mobile-mar, .panel--mobile-bottom-mar {
+  margin-bottom: 60px; }
+
 .slate {
   background-color: #eeefed; }
   .slate:after {
