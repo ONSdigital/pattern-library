@@ -1575,6 +1575,11 @@ img {
 .no-padding {
   padding: 0 !important; }
 
+/* misc bits */
+.prototype-banner {
+  background: #FF9933;
+  padding: 10px 0px; }
+
 /* ======================================================
    A standard wrapping block to limit the width of blocks - this allows for full width elements
    and contained elements without constraining it at <body> level
