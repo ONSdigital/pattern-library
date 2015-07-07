@@ -2863,14 +2863,14 @@ address {
     height: 50px; }
 
 .global-header {
-  border-top: 5px solid #b2bb1c; }
+  border-top: 5px solid transparent; }
 
 .global-header__wrapper {
   position: relative;
   max-width: 59.75em;
   padding: 10px 10px 0;
   margin: 0 auto 5px;
-  padding: 20px 10px 10px; }
+  padding: 20px 20px 10px 20px; }
 
 .global-header__top-nav {
   margin-right: 20px; }
@@ -2886,7 +2886,7 @@ address {
   display: block;
   position: absolute;
   top: 50%;
-  right: 10px;
+  right: 20px;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%); }
@@ -4143,7 +4143,7 @@ lesser , applied styles
 .nav--primary {
   display: table;
   width: 100%;
-  padding: 0 10px; }
+  padding: 0 20px; }
   .nav--primary a {
     padding: 12px 15px;
     font-size: 14px; }

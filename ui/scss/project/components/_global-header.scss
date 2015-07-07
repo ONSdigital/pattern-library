@@ -14,7 +14,8 @@
 }
 
 .global-header {
-  border-top: .5rem solid $ons-green;
+  // border-top: .5rem solid $ons-green;
+  border-top: .5rem solid transparent;
 }
 
 .global-header__wrapper {
@@ -24,7 +25,7 @@
   margin: 0 auto .5rem;
 
   @include respond-min(50em) {
-    padding: 2rem 1rem 1rem;
+    padding: 2rem 2rem 1rem 2rem;
   }
 }
 
@@ -67,7 +68,7 @@
     display: block;
     position: absolute;
     top: 50%;
-    right: 1rem;
+    right: 2rem;
     transform: translateY(-50%);
   }
 }
