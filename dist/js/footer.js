@@ -17443,8 +17443,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 						var extraTime = self.options.speed;
 
 						// disable horizontal scrollbar to keep overflowing tooltips from jacking with it and then restore it to its previous value
-						//self.bodyOverflowX = $('body').css('overflow-x');
-						//$('body').css('overflow-x', 'hidden');
+						self.bodyOverflowX = $('body').css('overflow-x');
+						$('body').css('overflow-x', 'hidden');
 
 						// get some other settings related to building the tooltip
 						var animation = 'tooltipster-' + self.options.animation,

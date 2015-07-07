@@ -1234,6 +1234,9 @@ body {
   color: #303030;
   background: #fff; }
 
+html, body {
+  height: 100%;
+  overflow: auto !important; }
 
 body, button, input, select, textarea {
   font-family: "open-sans-n4", "open-sans", sans-serif; }
