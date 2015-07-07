@@ -1546,6 +1546,9 @@ img {
 .clear-both {
   clear: both !important; }
 
+.oldie-clearleft {
+  clear: left; }
+
 .text-left {
   text-align: left !important; }
 

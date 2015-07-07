@@ -93,6 +93,7 @@
   }
 }
 
+
 .print-hidden {
   @media print {
     display:none !important;
@@ -142,6 +143,14 @@
 
 .clear-both {
   clear: both !important;
+}
+
+.oldie-clearleft {
+  @if $old-ie == true {
+    clear: left;
+  } @else {
+    
+  }
 }
 
 .text-left {
