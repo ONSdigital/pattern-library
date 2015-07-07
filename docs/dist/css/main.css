@@ -3940,7 +3940,7 @@ lesser , applied styles
   .list--table__item__body--update {
     width: 45%; }
   .list--table__item__body--stat {
-    width: 55%; } }
+    width: auto; } }
 
 @media screen and (min-width: 36em) {
   .list--table-header {
@@ -3951,7 +3951,7 @@ lesser , applied styles
     padding: 15px;
     padding: 1.5rem; }
   .list--table__item__body--stat {
-    width: 45%;
+    width: auto;
     min-height: 55px;
     min-height: 5.5rem; }
   .list--table__item__body--update {
@@ -3994,7 +3994,7 @@ lesser , applied styles
 @media screen and (min-width: 42em) {
   .list--table__item__body--update {
     float: left;
-    width: 100%;
+    width: 50%;
     min-height: 35px;
     min-height: 3.5rem; }
     .list--table__item__body--update dd + dt {
