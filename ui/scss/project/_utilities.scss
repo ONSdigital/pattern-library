@@ -148,8 +148,6 @@
 .oldie-clearleft {
   @if $old-ie == true {
     clear: left;
-  } @else {
-    
   }
 }
 
