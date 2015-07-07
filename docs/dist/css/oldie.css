@@ -3469,6 +3469,9 @@ lesser , applied styles
 .list--table__item__body--stat {
   width: 100%; }
 
+.list--table__item__body--chart {
+  width: 100%; }
+
 .list--table__item__body--update {
   width: 100%; }
 
@@ -3521,7 +3524,7 @@ lesser , applied styles
 .list--table__item__body--stat {
   min-height: 55px; }
 
-.list--table__item__body--update {
+.list--table__item__body--chart {
   min-height: 45px; }
 
 .list--table__item__body--date {
@@ -3530,7 +3533,7 @@ lesser , applied styles
 .list--table__item__body--release-caption {
   width: 87.5%; }
 
-.list--table__item__body--update {
+.list--table__item__body--chart {
   width: 45%; }
 
 .list--table__item__body--stat {
@@ -3547,10 +3550,10 @@ lesser , applied styles
   width: auto;
   min-height: 55px; }
 
-.list--table__item__body--update {
+.list--table__item__body--chart {
   width: 45%;
   min-height: 45px; }
-  .list--table__item__body--update dd + dt {
+  .list--table__item__body--chart dd + dt {
     clear: both; }
 
 .list--table--cushy .list--table__item {
@@ -3584,11 +3587,11 @@ lesser , applied styles
 .list--table--footer--releases {
   padding: 20px; }
 
-.list--table__item__body--update {
+.list--table__item__body--chart {
   float: left;
   width: 50%;
   min-height: 35px; }
-  .list--table__item__body--update dd + dt {
+  .list--table__item__body--chart dd + dt {
     clear: none; }
 
 .list--table__item__body--stat {
@@ -3622,7 +3625,7 @@ lesser , applied styles
     .js .list--table--complex .list--table__item__body--select-all {
       display: block; }
 
-.list--table__item__body--update {
+.list--table__item__body--chart {
   width: 20%;
   min-width: 90px; }
 
@@ -3649,7 +3652,7 @@ lesser , applied styles
 .list--table-header {
   max-width: 80%; }
 
-.list--table__item__body--update {
+.list--table__item__body--chart {
   width: 20%;
   padding-right: 0; }
 
@@ -3661,7 +3664,7 @@ lesser , applied styles
   width: 40%; }
 
 .list--table--complex {
-  /*.list--table__item__body--update {
+  /*.list--table__item__body--chart {
       min-width: 11.5rem;
     }*/ }
   .list--table--complex .list--table__body, .list--table--complex .list--table__footer {

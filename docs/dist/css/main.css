@@ -3858,6 +3858,9 @@ lesser , applied styles
       margin-top: 8px;
       margin-top: 0.8rem; } }
 
+.list--table__item__body--chart {
+  width: 100%; }
+
 .list--table__item__body--update {
   width: 100%; }
 
@@ -3926,7 +3929,7 @@ lesser , applied styles
   .list--table__item__body--stat {
     min-height: 55px;
     min-height: 5.5rem; }
-  .list--table__item__body--update {
+  .list--table__item__body--chart {
     min-height: 45px;
     min-height: 4.5rem; } }
 
@@ -3937,7 +3940,7 @@ lesser , applied styles
     width: 87.5%; } }
 
 @media screen and (min-width: 28em) {
-  .list--table__item__body--update {
+  .list--table__item__body--chart {
     width: 45%; }
   .list--table__item__body--stat {
     width: auto; } }
@@ -3954,11 +3957,11 @@ lesser , applied styles
     width: auto;
     min-height: 55px;
     min-height: 5.5rem; }
-  .list--table__item__body--update {
+  .list--table__item__body--chart {
     width: 45%;
     min-height: 45px;
     min-height: 4.5rem; }
-    .list--table__item__body--update dd + dt {
+    .list--table__item__body--chart dd + dt {
       clear: both; }
   .list--table--cushy .list--table__item {
     padding: 10px 15px;
@@ -3992,12 +3995,12 @@ lesser , applied styles
     padding: 2rem; } }
 
 @media screen and (min-width: 42em) {
-  .list--table__item__body--update {
+  .list--table__item__body--chart {
     float: left;
     width: 50%;
     min-height: 35px;
     min-height: 3.5rem; }
-    .list--table__item__body--update dd + dt {
+    .list--table__item__body--chart dd + dt {
       clear: none; }
   .list--table__item__body--stat {
     float: left;
@@ -4029,7 +4032,7 @@ lesser , applied styles
       padding-right: 2rem; }
       .js .list--table--complex .list--table__item__body--select-all {
         display: block; }
-  .list--table__item__body--update {
+  .list--table__item__body--chart {
     width: 20%;
     min-width: 90px;
     min-width: 9rem; }
@@ -4054,7 +4057,7 @@ lesser , applied styles
     max-width: 80%; } }
 
 @media screen and (min-width: 52em) {
-  .list--table__item__body--update {
+  .list--table__item__body--chart {
     width: 20%;
     padding-right: 0; }
   .list--table__item__body--stat {
@@ -4065,7 +4068,7 @@ lesser , applied styles
 
 @media screen and (min-width: 56.5em) {
   .list--table--complex {
-    /*.list--table__item__body--update {
+    /*.list--table__item__body--chart {
       min-width: 11.5rem;
     }*/ }
     .list--table--complex .list--table__body, .list--table--complex .list--table__footer {

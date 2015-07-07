@@ -81,8 +81,12 @@
   }
 }
 
-.list--table__item__body--update {
+.list--table__item__body--chart {
   width: 100%;
+}
+
+.list--table__item__body--update {
+    width: 100%;
 }
 
 .list--table__item__body--select {
@@ -165,7 +169,7 @@
     min-height: 5.5rem;
   }
 
-  .list--table__item__body--update {
+  .list--table__item__body--chart {
     min-height: 4.5rem;
   }
 
@@ -182,7 +186,7 @@
 }
 
 @include respond-min(28em) {
-  .list--table__item__body--update {
+  .list--table__item__body--chart {
     width: 45%;
   }
 
@@ -209,7 +213,7 @@
     min-height: 5.5rem;
   }
 
-  .list--table__item__body--update {
+  .list--table__item__body--chart {
     width: 45%;
     min-height: 4.5rem;
 
@@ -268,7 +272,7 @@
 }
 
 @include respond-min(42em) {
-  .list--table__item__body--update {
+  .list--table__item__body--chart {
     float: left;
     width: 50%;
     min-height: 3.5rem;
@@ -325,7 +329,7 @@
     }
   }
 
-  .list--table__item__body--update {
+  .list--table__item__body--chart {
     width: 20%;
     min-width: 9rem;
   }
@@ -363,7 +367,7 @@
 }
 
 @include respond-min(52em) {
-  .list--table__item__body--update {
+  .list--table__item__body--chart {
     width: 20%;
     padding-right: 0;
   }
@@ -390,7 +394,7 @@
       padding-right: 3.2rem;
     }
 
-    /*.list--table__item__body--update {
+    /*.list--table__item__body--chart {
       min-width: 11.5rem;
     }*/
 
