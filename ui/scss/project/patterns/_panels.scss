@@ -158,13 +158,13 @@
 .panel--mobile-mar,
 .panel--mobile-top-mar {
   @include respond-max($bp-tablet) {
-    margin-top: 6rem;
+    margin-top: 3rem;
   }
 }
 
 .panel--mobile-mar,
 .panel--mobile-bottom-mar {
   @include respond-max($bp-tablet) {
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
   }
 }

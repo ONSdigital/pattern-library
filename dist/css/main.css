@@ -4925,13 +4925,13 @@ lesser , applied styles
 
 @media screen and (max-width: 38em) {
   .panel--mobile-mar, .panel--mobile-top-mar {
-    margin-top: 60px;
-    margin-top: 6rem; } }
+    margin-top: 30px;
+    margin-top: 3rem; } }
 
 @media screen and (max-width: 38em) {
   .panel--mobile-mar, .panel--mobile-bottom-mar {
-    margin-bottom: 60px;
-    margin-bottom: 6rem; } }
+    margin-bottom: 30px;
+    margin-bottom: 3rem; } }
 
 .slate {
   background-color: #eeefed; }
