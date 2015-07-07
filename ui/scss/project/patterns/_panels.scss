@@ -157,14 +157,14 @@
 
 .panel--mobile-mar,
 .panel--mobile-top-mar {
-  @include respond-min($bp-tablet) {
+  @include respond-max($bp-tablet) {
     margin-top: 6rem;
   }
 }
 
 .panel--mobile-mar,
 .panel--mobile-bottom-mar {
-  @include respond-min($bp-tablet) {
+  @include respond-max($bp-tablet) {
     margin-bottom: 6rem;
   }
 }
