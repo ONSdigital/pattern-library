@@ -5814,6 +5814,9 @@ table actions
   * {
     color: #000 !important;
     /* Black prints faster: h5bp.com/s */
+    overflow: initial !important;
+    width: auto !important;
+    height: auto !important;
     text-shadow: none !important;
     background: transparent !important;
     box-shadow: none !important; }

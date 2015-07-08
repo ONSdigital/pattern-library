@@ -20395,9 +20395,9 @@ function error (code, stop) {
  * Fix JS round off float errors
  * @param {Number} num
  */
-function correctFloat(num) {
+function correctFloat(num, prec) {
 	return parseFloat(
-		num.toPrecision(14)
+		num.toPrecision(prec || 14)
 	);
 }
 
@@ -21512,10 +21512,7 @@ SVGElement.prototype = {
 			}
 			animate(this, params, animOptions);
 		} else {
-			this.attr(params);
-			if (complete) {
-				complete();
-			}
+			this.attr(params, null, complete);
 		}
 		return this;
 	},
@@ -21718,7 +21715,7 @@ SVGElement.prototype = {
 	 * @param {Object|String} hash
 	 * @param {Mixed|Undefined} val
 	 */
-	attr: function (hash, val) {
+	attr: function (hash, val, complete) {
 		var key,
 			value,
 			element = this.element,
@@ -21775,6 +21772,11 @@ SVGElement.prototype = {
 				this.doTransform = false;
 			}
 
+		}
+
+		// In accordance with animate, run a complete callback
+		if (complete) {
+			complete();
 		}
 
 		return ret;
@@ -27031,8 +27033,11 @@ Axis.prototype = {
 			if (!secondPass && mathMin(axis.min, pick(axis.dataMin, axis.min)) <= 0) { // #978
 				error(10, 1); // Can't plot negative values on log axis
 			}
-			axis.min = correctFloat(log2lin(axis.min)); // correctFloat cures #934
-			axis.max = correctFloat(log2lin(axis.max));
+			// The correctFloat cures #934, float errors on full tens. But it
+			// was too aggressive for #4360 because of conversion back to lin,
+			// therefore use precision 15.
+			axis.min = correctFloat(log2lin(axis.min), 15);
+			axis.max = correctFloat(log2lin(axis.max), 15);
 		}
 
 		// handle zoomed range
@@ -35880,7 +35885,9 @@ var ColumnSeries = extendClass(Series, {
 			pointPadding = defined(optionPointWidth) ? (pointOffsetWidth - optionPointWidth) / 2 :
 				pointOffsetWidth * options.pointPadding,
 			pointWidth = pick(optionPointWidth, pointOffsetWidth - 2 * pointPadding), // exact point width, used in polar charts
-			colIndex = (series.columnIndex || 0) + (reversedXAxis ? 1 : 0), // #1251, #3737
+			colIndex = (reversedXAxis ? 
+				columnCount - (series.columnIndex || 0) : // #1251
+				series.columnIndex) || 0,
 			pointXOffset = pointPadding + (groupPadding + colIndex *
 				pointOffsetWidth - (categoryWidth / 2)) *
 				(reversedXAxis ? -1 : 1);
@@ -37511,16 +37518,30 @@ if (seriesTypes.column) {
 		}
 
 		// Hide or show
-		for (i = 0; i < len; i++) {
-			label = labels[i];
+		each(labels, function (label) {
+			var complete,
+				newOpacity;
+
 			if (label) {
-				if (label.oldOpacity !== label.newOpacity && label.placed) {
-					label.alignAttr.opacity = label.newOpacity;
-					label[label.isOld && label.newOpacity ? 'animate' : 'attr'](label.alignAttr);
+				newOpacity = label.newOpacity;
+
+				// Make sure the label is completely hidden to avoid catching clicks (#4362)
+				if (newOpacity) {
+					label.show(true);
+				} else {
+					complete = function () {
+						label.hide();
+					};
+				}
+
+				// Animate or set the opacity
+				if (label.oldOpacity !== newOpacity && label.placed) {
+					label.alignAttr.opacity = newOpacity;
+					label[label.isOld ? 'animate' : 'attr'](label.alignAttr, null, complete);
 				}
 				label.isOld = true;
 			}
-		}
+		});
 	};
 
 }(Highcharts));/**
