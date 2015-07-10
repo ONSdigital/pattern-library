@@ -1334,9 +1334,13 @@ img {
   content: '\e80f';
   display: none !important; }
 
-.icon-search-1:before {
-  content: '\e810';
-  display: none !important; }
+/*.icon-search-1:before { content: '\e810'; display: none !important;}*/
+.icon-search-1 {
+  background: transparent url(../img/search.png) no-repeat 0 0;
+  display: block;
+  width: 35px;
+  height: 35px;
+  background-size: 35px auto; }
 
 .icon-popup:before {
   content: '\e811';
