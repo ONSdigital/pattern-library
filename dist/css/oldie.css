@@ -1336,7 +1336,7 @@ img {
 
 /*.icon-search-1:before { content: '\e810'; display: none !important;}*/
 .icon-search-1 {
-  background: transparent url(../img/search-icon.png) no-repeat 5px 8px;
+  background: transparent url(../img/search-icon.png) no-repeat 4px 8px;
   display: block;
   width: 28px;
   height: 38px;
