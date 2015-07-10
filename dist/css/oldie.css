@@ -1271,94 +1271,124 @@ img {
   speak: none; }
 
 .icon-info-circled:before {
-  content: '\e800'; }
+  content: '\e800';
+  display: none !important; }
 
 .icon-record:before {
-  content: '\e801'; }
+  content: '\e801';
+  display: none !important; }
 
 .icon-facebook:before {
-  content: '\e802'; }
+  content: '\e802';
+  display: none !important; }
 
 .icon-twitter:before {
-  content: '\e803'; }
+  content: '\e803';
+  display: none !important; }
 
 .icon-phone:before {
-  content: '\e804'; }
+  content: '\e804';
+  display: none !important; }
 
 .icon-mail:before {
-  content: '\e805'; }
+  content: '\e805';
+  display: none !important; }
 
 .icon-gplus:before {
-  content: '\e806'; }
+  content: '\e806';
+  display: none !important; }
 
 .icon-search:before {
-  content: '\e807'; }
+  content: '\e807';
+  display: none !important; }
 
 .icon-download:before {
-  content: '\e808'; }
+  content: '\e808';
+  display: none !important; }
 
 .icon-print:before {
-  content: '\e809'; }
+  content: '\e809';
+  display: none !important; }
 
 .icon-left-open-big:before {
-  content: '\e80a'; }
+  content: '\e80a';
+  display: none !important; }
 
 .icon-down-open-big:before {
-  content: '\e80b'; }
+  content: '\e80b';
+  display: none !important; }
 
 .icon-right-open-big:before {
-  content: '\e80c'; }
+  content: '\e80c';
+  display: none !important; }
 
 .icon-up-open-big:before {
-  content: '\e80d'; }
+  content: '\e80d';
+  display: none !important; }
 
 .icon-cog:before {
-  content: '\e80e'; }
+  content: '\e80e';
+  display: none !important; }
 
 .icon-check:before {
-  content: '\e80f'; }
+  content: '\e80f';
+  display: none !important; }
 
 .icon-search-1:before {
-  content: '\e810'; }
+  content: '\e810';
+  display: none !important; }
 
 .icon-popup:before {
-  content: '\e811'; }
+  content: '\e811';
+  display: none !important; }
 
 .icon-up-bold:before {
-  content: '\e812'; }
+  content: '\e812';
+  display: none !important; }
 
 .icon-down-bold:before {
-  content: '\e813'; }
+  content: '\e813';
+  display: none !important; }
 
 .icon-users:before {
-  content: '\e814'; }
+  content: '\e814';
+  display: none !important; }
 
 .icon-book:before {
-  content: '\e815'; }
+  content: '\e815';
+  display: none !important; }
 
 .icon-chart:before {
-  content: '\e816'; }
+  content: '\e816';
+  display: none !important; }
 
 .icon-table:before {
-  content: '\e817'; }
+  content: '\e817';
+  display: none !important; }
 
 .icon-down-open-mini:before {
-  content: '\e818'; }
+  content: '\e818';
+  display: none !important; }
 
 .icon-menu:before {
-  content: '\e819'; }
+  content: '\e819';
+  display: none !important; }
 
 .icon-cancel:before {
-  content: '\e81a'; }
+  content: '\e81a';
+  display: none !important; }
 
 .icon-comment:before {
-  content: '\e81b'; }
+  content: '\e81b';
+  display: none !important; }
 
 .icon-linkedin:before {
-  content: '\e815'; }
+  content: '\e815';
+  display: none !important; }
 
 .icon-rss:before {
-  content: '\e81d'; }
+  content: '\e81d';
+  display: none !important; }
 
 /*------------------------------
   Temporary wrapping classes
