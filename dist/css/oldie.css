@@ -1336,11 +1336,11 @@ img {
 
 /*.icon-search-1:before { content: '\e810'; display: none !important;}*/
 .icon-search-1 {
-  background: transparent url(../img/search.png) no-repeat 0 0;
+  background: transparent url(../img/search-icon.png) no-repeat 5px 8px;
   display: block;
-  width: 35px;
-  height: 35px;
-  background-size: 35px auto; }
+  width: 28px;
+  height: 38px;
+  background-size: 20px auto; }
 
 .icon-popup:before {
   content: '\e811';
@@ -4149,8 +4149,8 @@ lesser , applied styles
     padding-bottom: 5px;
     border-width: 0; }
   .nav-search .btn--nav-search {
-    top: 5px;
-    bottom: 5px; }
+    top: 4px;
+    bottom: 4px; }
 
 .nav--primary .nav--primary__secondary-content {
   display: none; }
@@ -4165,8 +4165,8 @@ lesser , applied styles
   margin: 0 auto;
   background-color: transparent; }
   .nav-search .btn--nav-search {
-    top: 18px;
-    bottom: 18px;
+    top: 15px;
+    bottom: 14px;
     line-height: 1.8; }
   .nav-search .nav-search__field {
     border-width: 3px; }
