@@ -4895,7 +4895,6 @@ table actions
     color: #000 !important;
     /* Black prints faster: h5bp.com/s */
     overflow: initial !important;
-    width: auto !important;
     height: auto !important;
     text-shadow: none !important;
     background: transparent !important;
@@ -4926,7 +4925,7 @@ table actions
   thead {
     display: table-header-group;
     /* h5bp.com/t */ }
-  tr, img, .box, section {
+  tr, img, .box, section, .table-of-contents-ordered-list, address {
     page-break-inside: avoid;
     position: relative; }
   img {
