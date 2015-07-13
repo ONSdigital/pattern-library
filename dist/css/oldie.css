@@ -4902,13 +4902,13 @@ table actions
   a, a:visited {
     text-decoration: underline; }
   article, .print-links {
-    /* Append 'https://www.ons.gov.uk/' to internal links using a relative path */
+    /* Append 'http://www.ons.gov.uk/' to internal links using a relative path */
     /* Stop links starting with https or http being appended with ons url */
     /*
      * Don't show links for images, javascript, internal links or email addresses
      */ }
     article a[href]:after, .print-links a[href]:after {
-      content: " (https://www.ons.gov.uk" attr(href) ")";
+      content: " (http://www.ons.gov.uk" attr(href) ")";
       word-wrap: break-word; }
     article abbr[title]:after, .print-links abbr[title]:after {
       content: " (" attr(title) ")"; }
