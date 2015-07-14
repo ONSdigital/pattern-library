@@ -4551,8 +4551,8 @@ lesser , applied styles
   margin: 0; }
   .nav--controls a {
     display: block;
-    padding: 5px 10px 10px;
-    padding: 0.5rem 1rem 1rem;
+    padding: 12px 10px 12px;
+    padding: 1.2rem 1rem 1.2rem;
     font-family: "open-sans-n7", "open-sans", sans-serif;
     font-size: 14px;
     font-size: 1.4rem;
