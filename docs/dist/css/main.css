@@ -3236,26 +3236,20 @@ address {
   height: 100%;
   margin-right: 5px;
   float: left;
-  /*background-color: #ddd;*/
-  padding: 18px 0 18px; }
-
-.title {
-  font-size: 14px;
-  text-transform: uppercase; }
+  padding-top: 13px; }
 
 #custom-tooltip {
   display: block;
   width: 220px;
   border: 1px solid #ddd;
-  background-color: #dddddd; }
+  background-color: #ddd; }
 
 .maintext {
-  font-family: "open-sans-n7", "open-sans", sans-serif;
-  padding: 10px 0 18px 40px;
-  display: block;
-  width: 220px;
+  padding: 10px;
+  display: inline-block;
+  width: 183px;
   height: 100%;
-  background-color: white; }
+  background-color: #fff; }
 
 .maintext__title {
   font-family: "open-sans-n7", "open-sans", sans-serif;
@@ -3325,7 +3319,7 @@ address {
   width: 0;
   height: 0;
   position: absolute;
-  bottom: 15px;
+  top: 10px;
   left: 219px; }
 
 .tooltip-left {
@@ -3339,7 +3333,7 @@ address {
   width: 0;
   height: 0;
   position: absolute;
-  bottom: 15px;
+  top: 10px;
   left: -20px; }
 
 .actionable-header {
