@@ -82,7 +82,8 @@ lesser , applied styles
     background: radial-gradient(ellipse at center, darken(#d5d6d2, 10%) 0%, darken(#c8c9c4, 10%) 100%);
   }
 }
-.btn--secondary--disabled {
+.btn--secondary--disabled,
+.btn--secondary--disabled:hover {
   color: $grey;
   background-color: $grey-light;
 }

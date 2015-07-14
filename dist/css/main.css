@@ -3647,7 +3647,7 @@ lesser , applied styles
     background: -webkit-radial-gradient(center, ellipse, #bcbeb7 0%, #afb1a9 100%);
     background: radial-gradient(ellipse at center, #bcbeb7 0%, #afb1a9 100%); }
 
-.btn--secondary--disabled {
+.btn--secondary--disabled, .btn--secondary--disabled:hover {
   color: #757575;
   background-color: #dedfdc; }
 
