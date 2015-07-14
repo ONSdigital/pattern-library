@@ -3289,6 +3289,10 @@ lesser , applied styles
     background: -webkit-radial-gradient(center, ellipse, #bcbeb7 0%, #afb1a9 100%);
     background: radial-gradient(ellipse at center, #bcbeb7 0%, #afb1a9 100%); }
 
+.btn--secondary--disabled {
+  color: #757575;
+  background-color: #dedfdc; }
+
 .btn--thin {
   padding-top: 0.5em;
   padding-bottom: 0.5em; }

@@ -82,6 +82,10 @@ lesser , applied styles
     background: radial-gradient(ellipse at center, darken(#d5d6d2, 10%) 0%, darken(#c8c9c4, 10%) 100%);
   }
 }
+.btn--secondary--disabled {
+  color: $grey;
+  background-color: $grey-light;
+}
 
 .btn--thin {
   padding-top: .5em;
