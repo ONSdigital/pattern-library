@@ -3310,7 +3310,8 @@ address {
   padding: 0px;
   padding-top: 1px;
   left: 0px;
-  text-align: left; }
+  text-align: left;
+  white-space: normal; }
 
 .tooltip-right {
   position: relative; }
