@@ -42203,7 +42203,8 @@ function expandAccordion() {
 
 $(document).on('ready', function() {
   // Expand footnotes section if it's collapsed and you click on footnote anchor
-  $('.footnote-body').on('click', function(e) {
+  $('.footnote-body').on('click', function() {
+    window.location = $(this).attr('href');
     expandAccordion();
   });
 
