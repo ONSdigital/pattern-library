@@ -5196,7 +5196,8 @@ $SPLIT
 .stat__figure {
   font-family: "open-sans-n7", "open-sans", sans-serif;
   font-size: 24px;
-  font-size: 2.4rem; }
+  font-size: 2.4rem;
+  margin-top: 1.2em; }
 
 .stat__figure--home {
   font-family: "open-sans-n7", "open-sans", sans-serif;
@@ -5228,7 +5229,7 @@ $SPLIT
     Offset number so it appears visually closer to the stat figure.
     @TODO: Fix magic number
   */
-  /* margin-left: -.7rem; 
+  /* margin-left: -.7rem;
   Breaking timeseries boxes on T3
   */
   font-size: 20px;
