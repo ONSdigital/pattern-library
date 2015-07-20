@@ -4,7 +4,7 @@
    ======================================================*/
 
 @page {
-  margin: .5cm;
+  margin: 1cm;
 }
 
 
@@ -70,14 +70,13 @@
     display: table-header-group; /* h5bp.com/t */
   }
 
+  .page-break-avoid,
   tr,
   img,
   .box,
   section,
-  .table-of-contents-ordered-list,
   address {
     page-break-inside: avoid;
-    position: relative;
   }
 
   img {

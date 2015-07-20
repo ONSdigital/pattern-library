@@ -4893,7 +4893,7 @@ table actions
    Inlined to avoid required HTTP connection: h5bp.com/r
    ======================================================*/
 @page {
-  margin: 0.5cm; }
+  margin: 1cm; }
 
 @media print {
   * {
@@ -4930,9 +4930,8 @@ table actions
   thead {
     display: table-header-group;
     /* h5bp.com/t */ }
-  tr, img, .box, section, .table-of-contents-ordered-list, address {
-    page-break-inside: avoid;
-    position: relative; }
+  .page-break-avoid, tr, img, .box, section, address {
+    page-break-inside: avoid; }
   img {
     max-width: 100% !important; }
   p, h2, h3 {
