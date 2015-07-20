@@ -16,6 +16,10 @@
     text-align: center;
     position: relative;
     // padding: 0 10px;
+
+    @include respond-max($bp-tablet) {
+      height:380px;
+    }
 }
 
 
@@ -141,6 +145,10 @@
     font-size: 200%;
     top: 10px;
     color: desaturate(lighten($blue-light, 45%), 25%);
+  }
+
+  @include respond-max($bp-tablet) {
+    height:80px;
   }
 }
 

@@ -4186,6 +4186,9 @@ lesser , applied styles
   overflow: hidden;
   text-align: center;
   position: relative; }
+  @media screen and (max-width: 38em) {
+    .nav-panel--home-hero {
+      height: 380px; } }
 
 .nav-panel__header {
   padding-top: 20px;
@@ -4306,6 +4309,9 @@ lesser , applied styles
     font-size: 200%;
     top: 10px;
     color: #b4def4; }
+  @media screen and (max-width: 38em) {
+    .nav-panel__footer-home-hero {
+      height: 80px; } }
 
 .nav-panel__footer-home-hero a {
   text-decoration: none;
