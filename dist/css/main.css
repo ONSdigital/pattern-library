@@ -4412,6 +4412,9 @@ lesser , applied styles
     background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), white 50%, #ffffff);
     background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, #ffffff); } }
 
+.nav--block-landing--remove:after {
+  background: transparent; }
+
 .nav--block-home-highlighted-content {
   margin-bottom: 20px; }
   .nav--block-home-highlighted-content .img-block {

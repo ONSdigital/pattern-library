@@ -106,6 +106,10 @@
   }
 }
 
+.nav--block-landing--remove:after {
+  background: transparent;
+}
+
 .nav--block-home-highlighted-content {
     //nth child stuff is more for automating the styling if and when this content is data driven (currently hardcoded) - still being used for border colouring currently however
 
@@ -134,7 +138,7 @@
         border-left-color: $orange;
         // @extend .box--orange--separated--left;
       }
-      
+
     }
 
     &:nth-child(4) {
