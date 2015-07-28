@@ -3314,6 +3314,10 @@ lesser , applied styles
 .btn--clear-results {
   margin-top: -7px; }
 
+.btn-tooltip {
+  padding: 0 8px;
+  border-radius: 20px; }
+
 .btn--form {
   padding-top: 0;
   padding-bottom: 0;

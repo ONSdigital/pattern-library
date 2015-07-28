@@ -3669,6 +3669,12 @@ lesser , applied styles
 .btn--clear-results {
   margin-top: -7px; }
 
+.btn-tooltip {
+  padding: 0 8px;
+  padding: 0 0.8rem;
+  border-radius: 20px;
+  border-radius: 2rem; }
+
 .btn--form {
   padding-top: 0;
   padding-bottom: 0;
