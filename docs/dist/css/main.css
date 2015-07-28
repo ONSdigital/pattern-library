@@ -1627,6 +1627,9 @@ img {
 .full-width {
   width: 100%; }
 
+.width-auto {
+  width: auto !important; }
+
 .no-padding {
   padding: 0 !important; }
 
