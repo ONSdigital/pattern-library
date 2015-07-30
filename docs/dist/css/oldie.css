@@ -3099,6 +3099,11 @@ address {
 .box--padded--med {
   padding: 20px; }
 
+.box--padded--med-vertical {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+
 
 
 

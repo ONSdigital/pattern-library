@@ -3434,6 +3434,13 @@ address {
   padding: 20px;
   padding: 2rem; }
 
+.box--padded--med-vertical {
+  padding-top: 20px;
+  padding-top: 2rem;
+  padding-bottom: 20px;
+  padding-bottom: 2rem; }
+
+
 
 
 

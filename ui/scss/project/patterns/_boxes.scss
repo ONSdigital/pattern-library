@@ -53,6 +53,11 @@
   padding: 2rem;
 }
 
+%pad-med--vertical {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .box--padded {
   @extend %pad-large;
 }
@@ -67,6 +72,10 @@
 
 .box--padded--med {
   @extend %pad-med;
+}
+
+.box--padded--med-vertical {
+  @extend %pad-med--vertical;
 }
 
 .box--callout {
