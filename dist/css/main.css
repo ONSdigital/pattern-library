@@ -1398,8 +1398,7 @@ img {
   display: none !important; }
 
 .icon-link-ext:after {
-  content: '\e81e';
-  display: none !important; }
+  content: '\e81e'; }
 
 /*------------------------------
   Temporary wrapping classes
