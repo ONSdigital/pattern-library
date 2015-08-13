@@ -1664,7 +1664,7 @@ textarea {
 .field__label {
   display: block;
   margin-bottom: 10px;
-  font-family: "ff-dax-web-pro", sans-serif;
+  font-family: "open-sans-n7", sans-serif;
   font-weight: 700; }
   .field__label + .label__description {
     margin-top: -10px;
@@ -2515,7 +2515,7 @@ b, strong {
 
 h1, h2, h3, h4, h5, h6, .alpha, .beta, .delta, .gamma {
   margin-top: 0;
-  font-family: "ff-dax-web-pro", sans-serif;
+  font-family: "open-sans-n7", sans-serif;
   font-weight: 100; }
 
 h1, .alpha {
@@ -2556,7 +2556,7 @@ h4, .gamma, .list--table__item__header {
   font-family: "open-sans-n3", "open-sans", sans-serif; }
 
 .headline-type, .page-header__title {
-  font-family: "ff-dax-web-pro", sans-serif; }
+  font-family: "open-sans-n7", sans-serif; }
 
 .description {
   color: #757575; }
