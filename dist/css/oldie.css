@@ -1394,7 +1394,7 @@ img {
   content: '\e81d';
   display: none !important; }
 
-.icon-link-ext:after {
+.icon-link-ext:before {
   content: '\e81e'; }
 
 /*------------------------------
