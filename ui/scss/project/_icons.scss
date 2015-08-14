@@ -98,7 +98,7 @@
 
 //.icon-link-ext:before { content: '\e81e'; } //Breaks on gov networks that block font packs
 .icon-link-ext:before {
-  background: transparent url(../external.png);
+  background: transparent url(../img/external.png);
   display: block;
   width: 28px;
   height: 38px;
@@ -244,6 +244,7 @@ a[href^="http://"]:not([href*="ons.gov.uk"]):not([href^="http://localhost"]):aft
 }
 
 //For use in unique situations where icons are automatically added but not wanted and a global solution isn't viable
-.hide-icon:after {
+.hide-icon:after, .hide-icon:before {
   content: "" !important;
+  background: "" !important;
 }
