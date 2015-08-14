@@ -1493,7 +1493,7 @@ img {
 
 .hide-icon:after, .hide-icon:before {
   content: "" !important;
-  background: "" !important; }
+  display: none !important; }
 
 /* =============================================================================
    Layout
