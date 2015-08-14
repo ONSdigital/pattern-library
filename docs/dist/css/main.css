@@ -1397,12 +1397,14 @@ img {
   content: '\e81d';
   display: none !important; }
 
-.icon-link-ext:before, a[href^="http://"]:not([href*="ons.gov.uk"]):not([href^="http://localhost"]):after, a[href^="https://"]:not([href*="carboni.uk"]):not([href*="carb.onl"]):after {
-  background: transparent url(../img/external.png);
-  display: block;
-  width: 28px;
-  height: 38px;
-  background-size: 20px auto; }
+.icon-link-ext:after, a[href^="http://"]:not([href*="ons.gov.uk"]):not([href^="http://localhost"]):after, a[href^="https://"]:not([href*="carboni.uk"]):not([href*="carb.onl"]):after {
+  background-image: url('../img/external.png');
+  background-size: 12px 12px;
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  content: "";
+  margin-left: 5px; }
 
 /*------------------------------
   Temporary wrapping classes
