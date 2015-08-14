@@ -1394,8 +1394,12 @@ img {
   content: '\e81d';
   display: none !important; }
 
-.icon-link-ext:before {
-  content: '\e81e'; }
+.icon-link-ext:before, a[href^="http://"]:not([href*="ons.gov.uk"]):not([href^="http://localhost"]):after, a[href^="https://"]:not([href*="carboni.uk"]):not([href*="carb.onl"]):after {
+  background: transparent url(../external.png);
+  display: block;
+  width: 28px;
+  height: 38px;
+  background-size: 20px auto; }
 
 /*------------------------------
   Temporary wrapping classes
@@ -1483,6 +1487,10 @@ img {
 
 .icon--right-margin {
   margin-right: 10px; }
+
+
+.hide-icon:after {
+  content: "" !important; }
 
 /* =============================================================================
    Layout

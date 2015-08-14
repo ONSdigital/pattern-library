@@ -96,7 +96,14 @@
 
 .icon-rss:before { content: '\e81d'; display: none !important;}
 
-.icon-link-ext:before { content: '\e81e'; }
+//.icon-link-ext:before { content: '\e81e'; } //Breaks on gov networks that block font packs
+.icon-link-ext:before {
+  background: transparent url(../external.png);
+  display: block;
+  width: 28px;
+  height: 38px;
+  background-size: 20px auto;
+}
 
 /*------------------------------
   Temporary wrapping classes
@@ -229,4 +236,14 @@
 
 .icon--right-margin {
   margin-right: 1rem;
+}
+
+//Add external link icon (:not excludes certain domains)
+a[href^="http://"]:not([href*="ons.gov.uk"]):not([href^="http://localhost"]):after, a[href^="https://"]:not([href*="carboni.uk"]):not([href*="carb.onl"]):after {
+  @extend .icon-link-ext:before;
+}
+
+//For use in unique situations where icons are automatically added but not wanted and a global solution isn't viable
+.hide-icon:after {
+  content: "" !important;
 }
