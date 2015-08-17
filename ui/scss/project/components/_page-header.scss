@@ -1,7 +1,7 @@
 .page-header {
   position: relative;
   padding: 2rem 0;
-  margin-bottom: 3rem;
+  //margin-bottom: 3rem;
 }
 
 .page-header__title {
@@ -33,7 +33,7 @@
 
 @include respond-min($bp-tablet-wide) {
   .page-header {
-    padding: 4rem 0 1rem;
+    padding: 2rem 0 1rem;
   }
 
   .page-header__title {

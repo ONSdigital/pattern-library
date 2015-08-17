@@ -2997,8 +2997,7 @@ address {
 
 .page-header {
   position: relative;
-  padding: 20px 0;
-  margin-bottom: 30px; }
+  padding: 20px 0; }
 
 
 .page-header__icons {
@@ -3018,7 +3017,7 @@ address {
   margin: 0; }
 
 .page-header {
-  padding: 40px 0 10px; }
+  padding: 20px 0 10px; }
 
 .page-header__title {
   padding-right: 140px; }
@@ -4048,7 +4047,7 @@ lesser , applied styles
     content: " \203A "; }
 
 .breadcrumb_hero {
-  margin-top: 0; }
+  margin: 0 0 20px 0; }
 
 .nav__active, .nav__active a {
   color: #757575;
