@@ -231,6 +231,9 @@ ONS.charts = (function() {
   function setOptions() {
 
     Highcharts.setOptions({
+      lang: {
+        thousandsSep: ","
+      },
       colors: ['#007dc3', '#409ed2', '#7fbee1', '#007dc3', '#409ed2', '#7fbee1'],
       series: [{
         marker: marker

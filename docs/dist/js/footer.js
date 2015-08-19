@@ -20128,6 +20128,7 @@ dateFormat = function (format, timestamp, capitalize) {
 
 			// Time
 			'H': pad(hours), // Two digits hours in 24h format, 00 through 23
+			'k': hours, // Hours in 24h format, 0 through 23
 			'I': pad((hours % 12) || 12), // Two digits hours in 12h format, 00 through 11
 			'l': (hours % 12) || 12, // Hours in 12h format, 1 through 12
 			'M': pad(date[getMinutes]()), // Two digits minutes, 00 through 59
@@ -27206,6 +27207,11 @@ Axis.prototype = {
 				tickPositions = this.getLinearTickPositions(this.tickInterval, this.min, this.max);
 			}
 
+			// Too dense ticks, keep only the first and last (#4477)
+			if (tickPositions.length > this.len) {
+				tickPositions = [tickPositions[0], tickPositions.pop()];
+			}
+
 			this.tickPositions = tickPositions;
 
 			// Run the tick positioner callback, that allows modifying auto tick positions.
@@ -27457,15 +27463,17 @@ Axis.prototype = {
 	zoom: function (newMin, newMax) {
 		var dataMin = this.dataMin,
 			dataMax = this.dataMax,
-			options = this.options;
+			options = this.options,
+			min = mathMin(dataMin, pick(options.min, dataMin)),
+			max = mathMax(dataMax, pick(options.max, dataMax));
 
 		// Prevent pinch zooming out of range. Check for defined is for #1946. #1734.
 		if (!this.allowZoomOutside) {
-			if (defined(dataMin) && newMin <= mathMin(dataMin, pick(options.min, dataMin))) {
-				newMin = UNDEFINED;
+			if (defined(dataMin) && newMin <= min) {
+				newMin = min;
 			}
-			if (defined(dataMax) && newMax >= mathMax(dataMax, pick(options.max, dataMax))) {
-				newMax = UNDEFINED;
+			if (defined(dataMax) && newMax >= max) {
+				newMax = max;
 			}
 		}
 
@@ -29324,7 +29332,9 @@ Pointer.prototype = {
 				if (tooltip) { 
 					tooltip.refresh(kdpoint, e);
 				}
-				kdpoint.onMouseOver(e); 
+				if(!hoverSeries || !hoverSeries.directTouch) { // #4448
+					kdpoint.onMouseOver(e); 
+				}
 			}
 			this.prevKDPoint = kdpoint;
 		
@@ -32037,6 +32047,7 @@ Chart.prototype = {
 				if (linkedTo) {
 					linkedTo.linkedSeries.push(series);
 					series.linkedParent = linkedTo;
+					series.visible = pick(series.options.visible, linkedTo.options.visible, series.visible); // #3879
 				}
 			}
 		});
@@ -32970,7 +32981,9 @@ Series.prototype = {
 	 * Get the series' color
 	 */
 	getColor: function () {
-		if (!this.options.colorByPoint) {
+		if (this.options.colorByPoint) {
+			this.options.color = null; // #4359, selected slice got series.color even when colorByPoint was set.
+		} else {
 			this.getCyclic('color', this.options.color || defaultPlotOptions[this.type].color, this.chart.options.colors);
 		}
 	},
@@ -36361,11 +36374,6 @@ var PieSeries = {
 		'stroke-width': 'borderWidth',
 		fill: 'color'
 	},
-
-	/**
-	 * Pies have one color each point
-	 */
-	getColor: noop,
 
 	/**
 	 * Animate the pies in
