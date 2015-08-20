@@ -5253,7 +5253,6 @@ $SPLIT
       width: 40%; } }
   @media screen and (min-width: 50em) {
     .stat__image--home {
-      position: absolute;
       bottom: 0px;
       left: 0;
       right: 0;

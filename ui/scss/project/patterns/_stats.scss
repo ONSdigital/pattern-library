@@ -39,7 +39,7 @@
   }
 
   @include respond-min($bp-tablet-wide) {
-    position: absolute;
+    // position: absolute; //Broken - T3 sparklines with no JS not contained by div
     bottom: 0px;
     left: 0;
     right: 0;
