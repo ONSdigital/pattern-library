@@ -63,6 +63,7 @@ $(document).ready(function() {
   $primaryNav.find('.nav__expandable').each(function() {
     var subNav = $(this).find('.nav--primary__sub');
     $(this).find(' > a').clone()
+      .removeClass()
       .prependTo(subNav)
       .wrap('<li class="nav__top-level-duplicate"></li>');
   });

@@ -21098,6 +21098,7 @@ defaultOptions = {
 			//pointStart: 0,
 			//pointInterval: 1,
 			//showInLegend: null, // auto: true for standalone series, false for linked series
+			softThreshold: true, // docs. Also, update the spline-plot-bands demo by removing y.min
 			states: { // states for the entire series
 				hover: {
 					//enabled: false,
@@ -21526,6 +21527,7 @@ SVGElement.prototype = {
 			colorObject,
 			gradName,
 			gradAttr,
+			radAttr,
 			gradients,
 			gradientObject,
 			stops,
@@ -21562,12 +21564,11 @@ SVGElement.prototype = {
 
 			// Correct the radial gradient for the radial reference system
 			if (gradName === 'radialGradient' && radialReference && !defined(gradAttr.gradientUnits)) {
-				gradAttr = merge(gradAttr, {
-					cx: (radialReference[0] - radialReference[2] / 2) + gradAttr.cx * radialReference[2],
-					cy: (radialReference[1] - radialReference[2] / 2) + gradAttr.cy * radialReference[2],
-					r: gradAttr.r * radialReference[2],
-					gradientUnits: 'userSpaceOnUse'
-				});
+				radAttr = gradAttr; // Save the radial attributes for updating
+				gradAttr = merge(gradAttr, 
+					renderer.getRadialAttr(radialReference, radAttr),
+					{ gradientUnits: 'userSpaceOnUse' }
+				);
 			}
 
 			// Build the unique key to detect whether we need to create a new element (#1282)
@@ -21593,6 +21594,7 @@ SVGElement.prototype = {
 					.attr(gradAttr)
 					.add(renderer.defs);
 
+				gradientObject.radAttr = radAttr;
 
 				// The gradient needs to keep a list of stops to be able to destroy them
 				gradientObject.stops = [];
@@ -21619,6 +21621,7 @@ SVGElement.prototype = {
 
 			// Set the reference to the gradient object
 			elem.setAttribute(prop, 'url(' + renderer.url + '#' + id + ')');
+			elem.gradient = key;
 		} 
 	},
 
@@ -21991,7 +21994,21 @@ SVGElement.prototype = {
 	 * [centerX, centerY, diameter] in pixels.
 	 */
 	setRadialReference: function (coordinates) {
+		var existingGradient = this.renderer.gradients[this.element.gradient];
+
 		this.element.radialReference = coordinates;
+		
+		// On redrawing objects with an existing gradient, the gradient needs
+		// to be repositioned (#3801)
+		if (existingGradient && existingGradient.radAttr) {
+			existingGradient.animate(
+				this.renderer.getRadialAttr(
+					coordinates, 
+					existingGradient.radAttr
+				)
+			);
+		}
+
 		return this;
 	},
 
@@ -22555,7 +22572,7 @@ SVGElement.prototype = {
 		// IE9-11 doesn't handle visibilty:inherit well, so we remove the attribute instead (#2881, #3909)
 		if (value === 'inherit') {
 			element.removeAttribute(key);
-		} else {
+		} else {
 			element.setAttribute(key, value);
 		}
 	},
@@ -22792,6 +22809,17 @@ SVGRenderer.prototype = {
 	 * Dummy function for use in canvas renderer
 	 */
 	draw: function () {},
+
+	/**
+	 * Get converted radial gradient attributes
+	 */
+	getRadialAttr: function (radialReference, gradAttr) {
+		return {
+			cx: (radialReference[0] - radialReference[2] / 2) + gradAttr.cx * radialReference[2],
+			cy: (radialReference[1] - radialReference[2] / 2) + gradAttr.cy * radialReference[2],
+			r: gradAttr.r * radialReference[2]
+		};
+	},
 
 	/**
 	 * Parse a simple HTML string into SVG tspans
@@ -26378,8 +26406,6 @@ Axis.prototype = {
 
 		//axis.axisTitleMargin = UNDEFINED,// = options.title.margin,
 		axis.minPixelPadding = 0;
-		//axis.ignoreMinPadding = UNDEFINED; // can be set to true by a column or bar series
-		//axis.ignoreMaxPadding = UNDEFINED;
 
 		axis.reversed = options.reversed;
 		axis.zoomEnabled = options.zoomEnabled !== false;
@@ -26577,7 +26603,8 @@ Axis.prototype = {
 		axis.hasVisibleSeries = false;
 
 		// Reset properties in case we're redrawing (#3353)
-		axis.dataMin = axis.dataMax = axis.ignoreMinPadding = axis.ignoreMaxPadding = null;
+		axis.dataMin = axis.dataMax = axis.threshold = null;
+		axis.softThreshold = !axis.isXAxis;
 		
 		if (axis.buildStacks) {
 			axis.buildStacks();
@@ -26627,13 +26654,11 @@ Axis.prototype = {
 
 					// Adjust to threshold
 					if (defined(threshold)) {
-						if (axis.dataMin >= threshold) {
-							axis.dataMin = threshold;
-							axis.ignoreMinPadding = true;
-						} else if (axis.dataMax < threshold) {
-							axis.dataMax = threshold;
-							axis.ignoreMaxPadding = true;
-						}
+						axis.threshold = threshold;
+					}
+					// If any series has a hard threshold, it takes precedence
+					if (!seriesOptions.softThreshold || axis.isLog) {
+						axis.softThreshold = false;
 					}
 				}
 			}
@@ -27043,13 +27068,23 @@ Axis.prototype = {
 			tickIntervalOption = options.tickInterval,
 			minTickInterval,
 			tickPixelIntervalOption = options.tickPixelInterval,
-			categories = axis.categories;
+			categories = axis.categories,
+			threshold = axis.threshold,
+			softThreshold = axis.softThreshold,
+			thresholdMin,
+			thresholdMax,
+			hardMin,
+			hardMax;
 
 		if (!isDatetimeAxis && !categories && !isLinked) {
 			this.getTickAmount();
 		}
 
-		// linked axis gets the extremes from the parent axis
+		// Min or max set either by zooming/setExtremes or initial options
+		hardMin = pick(axis.userMin, options.min);
+		hardMax = pick(axis.userMax, options.max);
+
+		// Linked axis gets the extremes from the parent axis
 		if (isLinked) {
 			axis.linkedParent = chart[axis.coll][options.linkedTo];
 			linkedParentExtremes = axis.linkedParent.getExtremes();
@@ -27058,9 +27093,24 @@ Axis.prototype = {
 			if (options.type !== axis.linkedParent.options.type) {
 				error(11, 1); // Can't link axes of different type
 			}
-		} else { // initial min and max from the extreme data values
-			axis.min = pick(axis.userMin, options.min, axis.dataMin);
-			axis.max = pick(axis.userMax, options.max, axis.dataMax);
+
+		// Initial min and max from the extreme data values
+		} else {
+
+			// Adjust to hard threshold
+			if (!softThreshold && defined(threshold)) {
+				if (axis.dataMin >= threshold) {
+					thresholdMin = threshold;
+					minPadding = 0;
+				} else if (axis.dataMax <= threshold) {
+					thresholdMax = threshold;
+					maxPadding = 0;
+				}
+			}
+
+			axis.min = pick(hardMin, thresholdMin, axis.dataMin);
+			axis.max = pick(hardMax, thresholdMax, axis.dataMax);
+
 		}
 
 		if (isLog) {
@@ -27076,8 +27126,8 @@ Axis.prototype = {
 
 		// handle zoomed range
 		if (axis.range && defined(axis.max)) {
-			axis.userMin = axis.min = mathMax(axis.min, axis.minFromRange()); // #618
-			axis.userMax = axis.max;
+			axis.userMin = axis.min = hardMin = mathMax(axis.min, axis.minFromRange()); // #618
+			axis.userMax = hardMax = axis.max;
 
 			axis.range = null;  // don't use it when running setExtremes
 		}
@@ -27095,10 +27145,10 @@ Axis.prototype = {
 		if (!categories && !axis.axisPointRange && !axis.usePercentage && !isLinked && defined(axis.min) && defined(axis.max)) {
 			length = axis.max - axis.min;
 			if (length) {
-				if (!defined(options.min) && !defined(axis.userMin) && minPadding && (axis.dataMin < 0 || !axis.ignoreMinPadding)) {
+				if (!defined(hardMin) && minPadding) {
 					axis.min -= length * minPadding;
 				}
-				if (!defined(options.max) && !defined(axis.userMax)  && maxPadding && (axis.dataMax > 0 || !axis.ignoreMaxPadding)) {
+				if (!defined(hardMax)  && maxPadding) {
 					axis.max += length * maxPadding;
 				}
 			}
@@ -27111,6 +27161,21 @@ Axis.prototype = {
 		if (isNumber(options.ceiling)) {
 			axis.max = mathMin(axis.max, options.ceiling);
 		}
+
+		// When the threshold is soft, adjust the extreme value only if 
+		// the data extreme and the padded extreme land on either side of the threshold. For example,
+		// a series of [0, 1, 2, 3] would make the yAxis add a tick for -1 because of the
+		// default minPadding and startOnTick options. This is prevented by the softThreshold
+		// option.
+		if (softThreshold && defined(axis.dataMin)) {
+			threshold = threshold || 0;
+			if (!defined(hardMin) && axis.min < threshold && axis.dataMin >= threshold) {
+				axis.min = threshold;
+			} else if (!defined(hardMax) && axis.max > threshold && axis.dataMax <= threshold) {
+				axis.max = threshold;
+			}
+		}
+
 
 		// get tickInterval
 		if (axis.min === axis.max || axis.min === undefined || axis.max === undefined) {
@@ -27311,12 +27376,12 @@ Axis.prototype = {
 					horiz = axis.horiz,
 					key = [horiz ? options.left : options.top, horiz ? options.width : options.height, options.pane].join(',');
 				
-				if (others[key]) {
-					if (axis.series.length) {
+				if (axis.series.length) { // #4442
+					if (others[key]) {
 						hasOther = true; // #4201
+					} else {
+						others[key] = 1;
 					}
-				} else {
-					others[key] = 1;
 				}
 			});
 
@@ -27756,11 +27821,11 @@ Axis.prototype = {
 			var tick = ticks[pos],
 				label = tick && tick.label;
 			if (label) {
+				label.attr(attr); // This needs to go before the CSS in old IE (#4502)
 				if (css) {
 					label.css(merge(css, label.specCss));
 				}
 				delete label.specCss;
-				label.attr(attr);
 				tick.rotation = attr.rotation;
 			}
 		});
@@ -29281,7 +29346,7 @@ Pointer.prototype = {
 			hoverPoint = chart.hoverPoint,
 			hoverSeries = chart.hoverSeries,
 			i,
-			distance = chart.chartWidth,
+			distance = Number.MAX_VALUE, // #4511
 			anchor,
 			noSharedTooltip,
 			directTouch,
@@ -29744,11 +29809,11 @@ Pointer.prototype = {
 
 	onTrackerMouseOut: function (e) {
 		var series = this.chart.hoverSeries,
-			relatedTarget = e.relatedTarget || e.toElement,
-			relatedSeries = relatedTarget && relatedTarget.point && relatedTarget.point.series; // #2499
+			relatedTarget = e.relatedTarget || e.toElement;
 		
-		if (series && !series.options.stickyTracking && !this.inClass(relatedTarget, PREFIX + 'tooltip') &&
-				relatedSeries !== series) {
+		if (series && !series.options.stickyTracking && 
+				!this.inClass(relatedTarget, PREFIX + 'tooltip') &&
+				!this.inClass(relatedTarget, PREFIX + 'series-' + series.index)) { // #2499, #4465
 			series.onMouseOut();
 		}
 	},
@@ -32701,6 +32766,7 @@ Series.prototype = {
 		fill: 'fillColor',
 		r: 'radius'
 	},
+	directTouch: false,
 	axisTypes: ['xAxis', 'yAxis'],
 	colorCounter: 0,
 	parallelArrays: ['x', 'y'], // each point's x and y values are stored in this.xData and this.yData
@@ -34248,7 +34314,10 @@ Series.prototype = {
 					zIndex: zIndex || 0.1 // IE8 needs this
 				})
 				.add(parent);
+
+			group.addClass('highcharts-series-' + this.index);
 		}
+		
 		// Place it on first and subsequent (redraw) calls
 		group[isNew ? 'attr' : 'animate'](this.getPlotBox());
 		return group;
@@ -35451,6 +35520,7 @@ seriesTypes.line = LineSeries;
  * Set the default options for area
  */
 defaultPlotOptions.area = merge(defaultSeriesOptions, {
+	softThreshold: false, // docs
 	threshold: 0
 	// trackByArea: false,
 	// lineColor: null, // overrides color, but lets fillColor be unaltered
@@ -35835,7 +35905,8 @@ defaultPlotOptions.column = merge(defaultSeriesOptions, {
 		verticalAlign: null, // auto
 		y: null
 	},
-	startFromThreshold: true, // docs: http://jsfiddle.net/highcharts/hz8fopan/14/
+	softThreshold: false, // docs
+	startFromThreshold: true, // docs (but false doesn't work well): http://jsfiddle.net/highcharts/hz8fopan/14/
 	stickyTracking: false,
 	tooltip: {
 		distance: 6
@@ -36020,7 +36091,7 @@ var ColumnSeries = extendClass(Series, {
 			barX = mathRound(barX) + xCrisp;
 			barW = right - barX;
 
-			fromTop = mathAbs(barY) < 0.5;
+			fromTop = mathAbs(barY) <= 0.5; // #4504
 			bottom = mathMin(mathRound(barY + barH) + yCrisp, 9e4); // #3575
 			barY = mathRound(barY) + yCrisp;
 			barH = bottom - barY;
@@ -36634,7 +36705,9 @@ var PieSeries = {
 
 				// draw the slice
 				if (graphic) {
-					graphic.animate(extend(shapeArgs, groupTranslation));				
+					graphic
+						.setRadialReference(series.center)
+						.animate(extend(shapeArgs, groupTranslation));				
 				} else {
 					attr = { 'stroke-linejoin': 'round' };
 					if (!point.visible) {
@@ -42331,6 +42404,7 @@ $(document).ready(function() {
   $primaryNav.find('.nav__expandable').each(function() {
     var subNav = $(this).find('.nav--primary__sub');
     $(this).find(' > a').clone()
+      .removeClass()
       .prependTo(subNav)
       .wrap('<li class="nav__top-level-duplicate"></li>');
   });
