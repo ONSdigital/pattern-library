@@ -26,6 +26,7 @@
     max-width: inherit;
     vertical-align: top;
   }
+
 }
 
 .lozenge--fat {
@@ -49,3 +50,9 @@
     //background-color: darken($azure, 5%);
   //}
 }
+
+.lozenge--transparent {
+    background-color: none;
+    border: 2px solid $grey-cold;
+    color: $black;
+  }

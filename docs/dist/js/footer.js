@@ -22676,7 +22676,7 @@ SVGRenderer.prototype = {
 	 * @param {Number} height
 	 * @param {Boolean} forExport
 	 */
-	init: function (container, width, height, style, forExport) {
+	init: function (container, width, height, style, forExport, allowHTML) {
 		var renderer = this,
 			loc = location,
 			boxWrapper,
@@ -22716,6 +22716,7 @@ SVGRenderer.prototype = {
 
 
 		renderer.defs = this.createElement('defs').add();
+		renderer.allowHTML = allowHTML;
 		renderer.forExport = forExport;
 		renderer.gradients = {}; // Object where gradient SvgElements are stored
 		renderer.cache = {}; // Cache for numerical bounding boxes
@@ -23730,7 +23731,7 @@ SVGRenderer.prototype = {
 			wrapper,
 			attr = {};
 
-		if (useHTML && !renderer.forExport) {
+		if (useHTML && (renderer.allowHTML || !renderer.forExport)) {
 			return renderer.html(str, x, y);
 		}
 
@@ -29349,6 +29350,7 @@ Pointer.prototype = {
 			distance = Number.MAX_VALUE, // #4511
 			anchor,
 			noSharedTooltip,
+			stickToHoverSeries,
 			directTouch,
 			kdpoints = [],
 			kdpoint,
@@ -29364,9 +29366,11 @@ Pointer.prototype = {
 			}
 		}
 
-		// If it has a hoverPoint and that series requires direct touch (like columns), 
-		// use the hoverPoint (#3899). Otherwise, search the k-d tree.
-		if (!shared && hoverSeries && hoverSeries.directTouch && hoverPoint) {
+		// If it has a hoverPoint and that series requires direct touch (like columns, #3899), or we're on 
+		// a noSharedTooltip series among shared tooltip series (#4546), use the hoverPoint . Otherwise, 
+		// search the k-d tree.
+		stickToHoverSeries = hoverSeries && (shared ? hoverSeries.noSharedTooltip : hoverSeries.directTouch);
+		if (stickToHoverSeries && hoverPoint) {
 			kdpoint = hoverPoint;
 
 		// Handle shared tooltip or cases where a series is not yet hovered
@@ -31606,12 +31610,14 @@ Chart.prototype = {
 	getContainer: function () {
 		var chart = this,
 			container,
-			optionsChart = chart.options.chart,
+			options = chart.options,
+			optionsChart = options.chart,
 			chartWidth,
 			chartHeight,
 			renderTo,
 			indexAttrName = 'data-highcharts-chart',
 			oldChartIndex,
+			Ren,
 			containerId;
 
 		chart.renderTo = renderTo = optionsChart.renderTo;
@@ -31678,10 +31684,15 @@ Chart.prototype = {
 		chart._cursor = container.style.cursor;
 
 		// Initialize the renderer
-		chart.renderer =
-			optionsChart.forExport ? // force SVG, used for SVG export
-				new SVGRenderer(container, chartWidth, chartHeight, optionsChart.style, true) :
-				new Renderer(container, chartWidth, chartHeight, optionsChart.style);
+		Ren = Highcharts[optionsChart.renderer] || Renderer;
+		chart.renderer = new Ren(
+			container, 
+			chartWidth, 
+			chartHeight, 
+			optionsChart.style, 
+			optionsChart.forExport, 
+			options.exporting && options.exporting.allowHTML
+		);
 
 		if (useCanVG) {
 			// If we need canvg library, extend and configure the renderer
@@ -33570,11 +33581,12 @@ Series.prototype = {
 	 */
 	setClip: function (animation) {
 		var chart = this.chart,
+			options = this.options,
 			renderer = chart.renderer,
 			inverted = chart.inverted,
 			seriesClipBox = this.clipBox,
 			clipBox = seriesClipBox || chart.clipBox,
-			sharedClipKey = this.sharedClipKey || ['_sharedClip', animation && animation.duration, animation && animation.easing, clipBox.height].join(','),
+			sharedClipKey = this.sharedClipKey || ['_sharedClip', animation && animation.duration, animation && animation.easing, clipBox.height, options.xAxis, options.yAxis].join(','), // #4526
 			clipRect = chart[sharedClipKey],
 			markerClipRect = chart[sharedClipKey + 'm'];
 
@@ -33599,7 +33611,7 @@ Series.prototype = {
 			clipRect.count += 1;
 		}
 
-		if (this.options.clip !== false) {
+		if (options.clip !== false) {
 			this.group.clip(animation || seriesClipBox ? clipRect : chart.clipRect);
 			this.markerGroup.clip(markerClipRect);
 			this.sharedClipKey = sharedClipKey;
@@ -33865,9 +33877,8 @@ Series.prototype = {
 						threshold = zones[++j];
 					}
 					
-					if (threshold.color) {
-						point.color = point.fillColor = threshold.color;
-					}
+					point.color = point.fillColor = pick(threshold.color, series.color); // #3636, #4267, #4430 - inherit color from series, when color is undefined
+					
 				}
 
 				hasPointSpecificOptions = seriesOptions.colorByPoint || point.color; // #868
@@ -33890,9 +33901,9 @@ Series.prototype = {
 					pointStateOptionsHover = stateOptions[HOVER_STATE] = stateOptions[HOVER_STATE] || {};
 
 					// Handle colors for column and pies
-					if (!seriesOptions.marker) { // column, bar, point
+					if (!seriesOptions.marker || (point.negative && !pointStateOptionsHover.fillColor && !stateOptionsHover.fillColor)) { // column, bar, point or negative threshold for series with markers (#3636)
 						// If no hover color is given, brighten the normal color. #1619, #2579
-						pointStateOptionsHover.color = pointStateOptionsHover.color || (!point.options.color && stateOptionsHover[(point.negative && seriesNegativeColor ? 'negativeColor' : 'color')]) ||
+						pointStateOptionsHover[series.pointAttrToOptions.fill] = pointStateOptionsHover.color || (!point.options.color && stateOptionsHover[(point.negative && seriesNegativeColor ? 'negativeColor' : 'color')]) ||
 							Color(point.color)
 								.brighten(pointStateOptionsHover.brightness || stateOptionsHover.brightness)
 								.get();
