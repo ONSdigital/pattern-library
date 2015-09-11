@@ -4182,9 +4182,10 @@ lesser , applied styles
   background-color: #00b5cb; }
 
 .lozenge--transparent {
-  background-color: none;
+  background-color: transparent;
   border: 2px solid #adafa7;
-  color: #303030; }
+  color: #757575;
+  font-weight: bold; }
 
 .media {
   display: block; }

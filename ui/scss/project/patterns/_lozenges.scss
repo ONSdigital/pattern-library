@@ -52,7 +52,8 @@
 }
 
 .lozenge--transparent {
-    background-color: none;
+    background-color: transparent;
     border: 2px solid $grey-cold;
-    color: $black;
+    color: $grey;
+    font-weight: bold;
   }
