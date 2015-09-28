@@ -43,3 +43,6 @@ publish
 # bower
 ui/vendor
 /.htmlcache/
+
+# Webstorm / IntelliJ
+/.idea

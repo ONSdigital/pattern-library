@@ -21240,6 +21240,7 @@ defaultOptions = {
 			cursor: 'default',
 			fontSize: '12px',
 			padding: '8px',
+			pointerEvents: 'none', // #1686 http://caniuse.com/#feat=pointer-events // docs
 			whiteSpace: 'nowrap'
 		}
 		//xDateFormat: '%A, %b %e, %Y',
@@ -24383,9 +24384,14 @@ extend(SVGRenderer.prototype, {
 									parentGroup.doTransform = true;
 								}
 							});
-							wrap(parentGroup, 'visibilitySetter', function (proceed, value, key, elem) {
-								proceed.call(this, value, key, elem);
-								htmlGroupStyle[key] = value;
+
+							// These properties are set as attributes on the SVG group, and as
+							// identical CSS properties on the div. (#3542)
+							each(['opacity', 'visibility'], function (prop) {
+								wrap(parentGroup, prop + 'Setter', function (proceed, value, key, elem) {
+									proceed.call(this, value, key, elem);
+									htmlGroupStyle[key] = value;
+								});
 							});
 						});
 
@@ -26274,6 +26280,7 @@ Axis.prototype = {
 			//y: 0
 		},
 		type: 'linear' // linear, logarithmic or datetime
+		//visible: true // docs, sample created
 	},
 
 	/**
@@ -26409,6 +26416,7 @@ Axis.prototype = {
 		axis.minPixelPadding = 0;
 
 		axis.reversed = options.reversed;
+		axis.visible = options.visible !== false;
 		axis.zoomEnabled = options.zoomEnabled !== false;
 
 		// Initial categories
@@ -27695,9 +27703,11 @@ Axis.prototype = {
 			};
 		
 		if (horiz) {
-			autoRotation = defined(rotationOption) ? 
-				[rotationOption] :
-				slotSize < pick(labelOptions.autoRotationLimit, 80) && !labelOptions.staggerLines && !labelOptions.step && labelOptions.autoRotation;
+			autoRotation = !labelOptions.staggerLines && !labelOptions.step && ( // #3971
+				defined(rotationOption) ? 
+					[rotationOption] :
+					slotSize < pick(labelOptions.autoRotationLimit, 80) && labelOptions.autoRotation
+			);
 
 			if (autoRotation) {
 
@@ -28149,12 +28159,12 @@ Axis.prototype = {
 			// alternate grid color
 			if (alternateGridColor) {
 				each(tickPositions, function (pos, i) {
-					if (i % 2 === 0 && pos < axis.max) {
+					to = tickPositions[i + 1] !== UNDEFINED ? tickPositions[i + 1] + tickmarkOffset : axis.max - tickmarkOffset; 
+					if (i % 2 === 0 && pos < axis.max && to <= axis.max - tickmarkOffset) { // #2248
 						if (!alternateBands[pos]) {
 							alternateBands[pos] = new Highcharts.PlotLineOrBand(axis);
 						}
 						from = pos + tickmarkOffset; // #949
-						to = tickPositions[i + 1] !== UNDEFINED ? tickPositions[i + 1] + tickmarkOffset : axis.max;
 						alternateBands[pos].options = {
 							from: isLog ? lin2log(from) : from,
 							to: isLog ? lin2log(to) : to,
@@ -28256,13 +28266,15 @@ Axis.prototype = {
 	 */
 	redraw: function () {
 		
-		// render the axis
-		this.render();
+		if (this.visible) {
+			// render the axis
+			this.render();
 
-		// move plot lines and bands
-		each(this.plotLinesAndBands, function (plotLine) {
-			plotLine.render();
-		});
+			// move plot lines and bands
+			each(this.plotLinesAndBands, function (plotLine) {
+				plotLine.render();
+			});
+		}
 
 		// mark associated series as dirty and ready for redraw
 		each(this.series, function (series) {
@@ -31745,7 +31757,9 @@ Chart.prototype = {
 		// pre-render axes to get labels offset width
 		if (chart.hasCartesianSeries) {
 			each(chart.axes, function (axis) {
-				axis.getOffset();
+				if (axis.visible) {
+					axis.getOffset();
+				}
 			});
 		}
 
@@ -31821,7 +31835,7 @@ Chart.prototype = {
 			chartHeight,
 			fireEndResize,
 			renderer = chart.renderer,
-			globalAnimation = renderer.globalAnimation;
+			globalAnimation;
 
 		// Handle the isResizing counter
 		chart.isResizing += 1;
@@ -31847,6 +31861,7 @@ Chart.prototype = {
 		}
 
 		// Resize the container with the global animation applied if enabled (#2503)
+		globalAnimation = renderer.globalAnimation;
 		(globalAnimation ? animate : css)(chart.container, {
 			width: chartWidth + PX,
 			height: chartHeight + PX
@@ -31879,8 +31894,8 @@ Chart.prototype = {
 		chart.oldChartHeight = null;
 		fireEvent(chart, 'resize');
 
-		// fire endResize and set isResizing back
-		// If animation is disabled, fire without delay
+		// Fire endResize and set isResizing back. If animation is disabled, fire without delay
+		globalAnimation = renderer.globalAnimation; // Reassign it before using it, it may have changed since the top of this function.
 		if (globalAnimation === false) {
 			fireEndResize();
 		} else { // else set a timeout with the animation duration
@@ -32246,7 +32261,9 @@ Chart.prototype = {
 		// Axes
 		if (chart.hasCartesianSeries) {
 			each(axes, function (axis) {
-				axis.render();
+				if (axis.visible) {
+					axis.render();	
+				}
 			});
 		}
 
@@ -32498,6 +32515,10 @@ var CenteredSeriesMixin = Highcharts.CenteredSeriesMixin = {
 				(handleSlicingRoom ? slicingRoom : 0);
 
 		}
+		// innerSize cannot be larger than size (#3632)
+		if (positions[3] > positions[2]) {
+			positions[3] = positions[2];
+		}
 		return positions;
 	}
 };
@@ -32593,7 +32614,11 @@ Point.prototype = {
 				i++;
 			}
 			while (j < valueCount) {
-				ret[pointArrayMap[j++]] = options[i++];
+				if (!keys || options[i] !== undefined) { // Skip undefined positions for keys
+					ret[pointArrayMap[j]] = options[i];
+				}
+				i++;
+				j++;
 			}
 		} else if (typeof options === 'object') {
 			ret = options;
@@ -32742,7 +32767,8 @@ Point.prototype = {
 		}
 
 		fireEvent(this, eventType, eventArgs, defaultFunction);
-	}
+	},
+	visible: true
 };/**
  * @classDescription The base function which all other series types inherit from. The data in the series is stored
  * in various arrays.
@@ -33227,6 +33253,13 @@ Series.prototype = {
 			animation = false;
 		}
 
+		// Typically for pie series, points need to be processed and generated 
+		// prior to rendering the legend
+		if (options.legendType === 'point') { // docs: legendType now supported on more series types
+			this.processData();
+			this.generatePoints();
+		}
+
 		if (redraw) {
 			chart.redraw(animation);
 		}
@@ -33250,6 +33283,7 @@ Series.prototype = {
 			i, // loop variable
 			options = series.options,
 			cropThreshold = options.cropThreshold,
+			getExtremesFromAll = series.getExtremesFromAll || options.getExtremesFromAll, // #4599
 			isCartesian = series.isCartesian,
 			xExtremes,
 			min,
@@ -33268,7 +33302,7 @@ Series.prototype = {
 		}
 
 		// optionally filter out points outside the plot area
-		if (isCartesian && series.sorted && (!cropThreshold || dataLength > cropThreshold || series.forceCrop)) {
+		if (isCartesian && series.sorted && !getExtremesFromAll && (!cropThreshold || dataLength > cropThreshold || series.forceCrop)) {
 			
 			// it's outside current extremes
 			if (processedXData[dataLength - 1] < min || processedXData[0] > max) {
@@ -33488,6 +33522,7 @@ Series.prototype = {
 			plotX,
 			plotY,
 			lastPlotX,
+			stackIndicator,
 			closestPointRangePx = Number.MAX_VALUE;
 
 		// Translate each point
@@ -33512,9 +33547,9 @@ Series.prototype = {
 
 			// Calculate the bottom y value for stacked series
 			if (stacking && series.visible && stack && stack[xValue]) {
-
+				stackIndicator = series.getStackIndicator(stackIndicator, xValue, series.index);
 				pointStack = stack[xValue];
-				stackValues = pointStack.points[series.index + ',' + i];
+				stackValues = pointStack.points[stackIndicator.key];
 				yBottom = stackValues[0];
 				yValue = stackValues[1];
 
@@ -34050,21 +34085,25 @@ Series.prototype = {
 					if (step === 'right') {
 						segmentPath.push(
 							lastPoint.plotX,
-							plotY
+							plotY,
+							L
 						);
 
 					} else if (step === 'center') {
 						segmentPath.push(
 							(lastPoint.plotX + plotX) / 2,
 							lastPoint.plotY,
+							L,
 							(lastPoint.plotX + plotX) / 2,
-							plotY
+							plotY,
+							L
 						);
 
 					} else {
 						segmentPath.push(
 							plotX,
-							lastPoint.plotY
+							lastPoint.plotY,
+							L
 						);
 					}
 				}
@@ -34878,6 +34917,7 @@ Series.prototype.setStackedPoints = function () {
 		yAxis = series.yAxis,
 		stacks = yAxis.stacks,
 		oldStacks = yAxis.oldStacks,
+		stackIndicator,
 		isNegative,
 		stack,
 		other,
@@ -34894,8 +34934,8 @@ Series.prototype.setStackedPoints = function () {
 	for (i = 0; i < yDataLength; i++) {
 		x = xData[i];
 		y = yData[i];
-		pointKey = series.index + ',' + i;
-
+		stackIndicator = series.getStackIndicator(stackIndicator, x, series.index);
+		pointKey = stackIndicator.key;
 		// Read stacked values into a stack based on the x value,
 		// the sign of y and the stack key. Stacking is also handled for null values (#739)
 		isNegative = negStacks && y < (stackThreshold ? 0 : threshold);
@@ -34964,7 +35004,8 @@ Series.prototype.setPercentStacks = function () {
 	var series = this,
 		stackKey = series.stackKey,
 		stacks = series.yAxis.stacks,
-		processedXData = series.processedXData;
+		processedXData = series.processedXData,
+		stackIndicator;
 
 	each([stackKey, '-' + stackKey], function (key) {
 		var i = processedXData.length,
@@ -34975,8 +35016,9 @@ Series.prototype.setPercentStacks = function () {
 
 		while (i--) {
 			x = processedXData[i];
+			stackIndicator = series.getStackIndicator(stackIndicator, x, series.index);
 			stack = stacks[key] && stacks[key][x];
-			pointExtremes = stack && stack.points[series.index + ',' + i];
+			pointExtremes = stack && stack.points[stackIndicator.key];
 			if (pointExtremes) {
 				totalFactor = stack.total ? 100 / stack.total : 0;
 				pointExtremes[0] = correctFloat(pointExtremes[0] * totalFactor); // Y bottom value
@@ -34985,6 +35027,24 @@ Series.prototype.setPercentStacks = function () {
 			}
 		}
 	});
+};
+
+/**
+* Get stack indicator, according to it's x-value, to determine points with the same x-value
+*/
+Series.prototype.getStackIndicator = function(stackIndicator, x, index) {
+	if (!defined(stackIndicator) || stackIndicator.x !== x) {
+		stackIndicator = {
+			x: x,
+			index: 0
+		};
+	} else {
+		stackIndicator.index++;
+	}
+	
+	stackIndicator.key = [index, x, stackIndicator.index].join(',');
+
+	return stackIndicator;
 };
 
 // Extend the Chart prototype for dynamic methods
@@ -35250,7 +35310,7 @@ extend(Series.prototype, {
 			}
 			each(shiftShapes, function (shape) {
 				if (series[shape]) {
-					series[shape].shift = currentShift + 1;
+					series[shape].shift = currentShift + (seriesOptions.step ? 2 : 1);
 				}
 			});
 		}
@@ -35562,6 +35622,7 @@ var AreaSeries = extendClass(Series, {
 			plotY,
 			points = this.points,
 			connectNulls = this.options.connectNulls,
+			stackIndicator,
 			i,
 			x;
 
@@ -35582,7 +35643,7 @@ var AreaSeries = extendClass(Series, {
 			});
 
 			each(keys, function (x) {
-				var y = 0,
+				var threshold = null,
 					stackPoint;
 
 				if (connectNulls && (!pointMap[x] || pointMap[x].y === null)) { // #1836
@@ -35599,16 +35660,17 @@ var AreaSeries = extendClass(Series, {
 
 					// Loop down the stack to find the series below this one that has
 					// a value (#1991)
-					for (i = series.index; i <= yAxis.series.length; i++) {
-						stackPoint = stack[x].points[i + ',' + x];
+					for (i = series.index; i <= yAxis.series.length; i++) {		
+						stackIndicator = series.getStackIndicator(null, x, i);
+						stackPoint = stack[x].points[stackIndicator.key];
 						if (stackPoint) {
-							y = stackPoint[1];
+							threshold = stackPoint[1];
 							break;
 						}
 					}
 
 					plotX = xAxis.translate(x);
-					plotY = yAxis.toPixels(y, true);
+					plotY = yAxis.getThreshold(threshold);
 					segment.push({ 
 						y: null, 
 						plotX: plotX,
@@ -36030,6 +36092,46 @@ var ColumnSeries = extendClass(Series, {
 	},
 
 	/**
+	 * Make the columns crisp. The edges are rounded to the nearest full pixel.
+	 */
+	crispCol: function (x, y, w, h) {
+		var chart = this.chart,
+			borderWidth = this.borderWidth,
+			xCrisp = -(borderWidth % 2 ? 0.5 : 0),
+			yCrisp = borderWidth % 2 ? 0.5 : 1,
+			right,
+			bottom;
+
+		if (chart.inverted && chart.renderer.isVML) {
+			yCrisp += 1;
+		}
+		
+		// Horizontal. We need to first compute the exact right edge, then round it
+		// and compute the width from there.
+		right = Math.round(x + w) + xCrisp;
+		x = Math.round(x) + xCrisp;
+		w = right - x;
+
+		// Vertical
+		bottom = Math.round(y + h) + yCrisp;
+		y = Math.round(y) + yCrisp;
+		h = bottom - y;
+
+		// Top edges are exceptions (#4504)
+		if (Math.abs(y) <= 0.5) {
+			y -= 1;
+			h += 1;
+		}
+
+		return {
+			x: x,
+			y: y,
+			width: w,
+			height: h
+		};
+	},
+
+	/**
 	 * Translate each point to the plot area coordinate system and find shape positions
 	 */
 	translate: function () {
@@ -36047,15 +36149,10 @@ var ColumnSeries = extendClass(Series, {
 			metrics = series.getColumnMetrics(),
 			pointWidth = metrics.width,
 			seriesBarW = series.barW = mathMax(pointWidth, 1 + 2 * borderWidth), // postprocessed for border width
-			pointXOffset = series.pointXOffset = metrics.offset,
-			xCrisp = -(borderWidth % 2 ? 0.5 : 0),
-			yCrisp = borderWidth % 2 ? 0.5 : 1;
+			pointXOffset = series.pointXOffset = metrics.offset;
 
 		if (chart.inverted) {
 			translatedThreshold -= 0.5; // #3355
-			if (chart.renderer.isVML) {
-				yCrisp += 1;
-			}
 		}
 
 		// When the pointPadding is 0, we want the columns to be packed tightly, so we allow individual
@@ -36069,15 +36166,12 @@ var ColumnSeries = extendClass(Series, {
 
 		// Record the new values
 		each(series.points, function (point) {
-			var yBottom = pick(point.yBottom, translatedThreshold),
+			var yBottom = mathMin(pick(point.yBottom, translatedThreshold), 9e4), // #3575
 				safeDistance = 999 + mathAbs(yBottom),
 				plotY = mathMin(mathMax(-safeDistance, point.plotY), yAxis.len + safeDistance), // Don't draw too far outside plot area (#1303, #2241, #4264)
 				barX = point.plotX + pointXOffset,
 				barW = seriesBarW,
 				barY = mathMin(plotY, yBottom),
-				right,
-				bottom,
-				fromTop,
 				up,
 				barH = mathMax(plotY, yBottom) - barY;
 
@@ -36086,32 +36180,15 @@ var ColumnSeries = extendClass(Series, {
 				if (minPointLength) {
 					barH = minPointLength;
 					up = (!yAxis.reversed && !point.negative) || (yAxis.reversed && point.negative);
-					barY =
-						mathRound(mathAbs(barY - translatedThreshold) > minPointLength ? // stacked
+					barY = mathAbs(barY - translatedThreshold) > minPointLength ? // stacked
 							yBottom - minPointLength : // keep position
-							translatedThreshold - (up ? minPointLength : 0)); // #1485, #4051
+							translatedThreshold - (up ? minPointLength : 0); // #1485, #4051
 				}
 			}
 
 			// Cache for access in polar
 			point.barX = barX;
 			point.pointWidth = pointWidth;
-
-			// Round off to obtain crisp edges and avoid overlapping with neighbours (#2694)
-			right = mathRound(barX + barW) + xCrisp;
-			barX = mathRound(barX) + xCrisp;
-			barW = right - barX;
-
-			fromTop = mathAbs(barY) <= 0.5; // #4504
-			bottom = mathMin(mathRound(barY + barH) + yCrisp, 9e4); // #3575
-			barY = mathRound(barY) + yCrisp;
-			barH = bottom - barY;
-
-			// Top edges are exceptions
-			if (fromTop) {
-				barY -= 1;
-				barH += 1;
-			}
 
 			// Fix the tooltip on center of grouped columns (#1216, #424, #3648)
 			point.tooltipPos = chart.inverted ? 
@@ -36120,12 +36197,7 @@ var ColumnSeries = extendClass(Series, {
 
 			// Register shape type and arguments to be used in drawPoints
 			point.shapeType = 'rect';
-			point.shapeArgs = {
-				x: barX,
-				y: barY,
-				width: barW,
-				height: barH
-			};
+			point.shapeArgs = series.crispCol(barX, barY, barW, barH);
 		});
 
 	},
@@ -36349,10 +36421,7 @@ var PiePoint = extendClass(Point, {
 		var point = this,
 			toggleSlice;
 
-		extend(point, {
-			visible: point.visible !== false,
-			name: pick(point.name, 'Slice')
-		});
+		point.name = pick(point.name, 'Slice');
 
 		// add event listener for select
 		toggleSlice = function (e) {
@@ -36507,19 +36576,6 @@ var PieSeries = {
 			// delete this function to allow it only once
 			series.animate = null;
 		}
-	},
-
-	/**
-	 * Extend the basic setData method by running processData and generatePoints immediately,
-	 * in order to access the points from the legend.
-	 */
-	setData: function (data, redraw, animation, updatePoints) {
-		Series.prototype.setData.call(this, data, false, animation, updatePoints);
-		this.processData();
-		this.generatePoints();
-		if (pick(redraw, true)) {
-			this.chart.redraw(animation);
-		} 
 	},
 
 	/**
@@ -37455,7 +37511,7 @@ if (seriesTypes.pie) {
 		// If the size must be decreased, we need to run translate and drawDataLabels again
 		if (newSize < center[2]) {
 			center[2] = newSize;
-			center[3] = relativeLength(options.innerSize || 0, newSize);
+			center[3] = Math.min(relativeLength(options.innerSize || 0, newSize), newSize); // #3632
 			this.translate(center);
 			each(this.points, function (point) {
 				if (point.dataLabel) {
@@ -37861,7 +37917,9 @@ extend(Legend.prototype, {
 		.on('click', function (event) {
 			var strLegendItemClick = 'legendItemClick',
 				fnLegendItemClick = function () {
-					item.setVisible();
+					if (item.setVisible) {
+						item.setVisible();
+					}
 				};
 				
 			// Pass over the click/touch event. #4.
@@ -38157,7 +38215,7 @@ extend(Point.prototype, {
 	 */
 	setState: function (state, move) {
 		var point = this,
-			plotX = point.plotX,
+			plotX = mathFloor(point.plotX), // #4586
 			plotY = point.plotY,
 			series = point.series,
 			stateOptions = series.options.states,
@@ -42483,6 +42541,7 @@ $(document).ready(function() {
 
   $('#menu-toggle').on('click', function(event) {
     event.preventDefault();
+    return false;
 
     if ($primaryNav.hasClass('nav-main--hidden')) {
       showMenu($menuToggle, $primaryNav);
@@ -42520,6 +42579,8 @@ $(document).ready(function() {
     settings = jQuery.extend({
       focusClass: 'menu-focus',
     }, settings);
+
+      console.log("this + " + this);
 
     // Set tabIndex to -1 so that links can't receive focus until menu is open
     $(this).find('> li > a').next('ul').find('a').attr('tabIndex',-1);

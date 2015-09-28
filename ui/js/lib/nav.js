@@ -131,6 +131,7 @@ $(document).ready(function() {
 
   $('#menu-toggle').on('click', function(event) {
     event.preventDefault();
+    return false;
 
     if ($primaryNav.hasClass('nav-main--hidden')) {
       showMenu($menuToggle, $primaryNav);
@@ -168,6 +169,8 @@ $(document).ready(function() {
     settings = jQuery.extend({
       focusClass: 'menu-focus',
     }, settings);
+
+      console.log("this + " + this);
 
     // Set tabIndex to -1 so that links can't receive focus until menu is open
     $(this).find('> li > a').next('ul').find('a').attr('tabIndex',-1);
