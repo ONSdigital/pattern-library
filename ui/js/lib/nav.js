@@ -170,7 +170,6 @@ $(document).ready(function() {
       focusClass: 'menu-focus',
     }, settings);
 
-      console.log("this + " + this);
 
     // Set tabIndex to -1 so that links can't receive focus until menu is open
     $(this).find('> li > a').next('ul').find('a').attr('tabIndex',-1);
