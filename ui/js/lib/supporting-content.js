@@ -7,7 +7,7 @@ $(document).on('ready', function() {
 
   $('.accordion__title')
     .attr('role', 'tab')
-    .attr('tabindex', '0')
+    .attr('tabindex', '1')
     .attr('aria-selected', 'false');
 
   $('.accordion__content')
