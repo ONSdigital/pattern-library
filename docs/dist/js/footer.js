@@ -42624,6 +42624,7 @@ $(document).on('ready', function() {
 
 	//Markup set to 'expanded' for no JS but if JS then defaults to 'collapsed'
 	if ('.accordion.is-expanded') {
+		console.log("Load toggle = "+this);
 		toggleAccordion(this);
 	}
 
@@ -42647,6 +42648,7 @@ $(document).on('ready', function() {
     .attr('aria-expanded', 'false');
 
   $('.accordion__title').on('click', function() {
+	  console.log("CLick this = "+this);
     toggleAccordion($(this));
   });
 
