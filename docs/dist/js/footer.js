@@ -42622,6 +42622,11 @@ $(document).ready(function() {
 
 $(document).on('ready', function() {
 
+	//Markup set to 'expanded' for no JS but if JS then defaults to 'collapsed'
+	if ('.accordion.is-expanded') {
+		toggleAccordion(this);
+	}
+
   // set up ARIA roles
   $('.accordion-container')
     .attr('role', 'tablist')
