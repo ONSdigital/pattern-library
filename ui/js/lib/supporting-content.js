@@ -2,8 +2,9 @@ $(document).on('ready', function() {
 
 	//Markup set to 'expanded' for no JS but if JS then defaults to 'collapsed'
 	if ('.accordion.is-expanded') {
-		console.log("Load toggle = "+this);
-		toggleAccordion(this);
+		var accordionTitle = $(this).find('.accordion__title');
+		console.log(accordionTitle);
+		toggleAccordion(accordionTitle);
 	}
 
   // set up ARIA roles
