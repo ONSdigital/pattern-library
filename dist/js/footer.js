@@ -42541,7 +42541,6 @@ $(document).ready(function() {
 
   $('#menu-toggle').on('click', function(event) {
     event.preventDefault();
-    return false;
 
     if ($primaryNav.hasClass('nav-main--hidden')) {
       showMenu($menuToggle, $primaryNav);
