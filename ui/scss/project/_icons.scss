@@ -96,6 +96,8 @@
 
 .icon-rss:before { content: '\e81d'; display: none !important;}
 
+.icon-target:before { content: '\e81f'; }
+
 //.icon-link-ext:before { content: '\e81e'; } //Breaks on gov networks that block font packs
 .icon-link-ext:after {
   background-image: url('../img/external.png');
