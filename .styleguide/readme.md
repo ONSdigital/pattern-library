@@ -2,9 +2,9 @@
 
 ### A library of visual and interaction patterns for ONS digital interfaces
 
-These patterns and UI components were created during the UX design, graphic design and front-end development work for the ONS Alpha site. 
+These patterns and user interface components were created during the UX design, graphic design and front-end development work for the ONS Alpha site.
 
-They have been developed with scalability and reuse in mind. 
+They have been developed with scalability and reuse in mind.
 
 This site is designed to be both a front-end framework and a toolkit that can be used to develop responsive, mobile-first web interfaces for ONS. It contains supporting notes for designers and front-end developers.
 
